@@ -11,6 +11,12 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 status](http://www.bioconductor.org/shields/build/release/bioc/recount3.svg)](https://bioconductor.org/checkResults/release/bioc-LATEST/recount3)
 [![Codecov test
 coverage](https://codecov.io/gh/LieberInstitute/recount3/branch/master/graph/badge.svg)](https://codecov.io/gh/LieberInstitute/recount3?branch=master)
+[![R build
+status](https://github.com/LieberInstitute/recount3/workflows/check-standard/badge.svg)](https://github.com/LieberInstitute/recount3/actions)
+[![Test
+coverage](https://github.com/LieberInstitute/recount3/workflows/test-coverage/badge.svg)](https://github.com/LieberInstitute/recount3/actions)
+[![Pkgdown
+deployment](https://github.com/LieberInstitute/recount3/workflows/pkgdown/badge.svg)](https://github.com/LieberInstitute/recount3/actions)
 <!-- badges: end -->
 
 Explore and download data from the recount project available at the

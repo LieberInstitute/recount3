@@ -46,3 +46,5 @@ usethis::use_git() ## Don't commit yet, since I need to ignore the .Rproj file
 usethis::use_git_ignore('*.Rproj')
 usethis::use_github('LieberInstitute')
 usethis::use_github_actions_badge('check-standard')
+usethis::use_github_actions_badge('test-coverage')
+usethis::use_github_actions_badge('pkgdown')
