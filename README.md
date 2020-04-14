@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# recount3
+# recount3 <img src="man/figures/logo.png" align="right" width="400px" />
 
 <!-- badges: start -->
 
@@ -12,7 +12,7 @@ status](http://www.bioconductor.org/shields/build/release/bioc/recount3.svg)](ht
 [![Codecov test
 coverage](https://codecov.io/gh/LieberInstitute/recount3/branch/master/graph/badge.svg)](https://codecov.io/gh/LieberInstitute/recount3?branch=master)
 [![R build
-status](https://github.com/LieberInstitute/recount3/workflows/check-standard/badge.svg)](https://github.com/LieberInstitute/recount3/actions)
+status](https://github.com/LieberInstitute/recount3/workflows/R-CMD-check/badge.svg)](https://github.com/LieberInstitute/recount3/actions)
 [![Test
 coverage](https://github.com/LieberInstitute/recount3/workflows/test-coverage/badge.svg)](https://github.com/LieberInstitute/recount3/actions)
 [![Pkgdown
@@ -81,18 +81,31 @@ you agree to abide by its terms.
     updated thanks to
     *[pkgdown](https://CRAN.R-project.org/package=pkgdown)*.
 
-<!-- <a href="https://www.libd.org/"><img src="http://aejaffe.com/media/LIBD_logo.jpg" width="250px"></a> -->
+## Teams involved
 
-<!-- <center><script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=n&d=FRs8oQ9HVpMg6QLJJKAExpF8seGfPVlH-YOnwqUE8Hg'></script></center> -->
+  - [Ben Langmead’s lab at JHU Computer
+    Science](http://www.langmead-lab.org/),
+  - [Kasper Daniel Hansen’s lab at JHBSPH Biostatistics
+    Department](https://www.hansenlab.org/),
+  - [Leonardo Collado-Torres](http://lcolladotor.github.io/) and [Andrew
+    E. Jaffe](http://aejaffe.com/) from [LIBD](https://www.libd.org/),
+  - [Abhinav Nellore’s lab at OHSU](http://nellore.bio/),
+  - Data hosted by [SciServer at JHU](https://www.sciserver.org/).
 
-<!-- <!-- Global site tag (gtag.js) - Google Analytics -->
+|                                                                                                                                                                               |                                                                                                      |                                                                                                                                                                         |                                                                                                                                                   |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <a href="http://www.langmead-lab.org/"><img src="http://www.langmead-lab.org/wp-content/uploads/2014/01/Screen-Shot-2014-02-02-at-5.20.13-PM-1024x199.png" width="250px"></a> | <a href="https://www.libd.org/"><img src="http://aejaffe.com/media/LIBD_logo.jpg" width="250px"></a> | <a href="http://nellore.bio/"><img src="https://seekvectorlogo.net/wp-content/uploads/2018/08/oregon-health-science-university-ohsu-vector-logo.png" width="250px"></a> | <a href="https://www.sciserver.org/"><img src="https://skyserver.sdss.org/dr14/en/images/sciserver_logo_inverted_vertical.png" width="250px"></a> |
 
-–\>
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159132967-1"></script> -->
-<!-- <script> --> <!--   window.dataLayer = window.dataLayer || []; -->
-<!--   function gtag(){dataLayer.push(arguments);} -->
-<!--   gtag('js', new Date()); -->
+<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=n&d=4xd7F6p1BfdRypx-yEodrXiKhC0xvF0bJJywqR8rMKQ'></script>
 
-<!--   gtag('config', 'UA-159132967-1'); -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
 
-<!-- </script> -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163623894-1"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-163623894-1');
+</script>

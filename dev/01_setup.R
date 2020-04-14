@@ -28,6 +28,7 @@ usethis::use_bioc_badge()
 
 ## Tests
 usethis::use_testthat()
+usethis::use_test('citation')
 
 ## Vignette
 usethis::use_vignette('recount3-quickstart', 'recount3 quick start guide')
@@ -45,6 +46,6 @@ devtools::document()
 usethis::use_git() ## Don't commit yet, since I need to ignore the .Rproj file
 usethis::use_git_ignore('*.Rproj')
 usethis::use_github('LieberInstitute')
-usethis::use_github_actions_badge('check-standard')
+usethis::use_github_actions_badge()
 usethis::use_github_actions_badge('test-coverage')
 usethis::use_github_actions_badge('pkgdown')
