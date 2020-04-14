@@ -70,9 +70,7 @@ you agree to abide by its terms.
 
 ## Development tools
 
-  - Testing on Bioc-devel is possible thanks to [R
-    Travis](http://docs.travis-ci.com/user/languages/r/) and [GitHub
-    actions through
+  - Testing on Bioc-devel is possible thanks to [GitHub actions through
     `usethis`](https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/).
   - Code coverage assessment is possible thanks to
     [codecov](https://codecov.io/gh).

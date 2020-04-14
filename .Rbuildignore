@@ -7,3 +7,4 @@
 ^README\.Rmd$
 ^CODE_OF_CONDUCT\.md$
 dev
+^codecov\.yml$

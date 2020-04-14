@@ -33,7 +33,8 @@ Suggests:
     knitcitations,
     sessioninfo,
     testthat,
-    RefManageR
+    RefManageR,
+    covr
 VignetteBuilder: knitr
 Depends: 
     SummarizedExperiment
