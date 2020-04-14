@@ -35,6 +35,7 @@ usethis::use_vignette('recount3-quickstart', 'recount3 quick start guide')
 usethis::use_package('BiocStyle', 'Suggests')
 usethis::use_package('knitcitations', 'Suggests')
 usethis::use_package('sessioninfo', 'Suggests')
+usethis::use_package('RefManageR', 'Suggests')
 
 ## Main packages
 usethis::use_package('SummarizedExperiment', 'Depends')
