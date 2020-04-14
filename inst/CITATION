@@ -1,0 +1,35 @@
+pkgVer <- function(pkg) {
+    if (!exists("meta") || is.null(meta)) meta <- packageDescription(pkg)
+    ver <- meta$Version
+    paste0('https://github.com/LieberInstitute/', pkg, ' - R package version ', ver)
+}
+
+c(
+
+    bibentry(bibtype="manual",
+        title = "Explore and download data from the recount3 project",
+        author = personList(
+            as.person("Leonardo Collado-Torres")
+        ),
+        year = format(Sys.Date(), "%Y"),
+        url = "http://www.bioconductor.org/packages/recount3",
+        note = pkgVer('recount3'),
+        doi = '10.18129/B9.bioc.recount3'
+    ),
+    bibentry(bibtype="article",
+        title = "recount3 pre-print title TODO",
+        author = personList(
+            as.person("Christopher Wilks"),
+            as.person("Leonardo Collado-Torres"),
+            as.person("Shijie C. Zheng"),
+            as.person("Andrew E. Jaffe"),
+            as.person("Abhinav Nellore"),
+            as.person("Kasper D. Hansen"),
+            as.person("Ben Langmead")
+        ),
+        year = 2020,
+        journal = "bioRxiv",
+        doi = "10.1101/TODO",
+        url = "https://www.biorxiv.org/content/10.1101/TODO"
+    )
+)

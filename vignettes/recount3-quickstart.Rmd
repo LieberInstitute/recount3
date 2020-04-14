@@ -49,6 +49,8 @@ bib <- c(
     BiocStyle = citation('BiocStyle'),
     knitcitations = citation('knitcitations'),
     knitr = citation('knitr')[3],
+    recount3 = citation('recount3')[1],
+    recount3paper = citation('recount3')[2],
     rmarkdown = citation('rmarkdown'),
     sessioninfo = citation('sessioninfo'),
     SummarizedExperiment = RefManageR::BibEntry(bibtype = 'manual',
@@ -72,7 +74,7 @@ write.bibtex(bib, file = 'quickstartRef.bib')
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
-BiocManager::install("recount")
+BiocManager::install("recount3")
 
 ## Check that you have a valid Bioconductor installation
 BiocManager::valid()
@@ -107,11 +109,13 @@ Main updates:
 
 TODO
 
+`recount3` project `r citep(bib[['recount3paper']])`.
+
 
 
 # Reproducibility
 
-The `r Biocpkg('recount')` package `r citep(bib[['recount']])` was made possible thanks to:
+The `r Biocpkg('recount3')` package `r citep(bib[['recount3']])` was made possible thanks to:
 
 * R `r citep(bib[['R']])`
 * `r Biocpkg('AnnotationHub')` `r citep(bib[['AnnotationHub']])`
