@@ -1,0 +1,41 @@
+Package: recount3
+Title: Explore and download data from the recount3 project
+Version: 0.99.0
+Authors@R: 
+    c(
+    person("Leonardo", "Collado-Torres", role = c("aut", "cre"), 
+    email = "lcolladotor@gmail.com", comment = c(ORCID = "0000-0003-2140-308X"))
+    )
+Description: Explore and download data from the recount project available at
+    https://jhubiostatistics.shinyapps.io/recount3/. Using the recount3 package
+    you can download RangedSummarizedExperiment objects at the gene, exon or
+    exon-exon junctions level, the raw counts, the phenotype metadata used,
+    the urls to the sample coverage bigWig files or the mean coverage bigWig
+    file for a particular study. The RangedSummarizedExperiment objects can be
+    used by different packages for performing differential expression analysis.
+    Using http://bioconductor.org/packages/derfinder you can perform
+    annotation-agnostic differential expression analyses with the data from the
+    recount3 project as described at 
+    http://doi.org/TODO.
+License: Artistic-2.0
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0
+URL: https://github.com/LieberInstitute/recount3
+BugReports: https://github.com/LieberInstitute/recount3/issues
+biocViews: Coverage, DifferentialExpression, GeneExpression, RNASeq, Sequencing,
+    Software, DataImport
+Suggests: 
+    knitr,
+    rmarkdown,
+    BiocStyle,
+    knitcitations,
+    sessioninfo,
+    testthat
+VignetteBuilder: knitr
+Depends: 
+    SummarizedExperiment
+Imports: 
+    BiocFileCache,
+    AnnotationHub

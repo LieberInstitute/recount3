@@ -1,0 +1,184 @@
+---
+title: "recount3 quick start guide"
+author: 
+  - name: Leonardo Collado-Torres
+    affiliation:
+    - &libd Lieber Institute for Brain Development, Johns Hopkins Medical Campus
+    - &ccb Center for Computational Biology, Johns Hopkins University
+    email: lcolladotor@gmail.com
+output: 
+  BiocStyle::html_document:
+    self_contained: yes
+    toc: true
+    toc_float: true
+    toc_depth: 2
+    code_folding: show
+date: "`r doc_date()`"
+package: "`r pkg_ver('recount3')`"
+vignette: >
+  %\VignetteIndexEntry{recount3 quick start guide}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}  
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r vignetteSetup, echo=FALSE, message=FALSE, warning = FALSE}
+## Track time spent on making the vignette
+startTime <- Sys.time()
+
+## Bib setup
+library('knitcitations')
+
+## Load knitcitations with a clean bibliography
+cleanbib()
+cite_options(hyperlink = 'to.doc', citation_format = 'text', style = 'html')
+# Note links won't show for now due to the following issue
+# https://github.com/cboettig/knitcitations/issues/63
+
+## Write bibliography information
+bib <- c(
+    R = citation(),
+    AnnotationHub = citation('AnnotationHub'),
+    BiocFileCache = citation('BiocFileCache'),
+    BiocStyle = citation('BiocStyle'),
+    knitcitations = citation('knitcitations'),
+    knitr = citation('knitr')[3],
+    rmarkdown = citation('rmarkdown'),
+    rtracklayer = citation('rtracklayer'),
+    sessioninfo = citation('sessioninfo'),
+    SummarizedExperiment = RefManageR::BibEntry(bibtype = 'manual',
+        key = 'SummarizedExperiment',
+        author = 'Martin Morgan and Valerie Obenchain and Jim Hester and Hervé Pagès',
+        title = 'SummarizedExperiment: SummarizedExperiment container',
+        year = 2019, doi = '10.18129/B9.bioc.SummarizedExperiment'),
+    testthat = citation('testthat')
+)
+
+write.bibtex(bib, file = 'quickstartRef.bib')
+```
+
+# Basics
+
+## Install `recount3`
+
+`R` is an open-source statistical environment which can be easily modified to enhance its functionality via packages. `r Biocpkg('recount3')` is a `R` package available via the [Bioconductor](http://bioconductor/packages/recount3) repository for packages. `R` can be installed on any operating system from [CRAN](https://cran.r-project.org/) after which you can install `r Biocpkg('recount3')` by using the following commands in your `R` session:
+
+```{r 'installDer', eval = FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("recount")
+
+## Check that you have a valid Bioconductor installation
+BiocManager::valid()
+```
+
+## Required knowledge
+
+`r Biocpkg('recount3')` is based on many other packages and in particular in those that have implemented the infrastructure needed for dealing with RNA-seq data. That is, packages like `r Biocpkg('GenomicFeatures')` and `r Biocpkg('rtracklayer')` that allow you to import the data. A `r Biocpkg('recount3)` user is not expected to deal with those packages directly but will need to be familiar with `r Biocpkg('SummarizedExperiment')` to understand the results `r Biocpkg('recount3')` generates. It might also prove to be highly beneficial to check the
+
+* `r Biocpkg('DESeq2')` package for performing differential expression analysis with the _RangedSummarizedExperiment_ objects,
+* `r Biocpkg('DEFormats')` package for switching the objects to those used by other differential expression packages such as `r Biocpkg('edgeR')`,
+* `r Biocpkg('derfinder')` package for performing annotation-agnostic differential expression analysis.
+
+If you are asking yourself the question "Where do I start using Bioconductor?" you might be interested in [this blog post](http://lcolladotor.github.io/2014/10/16/startbioc/#.VkOKbq6rRuU).
+
+## Asking for help
+
+As package developers, we try to explain clearly how to use our packages and in which order to use the functions. But `R` and `Bioconductor` have a steep learning curve so it is critical to learn where to ask for help. The blog post quoted above mentions some but we would like to highlight the [Bioconductor support site](https://support.bioconductor.org/) as the main resource for getting help: remember to use the `recount3` tag and check [the older posts](https://support.bioconductor.org/t/recount3/). Other alternatives are available such as creating GitHub issues and tweeting. However, please note that if you want to receive help you should adhere to the [posting guidelines](http://www.bioconductor.org/help/support/posting-guide/). It is particularly critical that you provide a small reproducible example and your session information so package developers can track down the source of the error.
+
+## Citing `r Biocpkg('recount3')`
+
+We hope that `r Biocpkg('recount3')` will be useful for your research. Please use the following information to cite the package and the overall approach. Thank you!
+
+```{r 'citation'}
+## Citation info
+citation('recount3')
+```
+
+# Quick start to using to `recount3`
+
+Main updates:
+
+TODO
+
+
+
+# Reproducibility
+
+The `r Biocpkg('recount')` package `r citep(bib[['recount']])` was made possible thanks to:
+
+* R `r citep(bib[['R']])`
+* `r Biocpkg('AnnotationHub')` `r citep(bib[['AnnotationHub']])`
+* `r Biocpkg('BiocFileCache')` `r citep(bib[['BiocFileCache']])`
+* `r Biocpkg('BiocStyle')` `r citep(bib[['BiocStyle']])`
+* `r CRANpkg('knitcitations')` `r citep(bib[['knitcitations']])`
+* `r CRANpkg('knitr')` `r citep(bib[['knitr']])`
+* `r CRANpkg('rmarkdown')` `r citep(bib[['rmarkdown']])`
+* `r CRANpkg('sessioninfo')` `r citep(bib[['sessioninfo']])`
+* `r Biocpkg('SummarizedExperiment')` `r citep(bib[['SummarizedExperiment']])`
+* `r CRANpkg('testthat')` `r citep(bib[['testthat']])`
+
+
+Code for creating the vignette
+
+```{r createVignette, eval=FALSE}
+## Create the vignette
+library('rmarkdown')
+system.time(render('recount3-quickstart.Rmd', 'BiocStyle::html_document'))
+
+## Extract the R code
+library('knitr')
+knit('recount3-quickstart.Rmd', tangle = TRUE)
+```
+
+```{r createVignette2}
+## Clean up
+file.remove('quickstartRef.bib')
+```
+
+Date the vignette was generated.
+
+```{r reproduce1, echo=FALSE}
+## Date the vignette was generated
+Sys.time()
+```
+
+Wallclock time spent generating the vignette.
+
+```{r reproduce2, echo=FALSE}
+## Processing time in seconds
+totalTime <- diff(c(startTime, Sys.time()))
+round(totalTime, digits=3)
+```
+
+`R` session information.
+
+```{r reproduce3, echo=FALSE}
+## Session info
+library('sessioninfo')
+options(width = 120)
+session_info()
+```
+
+
+
+# Bibliography
+
+This vignette was generated using `r Biocpkg('BiocStyle')` `r citep(bib[['BiocStyle']])`
+with `r CRANpkg('knitr')` `r citep(bib[['knitr']])` and `r CRANpkg('rmarkdown')` `r citep(bib[['rmarkdown']])` running behind the scenes.
+
+Citations made with `r CRANpkg('knitcitations')` `r citep(bib[['knitcitations']])`.
+
+```{r vignetteBiblio, results = 'asis', echo = FALSE, warning = FALSE, message = FALSE}
+## Print bibliography
+bibliography()
+```
+
+

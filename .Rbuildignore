@@ -1,0 +1,9 @@
+^recount3\.Rproj$
+^\.Rproj\.user$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$
+^README\.Rmd$
+^CODE_OF_CONDUCT\.md$
+dev
