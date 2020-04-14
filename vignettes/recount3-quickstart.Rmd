@@ -50,7 +50,6 @@ bib <- c(
     knitcitations = citation('knitcitations'),
     knitr = citation('knitr')[3],
     rmarkdown = citation('rmarkdown'),
-    rtracklayer = citation('rtracklayer'),
     sessioninfo = citation('sessioninfo'),
     SummarizedExperiment = RefManageR::BibEntry(bibtype = 'manual',
         key = 'SummarizedExperiment',
