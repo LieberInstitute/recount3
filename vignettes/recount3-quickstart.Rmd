@@ -82,7 +82,7 @@ BiocManager::valid()
 
 ## Required knowledge
 
-`r Biocpkg('recount3')` is based on many other packages and in particular in those that have implemented the infrastructure needed for dealing with RNA-seq data. That is, packages like `r Biocpkg('GenomicFeatures')` and `r Biocpkg('rtracklayer')` that allow you to import the data. A `r Biocpkg('recount3)` user is not expected to deal with those packages directly but will need to be familiar with `r Biocpkg('SummarizedExperiment')` to understand the results `r Biocpkg('recount3')` generates. It might also prove to be highly beneficial to check the
+`r Biocpkg('recount3')` is based on many other packages and in particular in those that have implemented the infrastructure needed for dealing with RNA-seq data. That is, packages like `r Biocpkg('GenomicFeatures')` and `r Biocpkg('rtracklayer')` that allow you to import the data. A `r Biocpkg('recount3')` user is not expected to deal with those packages directly but will need to be familiar with `r Biocpkg('SummarizedExperiment')` to understand the results `r Biocpkg('recount3')` generates. It might also prove to be highly beneficial to check the
 
 * `r Biocpkg('DESeq2')` package for performing differential expression analysis with the _RangedSummarizedExperiment_ objects,
 * `r Biocpkg('DEFormats')` package for switching the objects to those used by other differential expression packages such as `r Biocpkg('edgeR')`,
