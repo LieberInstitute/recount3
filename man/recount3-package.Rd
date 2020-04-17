@@ -6,6 +6,8 @@
 \alias{recount3-package}
 \title{recount3: Explore and download data from the recount3 project}
 \description{
+\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+
 Explore and download data from the recount project available at
     https://jhubiostatistics.shinyapps.io/recount3/. Using the recount3 package
     you can download RangedSummarizedExperiment objects at the gene, exon or

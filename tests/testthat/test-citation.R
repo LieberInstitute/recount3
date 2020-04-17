@@ -1,3 +1,3 @@
 test_that("citation works", {
-    expect_equal(length(citation('recount3')), 2)
+    expect_equal(length(citation("recount3")), 2)
 })

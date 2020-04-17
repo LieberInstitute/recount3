@@ -12,11 +12,7 @@ status](http://www.bioconductor.org/shields/build/release/bioc/recount3.svg)](ht
 [![Codecov test
 coverage](https://codecov.io/gh/LieberInstitute/recount3/branch/master/graph/badge.svg)](https://codecov.io/gh/LieberInstitute/recount3?branch=master)
 [![R build
-status](https://github.com/LieberInstitute/recount3/workflows/R-CMD-check/badge.svg)](https://github.com/LieberInstitute/recount3/actions)
-[![Test
-coverage](https://github.com/LieberInstitute/recount3/workflows/test-coverage/badge.svg)](https://github.com/LieberInstitute/recount3/actions)
-[![Pkgdown
-deployment](https://github.com/LieberInstitute/recount3/workflows/pkgdown/badge.svg)](https://github.com/LieberInstitute/recount3/actions)
+status](https://github.com/LieberInstitute/recount3/workflows/R-CMD-check-bioc/badge.svg)](https://github.com/LieberInstitute/recount3/actions)
 <!-- badges: end -->
 
 Explore and download data from the recount project available at the
@@ -30,6 +26,8 @@ by different packages for performing differential expression analysis.
 Using [derfinder](http://bioconductor.org/packages/derfinder) you can
 perform annotation-agnostic differential expression analyses with the
 data from the recount project.
+
+## Documentation
 
 For more information about `recount3` check the vignettes [through
 Bioconductor](http://bioconductor.org/packages/recount3) or at the
@@ -55,29 +53,45 @@ Please run this yourself to check for any updates on how to cite
 **recount3**.
 
 ``` r
-citation('recount3')
+print(citation('recount3'), bibtex = TRUE)
 ```
 
 Please note that the `recount3` was only made possible thanks to many
-other R and bioinformatics software authors. We have cited their work
-either in the pre-print or the vignette of the R package.
+other R and bioinformatics software authors, which are cited either in
+the vignettes and/or the paper(s) describing this package.
 
-## Code of conduct
+## Code of Conduct
 
-Please note that the `recount3` project is released with a [Contributor
-Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project,
-you agree to abide by its terms.
+Please note that the derfinderPlot project is released with a
+[Contributor Code of
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
 
 ## Development tools
 
-  - Testing on Bioc-devel is possible thanks to [GitHub actions through
-    `usethis`](https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/).
+  - Continuous code testing is possible thanks to [GitHub
+    actions](https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/)
+    through *[usethis](https://CRAN.R-project.org/package=usethis)*,
+    *[remotes](https://CRAN.R-project.org/package=remotes)*,
+    *[sysreqs](https://github.com/r-hub/sysreqs)* and
+    *[rcmdcheck](https://CRAN.R-project.org/package=rcmdcheck)*
+    customized to use [Bioconductor’s docker
+    containers](https://www.bioconductor.org/help/docker/) and
+    *[BiocCheck](https://bioconductor.org/packages/3.11/BiocCheck)*.
   - Code coverage assessment is possible thanks to
-    [codecov](https://codecov.io/gh).
+    [codecov](https://codecov.io/gh) and
+    *[covr](https://CRAN.R-project.org/package=covr)*.
   - The [documentation
-    website](http://lieberinstitute.github.io/recount3) is automatically
+    website](http://leekgroup.github.io/derfinderPlot) is automatically
     updated thanks to
     *[pkgdown](https://CRAN.R-project.org/package=pkgdown)*.
+  - The code is styled automatically thanks to
+    *[styler](https://CRAN.R-project.org/package=styler)*.
+  - The documentation is formatted thanks to
+    *[devtools](https://CRAN.R-project.org/package=devtools)* and
+    *[roxygen2](https://CRAN.R-project.org/package=roxygen2)*.
+
+For more details, check the `dev` directory.
 
 ## Teams involved
 

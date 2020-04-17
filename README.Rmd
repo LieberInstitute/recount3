@@ -19,12 +19,13 @@ knitr::opts_chunk$set(
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![BioC status](http://www.bioconductor.org/shields/build/release/bioc/recount3.svg)](https://bioconductor.org/checkResults/release/bioc-LATEST/recount3)
 [![Codecov test coverage](https://codecov.io/gh/LieberInstitute/recount3/branch/master/graph/badge.svg)](https://codecov.io/gh/LieberInstitute/recount3?branch=master)
-[![R build status](https://github.com/LieberInstitute/recount3/workflows/R-CMD-check/badge.svg)](https://github.com/LieberInstitute/recount3/actions)
-[![Test coverage](https://github.com/LieberInstitute/recount3/workflows/test-coverage/badge.svg)](https://github.com/LieberInstitute/recount3/actions)
-[![Pkgdown deployment](https://github.com/LieberInstitute/recount3/workflows/pkgdown/badge.svg)](https://github.com/LieberInstitute/recount3/actions)
+[![R build status](https://github.com/LieberInstitute/recount3/workflows/R-CMD-check-bioc/badge.svg)](https://github.com/LieberInstitute/recount3/actions)
 <!-- badges: end -->
 
 Explore and download data from the recount project available at the [recount3 website](https://jhubiostatistics.shinyapps.io/recount3/). Using the `recount3` package you can download _RangedSummarizedExperiment_ objects at the gene, exon or exon-exon junctions level, the raw counts, the phenotype metadata used, the urls to the sample coverage bigWig files or the mean coverage bigWig file for a particular study. The _RangedSummarizedExperiment_ objects can be used by different packages for performing differential expression analysis. Using [derfinder](http://bioconductor.org/packages/derfinder) you can perform annotation-agnostic differential expression analyses with the data from the recount project. 
+
+
+## Documentation
 
 For more information about `recount3` check the vignettes [through Bioconductor](http://bioconductor.org/packages/recount3) or at the [documentation website](http://lieberinstitute.github.io/recount3).
 
@@ -45,24 +46,24 @@ Below is the citation output from using `citation('recount3')` in R. Please
 run this yourself to check for any updates on how to cite __recount3__.
 
 ```{r 'citation', eval = requireNamespace('recount3')}
-citation('recount3')
+print(citation('recount3'), bibtex = TRUE)
 ```
 
-Please note that the `recount3` was only made possible thanks to many other R and bioinformatics software authors. We have cited their work either in the pre-print or the vignette of the R package.
+Please note that the `recount3` was only made possible thanks to many other R and bioinformatics software authors, which are cited either in the vignettes and/or the paper(s) describing this package.
 
-## Code of conduct
-
-
-Please note that the `recount3` project is released with a
-  [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
-  By contributing to this project, you agree to abide by its terms.
+## Code of Conduct
+  
+Please note that the derfinderPlot project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
 
 ## Development tools
 
-* Testing on Bioc-devel is possible thanks to [GitHub actions through `usethis`](https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/).
-* Code coverage assessment is possible thanks to [codecov](https://codecov.io/gh).
-* The [documentation website](http://lieberinstitute.github.io/recount3) is automatically updated thanks to `r BiocStyle::CRANpkg('pkgdown')`.
+* Continuous code testing is possible thanks to [GitHub actions](https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/)  through `r BiocStyle::CRANpkg('usethis')`, `r BiocStyle::CRANpkg('remotes')`, `r BiocStyle::Githubpkg('r-hub/sysreqs')` and `r BiocStyle::CRANpkg('rcmdcheck')` customized to use [Bioconductor's docker containers](https://www.bioconductor.org/help/docker/) and `r BiocStyle::Biocpkg('BiocCheck')`.
+* Code coverage assessment is possible thanks to [codecov](https://codecov.io/gh) and `r BiocStyle::CRANpkg('covr')`.
+* The [documentation website](http://leekgroup.github.io/derfinderPlot) is automatically updated thanks to `r BiocStyle::CRANpkg('pkgdown')`.
+* The code is styled automatically thanks to `r BiocStyle::CRANpkg('styler')`.
+* The documentation is formatted thanks to `r BiocStyle::CRANpkg('devtools')` and `r BiocStyle::CRANpkg('roxygen2')`.
 
+For more details, check the `dev` directory.
 
 ## Teams involved
 

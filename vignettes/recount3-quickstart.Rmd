@@ -23,8 +23,8 @@ vignette: >
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
+    collapse = TRUE,
+    comment = "#>"
 )
 ```
 
@@ -33,35 +33,37 @@ knitr::opts_chunk$set(
 startTime <- Sys.time()
 
 ## Bib setup
-library('knitcitations')
+library("knitcitations")
 
 ## Load knitcitations with a clean bibliography
 cleanbib()
-cite_options(hyperlink = 'to.doc', citation_format = 'text', style = 'html')
+cite_options(hyperlink = "to.doc", citation_format = "text", style = "html")
 # Note links won't show for now due to the following issue
 # https://github.com/cboettig/knitcitations/issues/63
 
 ## Write bibliography information
 bib <- c(
     R = citation(),
-    AnnotationHub = citation('AnnotationHub'),
-    BiocFileCache = citation('BiocFileCache'),
-    BiocStyle = citation('BiocStyle'),
-    knitcitations = citation('knitcitations'),
-    knitr = citation('knitr')[3],
-    recount3 = citation('recount3')[1],
-    recount3paper = citation('recount3')[2],
-    rmarkdown = citation('rmarkdown'),
-    sessioninfo = citation('sessioninfo'),
-    SummarizedExperiment = RefManageR::BibEntry(bibtype = 'manual',
-        key = 'SummarizedExperiment',
-        author = 'Martin Morgan and Valerie Obenchain and Jim Hester and Hervé Pagès',
-        title = 'SummarizedExperiment: SummarizedExperiment container',
-        year = 2019, doi = '10.18129/B9.bioc.SummarizedExperiment'),
-    testthat = citation('testthat')
+    AnnotationHub = citation("AnnotationHub"),
+    BiocFileCache = citation("BiocFileCache"),
+    BiocStyle = citation("BiocStyle"),
+    knitcitations = citation("knitcitations"),
+    knitr = citation("knitr")[3],
+    recount3 = citation("recount3")[1],
+    recount3paper = citation("recount3")[2],
+    rmarkdown = citation("rmarkdown"),
+    sessioninfo = citation("sessioninfo"),
+    SummarizedExperiment = RefManageR::BibEntry(
+        bibtype = "manual",
+        key = "SummarizedExperiment",
+        author = "Martin Morgan and Valerie Obenchain and Jim Hester and Hervé Pagès",
+        title = "SummarizedExperiment: SummarizedExperiment container",
+        year = 2019, doi = "10.18129/B9.bioc.SummarizedExperiment"
+    ),
+    testthat = citation("testthat")
 )
 
-write.bibtex(bib, file = 'quickstartRef.bib')
+write.bibtex(bib, file = "quickstartRef.bib")
 ```
 
 # Basics
@@ -71,8 +73,9 @@ write.bibtex(bib, file = 'quickstartRef.bib')
 `R` is an open-source statistical environment which can be easily modified to enhance its functionality via packages. `r Biocpkg('recount3')` is a `R` package available via the [Bioconductor](http://bioconductor/packages/recount3) repository for packages. `R` can be installed on any operating system from [CRAN](https://cran.r-project.org/) after which you can install `r Biocpkg('recount3')` by using the following commands in your `R` session:
 
 ```{r 'installDer', eval = FALSE}
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+      install.packages("BiocManager")
+  }
 
 BiocManager::install("recount3")
 
@@ -100,7 +103,7 @@ We hope that `r Biocpkg('recount3')` will be useful for your research. Please us
 
 ```{r 'citation'}
 ## Citation info
-citation('recount3')
+citation("recount3")
 ```
 
 # Quick start to using to `recount3`
@@ -133,17 +136,17 @@ Code for creating the vignette
 
 ```{r createVignette, eval=FALSE}
 ## Create the vignette
-library('rmarkdown')
-system.time(render('recount3-quickstart.Rmd', 'BiocStyle::html_document'))
+library("rmarkdown")
+system.time(render("recount3-quickstart.Rmd", "BiocStyle::html_document"))
 
 ## Extract the R code
-library('knitr')
-knit('recount3-quickstart.Rmd', tangle = TRUE)
+library("knitr")
+knit("recount3-quickstart.Rmd", tangle = TRUE)
 ```
 
 ```{r createVignette2}
 ## Clean up
-file.remove('quickstartRef.bib')
+file.remove("quickstartRef.bib")
 ```
 
 Date the vignette was generated.
@@ -158,14 +161,14 @@ Wallclock time spent generating the vignette.
 ```{r reproduce2, echo=FALSE}
 ## Processing time in seconds
 totalTime <- diff(c(startTime, Sys.time()))
-round(totalTime, digits=3)
+round(totalTime, digits = 3)
 ```
 
 `R` session information.
 
 ```{r reproduce3, echo=FALSE}
 ## Session info
-library('sessioninfo')
+library("sessioninfo")
 options(width = 120)
 session_info()
 ```
