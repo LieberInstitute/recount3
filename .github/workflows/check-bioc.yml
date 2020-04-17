@@ -71,6 +71,7 @@ jobs:
       CI: true
       TZ: UTZ
       NOT_CRAN: true
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     ## I haven't figured out a way to disable containers since you can't use if here
     ## Maybe there's a hint at https://github.community/t5/GitHub-Actions/Conditional-Expression-Syntax/td-p/45176
