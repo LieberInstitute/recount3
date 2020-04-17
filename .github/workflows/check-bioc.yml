@@ -128,13 +128,22 @@ jobs:
 
       - name: Install dependencies
         run: |
+          ## Do not use the first library when running on biocdocker
+          ## Since BiocCheck fails to load later otherwise.
+          libs <- .libPaths()
+          use_lib <- ifelse(length(libs) > 1, libs[2], libs[1])
+          message(paste(Sys.time(), 'using', use_lib,
+              'for BiocManager & BiocCheck'))
+          if (!requireNamespace("BiocManager", quietly = TRUE))
+              install.packages("BiocManager", lib = use_lib)
+          BiocManager::install('BiocCheck', lib = use_lib)
+
+          ## The rest of the dependencies will be installed in the
+          ## shared volume with the host ubuntu when using biocdocker which
+          ## should enable caching these packages.
           remotes::install_deps(dependencies = TRUE)
           if (!requireNamespace("rcmdcheck", quietly = TRUE))
               remotes::install_cran("rcmdcheck")
-          if (!requireNamespace("BiocManager", quietly = TRUE))
-              install.packages("BiocManager")
-          libs <- .libPaths()
-          BiocManager::install('BiocCheck', lib = ifelse(length(libs) > 1, libs[2], libs[1]))
         shell: Rscript {0}
 
       - name: Check
