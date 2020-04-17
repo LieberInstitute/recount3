@@ -103,6 +103,7 @@ jobs:
           fi
           echo ${R_LIBS_USER}
           echo "::set-output name=R_LIBS_USER::${R_LIBS_USER}"
+        shell: bash {0}
 
       - name: Query dependencies
         run: |
