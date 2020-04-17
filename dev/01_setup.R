@@ -75,6 +75,10 @@ usethis::use_github("LieberInstitute")
 ## GitHub badges
 usethis::use_github_actions_badge("R-CMD-check-bioc")
 
+## Deploy with pkgdown at least once locally such that the automatic updates
+## from GitHub actions will work
+pkgdown::deploy_to_branch(new_process = FALSE)
+
 ## Update style for this document
 styler::style_file("dev/01_setup.R", transformers = styler::tidyverse_style(indent_by = 4))
 
