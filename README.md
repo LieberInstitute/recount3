@@ -77,12 +77,12 @@ By contributing to this project, you agree to abide by its terms.
     *[rcmdcheck](https://CRAN.R-project.org/package=rcmdcheck)*
     customized to use [Bioconductor’s docker
     containers](https://www.bioconductor.org/help/docker/) and
-    *[BiocCheck](https://bioconductor.org/packages/3.11/BiocCheck)*.
+    *[BiocCheck](https://bioconductor.org/packages/3.10/BiocCheck)*.
   - Code coverage assessment is possible thanks to
     [codecov](https://codecov.io/gh) and
     *[covr](https://CRAN.R-project.org/package=covr)*.
   - The [documentation
-    website](http://leekgroup.github.io/derfinderPlot) is automatically
+    website](http://lieberinstitute.github.io/recount3) is automatically
     updated thanks to
     *[pkgdown](https://CRAN.R-project.org/package=pkgdown)*.
   - The code is styled automatically thanks to
