@@ -125,6 +125,9 @@ jobs:
           )
         shell: Rscript {0}
 
+      - name: Reveal testthat details
+        run: find . -name testthat.Rout -exec cat '{}' ';'
+
       - name: BiocCheck
         run: |
           R CMD BiocCheck --no-check-R-ver --no-check-bioc-help check/*.tar.gz
@@ -251,6 +254,13 @@ jobs:
           sysreqs=$(Rscript -e "cat(sysreqs::sysreq_commands('DESCRIPTION'))")
           sudo -s eval "$sysreqs"
 
+      - name: Install macOS system dependencies
+        if: matrix.config.os == 'macOS-latest' && needs.R-CMD-check-bioc.outputs.rversion == 'devel'
+        # the xml2 thing is a hack / experiment
+        run: |
+          brew install imagemagick@6
+          Rscript -e "remotes::install_github('r-lib/xml2')"
+
       - name: Install BiocManager
         run: |
           remotes::install_cran("BiocManager")
@@ -279,6 +289,9 @@ jobs:
               check_dir = "check"
           )
         shell: Rscript {0}
+
+      - name: Reveal testthat details
+        run: find . -name testthat.Rout -exec cat '{}' ';'
 
       - name: BiocCheck
         run: |
