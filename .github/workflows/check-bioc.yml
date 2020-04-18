@@ -99,8 +99,8 @@ jobs:
         run: |
           remotes::install_deps(dependencies = TRUE)
           remotes::install_cran("rcmdcheck")
-          remotes::install_bioc("BiocCheck")
           remotes::install_cran("BiocManager")
+          BiocManager::install("BiocCheck")
 
           ## Copy all the installed packages to a location where BiocCheck
           ## will find them later. This is needed when running biocdocker
@@ -257,7 +257,7 @@ jobs:
           BiocManager::version(Sys.getenv('BIOCVERSIONNUM'))
           remotes::install_deps(dependencies = TRUE)
           remotes::install_cran("rcmdcheck")
-          remotes::install_bioc("BiocCheck")
+          BiocManager::install("BiocCheck")
         shell: Rscript {0}
 
       - name: Check
