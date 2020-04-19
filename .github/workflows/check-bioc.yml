@@ -254,24 +254,22 @@ jobs:
           sysreqs=$(Rscript -e "cat(sysreqs::sysreq_commands('DESCRIPTION'))")
           sudo -s eval "$sysreqs"
 
+      - name: Install macOS libxml2
+        if: matrix.config.os == 'macOS-latest' && needs.R-CMD-check-bioc.outputs.rversion == 'devel'
+        run: |
+          ## Should enable installing XML
+          brew install libxml2
+          echo "::seq-env name=PATH::/usr/local/opt/libxml2/bin:$PATH"
+          echo "::set-env name=LDFLAGS::-L/usr/local/opt/libxml2/lib"
+          echo "::set-env name=CPPFLAGS::-I/usr/local/opt/libxml2/include"
+          echo "::set-env name=PKG_CONFIG_PATH::/usr/local/opt/libxml2/lib/pkgconfig"
+
       - name: Install macOS system dependencies
         if: matrix.config.os == 'macOS-latest' && needs.R-CMD-check-bioc.outputs.rversion == 'devel'
         # the xml2 thing is a hack / experiment
         run: |
-          ## Locally brew asked me this before running: brew install libxml2
-          # sudo chown -R $(whoami) /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/doc /usr/local/share/info
-          # chmod u+w /usr/local/bin /usr/local/include /usr/local/lib /usr/local/share /usr/local/share/doc /usr/local/share/info
-
-          ## Should enable installing XML
-          brew install libxml2
-          export LDFLAGS="-L/usr/local/opt/libxml2/lib"
-          export CPPFLAGS="-I/usr/local/opt/libxml2/include"
-          export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
+          ## Did it work?
           Rscript -e "install.packages('XML')"
-
-          ## I get "x usr/local/: Can't restore time" errors with this (and without sudo)
-          # curl -O http://mac.r-project.org/libs-4/xml2-2.9.10-darwin.17-x86_64.tar.gz
-          # sudo tar fvxz xml2-2.9.10-darwin.17-x86_64.tar.gz -C /
 
           brew install imagemagick@6
           Rscript -e "remotes::install_github('r-lib/xml2')"
