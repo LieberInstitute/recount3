@@ -60,7 +60,6 @@ jobs:
     outputs:
       rversion: ${{ steps.findrversion.outputs.rversion }}
       biocversionnum: ${{ steps.findrversion.outputs.biocversionnum }}
-      rtoolsversion: ${{ steps.findrversion.outputs.rtoolsversion }}
 
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
@@ -181,13 +180,6 @@ jobs:
           biocversionnum=$(Rscript -e "info <- BiocManager:::.version_map_get_online('https://bioconductor.org/config.yaml'); res <- subset(info, BiocStatus == '${biocversion}')[, 'Bioc']; cat(as.character(res))")
           rversion=$(Rscript -e "info <- BiocManager:::.version_map_get_online('https://bioconductor.org/config.yaml'); res <- subset(info, BiocStatus == '${biocversion}')[, 'R']; cat(as.character(res))")
 
-          ## Determine the rtools-version for winOS
-          if echo "$rversion" | grep -q "4."; then
-              rtoolsversion="40"
-          else
-              rtoolsversion="35"
-          fi
-
           ## I might need this for now until R 4.0 is out (try without it first)
           if echo "$rversion" | grep -q "4.0"; then
               rversion="devel"
@@ -197,12 +189,10 @@ jobs:
           echo $biocversion
           echo $biocversionnum
           echo $rversion
-          echo $rtoolsversion
 
           ## Save the info for the next job
           echo "::set-output name=rversion::${rversion}"
           echo "::set-output name=biocversionnum::${biocversionnum}"
-          echo "::set-output name=rtoolsversion::${rtoolsversion}"
         shell:
           bash {0}
 
@@ -240,7 +230,6 @@ jobs:
         uses: r-lib/actions/setup-r@master
         with:
           r-version: ${{ needs.R-CMD-check-bioc.outputs.rversion }}
-          rtools-version: ${{ needs.R-CMD-check-bioc.outputs.rtoolsversion }}
 
 
       - name: Setup pandoc from r-lib
