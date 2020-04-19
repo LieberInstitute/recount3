@@ -214,7 +214,7 @@ jobs:
       matrix:
         config:
           # ## Un-comment in case you also want to run other versions
-          # - {os: windows-latest}
+          - {os: windows-latest}
           - {os: macOS-latest}
           # - {os: ubuntu-16.04, rspm: "https://demo.rstudiopm.com/all/__linux__/xenial/latest"}
 
