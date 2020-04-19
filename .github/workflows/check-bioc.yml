@@ -317,9 +317,9 @@ jobs:
         run: find . -name testthat.Rout -exec cat '{}' ';'
 
       - name: BiocCheck
+        if: runner.os != 'Windows'
         run: |
-          cd check
-          R CMD BiocCheck --no-check-R-ver --no-check-bioc-help *.tar.gz
+          R CMD BiocCheck --no-check-R-ver --no-check-bioc-help check/*.tar.gz
         ## For more options check http://bioconductor.org/packages/release/bioc/vignettes/BiocCheck/inst/doc/BiocCheck.html
 
       - name: Upload check results
