@@ -259,11 +259,7 @@ jobs:
         run: |
           ## Should enable installing XML
           brew install libxml2
-          echo "::set-env name=PATH::/usr/local/opt/libxml2/bin:$PATH"
-          echo "::set-env name=LDFLAGS::-L/usr/local/opt/libxml2/lib"
-          echo "::set-env name=CPPFLAGS::-I/usr/local/opt/libxml2/include"
-          echo "::set-env name=PKG_CONFIG_PATH::/usr/local/opt/libxml2/lib/pkgconfig"
-          echo "::set-env name=XML_CONFIG::/usr/local/opt/libxml2/bin"
+          echo "::set-env name=XML_CONFIG::/usr/local/opt/libxml2/bin/xml2-config"
 
       - name: Install macOS system dependencies
         if: matrix.config.os == 'macOS-latest' && needs.R-CMD-check-bioc.outputs.rversion == 'devel'
