@@ -246,6 +246,12 @@ jobs:
       - name: Setup pandoc from r-lib
         uses: r-lib/actions/setup-pandoc@master
 
+
+      - name: Windows env settings
+        if: runner.os == 'Windows'
+        run |
+            echo "::set-env name=R_COMPILE_AND_INSTALL_PACKAGES::never"
+
       - name: Query dependencies
         run: |
           install.packages('remotes')
