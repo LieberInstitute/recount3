@@ -237,14 +237,14 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Setup R from r-lib
-        uses: lcolladotor/actions/setup-r@support_win_rtools_40_edit_repo_config
+        uses: lcolladotor/actions/setup-r@support_win_rtools_40
         with:
           r-version: ${{ needs.R-CMD-check-bioc.outputs.rversion }}
           rtools-version: ${{ needs.R-CMD-check-bioc.outputs.rtoolsversion }}
 
 
       - name: Setup pandoc from r-lib
-        uses: lcolladotor/actions/setup-pandoc@support_win_rtools_40_edit_repo_config
+        uses: r-lib/actions/setup-pandoc@master
 
       - name: Query dependencies
         run: |
