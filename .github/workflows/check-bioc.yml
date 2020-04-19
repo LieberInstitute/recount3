@@ -247,10 +247,11 @@ jobs:
         uses: r-lib/actions/setup-pandoc@master
 
 
-      - name: Windows env settings
+      - name: Windows system dependencies
         if: runner.os == 'Windows'
         run: |
-            echo "::set-env name=R_COMPILE_AND_INSTALL_PACKAGES::never"
+            install.packages('RCurl', type = 'binary')
+        shell: Rscript {0}
 
       - name: Query dependencies
         run: |
