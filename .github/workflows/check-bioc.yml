@@ -261,13 +261,11 @@ jobs:
         if: matrix.config.os == 'macOS-latest' && needs.R-CMD-check-bioc.outputs.rversion == 'devel'
         # the xml2 thing is a hack / experiment
         run: |
-          ## Enables installing XML from source if needed
+          ## Enables installing XML & xml2 from source if needed
           brew install libxml2
           echo "::set-env name=XML_CONFIG::/usr/local/opt/libxml2/bin/xml2-config"
 
           brew install imagemagick@6
-          Rscript -e "remotes::install_github('r-lib/xml2')"
-
       - name: Install BiocManager
         run: |
           remotes::install_cran("BiocManager")
