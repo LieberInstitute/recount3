@@ -11,6 +11,9 @@
 ## https://github.com/csoneson/dreval/blob/master/.github/workflows/R-CMD-check.yaml
 ## See also this blog post
 ## https://seandavi.github.io/post/learning-github-actions/
+##
+## The development of this GHA workflow and history is documented at
+## https://github.com/r-lib/actions/issues/84
 
 on:
   push:
@@ -254,19 +257,13 @@ jobs:
           sysreqs=$(Rscript -e "cat(sysreqs::sysreq_commands('DESCRIPTION'))")
           sudo -s eval "$sysreqs"
 
-      - name: Install macOS libxml2
-        if: matrix.config.os == 'macOS-latest' && needs.R-CMD-check-bioc.outputs.rversion == 'devel'
-        run: |
-          ## Should enable installing XML
-          brew install libxml2
-          echo "::set-env name=XML_CONFIG::/usr/local/opt/libxml2/bin/xml2-config"
-
       - name: Install macOS system dependencies
         if: matrix.config.os == 'macOS-latest' && needs.R-CMD-check-bioc.outputs.rversion == 'devel'
         # the xml2 thing is a hack / experiment
         run: |
-          ## Did it work?
-          Rscript -e "install.packages('XML')"
+          ## Enables installing XML from source if needed
+          brew install libxml2
+          echo "::set-env name=XML_CONFIG::/usr/local/opt/libxml2/bin/xml2-config"
 
           brew install imagemagick@6
           Rscript -e "remotes::install_github('r-lib/xml2')"
