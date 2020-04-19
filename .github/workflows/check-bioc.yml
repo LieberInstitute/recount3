@@ -224,7 +224,7 @@ jobs:
       matrix:
         config:
           # ## Un-comment in case you also want to run other versions
-          # - {os: windows-latest}
+          - {os: windows-latest}
           - {os: macOS-latest}
           # - {os: ubuntu-16.04, rspm: "https://demo.rstudiopm.com/all/__linux__/xenial/latest"}
 
@@ -240,7 +240,8 @@ jobs:
         uses: r-lib/actions/setup-r@master
         with:
           r-version: ${{ needs.R-CMD-check-bioc.outputs.rversion }}
-          rtools-version: ${{ needs.R-CMD-check-bioc.outputs.rtoolsversion }}
+          rtools-version: 35
+          # rtools-version: ${{ needs.R-CMD-check-bioc.outputs.rtoolsversion }}
 
 
       - name: Setup pandoc from r-lib
