@@ -317,9 +317,8 @@ jobs:
 
       - name: BiocCheck
         run: |
+          ## This syntax works on Windows as well as other OS
           BiocCheck::BiocCheck(dir('check', 'tar.gz$', full.names = TRUE), `--no-check-R-ver` = TRUE, `--no-check-bioc-help` = TRUE)
-          ## Checking if the above syntax works for Windows
-          # R CMD BiocCheck --no-check-R-ver --no-check-bioc-help check/*.tar.gz
           ## For more options check http://bioconductor.org/packages/release/bioc/vignettes/BiocCheck/inst/doc/BiocCheck.html
         shell: Rscript {0}
 
