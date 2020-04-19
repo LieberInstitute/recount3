@@ -247,7 +247,7 @@ jobs:
         uses: r-lib/actions/setup-pandoc@master
 
 
-      - name: Windows system dependencies
+      - name: Install Windows system dependencies
         if: runner.os == 'Windows'
         run: |
             install.packages('RCurl', type = 'binary')
@@ -260,14 +260,14 @@ jobs:
         shell: Rscript {0}
 
       - name: Cache R packages
-        if: runner.os != 'Windows'
+        # if: runner.os != 'Windows'
         uses: actions/cache@v1
         with:
           path: ${{ env.R_LIBS_USER }}
           key: ${{ runner.os }}-r-${{ needs.R-CMD-check-bioc.outputs.rversion }}-bioc-${{ needs.define-docker-info.outputs.biocversion }}-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-r-${{ needs.R-CMD-check-bioc.outputs.rversion }}-bioc-${{ needs.define-docker-info.outputs.biocversion }}-
 
-      - name: Install system dependencies
+      - name: Install Linux system dependencies
         if: runner.os == 'Linux'
         env:
           RHUB_PLATFORM: linux-x86_64-ubuntu-gcc
@@ -318,7 +318,8 @@ jobs:
 
       - name: BiocCheck
         run: |
-          R CMD BiocCheck --no-check-R-ver --no-check-bioc-help check/*.tar.gz
+          cd check
+          R CMD BiocCheck --no-check-R-ver --no-check-bioc-help *.tar.gz
         ## For more options check http://bioconductor.org/packages/release/bioc/vignettes/BiocCheck/inst/doc/BiocCheck.html
 
       - name: Upload check results
