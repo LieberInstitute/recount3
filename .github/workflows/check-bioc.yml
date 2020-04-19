@@ -249,7 +249,7 @@ jobs:
 
       - name: Windows env settings
         if: runner.os == 'Windows'
-        run |
+        run: |
             echo "::set-env name=R_COMPILE_AND_INSTALL_PACKAGES::never"
 
       - name: Query dependencies
