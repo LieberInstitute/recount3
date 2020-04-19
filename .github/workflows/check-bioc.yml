@@ -259,6 +259,10 @@ jobs:
         run: |
           ## Should enable installing XML
           brew install libxml2
+          echo "::set-env name=PATH::/usr/local/opt/libxml2/bin:$PATH"
+          echo "::set-env name=LDFLAGS::-L/usr/local/opt/libxml2/lib"
+          echo "::set-env name=CPPFLAGS::-I/usr/local/opt/libxml2/include"
+          echo "::set-env name=PKG_CONFIG_PATH::/usr/local/opt/libxml2/lib/pkgconfig"
           echo "::set-env name=XML_CONFIG::/usr/local/opt/libxml2/bin/xml2-config"
 
       - name: Install macOS system dependencies
@@ -266,7 +270,7 @@ jobs:
         # the xml2 thing is a hack / experiment
         run: |
           ## Did it work?
-          Rscript -e "install.packages('XML')"
+          Rscript -e "install.packages('XML', configure.vars='LIBXML_INCDIR=/usr/local/opt/libxml2/include LIBXML_LIBDIR=/usr/local/opt/libxml2/lib')"
 
           brew install imagemagick@6
           Rscript -e "remotes::install_github('r-lib/xml2')"
