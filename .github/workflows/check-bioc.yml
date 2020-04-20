@@ -88,6 +88,7 @@ jobs:
         shell: Rscript {0}
 
       - name: Cache R packages
+        if: !contains(github.event.head_commit.message, '/nocache')
         uses: actions/cache@v1
         with:
           path: /home/runner/work/_temp/Library
@@ -244,20 +245,14 @@ jobs:
       - name: Setup pandoc from r-lib
         uses: r-lib/actions/setup-pandoc@master
 
-
-      - name: Install Windows system dependencies
-        if: runner.os == 'Windows'
-        run: |
-            install.packages('RCurl', type = 'binary')
-        shell: Rscript {0}
-
       - name: Query dependencies
         run: |
-          install.packages('remotes')
+          if (!requireNamespace('remotes', quietly = TRUE)) install.packages('remotes')
           saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
         shell: Rscript {0}
 
       - name: Cache R packages
+        if: !contains(github.event.head_commit.message, '/nocache')
         uses: actions/cache@v1
         with:
           path: ${{ env.R_LIBS_USER }}
@@ -284,6 +279,19 @@ jobs:
           ## Won't be needed once the current xml2 dev is available on CRAN
           Rscript -e "remotes::install_github('r-lib/xml2')"
 
+      - name: Install Windows system dependencies
+        if: runner.os == 'Windows'
+        run: |
+          if (!requireNamespace('RCurl', quietly = TRUE)) install.packages('RCurl', type = 'binary')
+
+          ## Rhtslib is used by many Bioconductor packages -- I couldn't get it to compile on R 4.1
+          ## so for now I'm doing the workaround of using the binary from Bioc (for R 4.0)
+          ## which is really NOT supported!
+          ## https://stat.ethz.ch/pipermail/bioc-devel/2020-January/016059.html
+          ## https://github.com/Bioconductor/Rhtslib/blob/master/src/htslib-1.7/INSTALL
+          install.packages('https://bioconductor.org/packages/devel/bioc/bin/windows/contrib/4.0/Rhtslib_1.19.1.zip')
+        shell: Rscript {0}
+
       - name: Install BiocManager
         run: |
           remotes::install_cran("BiocManager")
@@ -298,7 +306,7 @@ jobs:
         run: |
           remotes::install_deps(dependencies = TRUE)
           remotes::install_cran("rcmdcheck")
-          BiocManager::install("BiocCheck")
+          if (!requireNamespace("BiocCheck", quietly = TRUE)) BiocManager::install("BiocCheck")
         shell: Rscript {0}
 
       - name: Check
