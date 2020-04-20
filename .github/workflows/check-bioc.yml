@@ -260,6 +260,7 @@ jobs:
         shell: Rscript {0}
 
       - name: Cache R packages
+        ## Testing this
         if: contains(steps.log.outputs.message, 'nocache') != 'true'
         uses: actions/cache@v1
         with:
