@@ -81,9 +81,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - id: log
-        run: echo "::set-output name=message::$(git log --no-merges -1 --oneline)"
-
       - name: Query dependencies
         run: |
           install.packages('remotes')
@@ -91,7 +88,7 @@ jobs:
         shell: Rscript {0}
 
       - name: Cache R packages
-        if: contains(steps.log.outputs.message, '/nocache') != 'true'
+        if: "!contains(github.event.head_commit.message, '/nocache')"
         uses: actions/cache@v1
         with:
           path: /home/runner/work/_temp/Library
@@ -239,14 +236,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - id: log
-        run: echo "::set-output name=message::$(git log --no-merges -1 --oneline)"
-
       - name: Setup R from r-lib
         uses: r-lib/actions/setup-r@master
         with:
           r-version: ${{ needs.R-CMD-check-bioc.outputs.rversion }}
-
 
       - name: Setup pandoc from r-lib
         uses: r-lib/actions/setup-pandoc@master
@@ -258,7 +251,7 @@ jobs:
         shell: Rscript {0}
 
       - name: Cache R packages
-        if: contains(steps.log.outputs.message, '/nocache') != 'true'
+        if: "!contains(github.event.head_commit.message, '/nocache')"
         uses: actions/cache@v1
         with:
           path: ${{ env.R_LIBS_USER }}
