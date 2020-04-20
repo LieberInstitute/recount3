@@ -143,29 +143,29 @@ jobs:
         ## For more options check http://bioconductor.org/packages/release/bioc/vignettes/BiocCheck/inst/doc/BiocCheck.html
 
       - name: Install covr
-        if: github.ref == 'refs/heads/master' & env.run_covr == 'true'
+        if: github.ref == 'refs/heads/master' && env.run_covr == 'true'
         run: |
           remotes::install_cran("covr")
         shell: Rscript {0}
 
       - name: Test coverage
-        if: github.ref == 'refs/heads/master' & env.run_covr == 'true'
+        if: github.ref == 'refs/heads/master' && env.run_covr == 'true'
         run: |
           covr::codecov()
         shell: Rscript {0}
 
       - name: Install pkgdown
-        if: github.ref == 'refs/heads/master' & env.run_pkgdown == 'true'
+        if: github.ref == 'refs/heads/master' && env.run_pkgdown == 'true'
         run: |
           remotes::install_cran("pkgdown")
         shell: Rscript {0}
 
       - name: Install package
-        if: github.ref == 'refs/heads/master' & env.run_pkgdown == 'true'
+        if: github.ref == 'refs/heads/master' && env.run_pkgdown == 'true'
         run: R CMD INSTALL .
 
       - name: Deploy package
-        if: github.ref == 'refs/heads/master' & env.run_pkgdown == 'true'
+        if: github.ref == 'refs/heads/master' && env.run_pkgdown == 'true'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
