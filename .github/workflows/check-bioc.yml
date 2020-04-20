@@ -27,6 +27,11 @@ on:
 
 name: R-CMD-check-bioc
 
+env:
+  has_testthat: 'true'
+  run_covr: 'true'
+  run_pkgdown: 'true'
+
 jobs:
   define-docker-info:
     runs-on: ubuntu-latest
@@ -129,6 +134,7 @@ jobs:
         shell: Rscript {0}
 
       - name: Reveal testthat details
+        if:  env.has_testthat == 'true'
         run: find . -name testthat.Rout -exec cat '{}' ';'
 
       - name: BiocCheck
@@ -136,21 +142,30 @@ jobs:
           R CMD BiocCheck --no-check-R-ver --no-check-bioc-help check/*.tar.gz
         ## For more options check http://bioconductor.org/packages/release/bioc/vignettes/BiocCheck/inst/doc/BiocCheck.html
 
-      - name: Install covr and pkgdown
-        if: github.ref == 'refs/heads/master'
+      - name: Install covr
+        if: github.ref == 'refs/heads/master' & env.run_covr == 'true'
         run: |
-          if (!requireNamespace("covr", quietly = TRUE))
-              remotes::install_cran("covr")
-          if (!requireNamespace("pkgdown", quietly = TRUE))
-              remotes::install_dev("pkgdown")
+          remotes::install_cran("covr")
+        shell: Rscript {0}
+
+      - name: Test coverage
+        if: github.ref == 'refs/heads/master' & env.run_covr == 'true'
+        run: |
+          covr::codecov()
+        shell: Rscript {0}
+
+      - name: Install pkgdown
+        if: github.ref == 'refs/heads/master' & env.run_pkgdown == 'true'
+        run: |
+          remotes::install_cran("pkgdown")
         shell: Rscript {0}
 
       - name: Install package
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/master' & env.run_pkgdown == 'true'
         run: R CMD INSTALL .
 
       - name: Deploy package
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/master' & env.run_pkgdown == 'true'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -160,12 +175,6 @@ jobs:
         ## at least one locally before this will work. This creates the gh-pages
         ## branch (erasing anything you haven't version controlled!) and
         ## makes the git history recognizable by pkgdown.
-
-      - name: Test coverage
-        if: github.ref == 'refs/heads/master'
-        run: |
-          covr::codecov()
-        shell: Rscript {0}
 
       - id: findrversion
         run: |
@@ -267,12 +276,14 @@ jobs:
       - name: Install macOS system dependencies
         if: matrix.config.os == 'macOS-latest' && needs.R-CMD-check-bioc.outputs.rversion == 'devel'
         run: |
-          ## Enable installing XML & xml2 from source if needed
+          ## Enable installing XML from source if needed
           brew install libxml2
           echo "::set-env name=XML_CONFIG::/usr/local/opt/libxml2/bin/xml2-config"
 
           brew install imagemagick@6
+          ## Won't be needed once the current xml2 dev is available on CRAN
           Rscript -e "remotes::install_github('r-lib/xml2')"
+
       - name: Install BiocManager
         run: |
           remotes::install_cran("BiocManager")
@@ -303,6 +314,7 @@ jobs:
         shell: Rscript {0}
 
       - name: Reveal testthat details
+        if:  env.has_testthat == 'true'
         run: find . -name testthat.Rout -exec cat '{}' ';'
 
       - name: BiocCheck
