@@ -282,13 +282,6 @@ jobs:
         if: runner.os == 'Windows'
         run: |
           if (!requireNamespace('RCurl', quietly = TRUE)) install.packages('RCurl', type = 'binary')
-
-          ## Rhtslib is used by many Bioconductor packages -- I couldn't get it to compile on R 4.1
-          ## so for now I'm doing the workaround of using the binary from Bioc (for R 4.0)
-          ## which is really NOT supported!
-          ## https://stat.ethz.ch/pipermail/bioc-devel/2020-January/016059.html
-          ## https://github.com/Bioconductor/Rhtslib/blob/master/src/htslib-1.7/INSTALL
-          install.packages('https://bioconductor.org/packages/devel/bioc/bin/windows/contrib/4.0/Rhtslib_1.19.1.zip')
         shell: Rscript {0}
 
       - name: Install BiocManager
@@ -299,6 +292,27 @@ jobs:
       - name: Set BiocVersion
         run: |
           BiocManager::install(version = Sys.getenv('BIOCVERSIONNUM'))
+        shell: Rscript {0}
+
+      - name: Install dependencies - Windows R-devel hack
+        if: runner.os == 'Windows' && ${{ needs.R-CMD-check-bioc.outputs.rversion }} == 'devel'
+        run: |
+          ## Hack my way through Windows for R-devel (4.1) ...
+          ## I only need this now to avoid the compilation issues on Windows
+          ## such as with Rhtslib and other packages.
+          ## At the end of April, once R 4.0 is actually released, then this
+          ## won't be an issue =)
+          ## Note that officially Bioconductor as of today 2020-04-20 does
+          ## not support R-devel! Hence the lack of binaries on R 4.1
+          contrib <- BiocManager::repositories()
+          is_cran <- names(contrib) == 'CRAN'
+          contrib[!is_cran] <- paste0(contrib[!is_cran], '/bin/windows/contrib/4.0/')
+          contrib[is_cran] <- paste0(contrib[is_cran], '/bin/windows/contrib/4.1/')
+          contrib
+
+          remotes::install_deps(dependencies = TRUE, contriburl = contrib)
+          remotes::install_cran("rcmdcheck", contriburl = contrib)
+          if (!requireNamespace("BiocCheck", quietly = TRUE)) BiocManager::install("BiocCheck", contriburl = contrib)
         shell: Rscript {0}
 
       - name: Install dependencies
