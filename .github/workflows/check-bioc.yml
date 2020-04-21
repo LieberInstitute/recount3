@@ -297,6 +297,9 @@ jobs:
       - name: Install dependencies - Windows R-devel hack
         if: runner.os == 'Windows' && ${{ needs.R-CMD-check-bioc.outputs.rversion }} == 'devel'
         run: |
+          ## Need GenomeInfoDbData first
+          BiocManager::install('GenomeInfoDbData')
+
           ## Hack my way through Windows for R-devel (4.1) ...
           ## I only need this now to avoid the compilation issues on Windows
           ## such as with Rhtslib and other packages.
@@ -343,7 +346,7 @@ jobs:
       - name: BiocCheck
         run: |
           ## This syntax works on Windows as well as other OS
-          BiocCheck::BiocCheck(dir('check', 'tar.gz$', full.names = TRUE), `--no-check-R-ver` = TRUE, `--no-check-bioc-help` = TRUE)
+          BiocCheck::BiocCheck(dir('check', 'tar.gz$', full.names = TRUE), `no-check-R-ver` = TRUE, `no-check-bioc-help` = TRUE)
           ## For more options check http://bioconductor.org/packages/release/bioc/vignettes/BiocCheck/inst/doc/BiocCheck.html
         shell: Rscript {0}
 
