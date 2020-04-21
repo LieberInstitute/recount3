@@ -306,7 +306,9 @@ jobs:
           ## not support R-devel! Hence the lack of binaries on R 4.1
           contrib <- BiocManager::repositories()
           is_cran <- names(contrib) == 'CRAN'
-          contrib[!is_cran] <- paste0(contrib[!is_cran], '/bin/windows/contrib/4.0/')
+          is_ann <- names(contrib) %in% c('BioCann', 'BioCexp', 'BioCworkflows')
+          contrib[!is_cran & !is_ann] <- paste0(contrib[!is_cran], '/bin/windows/contrib/4.0/')
+          contrib[is_ann] <- paste0(contrib[is_ann], '/src/contrib/')
           contrib[is_cran] <- paste0(contrib[is_cran], '/bin/windows/contrib/4.1/')
           contrib
 
