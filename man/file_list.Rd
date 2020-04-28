@@ -20,5 +20,5 @@ your computer, then this function will list all the files inside \code{url}.
 \examples{
 
 file_list("http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/")
-file_list(system.file("inst", package = "recount3"))
+## file_list(system.file("inst", package = "recount3"))
 }

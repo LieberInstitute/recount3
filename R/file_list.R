@@ -16,7 +16,7 @@
 #' @examples
 #'
 #' file_list("http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/")
-#' file_list(system.file("inst", package = "recount3"))
+#' ## file_list(system.file("inst", package = "recount3"))
 file_list <- function(url, bfc = BiocFileCache::BiocFileCache()) {
     if (file.exists(url)) {
         return(dir(url))
