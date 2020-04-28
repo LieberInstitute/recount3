@@ -54,6 +54,39 @@ Please run this yourself to check for any updates on how to cite
 
 ``` r
 print(citation('recount3'), bibtex = TRUE)
+#> 
+#> Collado-Torres L (2020). _Explore and download data from the recount3
+#> project_. doi: 10.18129/B9.bioc.recount3 (URL:
+#> https://doi.org/10.18129/B9.bioc.recount3),
+#> https://github.com/LieberInstitute/recount3 - R package version 0.99.0,
+#> <URL: http://www.bioconductor.org/packages/recount3>.
+#> 
+#> A BibTeX entry for LaTeX users is
+#> 
+#>   @Manual{,
+#>     title = {Explore and download data from the recount3 project},
+#>     author = {Leonardo Collado-Torres},
+#>     year = {2020},
+#>     url = {http://www.bioconductor.org/packages/recount3},
+#>     note = {https://github.com/LieberInstitute/recount3 - R package version 0.99.0},
+#>     doi = {10.18129/B9.bioc.recount3},
+#>   }
+#> 
+#> Wilks C, Collado-Torres L, Zheng SC, Jaffe AE, Nellore A, Hansen KD,
+#> Langmead B (2020). "recount3 pre-print title TODO." _bioRxiv_. doi:
+#> 10.1101/TODO (URL: https://doi.org/10.1101/TODO), <URL:
+#> https://www.biorxiv.org/content/10.1101/TODO>.
+#> 
+#> A BibTeX entry for LaTeX users is
+#> 
+#>   @Article{,
+#>     title = {recount3 pre-print title TODO},
+#>     author = {Christopher Wilks and Leonardo Collado-Torres and Shijie C. Zheng and Andrew E. Jaffe and Abhinav Nellore and Kasper D. Hansen and Ben Langmead},
+#>     year = {2020},
+#>     journal = {bioRxiv},
+#>     doi = {10.1101/TODO},
+#>     url = {https://www.biorxiv.org/content/10.1101/TODO},
+#>   }
 ```
 
 Please note that the `recount3` was only made possible thanks to many
@@ -77,7 +110,7 @@ By contributing to this project, you agree to abide by its terms.
     *[rcmdcheck](https://CRAN.R-project.org/package=rcmdcheck)*
     customized to use [Bioconductor’s docker
     containers](https://www.bioconductor.org/help/docker/) and
-    *[BiocCheck](https://bioconductor.org/packages/3.10/BiocCheck)*.
+    *[BiocCheck](https://bioconductor.org/packages/3.11/BiocCheck)*.
   - Code coverage assessment is possible thanks to
     [codecov](https://codecov.io/gh) and
     *[covr](https://CRAN.R-project.org/package=covr)*.
