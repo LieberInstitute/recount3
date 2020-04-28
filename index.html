@@ -123,7 +123,40 @@
 <h2 class="hasAnchor">
 <a href="#citation" class="anchor"></a>Citation</h2>
 <p>Below is the citation output from using <code><a href="https://rdrr.io/r/utils/citation.html">citation('recount3')</a></code> in R. Please run this yourself to check for any updates on how to cite <strong>recount3</strong>.</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span>(<span class="st">'recount3'</span>), <span class="kw">bibtex</span> <span class="kw">=</span> <span class="fl">TRUE</span>)</pre></div>
+<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span>(<span class="st">'recount3'</span>), <span class="kw">bibtex</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Collado-Torres L (2020). _Explore and download data from the recount3</span>
+<span class="co">#&gt; project_. doi: 10.18129/B9.bioc.recount3 (URL:</span>
+<span class="co">#&gt; https://doi.org/10.18129/B9.bioc.recount3),</span>
+<span class="co">#&gt; https://github.com/LieberInstitute/recount3 - R package version 0.99.0,</span>
+<span class="co">#&gt; &lt;URL: http://www.bioconductor.org/packages/recount3&gt;.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; A BibTeX entry for LaTeX users is</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;   @Manual{,</span>
+<span class="co">#&gt;     title = {Explore and download data from the recount3 project},</span>
+<span class="co">#&gt;     author = {Leonardo Collado-Torres},</span>
+<span class="co">#&gt;     year = {2020},</span>
+<span class="co">#&gt;     url = {http://www.bioconductor.org/packages/recount3},</span>
+<span class="co">#&gt;     note = {https://github.com/LieberInstitute/recount3 - R package version 0.99.0},</span>
+<span class="co">#&gt;     doi = {10.18129/B9.bioc.recount3},</span>
+<span class="co">#&gt;   }</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Wilks C, Collado-Torres L, Zheng SC, Jaffe AE, Nellore A, Hansen KD,</span>
+<span class="co">#&gt; Langmead B (2020). "recount3 pre-print title TODO." _bioRxiv_. doi:</span>
+<span class="co">#&gt; 10.1101/TODO (URL: https://doi.org/10.1101/TODO), &lt;URL:</span>
+<span class="co">#&gt; https://www.biorxiv.org/content/10.1101/TODO&gt;.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; A BibTeX entry for LaTeX users is</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;   @Article{,</span>
+<span class="co">#&gt;     title = {recount3 pre-print title TODO},</span>
+<span class="co">#&gt;     author = {Christopher Wilks and Leonardo Collado-Torres and Shijie C. Zheng and Andrew E. Jaffe and Abhinav Nellore and Kasper D. Hansen and Ben Langmead},</span>
+<span class="co">#&gt;     year = {2020},</span>
+<span class="co">#&gt;     journal = {bioRxiv},</span>
+<span class="co">#&gt;     doi = {10.1101/TODO},</span>
+<span class="co">#&gt;     url = {https://www.biorxiv.org/content/10.1101/TODO},</span>
+<span class="co">#&gt;   }</span></pre></div>
 <p>Please note that the <code>recount3</code> was only made possible thanks to many other R and bioinformatics software authors, which are cited either in the vignettes and/or the paper(s) describing this package.</p>
 </div>
 <div id="code-of-conduct" class="section level2">
@@ -135,7 +168,7 @@
 <h2 class="hasAnchor">
 <a href="#development-tools" class="anchor"></a>Development tools</h2>
 <ul>
-<li>Continuous code testing is possible thanks to <a href="https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/">GitHub actions</a> through <em><a href="https://CRAN.R-project.org/package=usethis">usethis</a></em>, <em><a href="https://CRAN.R-project.org/package=remotes">remotes</a></em>, <em><a href="https://github.com/r-hub/sysreqs">sysreqs</a></em> and <em><a href="https://CRAN.R-project.org/package=rcmdcheck">rcmdcheck</a></em> customized to use <a href="https://www.bioconductor.org/help/docker/">Bioconductor’s docker containers</a> and <em><a href="https://bioconductor.org/packages/3.10/BiocCheck">BiocCheck</a></em>.</li>
+<li>Continuous code testing is possible thanks to <a href="https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/">GitHub actions</a> through <em><a href="https://CRAN.R-project.org/package=usethis">usethis</a></em>, <em><a href="https://CRAN.R-project.org/package=remotes">remotes</a></em>, <em><a href="https://github.com/r-hub/sysreqs">sysreqs</a></em> and <em><a href="https://CRAN.R-project.org/package=rcmdcheck">rcmdcheck</a></em> customized to use <a href="https://www.bioconductor.org/help/docker/">Bioconductor’s docker containers</a> and <em><a href="https://bioconductor.org/packages/3.11/BiocCheck">BiocCheck</a></em>.</li>
 <li>Code coverage assessment is possible thanks to <a href="https://codecov.io/gh">codecov</a> and <em><a href="https://CRAN.R-project.org/package=covr">covr</a></em>.</li>
 <li>The <a href="http://lieberinstitute.github.io/recount3">documentation website</a> is automatically updated thanks to <em><a href="https://CRAN.R-project.org/package=pkgdown">pkgdown</a></em>.</li>
 <li>The code is styled automatically thanks to <em><a href="https://CRAN.R-project.org/package=styler">styler</a></em>.</li>
