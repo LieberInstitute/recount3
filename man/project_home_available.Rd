@@ -5,19 +5,30 @@
 \title{Find available project home options}
 \usage{
 project_home_available(
-  type = c("metadata", "gene", "exon", "jxn", "bw"),
+  home_type = c("data_source", "collection"),
   organism = c("human", "mouse"),
   recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3",
   bfc = BiocFileCache::BiocFileCache()
 )
 }
+\arguments{
+\item{home_type}{A \code{character(1)} specifying whether you are looking for
+the core data sources for \code{recount3} or collections which are user-created.}
+
+\item{organism}{A \code{character(1)} specifying which organism you want to
+download data from.}
+
+\item{recount3_url}{A \code{character(1)} specifying the home URL for \code{recount3}
+or a local directory where you have mirrored \code{recount3}.}
+}
 \value{
 A \code{character()} vector with the available \code{project_home} options.
 }
 \description{
-Find available project home options
+This function finds the home for a given project (study) of interest based
+on the \code{organism} and the \code{home_type}.
 }
 \examples{
 
-project_home_available("metadata")
+project_home_available()
 }

@@ -1,46 +1,39 @@
 #' Find available project home options
 #'
+#' This function finds the home for a given project (study) of interest based
+#' on the `organism` and the `home_type`.
+#'
+#' @param home_type A `character(1)` specifying whether you are looking for
+#' the core data sources for `recount3` or collections which are user-created.
 #' @inheritParams file_locate_url
 #'
 #' @return A `character()` vector with the available `project_home` options.
 #' @export
-#' @importFrom XML readHTMLTable
-#' @importFrom BiocFileCache bfcrpath
 #'
 #' @examples
 #'
-#' project_home_available("metadata")
+#' project_home_available()
 project_home_available <-
-    function(type = c("metadata", "gene", "exon", "jxn", "bw"),
+    function(home_type = c("data_source", "collection"),
     organism = c("human", "mouse"),
     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3",
     bfc = BiocFileCache::BiocFileCache()) {
-        type <- match.arg(type)
+        home_type <- match.arg(home_type)
         organism <- match.arg(organism)
 
         ## Define the base directories
         base_dir <- switch(
-            type,
-            metadata = "metadata",
-            gene = "gene_sums",
-            exon = "exon_sums",
-            jxn = "jxn",
-            bw = "base_sums"
+            home_type,
+            data_source = "data_sources",
+            collection = "collections"
         )
 
         ## Build the query URL
         url <- file.path(recount3_url, organism, base_dir)
+        available <- file_list(url = url, bfc = bfc)
 
-        ## Cache the url so it's only used once
-        local_url <- BiocFileCache::bfcrpath(bfc, url)
+        result <- file.path(base_dir, available)
+        names(result) <- available
 
-        ## Now read the HTML
-        list_files <- XML::readHTMLTable(local_url)[[1]]$Name
-
-        ## Find the available options
-        ## ## From https://stackoverflow.com/questions/12930933/retrieve-the-list-of-files-from-a-url
-        available <- list_files[!is.na(list_files)]
-        available <- gsub("/", "", available)
-        available <- available[which(available != "Parent Directory")]
-        return(available)
+        return(result)
     }

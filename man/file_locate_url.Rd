@@ -2,32 +2,53 @@
 % Please edit documentation in R/file_locate_url.R
 \name{file_locate_url}
 \alias{file_locate_url}
-\title{Title}
+\title{Construct the URL to access a particular \code{recount3} file}
 \usage{
 file_locate_url(
   project,
-  project_home = project_home_available(type = type, organism = organism, recount3_url
-    = recount3_url),
+  project_home = project_home_available(organism = organism, recount3_url =
+    recount3_url),
   type = c("metadata", "gene", "exon", "jxn", "bw"),
   organism = c("human", "mouse"),
   sample = NULL,
+  annotation = c("gencode_v26", "gencode_v29", "ercc", "sirv"),
   recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3"
 )
 }
 \arguments{
-\item{project}{A \code{character(1)}}
+\item{project}{A \code{character(1)} with the ID for a given study.}
 
-\item{recount3}{}
+\item{project_home}{A \code{character(1)} with the home directory for the
+\code{project}. You can find these using \code{project_home_available()}.}
+
+\item{type}{A \code{character(1)} specifying whether you want to access gene
+counts, exon counts, exon-exon junctions or base-pair BigWig coverage files
+(one per \code{sample}).}
+
+\item{organism}{A \code{character(1)} specifying which organism you want to
+download data from.}
+
+\item{sample}{A \code{character(1)} with the sample ID you want to download.}
+
+\item{annotation}{A \code{character(1)} specifying which annotation you want to
+download. Only used when \code{type} is either \code{gene} or \code{exon}.}
+
+\item{recount3_url}{A \code{character(1)} specifying the home URL for \code{recount3}
+or a local directory where you have mirrored \code{recount3}.}
 }
 \value{
-
+A \code{character(1)} with the URL for the file of interest.
 }
 \description{
-Title
+Given an organism of interest, this function constructs the URL for accessing
+one of the output files from the \code{recount3} project. You can then download
+the file using \code{file_retrieve()}.
 }
 \examples{
 
-file_locate_url("ERP001942", "sra", "metadata", "human")
+## Example for a metadata file
+file_locate_url("ERP001942", "data_sources/sra")
 
-file_locate_url("ERP001942", "sra", "bw", "human", "ERR204900")
+## Example for a BigWig file
+file_locate_url("ERP001942", "data_sources/sra", "bw", "human", "ERR204900")
 }

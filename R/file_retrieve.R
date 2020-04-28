@@ -1,6 +1,7 @@
 #' Download a cache a remote file
 #'
-#' @param url A `character(1)` with the file URL.
+#' @param url A `character(1)` with the file URL or the actual local path in
+#' which case, it won't be cached.
 #' @param bfc A `BiocFileCache` object
 #' [BiocFileCache-class][BiocFileCache::BiocFileCache-class].
 #'
@@ -11,12 +12,15 @@
 #'
 #' @examples
 #'
-#' file_url <- file_locate_url("ERP001942", "sra", "metadata", "human")
-#' file_local <- file_retrieve(url = file_url)
+#' ## Download the metadata file for project ERP001942
+#' url_ERP001942_meta <- file_locate_url("ERP001942", "data_sources/sra")
+#' local_ERP001942_meta <- file_retrieve(url = url_ERP001942_meta)
+#' local_ERP001942_meta
 file_retrieve <- function(url, bfc = BiocFileCache::BiocFileCache()) {
-    # if(!file.exists(url)) {
-    #     stop("The 'url'", url, "does not exist.", call. = FALSE)
-    # }
+    ## In case the url is a local file, there's no need to cache it then
+    if (file.exists(url)) {
+        return(url)
+    }
     if (!methods::is(bfc, "BiocFileCache")) {
         stop("'bfc' should be a BiocFileCache::BiocFileCache object.", call. = FALSE)
     }

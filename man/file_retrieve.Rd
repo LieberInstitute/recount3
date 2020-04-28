@@ -7,7 +7,8 @@
 file_retrieve(url, bfc = BiocFileCache::BiocFileCache())
 }
 \arguments{
-\item{url}{A \code{character(1)} with the file URL.}
+\item{url}{A \code{character(1)} with the file URL or the actual local path in
+which case, it won't be cached.}
 
 \item{bfc}{A \code{BiocFileCache} object
 \link[BiocFileCache:BiocFileCache-class]{BiocFileCache-class}.}
@@ -20,6 +21,8 @@ Download a cache a remote file
 }
 \examples{
 
-file_url <- file_locate_url("ERP001942", "sra", "metadata", "human")
-file_local <- file_retrieve(url = file_url)
+## Download the metadata file for project ERP001942
+url_ERP001942_meta <- file_locate_url("ERP001942", "data_sources/sra")
+local_ERP001942_meta <- file_retrieve(url = url_ERP001942_meta)
+local_ERP001942_meta
 }
