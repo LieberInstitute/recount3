@@ -169,7 +169,468 @@ metadata.</p>
 
 <span class='co'>## Read the metadata</span>
 <span class='no'>ERP001942_meta</span> <span class='kw'>&lt;-</span> <span class='fu'>read_metadata</span>(<span class='no'>local_ERP001942_meta</span>)
-
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>ERP001942_meta</span>)</div><div class='output co'>#&gt;   rail_id   run_acc study_acc sample_acc experiment_acc submission_acc
+#&gt; 1   98371 ERR188021 ERP001942  ERS185362      ERX163159      ERA169774
+#&gt; 2   98373 ERR188022 ERP001942  ERS185103      ERX162912      ERA169774
+#&gt; 3   98375 ERR188023 ERP001942  ERS185236      ERX162777      ERA169774
+#&gt; 4   98377 ERR188024 ERP001942  ERS185432      ERX162876      ERA169774
+#&gt; 5   98379 ERR188025 ERP001942  ERS185451      ERX163121      ERA169774
+#&gt; 6   98381 ERR188026 ERP001942  ERS185219      ERX162823      ERA169774
+#&gt;   submission_center submission_lab
+#&gt; 1          Geuvadis   ArrayExpress
+#&gt; 2          Geuvadis   ArrayExpress
+#&gt; 3          Geuvadis   ArrayExpress
+#&gt; 4          Geuvadis   ArrayExpress
+#&gt; 5          Geuvadis   ArrayExpress
+#&gt; 6          Geuvadis   ArrayExpress
+#&gt;                                                             study_title
+#&gt; 1 RNA-sequencing of 465 lymphoblastoid cell lines from the 1000 Genomes
+#&gt; 2 RNA-sequencing of 465 lymphoblastoid cell lines from the 1000 Genomes
+#&gt; 3 RNA-sequencing of 465 lymphoblastoid cell lines from the 1000 Genomes
+#&gt; 4 RNA-sequencing of 465 lymphoblastoid cell lines from the 1000 Genomes
+#&gt; 5 RNA-sequencing of 465 lymphoblastoid cell lines from the 1000 Genomes
+#&gt; 6 RNA-sequencing of 465 lymphoblastoid cell lines from the 1000 Genomes
+#&gt;                                                                                                                                                                                                                                                                                         study_abstract
+#&gt; 1 The data is under embargo until the first publication by the investigators in early 2013. This RNA sequencing data set of 465 human lymphoblastoid cell line samples from the CEU, FIN, GBR, TSI and YRI populations from the 1000 Genomes sample collection was created by the Geuvadis consortium.
+#&gt; 2 The data is under embargo until the first publication by the investigators in early 2013. This RNA sequencing data set of 465 human lymphoblastoid cell line samples from the CEU, FIN, GBR, TSI and YRI populations from the 1000 Genomes sample collection was created by the Geuvadis consortium.
+#&gt; 3 The data is under embargo until the first publication by the investigators in early 2013. This RNA sequencing data set of 465 human lymphoblastoid cell line samples from the CEU, FIN, GBR, TSI and YRI populations from the 1000 Genomes sample collection was created by the Geuvadis consortium.
+#&gt; 4 The data is under embargo until the first publication by the investigators in early 2013. This RNA sequencing data set of 465 human lymphoblastoid cell line samples from the CEU, FIN, GBR, TSI and YRI populations from the 1000 Genomes sample collection was created by the Geuvadis consortium.
+#&gt; 5 The data is under embargo until the first publication by the investigators in early 2013. This RNA sequencing data set of 465 human lymphoblastoid cell line samples from the CEU, FIN, GBR, TSI and YRI populations from the 1000 Genomes sample collection was created by the Geuvadis consortium.
+#&gt; 6 The data is under embargo until the first publication by the investigators in early 2013. This RNA sequencing data set of 465 human lymphoblastoid cell line samples from the CEU, FIN, GBR, TSI and YRI populations from the 1000 Genomes sample collection was created by the Geuvadis consortium.
+#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 study_description
+#&gt; 1 This RNA sequencing data set of 465 human lymphoblastoid cell line samples from the CEU, FIN, GBR, TSI and YRI populations from the 1000 Genomes sample collection was created by the Geuvadis consortium (www.geuvadis.org, http://www.geuvadis.org/web/geuvadis/our-rnaseq-project). The data is under embargo until the first publication by the investigators in early 2013. This accession contains mRNA sequencing data, and small RNA data from the same samples are available under accession E-GEUV-2.
+#&gt; 2 This RNA sequencing data set of 465 human lymphoblastoid cell line samples from the CEU, FIN, GBR, TSI and YRI populations from the 1000 Genomes sample collection was created by the Geuvadis consortium (www.geuvadis.org, http://www.geuvadis.org/web/geuvadis/our-rnaseq-project). The data is under embargo until the first publication by the investigators in early 2013. This accession contains mRNA sequencing data, and small RNA data from the same samples are available under accession E-GEUV-2.
+#&gt; 3 This RNA sequencing data set of 465 human lymphoblastoid cell line samples from the CEU, FIN, GBR, TSI and YRI populations from the 1000 Genomes sample collection was created by the Geuvadis consortium (www.geuvadis.org, http://www.geuvadis.org/web/geuvadis/our-rnaseq-project). The data is under embargo until the first publication by the investigators in early 2013. This accession contains mRNA sequencing data, and small RNA data from the same samples are available under accession E-GEUV-2.
+#&gt; 4 This RNA sequencing data set of 465 human lymphoblastoid cell line samples from the CEU, FIN, GBR, TSI and YRI populations from the 1000 Genomes sample collection was created by the Geuvadis consortium (www.geuvadis.org, http://www.geuvadis.org/web/geuvadis/our-rnaseq-project). The data is under embargo until the first publication by the investigators in early 2013. This accession contains mRNA sequencing data, and small RNA data from the same samples are available under accession E-GEUV-2.
+#&gt; 5 This RNA sequencing data set of 465 human lymphoblastoid cell line samples from the CEU, FIN, GBR, TSI and YRI populations from the 1000 Genomes sample collection was created by the Geuvadis consortium (www.geuvadis.org, http://www.geuvadis.org/web/geuvadis/our-rnaseq-project). The data is under embargo until the first publication by the investigators in early 2013. This accession contains mRNA sequencing data, and small RNA data from the same samples are available under accession E-GEUV-2.
+#&gt; 6 This RNA sequencing data set of 465 human lymphoblastoid cell line samples from the CEU, FIN, GBR, TSI and YRI populations from the 1000 Genomes sample collection was created by the Geuvadis consortium (www.geuvadis.org, http://www.geuvadis.org/web/geuvadis/our-rnaseq-project). The data is under embargo until the first publication by the investigators in early 2013. This accession contains mRNA sequencing data, and small RNA data from the same samples are available under accession E-GEUV-2.
+#&gt;                                                        experiment_title
+#&gt; 1 RNA-sequencing of 465 lymphoblastoid cell lines from the 1000 Genomes
+#&gt; 2 RNA-sequencing of 465 lymphoblastoid cell lines from the 1000 Genomes
+#&gt; 3 RNA-sequencing of 465 lymphoblastoid cell lines from the 1000 Genomes
+#&gt; 4 RNA-sequencing of 465 lymphoblastoid cell lines from the 1000 Genomes
+#&gt; 5 RNA-sequencing of 465 lymphoblastoid cell lines from the 1000 Genomes
+#&gt; 6 RNA-sequencing of 465 lymphoblastoid cell lines from the 1000 Genomes
+#&gt;                                                                      design_description
+#&gt; 1 RNA-sequencing of 465 lymphoblastoid cell lines from the 1000                 Genomes
+#&gt; 2 RNA-sequencing of 465 lymphoblastoid cell lines from the 1000                 Genomes
+#&gt; 3 RNA-sequencing of 465 lymphoblastoid cell lines from the 1000                 Genomes
+#&gt; 4 RNA-sequencing of 465 lymphoblastoid cell lines from the 1000                 Genomes
+#&gt; 5 RNA-sequencing of 465 lymphoblastoid cell lines from the 1000                 Genomes
+#&gt; 6 RNA-sequencing of 465 lymphoblastoid cell lines from the 1000                 Genomes
+#&gt;   sample_description                 library_name library_strategy
+#&gt; 1                 NA NA20508.1.M_111124_2 extract          RNA-Seq
+#&gt; 2                 NA NA12812.1.M_111124_4 extract          RNA-Seq
+#&gt; 3                 NA HG00315.2.M_111215_5 extract          RNA-Seq
+#&gt; 4                 NA NA12749.1.M_111124_2 extract          RNA-Seq
+#&gt; 5                 NA HG00377.2.M_120131_2 extract          RNA-Seq
+#&gt; 6                 NA NA20510.3.M_120202_3 extract          RNA-Seq
+#&gt;   library_source library_selection library_layout paired_nominal_length
+#&gt; 1 TRANSCRIPTOMIC              cDNA         paired                   280
+#&gt; 2 TRANSCRIPTOMIC              cDNA         paired                   280
+#&gt; 3 TRANSCRIPTOMIC              cDNA         paired                   280
+#&gt; 4 TRANSCRIPTOMIC              cDNA         paired                   280
+#&gt; 5 TRANSCRIPTOMIC              cDNA         paired                   280
+#&gt; 6 TRANSCRIPTOMIC              cDNA         paired                   280
+#&gt;   paired_nominal_stdev
+#&gt; 1                    0
+#&gt; 2                    0
+#&gt; 3                    0
+#&gt; 4                    0
+#&gt; 5                    0
+#&gt; 6                    0
+#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   library_construction_protocol
+#&gt; 1 Total RNA was extracted from cell pellets using the                     TRIzol Reagent (Ambion). The pellets had been frozen at ECACC without any                     additives like RNAlater or Trizol. In Geneva they were thawed, 1mL of trizol                     was added in each sample, and the samples were transferred to eppendorf tubes.                     The rest of the protocol followed the manufacturer's guidelines. No DNase                     treatment was done to the RNA samples. Sample processing for sequencing was                     done in a random order in each of the seven laboratories. Library preparation                     was done with TruSeq RNA Sample Prep Kit v2 using the high-throughput                     protocol.
+#&gt; 2 Total RNA was extracted from cell pellets using the                     TRIzol Reagent (Ambion). The pellets had been frozen at ECACC without any                     additives like RNAlater or Trizol. In Geneva they were thawed, 1mL of trizol                     was added in each sample, and the samples were transferred to eppendorf tubes.                     The rest of the protocol followed the manufacturer's guidelines. No DNase                     treatment was done to the RNA samples. Sample processing for sequencing was                     done in a random order in each of the seven laboratories. Library preparation                     was done with TruSeq RNA Sample Prep Kit v2 using the high-throughput                     protocol.
+#&gt; 3 Total RNA was extracted from cell pellets using the                     TRIzol Reagent (Ambion). The pellets had been frozen at ECACC without any                     additives like RNAlater or Trizol. In Geneva they were thawed, 1mL of trizol                     was added in each sample, and the samples were transferred to eppendorf tubes.                     The rest of the protocol followed the manufacturer's guidelines. No DNase                     treatment was done to the RNA samples. Sample processing for sequencing was                     done in a random order in each of the seven laboratories. Library preparation                     was done with TruSeq RNA Sample Prep Kit v2 using the high-throughput                     protocol.
+#&gt; 4 Total RNA was extracted from cell pellets using the                     TRIzol Reagent (Ambion). The pellets had been frozen at ECACC without any                     additives like RNAlater or Trizol. In Geneva they were thawed, 1mL of trizol                     was added in each sample, and the samples were transferred to eppendorf tubes.                     The rest of the protocol followed the manufacturer's guidelines. No DNase                     treatment was done to the RNA samples. Sample processing for sequencing was                     done in a random order in each of the seven laboratories. Library preparation                     was done with TruSeq RNA Sample Prep Kit v2 using the high-throughput                     protocol.
+#&gt; 5 Total RNA was extracted from cell pellets using the                     TRIzol Reagent (Ambion). The pellets had been frozen at ECACC without any                     additives like RNAlater or Trizol. In Geneva they were thawed, 1mL of trizol                     was added in each sample, and the samples were transferred to eppendorf tubes.                     The rest of the protocol followed the manufacturer's guidelines. No DNase                     treatment was done to the RNA samples. Sample processing for sequencing was                     done in a random order in each of the seven laboratories. Library preparation                     was done with TruSeq RNA Sample Prep Kit v2 using the high-throughput                     protocol.
+#&gt; 6 Total RNA was extracted from cell pellets using the                     TRIzol Reagent (Ambion). The pellets had been frozen at ECACC without any                     additives like RNAlater or Trizol. In Geneva they were thawed, 1mL of trizol                     was added in each sample, and the samples were transferred to eppendorf tubes.                     The rest of the protocol followed the manufacturer's guidelines. No DNase                     treatment was done to the RNA samples. Sample processing for sequencing was                     done in a random order in each of the seven laboratories. Library preparation                     was done with TruSeq RNA Sample Prep Kit v2 using the high-throughput                     protocol.
+#&gt;        platform_model
+#&gt; 1 Illumina HiSeq 2000
+#&gt; 2 Illumina HiSeq 2000
+#&gt; 3 Illumina HiSeq 2000
+#&gt; 4 Illumina HiSeq 2000
+#&gt; 5 Illumina HiSeq 2000
+#&gt; 6 Illumina HiSeq 2000
+#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             sample_attributes
+#&gt; 1 Alias;;GEUV:NA20508|Broker name;;ArrayExpress|Description;;Protocols: For more information about the populations, ELSI, etc., see http://www.1000genomes.org/about#ProjectSamples and http://ccr.coriell.org/Default.aspx. EVB transformed lymphoblastoid cell lines (LCLs) from Coriell Cell Repositories (GBR, FIN, TSI) and University of Geneva (CEU, YRI) were shipped to ECACC (European COllection of Cell Cultures) as live cultures (06/2011 - 09/2011), in batches of ~ 30 samples from Coriell (GBR/FIN/TSI more or less randomized) and 2 x ~90 samples (by population) from Geneva. In ECACC, these cell lines were cultures to approximately 1.2 x 10e8 cells (06/2011-10/2011). These cultures were split to produce 8 x cell banks of the samples, and a snap frozen pellet of 2 x 10e7 cells from a proliferating culture. The cell pellets were shipped from ECACC to University of Geneva in three batches, the first batch consisting of CEU/GBR/FIN/TSI samples, and the second and third batch with YRI and some CEU samples. Total RNA was extracted from cell pellets using the TRIzol Reagent (Ambion). The pellets had been frozen at ECACC without any additives like RNAlater or Trizol. In Geneva they were thawed, 1mL of trizol was added in each sample, and the samples were transferred to eppendorf tubes. The rest of the protocol followed the manufacturer's guidelines. No DNAse treatment was done to the RNA samples. The RNA quality was assessed by Agilent Bioanalyzer RNA 6000 Nano Kit according to the manufacturer's instructions. The sample information includes a visual inspection of RNA quality (degradation), in the scale 0, 0.5, 1. RNA quantity was measured by Qubit 2.0 (Invitrogen) using the RNA Broad range kit according to the manufacturer's instructions.|INSDC center alias;;Geuvadis|INSDC center name;;Geuvadis|INSDC first public;;2012-11-06T17:02:05Z|INSDC last update;;2018-03-08T16:06:35Z|INSDC status;;public|population;;TSI|Sample Name;;ERS185362|SRA accession;;ERS185362|Strain;;lymphoblastoid cell line|Title;;NA20508
+#&gt; 2 Alias;;GEUV:NA12812|Broker name;;ArrayExpress|Description;;Protocols: For more information about the populations, ELSI, etc., see http://www.1000genomes.org/about#ProjectSamples and http://ccr.coriell.org/Default.aspx. EVB transformed lymphoblastoid cell lines (LCLs) from Coriell Cell Repositories (GBR, FIN, TSI) and University of Geneva (CEU, YRI) were shipped to ECACC (European COllection of Cell Cultures) as live cultures (06/2011 - 09/2011), in batches of ~ 30 samples from Coriell (GBR/FIN/TSI more or less randomized) and 2 x ~90 samples (by population) from Geneva. In ECACC, these cell lines were cultures to approximately 1.2 x 10e8 cells (06/2011-10/2011). These cultures were split to produce 8 x cell banks of the samples, and a snap frozen pellet of 2 x 10e7 cells from a proliferating culture. The cell pellets were shipped from ECACC to University of Geneva in three batches, the first batch consisting of CEU/GBR/FIN/TSI samples, and the second and third batch with YRI and some CEU samples. Total RNA was extracted from cell pellets using the TRIzol Reagent (Ambion). The pellets had been frozen at ECACC without any additives like RNAlater or Trizol. In Geneva they were thawed, 1mL of trizol was added in each sample, and the samples were transferred to eppendorf tubes. The rest of the protocol followed the manufacturer's guidelines. No DNAse treatment was done to the RNA samples. The RNA quality was assessed by Agilent Bioanalyzer RNA 6000 Nano Kit according to the manufacturer's instructions. The sample information includes a visual inspection of RNA quality (degradation), in the scale 0, 0.5, 1. RNA quantity was measured by Qubit 2.0 (Invitrogen) using the RNA Broad range kit according to the manufacturer's instructions.|INSDC center alias;;Geuvadis|INSDC center name;;Geuvadis|INSDC first public;;2012-11-06T17:02:05Z|INSDC last update;;2018-03-08T16:06:49Z|INSDC status;;public|population;;CEU|Sample Name;;ERS185103|SRA accession;;ERS185103|Strain;;lymphoblastoid cell line|Title;;NA12812
+#&gt; 3 Alias;;GEUV:HG00315|Broker name;;ArrayExpress|Description;;Protocols: For more information about the populations, ELSI, etc., see http://www.1000genomes.org/about#ProjectSamples and http://ccr.coriell.org/Default.aspx. EVB transformed lymphoblastoid cell lines (LCLs) from Coriell Cell Repositories (GBR, FIN, TSI) and University of Geneva (CEU, YRI) were shipped to ECACC (European COllection of Cell Cultures) as live cultures (06/2011 - 09/2011), in batches of ~ 30 samples from Coriell (GBR/FIN/TSI more or less randomized) and 2 x ~90 samples (by population) from Geneva. In ECACC, these cell lines were cultures to approximately 1.2 x 10e8 cells (06/2011-10/2011). These cultures were split to produce 8 x cell banks of the samples, and a snap frozen pellet of 2 x 10e7 cells from a proliferating culture. The cell pellets were shipped from ECACC to University of Geneva in three batches, the first batch consisting of CEU/GBR/FIN/TSI samples, and the second and third batch with YRI and some CEU samples. Total RNA was extracted from cell pellets using the TRIzol Reagent (Ambion). The pellets had been frozen at ECACC without any additives like RNAlater or Trizol. In Geneva they were thawed, 1mL of trizol was added in each sample, and the samples were transferred to eppendorf tubes. The rest of the protocol followed the manufacturer's guidelines. No DNAse treatment was done to the RNA samples. The RNA quality was assessed by Agilent Bioanalyzer RNA 6000 Nano Kit according to the manufacturer's instructions. The sample information includes a visual inspection of RNA quality (degradation), in the scale 0, 0.5, 1. RNA quantity was measured by Qubit 2.0 (Invitrogen) using the RNA Broad range kit according to the manufacturer's instructions.|INSDC center alias;;Geuvadis|INSDC center name;;Geuvadis|INSDC first public;;2012-11-06T17:02:05Z|INSDC last update;;2018-03-08T16:07:06Z|INSDC status;;public|population;;FIN|Sample Name;;ERS185236|SRA accession;;ERS185236|Strain;;lymphoblastoid cell line|Title;;HG00315
+#&gt; 4 Alias;;GEUV:NA12749|Broker name;;ArrayExpress|Description;;Protocols: For more information about the populations, ELSI, etc., see http://www.1000genomes.org/about#ProjectSamples and http://ccr.coriell.org/Default.aspx. EVB transformed lymphoblastoid cell lines (LCLs) from Coriell Cell Repositories (GBR, FIN, TSI) and University of Geneva (CEU, YRI) were shipped to ECACC (European COllection of Cell Cultures) as live cultures (06/2011 - 09/2011), in batches of ~ 30 samples from Coriell (GBR/FIN/TSI more or less randomized) and 2 x ~90 samples (by population) from Geneva. In ECACC, these cell lines were cultures to approximately 1.2 x 10e8 cells (06/2011-10/2011). These cultures were split to produce 8 x cell banks of the samples, and a snap frozen pellet of 2 x 10e7 cells from a proliferating culture. The cell pellets were shipped from ECACC to University of Geneva in three batches, the first batch consisting of CEU/GBR/FIN/TSI samples, and the second and third batch with YRI and some CEU samples. Total RNA was extracted from cell pellets using the TRIzol Reagent (Ambion). The pellets had been frozen at ECACC without any additives like RNAlater or Trizol. In Geneva they were thawed, 1mL of trizol was added in each sample, and the samples were transferred to eppendorf tubes. The rest of the protocol followed the manufacturer's guidelines. No DNAse treatment was done to the RNA samples. The RNA quality was assessed by Agilent Bioanalyzer RNA 6000 Nano Kit according to the manufacturer's instructions. The sample information includes a visual inspection of RNA quality (degradation), in the scale 0, 0.5, 1. RNA quantity was measured by Qubit 2.0 (Invitrogen) using the RNA Broad range kit according to the manufacturer's instructions.|INSDC center alias;;Geuvadis|INSDC center name;;Geuvadis|INSDC first public;;2012-11-06T17:02:05Z|INSDC last update;;2018-03-08T16:07:11Z|INSDC status;;public|population;;CEU|Sample Name;;ERS185432|SRA accession;;ERS185432|Strain;;lymphoblastoid cell line|Title;;NA12749
+#&gt; 5 Alias;;GEUV:HG00377|Broker name;;ArrayExpress|Description;;Protocols: For more information about the populations, ELSI, etc., see http://www.1000genomes.org/about#ProjectSamples and http://ccr.coriell.org/Default.aspx. EVB transformed lymphoblastoid cell lines (LCLs) from Coriell Cell Repositories (GBR, FIN, TSI) and University of Geneva (CEU, YRI) were shipped to ECACC (European COllection of Cell Cultures) as live cultures (06/2011 - 09/2011), in batches of ~ 30 samples from Coriell (GBR/FIN/TSI more or less randomized) and 2 x ~90 samples (by population) from Geneva. In ECACC, these cell lines were cultures to approximately 1.2 x 10e8 cells (06/2011-10/2011). These cultures were split to produce 8 x cell banks of the samples, and a snap frozen pellet of 2 x 10e7 cells from a proliferating culture. The cell pellets were shipped from ECACC to University of Geneva in three batches, the first batch consisting of CEU/GBR/FIN/TSI samples, and the second and third batch with YRI and some CEU samples. Total RNA was extracted from cell pellets using the TRIzol Reagent (Ambion). The pellets had been frozen at ECACC without any additives like RNAlater or Trizol. In Geneva they were thawed, 1mL of trizol was added in each sample, and the samples were transferred to eppendorf tubes. The rest of the protocol followed the manufacturer's guidelines. No DNAse treatment was done to the RNA samples. The RNA quality was assessed by Agilent Bioanalyzer RNA 6000 Nano Kit according to the manufacturer's instructions. The sample information includes a visual inspection of RNA quality (degradation), in the scale 0, 0.5, 1. RNA quantity was measured by Qubit 2.0 (Invitrogen) using the RNA Broad range kit according to the manufacturer's instructions.|INSDC center alias;;Geuvadis|INSDC center name;;Geuvadis|INSDC first public;;2012-11-06T17:02:05Z|INSDC last update;;2018-03-08T16:06:54Z|INSDC status;;public|population;;FIN|Sample Name;;ERS185451|SRA accession;;ERS185451|Strain;;lymphoblastoid cell line|Title;;HG00377
+#&gt; 6 Alias;;GEUV:NA20510|Broker name;;ArrayExpress|Description;;Protocols: For more information about the populations, ELSI, etc., see http://www.1000genomes.org/about#ProjectSamples and http://ccr.coriell.org/Default.aspx. EVB transformed lymphoblastoid cell lines (LCLs) from Coriell Cell Repositories (GBR, FIN, TSI) and University of Geneva (CEU, YRI) were shipped to ECACC (European COllection of Cell Cultures) as live cultures (06/2011 - 09/2011), in batches of ~ 30 samples from Coriell (GBR/FIN/TSI more or less randomized) and 2 x ~90 samples (by population) from Geneva. In ECACC, these cell lines were cultures to approximately 1.2 x 10e8 cells (06/2011-10/2011). These cultures were split to produce 8 x cell banks of the samples, and a snap frozen pellet of 2 x 10e7 cells from a proliferating culture. The cell pellets were shipped from ECACC to University of Geneva in three batches, the first batch consisting of CEU/GBR/FIN/TSI samples, and the second and third batch with YRI and some CEU samples. Total RNA was extracted from cell pellets using the TRIzol Reagent (Ambion). The pellets had been frozen at ECACC without any additives like RNAlater or Trizol. In Geneva they were thawed, 1mL of trizol was added in each sample, and the samples were transferred to eppendorf tubes. The rest of the protocol followed the manufacturer's guidelines. No DNAse treatment was done to the RNA samples. The RNA quality was assessed by Agilent Bioanalyzer RNA 6000 Nano Kit according to the manufacturer's instructions. The sample information includes a visual inspection of RNA quality (degradation), in the scale 0, 0.5, 1. RNA quantity was measured by Qubit 2.0 (Invitrogen) using the RNA Broad range kit according to the manufacturer's instructions.|INSDC center alias;;Geuvadis|INSDC center name;;Geuvadis|INSDC first public;;2012-11-06T17:02:05Z|INSDC last update;;2018-03-08T16:06:54Z|INSDC status;;public|population;;TSI|Sample Name;;ERS185219|SRA accession;;ERS185219|Strain;;lymphoblastoid cell line|Title;;NA20510
+#&gt;                                                     experiment_attributes
+#&gt; 1 Experimental Factor: laboratory;;1|Experimental Factor: population;;TSI
+#&gt; 2 Experimental Factor: laboratory;;1|Experimental Factor: population;;CEU
+#&gt; 3 Experimental Factor: laboratory;;2|Experimental Factor: population;;FIN
+#&gt; 4 Experimental Factor: laboratory;;1|Experimental Factor: population;;CEU
+#&gt; 5 Experimental Factor: laboratory;;2|Experimental Factor: population;;FIN
+#&gt; 6 Experimental Factor: laboratory;;3|Experimental Factor: population;;TSI
+#&gt;   spot_length  sample_name sample_title sample_bases sample_spots
+#&gt; 1          75 SAMEA1573446 GEUV:NA20508   4876174200     32507828
+#&gt; 2          75 SAMEA1573207 GEUV:NA12812   3348579900     22323866
+#&gt; 3          75 SAMEA1573500 GEUV:HG00315   5548298680     36501965
+#&gt; 4          75 SAMEA1573203 GEUV:NA12749   3572181450     23814543
+#&gt; 5          75 SAMEA1573346 GEUV:HG00377   5348693800     35188775
+#&gt; 6          75 SAMEA1573212 GEUV:NA20510   2370019050     15800127
+#&gt;         run_published       size run_total_bases run_total_spots num_reads
+#&gt; 1 2012-11-07 04:16:08 3623033347      4876174200        32507828         2
+#&gt; 2 2012-11-07 04:14:09 2432987749      3348579900        22323866         2
+#&gt; 3 2012-11-07 04:18:08 3993335999      5548298680        36501965         2
+#&gt; 4 2012-11-07 04:17:08 2543501984      3572181450        23814543         2
+#&gt; 5 2012-11-07 04:19:11 3678693525      5348693800        35188775         2
+#&gt; 6 2012-11-07 04:15:12 1634077963      2370019050        15800127         2
+#&gt;   num_spots
+#&gt; 1  32507828
+#&gt; 2  22323866
+#&gt; 3  36501965
+#&gt; 4  23814543
+#&gt; 5  35188775
+#&gt; 6  15800127
+#&gt;                                                                             read_info
+#&gt; 1 index:0,count:32507828,average:75,stdev:0|index:1,count:32507828,average:75,stdev:0
+#&gt; 2 index:0,count:22323866,average:75,stdev:0|index:1,count:22323866,average:75,stdev:0
+#&gt; 3 index:0,count:36501965,average:76,stdev:0|index:1,count:36501965,average:76,stdev:0
+#&gt; 4 index:0,count:23814543,average:75,stdev:0|index:1,count:23814543,average:75,stdev:0
+#&gt; 5 index:0,count:35188775,average:76,stdev:0|index:1,count:35188775,average:76,stdev:0
+#&gt; 6 index:0,count:15800127,average:75,stdev:0|index:1,count:15800127,average:75,stdev:0
+#&gt;                       run_alias run_center_name run_broker_name run_center
+#&gt; 1 E-GEUV-1:NA20508.1.M_111124_2        Geuvadis    ArrayExpress      UNIGE
+#&gt; 2 E-GEUV-1:NA12812.1.M_111124_4        Geuvadis    ArrayExpress      UNIGE
+#&gt; 3 E-GEUV-1:HG00315.2.M_111215_5        Geuvadis    ArrayExpress        CRG
+#&gt; 4 E-GEUV-1:NA12749.1.M_111124_2        Geuvadis    ArrayExpress      UNIGE
+#&gt; 5 E-GEUV-1:HG00377.2.M_120131_2        Geuvadis    ArrayExpress        CRG
+#&gt; 6 E-GEUV-1:NA20510.3.M_120202_3        Geuvadis    ArrayExpress      MPIMG
+#&gt;   aligned_reads%.chrm aligned_reads%.chrx aligned_reads%.chry
+#&gt; 1                3.84                2.45                0.01
+#&gt; 2                4.71                2.38                0.08
+#&gt; 3                5.42                3.26                0.01
+#&gt; 4                2.96                2.59                0.01
+#&gt; 5                5.50                3.02                0.01
+#&gt; 6                5.32                3.21                0.08
+#&gt;   bc_auc.all_reads_all_bases bc_auc.all_reads_annotated_bases
+#&gt; 1                 4487006736                       5937023036
+#&gt; 2                 3160774094                       4254962867
+#&gt; 3                 4986944225                       6978656596
+#&gt; 4                 3391969427                       4449918757
+#&gt; 5                 4790947777                       6808795523
+#&gt; 6                 2146937605                       3001028496
+#&gt;   bc_auc.unique_reads_all_bases bc_auc.unique_reads_annotated_bases
+#&gt; 1                    4031104159                          5553402006
+#&gt; 2                    2877609107                          3997629999
+#&gt; 3                    4651727114                          6551951006
+#&gt; 4                    3046407903                          4163370586
+#&gt; 5                    4448615007                          6371631019
+#&gt; 6                    2005862336                          2826588229
+#&gt;   bc_auc.all_% bc_auc.unique_% bc_frag.count bc_frag.kallisto_count
+#&gt; 1       132.32          137.76      31597417               28687997
+#&gt; 2       134.62          138.92      21812480               19707049
+#&gt; 3       139.94          140.85      35631267               32627309
+#&gt; 4       131.19          136.66      23281510               20759336
+#&gt; 5       142.12          143.23      34203246               31389193
+#&gt; 6       139.78          140.92      15532452               14286866
+#&gt;   bc_frag.kallisto_mean_length bc_frag.mean_length bc_frag.mode_length
+#&gt; 1                      195.032             923.168                 146
+#&gt; 2                      211.248            1179.931                 157
+#&gt; 3                      189.127            1343.918                 135
+#&gt; 4                      217.225             984.437                 156
+#&gt; 5                      187.503            2149.511                 135
+#&gt; 6                      181.631            1337.894                 135
+#&gt;   bc_frag.mode_length_count exon_fc.all_% exon_fc.unique_%
+#&gt; 1                    339861         83.68            93.12
+#&gt; 2                    195738         81.10            89.07
+#&gt; 3                    379357         88.52            94.97
+#&gt; 4                    207838         79.03            87.97
+#&gt; 5                    379030         89.91            96.92
+#&gt; 6                    176539         88.93            95.25
+#&gt;   exon_fc_count_all.total exon_fc_count_all.assigned exon_fc_count_unique.total
+#&gt; 1                44086639                   26441235                   44086639
+#&gt; 2                28613656                   17689077                   28613656
+#&gt; 3                39383364                   31539949                   39383364
+#&gt; 4                32328629                   18398884                   32328629
+#&gt; 5                38269668                   30753643                   38269668
+#&gt; 6                17366656                   13813455                   17366656
+#&gt;   exon_fc_count_unique.assigned gene_fc.all_% gene_fc.unique_%
+#&gt; 1                      26441235         84.22            88.09
+#&gt; 2                      17689077         81.48            84.20
+#&gt; 3                      31539949         88.87            89.32
+#&gt; 4                      18398884         79.88            83.35
+#&gt; 5                      30753643         90.05            90.75
+#&gt; 6                      13813455         89.04            89.83
+#&gt;   gene_fc_count_all.total gene_fc_count_all.assigned gene_fc_count_unique.total
+#&gt; 1                44086639                   26612458                   44086639
+#&gt; 2                28613656                   17773582                   28613656
+#&gt; 3                39383364                   31666596                   39383364
+#&gt; 4                32328629                   18597797                   32328629
+#&gt; 5                38269668                   30800684                   38269668
+#&gt; 6                17366656                   13830598                   17366656
+#&gt;   gene_fc_count_unique.assigned intron_sum intron_sum_%
+#&gt; 1                      25012479  114005967         2.54
+#&gt; 2                      16721445  132732157         4.20
+#&gt; 3                      29663835   67507957         1.35
+#&gt; 4                      17433271  152366351         4.49
+#&gt; 5                      28797127   39915997         0.83
+#&gt; 6                      13027645   29062312         1.35
+#&gt;   star.%_of_chimeric_reads star.%_of_chimeric_reads2
+#&gt; 1                     0.94                         0
+#&gt; 2                     0.89                         0
+#&gt; 3                     1.16                         0
+#&gt; 4                     0.74                         0
+#&gt; 5                     1.12                         0
+#&gt; 6                     0.59                         0
+#&gt;   star.%_of_reads_mapped_to_multiple_loci
+#&gt; 1                                    9.86
+#&gt; 2                                    8.75
+#&gt; 3                                    6.63
+#&gt; 4                                    9.93
+#&gt; 5                                    7.02
+#&gt; 6                                    6.52
+#&gt;   star.%_of_reads_mapped_to_multiple_loci2
+#&gt; 1                                        0
+#&gt; 2                                        0
+#&gt; 3                                        0
+#&gt; 4                                        0
+#&gt; 5                                        0
+#&gt; 6                                        0
+#&gt;   star.%_of_reads_mapped_to_too_many_loci
+#&gt; 1                                    0.06
+#&gt; 2                                    0.06
+#&gt; 3                                    0.03
+#&gt; 4                                    0.07
+#&gt; 5                                    0.03
+#&gt; 6                                    0.03
+#&gt;   star.%_of_reads_mapped_to_too_many_loci2 star.%_of_reads_unmapped:_other
+#&gt; 1                                        0                            0.01
+#&gt; 2                                        0                            0.02
+#&gt; 3                                        0                            0.02
+#&gt; 4                                        0                            0.02
+#&gt; 5                                        0                            0.02
+#&gt; 6                                        0                            0.02
+#&gt;   star.%_of_reads_unmapped:_other2
+#&gt; 1                                0
+#&gt; 2                                0
+#&gt; 3                                0
+#&gt; 4                                0
+#&gt; 5                                0
+#&gt; 6                                0
+#&gt;   star.%_of_reads_unmapped:_too_many_mismatches
+#&gt; 1                                             0
+#&gt; 2                                             0
+#&gt; 3                                             0
+#&gt; 4                                             0
+#&gt; 5                                             0
+#&gt; 6                                             0
+#&gt;   star.%_of_reads_unmapped:_too_many_mismatches2
+#&gt; 1                                              0
+#&gt; 2                                              0
+#&gt; 3                                              0
+#&gt; 4                                              0
+#&gt; 5                                              0
+#&gt; 6                                              0
+#&gt;   star.%_of_reads_unmapped:_too_short star.%_of_reads_unmapped:_too_short2
+#&gt; 1                                2.72                                    0
+#&gt; 2                                2.21                                    0
+#&gt; 3                                2.33                                    0
+#&gt; 4                                2.15                                    0
+#&gt; 5                                2.75                                    0
+#&gt; 6                                1.64                                    0
+#&gt;   star.all_mapped_reads star.all_mapped_reads2 star.average_input_read_length
+#&gt; 1              31597417                      0                            150
+#&gt; 2              21812480                      0                            150
+#&gt; 3              35631267                      0                            152
+#&gt; 4              23281510                      0                            150
+#&gt; 5              34203246                      0                            152
+#&gt; 6              15532452                      0                            150
+#&gt;   star.average_input_read_length2 star.average_mapped_length
+#&gt; 1                               0                     148.21
+#&gt; 2                               0                     148.43
+#&gt; 3                               0                     150.14
+#&gt; 4                               0                     148.40
+#&gt; 5                               0                     150.03
+#&gt; 6                               0                     148.17
+#&gt;   star.average_mapped_length2 star.deletion_average_length
+#&gt; 1                           0                         1.60
+#&gt; 2                           0                         1.62
+#&gt; 3                           0                         1.50
+#&gt; 4                           0                         1.64
+#&gt; 5                           0                         1.55
+#&gt; 6                           0                         1.46
+#&gt;   star.deletion_average_length2 star.deletion_rate_per_base
+#&gt; 1                             0                        0.01
+#&gt; 2                             0                        0.01
+#&gt; 3                             0                        0.01
+#&gt; 4                             0                        0.01
+#&gt; 5                             0                        0.01
+#&gt; 6                             0                        0.01
+#&gt;   star.deletion_rate_per_base2 star.insertion_average_length
+#&gt; 1                            0                          1.35
+#&gt; 2                            0                          1.37
+#&gt; 3                            0                          1.30
+#&gt; 4                            0                          1.30
+#&gt; 5                            0                          1.31
+#&gt; 6                            0                          1.26
+#&gt;   star.insertion_average_length2 star.insertion_rate_per_base
+#&gt; 1                              0                         0.01
+#&gt; 2                              0                         0.01
+#&gt; 3                              0                         0.01
+#&gt; 4                              0                         0.01
+#&gt; 5                              0                         0.01
+#&gt; 6                              0                         0.01
+#&gt;   star.insertion_rate_per_base2 star.mapping_speed,_million_of_reads_per_hour
+#&gt; 1                             0                                        281.32
+#&gt; 2                             0                                        278.08
+#&gt; 3                             0                                        353.24
+#&gt; 4                             0                                        267.91
+#&gt; 5                             0                                        329.04
+#&gt; 6                             0                                        342.65
+#&gt;   star.mapping_speed,_million_of_reads_per_hour2 star.mismatch_rate_per_base,_%
+#&gt; 1                                              0                           0.58
+#&gt; 2                                              0                           0.47
+#&gt; 3                                              0                           0.43
+#&gt; 4                                              0                           0.40
+#&gt; 5                                              0                           0.45
+#&gt; 6                                              0                           0.47
+#&gt;   star.mismatch_rate_per_base,_%2 star.number_of_chimeric_reads
+#&gt; 1                               0                        304080
+#&gt; 2                               0                        198970
+#&gt; 3                               0                        425006
+#&gt; 4                               0                        177343
+#&gt; 5                               0                        394268
+#&gt; 6                               0                         93040
+#&gt;   star.number_of_chimeric_reads2 star.number_of_input_reads
+#&gt; 1                              0                   32507828
+#&gt; 2                              0                   22323866
+#&gt; 3                              0                   36501965
+#&gt; 4                              0                   23814543
+#&gt; 5                              0                   35188775
+#&gt; 6                              0                   15800127
+#&gt;   star.number_of_input_reads2 star.number_of_reads_mapped_to_multiple_loci
+#&gt; 1                           0                                      3203701
+#&gt; 2                           0                                      1953159
+#&gt; 3                           0                                      2421483
+#&gt; 4                           0                                      2365933
+#&gt; 5                           0                                      2471803
+#&gt; 6                           0                                      1029787
+#&gt;   star.number_of_reads_mapped_to_multiple_loci2
+#&gt; 1                                             0
+#&gt; 2                                             0
+#&gt; 3                                             0
+#&gt; 4                                             0
+#&gt; 5                                             0
+#&gt; 6                                             0
+#&gt;   star.number_of_reads_mapped_to_too_many_loci
+#&gt; 1                                        20436
+#&gt; 2                                        14297
+#&gt; 3                                        11077
+#&gt; 4                                        17372
+#&gt; 5                                        11281
+#&gt; 6                                         5478
+#&gt;   star.number_of_reads_mapped_to_too_many_loci2
+#&gt; 1                                             0
+#&gt; 2                                             0
+#&gt; 3                                             0
+#&gt; 4                                             0
+#&gt; 5                                             0
+#&gt; 6                                             0
+#&gt;   star.number_of_reads_unmapped:_other star.number_of_reads_unmapped:_other2
+#&gt; 1                                 4330                                     0
+#&gt; 2                                 3797                                     0
+#&gt; 3                                 8350                                     0
+#&gt; 4                                 4292                                     0
+#&gt; 5                                 6600                                     0
+#&gt; 6                                 2606                                     0
+#&gt;   star.number_of_reads_unmapped:_too_many_mismatches
+#&gt; 1                                                  0
+#&gt; 2                                                  0
+#&gt; 3                                                  0
+#&gt; 4                                                  0
+#&gt; 5                                                  0
+#&gt; 6                                                  0
+#&gt;   star.number_of_reads_unmapped:_too_many_mismatches2
+#&gt; 1                                                   0
+#&gt; 2                                                   0
+#&gt; 3                                                   0
+#&gt; 4                                                   0
+#&gt; 5                                                   0
+#&gt; 6                                                   0
+#&gt;   star.number_of_reads_unmapped:_too_short
+#&gt; 1                                   885645
+#&gt; 2                                   493292
+#&gt; 3                                   851271
+#&gt; 4                                   511369
+#&gt; 5                                   967648
+#&gt; 6                                   259591
+#&gt;   star.number_of_reads_unmapped:_too_short2 star.number_of_splices:_at/ac
+#&gt; 1                                         0                          5771
+#&gt; 2                                         0                          3297
+#&gt; 3                                         0                          6699
+#&gt; 4                                         0                          3576
+#&gt; 5                                         0                          6260
+#&gt; 6                                         0                          2602
+#&gt;   star.number_of_splices:_at/ac2 star.number_of_splices:_annotated_(sjdb)
+#&gt; 1                              0                                        0
+#&gt; 2                              0                                        0
+#&gt; 3                              0                                        0
+#&gt; 4                              0                                        0
+#&gt; 5                              0                                        0
+#&gt; 6                              0                                        0
+#&gt;   star.number_of_splices:_annotated_(sjdb)2 star.number_of_splices:_gc/ag
+#&gt; 1                                         0                         70736
+#&gt; 2                                         0                         39374
+#&gt; 3                                         0                         81695
+#&gt; 4                                         0                         46323
+#&gt; 5                                         0                         77631
+#&gt; 6                                         0                         32725
+#&gt;   star.number_of_splices:_gc/ag2 star.number_of_splices:_gt/ag
+#&gt; 1                              0                      10360293
+#&gt; 2                              0                       6042510
+#&gt; 3                              0                      12198197
+#&gt; 4                              0                       6632274
+#&gt; 5                              0                      11914541
+#&gt; 6                              0                       4817828
+#&gt;   star.number_of_splices:_gt/ag2 star.number_of_splices:_non-canonical
+#&gt; 1                              0                                 22871
+#&gt; 2                              0                                 14958
+#&gt; 3                              0                                 38809
+#&gt; 4                              0                                 18031
+#&gt; 5                              0                                 43545
+#&gt; 6                              0                                 10566
+#&gt;   star.number_of_splices:_non-canonical2 star.number_of_splices:_total
+#&gt; 1                                      0                      10459671
+#&gt; 2                                      0                       6100139
+#&gt; 3                                      0                      12325400
+#&gt; 4                                      0                       6700204
+#&gt; 5                                      0                      12041977
+#&gt; 6                                      0                       4863721
+#&gt;   star.number_of_splices:_total2 star.uniquely_mapped_reads_%
+#&gt; 1                              0                        87.34
+#&gt; 2                              0                        88.96
+#&gt; 3                              0                        90.98
+#&gt; 4                              0                        87.83
+#&gt; 5                              0                        90.17
+#&gt; 6                              0                        91.79
+#&gt;   star.uniquely_mapped_reads_%2 star.uniquely_mapped_reads_number
+#&gt; 1                             0                          28393716
+#&gt; 2                             0                          19859321
+#&gt; 3                             0                          33209784
+#&gt; 4                             0                          20915577
+#&gt; 5                             0                          31731443
+#&gt; 6                             0                          14502665
+#&gt;   star.uniquely_mapped_reads_number2 junction_count junction_coverage
+#&gt; 1                                  0         208563          10751073
+#&gt; 2                                  0         179052           6310384
+#&gt; 3                                  0         217431          12581781
+#&gt; 4                                  0         192621           6940931
+#&gt; 5                                  0         198828          12487692
+#&gt; 6                                  0         164382           4986477
+#&gt;   junction_avg_coverage
+#&gt; 1              51.54832
+#&gt; 2              35.24330
+#&gt; 3              57.86563
+#&gt; 4              36.03413
+#&gt; 5              62.80651
+#&gt; 6              30.33469</div><div class='input'>
 <span class='co'>## Locate and read the GTEx bladder metadata</span>
 <span class='no'>gtex_bladder_meta</span> <span class='kw'>&lt;-</span> <span class='fu'>read_metadata</span>(
     <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span>(
