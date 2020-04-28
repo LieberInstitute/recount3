@@ -33,5 +33,7 @@ on the \code{organism} and the \code{home_type}.
 }
 \examples{
 
+## List the different available `project_home` options for the default
+## arguments
 project_home_available()
 }

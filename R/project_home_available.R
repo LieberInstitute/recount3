@@ -13,6 +13,8 @@
 #'
 #' @examples
 #'
+#' ## List the different available `project_home` options for the default
+#' ## arguments
 #' project_home_available()
 project_home_available <-
     function(home_type = c("data_source", "collection"),

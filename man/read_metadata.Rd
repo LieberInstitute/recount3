@@ -27,6 +27,7 @@ local_ERP001942_meta <- file_retrieve(url = url_ERP001942_meta)
 
 ## Read the metadata
 ERP001942_meta <- read_metadata(local_ERP001942_meta)
+head(ERP001942_meta)
 
 ## Locate and read the GTEx bladder metadata
 gtex_bladder_meta <- read_metadata(

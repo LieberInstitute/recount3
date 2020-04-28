@@ -22,6 +22,9 @@ your computer, then this function will list all the files inside \code{url}.
 }
 \examples{
 
+## List the contents in a URL
 file_list("http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/")
-## file_list(system.file("inst", package = "recount3"))
+
+## List the contents in a directory
+file_list(getwd())
 }
