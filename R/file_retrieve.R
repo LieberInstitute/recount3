@@ -1,9 +1,9 @@
-#' Download a cache a remote file
+#' Download a remote file and cache it to re-use later
 #'
 #' @param url A `character(1)` with the file URL or the actual local path in
 #' which case, it won't be cached.
-#' @param bfc A `BiocFileCache` object
-#' [BiocFileCache-class][BiocFileCache::BiocFileCache-class].
+#' @param bfc A [BiocFileCache-class][BiocFileCache::BiocFileCache-class]
+#' object where the files will be cached to.
 #'
 #' @return A `character(1)` with the path to the cached file.
 #' @export

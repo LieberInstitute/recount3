@@ -2,7 +2,7 @@
 % Please edit documentation in R/file_retrieve.R
 \name{file_retrieve}
 \alias{file_retrieve}
-\title{Download a cache a remote file}
+\title{Download a remote file and cache it to re-use later}
 \usage{
 file_retrieve(url, bfc = BiocFileCache::BiocFileCache())
 }
@@ -10,14 +10,14 @@ file_retrieve(url, bfc = BiocFileCache::BiocFileCache())
 \item{url}{A \code{character(1)} with the file URL or the actual local path in
 which case, it won't be cached.}
 
-\item{bfc}{A \code{BiocFileCache} object
-\link[BiocFileCache:BiocFileCache-class]{BiocFileCache-class}.}
+\item{bfc}{A \link[BiocFileCache:BiocFileCache-class]{BiocFileCache-class}
+object where the files will be cached to.}
 }
 \value{
 A \code{character(1)} with the path to the cached file.
 }
 \description{
-Download a cache a remote file
+Download a remote file and cache it to re-use later
 }
 \examples{
 

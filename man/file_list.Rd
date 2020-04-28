@@ -9,8 +9,8 @@ file_list(url, bfc = BiocFileCache::BiocFileCache())
 \arguments{
 \item{url}{A \code{character(1)} with either a URL or a local file path.}
 
-\item{bfc}{A \code{BiocFileCache} object
-\link[BiocFileCache:BiocFileCache-class]{BiocFileCache-class}.}
+\item{bfc}{A \link[BiocFileCache:BiocFileCache-class]{BiocFileCache-class}
+object where the files will be cached to.}
 }
 \value{
 A \code{character()} vector with the available options.
