@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • recount3</title>
+<title>Download a cache a remote file — file_retrieve • recount3</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Download a cache a remote file — file_retrieve" />
+<meta property="og:description" content="Download a cache a remote file" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -66,7 +67,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -128,66 +129,45 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Download a cache a remote file</h1>
+    <small class="dont-index">Source: <a href='https://github.com/LieberInstitute/recount3/blob/master/R/file_retrieve.R'><code>R/file_retrieve.R</code></a></small>
+    <div class="hidden name"><code>file_retrieve.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Download a cache a remote file</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>file_retrieve</span>(<span class='no'>url</span>, <span class='kw'>bfc</span> <span class='kw'>=</span> <span class='kw pkg'>BiocFileCache</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html'>BiocFileCache</a></span>())</pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="file_list.html">file_list()</a></code> </p>
-        </td>
-        <td><p>Find available sub-directories for a given URL</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="file_locate_url.html">file_locate_url()</a></code> </p>
-        </td>
-        <td><p>Construct the URL to access a particular <code>recount3</code> file</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="file_retrieve.html">file_retrieve()</a></code> </p>
-        </td>
-        <td><p>Download a cache a remote file</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="project_home_available.html">project_home_available()</a></code> </p>
-        </td>
-        <td><p>Find available project home options</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="read_metadata.html">read_metadata()</a></code> </p>
-        </td>
-        <td><p>Read a metadata file</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>url</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> with the file URL or the actual local path in
+which case, it won't be cached.</p></td>
+    </tr>
+    <tr>
+      <th>bfc</th>
+      <td><p>A <code>BiocFileCache</code> object
+<a href='https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html'>BiocFileCache-class</a>.</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> with the path to the cached file.</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+<span class='co'>## Download the metadata file for project ERP001942</span>
+<span class='no'>url_ERP001942_meta</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(<span class='st'>"ERP001942"</span>, <span class='st'>"data_sources/sra"</span>)
+<span class='no'>local_ERP001942_meta</span> <span class='kw'>&lt;-</span> <span class='fu'>file_retrieve</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='no'>url_ERP001942_meta</span>)</div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/42/ERP001942/sra.metadata.ERP001942.MD.gz'</span></div><div class='input'><span class='no'>local_ERP001942_meta</span></div><div class='output co'>#&gt;                                                                     BFC3 
+#&gt; "/tmp/RtmpKsTA40/BiocFileCache/6da3eb1721a_sra.metadata.ERP001942.MD.gz" </div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
