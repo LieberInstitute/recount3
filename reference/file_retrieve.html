@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Download a cache a remote file — file_retrieve • recount3</title>
+<title>Download a remote file and cache it to re-use later — file_retrieve • recount3</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Download a cache a remote file — file_retrieve" />
-<meta property="og:description" content="Download a cache a remote file" />
+<meta property="og:title" content="Download a remote file and cache it to re-use later — file_retrieve" />
+<meta property="og:description" content="Download a remote file and cache it to re-use later" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -131,13 +131,13 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Download a cache a remote file</h1>
+    <h1>Download a remote file and cache it to re-use later</h1>
     <small class="dont-index">Source: <a href='https://github.com/LieberInstitute/recount3/blob/master/R/file_retrieve.R'><code>R/file_retrieve.R</code></a></small>
     <div class="hidden name"><code>file_retrieve.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Download a cache a remote file</p>
+    <p>Download a remote file and cache it to re-use later</p>
     </div>
 
     <pre class="usage"><span class='fu'>file_retrieve</span>(<span class='no'>url</span>, <span class='kw'>bfc</span> <span class='kw'>=</span> <span class='kw pkg'>BiocFileCache</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html'>BiocFileCache</a></span>())</pre>
@@ -152,8 +152,8 @@ which case, it won't be cached.</p></td>
     </tr>
     <tr>
       <th>bfc</th>
-      <td><p>A <code>BiocFileCache</code> object
-<a href='https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html'>BiocFileCache-class</a>.</p></td>
+      <td><p>A <a href='https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html'>BiocFileCache-class</a>
+object where the files will be cached to.</p></td>
     </tr>
     </table>
 
@@ -165,8 +165,8 @@ which case, it won't be cached.</p></td>
     <pre class="examples"><div class='input'>
 <span class='co'>## Download the metadata file for project ERP001942</span>
 <span class='no'>url_ERP001942_meta</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(<span class='st'>"ERP001942"</span>, <span class='st'>"data_sources/sra"</span>)
-<span class='no'>local_ERP001942_meta</span> <span class='kw'>&lt;-</span> <span class='fu'>file_retrieve</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='no'>url_ERP001942_meta</span>)</div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/42/ERP001942/sra.metadata.ERP001942.MD.gz'</span></div><div class='input'><span class='no'>local_ERP001942_meta</span></div><div class='output co'>#&gt;                                                                     BFC3 
-#&gt; "/tmp/RtmpdJHw1Q/BiocFileCache/73a4ed9a579_sra.metadata.ERP001942.MD.gz" </div></pre>
+<span class='no'>local_ERP001942_meta</span> <span class='kw'>&lt;-</span> <span class='fu'>file_retrieve</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='no'>url_ERP001942_meta</span>)</div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/42/ERP001942/sra.metadata.ERP001942.MD.gz'</span></div><div class='input'><span class='no'>local_ERP001942_meta</span></div><div class='output co'>#&gt;                                                                    BFC3 
+#&gt; "/tmp/Rtmp5V7639/BiocFileCache/738d50ce8a_sra.metadata.ERP001942.MD.gz" </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
