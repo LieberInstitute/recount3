@@ -5,7 +5,7 @@
 #' your computer, then this function will list all the files inside `url`.
 #'
 #' @param url A `character(1)` with either a URL or a local file path.
-#' @inheritParams file_locate_url
+#' @inheritParams file_retrieve
 #'
 #' @return A `character()` vector with the available options.
 #' @export

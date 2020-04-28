@@ -6,6 +6,7 @@
 #' @param home_type A `character(1)` specifying whether you are looking for
 #' the core data sources for `recount3` or collections which are user-created.
 #' @inheritParams file_locate_url
+#' @inheritParams file_retrieve
 #'
 #' @return A `character()` vector with the available `project_home` options.
 #' @export

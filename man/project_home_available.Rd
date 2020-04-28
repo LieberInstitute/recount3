@@ -20,6 +20,9 @@ download data from.}
 
 \item{recount3_url}{A \code{character(1)} specifying the home URL for \code{recount3}
 or a local directory where you have mirrored \code{recount3}.}
+
+\item{bfc}{A \code{BiocFileCache} object
+\link[BiocFileCache:BiocFileCache-class]{BiocFileCache-class}.}
 }
 \value{
 A \code{character()} vector with the available \code{project_home} options.
