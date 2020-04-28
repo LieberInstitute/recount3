@@ -40,4 +40,6 @@ Depends:
     SummarizedExperiment
 Imports: 
     BiocFileCache,
-    AnnotationHub
+    AnnotationHub,
+    methods,
+    XML
