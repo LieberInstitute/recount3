@@ -9,6 +9,8 @@
 #' @inheritParams file_retrieve
 #'
 #' @return A `character()` vector with the available `project_home` options.
+#'
+#' @family internal functions for accessing the recount3 data
 #' @export
 #'
 #' @examples

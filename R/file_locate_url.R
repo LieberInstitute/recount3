@@ -22,6 +22,7 @@
 #' @return A `character(1)` with the URL for the file of interest.
 #' @export
 #'
+#' @family internal functions for accessing the recount3 data
 #' @examples
 #'
 #' ## Example for a metadata file

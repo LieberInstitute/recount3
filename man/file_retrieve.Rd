@@ -31,3 +31,14 @@ url_ERP001942_gene <- file_locate_url("ERP001942", "data_sources/sra", type = "g
 local_ERP001942_gene <- file_retrieve(url = url_ERP001942_gene)
 local_ERP001942_gene
 }
+\seealso{
+Other internal functions for accessing the recount3 data: 
+\code{\link{annotation_ext}()},
+\code{\link{create_rse_manual}()},
+\code{\link{file_locate_url_annotation}()},
+\code{\link{file_locate_url}()},
+\code{\link{project_home_available}()},
+\code{\link{read_counts}()},
+\code{\link{read_metadata}()}
+}
+\concept{internal functions for accessing the recount3 data}

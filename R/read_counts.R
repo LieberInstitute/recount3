@@ -16,6 +16,7 @@
 #' <https://doi.org/10.12688/f1000research.12223.1> for details on the
 #' base-pair coverage counts used in recount2 and recount3.
 #'
+#' @family internal functions for accessing the recount3 data
 #' @examples
 #'
 #' ## Download the gene counts file for project ERP001942
@@ -40,6 +41,7 @@
 #' ## counts. This is more easily done once assembled into a
 #' ## RangedSummarizedExperiment object.
 read_counts <- function(counts_file) {
+    ## Maybe switch to readr, specify column classes
     counts <- read.delim(counts_file, skip = 2, row.names = 1)
     return(counts)
 }

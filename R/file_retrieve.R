@@ -10,6 +10,7 @@
 #' @importFrom BiocFileCache bfcrpath
 #' @importFrom methods is
 #'
+#' @family internal functions for accessing the recount3 data
 #' @examples
 #'
 #' ## Download the metadata file for project ERP001942

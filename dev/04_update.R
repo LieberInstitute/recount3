@@ -13,6 +13,7 @@ rstudioapi::navigateToFile(here::here("dev", "03_core_files.R"))
 ## macOS: shift + command + A
 ## Windows: shift + control + A
 styler::style_pkg(transformers = biocthis::bioc_style())
+styler::style_dir(here::here("inst"), transformers = biocthis::bioc_style())
 styler::style_dir(here::here("dev"), transformers = biocthis::bioc_style())
 styler::style_dir(
     here::here("vignettes"),

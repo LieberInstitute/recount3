@@ -22,6 +22,7 @@
 #' <https://doi.org/10.12688/f1000research.12223.1> for details on the
 #' base-pair coverage counts used in recount2 and recount3.
 #'
+#' @family internal functions for accessing the recount3 data
 #' @examples
 #'
 #' rse_gene_ERP001942_manual <- create_rse_manual("ERP001942", "data_sources/sra")
@@ -71,30 +72,9 @@ create_rse_manual <- function(project,
         Sys.time(),
         "downloading and reading the feature information"
     ))
-    ## Define the base directories
-    base_dir <- switch(type,
-        gene = "gene_sums",
-        exon = "exon_sums"
-    )
-
-    ## Define the annotation to work with
-    ann_ext <-
-        annotation_ext(organism = organism, annotation = annotation)
-
-    base_file <- paste0(organism, ".", base_dir, ".", ann_ext)
-    url <-
-        file.path(
-            recount3_url,
-            organism,
-            "annotations",
-            base_dir,
-            paste0(base_file, ".gtf.gz")
-        )
-    names(url) <- base_file
-
     ## Read the feature information
     feature_info <-
-        rtracklayer::import(file_retrieve(url = url, bfc = bfc))
+        rtracklayer::import(file_retrieve(url = file_locate_url_annotation(type = type, organism = organism, annotation = annotation, recount3_url = recount3_url), bfc = bfc))
 
 
     message(

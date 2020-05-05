@@ -28,3 +28,14 @@ corresponding file extension used in the \code{recount3} files.
 annotation_ext("human")
 annotation_ext("mouse")
 }
+\seealso{
+Other internal functions for accessing the recount3 data: 
+\code{\link{create_rse_manual}()},
+\code{\link{file_locate_url_annotation}()},
+\code{\link{file_locate_url}()},
+\code{\link{file_retrieve}()},
+\code{\link{project_home_available}()},
+\code{\link{read_counts}()},
+\code{\link{read_metadata}()}
+}
+\concept{internal functions for accessing the recount3 data}

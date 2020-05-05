@@ -12,6 +12,7 @@
 #' @export
 #' @importFrom utils read.delim
 #'
+#' @family internal functions for accessing the recount3 data
 #' @examples
 #'
 #' ## Download the metadata file for project ERP001942

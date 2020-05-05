@@ -53,3 +53,14 @@ file_locate_url("ERP001942", "data_sources/sra")
 ## Example for a BigWig file
 file_locate_url("ERP001942", "data_sources/sra", "bw", "human", "ERR204900")
 }
+\seealso{
+Other internal functions for accessing the recount3 data: 
+\code{\link{annotation_ext}()},
+\code{\link{create_rse_manual}()},
+\code{\link{file_locate_url_annotation}()},
+\code{\link{file_retrieve}()},
+\code{\link{project_home_available}()},
+\code{\link{read_counts}()},
+\code{\link{read_metadata}()}
+}
+\concept{internal functions for accessing the recount3 data}

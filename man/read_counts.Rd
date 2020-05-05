@@ -46,3 +46,14 @@ summary(ERP001942_gene_counts[, seq_len(6)])
 \url{https://doi.org/10.12688/f1000research.12223.1} for details on the
 base-pair coverage counts used in recount2 and recount3.
 }
+\seealso{
+Other internal functions for accessing the recount3 data: 
+\code{\link{annotation_ext}()},
+\code{\link{create_rse_manual}()},
+\code{\link{file_locate_url_annotation}()},
+\code{\link{file_locate_url}()},
+\code{\link{file_retrieve}()},
+\code{\link{project_home_available}()},
+\code{\link{read_metadata}()}
+}
+\concept{internal functions for accessing the recount3 data}

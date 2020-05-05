@@ -11,6 +11,7 @@
 #' @return A `character(1)` with the annotation file extension to be used.
 #' @export
 #'
+#' @family internal functions for accessing the recount3 data
 #' @examples
 #'
 #' annotation_ext("human")
