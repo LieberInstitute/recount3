@@ -16,7 +16,7 @@ project_home_available(
 the core data sources for \code{recount3} or collections which are user-created.}
 
 \item{organism}{A \code{character(1)} specifying which organism you want to
-download data from.}
+download data from. Supported options are \code{"human"} or \code{"mouse"}.}
 
 \item{recount3_url}{A \code{character(1)} specifying the home URL for \code{recount3}
 or a local directory where you have mirrored \code{recount3}.}

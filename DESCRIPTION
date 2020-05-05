@@ -27,20 +27,22 @@ BugReports: https://github.com/LieberInstitute/recount3/issues
 biocViews: Coverage, DifferentialExpression, GeneExpression, RNASeq, Sequencing,
     Software, DataImport
 Suggests: 
-    knitr,
-    rmarkdown,
     BiocStyle,
+    covr,
     knitcitations,
-    sessioninfo,
-    testthat,
+    knitr,
     RefManageR,
-    covr
+    rmarkdown,
+    sessioninfo,
+    testthat
 VignetteBuilder: knitr
 Depends: 
     SummarizedExperiment
 Imports: 
-    BiocFileCache,
     AnnotationHub,
+    BiocFileCache,
     methods,
-    XML,
-    utils
+    rtracklayer,
+    S4Vectors,
+    utils,
+    XML

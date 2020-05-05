@@ -11,7 +11,7 @@
 #' counts, exon counts, exon-exon junctions or base-pair BigWig coverage files
 #' (one per `sample`).
 #' @param organism A `character(1)` specifying which organism you want to
-#' download data from.
+#' download data from. Supported options are `"human"` or `"mouse"`.
 #' @param sample A `character(1)` with the sample ID you want to download.
 #' @param annotation A `character(1)` specifying which annotation you want to
 #' download. Only used when `type` is either `gene` or `exon`.
@@ -55,13 +55,7 @@ file_locate_url <-
         )
 
         ## Define the annotation to work with
-        ann_ext <- switch(
-            annotation,
-            gencode_v26 = "G026",
-            gencode_v29 = "G029",
-            ercc = "ERCC",
-            sirv = "SIRV"
-        )
+        ann_ext <- annotation_ext(organism = organism, annotation = annotation)
 
         ## Define the file extensions
         file_ext <- paste0(".", switch(

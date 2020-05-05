@@ -26,7 +26,7 @@ counts, exon counts, exon-exon junctions or base-pair BigWig coverage files
 (one per \code{sample}).}
 
 \item{organism}{A \code{character(1)} specifying which organism you want to
-download data from.}
+download data from. Supported options are \code{"human"} or \code{"mouse"}.}
 
 \item{sample}{A \code{character(1)} with the sample ID you want to download.}
 

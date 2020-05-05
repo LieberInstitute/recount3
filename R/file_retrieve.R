@@ -16,6 +16,11 @@
 #' url_ERP001942_meta <- file_locate_url("ERP001942", "data_sources/sra")
 #' local_ERP001942_meta <- file_retrieve(url = url_ERP001942_meta)
 #' local_ERP001942_meta
+#'
+#' ## Download the gene counts file for project ERP001942
+#' url_ERP001942_gene <- file_locate_url("ERP001942", "data_sources/sra", type = "gene")
+#' local_ERP001942_gene <- file_retrieve(url = url_ERP001942_gene)
+#' local_ERP001942_gene
 file_retrieve <- function(url, bfc = BiocFileCache::BiocFileCache()) {
     ## In case the url is a local file, there's no need to cache it then
     if (file.exists(url)) {
