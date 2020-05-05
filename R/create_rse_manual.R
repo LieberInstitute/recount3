@@ -41,46 +41,92 @@ create_rse_manual <- function(project,
     project_home <- match.arg(project_home)
     annotation <- match.arg(annotation)
 
-    message(paste(Sys.time(), "downloading and reading the counts"))
-    counts <- read_counts(
-        file_retrieve(
-            url = file_locate_url(project = project, project_home = project_home, type = type, organism = organism, annotation = annotation, recount3_url = recount3_url),
-            bfc = bfc
-        )
-    )
-
+    ## First the metadata which is the smallest
     message(paste(Sys.time(), "downloading and reading the metadata"))
-    metadata <- read_metadata(
-        file_retrieve(
-            url = file_locate_url(project = project, project_home = project_home, type = "metadata", organism = organism, annotation = annotation, recount3_url = recount3_url),
-            bfc = bfc
-        )
+    metadata <- read_metadata(file_retrieve(
+        url = file_locate_url(
+            project = project,
+            project_home = project_home,
+            type = "metadata",
+            organism = organism,
+            annotation = annotation,
+            recount3_url = recount3_url
+        ),
+        bfc = bfc
+    ))
+
+    ## Add the URLs to the BigWig files
+    metadata$BigWigURL <- file_locate_url(
+        project = project,
+        project_home = project_home,
+        type = "bw",
+        organism = organism,
+        annotation = annotation,
+        recount3_url = recount3_url,
+        sample = metadata$run_acc
     )
 
 
-    message(paste(Sys.time(), "downloading and reading the feature information"))
+    message(paste(
+        Sys.time(),
+        "downloading and reading the feature information"
+    ))
     ## Define the base directories
-    base_dir <- switch(
-        type,
+    base_dir <- switch(type,
         gene = "gene_sums",
         exon = "exon_sums"
     )
 
     ## Define the annotation to work with
-    ann_ext <- annotation_ext(organism = organism, annotation = annotation)
+    ann_ext <-
+        annotation_ext(organism = organism, annotation = annotation)
 
     base_file <- paste0(organism, ".", base_dir, ".", ann_ext)
-    url <- file.path(recount3_url, organism, "annotations", base_dir, paste0(base_file, ".gtf.gz"))
+    url <-
+        file.path(
+            recount3_url,
+            organism,
+            "annotations",
+            base_dir,
+            paste0(base_file, ".gtf.gz")
+        )
     names(url) <- base_file
 
     ## Read the feature information
-    feature_info <- rtracklayer::import(file_retrieve(url = url, bfc = bfc))
+    feature_info <-
+        rtracklayer::import(file_retrieve(url = url, bfc = bfc))
+
+
+    message(
+        paste(
+            Sys.time(),
+            "downloading and reading the counts:",
+            nrow(metadata),
+            "samples across",
+            length(feature_info),
+            "features."
+        )
+    )
+    counts <- read_counts(file_retrieve(
+        url = file_locate_url(
+            project = project,
+            project_home = project_home,
+            type = type,
+            organism = organism,
+            annotation = annotation,
+            recount3_url = recount3_url
+        ),
+        bfc = bfc
+    ))
 
     ## Build the RSE object
-    message(paste(Sys.time(), "construcing the RangedSummarizedExperiment (rse) object"))
+    message(paste(
+        Sys.time(),
+        "construcing the RangedSummarizedExperiment (rse) object"
+    ))
     rse <- SummarizedExperiment::SummarizedExperiment(
         assays = list(counts = counts),
-        colData = S4Vectors::DataFrame(metadata),
+        colData = S4Vectors::DataFrame(metadata, check.names = FALSE),
         rowRanges = feature_info
     )
     return(rse)

@@ -28,7 +28,8 @@ counts, exon counts, exon-exon junctions or base-pair BigWig coverage files
 \item{organism}{A \code{character(1)} specifying which organism you want to
 download data from. Supported options are \code{"human"} or \code{"mouse"}.}
 
-\item{sample}{A \code{character(1)} with the sample ID you want to download.}
+\item{sample}{A \code{character()} vector with the sample ID(s) you want to
+download.}
 
 \item{annotation}{A \code{character(1)} specifying which annotation you want to
 download. Only used when \code{type} is either \code{gene} or \code{exon}.}
