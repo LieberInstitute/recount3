@@ -182,7 +182,7 @@ base-pair coverage counts used in recount2 and recount3.</p>
 
 <span class='co'>## Read the gene counts, take about 25 seconds</span>
 <span class='fu'><a href='https://rdrr.io/r/base/system.time.html'>system.time</a></span>(<span class='no'>ERP001942_gene_counts</span> <span class='kw'>&lt;-</span> <span class='fu'>read_counts</span>(<span class='no'>local_ERP001942_gene</span>))</div><div class='output co'>#&gt;    user  system elapsed 
-#&gt;  21.299   0.048  21.352 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>ERP001942_gene_counts</span>)</div><div class='output co'>#&gt; [1] 63856   667</div><div class='input'>
+#&gt;  17.289   0.011  17.310 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>ERP001942_gene_counts</span>)</div><div class='output co'>#&gt; [1] 63856   667</div><div class='input'>
 <span class='co'>## Explore the top left corner</span>
 <span class='no'>ERP001942_gene_counts</span>[<span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>), <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>)]</div><div class='output co'>#&gt;                   ERR205000 ERR204900 ERR188400 ERR188200 ERR188300 ERR188100
 #&gt; ENSG00000278704.1         0         0         0         0         0         0
