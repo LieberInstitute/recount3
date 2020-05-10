@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Find available project home options — project_home_available • recount3</title>
+<title>Internal function for creating a recount3 RangedSummarizedExperiment object — create_rse_manual • recount3</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,9 +46,11 @@
 
 
 
-<meta property="og:title" content="Find available project home options — project_home_available" />
-<meta property="og:description" content="This function finds the home for a given project (study) of interest based
-on the organism and the home_type." />
+<meta property="og:title" content="Internal function for creating a recount3 RangedSummarizedExperiment object — create_rse_manual" />
+<meta property="og:description" content="This function is used internally by create_rse() to construct a recount3
+RangedSummarizedExperiment-class
+object that contains the base-pair coverage counts at the gene or exon
+feature level for a given annotation." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -132,30 +134,45 @@ on the organism and the home_type." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Find available project home options</h1>
-    <small class="dont-index">Source: <a href='https://github.com/LieberInstitute/recount3/blob/master/R/project_home_available.R'><code>R/project_home_available.R</code></a></small>
-    <div class="hidden name"><code>project_home_available.Rd</code></div>
+    <h1>Internal function for creating a recount3 RangedSummarizedExperiment object</h1>
+    <small class="dont-index">Source: <a href='https://github.com/LieberInstitute/recount3/blob/master/R/create_rse_manual.R'><code>R/create_rse_manual.R</code></a></small>
+    <div class="hidden name"><code>create_rse_manual.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function finds the home for a given project (study) of interest based
-on the <code>organism</code> and the <code>home_type</code>.</p>
+    <p>This function is used internally by <code><a href='create_rse.html'>create_rse()</a></code> to construct a <code>recount3</code>
+<a href='https://rdrr.io/pkg/SummarizedExperiment/man/RangedSummarizedExperiment-class.html'>RangedSummarizedExperiment-class</a>
+object that contains the base-pair coverage counts at the <code>gene</code> or <code>exon</code>
+feature level for a given annotation.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>project_home_available</span>(
-  <span class='kw'>home_type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"data_source"</span>, <span class='st'>"collection"</span>),
+    <pre class="usage"><span class='fu'>create_rse_manual</span>(
+  <span class='no'>project</span>,
+  <span class='kw'>project_home</span> <span class='kw'>=</span> <span class='fu'><a href='project_home_available.html'>project_home_available</a></span>(<span class='kw'>organism</span> <span class='kw'>=</span> <span class='no'>organism</span>, <span class='kw'>recount3_url</span> <span class='kw'>=</span>
+    <span class='no'>recount3_url</span>),
+  <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"gene"</span>, <span class='st'>"exon"</span>),
   <span class='kw'>organism</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"human"</span>, <span class='st'>"mouse"</span>),
-  <span class='kw'>recount3_url</span> <span class='kw'>=</span> <span class='st'>"http://snaptron.cs.jhu.edu/data/temp/recount3"</span>,
-  <span class='kw'>bfc</span> <span class='kw'>=</span> <span class='kw pkg'>BiocFileCache</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html'>BiocFileCache</a></span>()
+  <span class='kw'>annotation</span> <span class='kw'>=</span> <span class='fu'><a href='annotation_options.html'>annotation_options</a></span>(<span class='no'>organism</span>),
+  <span class='kw'>bfc</span> <span class='kw'>=</span> <span class='kw pkg'>BiocFileCache</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html'>BiocFileCache</a></span>(),
+  <span class='kw'>recount3_url</span> <span class='kw'>=</span> <span class='st'>"http://snaptron.cs.jhu.edu/data/temp/recount3"</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>home_type</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> specifying whether you are looking for
-the core data sources for <code>recount3</code> or collections which are user-created.</p></td>
+      <th>project</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> with the ID for a given study.</p></td>
+    </tr>
+    <tr>
+      <th>project_home</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> with the home directory for the
+<code>project</code>. You can find these using <code><a href='project_home_available.html'>project_home_available()</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>type</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> specifying whether you want to access gene
+counts or exon counts.</p></td>
     </tr>
     <tr>
       <th>organism</th>
@@ -163,37 +180,53 @@ the core data sources for <code>recount3</code> or collections which are user-cr
 download data from. Supported options are <code>"human"</code> or <code>"mouse"</code>.</p></td>
     </tr>
     <tr>
-      <th>recount3_url</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> specifying the home URL for <code>recount3</code>
-or a local directory where you have mirrored <code>recount3</code>.</p></td>
+      <th>annotation</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> specifying which annotation you want to
+download. Only used when <code>type</code> is either <code>gene</code> or <code>exon</code>.</p></td>
     </tr>
     <tr>
       <th>bfc</th>
       <td><p>A <a href='https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html'>BiocFileCache-class</a>
 object where the files will be cached to.</p></td>
     </tr>
+    <tr>
+      <th>recount3_url</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> specifying the home URL for <code>recount3</code>
+or a local directory where you have mirrored <code>recount3</code>.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code><a href='https://rdrr.io/r/base/character.html'>character()</a></code> vector with the available <code>project_home</code> options.</p>
+    <p>A
+<a href='https://rdrr.io/pkg/SummarizedExperiment/man/RangedSummarizedExperiment-class.html'>RangedSummarizedExperiment-class</a>
+object.</p>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p><a href='https://doi.org/10.12688/f1000research.12223.1'>https://doi.org/10.12688/f1000research.12223.1</a> for details on the
+base-pair coverage counts used in recount2 and recount3.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other internal functions for accessing the recount3 data: 
 <code><a href='annotation_ext.html'>annotation_ext</a>()</code>,
-<code><a href='create_rse_manual.html'>create_rse_manual</a>()</code>,
 <code><a href='file_locate_url_annotation.html'>file_locate_url_annotation</a>()</code>,
 <code><a href='file_locate_url.html'>file_locate_url</a>()</code>,
 <code><a href='file_retrieve.html'>file_retrieve</a>()</code>,
+<code><a href='project_home_available.html'>project_home_available</a>()</code>,
 <code><a href='read_counts.html'>read_counts</a>()</code>,
 <code><a href='read_metadata.html'>read_metadata</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='co'>## List the different available `project_home` options for the default</span>
-<span class='co'>## arguments</span>
-<span class='fu'>project_home_available</span>()</div><div class='output co'>#&gt;                gtex                 sra 
-#&gt; "data_sources/gtex"  "data_sources/sra" </div></pre>
+<span class='no'>rse_gene_ERP001942_manual</span> <span class='kw'>&lt;-</span> <span class='fu'>create_rse_manual</span>(<span class='st'>"ERP001942"</span>, <span class='st'>"data_sources/sra"</span>)</div><div class='output co'>#&gt; <span class='message'>2020-05-10 16:08:39 downloading and reading the metadata</span></div><div class='output co'>#&gt; <span class='message'>2020-05-10 16:08:39 downloading and reading the feature information</span></div><div class='output co'>#&gt; <span class='message'>2020-05-10 16:08:41 downloading and reading the counts: 667 samples across 63856 features.</span></div><div class='output co'>#&gt; <span class='message'>2020-05-10 16:09:04 construcing the RangedSummarizedExperiment (rse) object</span></div><div class='input'><span class='no'>rse_gene_ERP001942_manual</span></div><div class='output co'>#&gt; class: RangedSummarizedExperiment 
+#&gt; dim: 63856 667 
+#&gt; metadata(0):
+#&gt; assays(1): counts
+#&gt; rownames(63856): ENSG00000278704.1 ENSG00000277400.1 ...
+#&gt;   ENSG00000182484.15_PAR_Y ENSG00000227159.8_PAR_Y
+#&gt; rowData names(10): source type ... havana_gene tag
+#&gt; colnames(667): ERR205000 ERR204900 ... ERR204999 ERR188099
+#&gt; colData names(134): rail_id run_acc ... junction_avg_coverage BigWigURL</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

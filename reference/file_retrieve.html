@@ -160,13 +160,29 @@ object where the files will be cached to.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> with the path to the cached file.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>Other internal functions for accessing the recount3 data: 
+<code><a href='annotation_ext.html'>annotation_ext</a>()</code>,
+<code><a href='create_rse_manual.html'>create_rse_manual</a>()</code>,
+<code><a href='file_locate_url_annotation.html'>file_locate_url_annotation</a>()</code>,
+<code><a href='file_locate_url.html'>file_locate_url</a>()</code>,
+<code><a href='project_home_available.html'>project_home_available</a>()</code>,
+<code><a href='read_counts.html'>read_counts</a>()</code>,
+<code><a href='read_metadata.html'>read_metadata</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'>## Download the metadata file for project ERP001942</span>
 <span class='no'>url_ERP001942_meta</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(<span class='st'>"ERP001942"</span>, <span class='st'>"data_sources/sra"</span>)
-<span class='no'>local_ERP001942_meta</span> <span class='kw'>&lt;-</span> <span class='fu'>file_retrieve</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='no'>url_ERP001942_meta</span>)</div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/42/ERP001942/sra.metadata.ERP001942.MD.gz'</span></div><div class='input'><span class='no'>local_ERP001942_meta</span></div><div class='output co'>#&gt;                                                                     BFC3 
-#&gt; "/tmp/RtmpUAREE1/BiocFileCache/73723678909_sra.metadata.ERP001942.MD.gz" </div></pre>
+<span class='no'>local_ERP001942_meta</span> <span class='kw'>&lt;-</span> <span class='fu'>file_retrieve</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='no'>url_ERP001942_meta</span>)
+<span class='no'>local_ERP001942_meta</span></div><div class='output co'>#&gt;                                                                      BFC2 
+#&gt; "/tmp/RtmpkEZEWK/BiocFileCache/78cc2e26e9ea_sra.metadata.ERP001942.MD.gz" </div><div class='input'>
+<span class='co'>## Download the gene counts file for project ERP001942</span>
+<span class='no'>url_ERP001942_gene</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(<span class='st'>"ERP001942"</span>, <span class='st'>"data_sources/sra"</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"gene"</span>)
+<span class='no'>local_ERP001942_gene</span> <span class='kw'>&lt;-</span> <span class='fu'>file_retrieve</span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='no'>url_ERP001942_gene</span>)
+<span class='no'>local_ERP001942_gene</span></div><div class='output co'>#&gt;                                                                         BFC4 
+#&gt; "/tmp/RtmpkEZEWK/BiocFileCache/78cc42c6c88d_sra.gene_sums.ERP001942.G026.gz" </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
