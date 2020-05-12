@@ -25,8 +25,17 @@
 #' @family internal functions for accessing the recount3 data
 #' @examples
 #'
-#' rse_gene_ERP001942_manual <- create_rse_manual("ERP001942", "data_sources/sra")
-#' rse_gene_ERP001942_manual
+#' rse_gene_ERP110066_manual <- create_rse_manual("ERP110066", "data_sources/sra")
+#' rse_gene_ERP110066_manual
+#' \dontrun{
+#' project <- "ERP110066"
+#' project_home <- "data_sources/sra"
+#' type <- "exon"
+#' organism <- "human"
+#' annotation <- "gencode_v26"
+#' bfc <- BiocFileCache::BiocFileCache()
+#' recount3_url <- "http://snaptron.cs.jhu.edu/data/temp/recount3"
+#' }
 create_rse_manual <- function(project,
     project_home = project_home_available(
         organism = organism,
@@ -67,14 +76,21 @@ create_rse_manual <- function(project,
         sample = metadata$run_acc
     )
 
-
     message(paste(
         Sys.time(),
         "downloading and reading the feature information"
     ))
     ## Read the feature information
     feature_info <-
-        rtracklayer::import(file_retrieve(url = file_locate_url_annotation(type = type, organism = organism, annotation = annotation, recount3_url = recount3_url), bfc = bfc))
+        rtracklayer::import(file_retrieve(
+            url = file_locate_url_annotation(
+                type = type,
+                organism = organism,
+                annotation = annotation,
+                recount3_url = recount3_url
+            ),
+            bfc = bfc
+        ))
 
 
     message(
@@ -104,6 +120,11 @@ create_rse_manual <- function(project,
         Sys.time(),
         "construcing the RangedSummarizedExperiment (rse) object"
     ))
+
+    ## Make names consistent
+    names(feature_info) <- rownames(counts)
+    rownames(metadata) <- colnames(counts)
+
     rse <- SummarizedExperiment::SummarizedExperiment(
         assays = list(counts = counts),
         colData = S4Vectors::DataFrame(metadata, check.names = FALSE),

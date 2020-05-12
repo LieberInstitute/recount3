@@ -6,10 +6,10 @@ output: github_document
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
+    collapse = TRUE,
+    comment = "#>",
+    fig.path = "man/figures/README-",
+    out.width = "100%"
 )
 ```
 
@@ -36,8 +36,9 @@ For more information about `recount3` check the vignettes [through Bioconductor]
 Get the latest stable `R` release from [CRAN](http://cran.r-project.org/). Then install `recount3` using from [Bioconductor](http://bioconductor.org/) the following code:
 
 ```{r 'install', eval = FALSE}
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+      install.packages("BiocManager")
+  }
 
 BiocManager::install("recount3")
 ```
@@ -48,7 +49,7 @@ Below is the citation output from using `citation('recount3')` in R. Please
 run this yourself to check for any updates on how to cite __recount3__.
 
 ```{r 'citation', eval = requireNamespace('recount3')}
-print(citation('recount3'), bibtex = TRUE)
+print(citation("recount3"), bibtex = TRUE)
 ```
 
 Please note that the `recount3` was only made possible thanks to many other R and bioinformatics software authors, which are cited either in the vignettes and/or the paper(s) describing this package.

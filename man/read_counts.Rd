@@ -20,19 +20,19 @@ computer using \code{file_retrieve()}.
 }
 \examples{
 
-## Download the gene counts file for project ERP001942
-url_ERP001942_gene <- file_locate_url("ERP001942", "data_sources/sra", type = "gene")
-local_ERP001942_gene <- file_retrieve(url = url_ERP001942_gene)
+## Download the gene counts file for project ERP110066
+url_ERP110066_gene <- file_locate_url("ERP110066", "data_sources/sra", type = "gene")
+local_ERP110066_gene <- file_retrieve(url = url_ERP110066_gene)
 
-## Read the gene counts, take about 25 seconds
-system.time(ERP001942_gene_counts <- read_counts(local_ERP001942_gene))
-dim(ERP001942_gene_counts)
+## Read the gene counts, take about 3 seconds
+system.time(ERP110066_gene_counts <- read_counts(local_ERP110066_gene))
+dim(ERP110066_gene_counts)
 
 ## Explore the top left corner
-ERP001942_gene_counts[seq_len(6), seq_len(6)]
+ERP110066_gene_counts[seq_len(6), seq_len(6)]
 
 ## Explore the first 6 samples.
-summary(ERP001942_gene_counts[, seq_len(6)])
+summary(ERP110066_gene_counts[, seq_len(6)])
 
 ## Note that the count units are in
 ## base-pair coverage counts just like in the recount2 project.
@@ -41,6 +41,28 @@ summary(ERP001942_gene_counts[, seq_len(6)])
 ## They can be converted to reads per 40 million reads, RPKM and other
 ## counts. This is more easily done once assembled into a
 ## RangedSummarizedExperiment object.
+
+## Locate and retrieve an exon counts file
+\dontrun{
+local_ERP110066_exon <- file_retrieve(
+    file_locate_url(
+        "ERP110066",
+        "data_sources/sra",
+        type = "exon"
+    )
+)
+local_ERP110066_exon
+
+## Read the exon counts, takes about 50-60 seconds
+system.time(ERP110066_exon_counts <- read_counts(local_ERP110066_exon))
+dim(ERP110066_exon_counts)
+
+## Explore the top left corner
+ERP110066_exon_counts[seq_len(6), seq_len(6)]
+
+## Explore the first 6 samples.
+summary(ERP110066_exon_counts[, seq_len(6)])
+}
 }
 \references{
 \url{https://doi.org/10.12688/f1000research.12223.1} for details on the

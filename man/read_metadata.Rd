@@ -21,13 +21,13 @@ using \code{file_retrieve()}.
 }
 \examples{
 
-## Download the metadata file for project ERP001942
-url_ERP001942_meta <- file_locate_url("ERP001942", "data_sources/sra")
-local_ERP001942_meta <- file_retrieve(url = url_ERP001942_meta)
+## Download the metadata file for project ERP110066
+url_ERP110066_meta <- file_locate_url("ERP110066", "data_sources/sra")
+local_ERP110066_meta <- file_retrieve(url = url_ERP110066_meta)
 
 ## Read the metadata
-ERP001942_meta <- read_metadata(local_ERP001942_meta)
-head(ERP001942_meta)
+ERP110066_meta <- read_metadata(local_ERP110066_meta)
+head(ERP110066_meta)
 
 ## Locate and read the GTEx bladder metadata
 gtex_bladder_meta <- read_metadata(

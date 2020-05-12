@@ -46,4 +46,5 @@ Imports:
     S4Vectors,
     utils,
     XML,
-    RCurl
+    RCurl,
+    data.table

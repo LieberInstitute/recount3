@@ -46,18 +46,38 @@ retrieve the data, cache it, then assemble the RSE object.
 ## Find the project you are interested in
 ## (temporarily build this data.frame)
 proj_info <- data.frame(
-    project = "ERP001942",
+    project = "ERP110066",
     project_home = "data_sources/sra",
     organism = "human"
 )
 
-rse_gene_ERP001942 <- create_rse(proj_info)
+## Create a RSE object at the gene level
+rse_gene_ERP110066 <- create_rse(proj_info)
 
-## Explore the resulting RSE object
-rse_gene_ERP001942
+## Explore the resulting RSE gene object
+rse_gene_ERP110066
 
-dim(rse_gene_ERP001942)
-rowRanges(rse_gene_ERP001942)
-colData(rse_gene_ERP001942)
-colnames(colData(rse_gene_ERP001942))
+dim(rse_gene_ERP110066)
+rowRanges(rse_gene_ERP110066)
+colData(rse_gene_ERP110066)
+colnames(colData(rse_gene_ERP110066))
+
+## Create a second RSE object using another annotation
+rse_gene_ERP110066_gencode_v29 <- create_rse(proj_info, annotation = "gencode_v29")
+
+## Doesn't work right now
+# rse_gene_ERP110066_refseq <- create_rse(proj_info, annotation = "refseq")
+
+## Create a RSE object at the exon level
+\dontrun{
+rse_exon_ERP110066 <- create_rse(proj_info, type = "exon")
+
+## Explore the resulting RSE exon object
+rse_exon_ERP110066
+
+dim(rse_exon_ERP110066)
+rowRanges(rse_exon_ERP110066)
+colData(rse_exon_ERP110066)
+colnames(colData(rse_exon_ERP110066))
+}
 }

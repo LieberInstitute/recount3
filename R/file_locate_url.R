@@ -26,10 +26,14 @@
 #' @examples
 #'
 #' ## Example for a metadata file
-#' file_locate_url("ERP001942", "data_sources/sra")
+#' file_locate_url("ERP110066", "data_sources/sra")
 #'
 #' ## Example for a BigWig file
-#' file_locate_url("ERP001942", "data_sources/sra", "bw", "human", "ERR204900")
+#' file_locate_url("ERP110066", "data_sources/sra", "bw", "human", "ERR204900")
+#'
+#' ## Locate example gene count files
+#' file_locate_url("ERP110066", "data_sources/sra", "gene")
+#' file_locate_url("ERP110066", "data_sources/sra", "gene", annotation = "refseq")
 file_locate_url <-
     function(project,
     project_home = project_home_available(
@@ -39,7 +43,7 @@ file_locate_url <-
     type = c("metadata", "gene", "exon", "jxn", "bw"),
     organism = c("human", "mouse"),
     sample = NULL,
-    annotation = c("gencode_v26", "gencode_v29", "ercc", "sirv"),
+    annotation = annotation_options(organism),
     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3") {
         type <- match.arg(type)
         organism <- match.arg(organism)
@@ -101,7 +105,7 @@ file_locate_url <-
 
         ## Construct the final url
         url <- file.path(base_url, paste0(base_file, file_ext))
-        names(url) <- base_file
+        names(url) <- basename(url)
 
         ## Done
         return(url)

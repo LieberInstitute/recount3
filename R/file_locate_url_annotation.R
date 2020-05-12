@@ -42,7 +42,7 @@ file_locate_url_annotation <- function(type = c("gene", "exon"),
             base_dir,
             paste0(base_file, ".gtf.gz")
         )
-    names(url) <- base_file
+    names(url) <- basename(url)
 
     return(url)
 }

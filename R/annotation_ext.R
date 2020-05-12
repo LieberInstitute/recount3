@@ -15,6 +15,8 @@
 #' @examples
 #'
 #' annotation_ext("human")
+#' annotation_ext("human", "fantom6_cat")
+#' annotation_ext("human", "refseq")
 #' annotation_ext("mouse")
 annotation_ext <- function(organism = c("human", "mouse"),
     annotation = annotation_options(organism)) {
@@ -27,8 +29,8 @@ annotation_ext <- function(organism = c("human", "mouse"),
             annotation,
             gencode_v26 = "G026",
             gencode_v29 = "G029",
-            ercc = "ERCC",
-            sirv = "SIRV"
+            fantom6_cat = "F006",
+            refseq = "R109"
         )
     } else if (organism == "mouse") {
         ann_ext <- switch(

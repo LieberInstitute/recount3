@@ -26,6 +26,8 @@ corresponding file extension used in the \code{recount3} files.
 \examples{
 
 annotation_ext("human")
+annotation_ext("human", "fantom6_cat")
+annotation_ext("human", "refseq")
 annotation_ext("mouse")
 }
 \seealso{

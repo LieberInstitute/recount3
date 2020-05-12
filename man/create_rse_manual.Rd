@@ -49,8 +49,17 @@ feature level for a given annotation.
 }
 \examples{
 
-rse_gene_ERP001942_manual <- create_rse_manual("ERP001942", "data_sources/sra")
-rse_gene_ERP001942_manual
+rse_gene_ERP110066_manual <- create_rse_manual("ERP110066", "data_sources/sra")
+rse_gene_ERP110066_manual
+\dontrun{
+project <- "ERP110066"
+project_home <- "data_sources/sra"
+type <- "exon"
+organism <- "human"
+annotation <- "gencode_v26"
+bfc <- BiocFileCache::BiocFileCache()
+recount3_url <- "http://snaptron.cs.jhu.edu/data/temp/recount3"
+}
 }
 \references{
 \url{https://doi.org/10.12688/f1000research.12223.1} for details on the

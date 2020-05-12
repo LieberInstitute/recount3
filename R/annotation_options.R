@@ -15,7 +15,7 @@
 #' annotation_options("mouse")
 annotation_options <- function(organism = c("human", "mouse")) {
     if (organism == "human") {
-        options <- c("gencode_v26", "gencode_v29", "ercc", "sirv")
+        options <- c("gencode_v26", "gencode_v29", "fantom6_cat", "refseq")
     } else if (organism == "mouse") {
         warning("Currently not supported!", call. = FALSE)
         options <- c("gencode_v23")
