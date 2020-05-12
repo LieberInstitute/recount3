@@ -47,4 +47,5 @@ Imports:
     utils,
     XML,
     RCurl,
-    data.table
+    data.table,
+    R.utils

@@ -11,6 +11,7 @@
 #' @export
 #' @importFrom utils read.delim
 #' @importFrom data.table fread
+#' @importFrom R.utils gunzip
 #'
 #' @references
 #'
