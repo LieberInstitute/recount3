@@ -45,4 +45,5 @@ Imports:
     rtracklayer,
     S4Vectors,
     utils,
-    XML
+    XML,
+    RCurl

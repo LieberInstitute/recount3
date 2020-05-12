@@ -9,26 +9,31 @@
 #' @export
 #' @importFrom BiocFileCache bfcrpath
 #' @importFrom methods is
+#' @importFrom RCurl url.exists
 #'
 #' @family internal functions for accessing the recount3 data
 #' @examples
 #'
-#' ## Download the metadata file for project ERP001942
-#' url_ERP001942_meta <- file_locate_url("ERP001942", "data_sources/sra")
-#' local_ERP001942_meta <- file_retrieve(url = url_ERP001942_meta)
-#' local_ERP001942_meta
+#' ## Download the metadata file for project ERP110066
+#' url_ERP110066_meta <- file_locate_url("ERP110066", "data_sources/sra")
+#' local_ERP110066_meta <- file_retrieve(url = url_ERP110066_meta)
+#' local_ERP110066_meta
 #'
-#' ## Download the gene counts file for project ERP001942
-#' url_ERP001942_gene <- file_locate_url("ERP001942", "data_sources/sra", type = "gene")
-#' local_ERP001942_gene <- file_retrieve(url = url_ERP001942_gene)
-#' local_ERP001942_gene
+#' ## Download the gene counts file for project ERP110066
+#' url_ERP110066_gene <- file_locate_url("ERP110066", "data_sources/sra", type = "gene")
+#' local_ERP110066_gene <- file_retrieve(url = url_ERP110066_gene)
+#' local_ERP110066_gene
 file_retrieve <- function(url, bfc = BiocFileCache::BiocFileCache()) {
     ## In case the url is a local file, there's no need to cache it then
     if (file.exists(url)) {
         return(url)
+    } else if (!url.exists(url)) {
+        stop("The 'url' <", url, "> does not exist or is not available.", call. = FALSE)
     }
+
     if (!methods::is(bfc, "BiocFileCache")) {
         stop("'bfc' should be a BiocFileCache::BiocFileCache object.", call. = FALSE)
     }
-    BiocFileCache::bfcrpath(bfc, url)
+    message(paste("Caching file", basename(url)))
+    BiocFileCache::bfcrpath(bfc, url, exact = TRUE)
 }
