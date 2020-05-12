@@ -3,7 +3,7 @@ library("sessioninfo")
 
 ## Locate the project info
 proj_files <-
-    dir(here::here("inst", "data"),
+    dir(here::here("inst", "project_data"),
         "_project_info_all.RData",
         full.names = TRUE
     )
@@ -11,7 +11,7 @@ names(proj_files) <-
     gsub(
         "_project_info_all\\.RData",
         "",
-        dir(here::here("inst", "data"), "_project_info_all.RData")
+        dir(here::here("inst", "project_data"), "_project_info_all.RData")
     )
 
 ## Update this query date
