@@ -27,7 +27,17 @@ local_ERP110066_meta <- file_retrieve(url = url_ERP110066_meta)
 
 ## Read the metadata
 ERP110066_meta <- read_metadata(local_ERP110066_meta)
+dim(ERP110066_meta)
 head(ERP110066_meta)
+
+## Read the metadata files for a project in a collection
+ERP110066_collection_meta <- read_metadata(
+    metadata_files = file_retrieve(
+        file_locate_url("ERP110066", "collections/geuvadis_smartseq")
+    )
+)
+dim(ERP110066_collection_meta)
+colnames(ERP110066_collection_meta)
 \dontrun{
 ## Locate and read the GTEx bladder metadata
 gtex_bladder_meta <- read_metadata(

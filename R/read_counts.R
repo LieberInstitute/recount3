@@ -6,6 +6,9 @@
 #'
 #' @param counts_file A `character(1)` with the local path to a `recount3`
 #' counts file.
+#' @param samples A `character()` with `run_acc` sample IDs to read in. When
+#' `NULL` (default), all samples will be read in. This argument is used by
+#' `create_rse_manual()`.
 #'
 #' @return A `data.frame()` with sample IDs as the column names.
 #' @export
@@ -64,17 +67,35 @@
 #' ## Explore the first 6 samples.
 #' summary(ERP110066_exon_counts[, seq_len(6)])
 #' }
-read_counts <- function(counts_file) {
+read_counts <- function(counts_file, samples = NULL) {
     ## To get the number of samples
-    counts_info <- read.delim(counts_file, skip = 2, nrows = 1)
+    counts_info <-
+        read.delim(
+            counts_file,
+            skip = 2,
+            nrows = 1,
+            check.names = FALSE
+        )
 
-    # ## Now read in the data without having to guess the column classes
-    # counts <- read.delim(counts_file, skip = 2, row.names = 1, colClasses = c("character", rep("integer", ncol(counts_info) - 1)))
+    ## Samples to read in
+    if (is.null(samples)) {
+        to_read <- colnames(counts_info)
+    } else {
+        if (!all(samples %in% colnames(counts_info))) {
+            invalid_samples <-
+                paste(samples[!samples %in% colnames(counts_info)], collapse = "', '")
+            stop(
+                "Not all 'samples' are present in the 'counts_file'. Invalid sample names are: '",
+                invalid_samples,
+                "'",
+                call. = FALSE
+            )
+        }
 
-    ## Maybe switch to readr: takes 17 secs on the gene counts, so no.
-    # counts <- readr::read_tsv(counts_file, skip = 2, col_types = paste(c("c", rep("i", ncol(counts_info) - 1)), collapse = ""))
+        to_read <- c(colnames(counts_info)[1], samples)
+    }
 
-    ## Fastest of them all
+    ## Now read in the data without having to guess the column classes
     counts <-
         data.table::fread(
             counts_file,
@@ -82,18 +103,14 @@ read_counts <- function(counts_file) {
             colClasses = c("character", rep("integer", ncol(counts_info) - 1)),
             nThread = 1,
             sep = "\t",
-            data.table = FALSE
+            data.table = FALSE,
+            select = to_read
         )
-    #
-    #     if (colnames(counts)[1] == "gene_id") {
-    #         rnames <- counts$gene_id
-    #         select_cols <- colnames(counts)[-1]
-    #     } else {
-    #         rnames <-
-    #             paste0(counts$chromosome, ":", counts$start, "-", counts$end)
-    #         select_cols <- colnames(counts)[-seq_len(3)]
-    #     }
+
+    ## Save the row names
     rnames <- counts[[1]]
+
+    ## Cast to a matrix
     counts <- as.matrix(counts[, -1, drop = FALSE])
     rownames(counts) <- rnames
     return(counts)

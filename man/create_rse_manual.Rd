@@ -7,7 +7,7 @@
 create_rse_manual(
   project,
   project_home = project_home_available(organism = organism, recount3_url =
-    recount3_url),
+    recount3_url, bfc = bfc),
   type = c("gene", "exon"),
   organism = c("human", "mouse"),
   annotation = annotation_options(organism),
@@ -51,9 +51,16 @@ feature level for a given annotation.
 
 rse_gene_ERP110066_manual <- create_rse_manual("ERP110066", "data_sources/sra")
 rse_gene_ERP110066_manual
+
+rse_gene_ERP110066_collection_manual <- create_rse_manual("ERP110066", "collections/geuvadis_smartseq")
+rse_gene_ERP110066_collection_manual
+
+
+rse_exon_ERP110066_collection_manual <- create_rse_manual("ERP110066", "collections/geuvadis_smartseq", type = "exon")
+rse_exon_ERP110066_collection_manual
 \dontrun{
 project <- "ERP110066"
-project_home <- "data_sources/sra"
+project_home <- "collections/geuvadis_smartseq"
 type <- "exon"
 organism <- "human"
 annotation <- "gencode_v26"

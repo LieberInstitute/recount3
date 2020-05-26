@@ -27,9 +27,16 @@
 #'
 #' rse_gene_ERP110066_manual <- create_rse_manual("ERP110066", "data_sources/sra")
 #' rse_gene_ERP110066_manual
+#'
+#' rse_gene_ERP110066_collection_manual <- create_rse_manual("ERP110066", "collections/geuvadis_smartseq")
+#' rse_gene_ERP110066_collection_manual
+#'
+#'
+#' rse_exon_ERP110066_collection_manual <- create_rse_manual("ERP110066", "collections/geuvadis_smartseq", type = "exon")
+#' rse_exon_ERP110066_collection_manual
 #' \dontrun{
 #' project <- "ERP110066"
-#' project_home <- "data_sources/sra"
+#' project_home <- "collections/geuvadis_smartseq"
 #' type <- "exon"
 #' organism <- "human"
 #' annotation <- "gencode_v26"
@@ -39,7 +46,8 @@
 create_rse_manual <- function(project,
     project_home = project_home_available(
         organism = organism,
-        recount3_url = recount3_url
+        recount3_url = recount3_url,
+        bfc = bfc
     ),
     type = c("gene", "exon"),
     organism = c("human", "mouse"),
@@ -64,6 +72,9 @@ create_rse_manual <- function(project,
         ),
         bfc = bfc
     ))
+
+    ## Update the project_home based on the metadata
+    project_home <- metadata$recount_project.file_source[1]
 
     ## Add the URLs to the BigWig files
     metadata$BigWigURL <- file_locate_url(
@@ -98,28 +109,54 @@ create_rse_manual <- function(project,
             Sys.time(),
             "downloading and reading the counts:",
             nrow(metadata),
-            "samples across",
+            ifelse(nrow(metadata) > 1, "samples", "sample"),
+            "across",
             length(feature_info),
             "features."
         )
     )
-    counts <- read_counts(file_retrieve(
-        url = file_locate_url(
-            project = project,
-            project_home = project_home,
-            type = type,
-            organism = organism,
-            annotation = annotation,
-            recount3_url = recount3_url
+    counts <- read_counts(
+        file_retrieve(
+            url = file_locate_url(
+                project = project,
+                project_home = project_home,
+                type = type,
+                organism = organism,
+                annotation = annotation,
+                recount3_url = recount3_url
+            ),
+            bfc = bfc
         ),
-        bfc = bfc
-    ))
+        samples = metadata$run_acc
+    )
 
     ## Build the RSE object
     message(paste(
         Sys.time(),
         "construcing the RangedSummarizedExperiment (rse) object"
     ))
+
+    stopifnot("Metadata run_acc and counts colnames are not matching." = identical(metadata$run_acc, colnames(counts)))
+
+    if (type == "gene") {
+        stopifnot("Gene names and count rownames are not matching." = identical(feature_info$gene_id, rownames(counts)))
+    } else if (type == "exon") {
+        stopifnot("Exon names and count rownames are not matching." = identical(feature_info$recount_exon_id, rownames(counts)))
+
+
+        # counts_gr <- GenomicRanges::GRanges(rownames(counts))
+        # ov <- findOverlaps(counts_gr, feature_info, type = "equal", ignore.strand = FALSE)
+        # ov_c <- countOverlaps(counts_gr, feature_info, type = "equal", ignore.strand = FALSE)
+        # table(ov_c)
+        # ov_rev <- findOverlaps(feature_info, counts_gr, type = "equal", ignore.strand = FALSE)
+        # ov_c_rev <- countOverlaps(feature_info, counts_gr, type = "equal", ignore.strand = FALSE)
+        # table(ov_c_rev)
+        # #       1       2
+        # # 1299467     219
+        # i <- which(ov_c_rev == 2)[1]
+        # feature_info[i]
+        # counts_gr[subjectHits(ov_rev[queryHits(ov_rev) == i, ])]
+    }
 
     ## Make names consistent
     names(feature_info) <- rownames(counts)

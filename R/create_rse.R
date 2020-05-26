@@ -38,7 +38,10 @@
 #' colnames(colData(rse_gene_ERP110066))
 #'
 #' ## Create a second RSE object using another annotation
-#' rse_gene_ERP110066_gencode_v29 <- create_rse(proj_info, annotation = "gencode_v29")
+#' rse_gene_ERP110066_gencode_v29 <- create_rse(
+#'     proj_info,
+#'     annotation = "gencode_v29"
+#' )
 #'
 #' ## Doesn't work right now
 #' # rse_gene_ERP110066_refseq <- create_rse(proj_info, annotation = "refseq")

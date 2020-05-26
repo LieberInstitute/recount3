@@ -21,7 +21,17 @@
 #'
 #' ## Read the metadata
 #' ERP110066_meta <- read_metadata(local_ERP110066_meta)
+#' dim(ERP110066_meta)
 #' head(ERP110066_meta)
+#'
+#' ## Read the metadata files for a project in a collection
+#' ERP110066_collection_meta <- read_metadata(
+#'     metadata_files = file_retrieve(
+#'         file_locate_url("ERP110066", "collections/geuvadis_smartseq")
+#'     )
+#' )
+#' dim(ERP110066_collection_meta)
+#' colnames(ERP110066_collection_meta)
 #' \dontrun{
 #' ## Locate and read the GTEx bladder metadata
 #' gtex_bladder_meta <- read_metadata(
@@ -48,6 +58,9 @@ read_metadata <- function(metadata_files) {
         check.names = FALSE
     )
 
+    ## Key columns
+    keys <- c("rail_id", "run_acc", "study_acc")
+
     ## Merge the metadata files
     for (i in seq_along(meta_list)) {
         ## Make all column names consistently lower case
@@ -58,8 +71,25 @@ read_metadata <- function(metadata_files) {
             meta <- meta_list[[i]]
         } else {
             ## Then merge one by one
-            merge(meta, meta_list[[i]])
+            meta <- merge(meta, meta_list[[i]], by = keys)
         }
     }
+
+    ## Add the origin to the colnames
+    origin <- vapply(
+        strsplit(names(meta_list), "\\."),
+        "[",
+        character(1),
+        2
+    )
+    origin_n <- vapply(meta_list, ncol, integer(1)) - length(keys)
+    stopifnot(all(origin_n > 0))
+    colnames(meta) <- paste0(
+        rep(
+            c("", paste0(origin, ".")),
+            c(length(keys), origin_n)
+        ),
+        colnames(meta)
+    )
     return(meta)
 }

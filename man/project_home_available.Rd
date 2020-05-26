@@ -5,16 +5,12 @@
 \title{Find available project home options}
 \usage{
 project_home_available(
-  home_type = c("data_source", "collection"),
   organism = c("human", "mouse"),
   recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3",
   bfc = BiocFileCache::BiocFileCache()
 )
 }
 \arguments{
-\item{home_type}{A \code{character(1)} specifying whether you are looking for
-the core data sources for \code{recount3} or collections which are user-created.}
-
 \item{organism}{A \code{character(1)} specifying which organism you want to
 download data from. Supported options are \code{"human"} or \code{"mouse"}.}
 
