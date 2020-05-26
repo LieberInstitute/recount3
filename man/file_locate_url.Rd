@@ -38,7 +38,7 @@ download. Only used when \code{type} is either \code{gene} or \code{exon}.}
 or a local directory where you have mirrored \code{recount3}.}
 }
 \value{
-A \code{character(1)} with the URL for the file of interest.
+A \code{character()} with the URL(s) for the file(s) of interest.
 }
 \description{
 Given an organism of interest, this function constructs the URL for accessing
@@ -47,8 +47,11 @@ the file using \code{file_retrieve()}.
 }
 \examples{
 
-## Example for a metadata file
+## Example for metadata files from a project from SRA
 file_locate_url("ERP110066", "data_sources/sra")
+
+## Example for metadata files from a project that is part of a collection
+file_locate_url("ERP110066", "collections/geuvadis_smartseq")
 
 ## Example for a BigWig file
 file_locate_url("ERP110066", "data_sources/sra", "bw", "human", "ERR204900")

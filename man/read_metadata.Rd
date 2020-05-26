@@ -2,33 +2,33 @@
 % Please edit documentation in R/read_metadata.R
 \name{read_metadata}
 \alias{read_metadata}
-\title{Read a metadata file}
+\title{Read the metadata files}
 \usage{
-read_metadata(metadata_file)
+read_metadata(metadata_files)
 }
 \arguments{
-\item{metadata_file}{A \code{character(1)} with the local path to a \code{recount3}
-metadata file.}
+\item{metadata_files}{A \code{character()} with the local path to \code{recount3}
+metadata files.}
 }
 \value{
 A \code{data.frame()} with all lower case column names for the sample
 metadata.
 }
 \description{
-This function reads in a \code{recount3} metadata file into R. You can first
-locate the file using \code{file_locate_url()} then download it to your computer
+This function reads in the \code{recount3} metadata files into R. You can first
+locate the files using \code{file_locate_url()} then download it to your computer
 using \code{file_retrieve()}.
 }
 \examples{
 
-## Download the metadata file for project ERP110066
+## Download the metadata files for project ERP110066
 url_ERP110066_meta <- file_locate_url("ERP110066", "data_sources/sra")
 local_ERP110066_meta <- file_retrieve(url = url_ERP110066_meta)
 
 ## Read the metadata
 ERP110066_meta <- read_metadata(local_ERP110066_meta)
 head(ERP110066_meta)
-
+\dontrun{
 ## Locate and read the GTEx bladder metadata
 gtex_bladder_meta <- read_metadata(
     file_retrieve(
@@ -37,6 +37,7 @@ gtex_bladder_meta <- read_metadata(
 )
 
 head(gtex_bladder_meta)
+}
 }
 \seealso{
 Other internal functions for accessing the recount3 data: 

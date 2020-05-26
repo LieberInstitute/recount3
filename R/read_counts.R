@@ -81,18 +81,20 @@ read_counts <- function(counts_file) {
             skip = 2,
             colClasses = c("character", rep("integer", ncol(counts_info) - 1)),
             nThread = 1,
-            sep = "\t"
+            sep = "\t",
+            data.table = FALSE
         )
-
-    if (colnames(counts)[1] == "gene_id") {
-        rnames <- counts$gene_id
-        select_cols <- colnames(counts)[-1]
-    } else {
-        rnames <-
-            paste0(counts$chromosome, ":", counts$start, "-", counts$end)
-        select_cols <- colnames(counts)[-seq_len(3)]
-    }
-    counts_mat <- as.matrix(counts[, select_cols, with = FALSE])
-    rownames(counts_mat) <- rnames
-    return(counts_mat)
+    #
+    #     if (colnames(counts)[1] == "gene_id") {
+    #         rnames <- counts$gene_id
+    #         select_cols <- colnames(counts)[-1]
+    #     } else {
+    #         rnames <-
+    #             paste0(counts$chromosome, ":", counts$start, "-", counts$end)
+    #         select_cols <- colnames(counts)[-seq_len(3)]
+    #     }
+    rnames <- counts[[1]]
+    counts <- as.matrix(counts[, -1, drop = FALSE])
+    rownames(counts) <- rnames
+    return(counts)
 }

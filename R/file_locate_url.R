@@ -19,14 +19,17 @@
 #' @param recount3_url A `character(1)` specifying the home URL for `recount3`
 #' or a local directory where you have mirrored `recount3`.
 #'
-#' @return A `character(1)` with the URL for the file of interest.
+#' @return A `character()` with the URL(s) for the file(s) of interest.
 #' @export
 #'
 #' @family internal functions for accessing the recount3 data
 #' @examples
 #'
-#' ## Example for a metadata file
+#' ## Example for metadata files from a project from SRA
 #' file_locate_url("ERP110066", "data_sources/sra")
+#'
+#' ## Example for metadata files from a project that is part of a collection
+#' file_locate_url("ERP110066", "collections/geuvadis_smartseq")
 #'
 #' ## Example for a BigWig file
 #' file_locate_url("ERP110066", "data_sources/sra", "bw", "human", "ERR204900")
@@ -94,8 +97,15 @@ file_locate_url <-
             project
         )
 
+        ## Metadata case
+        if (type == "metadata") {
+            file_tag <- c("ncbi", "recount_project", "recount_qc")
+        } else {
+            file_tag <- base_dir
+        }
+
         ## Define the base file path
-        base_file <- paste0(basename(project_home), ".", base_dir, ".", project)
+        base_file <- paste0(basename(project_home), ".", file_tag, ".", project)
 
         ## Handle the BigWig file case
         if (type == "bw") {
@@ -103,8 +113,24 @@ file_locate_url <-
             base_file <- paste0(base_file, "_", sample)
         }
 
-        ## Construct the final url
+        ## Construct the final url(s)
         url <- file.path(base_url, paste0(base_file, file_ext))
+
+        ## Deal with metadta collection case
+        if (dirname(project_home) == "collections" & type == "metadata") {
+            url <- c(
+                url,
+                file.path(
+                    recount3_url,
+                    organism,
+                    project_home,
+                    base_dir,
+                    paste0(
+                        basename(project_home), ".custom.gz"
+                    )
+                )
+            )
+        }
         names(url) <- basename(url)
 
         ## Done

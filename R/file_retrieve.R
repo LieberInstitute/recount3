@@ -1,7 +1,8 @@
 #' Download a remote file and cache it to re-use later
 #'
 #' @param url A `character(1)` with the file URL or the actual local path in
-#' which case, it won't be cached.
+#' which case, it won't be cached. If `length(url) > 1` , this function
+#' will be used recursively.
 #' @param bfc A [BiocFileCache-class][BiocFileCache::BiocFileCache-class]
 #' object where the files will be cached to.
 #'
@@ -24,6 +25,11 @@
 #' local_ERP110066_gene <- file_retrieve(url = url_ERP110066_gene)
 #' local_ERP110066_gene
 file_retrieve <- function(url, bfc = BiocFileCache::BiocFileCache()) {
+    ## In case you are working with more than one url (like with metadata)
+    if (length(url) > 1) {
+        return(vapply(url, file_retrieve, character(1), bfc = bfc))
+    }
+
     ## In case the url is a local file, there's no need to cache it then
     if (file.exists(url)) {
         return(url)
