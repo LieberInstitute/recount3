@@ -23,13 +23,24 @@ Download a remote file and cache it to re-use later
 \examples{
 
 ## Download the metadata file for project ERP110066
-url_ERP110066_meta <- file_locate_url("ERP110066", "data_sources/sra")
-local_ERP110066_meta <- file_retrieve(url = url_ERP110066_meta)
+url_ERP110066_meta <- file_locate_url(
+    "ERP110066",
+    "data_sources/sra"
+)
+local_ERP110066_meta <- file_retrieve(
+    url = url_ERP110066_meta
+)
 local_ERP110066_meta
 
 ## Download the gene counts file for project ERP110066
-url_ERP110066_gene <- file_locate_url("ERP110066", "data_sources/sra", type = "gene")
-local_ERP110066_gene <- file_retrieve(url = url_ERP110066_gene)
+url_ERP110066_gene <- file_locate_url(
+    "ERP110066",
+    "data_sources/sra",
+    type = "gene"
+)
+local_ERP110066_gene <- file_retrieve(
+    url = url_ERP110066_gene
+)
 local_ERP110066_gene
 }
 \seealso{

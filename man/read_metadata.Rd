@@ -22,8 +22,13 @@ using \code{file_retrieve()}.
 \examples{
 
 ## Download the metadata files for project ERP110066
-url_ERP110066_meta <- file_locate_url("ERP110066", "data_sources/sra")
-local_ERP110066_meta <- file_retrieve(url = url_ERP110066_meta)
+url_ERP110066_meta <- file_locate_url(
+    "ERP110066",
+    "data_sources/sra"
+)
+local_ERP110066_meta <- file_retrieve(
+    url = url_ERP110066_meta
+)
 
 ## Read the metadata
 ERP110066_meta <- read_metadata(local_ERP110066_meta)

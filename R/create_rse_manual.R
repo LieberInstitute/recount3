@@ -25,14 +25,24 @@
 #' @family internal functions for accessing the recount3 data
 #' @examples
 #'
-#' rse_gene_ERP110066_manual <- create_rse_manual("ERP110066", "data_sources/sra")
+#' rse_gene_ERP110066_manual <- create_rse_manual(
+#'     "ERP110066",
+#'     "data_sources/sra"
+#' )
 #' rse_gene_ERP110066_manual
 #'
-#' rse_gene_ERP110066_collection_manual <- create_rse_manual("ERP110066", "collections/geuvadis_smartseq")
+#' rse_gene_ERP110066_collection_manual <- create_rse_manual(
+#'     "ERP110066",
+#'     "collections/geuvadis_smartseq"
+#' )
 #' rse_gene_ERP110066_collection_manual
 #'
 #'
-#' rse_exon_ERP110066_collection_manual <- create_rse_manual("ERP110066", "collections/geuvadis_smartseq", type = "exon")
+#' rse_exon_ERP110066_collection_manual <- create_rse_manual(
+#'     "ERP110066",
+#'     "collections/geuvadis_smartseq",
+#'     type = "exon"
+#' )
 #' rse_exon_ERP110066_collection_manual
 #' \dontrun{
 #' project <- "ERP110066"
@@ -136,26 +146,21 @@ create_rse_manual <- function(project,
         "construcing the RangedSummarizedExperiment (rse) object"
     ))
 
-    stopifnot("Metadata run_acc and counts colnames are not matching." = identical(metadata$run_acc, colnames(counts)))
+    stopifnot(
+        "Metadata run_acc and counts colnames are not matching." =
+            identical(metadata$run_acc, colnames(counts))
+    )
 
     if (type == "gene") {
-        stopifnot("Gene names and count rownames are not matching." = identical(feature_info$gene_id, rownames(counts)))
+        stopifnot(
+            "Gene names and count rownames are not matching." =
+                identical(feature_info$gene_id, rownames(counts))
+        )
     } else if (type == "exon") {
-        stopifnot("Exon names and count rownames are not matching." = identical(feature_info$recount_exon_id, rownames(counts)))
-
-
-        # counts_gr <- GenomicRanges::GRanges(rownames(counts))
-        # ov <- findOverlaps(counts_gr, feature_info, type = "equal", ignore.strand = FALSE)
-        # ov_c <- countOverlaps(counts_gr, feature_info, type = "equal", ignore.strand = FALSE)
-        # table(ov_c)
-        # ov_rev <- findOverlaps(feature_info, counts_gr, type = "equal", ignore.strand = FALSE)
-        # ov_c_rev <- countOverlaps(feature_info, counts_gr, type = "equal", ignore.strand = FALSE)
-        # table(ov_c_rev)
-        # #       1       2
-        # # 1299467     219
-        # i <- which(ov_c_rev == 2)[1]
-        # feature_info[i]
-        # counts_gr[subjectHits(ov_rev[queryHits(ov_rev) == i, ])]
+        stopifnot(
+            "Exon names and count rownames are not matching." =
+                identical(feature_info$recount_exon_id, rownames(counts))
+        )
     }
 
     ## Make names consistent

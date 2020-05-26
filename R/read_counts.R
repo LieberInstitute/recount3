@@ -47,6 +47,7 @@
 #' ## RangedSummarizedExperiment object.
 #'
 #' ## Locate and retrieve an exon counts file
+#' ## Requires about 5GB of RAM
 #' \dontrun{
 #' local_ERP110066_exon <- file_retrieve(
 #'     file_locate_url(
@@ -58,7 +59,11 @@
 #' local_ERP110066_exon
 #'
 #' ## Read the exon counts, takes about 50-60 seconds
-#' system.time(ERP110066_exon_counts <- read_counts(local_ERP110066_exon))
+#' system.time(
+#'     ERP110066_exon_counts <- read_counts(
+#'         local_ERP110066_exon
+#'     )
+#' )
 #' dim(ERP110066_exon_counts)
 #'
 #' ## Explore the top left corner

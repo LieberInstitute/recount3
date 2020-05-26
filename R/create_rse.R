@@ -44,11 +44,17 @@
 #' )
 #'
 #' ## Doesn't work right now
-#' # rse_gene_ERP110066_refseq <- create_rse(proj_info, annotation = "refseq")
+#' # rse_gene_ERP110066_refseq <- create_rse(
+#'     proj_info,
+#'     annotation = "refseq"
+#' )
 #'
 #' ## Create a RSE object at the exon level
 #' \dontrun{
-#' rse_exon_ERP110066 <- create_rse(proj_info, type = "exon")
+#' rse_exon_ERP110066 <- create_rse(
+#'     proj_info,
+#'     type = "exon"
+#' )
 #'
 #' ## Explore the resulting RSE exon object
 #' rse_exon_ERP110066
@@ -66,11 +72,15 @@ create_rse <-
     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3") {
         ## Check the inputs
         stopifnot(
-            "'project_info' should be a data.frame" = is.data.frame(project_info),
-            "'project_info' should only have one row" = nrow(project_info) == 1,
-            "'project_info' should contain columns 'project', 'project_home' and 'organism'." = all(
-                c("project", "project_home", "organism") %in% colnames(project_info)
-            )
+            "'project_info' should be a data.frame" =
+                is.data.frame(project_info),
+            "'project_info' should only have one row" =
+                nrow(project_info) == 1,
+            "'project_info' should contain columns 'project', 'project_home' and 'organism'." =
+                all(
+                    c("project", "project_home", "organism") %in%
+                        colnames(project_info)
+                )
         )
 
         type <- match.arg(type)

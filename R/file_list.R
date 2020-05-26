@@ -16,7 +16,9 @@
 #' @examples
 #'
 #' ## List the contents in a URL
-#' file_list("http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/")
+#' file_list(
+#'     "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/"
+#' )
 #'
 #' ## List the contents in a directory
 #' file_list(getwd())
@@ -26,7 +28,10 @@ file_list <- function(url, bfc = BiocFileCache::BiocFileCache()) {
     }
 
     if (!methods::is(bfc, "BiocFileCache")) {
-        stop("'bfc' should be a BiocFileCache::BiocFileCache object.", call. = FALSE)
+        stop(
+            "'bfc' should be a BiocFileCache::BiocFileCache object.",
+            call. = FALSE
+        )
     }
 
     ## Cache the url so it's only used once

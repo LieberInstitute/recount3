@@ -69,11 +69,17 @@ rse_gene_ERP110066_gencode_v29 <- create_rse(
 )
 
 ## Doesn't work right now
-# rse_gene_ERP110066_refseq <- create_rse(proj_info, annotation = "refseq")
+# rse_gene_ERP110066_refseq <- create_rse(
+    proj_info,
+    annotation = "refseq"
+)
 
 ## Create a RSE object at the exon level
 \dontrun{
-rse_exon_ERP110066 <- create_rse(proj_info, type = "exon")
+rse_exon_ERP110066 <- create_rse(
+    proj_info,
+    type = "exon"
+)
 
 ## Explore the resulting RSE exon object
 rse_exon_ERP110066

@@ -49,14 +49,24 @@ feature level for a given annotation.
 }
 \examples{
 
-rse_gene_ERP110066_manual <- create_rse_manual("ERP110066", "data_sources/sra")
+rse_gene_ERP110066_manual <- create_rse_manual(
+    "ERP110066",
+    "data_sources/sra"
+)
 rse_gene_ERP110066_manual
 
-rse_gene_ERP110066_collection_manual <- create_rse_manual("ERP110066", "collections/geuvadis_smartseq")
+rse_gene_ERP110066_collection_manual <- create_rse_manual(
+    "ERP110066",
+    "collections/geuvadis_smartseq"
+)
 rse_gene_ERP110066_collection_manual
 
 
-rse_exon_ERP110066_collection_manual <- create_rse_manual("ERP110066", "collections/geuvadis_smartseq", type = "exon")
+rse_exon_ERP110066_collection_manual <- create_rse_manual(
+    "ERP110066",
+    "collections/geuvadis_smartseq",
+    type = "exon"
+)
 rse_exon_ERP110066_collection_manual
 \dontrun{
 project <- "ERP110066"

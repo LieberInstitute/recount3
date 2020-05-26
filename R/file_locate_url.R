@@ -26,17 +26,38 @@
 #' @examples
 #'
 #' ## Example for metadata files from a project from SRA
-#' file_locate_url("ERP110066", "data_sources/sra")
+#' file_locate_url(
+#'     "ERP110066",
+#'     "data_sources/sra"
+#' )
 #'
 #' ## Example for metadata files from a project that is part of a collection
-#' file_locate_url("ERP110066", "collections/geuvadis_smartseq")
+#' file_locate_url(
+#'     "ERP110066",
+#'     "collections/geuvadis_smartseq"
+#' )
 #'
 #' ## Example for a BigWig file
-#' file_locate_url("ERP110066", "data_sources/sra", "bw", "human", "ERR204900")
+#' file_locate_url(
+#'     "ERP110066",
+#'     "data_sources/sra",
+#'     "bw",
+#'     "human",
+#'     "ERR204900"
+#' )
 #'
 #' ## Locate example gene count files
-#' file_locate_url("ERP110066", "data_sources/sra", "gene")
-#' file_locate_url("ERP110066", "data_sources/sra", "gene", annotation = "refseq")
+#' file_locate_url(
+#'     "ERP110066",
+#'     "data_sources/sra",
+#'     "gene"
+#' )
+#' file_locate_url(
+#'     "ERP110066",
+#'     "data_sources/sra",
+#'     "gene",
+#'     annotation = "refseq"
+#' )
 file_locate_url <-
     function(project,
     project_home = project_home_available(
@@ -109,7 +130,10 @@ file_locate_url <-
 
         ## Handle the BigWig file case
         if (type == "bw") {
-            base_url <- file.path(base_url, substr(sample, nchar(sample) - 1, nchar(sample)))
+            base_url <- file.path(
+                base_url,
+                substr(sample, nchar(sample) - 1, nchar(sample))
+            )
             base_file <- paste0(base_file, "_", sample)
         }
 
