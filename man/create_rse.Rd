@@ -59,7 +59,6 @@ rse_gene_ERP110066
 
 dim(rse_gene_ERP110066)
 rowRanges(rse_gene_ERP110066)
-colData(rse_gene_ERP110066)
 colnames(colData(rse_gene_ERP110066))
 
 ## Create a second RSE object using another annotation
@@ -70,9 +69,9 @@ rse_gene_ERP110066_gencode_v29 <- create_rse(
 
 ## Doesn't work right now
 # rse_gene_ERP110066_refseq <- create_rse(
-    proj_info,
-    annotation = "refseq"
-)
+#     proj_info,
+#     annotation = "refseq"
+# )
 
 ## Create a RSE object at the exon level
 \dontrun{
