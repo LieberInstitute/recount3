@@ -149,7 +149,7 @@ feature level for a given annotation.</p>
     <pre class="usage"><span class='fu'>create_rse_manual</span>(
   <span class='no'>project</span>,
   <span class='kw'>project_home</span> <span class='kw'>=</span> <span class='fu'><a href='project_home_available.html'>project_home_available</a></span>(<span class='kw'>organism</span> <span class='kw'>=</span> <span class='no'>organism</span>, <span class='kw'>recount3_url</span> <span class='kw'>=</span>
-    <span class='no'>recount3_url</span>),
+    <span class='no'>recount3_url</span>, <span class='kw'>bfc</span> <span class='kw'>=</span> <span class='no'>bfc</span>),
   <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"gene"</span>, <span class='st'>"exon"</span>),
   <span class='kw'>organism</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"human"</span>, <span class='st'>"mouse"</span>),
   <span class='kw'>annotation</span> <span class='kw'>=</span> <span class='fu'><a href='annotation_options.html'>annotation_options</a></span>(<span class='no'>organism</span>),
@@ -218,17 +218,49 @@ base-pair coverage counts used in recount2 and recount3.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='no'>rse_gene_ERP110066_manual</span> <span class='kw'>&lt;-</span> <span class='fu'>create_rse_manual</span>(<span class='st'>"ERP110066"</span>, <span class='st'>"data_sources/sra"</span>)</div><div class='output co'>#&gt; <span class='message'>2020-05-12 13:40:33 downloading and reading the metadata</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.metadata.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>2020-05-12 13:40:34 downloading and reading the feature information</span></div><div class='output co'>#&gt; <span class='message'>Caching file human.gene_sums.G026.gtf.gz</span></div><div class='output co'>#&gt; <span class='message'>2020-05-12 13:40:35 downloading and reading the counts: 1024 samples across 63856 features.</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.gene_sums.ERP110066.G026.gz</span></div><div class='output co'>#&gt; <span class='message'>2020-05-12 13:40:38 construcing the RangedSummarizedExperiment (rse) object</span></div><div class='input'><span class='no'>rse_gene_ERP110066_manual</span></div><div class='output co'>#&gt; class: RangedSummarizedExperiment 
+<span class='no'>rse_gene_ERP110066_manual</span> <span class='kw'>&lt;-</span> <span class='fu'>create_rse_manual</span>(
+    <span class='st'>"ERP110066"</span>,
+    <span class='st'>"data_sources/sra"</span>
+)</div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:37:04 downloading and reading the metadata</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.ncbi.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_project.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_qc.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:37:06 downloading and reading the feature information</span></div><div class='output co'>#&gt; <span class='message'>Caching file human.gene_sums.G026.gtf.gz</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:37:07 downloading and reading the counts: 1024 samples across 63856 features.</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.gene_sums.ERP110066.G026.gz</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:37:10 construcing the RangedSummarizedExperiment (rse) object</span></div><div class='input'><span class='no'>rse_gene_ERP110066_manual</span></div><div class='output co'>#&gt; class: RangedSummarizedExperiment 
 #&gt; dim: 63856 1024 
 #&gt; metadata(0):
 #&gt; assays(1): counts
 #&gt; rownames(63856): ENSG00000278704.1 ENSG00000277400.1 ...
 #&gt;   ENSG00000182484.15_PAR_Y ENSG00000227159.8_PAR_Y
 #&gt; rowData names(10): source type ... havana_gene tag
-#&gt; colnames(1024): ERR2713300 ERR2713800 ... ERR2713699 ERR2713299
-#&gt; colData names(134): rail_id run_acc ... junction_avg_coverage BigWigURL</div><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+#&gt; colnames(1024): ERR2713604 ERR2713605 ... ERR2713998 ERR2713999
+#&gt; colData names(139): rail_id run_acc ...
+#&gt;   recount_qc.junction_avg_coverage BigWigURL</div><div class='input'>
+<span class='no'>rse_gene_ERP110066_collection_manual</span> <span class='kw'>&lt;-</span> <span class='fu'>create_rse_manual</span>(
+    <span class='st'>"ERP110066"</span>,
+    <span class='st'>"collections/geuvadis_smartseq"</span>
+)</div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:37:11 downloading and reading the metadata</span></div><div class='output co'>#&gt; <span class='message'>Caching file geuvadis_smartseq.ncbi.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/collections/geuvadis_smartseq/metadata/66/ERP110066/geuvadis_smartseq.ncbi.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>Caching file geuvadis_smartseq.recount_project.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/collections/geuvadis_smartseq/metadata/66/ERP110066/geuvadis_smartseq.recount_project.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>Caching file geuvadis_smartseq.recount_qc.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/collections/geuvadis_smartseq/metadata/66/ERP110066/geuvadis_smartseq.recount_qc.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>Caching file geuvadis_smartseq.custom.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/collections/geuvadis_smartseq/metadata/geuvadis_smartseq.custom.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:37:13 downloading and reading the feature information</span></div><div class='output co'>#&gt; <span class='message'>Caching file human.gene_sums.G026.gtf.gz</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:37:14 downloading and reading the counts: 1 sample across 63856 features.</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.gene_sums.ERP110066.G026.gz</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:37:16 construcing the RangedSummarizedExperiment (rse) object</span></div><div class='input'><span class='no'>rse_gene_ERP110066_collection_manual</span></div><div class='output co'>#&gt; class: RangedSummarizedExperiment 
+#&gt; dim: 63856 1 
+#&gt; metadata(0):
+#&gt; assays(1): counts
+#&gt; rownames(63856): ENSG00000278704.1 ENSG00000277400.1 ...
+#&gt;   ENSG00000182484.15_PAR_Y ENSG00000227159.8_PAR_Y
+#&gt; rowData names(10): source type ... havana_gene tag
+#&gt; colnames(1): ERR2713106
+#&gt; colData names(140): rail_id run_acc ... custom.sequencing_type
+#&gt;   BigWigURL</div><div class='input'>
+
+<span class='no'>rse_exon_ERP110066_collection_manual</span> <span class='kw'>&lt;-</span> <span class='fu'>create_rse_manual</span>(
+    <span class='st'>"ERP110066"</span>,
+    <span class='st'>"collections/geuvadis_smartseq"</span>,
+    <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"exon"</span>
+)</div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:37:16 downloading and reading the metadata</span></div><div class='output co'>#&gt; <span class='message'>Caching file geuvadis_smartseq.ncbi.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file geuvadis_smartseq.recount_project.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file geuvadis_smartseq.recount_qc.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file geuvadis_smartseq.custom.gz</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:37:18 downloading and reading the feature information</span></div><div class='output co'>#&gt; <span class='message'>Caching file human.exon_sums.G026.gtf.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/annotations/exon_sums/human.exon_sums.G026.gtf.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:37:40 downloading and reading the counts: 1 sample across 1299686 features.</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.exon_sums.ERP110066.G026.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/exon_sums/66/ERP110066/sra.exon_sums.ERP110066.G026.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:38:53 construcing the RangedSummarizedExperiment (rse) object</span></div><div class='input'><span class='no'>rse_exon_ERP110066_collection_manual</span></div><div class='output co'>#&gt; class: RangedSummarizedExperiment 
+#&gt; dim: 1299686 1 
+#&gt; metadata(0):
+#&gt; assays(1): counts
+#&gt; rownames(1299686): GL000009.2|56140|58376|- GL000194.1|53594|54832|-
+#&gt;   ... chrY|57213880|57213964|- chrY|57214350|57214397|-
+#&gt; rowData names(21): source type ... ont ccdsid
+#&gt; colnames(1): ERR2713106
+#&gt; colData names(140): rail_id run_acc ... custom.sequencing_type
+#&gt;   BigWigURL</div><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
 <span class='no'>project</span> <span class='kw'>&lt;-</span> <span class='st'>"ERP110066"</span>
-<span class='no'>project_home</span> <span class='kw'>&lt;-</span> <span class='st'>"data_sources/sra"</span>
+<span class='no'>project_home</span> <span class='kw'>&lt;-</span> <span class='st'>"collections/geuvadis_smartseq"</span>
 <span class='no'>type</span> <span class='kw'>&lt;-</span> <span class='st'>"exon"</span>
 <span class='no'>organism</span> <span class='kw'>&lt;-</span> <span class='st'>"human"</span>
 <span class='no'>annotation</span> <span class='kw'>&lt;-</span> <span class='st'>"gencode_v26"</span>

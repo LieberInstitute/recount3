@@ -143,7 +143,6 @@ on the <code>organism</code> and the <code>home_type</code>.</p>
     </div>
 
     <pre class="usage"><span class='fu'>project_home_available</span>(
-  <span class='kw'>home_type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"data_source"</span>, <span class='st'>"collection"</span>),
   <span class='kw'>organism</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"human"</span>, <span class='st'>"mouse"</span>),
   <span class='kw'>recount3_url</span> <span class='kw'>=</span> <span class='st'>"http://snaptron.cs.jhu.edu/data/temp/recount3"</span>,
   <span class='kw'>bfc</span> <span class='kw'>=</span> <span class='kw pkg'>BiocFileCache</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html'>BiocFileCache</a></span>()
@@ -152,11 +151,6 @@ on the <code>organism</code> and the <code>home_type</code>.</p>
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>home_type</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> specifying whether you are looking for
-the core data sources for <code>recount3</code> or collections which are user-created.</p></td>
-    </tr>
     <tr>
       <th>organism</th>
       <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> specifying which organism you want to
@@ -192,8 +186,8 @@ object where the files will be cached to.</p></td>
     <pre class="examples"><div class='input'>
 <span class='co'>## List the different available `project_home` options for the default</span>
 <span class='co'>## arguments</span>
-<span class='fu'>project_home_available</span>()</div><div class='output co'>#&gt;                gtex                 sra 
-#&gt; "data_sources/gtex"  "data_sources/sra" </div></pre>
+<span class='fu'>project_home_available</span>()</div><div class='output co'>#&gt; [1] "data_sources/gtex"             "data_sources/sra"             
+#&gt; [3] "collections/ccle"              "collections/geuvadis_smartseq"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

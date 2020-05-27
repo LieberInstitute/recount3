@@ -197,7 +197,7 @@ or a local directory where you have mirrored <code>recount3</code>.</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> with the URL for the file of interest.</p>
+    <p>A <code><a href='https://rdrr.io/r/base/character.html'>character()</a></code> with the URL(s) for the file(s) of interest.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other internal functions for accessing the recount3 data: 
@@ -211,15 +211,49 @@ or a local directory where you have mirrored <code>recount3</code>.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='co'>## Example for a metadata file</span>
-<span class='fu'>file_locate_url</span>(<span class='st'>"ERP110066"</span>, <span class='st'>"data_sources/sra"</span>)</div><div class='output co'>#&gt;                                                                                              sra.metadata.ERP110066.MD.gz 
-#&gt; "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.metadata.ERP110066.MD.gz" </div><div class='input'>
+<span class='co'>## Example for metadata files from a project from SRA</span>
+<span class='fu'>file_locate_url</span>(
+    <span class='st'>"ERP110066"</span>,
+    <span class='st'>"data_sources/sra"</span>
+)</div><div class='output co'>#&gt;                                                                                                         sra.ncbi.ERP110066.MD.gz 
+#&gt;            "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.ncbi.ERP110066.MD.gz" 
+#&gt;                                                                                              sra.recount_project.ERP110066.MD.gz 
+#&gt; "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_project.ERP110066.MD.gz" 
+#&gt;                                                                                                   sra.recount_qc.ERP110066.MD.gz 
+#&gt;      "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_qc.ERP110066.MD.gz" </div><div class='input'>
+<span class='co'>## Example for metadata files from a project that is part of a collection</span>
+<span class='fu'>file_locate_url</span>(
+    <span class='st'>"ERP110066"</span>,
+    <span class='st'>"collections/geuvadis_smartseq"</span>
+)</div><div class='output co'>#&gt;                                                                                                                      geuvadis_smartseq.ncbi.ERP110066.MD.gz 
+#&gt;            "http://snaptron.cs.jhu.edu/data/temp/recount3/human/collections/geuvadis_smartseq/metadata/66/ERP110066/geuvadis_smartseq.ncbi.ERP110066.MD.gz" 
+#&gt;                                                                                                           geuvadis_smartseq.recount_project.ERP110066.MD.gz 
+#&gt; "http://snaptron.cs.jhu.edu/data/temp/recount3/human/collections/geuvadis_smartseq/metadata/66/ERP110066/geuvadis_smartseq.recount_project.ERP110066.MD.gz" 
+#&gt;                                                                                                                geuvadis_smartseq.recount_qc.ERP110066.MD.gz 
+#&gt;      "http://snaptron.cs.jhu.edu/data/temp/recount3/human/collections/geuvadis_smartseq/metadata/66/ERP110066/geuvadis_smartseq.recount_qc.ERP110066.MD.gz" 
+#&gt;                                                                                                                                 geuvadis_smartseq.custom.gz 
+#&gt;                                    "http://snaptron.cs.jhu.edu/data/temp/recount3/human/collections/geuvadis_smartseq/metadata/geuvadis_smartseq.custom.gz" </div><div class='input'>
 <span class='co'>## Example for a BigWig file</span>
-<span class='fu'>file_locate_url</span>(<span class='st'>"ERP110066"</span>, <span class='st'>"data_sources/sra"</span>, <span class='st'>"bw"</span>, <span class='st'>"human"</span>, <span class='st'>"ERR204900"</span>)</div><div class='output co'>#&gt;                                                                                                  sra.base_sums.ERP110066_ERR204900.ALL.bw 
+<span class='fu'>file_locate_url</span>(
+    <span class='st'>"ERP110066"</span>,
+    <span class='st'>"data_sources/sra"</span>,
+    <span class='st'>"bw"</span>,
+    <span class='st'>"human"</span>,
+    <span class='st'>"ERR204900"</span>
+)</div><div class='output co'>#&gt;                                                                                                  sra.base_sums.ERP110066_ERR204900.ALL.bw 
 #&gt; "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/base_sums/66/ERP110066/00/sra.base_sums.ERP110066_ERR204900.ALL.bw" </div><div class='input'>
 <span class='co'>## Locate example gene count files</span>
-<span class='fu'>file_locate_url</span>(<span class='st'>"ERP110066"</span>, <span class='st'>"data_sources/sra"</span>, <span class='st'>"gene"</span>)</div><div class='output co'>#&gt;                                                                                               sra.gene_sums.ERP110066.G026.gz 
-#&gt; "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.G026.gz" </div><div class='input'><span class='fu'>file_locate_url</span>(<span class='st'>"ERP110066"</span>, <span class='st'>"data_sources/sra"</span>, <span class='st'>"gene"</span>, <span class='kw'>annotation</span> <span class='kw'>=</span> <span class='st'>"refseq"</span>)</div><div class='output co'>#&gt;                                                                                               sra.gene_sums.ERP110066.R109.gz 
+<span class='fu'>file_locate_url</span>(
+    <span class='st'>"ERP110066"</span>,
+    <span class='st'>"data_sources/sra"</span>,
+    <span class='st'>"gene"</span>
+)</div><div class='output co'>#&gt;                                                                                               sra.gene_sums.ERP110066.G026.gz 
+#&gt; "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.G026.gz" </div><div class='input'><span class='fu'>file_locate_url</span>(
+    <span class='st'>"ERP110066"</span>,
+    <span class='st'>"data_sources/sra"</span>,
+    <span class='st'>"gene"</span>,
+    <span class='kw'>annotation</span> <span class='kw'>=</span> <span class='st'>"refseq"</span>
+)</div><div class='output co'>#&gt;                                                                                               sra.gene_sums.ERP110066.R109.gz 
 #&gt; "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.R109.gz" </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

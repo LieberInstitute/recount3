@@ -204,7 +204,7 @@ object.</p>
 )
 
 <span class='co'>## Create a RSE object at the gene level</span>
-<span class='no'>rse_gene_ERP110066</span> <span class='kw'>&lt;-</span> <span class='fu'>create_rse</span>(<span class='no'>proj_info</span>)</div><div class='output co'>#&gt; <span class='message'>using temporary cache /tmp/RtmpYnT3ao/BiocFileCache</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-12 13:40:13 downloading and reading the metadata</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.metadata.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.metadata.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-12 13:40:15 downloading and reading the feature information</span></div><div class='output co'>#&gt; <span class='message'>Caching file human.gene_sums.G026.gtf.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/annotations/gene_sums/human.gene_sums.G026.gtf.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-12 13:40:16 downloading and reading the counts: 1024 samples across 63856 features.</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.gene_sums.ERP110066.G026.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.G026.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-12 13:40:25 construcing the RangedSummarizedExperiment (rse) object</span></div><div class='input'>
+<span class='no'>rse_gene_ERP110066</span> <span class='kw'>&lt;-</span> <span class='fu'>create_rse</span>(<span class='no'>proj_info</span>)</div><div class='output co'>#&gt; <span class='message'>using temporary cache /tmp/RtmpvzkdzB/BiocFileCache</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources'</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/collections'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:36:44 downloading and reading the metadata</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.ncbi.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.ncbi.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_project.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_project.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_qc.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_qc.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:36:47 downloading and reading the feature information</span></div><div class='output co'>#&gt; <span class='message'>Caching file human.gene_sums.G026.gtf.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/annotations/gene_sums/human.gene_sums.G026.gtf.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:36:48 downloading and reading the counts: 1024 samples across 63856 features.</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.gene_sums.ERP110066.G026.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.G026.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:36:56 construcing the RangedSummarizedExperiment (rse) object</span></div><div class='input'>
 <span class='co'>## Explore the resulting RSE gene object</span>
 <span class='no'>rse_gene_ERP110066</span></div><div class='output co'>#&gt; class: RangedSummarizedExperiment 
 #&gt; dim: 63856 1024 
@@ -213,8 +213,9 @@ object.</p>
 #&gt; rownames(63856): ENSG00000278704.1 ENSG00000277400.1 ...
 #&gt;   ENSG00000182484.15_PAR_Y ENSG00000227159.8_PAR_Y
 #&gt; rowData names(10): source type ... havana_gene tag
-#&gt; colnames(1024): ERR2713300 ERR2713800 ... ERR2713699 ERR2713299
-#&gt; colData names(134): rail_id run_acc ... junction_avg_coverage BigWigURL</div><div class='input'>
+#&gt; colnames(1024): ERR2713604 ERR2713605 ... ERR2713998 ERR2713999
+#&gt; colData names(139): rail_id run_acc ...
+#&gt;   recount_qc.junction_avg_coverage BigWigURL</div><div class='input'>
 <span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>rse_gene_ERP110066</span>)</div><div class='output co'>#&gt; [1] 63856  1024</div><div class='input'><span class='fu'>rowRanges</span>(<span class='no'>rse_gene_ERP110066</span>)</div><div class='output co'>#&gt; GRanges object with 63856 ranges and 10 metadata columns:
 #&gt;                              seqnames            ranges strand |   source
 #&gt;                                 &lt;Rle&gt;         &lt;IRanges&gt;  &lt;Rle&gt; | &lt;factor&gt;
@@ -229,1163 +230,202 @@ object.</p>
 #&gt;    ENSG00000270726.6_PAR_Y       chrY 57190738-57208756      + |   HAVANA
 #&gt;   ENSG00000182484.15_PAR_Y       chrY 57207346-57212230      + |   HAVANA
 #&gt;    ENSG00000227159.8_PAR_Y       chrY 57212184-57214397      - |   HAVANA
-#&gt;                                type     score     phase
-#&gt;                            &lt;factor&gt; &lt;numeric&gt; &lt;integer&gt;
-#&gt;          ENSG00000278704.1     gene      2237      &lt;NA&gt;
-#&gt;          ENSG00000277400.1     gene      2179      &lt;NA&gt;
-#&gt;          ENSG00000274847.1     gene      1599      &lt;NA&gt;
-#&gt;          ENSG00000277428.1     gene       101      &lt;NA&gt;
-#&gt;          ENSG00000276256.1     gene      2195      &lt;NA&gt;
-#&gt;                        ...      ...       ...       ...
-#&gt;   ENSG00000124334.17_PAR_Y     gene      2504      &lt;NA&gt;
-#&gt;   ENSG00000185203.12_PAR_Y     gene      1054      &lt;NA&gt;
-#&gt;    ENSG00000270726.6_PAR_Y     gene       773      &lt;NA&gt;
-#&gt;   ENSG00000182484.15_PAR_Y     gene      4618      &lt;NA&gt;
-#&gt;    ENSG00000227159.8_PAR_Y     gene      1306      &lt;NA&gt;
-#&gt;                                             gene_id
-#&gt;                                         &lt;character&gt;
-#&gt;          ENSG00000278704.1        ENSG00000278704.1
-#&gt;          ENSG00000277400.1        ENSG00000277400.1
-#&gt;          ENSG00000274847.1        ENSG00000274847.1
-#&gt;          ENSG00000277428.1        ENSG00000277428.1
-#&gt;          ENSG00000276256.1        ENSG00000276256.1
-#&gt;                        ...                      ...
-#&gt;   ENSG00000124334.17_PAR_Y ENSG00000124334.17_PAR_Y
-#&gt;   ENSG00000185203.12_PAR_Y ENSG00000185203.12_PAR_Y
-#&gt;    ENSG00000270726.6_PAR_Y  ENSG00000270726.6_PAR_Y
-#&gt;   ENSG00000182484.15_PAR_Y ENSG00000182484.15_PAR_Y
-#&gt;    ENSG00000227159.8_PAR_Y  ENSG00000227159.8_PAR_Y
-#&gt;                                                     gene_type   gene_name
-#&gt;                                                   &lt;character&gt; &lt;character&gt;
-#&gt;          ENSG00000278704.1                     protein_coding  BX004987.1
-#&gt;          ENSG00000277400.1                     protein_coding  AC145212.2
-#&gt;          ENSG00000274847.1                     protein_coding  AC145212.1
-#&gt;          ENSG00000277428.1                           misc_RNA       Y_RNA
-#&gt;          ENSG00000276256.1                     protein_coding  AC011043.1
-#&gt;                        ...                                ...         ...
-#&gt;   ENSG00000124334.17_PAR_Y                     protein_coding        IL9R
-#&gt;   ENSG00000185203.12_PAR_Y                          antisense      WASIR1
-#&gt;    ENSG00000270726.6_PAR_Y               processed_transcript AJ271736.10
-#&gt;   ENSG00000182484.15_PAR_Y transcribed_unprocessed_pseudogene      WASH6P
-#&gt;    ENSG00000227159.8_PAR_Y             unprocessed_pseudogene    DDX11L16
-#&gt;                                  level          havana_gene         tag
-#&gt;                            &lt;character&gt;          &lt;character&gt; &lt;character&gt;
-#&gt;          ENSG00000278704.1           3                 &lt;NA&gt;        &lt;NA&gt;
-#&gt;          ENSG00000277400.1           3                 &lt;NA&gt;        &lt;NA&gt;
-#&gt;          ENSG00000274847.1           3                 &lt;NA&gt;        &lt;NA&gt;
-#&gt;          ENSG00000277428.1           3                 &lt;NA&gt;        &lt;NA&gt;
-#&gt;          ENSG00000276256.1           3                 &lt;NA&gt;        &lt;NA&gt;
-#&gt;                        ...         ...                  ...         ...
-#&gt;   ENSG00000124334.17_PAR_Y           2 OTTHUMG00000022720.1         PAR
-#&gt;   ENSG00000185203.12_PAR_Y           2 OTTHUMG00000022676.3         PAR
-#&gt;    ENSG00000270726.6_PAR_Y           2 OTTHUMG00000184987.2         PAR
-#&gt;   ENSG00000182484.15_PAR_Y           2 OTTHUMG00000022677.5         PAR
-#&gt;    ENSG00000227159.8_PAR_Y           2 OTTHUMG00000022678.1         PAR
+#&gt;                                type     score     phase                gene_id
+#&gt;                            &lt;factor&gt; &lt;numeric&gt; &lt;integer&gt;            &lt;character&gt;
+#&gt;          ENSG00000278704.1     gene      2237      &lt;NA&gt;      ENSG00000278704.1
+#&gt;          ENSG00000277400.1     gene      2179      &lt;NA&gt;      ENSG00000277400.1
+#&gt;          ENSG00000274847.1     gene      1599      &lt;NA&gt;      ENSG00000274847.1
+#&gt;          ENSG00000277428.1     gene       101      &lt;NA&gt;      ENSG00000277428.1
+#&gt;          ENSG00000276256.1     gene      2195      &lt;NA&gt;      ENSG00000276256.1
+#&gt;                        ...      ...       ...       ...                    ...
+#&gt;   ENSG00000124334.17_PAR_Y     gene      2504      &lt;NA&gt; ENSG00000124334.17_P..
+#&gt;   ENSG00000185203.12_PAR_Y     gene      1054      &lt;NA&gt; ENSG00000185203.12_P..
+#&gt;    ENSG00000270726.6_PAR_Y     gene       773      &lt;NA&gt; ENSG00000270726.6_PA..
+#&gt;   ENSG00000182484.15_PAR_Y     gene      4618      &lt;NA&gt; ENSG00000182484.15_P..
+#&gt;    ENSG00000227159.8_PAR_Y     gene      1306      &lt;NA&gt; ENSG00000227159.8_PA..
+#&gt;                                         gene_type   gene_name       level
+#&gt;                                       &lt;character&gt; &lt;character&gt; &lt;character&gt;
+#&gt;          ENSG00000278704.1         protein_coding  BX004987.1           3
+#&gt;          ENSG00000277400.1         protein_coding  AC145212.2           3
+#&gt;          ENSG00000274847.1         protein_coding  AC145212.1           3
+#&gt;          ENSG00000277428.1               misc_RNA       Y_RNA           3
+#&gt;          ENSG00000276256.1         protein_coding  AC011043.1           3
+#&gt;                        ...                    ...         ...         ...
+#&gt;   ENSG00000124334.17_PAR_Y         protein_coding        IL9R           2
+#&gt;   ENSG00000185203.12_PAR_Y              antisense      WASIR1           2
+#&gt;    ENSG00000270726.6_PAR_Y   processed_transcript AJ271736.10           2
+#&gt;   ENSG00000182484.15_PAR_Y transcribed_unproces..      WASH6P           2
+#&gt;    ENSG00000227159.8_PAR_Y unprocessed_pseudogene    DDX11L16           2
+#&gt;                                     havana_gene         tag
+#&gt;                                     &lt;character&gt; &lt;character&gt;
+#&gt;          ENSG00000278704.1                 &lt;NA&gt;        &lt;NA&gt;
+#&gt;          ENSG00000277400.1                 &lt;NA&gt;        &lt;NA&gt;
+#&gt;          ENSG00000274847.1                 &lt;NA&gt;        &lt;NA&gt;
+#&gt;          ENSG00000277428.1                 &lt;NA&gt;        &lt;NA&gt;
+#&gt;          ENSG00000276256.1                 &lt;NA&gt;        &lt;NA&gt;
+#&gt;                        ...                  ...         ...
+#&gt;   ENSG00000124334.17_PAR_Y OTTHUMG00000022720.1         PAR
+#&gt;   ENSG00000185203.12_PAR_Y OTTHUMG00000022676.3         PAR
+#&gt;    ENSG00000270726.6_PAR_Y OTTHUMG00000184987.2         PAR
+#&gt;   ENSG00000182484.15_PAR_Y OTTHUMG00000022677.5         PAR
+#&gt;    ENSG00000227159.8_PAR_Y OTTHUMG00000022678.1         PAR
 #&gt;   -------
-#&gt;   seqinfo: 374 sequences from an unspecified genome; no seqlengths</div><div class='input'><span class='fu'>colData</span>(<span class='no'>rse_gene_ERP110066</span>)</div><div class='output co'>#&gt; DataFrame with 1024 rows and 134 columns
-#&gt;              rail_id     run_acc   study_acc  sample_acc experiment_acc
-#&gt;            &lt;integer&gt; &lt;character&gt; &lt;character&gt; &lt;character&gt;    &lt;character&gt;
-#&gt; ERR2713300    526388  ERR2713106   ERP110066  ERS2624036     ERX2727275
-#&gt; ERR2713800    526396  ERR2713107   ERP110066  ERS2624037     ERX2727276
-#&gt; ERR2714100    526404  ERR2713108   ERP110066  ERS2624038     ERX2727277
-#&gt; ERR2713700    526412  ERR2713109   ERP110066  ERS2624039     ERX2727278
-#&gt; ERR2713600    526468  ERR2713110   ERP110066  ERS2624040     ERX2727279
-#&gt; ...              ...         ...         ...         ...            ...
-#&gt; ERR2713499    526646  ERR2714126   ERP110066  ERS2625055     ERX2728294
-#&gt; ERR2713899    526655  ERR2714127   ERP110066  ERS2625056     ERX2728295
-#&gt; ERR2713599    526662  ERR2714128   ERP110066  ERS2625057     ERX2728296
-#&gt; ERR2713699    526670  ERR2714129   ERP110066  ERS2625058     ERX2728297
-#&gt; ERR2713299    526726  ERR2714130   ERP110066  ERS2625059     ERX2728298
-#&gt;            submission_acc submission_center              submission_lab
-#&gt;               &lt;character&gt;         &lt;logical&gt;                 &lt;character&gt;
-#&gt; ERR2713300     ERA1552443                NA European Nucleotide Archive
-#&gt; ERR2713800     ERA1552443                NA European Nucleotide Archive
-#&gt; ERR2714100     ERA1552443                NA European Nucleotide Archive
-#&gt; ERR2713700     ERA1552443                NA European Nucleotide Archive
-#&gt; ERR2713600     ERA1552443                NA European Nucleotide Archive
-#&gt; ...                   ...               ...                         ...
-#&gt; ERR2713499     ERA1552443                NA European Nucleotide Archive
-#&gt; ERR2713899     ERA1552443                NA European Nucleotide Archive
-#&gt; ERR2713599     ERA1552443                NA European Nucleotide Archive
-#&gt; ERR2713699     ERA1552443                NA European Nucleotide Archive
-#&gt; ERR2713299     ERA1552443                NA European Nucleotide Archive
-#&gt;                                                      study_title
-#&gt;                                                      &lt;character&gt;
-#&gt; ERR2713300 Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713800 Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2714100 Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713700 Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713600 Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ...                                                          ...
-#&gt; ERR2713499 Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713899 Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713599 Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713699 Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713299 Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                             study_abstract
-#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                &lt;character&gt;
-#&gt; ERR2713300 Single-cell RNA-seq (scRNA-seq) on nocodazole and DMSO treated cells before and after differentiation into endoderm. hPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours and induced to differentiate into definitive endoderm for three days. Single cells were subsequently collected in either undifferentiated conditions (Und) or after 3 days of endoderm differentiation (Endoderm) and then sorted onto 384 well plates for Smart-Seq2 processing.
-#&gt; ERR2713800 Single-cell RNA-seq (scRNA-seq) on nocodazole and DMSO treated cells before and after differentiation into endoderm. hPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours and induced to differentiate into definitive endoderm for three days. Single cells were subsequently collected in either undifferentiated conditions (Und) or after 3 days of endoderm differentiation (Endoderm) and then sorted onto 384 well plates for Smart-Seq2 processing.
-#&gt; ERR2714100 Single-cell RNA-seq (scRNA-seq) on nocodazole and DMSO treated cells before and after differentiation into endoderm. hPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours and induced to differentiate into definitive endoderm for three days. Single cells were subsequently collected in either undifferentiated conditions (Und) or after 3 days of endoderm differentiation (Endoderm) and then sorted onto 384 well plates for Smart-Seq2 processing.
-#&gt; ERR2713700 Single-cell RNA-seq (scRNA-seq) on nocodazole and DMSO treated cells before and after differentiation into endoderm. hPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours and induced to differentiate into definitive endoderm for three days. Single cells were subsequently collected in either undifferentiated conditions (Und) or after 3 days of endoderm differentiation (Endoderm) and then sorted onto 384 well plates for Smart-Seq2 processing.
-#&gt; ERR2713600 Single-cell RNA-seq (scRNA-seq) on nocodazole and DMSO treated cells before and after differentiation into endoderm. hPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours and induced to differentiate into definitive endoderm for three days. Single cells were subsequently collected in either undifferentiated conditions (Und) or after 3 days of endoderm differentiation (Endoderm) and then sorted onto 384 well plates for Smart-Seq2 processing.
-#&gt; ...                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ...
-#&gt; ERR2713499 Single-cell RNA-seq (scRNA-seq) on nocodazole and DMSO treated cells before and after differentiation into endoderm. hPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours and induced to differentiate into definitive endoderm for three days. Single cells were subsequently collected in either undifferentiated conditions (Und) or after 3 days of endoderm differentiation (Endoderm) and then sorted onto 384 well plates for Smart-Seq2 processing.
-#&gt; ERR2713899 Single-cell RNA-seq (scRNA-seq) on nocodazole and DMSO treated cells before and after differentiation into endoderm. hPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours and induced to differentiate into definitive endoderm for three days. Single cells were subsequently collected in either undifferentiated conditions (Und) or after 3 days of endoderm differentiation (Endoderm) and then sorted onto 384 well plates for Smart-Seq2 processing.
-#&gt; ERR2713599 Single-cell RNA-seq (scRNA-seq) on nocodazole and DMSO treated cells before and after differentiation into endoderm. hPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours and induced to differentiate into definitive endoderm for three days. Single cells were subsequently collected in either undifferentiated conditions (Und) or after 3 days of endoderm differentiation (Endoderm) and then sorted onto 384 well plates for Smart-Seq2 processing.
-#&gt; ERR2713699 Single-cell RNA-seq (scRNA-seq) on nocodazole and DMSO treated cells before and after differentiation into endoderm. hPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours and induced to differentiate into definitive endoderm for three days. Single cells were subsequently collected in either undifferentiated conditions (Und) or after 3 days of endoderm differentiation (Endoderm) and then sorted onto 384 well plates for Smart-Seq2 processing.
-#&gt; ERR2713299 Single-cell RNA-seq (scRNA-seq) on nocodazole and DMSO treated cells before and after differentiation into endoderm. hPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours and induced to differentiate into definitive endoderm for three days. Single cells were subsequently collected in either undifferentiated conditions (Und) or after 3 days of endoderm differentiation (Endoderm) and then sorted onto 384 well plates for Smart-Seq2 processing.
-#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                          study_description
-#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                &lt;character&gt;
-#&gt; ERR2713300 Single-cell RNA-seq (scRNA-seq) on nocodazole and DMSO treated cells before and after differentiation into endoderm. hPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours and induced to differentiate into definitive endoderm for three days. Single cells were subsequently collected in either undifferentiated conditions (Und) or after 3 days of endoderm differentiation (Endoderm) and then sorted onto 384 well plates for Smart-Seq2 processing.
-#&gt; ERR2713800 Single-cell RNA-seq (scRNA-seq) on nocodazole and DMSO treated cells before and after differentiation into endoderm. hPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours and induced to differentiate into definitive endoderm for three days. Single cells were subsequently collected in either undifferentiated conditions (Und) or after 3 days of endoderm differentiation (Endoderm) and then sorted onto 384 well plates for Smart-Seq2 processing.
-#&gt; ERR2714100 Single-cell RNA-seq (scRNA-seq) on nocodazole and DMSO treated cells before and after differentiation into endoderm. hPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours and induced to differentiate into definitive endoderm for three days. Single cells were subsequently collected in either undifferentiated conditions (Und) or after 3 days of endoderm differentiation (Endoderm) and then sorted onto 384 well plates for Smart-Seq2 processing.
-#&gt; ERR2713700 Single-cell RNA-seq (scRNA-seq) on nocodazole and DMSO treated cells before and after differentiation into endoderm. hPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours and induced to differentiate into definitive endoderm for three days. Single cells were subsequently collected in either undifferentiated conditions (Und) or after 3 days of endoderm differentiation (Endoderm) and then sorted onto 384 well plates for Smart-Seq2 processing.
-#&gt; ERR2713600 Single-cell RNA-seq (scRNA-seq) on nocodazole and DMSO treated cells before and after differentiation into endoderm. hPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours and induced to differentiate into definitive endoderm for three days. Single cells were subsequently collected in either undifferentiated conditions (Und) or after 3 days of endoderm differentiation (Endoderm) and then sorted onto 384 well plates for Smart-Seq2 processing.
-#&gt; ...                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ...
-#&gt; ERR2713499 Single-cell RNA-seq (scRNA-seq) on nocodazole and DMSO treated cells before and after differentiation into endoderm. hPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours and induced to differentiate into definitive endoderm for three days. Single cells were subsequently collected in either undifferentiated conditions (Und) or after 3 days of endoderm differentiation (Endoderm) and then sorted onto 384 well plates for Smart-Seq2 processing.
-#&gt; ERR2713899 Single-cell RNA-seq (scRNA-seq) on nocodazole and DMSO treated cells before and after differentiation into endoderm. hPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours and induced to differentiate into definitive endoderm for three days. Single cells were subsequently collected in either undifferentiated conditions (Und) or after 3 days of endoderm differentiation (Endoderm) and then sorted onto 384 well plates for Smart-Seq2 processing.
-#&gt; ERR2713599 Single-cell RNA-seq (scRNA-seq) on nocodazole and DMSO treated cells before and after differentiation into endoderm. hPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours and induced to differentiate into definitive endoderm for three days. Single cells were subsequently collected in either undifferentiated conditions (Und) or after 3 days of endoderm differentiation (Endoderm) and then sorted onto 384 well plates for Smart-Seq2 processing.
-#&gt; ERR2713699 Single-cell RNA-seq (scRNA-seq) on nocodazole and DMSO treated cells before and after differentiation into endoderm. hPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours and induced to differentiate into definitive endoderm for three days. Single cells were subsequently collected in either undifferentiated conditions (Und) or after 3 days of endoderm differentiation (Endoderm) and then sorted onto 384 well plates for Smart-Seq2 processing.
-#&gt; ERR2713299 Single-cell RNA-seq (scRNA-seq) on nocodazole and DMSO treated cells before and after differentiation into endoderm. hPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours and induced to differentiate into definitive endoderm for three days. Single cells were subsequently collected in either undifferentiated conditions (Und) or after 3 days of endoderm differentiation (Endoderm) and then sorted onto 384 well plates for Smart-Seq2 processing.
-#&gt;                                                                                            experiment_title
-#&gt;                                                                                                 &lt;character&gt;
-#&gt; ERR2713300 Illumina HiSeq 4000 paired end sequencing; Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713800 Illumina HiSeq 4000 paired end sequencing; Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2714100 Illumina HiSeq 4000 paired end sequencing; Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713700 Illumina HiSeq 4000 paired end sequencing; Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713600 Illumina HiSeq 4000 paired end sequencing; Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ...                                                                                                     ...
-#&gt; ERR2713499 Illumina HiSeq 4000 paired end sequencing; Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713899 Illumina HiSeq 4000 paired end sequencing; Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713599 Illumina HiSeq 4000 paired end sequencing; Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713699 Illumina HiSeq 4000 paired end sequencing; Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713299 Illumina HiSeq 4000 paired end sequencing; Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt;                                               design_description
-#&gt;                                                      &lt;character&gt;
-#&gt; ERR2713300 Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713800 Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2714100 Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713700 Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713600 Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ...                                                          ...
-#&gt; ERR2713499 Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713899 Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713599 Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713699 Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt; ERR2713299 Endoderm Differentiation - Single Cell RNA-sequencing
-#&gt;            sample_description      library_name library_strategy library_source
-#&gt;                     &lt;logical&gt;       &lt;character&gt;      &lt;character&gt;    &lt;character&gt;
-#&gt; ERR2713300                 NA  0hS_22728_4_10_p          RNA-Seq TRANSCRIPTOMIC
-#&gt; ERR2713800                 NA 0hS_22728_4_105_p          RNA-Seq TRANSCRIPTOMIC
-#&gt; ERR2714100                 NA 0hS_22728_4_106_p          RNA-Seq TRANSCRIPTOMIC
-#&gt; ERR2713700                 NA 0hS_22728_4_107_p          RNA-Seq TRANSCRIPTOMIC
-#&gt; ERR2713600                 NA 0hS_22728_4_108_p          RNA-Seq TRANSCRIPTOMIC
-#&gt; ...                       ...               ...              ...            ...
-#&gt; ERR2713499                 NA 72hU_22728_3_92_p          RNA-Seq TRANSCRIPTOMIC
-#&gt; ERR2713899                 NA 72hU_22728_3_93_p          RNA-Seq TRANSCRIPTOMIC
-#&gt; ERR2713599                 NA 72hU_22728_3_94_p          RNA-Seq TRANSCRIPTOMIC
-#&gt; ERR2713699                 NA 72hU_22728_3_95_p          RNA-Seq TRANSCRIPTOMIC
-#&gt; ERR2713299                 NA 72hU_22728_3_96_p          RNA-Seq TRANSCRIPTOMIC
-#&gt;            library_selection library_layout paired_nominal_length
-#&gt;                  &lt;character&gt;    &lt;character&gt;             &lt;integer&gt;
-#&gt; ERR2713300             PolyA         paired                   400
-#&gt; ERR2713800             PolyA         paired                   400
-#&gt; ERR2714100             PolyA         paired                   400
-#&gt; ERR2713700             PolyA         paired                   400
-#&gt; ERR2713600             PolyA         paired                   400
-#&gt; ...                      ...            ...                   ...
-#&gt; ERR2713499             PolyA         paired                   400
-#&gt; ERR2713899             PolyA         paired                   400
-#&gt; ERR2713599             PolyA         paired                   400
-#&gt; ERR2713699             PolyA         paired                   400
-#&gt; ERR2713299             PolyA         paired                   400
-#&gt;            paired_nominal_stdev
-#&gt;                       &lt;numeric&gt;
-#&gt; ERR2713300                    0
-#&gt; ERR2713800                    0
-#&gt; ERR2714100                    0
-#&gt; ERR2713700                    0
-#&gt; ERR2713600                    0
-#&gt; ...                         ...
-#&gt; ERR2713499                    0
-#&gt; ERR2713899                    0
-#&gt; ERR2713599                    0
-#&gt; ERR2713699                    0
-#&gt; ERR2713299                    0
-#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              library_construction_protocol
-#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                &lt;character&gt;
-#&gt; ERR2713300 Cells  were treated with Accutase and, once obtained single cells, were filtered (40um strainers), counted and resuspended in PBS/BSA (at 1%) at 10^6/mL to sort them into 384-well plates (containing the lysis buffer and ERCCs). The hiPSC line FSPS13B was plated on vitronectin coated plates (10µg/ml, Stem Cell Technologies) and cultured in E6 media supplemented with 2ng/ml TGF-β (R&amp;D) and 25ng/ml FGF2 making complete E8 media. Cells were maintained by weekly passaging using 0.5mM EDTA (Thermo Fisher Scientific). hiPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours. Following synchronisation, cells were maintained in pluripotency conditions or induced to form definitive endoderm using a 3-day protocol. On day 1 cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4, 100ng/ml Activin A and 3µM CHIR99021. On day 2 the cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4 and 100ng/ml Activin A. On day 3 the cells were cultured in RPMI-B27 media supplemented with 80ng/ml FGF2 and 100ng/ml Activin. Conversion was performed following the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) using a poly-Dt30 oligo and a TSO oligo. RNA extraction is based on the Picelli et al SS2 protocol, using a polydT primer plus the template switching oligo – TSO, as published (https://www.nature.com/articles/nprot.2014.006). Cell sorting and library preparation was carried out by the sequencing core facility at the Wellcome Sanger Institute. Single hPSCs were isolated into 384 wells plates and libraries were prepared for 120 cells/per condition using the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) and using Nextera XT DNA Library Preparation Kit – Illumina. A constant amount of spike-in RNA from the External RNA Controls Consortium (ERCC) was also added to the lysis buffer prior to sorting.
-#&gt; ERR2713800 Cells  were treated with Accutase and, once obtained single cells, were filtered (40um strainers), counted and resuspended in PBS/BSA (at 1%) at 10^6/mL to sort them into 384-well plates (containing the lysis buffer and ERCCs). The hiPSC line FSPS13B was plated on vitronectin coated plates (10µg/ml, Stem Cell Technologies) and cultured in E6 media supplemented with 2ng/ml TGF-β (R&amp;D) and 25ng/ml FGF2 making complete E8 media. Cells were maintained by weekly passaging using 0.5mM EDTA (Thermo Fisher Scientific). hiPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours. Following synchronisation, cells were maintained in pluripotency conditions or induced to form definitive endoderm using a 3-day protocol. On day 1 cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4, 100ng/ml Activin A and 3µM CHIR99021. On day 2 the cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4 and 100ng/ml Activin A. On day 3 the cells were cultured in RPMI-B27 media supplemented with 80ng/ml FGF2 and 100ng/ml Activin. Conversion was performed following the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) using a poly-Dt30 oligo and a TSO oligo. RNA extraction is based on the Picelli et al SS2 protocol, using a polydT primer plus the template switching oligo – TSO, as published (https://www.nature.com/articles/nprot.2014.006). Cell sorting and library preparation was carried out by the sequencing core facility at the Wellcome Sanger Institute. Single hPSCs were isolated into 384 wells plates and libraries were prepared for 120 cells/per condition using the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) and using Nextera XT DNA Library Preparation Kit – Illumina. A constant amount of spike-in RNA from the External RNA Controls Consortium (ERCC) was also added to the lysis buffer prior to sorting.
-#&gt; ERR2714100 Cells  were treated with Accutase and, once obtained single cells, were filtered (40um strainers), counted and resuspended in PBS/BSA (at 1%) at 10^6/mL to sort them into 384-well plates (containing the lysis buffer and ERCCs). The hiPSC line FSPS13B was plated on vitronectin coated plates (10µg/ml, Stem Cell Technologies) and cultured in E6 media supplemented with 2ng/ml TGF-β (R&amp;D) and 25ng/ml FGF2 making complete E8 media. Cells were maintained by weekly passaging using 0.5mM EDTA (Thermo Fisher Scientific). hiPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours. Following synchronisation, cells were maintained in pluripotency conditions or induced to form definitive endoderm using a 3-day protocol. On day 1 cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4, 100ng/ml Activin A and 3µM CHIR99021. On day 2 the cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4 and 100ng/ml Activin A. On day 3 the cells were cultured in RPMI-B27 media supplemented with 80ng/ml FGF2 and 100ng/ml Activin. Conversion was performed following the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) using a poly-Dt30 oligo and a TSO oligo. RNA extraction is based on the Picelli et al SS2 protocol, using a polydT primer plus the template switching oligo – TSO, as published (https://www.nature.com/articles/nprot.2014.006). Cell sorting and library preparation was carried out by the sequencing core facility at the Wellcome Sanger Institute. Single hPSCs were isolated into 384 wells plates and libraries were prepared for 120 cells/per condition using the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) and using Nextera XT DNA Library Preparation Kit – Illumina. A constant amount of spike-in RNA from the External RNA Controls Consortium (ERCC) was also added to the lysis buffer prior to sorting.
-#&gt; ERR2713700 Cells  were treated with Accutase and, once obtained single cells, were filtered (40um strainers), counted and resuspended in PBS/BSA (at 1%) at 10^6/mL to sort them into 384-well plates (containing the lysis buffer and ERCCs). The hiPSC line FSPS13B was plated on vitronectin coated plates (10µg/ml, Stem Cell Technologies) and cultured in E6 media supplemented with 2ng/ml TGF-β (R&amp;D) and 25ng/ml FGF2 making complete E8 media. Cells were maintained by weekly passaging using 0.5mM EDTA (Thermo Fisher Scientific). hiPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours. Following synchronisation, cells were maintained in pluripotency conditions or induced to form definitive endoderm using a 3-day protocol. On day 1 cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4, 100ng/ml Activin A and 3µM CHIR99021. On day 2 the cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4 and 100ng/ml Activin A. On day 3 the cells were cultured in RPMI-B27 media supplemented with 80ng/ml FGF2 and 100ng/ml Activin. Conversion was performed following the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) using a poly-Dt30 oligo and a TSO oligo. RNA extraction is based on the Picelli et al SS2 protocol, using a polydT primer plus the template switching oligo – TSO, as published (https://www.nature.com/articles/nprot.2014.006). Cell sorting and library preparation was carried out by the sequencing core facility at the Wellcome Sanger Institute. Single hPSCs were isolated into 384 wells plates and libraries were prepared for 120 cells/per condition using the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) and using Nextera XT DNA Library Preparation Kit – Illumina. A constant amount of spike-in RNA from the External RNA Controls Consortium (ERCC) was also added to the lysis buffer prior to sorting.
-#&gt; ERR2713600 Cells  were treated with Accutase and, once obtained single cells, were filtered (40um strainers), counted and resuspended in PBS/BSA (at 1%) at 10^6/mL to sort them into 384-well plates (containing the lysis buffer and ERCCs). The hiPSC line FSPS13B was plated on vitronectin coated plates (10µg/ml, Stem Cell Technologies) and cultured in E6 media supplemented with 2ng/ml TGF-β (R&amp;D) and 25ng/ml FGF2 making complete E8 media. Cells were maintained by weekly passaging using 0.5mM EDTA (Thermo Fisher Scientific). hiPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours. Following synchronisation, cells were maintained in pluripotency conditions or induced to form definitive endoderm using a 3-day protocol. On day 1 cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4, 100ng/ml Activin A and 3µM CHIR99021. On day 2 the cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4 and 100ng/ml Activin A. On day 3 the cells were cultured in RPMI-B27 media supplemented with 80ng/ml FGF2 and 100ng/ml Activin. Conversion was performed following the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) using a poly-Dt30 oligo and a TSO oligo. RNA extraction is based on the Picelli et al SS2 protocol, using a polydT primer plus the template switching oligo – TSO, as published (https://www.nature.com/articles/nprot.2014.006). Cell sorting and library preparation was carried out by the sequencing core facility at the Wellcome Sanger Institute. Single hPSCs were isolated into 384 wells plates and libraries were prepared for 120 cells/per condition using the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) and using Nextera XT DNA Library Preparation Kit – Illumina. A constant amount of spike-in RNA from the External RNA Controls Consortium (ERCC) was also added to the lysis buffer prior to sorting.
-#&gt; ...                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ...
-#&gt; ERR2713499 Cells  were treated with Accutase and, once obtained single cells, were filtered (40um strainers), counted and resuspended in PBS/BSA (at 1%) at 10^6/mL to sort them into 384-well plates (containing the lysis buffer and ERCCs). The hiPSC line FSPS13B was plated on vitronectin coated plates (10µg/ml, Stem Cell Technologies) and cultured in E6 media supplemented with 2ng/ml TGF-β (R&amp;D) and 25ng/ml FGF2 making complete E8 media. Cells were maintained by weekly passaging using 0.5mM EDTA (Thermo Fisher Scientific). hiPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours. Following synchronisation, cells were maintained in pluripotency conditions or induced to form definitive endoderm using a 3-day protocol. On day 1 cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4, 100ng/ml Activin A and 3µM CHIR99021. On day 2 the cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4 and 100ng/ml Activin A. On day 3 the cells were cultured in RPMI-B27 media supplemented with 80ng/ml FGF2 and 100ng/ml Activin. Conversion was performed following the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) using a poly-Dt30 oligo and a TSO oligo. RNA extraction is based on the Picelli et al SS2 protocol, using a polydT primer plus the template switching oligo – TSO, as published (https://www.nature.com/articles/nprot.2014.006). Cell sorting and library preparation was carried out by the sequencing core facility at the Wellcome Sanger Institute. Single hPSCs were isolated into 384 wells plates and libraries were prepared for 120 cells/per condition using the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) and using Nextera XT DNA Library Preparation Kit – Illumina. A constant amount of spike-in RNA from the External RNA Controls Consortium (ERCC) was also added to the lysis buffer prior to sorting.
-#&gt; ERR2713899 Cells  were treated with Accutase and, once obtained single cells, were filtered (40um strainers), counted and resuspended in PBS/BSA (at 1%) at 10^6/mL to sort them into 384-well plates (containing the lysis buffer and ERCCs). The hiPSC line FSPS13B was plated on vitronectin coated plates (10µg/ml, Stem Cell Technologies) and cultured in E6 media supplemented with 2ng/ml TGF-β (R&amp;D) and 25ng/ml FGF2 making complete E8 media. Cells were maintained by weekly passaging using 0.5mM EDTA (Thermo Fisher Scientific). hiPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours. Following synchronisation, cells were maintained in pluripotency conditions or induced to form definitive endoderm using a 3-day protocol. On day 1 cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4, 100ng/ml Activin A and 3µM CHIR99021. On day 2 the cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4 and 100ng/ml Activin A. On day 3 the cells were cultured in RPMI-B27 media supplemented with 80ng/ml FGF2 and 100ng/ml Activin. Conversion was performed following the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) using a poly-Dt30 oligo and a TSO oligo. RNA extraction is based on the Picelli et al SS2 protocol, using a polydT primer plus the template switching oligo – TSO, as published (https://www.nature.com/articles/nprot.2014.006). Cell sorting and library preparation was carried out by the sequencing core facility at the Wellcome Sanger Institute. Single hPSCs were isolated into 384 wells plates and libraries were prepared for 120 cells/per condition using the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) and using Nextera XT DNA Library Preparation Kit – Illumina. A constant amount of spike-in RNA from the External RNA Controls Consortium (ERCC) was also added to the lysis buffer prior to sorting.
-#&gt; ERR2713599 Cells  were treated with Accutase and, once obtained single cells, were filtered (40um strainers), counted and resuspended in PBS/BSA (at 1%) at 10^6/mL to sort them into 384-well plates (containing the lysis buffer and ERCCs). The hiPSC line FSPS13B was plated on vitronectin coated plates (10µg/ml, Stem Cell Technologies) and cultured in E6 media supplemented with 2ng/ml TGF-β (R&amp;D) and 25ng/ml FGF2 making complete E8 media. Cells were maintained by weekly passaging using 0.5mM EDTA (Thermo Fisher Scientific). hiPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours. Following synchronisation, cells were maintained in pluripotency conditions or induced to form definitive endoderm using a 3-day protocol. On day 1 cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4, 100ng/ml Activin A and 3µM CHIR99021. On day 2 the cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4 and 100ng/ml Activin A. On day 3 the cells were cultured in RPMI-B27 media supplemented with 80ng/ml FGF2 and 100ng/ml Activin. Conversion was performed following the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) using a poly-Dt30 oligo and a TSO oligo. RNA extraction is based on the Picelli et al SS2 protocol, using a polydT primer plus the template switching oligo – TSO, as published (https://www.nature.com/articles/nprot.2014.006). Cell sorting and library preparation was carried out by the sequencing core facility at the Wellcome Sanger Institute. Single hPSCs were isolated into 384 wells plates and libraries were prepared for 120 cells/per condition using the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) and using Nextera XT DNA Library Preparation Kit – Illumina. A constant amount of spike-in RNA from the External RNA Controls Consortium (ERCC) was also added to the lysis buffer prior to sorting.
-#&gt; ERR2713699 Cells  were treated with Accutase and, once obtained single cells, were filtered (40um strainers), counted and resuspended in PBS/BSA (at 1%) at 10^6/mL to sort them into 384-well plates (containing the lysis buffer and ERCCs). The hiPSC line FSPS13B was plated on vitronectin coated plates (10µg/ml, Stem Cell Technologies) and cultured in E6 media supplemented with 2ng/ml TGF-β (R&amp;D) and 25ng/ml FGF2 making complete E8 media. Cells were maintained by weekly passaging using 0.5mM EDTA (Thermo Fisher Scientific). hiPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours. Following synchronisation, cells were maintained in pluripotency conditions or induced to form definitive endoderm using a 3-day protocol. On day 1 cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4, 100ng/ml Activin A and 3µM CHIR99021. On day 2 the cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4 and 100ng/ml Activin A. On day 3 the cells were cultured in RPMI-B27 media supplemented with 80ng/ml FGF2 and 100ng/ml Activin. Conversion was performed following the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) using a poly-Dt30 oligo and a TSO oligo. RNA extraction is based on the Picelli et al SS2 protocol, using a polydT primer plus the template switching oligo – TSO, as published (https://www.nature.com/articles/nprot.2014.006). Cell sorting and library preparation was carried out by the sequencing core facility at the Wellcome Sanger Institute. Single hPSCs were isolated into 384 wells plates and libraries were prepared for 120 cells/per condition using the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) and using Nextera XT DNA Library Preparation Kit – Illumina. A constant amount of spike-in RNA from the External RNA Controls Consortium (ERCC) was also added to the lysis buffer prior to sorting.
-#&gt; ERR2713299 Cells  were treated with Accutase and, once obtained single cells, were filtered (40um strainers), counted and resuspended in PBS/BSA (at 1%) at 10^6/mL to sort them into 384-well plates (containing the lysis buffer and ERCCs). The hiPSC line FSPS13B was plated on vitronectin coated plates (10µg/ml, Stem Cell Technologies) and cultured in E6 media supplemented with 2ng/ml TGF-β (R&amp;D) and 25ng/ml FGF2 making complete E8 media. Cells were maintained by weekly passaging using 0.5mM EDTA (Thermo Fisher Scientific). hiPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours. Following synchronisation, cells were maintained in pluripotency conditions or induced to form definitive endoderm using a 3-day protocol. On day 1 cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4, 100ng/ml Activin A and 3µM CHIR99021. On day 2 the cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4 and 100ng/ml Activin A. On day 3 the cells were cultured in RPMI-B27 media supplemented with 80ng/ml FGF2 and 100ng/ml Activin. Conversion was performed following the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) using a poly-Dt30 oligo and a TSO oligo. RNA extraction is based on the Picelli et al SS2 protocol, using a polydT primer plus the template switching oligo – TSO, as published (https://www.nature.com/articles/nprot.2014.006). Cell sorting and library preparation was carried out by the sequencing core facility at the Wellcome Sanger Institute. Single hPSCs were isolated into 384 wells plates and libraries were prepared for 120 cells/per condition using the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) and using Nextera XT DNA Library Preparation Kit – Illumina. A constant amount of spike-in RNA from the External RNA Controls Consortium (ERCC) was also added to the lysis buffer prior to sorting.
-#&gt;                 platform_model
-#&gt;                    &lt;character&gt;
-#&gt; ERR2713300 Illumina HiSeq 4000
-#&gt; ERR2713800 Illumina HiSeq 4000
-#&gt; ERR2714100 Illumina HiSeq 4000
-#&gt; ERR2713700 Illumina HiSeq 4000
-#&gt; ERR2713600 Illumina HiSeq 4000
-#&gt; ...                        ...
-#&gt; ERR2713499 Illumina HiSeq 4000
-#&gt; ERR2713899 Illumina HiSeq 4000
-#&gt; ERR2713599 Illumina HiSeq 4000
-#&gt; ERR2713699 Illumina HiSeq 4000
-#&gt; ERR2713299 Illumina HiSeq 4000
-#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         sample_attributes
-#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               &lt;character&gt;
-#&gt; ERR2713300   Alias;;E-MTAB-7008:0hS_22728_4_10|Broker name;;ArrayExpress|cell_line;;HPSI0813i-fpdm_2|cell_type;;induced pluripotent stem cell|Description;;Protocols: Cells were treated with Accutase and, once obtained single cells, were filtered (40um strainers), counted and resuspended in PBS/BSA (at 1%) at 10^6/mL to sort them into 384-well plates (containing the lysis buffer and ERCCs). The hiPSC line FSPS13B was plated on vitronectin coated plates (10µg/ml, Stem Cell Technologies) and cultured in E6 media supplemented with 2ng/ml TGF-β (R&amp;D) and 25ng/ml FGF2 making complete E8 media. Cells were maintained by weekly passaging using 0.5mM EDTA (Thermo Fisher Scientific). hiPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours. Following synchronisation, cells were maintained in pluripotency conditions or induced to form definitive endoderm using a 3-day protocol. On day 1 cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4, 100ng/ml Activin A and 3µM CHIR99021. On day 2 the cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4 and 100ng/ml Activin A. On day 3 the cells were cultured in RPMI-B27 media supplemented with 80ng/ml FGF2 and 100ng/ml Activin. Conversion was performed following the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) using a poly-Dt30 oligo and a TSO oligo. RNA extraction is based on the Picelli et al SS2 protocol, using a polydT primer plus the template switching oligo - TSO, as published (https://www.nature.com/articles/nprot.2014.006). Cell sorting and library preparation was carried out by the sequencing core facility at the Wellcome Sanger Institute. Single hPSCs were isolated into 384 wells plates and libraries were prepared for 120 cells/per condition using the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) and using Nextera XT DNA Library Preparation Kit - Illumina. A constant amount of spike-in RNA from the External RNA Controls Consortium (ERCC) was also added to the lysis buffer prior to sorting.|developmental stage;;adult|disease;;normal|ENA checklist;;ERC000011|genotype;;wild type genotype|growth condition;;normal culture to maintain pluripotency|INSDC center alias;;Wellcome Sanger Institute|INSDC center name;;Wellcome Sanger Institute|INSDC first public;;2019-06-16T17:03:41Z|INSDC last update;;2018-07-25T16:48:03Z|INSDC status;;public|organism part;;blood|organism;;Homo sapiens|progenitor cell type;;blood cell|Sample Name;;ERS2624036|sex;;male|SRA accession;;ERS2624036|stimulus;;synchronization|Title;;0hS_22728_4_10
-#&gt; ERR2713800 Alias;;E-MTAB-7008:0hS_22728_4_105|Broker name;;ArrayExpress|cell_line;;HPSI0813i-fpdm_2|cell_type;;induced pluripotent stem cell|Description;;Protocols: Cells were treated with Accutase and, once obtained single cells, were filtered (40um strainers), counted and resuspended in PBS/BSA (at 1%) at 10^6/mL to sort them into 384-well plates (containing the lysis buffer and ERCCs). The hiPSC line FSPS13B was plated on vitronectin coated plates (10µg/ml, Stem Cell Technologies) and cultured in E6 media supplemented with 2ng/ml TGF-β (R&amp;D) and 25ng/ml FGF2 making complete E8 media. Cells were maintained by weekly passaging using 0.5mM EDTA (Thermo Fisher Scientific). hiPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours. Following synchronisation, cells were maintained in pluripotency conditions or induced to form definitive endoderm using a 3-day protocol. On day 1 cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4, 100ng/ml Activin A and 3µM CHIR99021. On day 2 the cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4 and 100ng/ml Activin A. On day 3 the cells were cultured in RPMI-B27 media supplemented with 80ng/ml FGF2 and 100ng/ml Activin. Conversion was performed following the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) using a poly-Dt30 oligo and a TSO oligo. RNA extraction is based on the Picelli et al SS2 protocol, using a polydT primer plus the template switching oligo - TSO, as published (https://www.nature.com/articles/nprot.2014.006). Cell sorting and library preparation was carried out by the sequencing core facility at the Wellcome Sanger Institute. Single hPSCs were isolated into 384 wells plates and libraries were prepared for 120 cells/per condition using the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) and using Nextera XT DNA Library Preparation Kit - Illumina. A constant amount of spike-in RNA from the External RNA Controls Consortium (ERCC) was also added to the lysis buffer prior to sorting.|developmental stage;;adult|disease;;normal|ENA checklist;;ERC000011|genotype;;wild type genotype|growth condition;;normal culture to maintain pluripotency|INSDC center alias;;Wellcome Sanger Institute|INSDC center name;;Wellcome Sanger Institute|INSDC first public;;2019-06-16T17:03:41Z|INSDC last update;;2018-07-25T16:48:03Z|INSDC status;;public|organism part;;blood|organism;;Homo sapiens|progenitor cell type;;blood cell|Sample Name;;ERS2624037|sex;;male|SRA accession;;ERS2624037|stimulus;;synchronization|Title;;0hS_22728_4_105
-#&gt; ERR2714100 Alias;;E-MTAB-7008:0hS_22728_4_106|Broker name;;ArrayExpress|cell_line;;HPSI0813i-fpdm_2|cell_type;;induced pluripotent stem cell|Description;;Protocols: Cells were treated with Accutase and, once obtained single cells, were filtered (40um strainers), counted and resuspended in PBS/BSA (at 1%) at 10^6/mL to sort them into 384-well plates (containing the lysis buffer and ERCCs). The hiPSC line FSPS13B was plated on vitronectin coated plates (10µg/ml, Stem Cell Technologies) and cultured in E6 media supplemented with 2ng/ml TGF-β (R&amp;D) and 25ng/ml FGF2 making complete E8 media. Cells were maintained by weekly passaging using 0.5mM EDTA (Thermo Fisher Scientific). hiPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours. Following synchronisation, cells were maintained in pluripotency conditions or induced to form definitive endoderm using a 3-day protocol. On day 1 cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4, 100ng/ml Activin A and 3µM CHIR99021. On day 2 the cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4 and 100ng/ml Activin A. On day 3 the cells were cultured in RPMI-B27 media supplemented with 80ng/ml FGF2 and 100ng/ml Activin. Conversion was performed following the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) using a poly-Dt30 oligo and a TSO oligo. RNA extraction is based on the Picelli et al SS2 protocol, using a polydT primer plus the template switching oligo - TSO, as published (https://www.nature.com/articles/nprot.2014.006). Cell sorting and library preparation was carried out by the sequencing core facility at the Wellcome Sanger Institute. Single hPSCs were isolated into 384 wells plates and libraries were prepared for 120 cells/per condition using the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) and using Nextera XT DNA Library Preparation Kit - Illumina. A constant amount of spike-in RNA from the External RNA Controls Consortium (ERCC) was also added to the lysis buffer prior to sorting.|developmental stage;;adult|disease;;normal|ENA checklist;;ERC000011|genotype;;wild type genotype|growth condition;;normal culture to maintain pluripotency|INSDC center alias;;Wellcome Sanger Institute|INSDC center name;;Wellcome Sanger Institute|INSDC first public;;2019-06-16T17:03:41Z|INSDC last update;;2018-07-25T16:48:03Z|INSDC status;;public|organism part;;blood|organism;;Homo sapiens|progenitor cell type;;blood cell|Sample Name;;ERS2624038|sex;;male|SRA accession;;ERS2624038|stimulus;;synchronization|Title;;0hS_22728_4_106
-#&gt; ERR2713700 Alias;;E-MTAB-7008:0hS_22728_4_107|Broker name;;ArrayExpress|cell_line;;HPSI0813i-fpdm_2|cell_type;;induced pluripotent stem cell|Description;;Protocols: Cells were treated with Accutase and, once obtained single cells, were filtered (40um strainers), counted and resuspended in PBS/BSA (at 1%) at 10^6/mL to sort them into 384-well plates (containing the lysis buffer and ERCCs). The hiPSC line FSPS13B was plated on vitronectin coated plates (10µg/ml, Stem Cell Technologies) and cultured in E6 media supplemented with 2ng/ml TGF-β (R&amp;D) and 25ng/ml FGF2 making complete E8 media. Cells were maintained by weekly passaging using 0.5mM EDTA (Thermo Fisher Scientific). hiPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours. Following synchronisation, cells were maintained in pluripotency conditions or induced to form definitive endoderm using a 3-day protocol. On day 1 cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4, 100ng/ml Activin A and 3µM CHIR99021. On day 2 the cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4 and 100ng/ml Activin A. On day 3 the cells were cultured in RPMI-B27 media supplemented with 80ng/ml FGF2 and 100ng/ml Activin. Conversion was performed following the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) using a poly-Dt30 oligo and a TSO oligo. RNA extraction is based on the Picelli et al SS2 protocol, using a polydT primer plus the template switching oligo - TSO, as published (https://www.nature.com/articles/nprot.2014.006). Cell sorting and library preparation was carried out by the sequencing core facility at the Wellcome Sanger Institute. Single hPSCs were isolated into 384 wells plates and libraries were prepared for 120 cells/per condition using the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) and using Nextera XT DNA Library Preparation Kit - Illumina. A constant amount of spike-in RNA from the External RNA Controls Consortium (ERCC) was also added to the lysis buffer prior to sorting.|developmental stage;;adult|disease;;normal|ENA checklist;;ERC000011|genotype;;wild type genotype|growth condition;;normal culture to maintain pluripotency|INSDC center alias;;Wellcome Sanger Institute|INSDC center name;;Wellcome Sanger Institute|INSDC first public;;2019-06-16T17:03:41Z|INSDC last update;;2018-07-25T16:48:03Z|INSDC status;;public|organism part;;blood|organism;;Homo sapiens|progenitor cell type;;blood cell|Sample Name;;ERS2624039|sex;;male|SRA accession;;ERS2624039|stimulus;;synchronization|Title;;0hS_22728_4_107
-#&gt; ERR2713600 Alias;;E-MTAB-7008:0hS_22728_4_108|Broker name;;ArrayExpress|cell_line;;HPSI0813i-fpdm_2|cell_type;;induced pluripotent stem cell|Description;;Protocols: Cells were treated with Accutase and, once obtained single cells, were filtered (40um strainers), counted and resuspended in PBS/BSA (at 1%) at 10^6/mL to sort them into 384-well plates (containing the lysis buffer and ERCCs). The hiPSC line FSPS13B was plated on vitronectin coated plates (10µg/ml, Stem Cell Technologies) and cultured in E6 media supplemented with 2ng/ml TGF-β (R&amp;D) and 25ng/ml FGF2 making complete E8 media. Cells were maintained by weekly passaging using 0.5mM EDTA (Thermo Fisher Scientific). hiPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours. Following synchronisation, cells were maintained in pluripotency conditions or induced to form definitive endoderm using a 3-day protocol. On day 1 cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4, 100ng/ml Activin A and 3µM CHIR99021. On day 2 the cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4 and 100ng/ml Activin A. On day 3 the cells were cultured in RPMI-B27 media supplemented with 80ng/ml FGF2 and 100ng/ml Activin. Conversion was performed following the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) using a poly-Dt30 oligo and a TSO oligo. RNA extraction is based on the Picelli et al SS2 protocol, using a polydT primer plus the template switching oligo - TSO, as published (https://www.nature.com/articles/nprot.2014.006). Cell sorting and library preparation was carried out by the sequencing core facility at the Wellcome Sanger Institute. Single hPSCs were isolated into 384 wells plates and libraries were prepared for 120 cells/per condition using the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) and using Nextera XT DNA Library Preparation Kit - Illumina. A constant amount of spike-in RNA from the External RNA Controls Consortium (ERCC) was also added to the lysis buffer prior to sorting.|developmental stage;;adult|disease;;normal|ENA checklist;;ERC000011|genotype;;wild type genotype|growth condition;;normal culture to maintain pluripotency|INSDC center alias;;Wellcome Sanger Institute|INSDC center name;;Wellcome Sanger Institute|INSDC first public;;2019-06-16T17:03:41Z|INSDC last update;;2018-07-25T16:48:03Z|INSDC status;;public|organism part;;blood|organism;;Homo sapiens|progenitor cell type;;blood cell|Sample Name;;ERS2624040|sex;;male|SRA accession;;ERS2624040|stimulus;;synchronization|Title;;0hS_22728_4_108
-#&gt; ...                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ...
-#&gt; ERR2713499                                          Alias;;E-MTAB-7008:72hU_22728_3_92|Broker name;;ArrayExpress|cell_line;;HPSI0813i-fpdm_2|cell_type;;induced pluripotent stem cell|Description;;Protocols: Cells were treated with Accutase and, once obtained single cells, were filtered (40um strainers), counted and resuspended in PBS/BSA (at 1%) at 10^6/mL to sort them into 384-well plates (containing the lysis buffer and ERCCs). The hiPSC line FSPS13B was plated on vitronectin coated plates (10µg/ml, Stem Cell Technologies) and cultured in E6 media supplemented with 2ng/ml TGF-β (R&amp;D) and 25ng/ml FGF2 making complete E8 media. Cells were maintained by weekly passaging using 0.5mM EDTA (Thermo Fisher Scientific). hiPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours. Following synchronisation, cells were maintained in pluripotency conditions or induced to form definitive endoderm using a 3-day protocol. On day 1 cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4, 100ng/ml Activin A and 3µM CHIR99021. On day 2 the cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4 and 100ng/ml Activin A. On day 3 the cells were cultured in RPMI-B27 media supplemented with 80ng/ml FGF2 and 100ng/ml Activin. Conversion was performed following the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) using a poly-Dt30 oligo and a TSO oligo. RNA extraction is based on the Picelli et al SS2 protocol, using a polydT primer plus the template switching oligo - TSO, as published (https://www.nature.com/articles/nprot.2014.006). Cell sorting and library preparation was carried out by the sequencing core facility at the Wellcome Sanger Institute. Single hPSCs were isolated into 384 wells plates and libraries were prepared for 120 cells/per condition using the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) and using Nextera XT DNA Library Preparation Kit - Illumina. A constant amount of spike-in RNA from the External RNA Controls Consortium (ERCC) was also added to the lysis buffer prior to sorting.|developmental stage;;adult|disease;;normal|ENA checklist;;ERC000011|genotype;;wild type genotype|growth condition;;endoderm differentiation|INSDC center alias;;Wellcome Sanger Institute|INSDC center name;;Wellcome Sanger Institute|INSDC first public;;2019-06-16T17:03:42Z|INSDC last update;;2018-07-25T16:48:27Z|INSDC status;;public|organism part;;blood|organism;;Homo sapiens|progenitor cell type;;blood cell|Sample Name;;ERS2625055|sex;;male|SRA accession;;ERS2625055|Title;;72hU_22728_3_92
-#&gt; ERR2713899                                          Alias;;E-MTAB-7008:72hU_22728_3_93|Broker name;;ArrayExpress|cell_line;;HPSI0813i-fpdm_2|cell_type;;induced pluripotent stem cell|Description;;Protocols: Cells were treated with Accutase and, once obtained single cells, were filtered (40um strainers), counted and resuspended in PBS/BSA (at 1%) at 10^6/mL to sort them into 384-well plates (containing the lysis buffer and ERCCs). The hiPSC line FSPS13B was plated on vitronectin coated plates (10µg/ml, Stem Cell Technologies) and cultured in E6 media supplemented with 2ng/ml TGF-β (R&amp;D) and 25ng/ml FGF2 making complete E8 media. Cells were maintained by weekly passaging using 0.5mM EDTA (Thermo Fisher Scientific). hiPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours. Following synchronisation, cells were maintained in pluripotency conditions or induced to form definitive endoderm using a 3-day protocol. On day 1 cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4, 100ng/ml Activin A and 3µM CHIR99021. On day 2 the cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4 and 100ng/ml Activin A. On day 3 the cells were cultured in RPMI-B27 media supplemented with 80ng/ml FGF2 and 100ng/ml Activin. Conversion was performed following the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) using a poly-Dt30 oligo and a TSO oligo. RNA extraction is based on the Picelli et al SS2 protocol, using a polydT primer plus the template switching oligo - TSO, as published (https://www.nature.com/articles/nprot.2014.006). Cell sorting and library preparation was carried out by the sequencing core facility at the Wellcome Sanger Institute. Single hPSCs were isolated into 384 wells plates and libraries were prepared for 120 cells/per condition using the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) and using Nextera XT DNA Library Preparation Kit - Illumina. A constant amount of spike-in RNA from the External RNA Controls Consortium (ERCC) was also added to the lysis buffer prior to sorting.|developmental stage;;adult|disease;;normal|ENA checklist;;ERC000011|genotype;;wild type genotype|growth condition;;endoderm differentiation|INSDC center alias;;Wellcome Sanger Institute|INSDC center name;;Wellcome Sanger Institute|INSDC first public;;2019-06-16T17:03:42Z|INSDC last update;;2018-07-25T16:48:27Z|INSDC status;;public|organism part;;blood|organism;;Homo sapiens|progenitor cell type;;blood cell|Sample Name;;ERS2625056|sex;;male|SRA accession;;ERS2625056|Title;;72hU_22728_3_93
-#&gt; ERR2713599                                          Alias;;E-MTAB-7008:72hU_22728_3_94|Broker name;;ArrayExpress|cell_line;;HPSI0813i-fpdm_2|cell_type;;induced pluripotent stem cell|Description;;Protocols: Cells were treated with Accutase and, once obtained single cells, were filtered (40um strainers), counted and resuspended in PBS/BSA (at 1%) at 10^6/mL to sort them into 384-well plates (containing the lysis buffer and ERCCs). The hiPSC line FSPS13B was plated on vitronectin coated plates (10µg/ml, Stem Cell Technologies) and cultured in E6 media supplemented with 2ng/ml TGF-β (R&amp;D) and 25ng/ml FGF2 making complete E8 media. Cells were maintained by weekly passaging using 0.5mM EDTA (Thermo Fisher Scientific). hiPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours. Following synchronisation, cells were maintained in pluripotency conditions or induced to form definitive endoderm using a 3-day protocol. On day 1 cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4, 100ng/ml Activin A and 3µM CHIR99021. On day 2 the cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4 and 100ng/ml Activin A. On day 3 the cells were cultured in RPMI-B27 media supplemented with 80ng/ml FGF2 and 100ng/ml Activin. Conversion was performed following the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) using a poly-Dt30 oligo and a TSO oligo. RNA extraction is based on the Picelli et al SS2 protocol, using a polydT primer plus the template switching oligo - TSO, as published (https://www.nature.com/articles/nprot.2014.006). Cell sorting and library preparation was carried out by the sequencing core facility at the Wellcome Sanger Institute. Single hPSCs were isolated into 384 wells plates and libraries were prepared for 120 cells/per condition using the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) and using Nextera XT DNA Library Preparation Kit - Illumina. A constant amount of spike-in RNA from the External RNA Controls Consortium (ERCC) was also added to the lysis buffer prior to sorting.|developmental stage;;adult|disease;;normal|ENA checklist;;ERC000011|genotype;;wild type genotype|growth condition;;endoderm differentiation|INSDC center alias;;Wellcome Sanger Institute|INSDC center name;;Wellcome Sanger Institute|INSDC first public;;2019-06-16T17:03:42Z|INSDC last update;;2018-07-25T16:48:27Z|INSDC status;;public|organism part;;blood|organism;;Homo sapiens|progenitor cell type;;blood cell|Sample Name;;ERS2625057|sex;;male|SRA accession;;ERS2625057|Title;;72hU_22728_3_94
-#&gt; ERR2713699                                          Alias;;E-MTAB-7008:72hU_22728_3_95|Broker name;;ArrayExpress|cell_line;;HPSI0813i-fpdm_2|cell_type;;induced pluripotent stem cell|Description;;Protocols: Cells were treated with Accutase and, once obtained single cells, were filtered (40um strainers), counted and resuspended in PBS/BSA (at 1%) at 10^6/mL to sort them into 384-well plates (containing the lysis buffer and ERCCs). The hiPSC line FSPS13B was plated on vitronectin coated plates (10µg/ml, Stem Cell Technologies) and cultured in E6 media supplemented with 2ng/ml TGF-β (R&amp;D) and 25ng/ml FGF2 making complete E8 media. Cells were maintained by weekly passaging using 0.5mM EDTA (Thermo Fisher Scientific). hiPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours. Following synchronisation, cells were maintained in pluripotency conditions or induced to form definitive endoderm using a 3-day protocol. On day 1 cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4, 100ng/ml Activin A and 3µM CHIR99021. On day 2 the cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4 and 100ng/ml Activin A. On day 3 the cells were cultured in RPMI-B27 media supplemented with 80ng/ml FGF2 and 100ng/ml Activin. Conversion was performed following the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) using a poly-Dt30 oligo and a TSO oligo. RNA extraction is based on the Picelli et al SS2 protocol, using a polydT primer plus the template switching oligo - TSO, as published (https://www.nature.com/articles/nprot.2014.006). Cell sorting and library preparation was carried out by the sequencing core facility at the Wellcome Sanger Institute. Single hPSCs were isolated into 384 wells plates and libraries were prepared for 120 cells/per condition using the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) and using Nextera XT DNA Library Preparation Kit - Illumina. A constant amount of spike-in RNA from the External RNA Controls Consortium (ERCC) was also added to the lysis buffer prior to sorting.|developmental stage;;adult|disease;;normal|ENA checklist;;ERC000011|genotype;;wild type genotype|growth condition;;endoderm differentiation|INSDC center alias;;Wellcome Sanger Institute|INSDC center name;;Wellcome Sanger Institute|INSDC first public;;2019-06-16T17:03:42Z|INSDC last update;;2018-07-25T16:48:27Z|INSDC status;;public|organism part;;blood|organism;;Homo sapiens|progenitor cell type;;blood cell|Sample Name;;ERS2625058|sex;;male|SRA accession;;ERS2625058|Title;;72hU_22728_3_95
-#&gt; ERR2713299                                          Alias;;E-MTAB-7008:72hU_22728_3_96|Broker name;;ArrayExpress|cell_line;;HPSI0813i-fpdm_2|cell_type;;induced pluripotent stem cell|Description;;Protocols: Cells were treated with Accutase and, once obtained single cells, were filtered (40um strainers), counted and resuspended in PBS/BSA (at 1%) at 10^6/mL to sort them into 384-well plates (containing the lysis buffer and ERCCs). The hiPSC line FSPS13B was plated on vitronectin coated plates (10µg/ml, Stem Cell Technologies) and cultured in E6 media supplemented with 2ng/ml TGF-β (R&amp;D) and 25ng/ml FGF2 making complete E8 media. Cells were maintained by weekly passaging using 0.5mM EDTA (Thermo Fisher Scientific). hiPSC colonies were treated with DMSO or 100ng/ml nocodazole for 16 hours. Following synchronisation, cells were maintained in pluripotency conditions or induced to form definitive endoderm using a 3-day protocol. On day 1 cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4, 100ng/ml Activin A and 3µM CHIR99021. On day 2 the cells were cultured in CDM-PVA supplemented with 80ng/ml FGF2, 10µM LY294002, 10ng/ml BMP4 and 100ng/ml Activin A. On day 3 the cells were cultured in RPMI-B27 media supplemented with 80ng/ml FGF2 and 100ng/ml Activin. Conversion was performed following the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) using a poly-Dt30 oligo and a TSO oligo. RNA extraction is based on the Picelli et al SS2 protocol, using a polydT primer plus the template switching oligo - TSO, as published (https://www.nature.com/articles/nprot.2014.006). Cell sorting and library preparation was carried out by the sequencing core facility at the Wellcome Sanger Institute. Single hPSCs were isolated into 384 wells plates and libraries were prepared for 120 cells/per condition using the SMART-Seq2 protocol (https://www.nature.com/articles/nprot.2014.006) and using Nextera XT DNA Library Preparation Kit - Illumina. A constant amount of spike-in RNA from the External RNA Controls Consortium (ERCC) was also added to the lysis buffer prior to sorting.|developmental stage;;adult|disease;;normal|ENA checklist;;ERC000011|genotype;;wild type genotype|growth condition;;endoderm differentiation|INSDC center alias;;Wellcome Sanger Institute|INSDC center name;;Wellcome Sanger Institute|INSDC first public;;2019-06-16T17:03:42Z|INSDC last update;;2018-07-25T16:48:27Z|INSDC status;;public|organism part;;blood|organism;;Homo sapiens|progenitor cell type;;blood cell|Sample Name;;ERS2625059|sex;;male|SRA accession;;ERS2625059|Title;;72hU_22728_3_96
-#&gt;                                                                                                                                                                        experiment_attributes
-#&gt;                                                                                                                                                                                  &lt;character&gt;
-#&gt; ERR2713300  Experimental Factor: compound;;nocodazole|Experimental Factor: dose;;100|Experimental Factor: sampling time point;;0|Experimental Factor: single cell identifier;;0hS_22728_4_10
-#&gt; ERR2713800 Experimental Factor: compound;;nocodazole|Experimental Factor: dose;;100|Experimental Factor: sampling time point;;0|Experimental Factor: single cell identifier;;0hS_22728_4_105
-#&gt; ERR2714100 Experimental Factor: compound;;nocodazole|Experimental Factor: dose;;100|Experimental Factor: sampling time point;;0|Experimental Factor: single cell identifier;;0hS_22728_4_106
-#&gt; ERR2713700 Experimental Factor: compound;;nocodazole|Experimental Factor: dose;;100|Experimental Factor: sampling time point;;0|Experimental Factor: single cell identifier;;0hS_22728_4_107
-#&gt; ERR2713600 Experimental Factor: compound;;nocodazole|Experimental Factor: dose;;100|Experimental Factor: sampling time point;;0|Experimental Factor: single cell identifier;;0hS_22728_4_108
-#&gt; ...                                                                                                                                                                                      ...
-#&gt; ERR2713499                       Experimental Factor: compound;;dimethyl sulfoxide|Experimental Factor: sampling time point;;72|Experimental Factor: single cell identifier;;72hU_22728_3_92
-#&gt; ERR2713899                       Experimental Factor: compound;;dimethyl sulfoxide|Experimental Factor: sampling time point;;72|Experimental Factor: single cell identifier;;72hU_22728_3_93
-#&gt; ERR2713599                       Experimental Factor: compound;;dimethyl sulfoxide|Experimental Factor: sampling time point;;72|Experimental Factor: single cell identifier;;72hU_22728_3_94
-#&gt; ERR2713699                       Experimental Factor: compound;;dimethyl sulfoxide|Experimental Factor: sampling time point;;72|Experimental Factor: single cell identifier;;72hU_22728_3_95
-#&gt; ERR2713299                       Experimental Factor: compound;;dimethyl sulfoxide|Experimental Factor: sampling time point;;72|Experimental Factor: single cell identifier;;72hU_22728_3_96
-#&gt;            spot_length  sample_name                sample_title sample_bases
-#&gt;              &lt;integer&gt;  &lt;character&gt;                 &lt;character&gt;    &lt;integer&gt;
-#&gt; ERR2713300         150 SAMEA4804123  E-MTAB-7008:0hS_22728_4_10     49258200
-#&gt; ERR2713800         150 SAMEA4804124 E-MTAB-7008:0hS_22728_4_105     14499000
-#&gt; ERR2714100         150 SAMEA4804125 E-MTAB-7008:0hS_22728_4_106     95237100
-#&gt; ERR2713700         150 SAMEA4804126 E-MTAB-7008:0hS_22728_4_107     12761700
-#&gt; ERR2713600         150 SAMEA4804127 E-MTAB-7008:0hS_22728_4_108    117535950
-#&gt; ...                ...          ...                         ...          ...
-#&gt; ERR2713499         150 SAMEA4805144 E-MTAB-7008:72hU_22728_3_92     68116200
-#&gt; ERR2713899         150 SAMEA4805145 E-MTAB-7008:72hU_22728_3_93     50006850
-#&gt; ERR2713599         150 SAMEA4805146 E-MTAB-7008:72hU_22728_3_94     29291850
-#&gt; ERR2713699         150 SAMEA4805147 E-MTAB-7008:72hU_22728_3_95     28963350
-#&gt; ERR2713299         150 SAMEA4805148 E-MTAB-7008:72hU_22728_3_96     27140850
-#&gt;            sample_spots       run_published      size run_total_bases
-#&gt;               &lt;integer&gt;         &lt;character&gt; &lt;integer&gt;       &lt;integer&gt;
-#&gt; ERR2713300       328388 2019-06-17 08:03:32  19387330        49258200
-#&gt; ERR2713800        96660 2019-06-17 08:03:32   5895708        14499000
-#&gt; ERR2714100       634914 2019-06-17 08:03:32  39337877        95237100
-#&gt; ERR2713700        85078 2019-06-17 08:03:32   5194717        12761700
-#&gt; ERR2713600       783573 2019-06-17 08:03:32  48515159       117535950
-#&gt; ...                 ...                 ...       ...             ...
-#&gt; ERR2713499       454108 2019-06-17 08:09:35  26032744        68116200
-#&gt; ERR2713899       333379 2019-06-17 08:09:35  18853316        50006850
-#&gt; ERR2713599       195279 2019-06-17 08:09:35  11007831        29291850
-#&gt; ERR2713699       193089 2019-06-17 08:09:35  10903362        28963350
-#&gt; ERR2713299       180939 2019-06-17 08:09:35  10183072        27140850
-#&gt;            run_total_spots num_reads num_spots
-#&gt;                  &lt;integer&gt; &lt;integer&gt; &lt;integer&gt;
-#&gt; ERR2713300          328388         2    328388
-#&gt; ERR2713800           96660         2     96660
-#&gt; ERR2714100          634914         2    634914
-#&gt; ERR2713700           85078         2     85078
-#&gt; ERR2713600          783573         2    783573
-#&gt; ...                    ...       ...       ...
-#&gt; ERR2713499          454108         2    454108
-#&gt; ERR2713899          333379         2    333379
-#&gt; ERR2713599          195279         2    195279
-#&gt; ERR2713699          193089         2    193089
-#&gt; ERR2713299          180939         2    180939
-#&gt;                                                                                  read_info
-#&gt;                                                                                &lt;character&gt;
-#&gt; ERR2713300 index:0,count:328388,average:75,stdev:0|index:1,count:328388,average:75,stdev:0
-#&gt; ERR2713800   index:0,count:96660,average:75,stdev:0|index:1,count:96660,average:75,stdev:0
-#&gt; ERR2714100 index:0,count:634914,average:75,stdev:0|index:1,count:634914,average:75,stdev:0
-#&gt; ERR2713700   index:0,count:85078,average:75,stdev:0|index:1,count:85078,average:75,stdev:0
-#&gt; ERR2713600 index:0,count:783573,average:75,stdev:0|index:1,count:783573,average:75,stdev:0
-#&gt; ...                                                                                    ...
-#&gt; ERR2713499 index:0,count:454108,average:75,stdev:0|index:1,count:454108,average:75,stdev:0
-#&gt; ERR2713899 index:0,count:333379,average:75,stdev:0|index:1,count:333379,average:75,stdev:0
-#&gt; ERR2713599 index:0,count:195279,average:75,stdev:0|index:1,count:195279,average:75,stdev:0
-#&gt; ERR2713699 index:0,count:193089,average:75,stdev:0|index:1,count:193089,average:75,stdev:0
-#&gt; ERR2713299 index:0,count:180939,average:75,stdev:0|index:1,count:180939,average:75,stdev:0
-#&gt;                               run_alias           run_center_name
-#&gt;                             &lt;character&gt;               &lt;character&gt;
-#&gt; ERR2713300  E-MTAB-7008:0hS_22728_4_10_ Wellcome Sanger Institute
-#&gt; ERR2713800 E-MTAB-7008:0hS_22728_4_105_ Wellcome Sanger Institute
-#&gt; ERR2714100 E-MTAB-7008:0hS_22728_4_106_ Wellcome Sanger Institute
-#&gt; ERR2713700 E-MTAB-7008:0hS_22728_4_107_ Wellcome Sanger Institute
-#&gt; ERR2713600 E-MTAB-7008:0hS_22728_4_108_ Wellcome Sanger Institute
-#&gt; ...                                 ...                       ...
-#&gt; ERR2713499 E-MTAB-7008:72hU_22728_3_92_ Wellcome Sanger Institute
-#&gt; ERR2713899 E-MTAB-7008:72hU_22728_3_93_ Wellcome Sanger Institute
-#&gt; ERR2713599 E-MTAB-7008:72hU_22728_3_94_ Wellcome Sanger Institute
-#&gt; ERR2713699 E-MTAB-7008:72hU_22728_3_95_ Wellcome Sanger Institute
-#&gt; ERR2713299 E-MTAB-7008:72hU_22728_3_96_ Wellcome Sanger Institute
-#&gt;            run_broker_name  run_center aligned_reads%.chrm aligned_reads%.chrx
-#&gt;                &lt;character&gt; &lt;character&gt;           &lt;numeric&gt;           &lt;numeric&gt;
-#&gt; ERR2713300    ArrayExpress          SC                0.01                0.13
-#&gt; ERR2713800    ArrayExpress          SC                0.58                0.24
-#&gt; ERR2714100    ArrayExpress          SC                4.69                1.54
-#&gt; ERR2713700    ArrayExpress          SC                0.58                0.26
-#&gt; ERR2713600    ArrayExpress          SC                4.26                1.73
-#&gt; ...                    ...         ...                 ...                 ...
-#&gt; ERR2713499    ArrayExpress          SC                4.22                2.21
-#&gt; ERR2713899    ArrayExpress          SC                3.03                1.81
-#&gt; ERR2713599    ArrayExpress          SC                3.37                1.84
-#&gt; ERR2713699    ArrayExpress          SC                2.86                1.94
-#&gt; ERR2713299    ArrayExpress          SC                2.77                1.89
-#&gt;            aligned_reads%.chry bc_auc.all_reads_all_bases
-#&gt;                      &lt;numeric&gt;                  &lt;integer&gt;
-#&gt; ERR2713300                0.01                   44344618
-#&gt; ERR2713800                0.01                   12969528
-#&gt; ERR2714100                0.08                   89662462
-#&gt; ERR2713700                0.01                   11403396
-#&gt; ERR2713600                0.08                  111182337
-#&gt; ...                        ...                        ...
-#&gt; ERR2713499                0.12                   65365132
-#&gt; ERR2713899                0.07                   47046127
-#&gt; ERR2713599                0.04                   27334823
-#&gt; ERR2713699                0.06                   26783362
-#&gt; ERR2713299                0.06                   24283521
-#&gt;            bc_auc.all_reads_annotated_bases bc_auc.unique_reads_all_bases
-#&gt;                                   &lt;integer&gt;                     &lt;integer&gt;
-#&gt; ERR2713300                         45347466                      43467166
-#&gt; ERR2713800                         13302507                      12852528
-#&gt; ERR2714100                        112112367                      74980409
-#&gt; ERR2713700                         11688165                      11305148
-#&gt; ERR2713600                        140112241                      93642370
-#&gt; ...                                     ...                           ...
-#&gt; ERR2713499                         85384094                      58027093
-#&gt; ERR2713899                         62511711                      41931053
-#&gt; ERR2713599                         36126336                      23910362
-#&gt; ERR2713699                         35368187                      23712959
-#&gt; ERR2713299                         32107801                      21420376
-#&gt;            bc_auc.unique_reads_annotated_bases bc_auc.all_% bc_auc.unique_%
-#&gt;                                      &lt;integer&gt;    &lt;numeric&gt;       &lt;numeric&gt;
-#&gt; ERR2713300                            44747846       102.26          102.95
-#&gt; ERR2713800                            13202960       102.57          102.73
-#&gt; ERR2714100                           102695715       125.04          136.96
-#&gt; ERR2713700                            11606039       102.50          102.66
-#&gt; ERR2713600                           128573987       126.02          137.30
-#&gt; ...                                        ...          ...             ...
-#&gt; ERR2713499                            80108788       130.63          138.05
-#&gt; ERR2713899                            58806723       132.87          140.25
-#&gt; ERR2713599                            33727567       132.16          141.06
-#&gt; ERR2713699                            33186855       132.05          139.95
-#&gt; ERR2713299                            29998752       132.22          140.05
-#&gt;            bc_frag.count bc_frag.kallisto_count bc_frag.kallisto_mean_length
-#&gt;                &lt;integer&gt;              &lt;integer&gt;                    &lt;numeric&gt;
-#&gt; ERR2713300        303856                 294125                      321.277
-#&gt; ERR2713800         88769                  86650                      335.648
-#&gt; ERR2714100        611231                 475649                      371.482
-#&gt; ERR2713700         78035                  76259                      335.415
-#&gt; ERR2713600        758261                 575377                      364.896
-#&gt; ...                  ...                    ...                          ...
-#&gt; ERR2713499        445671                 314572                      354.341
-#&gt; ERR2713899        326244                 252831                      299.973
-#&gt; ERR2713599        190792                 151203                      283.712
-#&gt; ERR2713699        188214                 151394                      271.167
-#&gt; ERR2713299        174818                 145761                      247.288
-#&gt;            bc_frag.mean_length bc_frag.mode_length bc_frag.mode_length_count
-#&gt;                      &lt;numeric&gt;           &lt;integer&gt;                 &lt;integer&gt;
-#&gt; ERR2713300             552.146                 230                      2282
-#&gt; ERR2713800             595.274                 230                       647
-#&gt; ERR2714100            2085.693                 296                      1524
-#&gt; ERR2713700             548.169                 230                       586
-#&gt; ERR2713600            2203.148                 257                      1990
-#&gt; ...                        ...                 ...                       ...
-#&gt; ERR2713499             2697.30                 308                      1183
-#&gt; ERR2713899             1796.44                 236                      1172
-#&gt; ERR2713599             1637.90                 225                       712
-#&gt; ERR2713699             1568.38                 204                       739
-#&gt; ERR2713299             1418.68                 139                       778
-#&gt;            exon_fc.all_% exon_fc.unique_% exon_fc_count_all.total
-#&gt;                &lt;numeric&gt;        &lt;numeric&gt;               &lt;integer&gt;
-#&gt; ERR2713300         97.78            99.74                  333112
-#&gt; ERR2713800         98.23            99.13                   91743
-#&gt; ERR2714100         69.84            83.54                 1126389
-#&gt; ERR2713700         98.29            99.15                   80679
-#&gt; ERR2713600         70.61            83.84                 1358281
-#&gt; ...                  ...              ...                     ...
-#&gt; ERR2713499         81.30            91.58                  680924
-#&gt; ERR2713899         84.97            95.38                  495974
-#&gt; ERR2713599         83.22            95.18                  308007
-#&gt; ERR2713699         83.59            94.50                  293409
-#&gt; ERR2713299         82.20            93.35                  272631
-#&gt;            exon_fc_count_all.assigned exon_fc_count_unique.total
-#&gt;                             &lt;integer&gt;                  &lt;integer&gt;
-#&gt; ERR2713300                     297102                     333112
-#&gt; ERR2713800                      87196                      91743
-#&gt; ERR2714100                     426876                    1126389
-#&gt; ERR2713700                      76704                      80679
-#&gt; ERR2713600                     535378                    1358281
-#&gt; ...                               ...                        ...
-#&gt; ERR2713499                     362343                     680924
-#&gt; ERR2713899                     277202                     495974
-#&gt; ERR2713599                     158771                     308007
-#&gt; ERR2713699                     157337                     293409
-#&gt; ERR2713299                     143692                     272631
-#&gt;            exon_fc_count_unique.assigned gene_fc.all_% gene_fc.unique_%
-#&gt;                                &lt;integer&gt;     &lt;numeric&gt;        &lt;numeric&gt;
-#&gt; ERR2713300                        297102         98.27            99.35
-#&gt; ERR2713800                         87196         98.40            98.80
-#&gt; ERR2714100                        426876         73.78            79.86
-#&gt; ERR2713700                         76704         98.47            98.85
-#&gt; ERR2713600                        535378         74.22            79.96
-#&gt; ...                                  ...           ...              ...
-#&gt; ERR2713499                        362343         82.37            87.06
-#&gt; ERR2713899                        277202         84.53            89.70
-#&gt; ERR2713599                        158771         83.22            89.35
-#&gt; ERR2713699                        157337         82.96            88.55
-#&gt; ERR2713299                        143692         82.03            87.53
-#&gt;            gene_fc_count_all.total gene_fc_count_all.assigned
-#&gt;                          &lt;integer&gt;                  &lt;integer&gt;
-#&gt; ERR2713300                  333112                     298607
-#&gt; ERR2713800                   91743                      87352
-#&gt; ERR2714100                 1126389                     450992
-#&gt; ERR2713700                   80679                      76843
-#&gt; ERR2713600                 1358281                     562756
-#&gt; ...                            ...                        ...
-#&gt; ERR2713499                  680924                     367109
-#&gt; ERR2713899                  495974                     275767
-#&gt; ERR2713599                  308007                     158783
-#&gt; ERR2713699                  293409                     156135
-#&gt; ERR2713299                  272631                     143395
-#&gt;            gene_fc_count_unique.total gene_fc_count_unique.assigned intron_sum
-#&gt;                             &lt;integer&gt;                     &lt;integer&gt;  &lt;integer&gt;
-#&gt; ERR2713300                     333112                        295944      36893
-#&gt; ERR2713800                      91743                         86907      55865
-#&gt; ERR2714100                    1126389                        408069    7345392
-#&gt; ERR2713700                      80679                         76470      43850
-#&gt; ERR2713600                    1358281                        510601    9054481
-#&gt; ...                               ...                           ...        ...
-#&gt; ERR2713499                     680924                        344467    2365847
-#&gt; ERR2713899                     495974                        260685     960603
-#&gt; ERR2713599                     308007                        149049     529819
-#&gt; ERR2713699                     293409                        147428     643081
-#&gt; ERR2713299                     272631                        134738     724193
-#&gt;            intron_sum_% star.%_of_chimeric_reads star.%_of_chimeric_reads2
-#&gt;               &lt;numeric&gt;                &lt;numeric&gt;                 &lt;integer&gt;
-#&gt; ERR2713300         0.08                     0.53                         0
-#&gt; ERR2713800         0.43                     0.42                         0
-#&gt; ERR2714100         8.19                     1.26                         0
-#&gt; ERR2713700         0.38                     0.40                         0
-#&gt; ERR2713600         8.14                     1.05                         0
-#&gt; ...                 ...                      ...                       ...
-#&gt; ERR2713499         3.62                     0.77                         0
-#&gt; ERR2713899         2.04                     0.82                         0
-#&gt; ERR2713599         1.94                     0.84                         0
-#&gt; ERR2713699         2.40                     0.85                         0
-#&gt; ERR2713299         2.98                     0.98                         0
-#&gt;            star.%_of_reads_mapped_to_multiple_loci
-#&gt;                                          &lt;numeric&gt;
-#&gt; ERR2713300                                    1.82
-#&gt; ERR2713800                                    0.83
-#&gt; ERR2714100                                   15.79
-#&gt; ERR2713700                                    0.79
-#&gt; ERR2713600                                   15.28
-#&gt; ...                                            ...
-#&gt; ERR2713499                                   11.01
-#&gt; ERR2713899                                   10.68
-#&gt; ERR2713599                                   12.28
-#&gt; ERR2713699                                   11.25
-#&gt; ERR2713299                                   11.55
-#&gt;            star.%_of_reads_mapped_to_multiple_loci2
-#&gt;                                           &lt;integer&gt;
-#&gt; ERR2713300                                        0
-#&gt; ERR2713800                                        0
-#&gt; ERR2714100                                        0
-#&gt; ERR2713700                                        0
-#&gt; ERR2713600                                        0
-#&gt; ...                                             ...
-#&gt; ERR2713499                                        0
-#&gt; ERR2713899                                        0
-#&gt; ERR2713599                                        0
-#&gt; ERR2713699                                        0
-#&gt; ERR2713299                                        0
-#&gt;            star.%_of_reads_mapped_to_too_many_loci
-#&gt;                                          &lt;numeric&gt;
-#&gt; ERR2713300                                    0.00
-#&gt; ERR2713800                                    0.01
-#&gt; ERR2714100                                    0.09
-#&gt; ERR2713700                                    0.00
-#&gt; ERR2713600                                    0.07
-#&gt; ...                                            ...
-#&gt; ERR2713499                                    0.04
-#&gt; ERR2713899                                    0.05
-#&gt; ERR2713599                                    0.05
-#&gt; ERR2713699                                    0.06
-#&gt; ERR2713299                                    0.09
-#&gt;            star.%_of_reads_mapped_to_too_many_loci2
-#&gt;                                           &lt;integer&gt;
-#&gt; ERR2713300                                        0
-#&gt; ERR2713800                                        0
-#&gt; ERR2714100                                        0
-#&gt; ERR2713700                                        0
-#&gt; ERR2713600                                        0
-#&gt; ...                                             ...
-#&gt; ERR2713499                                        0
-#&gt; ERR2713899                                        0
-#&gt; ERR2713599                                        0
-#&gt; ERR2713699                                        0
-#&gt; ERR2713299                                        0
-#&gt;            star.%_of_reads_unmapped:_other star.%_of_reads_unmapped:_other2
-#&gt;                                  &lt;numeric&gt;                        &lt;integer&gt;
-#&gt; ERR2713300                            0.00                                0
-#&gt; ERR2713800                            0.00                                0
-#&gt; ERR2714100                            0.05                                0
-#&gt; ERR2713700                            0.00                                0
-#&gt; ERR2713600                            0.04                                0
-#&gt; ...                                    ...                              ...
-#&gt; ERR2713499                            0.02                                0
-#&gt; ERR2713899                            0.01                                0
-#&gt; ERR2713599                            0.01                                0
-#&gt; ERR2713699                            0.02                                0
-#&gt; ERR2713299                            0.02                                0
-#&gt;            star.%_of_reads_unmapped:_too_many_mismatches
-#&gt;                                                &lt;numeric&gt;
-#&gt; ERR2713300                                             0
-#&gt; ERR2713800                                             0
-#&gt; ERR2714100                                             0
-#&gt; ERR2713700                                             0
-#&gt; ERR2713600                                             0
-#&gt; ...                                                  ...
-#&gt; ERR2713499                                             0
-#&gt; ERR2713899                                             0
-#&gt; ERR2713599                                             0
-#&gt; ERR2713699                                             0
-#&gt; ERR2713299                                             0
-#&gt;            star.%_of_reads_unmapped:_too_many_mismatches2
-#&gt;                                                 &lt;integer&gt;
-#&gt; ERR2713300                                              0
-#&gt; ERR2713800                                              0
-#&gt; ERR2714100                                              0
-#&gt; ERR2713700                                              0
-#&gt; ERR2713600                                              0
-#&gt; ...                                                   ...
-#&gt; ERR2713499                                              0
-#&gt; ERR2713899                                              0
-#&gt; ERR2713599                                              0
-#&gt; ERR2713699                                              0
-#&gt; ERR2713299                                              0
-#&gt;            star.%_of_reads_unmapped:_too_short
-#&gt;                                      &lt;numeric&gt;
-#&gt; ERR2713300                                7.47
-#&gt; ERR2713800                                8.16
-#&gt; ERR2714100                                3.59
-#&gt; ERR2713700                                8.27
-#&gt; ERR2713600                                3.12
-#&gt; ...                                        ...
-#&gt; ERR2713499                                1.80
-#&gt; ERR2713899                                2.07
-#&gt; ERR2713599                                2.24
-#&gt; ERR2713699                                2.44
-#&gt; ERR2713299                                3.27
-#&gt;            star.%_of_reads_unmapped:_too_short2 star.all_mapped_reads
-#&gt;                                       &lt;integer&gt;             &lt;integer&gt;
-#&gt; ERR2713300                                    0                303856
-#&gt; ERR2713800                                    0                 88769
-#&gt; ERR2714100                                    0                611231
-#&gt; ERR2713700                                    0                 78035
-#&gt; ERR2713600                                    0                758261
-#&gt; ...                                         ...                   ...
-#&gt; ERR2713499                                    0                445671
-#&gt; ERR2713899                                    0                326244
-#&gt; ERR2713599                                    0                190792
-#&gt; ERR2713699                                    0                188214
-#&gt; ERR2713299                                    0                174818
-#&gt;            star.all_mapped_reads2 star.average_input_read_length
-#&gt;                         &lt;integer&gt;                      &lt;integer&gt;
-#&gt; ERR2713300                      0                            150
-#&gt; ERR2713800                      0                            150
-#&gt; ERR2714100                      0                            150
-#&gt; ERR2713700                      0                            150
-#&gt; ERR2713600                      0                            150
-#&gt; ...                           ...                            ...
-#&gt; ERR2713499                      0                            150
-#&gt; ERR2713899                      0                            150
-#&gt; ERR2713599                      0                            150
-#&gt; ERR2713699                      0                            150
-#&gt; ERR2713299                      0                            150
-#&gt;            star.average_input_read_length2 star.average_mapped_length
-#&gt;                                  &lt;integer&gt;                  &lt;numeric&gt;
-#&gt; ERR2713300                               0                     147.58
-#&gt; ERR2713800                               0                     147.51
-#&gt; ERR2714100                               0                     148.13
-#&gt; ERR2713700                               0                     147.53
-#&gt; ERR2713600                               0                     148.20
-#&gt; ...                                    ...                        ...
-#&gt; ERR2713499                               0                     148.33
-#&gt; ERR2713899                               0                     148.12
-#&gt; ERR2713599                               0                     148.10
-#&gt; ERR2713699                               0                     148.07
-#&gt; ERR2713299                               0                     147.90
-#&gt;            star.average_mapped_length2 star.deletion_average_length
-#&gt;                              &lt;integer&gt;                    &lt;numeric&gt;
-#&gt; ERR2713300                           0                         1.47
-#&gt; ERR2713800                           0                         1.40
-#&gt; ERR2714100                           0                         1.46
-#&gt; ERR2713700                           0                         1.37
-#&gt; ERR2713600                           0                         1.47
-#&gt; ...                                ...                          ...
-#&gt; ERR2713499                           0                         1.46
-#&gt; ERR2713899                           0                         1.45
-#&gt; ERR2713599                           0                         1.39
-#&gt; ERR2713699                           0                         1.43
-#&gt; ERR2713299                           0                         1.49
-#&gt;            star.deletion_average_length2 star.deletion_rate_per_base
-#&gt;                                &lt;integer&gt;                   &lt;numeric&gt;
-#&gt; ERR2713300                             0                        0.01
-#&gt; ERR2713800                             0                        0.01
-#&gt; ERR2714100                             0                        0.01
-#&gt; ERR2713700                             0                        0.01
-#&gt; ERR2713600                             0                        0.01
-#&gt; ...                                  ...                         ...
-#&gt; ERR2713499                             0                        0.01
-#&gt; ERR2713899                             0                        0.01
-#&gt; ERR2713599                             0                        0.01
-#&gt; ERR2713699                             0                        0.01
-#&gt; ERR2713299                             0                        0.01
-#&gt;            star.deletion_rate_per_base2 star.insertion_average_length
-#&gt;                               &lt;integer&gt;                     &lt;numeric&gt;
-#&gt; ERR2713300                            0                          1.10
-#&gt; ERR2713800                            0                          1.15
-#&gt; ERR2714100                            0                          1.26
-#&gt; ERR2713700                            0                          1.17
-#&gt; ERR2713600                            0                          1.26
-#&gt; ...                                 ...                           ...
-#&gt; ERR2713499                            0                          1.26
-#&gt; ERR2713899                            0                          1.25
-#&gt; ERR2713599                            0                          1.22
-#&gt; ERR2713699                            0                          1.26
-#&gt; ERR2713299                            0                          1.21
-#&gt;            star.insertion_average_length2 star.insertion_rate_per_base
-#&gt;                                 &lt;integer&gt;                    &lt;numeric&gt;
-#&gt; ERR2713300                              0                         0.01
-#&gt; ERR2713800                              0                         0.01
-#&gt; ERR2714100                              0                         0.01
-#&gt; ERR2713700                              0                         0.01
-#&gt; ERR2713600                              0                         0.01
-#&gt; ...                                   ...                          ...
-#&gt; ERR2713499                              0                         0.01
-#&gt; ERR2713899                              0                         0.01
-#&gt; ERR2713599                              0                         0.01
-#&gt; ERR2713699                              0                         0.01
-#&gt; ERR2713299                              0                         0.00
-#&gt;            star.insertion_rate_per_base2
-#&gt;                                &lt;integer&gt;
-#&gt; ERR2713300                             0
-#&gt; ERR2713800                             0
-#&gt; ERR2714100                             0
-#&gt; ERR2713700                             0
-#&gt; ERR2713600                             0
-#&gt; ...                                  ...
-#&gt; ERR2713499                             0
-#&gt; ERR2713899                             0
-#&gt; ERR2713599                             0
-#&gt; ERR2713699                             0
-#&gt; ERR2713299                             0
-#&gt;            star.mapping_speed,_million_of_reads_per_hour
-#&gt;                                                &lt;numeric&gt;
-#&gt; ERR2713300                                        107.47
-#&gt; ERR2713800                                         58.00
-#&gt; ERR2714100                                        120.30
-#&gt; ERR2713700                                         34.03
-#&gt; ERR2713600                                        156.71
-#&gt; ...                                                  ...
-#&gt; ERR2713499                                        125.75
-#&gt; ERR2713899                                         75.01
-#&gt; ERR2713599                                         50.21
-#&gt; ERR2713699                                         69.51
-#&gt; ERR2713299                                         50.11
-#&gt;            star.mapping_speed,_million_of_reads_per_hour2
-#&gt;                                                 &lt;integer&gt;
-#&gt; ERR2713300                                              0
-#&gt; ERR2713800                                              0
-#&gt; ERR2714100                                              0
-#&gt; ERR2713700                                              0
-#&gt; ERR2713600                                              0
-#&gt; ...                                                   ...
-#&gt; ERR2713499                                              0
-#&gt; ERR2713899                                              0
-#&gt; ERR2713599                                              0
-#&gt; ERR2713699                                              0
-#&gt; ERR2713299                                              0
-#&gt;            star.mismatch_rate_per_base,_% star.mismatch_rate_per_base,_%2
-#&gt;                                 &lt;numeric&gt;                       &lt;integer&gt;
-#&gt; ERR2713300                           0.15                               0
-#&gt; ERR2713800                           0.17                               0
-#&gt; ERR2714100                           0.27                               0
-#&gt; ERR2713700                           0.18                               0
-#&gt; ERR2713600                           0.27                               0
-#&gt; ...                                   ...                             ...
-#&gt; ERR2713499                           0.21                               0
-#&gt; ERR2713899                           0.20                               0
-#&gt; ERR2713599                           0.20                               0
-#&gt; ERR2713699                           0.20                               0
-#&gt; ERR2713299                           0.20                               0
-#&gt;            star.number_of_chimeric_reads star.number_of_chimeric_reads2
-#&gt;                                &lt;integer&gt;                      &lt;integer&gt;
-#&gt; ERR2713300                          1755                              0
-#&gt; ERR2713800                           408                              0
-#&gt; ERR2714100                          8018                              0
-#&gt; ERR2713700                           343                              0
-#&gt; ERR2713600                          8198                              0
-#&gt; ...                                  ...                            ...
-#&gt; ERR2713499                          3477                              0
-#&gt; ERR2713899                          2748                              0
-#&gt; ERR2713599                          1650                              0
-#&gt; ERR2713699                          1638                              0
-#&gt; ERR2713299                          1768                              0
-#&gt;            star.number_of_input_reads star.number_of_input_reads2
-#&gt;                             &lt;integer&gt;                   &lt;integer&gt;
-#&gt; ERR2713300                     328388                           0
-#&gt; ERR2713800                      96660                           0
-#&gt; ERR2714100                     634914                           0
-#&gt; ERR2713700                      85078                           0
-#&gt; ERR2713600                     783573                           0
-#&gt; ...                               ...                         ...
-#&gt; ERR2713499                     454108                           0
-#&gt; ERR2713899                     333379                           0
-#&gt; ERR2713599                     195279                           0
-#&gt; ERR2713699                     193089                           0
-#&gt; ERR2713299                     180939                           0
-#&gt;            star.number_of_reads_mapped_to_multiple_loci
-#&gt;                                               &lt;integer&gt;
-#&gt; ERR2713300                                         5972
-#&gt; ERR2713800                                          807
-#&gt; ERR2714100                                       100238
-#&gt; ERR2713700                                          674
-#&gt; ERR2713600                                       119705
-#&gt; ...                                                 ...
-#&gt; ERR2713499                                        50002
-#&gt; ERR2713899                                        35613
-#&gt; ERR2713599                                        23975
-#&gt; ERR2713699                                        21726
-#&gt; ERR2713299                                        20892
-#&gt;            star.number_of_reads_mapped_to_multiple_loci2
-#&gt;                                                &lt;integer&gt;
-#&gt; ERR2713300                                             0
-#&gt; ERR2713800                                             0
-#&gt; ERR2714100                                             0
-#&gt; ERR2713700                                             0
-#&gt; ERR2713600                                             0
-#&gt; ...                                                  ...
-#&gt; ERR2713499                                             0
-#&gt; ERR2713899                                             0
-#&gt; ERR2713599                                             0
-#&gt; ERR2713699                                             0
-#&gt; ERR2713299                                             0
-#&gt;            star.number_of_reads_mapped_to_too_many_loci
-#&gt;                                               &lt;integer&gt;
-#&gt; ERR2713300                                           11
-#&gt; ERR2713800                                            7
-#&gt; ERR2714100                                          562
-#&gt; ERR2713700                                            3
-#&gt; ERR2713600                                          578
-#&gt; ...                                                 ...
-#&gt; ERR2713499                                          162
-#&gt; ERR2713899                                          178
-#&gt; ERR2713599                                           99
-#&gt; ERR2713699                                          118
-#&gt; ERR2713299                                          161
-#&gt;            star.number_of_reads_mapped_to_too_many_loci2
-#&gt;                                                &lt;integer&gt;
-#&gt; ERR2713300                                             0
-#&gt; ERR2713800                                             0
-#&gt; ERR2714100                                             0
-#&gt; ERR2713700                                             0
-#&gt; ERR2713600                                             0
-#&gt; ...                                                  ...
-#&gt; ERR2713499                                             0
-#&gt; ERR2713899                                             0
-#&gt; ERR2713599                                             0
-#&gt; ERR2713699                                             0
-#&gt; ERR2713299                                             0
-#&gt;            star.number_of_reads_unmapped:_other
-#&gt;                                       &lt;integer&gt;
-#&gt; ERR2713300                                    2
-#&gt; ERR2713800                                    1
-#&gt; ERR2714100                                  324
-#&gt; ERR2713700                                    2
-#&gt; ERR2713600                                  307
-#&gt; ...                                         ...
-#&gt; ERR2713499                                   85
-#&gt; ERR2713899                                   42
-#&gt; ERR2713599                                   23
-#&gt; ERR2713699                                   43
-#&gt; ERR2713299                                   41
-#&gt;            star.number_of_reads_unmapped:_other2
-#&gt;                                        &lt;integer&gt;
-#&gt; ERR2713300                                     0
-#&gt; ERR2713800                                     0
-#&gt; ERR2714100                                     0
-#&gt; ERR2713700                                     0
-#&gt; ERR2713600                                     0
-#&gt; ...                                          ...
-#&gt; ERR2713499                                     0
-#&gt; ERR2713899                                     0
-#&gt; ERR2713599                                     0
-#&gt; ERR2713699                                     0
-#&gt; ERR2713299                                     0
-#&gt;            star.number_of_reads_unmapped:_too_many_mismatches
-#&gt;                                                     &lt;integer&gt;
-#&gt; ERR2713300                                                  0
-#&gt; ERR2713800                                                  0
-#&gt; ERR2714100                                                  0
-#&gt; ERR2713700                                                  0
-#&gt; ERR2713600                                                  0
-#&gt; ...                                                       ...
-#&gt; ERR2713499                                                  0
-#&gt; ERR2713899                                                  0
-#&gt; ERR2713599                                                  0
-#&gt; ERR2713699                                                  0
-#&gt; ERR2713299                                                  0
-#&gt;            star.number_of_reads_unmapped:_too_many_mismatches2
-#&gt;                                                      &lt;integer&gt;
-#&gt; ERR2713300                                                   0
-#&gt; ERR2713800                                                   0
-#&gt; ERR2714100                                                   0
-#&gt; ERR2713700                                                   0
-#&gt; ERR2713600                                                   0
-#&gt; ...                                                        ...
-#&gt; ERR2713499                                                   0
-#&gt; ERR2713899                                                   0
-#&gt; ERR2713599                                                   0
-#&gt; ERR2713699                                                   0
-#&gt; ERR2713299                                                   0
-#&gt;            star.number_of_reads_unmapped:_too_short
-#&gt;                                           &lt;integer&gt;
-#&gt; ERR2713300                                    24519
-#&gt; ERR2713800                                     7883
-#&gt; ERR2714100                                    22797
-#&gt; ERR2713700                                     7038
-#&gt; ERR2713600                                    24427
-#&gt; ...                                             ...
-#&gt; ERR2713499                                     8190
-#&gt; ERR2713899                                     6915
-#&gt; ERR2713599                                     4365
-#&gt; ERR2713699                                     4714
-#&gt; ERR2713299                                     5919
-#&gt;            star.number_of_reads_unmapped:_too_short2
-#&gt;                                            &lt;integer&gt;
-#&gt; ERR2713300                                         0
-#&gt; ERR2713800                                         0
-#&gt; ERR2714100                                         0
-#&gt; ERR2713700                                         0
-#&gt; ERR2713600                                         0
-#&gt; ...                                              ...
-#&gt; ERR2713499                                         0
-#&gt; ERR2713899                                         0
-#&gt; ERR2713599                                         0
-#&gt; ERR2713699                                         0
-#&gt; ERR2713299                                         0
-#&gt;            star.number_of_splices:_at/ac star.number_of_splices:_at/ac2
-#&gt;                                &lt;integer&gt;                      &lt;integer&gt;
-#&gt; ERR2713300                            29                              0
-#&gt; ERR2713800                             0                              0
-#&gt; ERR2714100                            75                              0
-#&gt; ERR2713700                             1                              0
-#&gt; ERR2713600                           115                              0
-#&gt; ...                                  ...                            ...
-#&gt; ERR2713499                            74                              0
-#&gt; ERR2713899                            62                              0
-#&gt; ERR2713599                            55                              0
-#&gt; ERR2713699                            46                              0
-#&gt; ERR2713299                            31                              0
-#&gt;            star.number_of_splices:_annotated_(sjdb)
-#&gt;                                           &lt;integer&gt;
-#&gt; ERR2713300                                        0
-#&gt; ERR2713800                                        0
-#&gt; ERR2714100                                        0
-#&gt; ERR2713700                                        0
-#&gt; ERR2713600                                        0
-#&gt; ...                                             ...
-#&gt; ERR2713499                                        0
-#&gt; ERR2713899                                        0
-#&gt; ERR2713599                                        0
-#&gt; ERR2713699                                        0
-#&gt; ERR2713299                                        0
-#&gt;            star.number_of_splices:_annotated_(sjdb)2
-#&gt;                                            &lt;integer&gt;
-#&gt; ERR2713300                                         0
-#&gt; ERR2713800                                         0
-#&gt; ERR2714100                                         0
-#&gt; ERR2713700                                         0
-#&gt; ERR2713600                                         0
-#&gt; ...                                              ...
-#&gt; ERR2713499                                         0
-#&gt; ERR2713899                                         0
-#&gt; ERR2713599                                         0
-#&gt; ERR2713699                                         0
-#&gt; ERR2713299                                         0
-#&gt;            star.number_of_splices:_gc/ag star.number_of_splices:_gc/ag2
-#&gt;                                &lt;integer&gt;                      &lt;integer&gt;
-#&gt; ERR2713300                            86                              0
-#&gt; ERR2713800                            16                              0
-#&gt; ERR2714100                           761                              0
-#&gt; ERR2713700                            15                              0
-#&gt; ERR2713600                          1148                              0
-#&gt; ...                                  ...                            ...
-#&gt; ERR2713499                          1059                              0
-#&gt; ERR2713899                           750                              0
-#&gt; ERR2713599                           413                              0
-#&gt; ERR2713699                           485                              0
-#&gt; ERR2713299                           417                              0
-#&gt;            star.number_of_splices:_gt/ag star.number_of_splices:_gt/ag2
-#&gt;                                &lt;integer&gt;                      &lt;integer&gt;
-#&gt; ERR2713300                          9504                              0
-#&gt; ERR2713800                          2151                              0
-#&gt; ERR2714100                        132445                              0
-#&gt; ERR2713700                          1871                              0
-#&gt; ERR2713600                        185981                              0
-#&gt; ...                                  ...                            ...
-#&gt; ERR2713499                        136965                              0
-#&gt; ERR2713899                        111286                              0
-#&gt; ERR2713599                         65109                              0
-#&gt; ERR2713699                         64797                              0
-#&gt; ERR2713299                         58521                              0
-#&gt;            star.number_of_splices:_non-canonical
-#&gt;                                        &lt;integer&gt;
-#&gt; ERR2713300                                   135
-#&gt; ERR2713800                                    19
-#&gt; ERR2714100                                   907
-#&gt; ERR2713700                                    15
-#&gt; ERR2713600                                  1108
-#&gt; ...                                          ...
-#&gt; ERR2713499                                   762
-#&gt; ERR2713899                                   694
-#&gt; ERR2713599                                   357
-#&gt; ERR2713699                                   350
-#&gt; ERR2713299                                   301
-#&gt;            star.number_of_splices:_non-canonical2 star.number_of_splices:_total
-#&gt;                                         &lt;integer&gt;                     &lt;integer&gt;
-#&gt; ERR2713300                                      0                          9754
-#&gt; ERR2713800                                      0                          2186
-#&gt; ERR2714100                                      0                        134188
-#&gt; ERR2713700                                      0                          1902
-#&gt; ERR2713600                                      0                        188352
-#&gt; ...                                           ...                           ...
-#&gt; ERR2713499                                      0                        138860
-#&gt; ERR2713899                                      0                        112792
-#&gt; ERR2713599                                      0                         65934
-#&gt; ERR2713699                                      0                         65678
-#&gt; ERR2713299                                      0                         59270
-#&gt;            star.number_of_splices:_total2 star.uniquely_mapped_reads_%
-#&gt;                                 &lt;integer&gt;                    &lt;numeric&gt;
-#&gt; ERR2713300                              0                        90.71
-#&gt; ERR2713800                              0                        91.00
-#&gt; ERR2714100                              0                        80.48
-#&gt; ERR2713700                              0                        90.93
-#&gt; ERR2713600                              0                        81.49
-#&gt; ...                                   ...                          ...
-#&gt; ERR2713499                              0                        87.13
-#&gt; ERR2713899                              0                        87.18
-#&gt; ERR2713599                              0                        85.42
-#&gt; ERR2713699                              0                        86.22
-#&gt; ERR2713299                              0                        85.07
-#&gt;            star.uniquely_mapped_reads_%2 star.uniquely_mapped_reads_number
-#&gt;                                &lt;integer&gt;                         &lt;integer&gt;
-#&gt; ERR2713300                             0                            297884
-#&gt; ERR2713800                             0                             87962
-#&gt; ERR2714100                             0                            510993
-#&gt; ERR2713700                             0                             77361
-#&gt; ERR2713600                             0                            638556
-#&gt; ...                                  ...                               ...
-#&gt; ERR2713499                             0                            395669
-#&gt; ERR2713899                             0                            290631
-#&gt; ERR2713599                             0                            166817
-#&gt; ERR2713699                             0                            166488
-#&gt; ERR2713299                             0                            153926
-#&gt;            star.uniquely_mapped_reads_number2 junction_count junction_coverage
-#&gt;                                     &lt;integer&gt;      &lt;integer&gt;         &lt;integer&gt;
-#&gt; ERR2713300                                  0           1054             10064
-#&gt; ERR2713800                                  0           1879              2197
-#&gt; ERR2714100                                  0          34809            137235
-#&gt; ERR2713700                                  0           1604              1895
-#&gt; ERR2713600                                  0          42691            192409
-#&gt; ...                                       ...            ...               ...
-#&gt; ERR2713499                                  0          37383            141648
-#&gt; ERR2713899                                  0          32598            113346
-#&gt; ERR2713599                                  0          24717             66315
-#&gt; ERR2713699                                  0          24556             65627
-#&gt; ERR2713299                                  0          23131             58251
-#&gt;            junction_avg_coverage
-#&gt;                        &lt;numeric&gt;
-#&gt; ERR2713300               9.54839
-#&gt; ERR2713800               1.16924
-#&gt; ERR2714100               3.94251
-#&gt; ERR2713700               1.18142
-#&gt; ERR2713600               4.50702
-#&gt; ...                          ...
-#&gt; ERR2713499               3.78910
-#&gt; ERR2713899               3.47708
-#&gt; ERR2713599               2.68297
-#&gt; ERR2713699               2.67254
-#&gt; ERR2713299               2.51831
-#&gt;                                                                                                                                           BigWigURL
-#&gt;                                                                                                                                         &lt;character&gt;
-#&gt; ERR2713300 http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/base_sums/66/ERP110066/06/sra.base_sums.ERP110066_ERR2713106.ALL.bw
-#&gt; ERR2713800 http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/base_sums/66/ERP110066/07/sra.base_sums.ERP110066_ERR2713107.ALL.bw
-#&gt; ERR2714100 http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/base_sums/66/ERP110066/08/sra.base_sums.ERP110066_ERR2713108.ALL.bw
-#&gt; ERR2713700 http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/base_sums/66/ERP110066/09/sra.base_sums.ERP110066_ERR2713109.ALL.bw
-#&gt; ERR2713600 http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/base_sums/66/ERP110066/10/sra.base_sums.ERP110066_ERR2713110.ALL.bw
-#&gt; ...                                                                                                                                             ...
-#&gt; ERR2713499 http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/base_sums/66/ERP110066/26/sra.base_sums.ERP110066_ERR2714126.ALL.bw
-#&gt; ERR2713899 http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/base_sums/66/ERP110066/27/sra.base_sums.ERP110066_ERR2714127.ALL.bw
-#&gt; ERR2713599 http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/base_sums/66/ERP110066/28/sra.base_sums.ERP110066_ERR2714128.ALL.bw
-#&gt; ERR2713699 http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/base_sums/66/ERP110066/29/sra.base_sums.ERP110066_ERR2714129.ALL.bw
-#&gt; ERR2713299 http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/base_sums/66/ERP110066/30/sra.base_sums.ERP110066_ERR2714130.ALL.bw</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='fu'>colData</span>(<span class='no'>rse_gene_ERP110066</span>))</div><div class='output co'>#&gt;   [1] "rail_id"                                            
-#&gt;   [2] "run_acc"                                            
-#&gt;   [3] "study_acc"                                          
-#&gt;   [4] "sample_acc"                                         
-#&gt;   [5] "experiment_acc"                                     
-#&gt;   [6] "submission_acc"                                     
-#&gt;   [7] "submission_center"                                  
-#&gt;   [8] "submission_lab"                                     
-#&gt;   [9] "study_title"                                        
-#&gt;  [10] "study_abstract"                                     
-#&gt;  [11] "study_description"                                  
-#&gt;  [12] "experiment_title"                                   
-#&gt;  [13] "design_description"                                 
-#&gt;  [14] "sample_description"                                 
-#&gt;  [15] "library_name"                                       
-#&gt;  [16] "library_strategy"                                   
-#&gt;  [17] "library_source"                                     
-#&gt;  [18] "library_selection"                                  
-#&gt;  [19] "library_layout"                                     
-#&gt;  [20] "paired_nominal_length"                              
-#&gt;  [21] "paired_nominal_stdev"                               
-#&gt;  [22] "library_construction_protocol"                      
-#&gt;  [23] "platform_model"                                     
-#&gt;  [24] "sample_attributes"                                  
-#&gt;  [25] "experiment_attributes"                              
-#&gt;  [26] "spot_length"                                        
-#&gt;  [27] "sample_name"                                        
-#&gt;  [28] "sample_title"                                       
-#&gt;  [29] "sample_bases"                                       
-#&gt;  [30] "sample_spots"                                       
-#&gt;  [31] "run_published"                                      
-#&gt;  [32] "size"                                               
-#&gt;  [33] "run_total_bases"                                    
-#&gt;  [34] "run_total_spots"                                    
-#&gt;  [35] "num_reads"                                          
-#&gt;  [36] "num_spots"                                          
-#&gt;  [37] "read_info"                                          
-#&gt;  [38] "run_alias"                                          
-#&gt;  [39] "run_center_name"                                    
-#&gt;  [40] "run_broker_name"                                    
-#&gt;  [41] "run_center"                                         
-#&gt;  [42] "aligned_reads%.chrm"                                
-#&gt;  [43] "aligned_reads%.chrx"                                
-#&gt;  [44] "aligned_reads%.chry"                                
-#&gt;  [45] "bc_auc.all_reads_all_bases"                         
-#&gt;  [46] "bc_auc.all_reads_annotated_bases"                   
-#&gt;  [47] "bc_auc.unique_reads_all_bases"                      
-#&gt;  [48] "bc_auc.unique_reads_annotated_bases"                
-#&gt;  [49] "bc_auc.all_%"                                       
-#&gt;  [50] "bc_auc.unique_%"                                    
-#&gt;  [51] "bc_frag.count"                                      
-#&gt;  [52] "bc_frag.kallisto_count"                             
-#&gt;  [53] "bc_frag.kallisto_mean_length"                       
-#&gt;  [54] "bc_frag.mean_length"                                
-#&gt;  [55] "bc_frag.mode_length"                                
-#&gt;  [56] "bc_frag.mode_length_count"                          
-#&gt;  [57] "exon_fc.all_%"                                      
-#&gt;  [58] "exon_fc.unique_%"                                   
-#&gt;  [59] "exon_fc_count_all.total"                            
-#&gt;  [60] "exon_fc_count_all.assigned"                         
-#&gt;  [61] "exon_fc_count_unique.total"                         
-#&gt;  [62] "exon_fc_count_unique.assigned"                      
-#&gt;  [63] "gene_fc.all_%"                                      
-#&gt;  [64] "gene_fc.unique_%"                                   
-#&gt;  [65] "gene_fc_count_all.total"                            
-#&gt;  [66] "gene_fc_count_all.assigned"                         
-#&gt;  [67] "gene_fc_count_unique.total"                         
-#&gt;  [68] "gene_fc_count_unique.assigned"                      
-#&gt;  [69] "intron_sum"                                         
-#&gt;  [70] "intron_sum_%"                                       
-#&gt;  [71] "star.%_of_chimeric_reads"                           
-#&gt;  [72] "star.%_of_chimeric_reads2"                          
-#&gt;  [73] "star.%_of_reads_mapped_to_multiple_loci"            
-#&gt;  [74] "star.%_of_reads_mapped_to_multiple_loci2"           
-#&gt;  [75] "star.%_of_reads_mapped_to_too_many_loci"            
-#&gt;  [76] "star.%_of_reads_mapped_to_too_many_loci2"           
-#&gt;  [77] "star.%_of_reads_unmapped:_other"                    
-#&gt;  [78] "star.%_of_reads_unmapped:_other2"                   
-#&gt;  [79] "star.%_of_reads_unmapped:_too_many_mismatches"      
-#&gt;  [80] "star.%_of_reads_unmapped:_too_many_mismatches2"     
-#&gt;  [81] "star.%_of_reads_unmapped:_too_short"                
-#&gt;  [82] "star.%_of_reads_unmapped:_too_short2"               
-#&gt;  [83] "star.all_mapped_reads"                              
-#&gt;  [84] "star.all_mapped_reads2"                             
-#&gt;  [85] "star.average_input_read_length"                     
-#&gt;  [86] "star.average_input_read_length2"                    
-#&gt;  [87] "star.average_mapped_length"                         
-#&gt;  [88] "star.average_mapped_length2"                        
-#&gt;  [89] "star.deletion_average_length"                       
-#&gt;  [90] "star.deletion_average_length2"                      
-#&gt;  [91] "star.deletion_rate_per_base"                        
-#&gt;  [92] "star.deletion_rate_per_base2"                       
-#&gt;  [93] "star.insertion_average_length"                      
-#&gt;  [94] "star.insertion_average_length2"                     
-#&gt;  [95] "star.insertion_rate_per_base"                       
-#&gt;  [96] "star.insertion_rate_per_base2"                      
-#&gt;  [97] "star.mapping_speed,_million_of_reads_per_hour"      
-#&gt;  [98] "star.mapping_speed,_million_of_reads_per_hour2"     
-#&gt;  [99] "star.mismatch_rate_per_base,_%"                     
-#&gt; [100] "star.mismatch_rate_per_base,_%2"                    
-#&gt; [101] "star.number_of_chimeric_reads"                      
-#&gt; [102] "star.number_of_chimeric_reads2"                     
-#&gt; [103] "star.number_of_input_reads"                         
-#&gt; [104] "star.number_of_input_reads2"                        
-#&gt; [105] "star.number_of_reads_mapped_to_multiple_loci"       
-#&gt; [106] "star.number_of_reads_mapped_to_multiple_loci2"      
-#&gt; [107] "star.number_of_reads_mapped_to_too_many_loci"       
-#&gt; [108] "star.number_of_reads_mapped_to_too_many_loci2"      
-#&gt; [109] "star.number_of_reads_unmapped:_other"               
-#&gt; [110] "star.number_of_reads_unmapped:_other2"              
-#&gt; [111] "star.number_of_reads_unmapped:_too_many_mismatches" 
-#&gt; [112] "star.number_of_reads_unmapped:_too_many_mismatches2"
-#&gt; [113] "star.number_of_reads_unmapped:_too_short"           
-#&gt; [114] "star.number_of_reads_unmapped:_too_short2"          
-#&gt; [115] "star.number_of_splices:_at/ac"                      
-#&gt; [116] "star.number_of_splices:_at/ac2"                     
-#&gt; [117] "star.number_of_splices:_annotated_(sjdb)"           
-#&gt; [118] "star.number_of_splices:_annotated_(sjdb)2"          
-#&gt; [119] "star.number_of_splices:_gc/ag"                      
-#&gt; [120] "star.number_of_splices:_gc/ag2"                     
-#&gt; [121] "star.number_of_splices:_gt/ag"                      
-#&gt; [122] "star.number_of_splices:_gt/ag2"                     
-#&gt; [123] "star.number_of_splices:_non-canonical"              
-#&gt; [124] "star.number_of_splices:_non-canonical2"             
-#&gt; [125] "star.number_of_splices:_total"                      
-#&gt; [126] "star.number_of_splices:_total2"                     
-#&gt; [127] "star.uniquely_mapped_reads_%"                       
-#&gt; [128] "star.uniquely_mapped_reads_%2"                      
-#&gt; [129] "star.uniquely_mapped_reads_number"                  
-#&gt; [130] "star.uniquely_mapped_reads_number2"                 
-#&gt; [131] "junction_count"                                     
-#&gt; [132] "junction_coverage"                                  
-#&gt; [133] "junction_avg_coverage"                              
-#&gt; [134] "BigWigURL"                                          </div><div class='input'>
+#&gt;   seqinfo: 374 sequences from an unspecified genome; no seqlengths</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='fu'>colData</span>(<span class='no'>rse_gene_ERP110066</span>))</div><div class='output co'>#&gt;   [1] "rail_id"                                                       
+#&gt;   [2] "run_acc"                                                       
+#&gt;   [3] "study_acc"                                                     
+#&gt;   [4] "ncbi.sample_acc"                                               
+#&gt;   [5] "ncbi.experiment_acc"                                           
+#&gt;   [6] "ncbi.submission_acc"                                           
+#&gt;   [7] "ncbi.submission_center"                                        
+#&gt;   [8] "ncbi.submission_lab"                                           
+#&gt;   [9] "ncbi.study_title"                                              
+#&gt;  [10] "ncbi.study_abstract"                                           
+#&gt;  [11] "ncbi.study_description"                                        
+#&gt;  [12] "ncbi.experiment_title"                                         
+#&gt;  [13] "ncbi.design_description"                                       
+#&gt;  [14] "ncbi.sample_description"                                       
+#&gt;  [15] "ncbi.library_name"                                             
+#&gt;  [16] "ncbi.library_strategy"                                         
+#&gt;  [17] "ncbi.library_source"                                           
+#&gt;  [18] "ncbi.library_selection"                                        
+#&gt;  [19] "ncbi.library_layout"                                           
+#&gt;  [20] "ncbi.paired_nominal_length"                                    
+#&gt;  [21] "ncbi.paired_nominal_stdev"                                     
+#&gt;  [22] "ncbi.library_construction_protocol"                            
+#&gt;  [23] "ncbi.platform_model"                                           
+#&gt;  [24] "ncbi.sample_attributes"                                        
+#&gt;  [25] "ncbi.experiment_attributes"                                    
+#&gt;  [26] "ncbi.spot_length"                                              
+#&gt;  [27] "ncbi.sample_name"                                              
+#&gt;  [28] "ncbi.sample_title"                                             
+#&gt;  [29] "ncbi.sample_bases"                                             
+#&gt;  [30] "ncbi.sample_spots"                                             
+#&gt;  [31] "ncbi.run_published"                                            
+#&gt;  [32] "ncbi.size"                                                     
+#&gt;  [33] "ncbi.run_total_bases"                                          
+#&gt;  [34] "ncbi.run_total_spots"                                          
+#&gt;  [35] "ncbi.num_reads"                                                
+#&gt;  [36] "ncbi.num_spots"                                                
+#&gt;  [37] "ncbi.read_info"                                                
+#&gt;  [38] "ncbi.run_alias"                                                
+#&gt;  [39] "ncbi.run_center_name"                                          
+#&gt;  [40] "ncbi.run_broker_name"                                          
+#&gt;  [41] "ncbi.run_center"                                               
+#&gt;  [42] "recount_project.project"                                       
+#&gt;  [43] "recount_project.organism"                                      
+#&gt;  [44] "recount_project.file_source"                                   
+#&gt;  [45] "recount_project.metadata_source"                               
+#&gt;  [46] "recount_project.date_processed"                                
+#&gt;  [47] "recount_qc.aligned_reads%.chrm"                                
+#&gt;  [48] "recount_qc.aligned_reads%.chrx"                                
+#&gt;  [49] "recount_qc.aligned_reads%.chry"                                
+#&gt;  [50] "recount_qc.bc_auc.all_reads_all_bases"                         
+#&gt;  [51] "recount_qc.bc_auc.all_reads_annotated_bases"                   
+#&gt;  [52] "recount_qc.bc_auc.unique_reads_all_bases"                      
+#&gt;  [53] "recount_qc.bc_auc.unique_reads_annotated_bases"                
+#&gt;  [54] "recount_qc.bc_auc.all_%"                                       
+#&gt;  [55] "recount_qc.bc_auc.unique_%"                                    
+#&gt;  [56] "recount_qc.bc_frag.count"                                      
+#&gt;  [57] "recount_qc.bc_frag.kallisto_count"                             
+#&gt;  [58] "recount_qc.bc_frag.kallisto_mean_length"                       
+#&gt;  [59] "recount_qc.bc_frag.mean_length"                                
+#&gt;  [60] "recount_qc.bc_frag.mode_length"                                
+#&gt;  [61] "recount_qc.bc_frag.mode_length_count"                          
+#&gt;  [62] "recount_qc.exon_fc.all_%"                                      
+#&gt;  [63] "recount_qc.exon_fc.unique_%"                                   
+#&gt;  [64] "recount_qc.exon_fc_count_all.total"                            
+#&gt;  [65] "recount_qc.exon_fc_count_all.assigned"                         
+#&gt;  [66] "recount_qc.exon_fc_count_unique.total"                         
+#&gt;  [67] "recount_qc.exon_fc_count_unique.assigned"                      
+#&gt;  [68] "recount_qc.gene_fc.all_%"                                      
+#&gt;  [69] "recount_qc.gene_fc.unique_%"                                   
+#&gt;  [70] "recount_qc.gene_fc_count_all.total"                            
+#&gt;  [71] "recount_qc.gene_fc_count_all.assigned"                         
+#&gt;  [72] "recount_qc.gene_fc_count_unique.total"                         
+#&gt;  [73] "recount_qc.gene_fc_count_unique.assigned"                      
+#&gt;  [74] "recount_qc.intron_sum"                                         
+#&gt;  [75] "recount_qc.intron_sum_%"                                       
+#&gt;  [76] "recount_qc.star.%_of_chimeric_reads"                           
+#&gt;  [77] "recount_qc.star.%_of_chimeric_reads2"                          
+#&gt;  [78] "recount_qc.star.%_of_reads_mapped_to_multiple_loci"            
+#&gt;  [79] "recount_qc.star.%_of_reads_mapped_to_multiple_loci2"           
+#&gt;  [80] "recount_qc.star.%_of_reads_mapped_to_too_many_loci"            
+#&gt;  [81] "recount_qc.star.%_of_reads_mapped_to_too_many_loci2"           
+#&gt;  [82] "recount_qc.star.%_of_reads_unmapped:_other"                    
+#&gt;  [83] "recount_qc.star.%_of_reads_unmapped:_other2"                   
+#&gt;  [84] "recount_qc.star.%_of_reads_unmapped:_too_many_mismatches"      
+#&gt;  [85] "recount_qc.star.%_of_reads_unmapped:_too_many_mismatches2"     
+#&gt;  [86] "recount_qc.star.%_of_reads_unmapped:_too_short"                
+#&gt;  [87] "recount_qc.star.%_of_reads_unmapped:_too_short2"               
+#&gt;  [88] "recount_qc.star.all_mapped_reads"                              
+#&gt;  [89] "recount_qc.star.all_mapped_reads2"                             
+#&gt;  [90] "recount_qc.star.average_input_read_length"                     
+#&gt;  [91] "recount_qc.star.average_input_read_length2"                    
+#&gt;  [92] "recount_qc.star.average_mapped_length"                         
+#&gt;  [93] "recount_qc.star.average_mapped_length2"                        
+#&gt;  [94] "recount_qc.star.deletion_average_length"                       
+#&gt;  [95] "recount_qc.star.deletion_average_length2"                      
+#&gt;  [96] "recount_qc.star.deletion_rate_per_base"                        
+#&gt;  [97] "recount_qc.star.deletion_rate_per_base2"                       
+#&gt;  [98] "recount_qc.star.insertion_average_length"                      
+#&gt;  [99] "recount_qc.star.insertion_average_length2"                     
+#&gt; [100] "recount_qc.star.insertion_rate_per_base"                       
+#&gt; [101] "recount_qc.star.insertion_rate_per_base2"                      
+#&gt; [102] "recount_qc.star.mapping_speed,_million_of_reads_per_hour"      
+#&gt; [103] "recount_qc.star.mapping_speed,_million_of_reads_per_hour2"     
+#&gt; [104] "recount_qc.star.mismatch_rate_per_base,_%"                     
+#&gt; [105] "recount_qc.star.mismatch_rate_per_base,_%2"                    
+#&gt; [106] "recount_qc.star.number_of_chimeric_reads"                      
+#&gt; [107] "recount_qc.star.number_of_chimeric_reads2"                     
+#&gt; [108] "recount_qc.star.number_of_input_reads"                         
+#&gt; [109] "recount_qc.star.number_of_input_reads2"                        
+#&gt; [110] "recount_qc.star.number_of_reads_mapped_to_multiple_loci"       
+#&gt; [111] "recount_qc.star.number_of_reads_mapped_to_multiple_loci2"      
+#&gt; [112] "recount_qc.star.number_of_reads_mapped_to_too_many_loci"       
+#&gt; [113] "recount_qc.star.number_of_reads_mapped_to_too_many_loci2"      
+#&gt; [114] "recount_qc.star.number_of_reads_unmapped:_other"               
+#&gt; [115] "recount_qc.star.number_of_reads_unmapped:_other2"              
+#&gt; [116] "recount_qc.star.number_of_reads_unmapped:_too_many_mismatches" 
+#&gt; [117] "recount_qc.star.number_of_reads_unmapped:_too_many_mismatches2"
+#&gt; [118] "recount_qc.star.number_of_reads_unmapped:_too_short"           
+#&gt; [119] "recount_qc.star.number_of_reads_unmapped:_too_short2"          
+#&gt; [120] "recount_qc.star.number_of_splices:_at/ac"                      
+#&gt; [121] "recount_qc.star.number_of_splices:_at/ac2"                     
+#&gt; [122] "recount_qc.star.number_of_splices:_annotated_(sjdb)"           
+#&gt; [123] "recount_qc.star.number_of_splices:_annotated_(sjdb)2"          
+#&gt; [124] "recount_qc.star.number_of_splices:_gc/ag"                      
+#&gt; [125] "recount_qc.star.number_of_splices:_gc/ag2"                     
+#&gt; [126] "recount_qc.star.number_of_splices:_gt/ag"                      
+#&gt; [127] "recount_qc.star.number_of_splices:_gt/ag2"                     
+#&gt; [128] "recount_qc.star.number_of_splices:_non-canonical"              
+#&gt; [129] "recount_qc.star.number_of_splices:_non-canonical2"             
+#&gt; [130] "recount_qc.star.number_of_splices:_total"                      
+#&gt; [131] "recount_qc.star.number_of_splices:_total2"                     
+#&gt; [132] "recount_qc.star.uniquely_mapped_reads_%"                       
+#&gt; [133] "recount_qc.star.uniquely_mapped_reads_%2"                      
+#&gt; [134] "recount_qc.star.uniquely_mapped_reads_number"                  
+#&gt; [135] "recount_qc.star.uniquely_mapped_reads_number2"                 
+#&gt; [136] "recount_qc.junction_count"                                     
+#&gt; [137] "recount_qc.junction_coverage"                                  
+#&gt; [138] "recount_qc.junction_avg_coverage"                              
+#&gt; [139] "BigWigURL"                                                     </div><div class='input'>
 <span class='co'>## Create a second RSE object using another annotation</span>
-<span class='no'>rse_gene_ERP110066_gencode_v29</span> <span class='kw'>&lt;-</span> <span class='fu'>create_rse</span>(<span class='no'>proj_info</span>, <span class='kw'>annotation</span> <span class='kw'>=</span> <span class='st'>"gencode_v29"</span>)</div><div class='output co'>#&gt; <span class='message'>2020-05-12 13:40:26 downloading and reading the metadata</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.metadata.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>2020-05-12 13:40:27 downloading and reading the feature information</span></div><div class='output co'>#&gt; <span class='message'>Caching file human.gene_sums.G029.gtf.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/annotations/gene_sums/human.gene_sums.G029.gtf.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-12 13:40:28 downloading and reading the counts: 1024 samples across 64837 features.</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.gene_sums.ERP110066.G029.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.G029.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-12 13:40:33 construcing the RangedSummarizedExperiment (rse) object</span></div><div class='input'>
+<span class='no'>rse_gene_ERP110066_gencode_v29</span> <span class='kw'>&lt;-</span> <span class='fu'>create_rse</span>(
+    <span class='no'>proj_info</span>,
+    <span class='kw'>annotation</span> <span class='kw'>=</span> <span class='st'>"gencode_v29"</span>
+)</div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:36:56 downloading and reading the metadata</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.ncbi.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_project.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_qc.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:36:58 downloading and reading the feature information</span></div><div class='output co'>#&gt; <span class='message'>Caching file human.gene_sums.G029.gtf.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/annotations/gene_sums/human.gene_sums.G029.gtf.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:36:59 downloading and reading the counts: 1024 samples across 64837 features.</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.gene_sums.ERP110066.G029.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.G029.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:37:04 construcing the RangedSummarizedExperiment (rse) object</span></div><div class='input'>
 <span class='co'>## Doesn't work right now</span>
-<span class='co'># rse_gene_ERP110066_refseq &lt;- create_rse(proj_info, annotation = "refseq")</span>
+<span class='co'># rse_gene_ERP110066_refseq &lt;- create_rse(</span>
+<span class='co'>#     proj_info,</span>
+<span class='co'>#     annotation = "refseq"</span>
+<span class='co'># )</span>
 
 <span class='co'>## Create a RSE object at the exon level</span>
 <span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='no'>rse_exon_ERP110066</span> <span class='kw'>&lt;-</span> <span class='fu'>create_rse</span>(<span class='no'>proj_info</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"exon"</span>)
+<span class='no'>rse_exon_ERP110066</span> <span class='kw'>&lt;-</span> <span class='fu'>create_rse</span>(
+    <span class='no'>proj_info</span>,
+    <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"exon"</span>
+)
 
 <span class='co'>## Explore the resulting RSE exon object</span>
 <span class='no'>rse_exon_ERP110066</span>
