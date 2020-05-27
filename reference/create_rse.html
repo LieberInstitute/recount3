@@ -204,216 +204,23 @@ object.</p>
 )
 
 <span class='co'>## Create a RSE object at the gene level</span>
-<span class='no'>rse_gene_ERP110066</span> <span class='kw'>&lt;-</span> <span class='fu'>create_rse</span>(<span class='no'>proj_info</span>)</div><div class='output co'>#&gt; <span class='message'>using temporary cache /tmp/RtmpvzkdzB/BiocFileCache</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources'</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/collections'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:36:44 downloading and reading the metadata</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.ncbi.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.ncbi.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_project.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_project.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_qc.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_qc.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:36:47 downloading and reading the feature information</span></div><div class='output co'>#&gt; <span class='message'>Caching file human.gene_sums.G026.gtf.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/annotations/gene_sums/human.gene_sums.G026.gtf.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:36:48 downloading and reading the counts: 1024 samples across 63856 features.</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.gene_sums.ERP110066.G026.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.G026.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:36:56 construcing the RangedSummarizedExperiment (rse) object</span></div><div class='input'>
+<span class='no'>rse_gene_ERP110066</span> <span class='kw'>&lt;-</span> <span class='fu'>create_rse</span>(<span class='no'>proj_info</span>)</div><div class='output co'>#&gt; <span class='message'>using temporary cache /tmp/RtmpXX0Qcp/BiocFileCache</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources'</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/collections'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 05:24:02 downloading and reading the metadata</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.ncbi.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.ncbi.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_project.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_project.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_qc.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_qc.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='warning'>Warning: download failed</span>
+#&gt; <span class='warning'>  web resource path: ‘http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_qc.ERP110066.MD.gz’</span>
+#&gt; <span class='warning'>  local file path: ‘/tmp/RtmpXX0Qcp/BiocFileCache/be11e7f62e5_sra.recount_qc.ERP110066.MD.gz’</span>
+#&gt; <span class='warning'>  reason: Timeout was reached: [snaptron.cs.jhu.edu] Connection timed out after 10001 milliseconds</span></div><div class='output co'>#&gt; <span class='warning'>Warning: bfcadd() failed; resource removed</span>
+#&gt; <span class='warning'>  rid: BFC5</span>
+#&gt; <span class='warning'>  fpath: ‘http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_qc.ERP110066.MD.gz’</span>
+#&gt; <span class='warning'>  reason: download failed</span></div><div class='output co'>#&gt; <span class='warning'>Warning: </span>
+#&gt; <span class='warning'>trying to add rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_qc.ERP110066.MD.gz' produced error:</span>
+#&gt; <span class='warning'>  bfcadd() failed; see warnings()</span></div><div class='output co'>#&gt; <span class='error'>Error in BiocFileCache::bfcrpath(bfc, url, exact = TRUE): not all 'rnames' found or unique.</span></div><div class='input'>
 <span class='co'>## Explore the resulting RSE gene object</span>
-<span class='no'>rse_gene_ERP110066</span></div><div class='output co'>#&gt; class: RangedSummarizedExperiment 
-#&gt; dim: 63856 1024 
-#&gt; metadata(0):
-#&gt; assays(1): counts
-#&gt; rownames(63856): ENSG00000278704.1 ENSG00000277400.1 ...
-#&gt;   ENSG00000182484.15_PAR_Y ENSG00000227159.8_PAR_Y
-#&gt; rowData names(10): source type ... havana_gene tag
-#&gt; colnames(1024): ERR2713604 ERR2713605 ... ERR2713998 ERR2713999
-#&gt; colData names(139): rail_id run_acc ...
-#&gt;   recount_qc.junction_avg_coverage BigWigURL</div><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>rse_gene_ERP110066</span>)</div><div class='output co'>#&gt; [1] 63856  1024</div><div class='input'><span class='fu'>rowRanges</span>(<span class='no'>rse_gene_ERP110066</span>)</div><div class='output co'>#&gt; GRanges object with 63856 ranges and 10 metadata columns:
-#&gt;                              seqnames            ranges strand |   source
-#&gt;                                 &lt;Rle&gt;         &lt;IRanges&gt;  &lt;Rle&gt; | &lt;factor&gt;
-#&gt;          ENSG00000278704.1 GL000009.2       56140-58376      - |  ENSEMBL
-#&gt;          ENSG00000277400.1 GL000194.1      53590-115018      - |  ENSEMBL
-#&gt;          ENSG00000274847.1 GL000194.1      53594-115055      - |  ENSEMBL
-#&gt;          ENSG00000277428.1 GL000195.1       37434-37534      - |  ENSEMBL
-#&gt;          ENSG00000276256.1 GL000195.1       42939-49164      - |  ENSEMBL
-#&gt;                        ...        ...               ...    ... .      ...
-#&gt;   ENSG00000124334.17_PAR_Y       chrY 57184101-57197337      + |   HAVANA
-#&gt;   ENSG00000185203.12_PAR_Y       chrY 57201143-57203357      - |   HAVANA
-#&gt;    ENSG00000270726.6_PAR_Y       chrY 57190738-57208756      + |   HAVANA
-#&gt;   ENSG00000182484.15_PAR_Y       chrY 57207346-57212230      + |   HAVANA
-#&gt;    ENSG00000227159.8_PAR_Y       chrY 57212184-57214397      - |   HAVANA
-#&gt;                                type     score     phase                gene_id
-#&gt;                            &lt;factor&gt; &lt;numeric&gt; &lt;integer&gt;            &lt;character&gt;
-#&gt;          ENSG00000278704.1     gene      2237      &lt;NA&gt;      ENSG00000278704.1
-#&gt;          ENSG00000277400.1     gene      2179      &lt;NA&gt;      ENSG00000277400.1
-#&gt;          ENSG00000274847.1     gene      1599      &lt;NA&gt;      ENSG00000274847.1
-#&gt;          ENSG00000277428.1     gene       101      &lt;NA&gt;      ENSG00000277428.1
-#&gt;          ENSG00000276256.1     gene      2195      &lt;NA&gt;      ENSG00000276256.1
-#&gt;                        ...      ...       ...       ...                    ...
-#&gt;   ENSG00000124334.17_PAR_Y     gene      2504      &lt;NA&gt; ENSG00000124334.17_P..
-#&gt;   ENSG00000185203.12_PAR_Y     gene      1054      &lt;NA&gt; ENSG00000185203.12_P..
-#&gt;    ENSG00000270726.6_PAR_Y     gene       773      &lt;NA&gt; ENSG00000270726.6_PA..
-#&gt;   ENSG00000182484.15_PAR_Y     gene      4618      &lt;NA&gt; ENSG00000182484.15_P..
-#&gt;    ENSG00000227159.8_PAR_Y     gene      1306      &lt;NA&gt; ENSG00000227159.8_PA..
-#&gt;                                         gene_type   gene_name       level
-#&gt;                                       &lt;character&gt; &lt;character&gt; &lt;character&gt;
-#&gt;          ENSG00000278704.1         protein_coding  BX004987.1           3
-#&gt;          ENSG00000277400.1         protein_coding  AC145212.2           3
-#&gt;          ENSG00000274847.1         protein_coding  AC145212.1           3
-#&gt;          ENSG00000277428.1               misc_RNA       Y_RNA           3
-#&gt;          ENSG00000276256.1         protein_coding  AC011043.1           3
-#&gt;                        ...                    ...         ...         ...
-#&gt;   ENSG00000124334.17_PAR_Y         protein_coding        IL9R           2
-#&gt;   ENSG00000185203.12_PAR_Y              antisense      WASIR1           2
-#&gt;    ENSG00000270726.6_PAR_Y   processed_transcript AJ271736.10           2
-#&gt;   ENSG00000182484.15_PAR_Y transcribed_unproces..      WASH6P           2
-#&gt;    ENSG00000227159.8_PAR_Y unprocessed_pseudogene    DDX11L16           2
-#&gt;                                     havana_gene         tag
-#&gt;                                     &lt;character&gt; &lt;character&gt;
-#&gt;          ENSG00000278704.1                 &lt;NA&gt;        &lt;NA&gt;
-#&gt;          ENSG00000277400.1                 &lt;NA&gt;        &lt;NA&gt;
-#&gt;          ENSG00000274847.1                 &lt;NA&gt;        &lt;NA&gt;
-#&gt;          ENSG00000277428.1                 &lt;NA&gt;        &lt;NA&gt;
-#&gt;          ENSG00000276256.1                 &lt;NA&gt;        &lt;NA&gt;
-#&gt;                        ...                  ...         ...
-#&gt;   ENSG00000124334.17_PAR_Y OTTHUMG00000022720.1         PAR
-#&gt;   ENSG00000185203.12_PAR_Y OTTHUMG00000022676.3         PAR
-#&gt;    ENSG00000270726.6_PAR_Y OTTHUMG00000184987.2         PAR
-#&gt;   ENSG00000182484.15_PAR_Y OTTHUMG00000022677.5         PAR
-#&gt;    ENSG00000227159.8_PAR_Y OTTHUMG00000022678.1         PAR
-#&gt;   -------
-#&gt;   seqinfo: 374 sequences from an unspecified genome; no seqlengths</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='fu'>colData</span>(<span class='no'>rse_gene_ERP110066</span>))</div><div class='output co'>#&gt;   [1] "rail_id"                                                       
-#&gt;   [2] "run_acc"                                                       
-#&gt;   [3] "study_acc"                                                     
-#&gt;   [4] "ncbi.sample_acc"                                               
-#&gt;   [5] "ncbi.experiment_acc"                                           
-#&gt;   [6] "ncbi.submission_acc"                                           
-#&gt;   [7] "ncbi.submission_center"                                        
-#&gt;   [8] "ncbi.submission_lab"                                           
-#&gt;   [9] "ncbi.study_title"                                              
-#&gt;  [10] "ncbi.study_abstract"                                           
-#&gt;  [11] "ncbi.study_description"                                        
-#&gt;  [12] "ncbi.experiment_title"                                         
-#&gt;  [13] "ncbi.design_description"                                       
-#&gt;  [14] "ncbi.sample_description"                                       
-#&gt;  [15] "ncbi.library_name"                                             
-#&gt;  [16] "ncbi.library_strategy"                                         
-#&gt;  [17] "ncbi.library_source"                                           
-#&gt;  [18] "ncbi.library_selection"                                        
-#&gt;  [19] "ncbi.library_layout"                                           
-#&gt;  [20] "ncbi.paired_nominal_length"                                    
-#&gt;  [21] "ncbi.paired_nominal_stdev"                                     
-#&gt;  [22] "ncbi.library_construction_protocol"                            
-#&gt;  [23] "ncbi.platform_model"                                           
-#&gt;  [24] "ncbi.sample_attributes"                                        
-#&gt;  [25] "ncbi.experiment_attributes"                                    
-#&gt;  [26] "ncbi.spot_length"                                              
-#&gt;  [27] "ncbi.sample_name"                                              
-#&gt;  [28] "ncbi.sample_title"                                             
-#&gt;  [29] "ncbi.sample_bases"                                             
-#&gt;  [30] "ncbi.sample_spots"                                             
-#&gt;  [31] "ncbi.run_published"                                            
-#&gt;  [32] "ncbi.size"                                                     
-#&gt;  [33] "ncbi.run_total_bases"                                          
-#&gt;  [34] "ncbi.run_total_spots"                                          
-#&gt;  [35] "ncbi.num_reads"                                                
-#&gt;  [36] "ncbi.num_spots"                                                
-#&gt;  [37] "ncbi.read_info"                                                
-#&gt;  [38] "ncbi.run_alias"                                                
-#&gt;  [39] "ncbi.run_center_name"                                          
-#&gt;  [40] "ncbi.run_broker_name"                                          
-#&gt;  [41] "ncbi.run_center"                                               
-#&gt;  [42] "recount_project.project"                                       
-#&gt;  [43] "recount_project.organism"                                      
-#&gt;  [44] "recount_project.file_source"                                   
-#&gt;  [45] "recount_project.metadata_source"                               
-#&gt;  [46] "recount_project.date_processed"                                
-#&gt;  [47] "recount_qc.aligned_reads%.chrm"                                
-#&gt;  [48] "recount_qc.aligned_reads%.chrx"                                
-#&gt;  [49] "recount_qc.aligned_reads%.chry"                                
-#&gt;  [50] "recount_qc.bc_auc.all_reads_all_bases"                         
-#&gt;  [51] "recount_qc.bc_auc.all_reads_annotated_bases"                   
-#&gt;  [52] "recount_qc.bc_auc.unique_reads_all_bases"                      
-#&gt;  [53] "recount_qc.bc_auc.unique_reads_annotated_bases"                
-#&gt;  [54] "recount_qc.bc_auc.all_%"                                       
-#&gt;  [55] "recount_qc.bc_auc.unique_%"                                    
-#&gt;  [56] "recount_qc.bc_frag.count"                                      
-#&gt;  [57] "recount_qc.bc_frag.kallisto_count"                             
-#&gt;  [58] "recount_qc.bc_frag.kallisto_mean_length"                       
-#&gt;  [59] "recount_qc.bc_frag.mean_length"                                
-#&gt;  [60] "recount_qc.bc_frag.mode_length"                                
-#&gt;  [61] "recount_qc.bc_frag.mode_length_count"                          
-#&gt;  [62] "recount_qc.exon_fc.all_%"                                      
-#&gt;  [63] "recount_qc.exon_fc.unique_%"                                   
-#&gt;  [64] "recount_qc.exon_fc_count_all.total"                            
-#&gt;  [65] "recount_qc.exon_fc_count_all.assigned"                         
-#&gt;  [66] "recount_qc.exon_fc_count_unique.total"                         
-#&gt;  [67] "recount_qc.exon_fc_count_unique.assigned"                      
-#&gt;  [68] "recount_qc.gene_fc.all_%"                                      
-#&gt;  [69] "recount_qc.gene_fc.unique_%"                                   
-#&gt;  [70] "recount_qc.gene_fc_count_all.total"                            
-#&gt;  [71] "recount_qc.gene_fc_count_all.assigned"                         
-#&gt;  [72] "recount_qc.gene_fc_count_unique.total"                         
-#&gt;  [73] "recount_qc.gene_fc_count_unique.assigned"                      
-#&gt;  [74] "recount_qc.intron_sum"                                         
-#&gt;  [75] "recount_qc.intron_sum_%"                                       
-#&gt;  [76] "recount_qc.star.%_of_chimeric_reads"                           
-#&gt;  [77] "recount_qc.star.%_of_chimeric_reads2"                          
-#&gt;  [78] "recount_qc.star.%_of_reads_mapped_to_multiple_loci"            
-#&gt;  [79] "recount_qc.star.%_of_reads_mapped_to_multiple_loci2"           
-#&gt;  [80] "recount_qc.star.%_of_reads_mapped_to_too_many_loci"            
-#&gt;  [81] "recount_qc.star.%_of_reads_mapped_to_too_many_loci2"           
-#&gt;  [82] "recount_qc.star.%_of_reads_unmapped:_other"                    
-#&gt;  [83] "recount_qc.star.%_of_reads_unmapped:_other2"                   
-#&gt;  [84] "recount_qc.star.%_of_reads_unmapped:_too_many_mismatches"      
-#&gt;  [85] "recount_qc.star.%_of_reads_unmapped:_too_many_mismatches2"     
-#&gt;  [86] "recount_qc.star.%_of_reads_unmapped:_too_short"                
-#&gt;  [87] "recount_qc.star.%_of_reads_unmapped:_too_short2"               
-#&gt;  [88] "recount_qc.star.all_mapped_reads"                              
-#&gt;  [89] "recount_qc.star.all_mapped_reads2"                             
-#&gt;  [90] "recount_qc.star.average_input_read_length"                     
-#&gt;  [91] "recount_qc.star.average_input_read_length2"                    
-#&gt;  [92] "recount_qc.star.average_mapped_length"                         
-#&gt;  [93] "recount_qc.star.average_mapped_length2"                        
-#&gt;  [94] "recount_qc.star.deletion_average_length"                       
-#&gt;  [95] "recount_qc.star.deletion_average_length2"                      
-#&gt;  [96] "recount_qc.star.deletion_rate_per_base"                        
-#&gt;  [97] "recount_qc.star.deletion_rate_per_base2"                       
-#&gt;  [98] "recount_qc.star.insertion_average_length"                      
-#&gt;  [99] "recount_qc.star.insertion_average_length2"                     
-#&gt; [100] "recount_qc.star.insertion_rate_per_base"                       
-#&gt; [101] "recount_qc.star.insertion_rate_per_base2"                      
-#&gt; [102] "recount_qc.star.mapping_speed,_million_of_reads_per_hour"      
-#&gt; [103] "recount_qc.star.mapping_speed,_million_of_reads_per_hour2"     
-#&gt; [104] "recount_qc.star.mismatch_rate_per_base,_%"                     
-#&gt; [105] "recount_qc.star.mismatch_rate_per_base,_%2"                    
-#&gt; [106] "recount_qc.star.number_of_chimeric_reads"                      
-#&gt; [107] "recount_qc.star.number_of_chimeric_reads2"                     
-#&gt; [108] "recount_qc.star.number_of_input_reads"                         
-#&gt; [109] "recount_qc.star.number_of_input_reads2"                        
-#&gt; [110] "recount_qc.star.number_of_reads_mapped_to_multiple_loci"       
-#&gt; [111] "recount_qc.star.number_of_reads_mapped_to_multiple_loci2"      
-#&gt; [112] "recount_qc.star.number_of_reads_mapped_to_too_many_loci"       
-#&gt; [113] "recount_qc.star.number_of_reads_mapped_to_too_many_loci2"      
-#&gt; [114] "recount_qc.star.number_of_reads_unmapped:_other"               
-#&gt; [115] "recount_qc.star.number_of_reads_unmapped:_other2"              
-#&gt; [116] "recount_qc.star.number_of_reads_unmapped:_too_many_mismatches" 
-#&gt; [117] "recount_qc.star.number_of_reads_unmapped:_too_many_mismatches2"
-#&gt; [118] "recount_qc.star.number_of_reads_unmapped:_too_short"           
-#&gt; [119] "recount_qc.star.number_of_reads_unmapped:_too_short2"          
-#&gt; [120] "recount_qc.star.number_of_splices:_at/ac"                      
-#&gt; [121] "recount_qc.star.number_of_splices:_at/ac2"                     
-#&gt; [122] "recount_qc.star.number_of_splices:_annotated_(sjdb)"           
-#&gt; [123] "recount_qc.star.number_of_splices:_annotated_(sjdb)2"          
-#&gt; [124] "recount_qc.star.number_of_splices:_gc/ag"                      
-#&gt; [125] "recount_qc.star.number_of_splices:_gc/ag2"                     
-#&gt; [126] "recount_qc.star.number_of_splices:_gt/ag"                      
-#&gt; [127] "recount_qc.star.number_of_splices:_gt/ag2"                     
-#&gt; [128] "recount_qc.star.number_of_splices:_non-canonical"              
-#&gt; [129] "recount_qc.star.number_of_splices:_non-canonical2"             
-#&gt; [130] "recount_qc.star.number_of_splices:_total"                      
-#&gt; [131] "recount_qc.star.number_of_splices:_total2"                     
-#&gt; [132] "recount_qc.star.uniquely_mapped_reads_%"                       
-#&gt; [133] "recount_qc.star.uniquely_mapped_reads_%2"                      
-#&gt; [134] "recount_qc.star.uniquely_mapped_reads_number"                  
-#&gt; [135] "recount_qc.star.uniquely_mapped_reads_number2"                 
-#&gt; [136] "recount_qc.junction_count"                                     
-#&gt; [137] "recount_qc.junction_coverage"                                  
-#&gt; [138] "recount_qc.junction_avg_coverage"                              
-#&gt; [139] "BigWigURL"                                                     </div><div class='input'>
+<span class='no'>rse_gene_ERP110066</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'rse_gene_ERP110066' not found</span></div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>rse_gene_ERP110066</span>)</div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'rse_gene_ERP110066' not found</span></div><div class='input'><span class='fu'>rowRanges</span>(<span class='no'>rse_gene_ERP110066</span>)</div><div class='output co'>#&gt; <span class='error'>Error in rowRanges(rse_gene_ERP110066): object 'rse_gene_ERP110066' not found</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='fu'>colData</span>(<span class='no'>rse_gene_ERP110066</span>))</div><div class='output co'>#&gt; <span class='error'>Error in colData(rse_gene_ERP110066): object 'rse_gene_ERP110066' not found</span></div><div class='input'>
 <span class='co'>## Create a second RSE object using another annotation</span>
 <span class='no'>rse_gene_ERP110066_gencode_v29</span> <span class='kw'>&lt;-</span> <span class='fu'>create_rse</span>(
     <span class='no'>proj_info</span>,
     <span class='kw'>annotation</span> <span class='kw'>=</span> <span class='st'>"gencode_v29"</span>
-)</div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:36:56 downloading and reading the metadata</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.ncbi.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_project.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_qc.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:36:58 downloading and reading the feature information</span></div><div class='output co'>#&gt; <span class='message'>Caching file human.gene_sums.G029.gtf.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/annotations/gene_sums/human.gene_sums.G029.gtf.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:36:59 downloading and reading the counts: 1024 samples across 64837 features.</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.gene_sums.ERP110066.G029.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.G029.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 01:37:04 construcing the RangedSummarizedExperiment (rse) object</span></div><div class='input'>
+)</div><div class='output co'>#&gt; <span class='message'>2020-05-27 05:24:46 downloading and reading the metadata</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.ncbi.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_project.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_qc.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_qc.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 05:24:48 downloading and reading the feature information</span></div><div class='output co'>#&gt; <span class='message'>Caching file human.gene_sums.G029.gtf.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/annotations/gene_sums/human.gene_sums.G029.gtf.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 05:24:49 downloading and reading the counts: 1024 samples across 64837 features.</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.gene_sums.ERP110066.G029.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.G029.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-05-27 05:24:57 construcing the RangedSummarizedExperiment (rse) object</span></div><div class='input'>
 <span class='co'>## Doesn't work right now</span>
 <span class='co'># rse_gene_ERP110066_refseq &lt;- create_rse(</span>
 <span class='co'>#     proj_info,</span>
