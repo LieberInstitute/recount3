@@ -27,7 +27,7 @@
 #' ## Read the metadata
 #' ERP110066_meta <- read_metadata(local_ERP110066_meta)
 #' dim(ERP110066_meta)
-#' head(ERP110066_meta)
+#' colnames(ERP110066_meta)
 #'
 #' ## Read the metadata files for a project in a collection
 #' ERP110066_collection_meta <- read_metadata(
@@ -54,7 +54,9 @@ read_metadata <- function(metadata_files) {
         "'metadata_files' should be a character" =
             is.character(metadata_files),
         "'metadata_files' should point a local file that exists" =
-            all(file.exists(metadata_files))
+            all(file.exists(metadata_files)),
+        "'metadata_files' should be named" =
+            length(names(metadata_files)) == length(metadata_files)
     )
 
     ## Read in the metadata files
@@ -64,6 +66,20 @@ read_metadata <- function(metadata_files) {
         sep = "\t",
         check.names = FALSE
     )
+
+    ## Temporarily fix the "recount_project" column names
+    meta_proj <- grep("recount_project", names(meta_list))
+    if (length(meta_proj) == 1) {
+        m <- match(c("external_id", "study"), colnames(meta_list[[meta_proj]]))
+        colnames(meta_list[[meta_proj]])[m] <- c("run_acc", "study_acc")
+    }
+
+    ## Temporarily fix the "recount_project" column names
+    meta_custom <- grep("custom\\.gz$", names(meta_list))
+    if (length(meta_custom) == 1) {
+        m <- match(c("external_id", "study"), colnames(meta_list[[meta_custom]]))
+        colnames(meta_list[[meta_custom]])[m] <- c("run_acc", "study_acc")
+    }
 
     ## Key columns
     keys <- c("rail_id", "run_acc", "study_acc")

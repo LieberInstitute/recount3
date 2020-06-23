@@ -34,7 +34,7 @@
 #' ## Example for metadata files from a project that is part of a collection
 #' file_locate_url(
 #'     "ERP110066",
-#'     "collections/geuvadis_smartseq"
+#'     "collections/geuvadis_smartseq",
 #' )
 #'
 #' ## Example for a BigWig file
@@ -57,6 +57,13 @@
 #'     "data_sources/sra",
 #'     "gene",
 #'     annotation = "refseq"
+#' )
+#'
+#' ## Example for a gene count file from a project that is part of a collection
+#' file_locate_url(
+#'     "ERP110066",
+#'     "collections/geuvadis_smartseq",
+#'     "gene"
 #' )
 file_locate_url <-
     function(project,
@@ -120,7 +127,7 @@ file_locate_url <-
 
         ## Metadata case
         if (type == "metadata") {
-            file_tag <- c("ncbi", "recount_project", "recount_qc")
+            file_tag <- c(basename(project_home), "recount_project", "recount_qc")
         } else {
             file_tag <- base_dir
         }
@@ -138,22 +145,58 @@ file_locate_url <-
         }
 
         ## Construct the final url(s)
-        url <- file.path(base_url, paste0(base_file, file_ext))
+        if (dirname(project_home) == "collections") {
+            ## Deal with metadata collection case
 
-        ## Deal with metadta collection case
-        if (dirname(project_home) == "collections" & type == "metadata") {
-            url <- c(
-                url,
-                file.path(
-                    recount3_url,
-                    organism,
-                    project_home,
-                    base_dir,
-                    paste0(
-                        basename(project_home), ".custom.gz"
+            ## Locate the file source from the metadata files
+            url_collection_meta <- file.path(
+                recount3_url,
+                organism,
+                project_home,
+                "metadata",
+                paste0(basename(project_home), ".recount_project.gz")
+            )
+            names(url_collection_meta) <- basename(url_collection_meta)
+
+            metadata <- read_metadata(
+                file_retrieve(url = url_collection_meta)
+            )
+            i <- which(metadata$recount_project.project == project)
+            stopifnot(
+                "The 'project' is not part of this collection." = length(i) > 0
+            )
+            file_source <- metadata$recount_project.file_source[i[1]]
+
+            ## Find the files from the file source
+            url <- file_locate_url(
+                project = project,
+                project_home = file_source,
+                type = type,
+                organism = organism,
+                sample = sample,
+                annotation = annotation,
+                recount3_url = recount3_url
+            )
+
+            ## Deal with metadata collection case
+            if (type == "metadata") {
+
+                ## Add the custom collection metadata
+                url <- c(
+                    url,
+                    file.path(
+                        recount3_url,
+                        organism,
+                        project_home,
+                        "metadata",
+                        paste0(
+                            basename(project_home), ".custom.gz"
+                        )
                     )
                 )
-            )
+            }
+        } else {
+            url <- file.path(base_url, paste0(base_file, file_ext))
         }
         names(url) <- basename(url)
 

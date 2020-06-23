@@ -56,7 +56,7 @@ file_locate_url(
 ## Example for metadata files from a project that is part of a collection
 file_locate_url(
     "ERP110066",
-    "collections/geuvadis_smartseq"
+    "collections/geuvadis_smartseq",
 )
 
 ## Example for a BigWig file
@@ -79,6 +79,13 @@ file_locate_url(
     "data_sources/sra",
     "gene",
     annotation = "refseq"
+)
+
+## Example for a gene count file from a project that is part of a collection
+file_locate_url(
+    "ERP110066",
+    "collections/geuvadis_smartseq",
+    "gene"
 )
 }
 \seealso{

@@ -33,7 +33,7 @@ local_ERP110066_meta <- file_retrieve(
 ## Read the metadata
 ERP110066_meta <- read_metadata(local_ERP110066_meta)
 dim(ERP110066_meta)
-head(ERP110066_meta)
+colnames(ERP110066_meta)
 
 ## Read the metadata files for a project in a collection
 ERP110066_collection_meta <- read_metadata(
