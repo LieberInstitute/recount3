@@ -140,11 +140,11 @@ computer using file_retrieve()." />
 
     <div class="ref-description">
     <p>This function reads in a <code>recount3</code> gene or gexon counts file into R. You can
-first locate the file using <code><a href='file_locate_url.html'>file_locate_url()</a></code> then download it to your
-computer using <code><a href='file_retrieve.html'>file_retrieve()</a></code>.</p>
+first locate the file using <code>file_locate_url()</code> then download it to your
+computer using <code>file_retrieve()</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>read_counts</span>(<span class='no'>counts_file</span>, <span class='kw'>samples</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>read_counts</span>(<span class='kw'>counts_file</span>, samples = <span class='kw'>NULL</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -158,7 +158,7 @@ counts file.</p></td>
       <th>samples</th>
       <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character()</a></code> with <code>run_acc</code> sample IDs to read in. When
 <code>NULL</code> (default), all samples will be read in. This argument is used by
-<code><a href='create_rse_manual.html'>create_rse_manual()</a></code>.</p></td>
+<code>create_rse_manual()</code>.</p></td>
     </tr>
     </table>
 
@@ -172,24 +172,24 @@ base-pair coverage counts used in recount2 and recount3.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other internal functions for accessing the recount3 data: 
-<code><a href='annotation_ext.html'>annotation_ext</a>()</code>,
-<code><a href='create_rse_manual.html'>create_rse_manual</a>()</code>,
-<code><a href='file_locate_url_annotation.html'>file_locate_url_annotation</a>()</code>,
-<code><a href='file_locate_url.html'>file_locate_url</a>()</code>,
-<code><a href='file_retrieve.html'>file_retrieve</a>()</code>,
-<code><a href='project_home_available.html'>project_home_available</a>()</code>,
-<code><a href='read_metadata.html'>read_metadata</a>()</code></p></div>
+<code>annotation_ext()</code>,
+<code>create_rse_manual()</code>,
+<code>file_locate_url_annotation()</code>,
+<code>file_locate_url()</code>,
+<code>file_retrieve()</code>,
+<code>project_home_available()</code>,
+<code>read_metadata()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'>## Download the gene counts file for project ERP110066</span>
-<span class='no'>url_ERP110066_gene</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(<span class='st'>"ERP110066"</span>, <span class='st'>"data_sources/sra"</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"gene"</span>)
-<span class='no'>local_ERP110066_gene</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span>(<span class='kw'>url</span> <span class='kw'>=</span> <span class='no'>url_ERP110066_gene</span>)</div><div class='output co'>#&gt; <span class='message'>Caching file sra.gene_sums.ERP110066.G026.gz</span></div><div class='input'>
+<span class='kw'>url_ERP110066_gene</span> <span class='op'>&lt;-</span> <span class='fu'>file_locate_url</span>(<span class='st'>"ERP110066"</span>, <span class='st'>"data_sources/sra"</span>, type = <span class='st'>"gene"</span>)
+<span class='kw'>local_ERP110066_gene</span> <span class='op'>&lt;-</span> <span class='fu'>file_retrieve</span>(url = <span class='kw'>url_ERP110066_gene</span>)</div><div class='output co'>#&gt; <span class='message'>Caching file sra.gene_sums.ERP110066.G026.gz</span></div><div class='input'>
 <span class='co'>## Read the gene counts, take about 3 seconds</span>
-<span class='fu'><a href='https://rdrr.io/r/base/system.time.html'>system.time</a></span>(<span class='no'>ERP110066_gene_counts</span> <span class='kw'>&lt;-</span> <span class='fu'>read_counts</span>(<span class='no'>local_ERP110066_gene</span>))</div><div class='output co'>#&gt;    user  system elapsed 
-#&gt;   2.659   0.272   2.933 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>ERP110066_gene_counts</span>)</div><div class='output co'>#&gt; [1] 63856  1024</div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/system.time.html'>system.time</a></span>(<span class='kw'>ERP110066_gene_counts</span> <span class='op'>&lt;-</span> <span class='fu'>read_counts</span>(<span class='kw'>local_ERP110066_gene</span>))</div><div class='output co'>#&gt;    user  system elapsed 
+#&gt;   1.719   0.230   1.950 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>ERP110066_gene_counts</span>)</div><div class='output co'>#&gt; [1] 63856  1024</div><div class='input'>
 <span class='co'>## Explore the top left corner</span>
-<span class='no'>ERP110066_gene_counts</span>[<span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>), <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>)]</div><div class='output co'>#&gt;                   ERR2713300 ERR2713800 ERR2714100 ERR2713700 ERR2713600
+<span class='kw'>ERP110066_gene_counts</span>[<span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>), <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>)]</div><div class='output co'>#&gt;                   ERR2713300 ERR2713800 ERR2714100 ERR2713700 ERR2713600
 #&gt; ENSG00000278704.1          0          0          0          0          0
 #&gt; ENSG00000277400.1          0          0          0          0          0
 #&gt; ENSG00000274847.1          0          0          0          0          0
@@ -204,7 +204,7 @@ base-pair coverage counts used in recount2 and recount3.</p>
 #&gt; ENSG00000276256.1          0
 #&gt; ENSG00000278198.1          0</div><div class='input'>
 <span class='co'>## Explore the first 6 samples.</span>
-<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='no'>ERP110066_gene_counts</span>[, <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>)])</div><div class='output co'>#&gt;    ERR2713300        ERR2713800        ERR2714100         ERR2713700     
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='kw'>ERP110066_gene_counts</span>[, <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>)])</div><div class='output co'>#&gt;    ERR2713300        ERR2713800        ERR2714100         ERR2713700     
 #&gt;  Min.   :      0   Min.   :      0   Min.   :     0.0   Min.   :      0  
 #&gt;  1st Qu.:      0   1st Qu.:      0   1st Qu.:     0.0   1st Qu.:      0  
 #&gt;  Median :      0   Median :      0   Median :     0.0   Median :      0  
@@ -228,29 +228,29 @@ base-pair coverage counts used in recount2 and recount3.</p>
 
 <span class='co'>## Locate and retrieve an exon counts file</span>
 <span class='co'>## Requires about 5GB of RAM</span>
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='no'>local_ERP110066_exon</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span>(
-    <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='kw'>local_ERP110066_exon</span> <span class='op'>&lt;-</span> <span class='fu'>file_retrieve</span>(
+    <span class='fu'>file_locate_url</span>(
         <span class='st'>"ERP110066"</span>,
         <span class='st'>"data_sources/sra"</span>,
-        <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"exon"</span>
+        type = <span class='st'>"exon"</span>
     )
 )
-<span class='no'>local_ERP110066_exon</span>
+<span class='kw'>local_ERP110066_exon</span>
 
 <span class='co'>## Read the exon counts, takes about 50-60 seconds</span>
 <span class='fu'><a href='https://rdrr.io/r/base/system.time.html'>system.time</a></span>(
-    <span class='no'>ERP110066_exon_counts</span> <span class='kw'>&lt;-</span> <span class='fu'>read_counts</span>(
-        <span class='no'>local_ERP110066_exon</span>
+    <span class='kw'>ERP110066_exon_counts</span> <span class='op'>&lt;-</span> <span class='fu'>read_counts</span>(
+        <span class='kw'>local_ERP110066_exon</span>
     )
 )
-<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>ERP110066_exon_counts</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>ERP110066_exon_counts</span>)
 
 <span class='co'>## Explore the top left corner</span>
-<span class='no'>ERP110066_exon_counts</span>[<span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>), <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>)]
+<span class='kw'>ERP110066_exon_counts</span>[<span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>), <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>)]
 
 <span class='co'>## Explore the first 6 samples.</span>
-<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='no'>ERP110066_exon_counts</span>[, <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>)])
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='kw'>ERP110066_exon_counts</span>[, <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>)])
 }</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

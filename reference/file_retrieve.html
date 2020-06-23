@@ -140,7 +140,7 @@
     <p>Download a remote file and cache it to re-use later</p>
     </div>
 
-    <pre class="usage"><span class='fu'>file_retrieve</span>(<span class='no'>url</span>, <span class='kw'>bfc</span> <span class='kw'>=</span> <span class='kw pkg'>BiocFileCache</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html'>BiocFileCache</a></span>())</pre>
+    <pre class="usage"><span class='fu'>file_retrieve</span>(<span class='kw'>url</span>, bfc = <span class='kw'>BiocFileCache</span>::<span class='fu'><a href='https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html'>BiocFileCache</a></span>())</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -164,34 +164,39 @@ object where the files will be cached to.</p></td>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other internal functions for accessing the recount3 data: 
-<code><a href='annotation_ext.html'>annotation_ext</a>()</code>,
-<code><a href='create_rse_manual.html'>create_rse_manual</a>()</code>,
-<code><a href='file_locate_url_annotation.html'>file_locate_url_annotation</a>()</code>,
-<code><a href='file_locate_url.html'>file_locate_url</a>()</code>,
-<code><a href='project_home_available.html'>project_home_available</a>()</code>,
-<code><a href='read_counts.html'>read_counts</a>()</code>,
-<code><a href='read_metadata.html'>read_metadata</a>()</code></p></div>
+<code>annotation_ext()</code>,
+<code>create_rse_manual()</code>,
+<code>file_locate_url_annotation()</code>,
+<code>file_locate_url()</code>,
+<code>project_home_available()</code>,
+<code>read_counts()</code>,
+<code>read_metadata()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'>## Download the metadata file for project ERP110066</span>
-<span class='no'>url_ERP110066_meta</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(
+<span class='kw'>url_ERP110066_meta</span> <span class='op'>&lt;-</span> <span class='fu'>file_locate_url</span>(
     <span class='st'>"ERP110066"</span>,
     <span class='st'>"data_sources/sra"</span>
 )
-<span class='no'>local_ERP110066_meta</span> <span class='kw'>&lt;-</span> <span class='fu'>file_retrieve</span>(
-    <span class='kw'>url</span> <span class='kw'>=</span> <span class='no'>url_ERP110066_meta</span>
-)</div><div class='output co'>#&gt; <span class='message'>Caching file sra.ncbi.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_project.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='error'>Error: The 'url' &lt;http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_qc.ERP110066.MD.gz&gt; does not exist or is not available.</span></div><div class='input'><span class='no'>local_ERP110066_meta</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'local_ERP110066_meta' not found</span></div><div class='input'>
+<span class='kw'>local_ERP110066_meta</span> <span class='op'>&lt;-</span> <span class='fu'>file_retrieve</span>(
+    url = <span class='kw'>url_ERP110066_meta</span>
+)</div><div class='output co'>#&gt; <span class='message'>Caching file sra.sra.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_project.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_qc.ERP110066.MD.gz</span></div><div class='input'><span class='kw'>local_ERP110066_meta</span></div><div class='output co'>#&gt;                                                          sra.sra.ERP110066.MD.gz 
+#&gt;             "/tmp/Rtmph7LtpY/BiocFileCache/1fba625e2688_sra.sra.ERP110066.MD.gz" 
+#&gt;                                              sra.recount_project.ERP110066.MD.gz 
+#&gt; "/tmp/Rtmph7LtpY/BiocFileCache/1fba2dcd3404_sra.recount_project.ERP110066.MD.gz" 
+#&gt;                                                   sra.recount_qc.ERP110066.MD.gz 
+#&gt;      "/tmp/Rtmph7LtpY/BiocFileCache/1fba2e0eed6b_sra.recount_qc.ERP110066.MD.gz" </div><div class='input'>
 <span class='co'>## Download the gene counts file for project ERP110066</span>
-<span class='no'>url_ERP110066_gene</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(
+<span class='kw'>url_ERP110066_gene</span> <span class='op'>&lt;-</span> <span class='fu'>file_locate_url</span>(
     <span class='st'>"ERP110066"</span>,
     <span class='st'>"data_sources/sra"</span>,
-    <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"gene"</span>
+    type = <span class='st'>"gene"</span>
 )
-<span class='no'>local_ERP110066_gene</span> <span class='kw'>&lt;-</span> <span class='fu'>file_retrieve</span>(
-    <span class='kw'>url</span> <span class='kw'>=</span> <span class='no'>url_ERP110066_gene</span>
-)</div><div class='output co'>#&gt; <span class='message'>Caching file sra.gene_sums.ERP110066.G026.gz</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.G026.gz'</span></div><div class='input'><span class='no'>local_ERP110066_gene</span></div><div class='output co'>#&gt;                                                                       BFC16 
-#&gt; "/tmp/RtmpXX0Qcp/BiocFileCache/be156ae05cf_sra.gene_sums.ERP110066.G026.gz" </div></pre>
+<span class='kw'>local_ERP110066_gene</span> <span class='op'>&lt;-</span> <span class='fu'>file_retrieve</span>(
+    url = <span class='kw'>url_ERP110066_gene</span>
+)</div><div class='output co'>#&gt; <span class='message'>Caching file sra.gene_sums.ERP110066.G026.gz</span></div><div class='input'><span class='kw'>local_ERP110066_gene</span></div><div class='output co'>#&gt;                                              sra.gene_sums.ERP110066.G026.gz 
+#&gt; "/tmp/Rtmph7LtpY/BiocFileCache/1fba1dea314a_sra.gene_sums.ERP110066.G026.gz" </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
