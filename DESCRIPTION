@@ -49,4 +49,5 @@ Imports:
     RCurl,
     data.table,
     R.utils,
-    Matrix
+    Matrix,
+    GenomicRanges

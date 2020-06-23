@@ -18,6 +18,7 @@
 #' @importFrom S4Vectors DataFrame
 #' @importFrom rtracklayer import
 #' @importFrom Matrix readMM
+#' @importFrom GenomicRanges GRanges
 #' @references
 #'
 #' <https://doi.org/10.12688/f1000research.12223.1> for details on the
