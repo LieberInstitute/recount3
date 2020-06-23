@@ -5,8 +5,8 @@
 #' object that contains the base-pair coverage counts at the `gene` or `exon`
 #' feature level for a given annotation.
 #'
-#' @param type  A `character(1)` specifying whether you want to access gene
-#' counts or exon counts.
+#' @param type  A `character(1)` specifying whether you want to access gene,
+#' exon, or exon-exon junction counts.
 #' @inheritParams file_locate_url
 #' @inheritParams file_retrieve
 #'
@@ -17,6 +17,7 @@
 #' @importFrom SummarizedExperiment SummarizedExperiment
 #' @importFrom S4Vectors DataFrame
 #' @importFrom rtracklayer import
+#' @importFrom Matrix readMM
 #' @references
 #'
 #' <https://doi.org/10.12688/f1000research.12223.1> for details on the
@@ -44,10 +45,17 @@
 #'     type = "exon"
 #' )
 #' rse_exon_ERP110066_collection_manual
+#'
+#' system.time(rse_jxn_ERP110066_collection_manual <- create_rse_manual(
+#'     "ERP110066",
+#'     "collections/geuvadis_smartseq",
+#'     type = "jxn"
+#' ))
+#' rse_jxn_ERP110066_collection_manual
 #' \dontrun{
 #' project <- "ERP110066"
 #' project_home <- "collections/geuvadis_smartseq"
-#' type <- "exon"
+#' type <- "jxn"
 #' organism <- "human"
 #' annotation <- "gencode_v26"
 #' bfc <- BiocFileCache::BiocFileCache()
@@ -59,7 +67,7 @@ create_rse_manual <- function(project,
         recount3_url = recount3_url,
         bfc = bfc
     ),
-    type = c("gene", "exon"),
+    type = c("gene", "exon", "jxn"),
     organism = c("human", "mouse"),
     annotation = annotation_options(organism),
     bfc = BiocFileCache::BiocFileCache(),
@@ -97,22 +105,40 @@ create_rse_manual <- function(project,
         sample = metadata$run_acc
     )
 
+    if (type == "jxn") {
+        jxn_files <- file_locate_url(
+            project = project,
+            project_home = project_home,
+            type = "jxn",
+            organism = organism,
+            annotation = annotation,
+            recount3_url = recount3_url
+        )
+    }
+
     message(paste(
         Sys.time(),
         "downloading and reading the feature information"
     ))
     ## Read the feature information
-    feature_info <-
-        rtracklayer::import(file_retrieve(
-            url = file_locate_url_annotation(
-                type = type,
-                organism = organism,
-                annotation = annotation,
-                recount3_url = recount3_url
-            ),
-            bfc = bfc
-        ))
-
+    if (type %in% c("gene", "exon")) {
+        feature_info <-
+            rtracklayer::import(file_retrieve(
+                url = file_locate_url_annotation(
+                    type = type,
+                    organism = organism,
+                    annotation = annotation,
+                    recount3_url = recount3_url
+                ),
+                bfc = bfc
+            ))
+    } else if (type == "jxn") {
+        feature_info <-
+            GenomicRanges::GRanges(utils::read.delim(file_retrieve(
+                url = jxn_files[grep("\\.RR\\.gz$", jxn_files)],
+                bfc = bfc
+            )))
+    }
 
     message(
         paste(
@@ -125,20 +151,45 @@ create_rse_manual <- function(project,
             "features."
         )
     )
-    counts <- read_counts(
-        file_retrieve(
-            url = file_locate_url(
-                project = project,
-                project_home = project_home,
-                type = type,
-                organism = organism,
-                annotation = annotation,
-                recount3_url = recount3_url
+    if (type %in% c("gene", "exon")) {
+        counts <- read_counts(
+            file_retrieve(
+                url = file_locate_url(
+                    project = project,
+                    project_home = project_home,
+                    type = type,
+                    organism = organism,
+                    annotation = annotation,
+                    recount3_url = recount3_url
+                ),
+                bfc = bfc
             ),
+            samples = metadata$run_acc
+        )
+    } else if (type == "jxn") {
+        counts <- Matrix::readMM(file_retrieve(
+            url = jxn_files[grep("\\.MM\\.gz$", jxn_files)],
             bfc = bfc
-        ),
-        samples = metadata$run_acc
-    )
+        ))
+
+        ## Read in the metadata again if needed (like with collections)
+        if (ncol(counts) > nrow(metadata)) {
+            metadata_full <- read_metadata(file_retrieve(
+                url = file_locate_url(
+                    project = project,
+                    project_home = project_home,
+                    type = "metadata",
+                    organism = organism,
+                    annotation = annotation,
+                    recount3_url = recount3_url
+                ),
+                bfc = bfc
+            ))
+            m <- match(metadata$run_acc, metadata_full$run_acc)
+            counts <- counts[, m, drop = FALSE]
+            colnames(counts) <- metadata$run_acc
+        }
+    }
 
     ## Build the RSE object
     message(paste(

@@ -8,7 +8,7 @@ create_rse_manual(
   project,
   project_home = project_home_available(organism = organism, recount3_url =
     recount3_url, bfc = bfc),
-  type = c("gene", "exon"),
+  type = c("gene", "exon", "jxn"),
   organism = c("human", "mouse"),
   annotation = annotation_options(organism),
   bfc = BiocFileCache::BiocFileCache(),
@@ -21,8 +21,8 @@ create_rse_manual(
 \item{project_home}{A \code{character(1)} with the home directory for the
 \code{project}. You can find these using \code{project_home_available()}.}
 
-\item{type}{A \code{character(1)} specifying whether you want to access gene
-counts or exon counts.}
+\item{type}{A \code{character(1)} specifying whether you want to access gene,
+exon, or exon-exon junction counts.}
 
 \item{organism}{A \code{character(1)} specifying which organism you want to
 download data from. Supported options are \code{"human"} or \code{"mouse"}.}
@@ -68,10 +68,17 @@ rse_exon_ERP110066_collection_manual <- create_rse_manual(
     type = "exon"
 )
 rse_exon_ERP110066_collection_manual
+
+system.time(rse_jxn_ERP110066_collection_manual <- create_rse_manual(
+    "ERP110066",
+    "collections/geuvadis_smartseq",
+    type = "jxn"
+))
+rse_jxn_ERP110066_collection_manual
 \dontrun{
 project <- "ERP110066"
 project_home <- "collections/geuvadis_smartseq"
-type <- "exon"
+type <- "jxn"
 organism <- "human"
 annotation <- "gencode_v26"
 bfc <- BiocFileCache::BiocFileCache()

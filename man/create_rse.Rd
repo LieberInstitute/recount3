@@ -6,7 +6,7 @@
 \usage{
 create_rse(
   project_info,
-  type = c("gene", "exon"),
+  type = c("gene", "exon", "jxn"),
   annotation = annotation_options(project_info$organism),
   bfc = BiocFileCache::BiocFileCache(),
   recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3"
@@ -17,8 +17,8 @@ create_rse(
 information for the project you are interested in. You can find which
 project to work on using \code{todo()}.}
 
-\item{type}{A \code{character(1)} specifying whether you want to access gene
-counts or exon counts.}
+\item{type}{A \code{character(1)} specifying whether you want to access gene,
+exon, or exon-exon junction counts.}
 
 \item{annotation}{A \code{character(1)} specifying which annotation you want to
 download. Only used when \code{type} is either \code{gene} or \code{exon}.}

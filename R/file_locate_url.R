@@ -65,6 +65,13 @@
 #'     "collections/geuvadis_smartseq",
 #'     "gene"
 #' )
+#'
+#' ## Locate example junction files
+#' file_locate_url(
+#'     "ERP110066",
+#'     "data_sources/sra",
+#'     "jxn"
+#' )
 file_locate_url <-
     function(project,
     project_home = project_home_available(
@@ -87,7 +94,7 @@ file_locate_url <-
             metadata = "metadata",
             gene = "gene_sums",
             exon = "exon_sums",
-            jxn = "something_todo",
+            jxn = "junctions",
             bw = "base_sums"
         )
 
@@ -100,7 +107,7 @@ file_locate_url <-
             metadata = "MD.gz",
             gene = paste0(ann_ext, ".gz"),
             exon = paste0(ann_ext, ".gz"),
-            jxn = "something_todo",
+            jxn = c("MM.gz", "RR.gz"),
             bw = "ALL.bw"
         ))
 
@@ -111,8 +118,6 @@ file_locate_url <-
                     call. = FALSE
                 )
             }
-        } else if (type == "jxn") {
-            stop("Currently type = 'jxn' is not supported", call. = FALSE)
         }
 
         ## Base URL

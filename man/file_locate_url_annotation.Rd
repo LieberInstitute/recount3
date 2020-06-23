@@ -13,7 +13,7 @@ file_locate_url_annotation(
 }
 \arguments{
 \item{type}{A \code{character(1)} specifying whether you want to access gene
-counts or exon counts.}
+counts or exon data.}
 
 \item{organism}{A \code{character(1)} specifying which organism you want to
 download data from. Supported options are \code{"human"} or \code{"mouse"}.}

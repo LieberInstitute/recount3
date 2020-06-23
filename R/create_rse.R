@@ -65,7 +65,7 @@
 #' }
 create_rse <-
     function(project_info,
-    type = c("gene", "exon"),
+    type = c("gene", "exon", "jxn"),
     annotation = annotation_options(project_info$organism),
     bfc = BiocFileCache::BiocFileCache(),
     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3") {

@@ -87,6 +87,13 @@ file_locate_url(
     "collections/geuvadis_smartseq",
     "gene"
 )
+
+## Locate example junction files
+file_locate_url(
+    "ERP110066",
+    "data_sources/sra",
+    "jxn"
+)
 }
 \seealso{
 Other internal functions for accessing the recount3 data: 

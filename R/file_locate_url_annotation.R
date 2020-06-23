@@ -4,6 +4,8 @@
 #' function constructs the URL (or file path) to access a recount3
 #' annotation file. This function is used by `create_rse_manual()`.
 #'
+#' @param type  A `character(1)` specifying whether you want to access gene
+#' counts or exon data.
 #' @inheritParams create_rse_manual
 #'
 #' @return A `character(1)` with the URL (or file path) to access the

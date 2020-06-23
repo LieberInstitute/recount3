@@ -48,4 +48,5 @@ Imports:
     XML,
     RCurl,
     data.table,
-    R.utils
+    R.utils,
+    Matrix
