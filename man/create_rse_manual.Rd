@@ -75,6 +75,14 @@ system.time(rse_jxn_ERP110066_collection_manual <- create_rse_manual(
     type = "jxn"
 ))
 rse_jxn_ERP110066_collection_manual
+
+## Mouse example
+rse_gene_SRP060340_manual <- create_rse_manual(
+    "SRP060340",
+    "data_sources/sra",
+    organism = "mouse"
+)
+rse_gene_SRP060340_manual
 \dontrun{
 project <- "ERP110066"
 project_home <- "collections/geuvadis_smartseq"

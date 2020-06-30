@@ -24,7 +24,6 @@ annotation_options <- function(organism = c("human", "mouse")) {
             "sirv"
         )
     } else if (organism == "mouse") {
-        warning("Currently not supported!", call. = FALSE)
         options <- c("gencode_v23")
     }
     return(options)

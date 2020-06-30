@@ -15,7 +15,8 @@
 #'
 #' ## List the different available `project_home` options for the default
 #' ## arguments
-#' project_home_available()
+#' project_home_available("human")
+#' project_home_available("mouse")
 project_home_available <-
     function(organism = c("human", "mouse"),
     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3",
@@ -27,10 +28,15 @@ project_home_available <-
             "data_sources",
             "collections"
         )
+        if (organism == "mouse") {
+            ## Currently there are no mouse collections
+            base_dirs <- "data_sources"
+        }
 
         homes <- lapply(base_dirs, function(base_dir) {
             ## Build the query URL
             url <- file.path(recount3_url, organism, base_dir)
+            names(url) <- url
 
             ## Find the available options
             available <- file_list(url, bfc = bfc)

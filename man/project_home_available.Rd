@@ -31,7 +31,8 @@ on the \code{organism} and the \code{home_type}.
 
 ## List the different available `project_home` options for the default
 ## arguments
-project_home_available()
+project_home_available("human")
+project_home_available("mouse")
 }
 \seealso{
 Other internal functions for accessing the recount3 data: 
