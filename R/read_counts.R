@@ -6,7 +6,7 @@
 #'
 #' @param counts_file A `character(1)` with the local path to a `recount3`
 #' counts file.
-#' @param samples A `character()` with `run_acc` sample IDs to read in. When
+#' @param samples A `character()` with `external_id` sample IDs to read in. When
 #' `NULL` (default), all samples will be read in. This argument is used by
 #' `create_rse_manual()`.
 #'

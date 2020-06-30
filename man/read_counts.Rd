@@ -10,7 +10,7 @@ read_counts(counts_file, samples = NULL)
 \item{counts_file}{A \code{character(1)} with the local path to a \code{recount3}
 counts file.}
 
-\item{samples}{A \code{character()} with \code{run_acc} sample IDs to read in. When
+\item{samples}{A \code{character()} with \code{external_id} sample IDs to read in. When
 \code{NULL} (default), all samples will be read in. This argument is used by
 \code{create_rse_manual()}.}
 }

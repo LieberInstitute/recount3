@@ -103,7 +103,7 @@ create_rse_manual <- function(project,
         organism = organism,
         annotation = annotation,
         recount3_url = recount3_url,
-        sample = metadata$run_acc
+        sample = metadata$external_id
     )
 
     if (type == "jxn") {
@@ -165,7 +165,7 @@ create_rse_manual <- function(project,
                 ),
                 bfc = bfc
             ),
-            samples = metadata$run_acc
+            samples = metadata$external_id
         )
     } else if (type == "jxn") {
         counts <- Matrix::readMM(file_retrieve(
@@ -186,9 +186,9 @@ create_rse_manual <- function(project,
                 ),
                 bfc = bfc
             ))
-            m <- match(metadata$run_acc, metadata_full$run_acc)
+            m <- match(metadata$external_id, metadata_full$external_id)
             counts <- counts[, m, drop = FALSE]
-            colnames(counts) <- metadata$run_acc
+            colnames(counts) <- metadata$external_id
         }
     }
 
@@ -199,8 +199,8 @@ create_rse_manual <- function(project,
     ))
 
     stopifnot(
-        "Metadata run_acc and counts colnames are not matching." =
-            identical(metadata$run_acc, colnames(counts))
+        "Metadata external_id and counts colnames are not matching." =
+            identical(metadata$external_id, colnames(counts))
     )
 
     if (type == "gene") {

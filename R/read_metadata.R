@@ -67,22 +67,8 @@ read_metadata <- function(metadata_files) {
         check.names = FALSE
     )
 
-    ## Temporarily fix the "recount_project" column names
-    meta_proj <- grep("recount_project", names(meta_list))
-    if (length(meta_proj) == 1) {
-        m <- match(c("external_id", "study"), colnames(meta_list[[meta_proj]]))
-        colnames(meta_list[[meta_proj]])[m] <- c("run_acc", "study_acc")
-    }
-
-    ## Temporarily fix the "recount_project" column names
-    meta_custom <- grep("custom\\.gz$", names(meta_list))
-    if (length(meta_custom) == 1) {
-        m <- match(c("external_id", "study"), colnames(meta_list[[meta_custom]]))
-        colnames(meta_list[[meta_custom]])[m] <- c("run_acc", "study_acc")
-    }
-
     ## Key columns
-    keys <- c("rail_id", "run_acc", "study_acc")
+    keys <- c("rail_id", "external_id", "study")
 
     ## Merge the metadata files
     for (i in seq_along(meta_list)) {
