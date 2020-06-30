@@ -156,7 +156,7 @@ counts file.</p></td>
     </tr>
     <tr>
       <th>samples</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character()</a></code> with <code>run_acc</code> sample IDs to read in. When
+      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character()</a></code> with <code>external_id</code> sample IDs to read in. When
 <code>NULL</code> (default), all samples will be read in. This argument is used by
 <code>create_rse_manual()</code>.</p></td>
     </tr>
@@ -187,7 +187,7 @@ base-pair coverage counts used in recount2 and recount3.</p>
 <span class='kw'>local_ERP110066_gene</span> <span class='op'>&lt;-</span> <span class='fu'>file_retrieve</span>(url = <span class='kw'>url_ERP110066_gene</span>)</div><div class='output co'>#&gt; <span class='message'>Caching file sra.gene_sums.ERP110066.G026.gz</span></div><div class='input'>
 <span class='co'>## Read the gene counts, take about 3 seconds</span>
 <span class='fu'><a href='https://rdrr.io/r/base/system.time.html'>system.time</a></span>(<span class='kw'>ERP110066_gene_counts</span> <span class='op'>&lt;-</span> <span class='fu'>read_counts</span>(<span class='kw'>local_ERP110066_gene</span>))</div><div class='output co'>#&gt;    user  system elapsed 
-#&gt;   1.719   0.230   1.950 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>ERP110066_gene_counts</span>)</div><div class='output co'>#&gt; [1] 63856  1024</div><div class='input'>
+#&gt;   2.065   0.270   2.335 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>ERP110066_gene_counts</span>)</div><div class='output co'>#&gt; [1] 63856  1024</div><div class='input'>
 <span class='co'>## Explore the top left corner</span>
 <span class='kw'>ERP110066_gene_counts</span>[<span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>), <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>)]</div><div class='output co'>#&gt;                   ERR2713300 ERR2713800 ERR2714100 ERR2713700 ERR2713600
 #&gt; ENSG00000278704.1          0          0          0          0          0

@@ -184,8 +184,8 @@ metadata.</p>
 <span class='co'>## Read the metadata</span>
 <span class='kw'>ERP110066_meta</span> <span class='op'>&lt;-</span> <span class='fu'>read_metadata</span>(<span class='kw'>local_ERP110066_meta</span>)
 <span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>ERP110066_meta</span>)</div><div class='output co'>#&gt; [1] 1024  138</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='kw'>ERP110066_meta</span>)</div><div class='output co'>#&gt;   [1] "rail_id"                                                       
-#&gt;   [2] "run_acc"                                                       
-#&gt;   [3] "study_acc"                                                     
+#&gt;   [2] "external_id"                                                   
+#&gt;   [3] "study"                                                         
 #&gt;   [4] "sra.sample_acc"                                                
 #&gt;   [5] "sra.experiment_acc"                                            
 #&gt;   [6] "sra.submission_acc"                                            
@@ -327,8 +327,8 @@ metadata.</p>
         <span class='fu'>file_locate_url</span>(<span class='st'>"ERP110066"</span>, <span class='st'>"collections/geuvadis_smartseq"</span>)
     )
 )</div><div class='output co'>#&gt; <span class='message'>Caching file geuvadis_smartseq.recount_project.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.sra.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_project.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_qc.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file geuvadis_smartseq.custom.gz</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>ERP110066_collection_meta</span>)</div><div class='output co'>#&gt; [1]   1 139</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='kw'>ERP110066_collection_meta</span>)</div><div class='output co'>#&gt;   [1] "rail_id"                                                       
-#&gt;   [2] "run_acc"                                                       
-#&gt;   [3] "study_acc"                                                     
+#&gt;   [2] "external_id"                                                   
+#&gt;   [3] "study"                                                         
 #&gt;   [4] "sra.sample_acc"                                                
 #&gt;   [5] "sra.experiment_acc"                                            
 #&gt;   [6] "sra.submission_acc"                                            
