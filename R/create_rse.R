@@ -68,6 +68,7 @@ create_rse <-
     type = c("gene", "exon", "jxn"),
     annotation = annotation_options(project_info$organism),
     bfc = BiocFileCache::BiocFileCache(),
+    jxn_format = c("ALL", "UNIQUE"),
     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3") {
         ## Check the inputs
         stopifnot(
@@ -84,6 +85,7 @@ create_rse <-
 
         type <- match.arg(type)
         annotation <- match.arg(annotation)
+        jxn_format <- match.arg(jxn_format)
 
         rse <- create_rse_manual(
             project = project_info$project,
@@ -92,6 +94,7 @@ create_rse <-
             organism = project_info$organism,
             annotation = annotation,
             bfc = bfc,
+            jxn_format = jxn_format,
             recount3_url = recount3_url
         )
 

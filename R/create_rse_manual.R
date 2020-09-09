@@ -80,11 +80,13 @@ create_rse_manual <- function(project,
     organism = c("human", "mouse"),
     annotation = annotation_options(organism),
     bfc = BiocFileCache::BiocFileCache(),
+    jxn_format = c("ALL", "UNIQUE"),
     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3") {
     type <- match.arg(type)
     organism <- match.arg(organism)
     project_home <- match.arg(project_home)
     annotation <- match.arg(annotation)
+    jxn_format <- match.arg(jxn_format)
 
     ## First the metadata which is the smallest
     message(paste(Sys.time(), "downloading and reading the metadata"))
@@ -121,6 +123,7 @@ create_rse_manual <- function(project,
             type = "jxn",
             organism = organism,
             annotation = annotation,
+            jxn_format = jxn_format,
             recount3_url = recount3_url
         )
     }

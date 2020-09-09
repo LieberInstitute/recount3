@@ -16,6 +16,10 @@
 #' download.
 #' @param annotation A `character(1)` specifying which annotation you want to
 #' download. Only used when `type` is either `gene` or `exon`.
+#' @param jxn_format A `character(1)` specifying whether the exon-exon junction
+#' files are derived from all the reads (`ALL`) or only the uniquely mapping
+#' read counts (`UNIQUE`). Note that `UNIQUE` is only available for some
+#' projects.
 #' @param recount3_url A `character(1)` specifying the home URL for `recount3`
 #' or a local directory where you have mirrored `recount3`.
 #'
@@ -82,11 +86,13 @@ file_locate_url <-
     organism = c("human", "mouse"),
     sample = NULL,
     annotation = annotation_options(organism),
+    jxn_format = c("ALL", "UNIQUE"),
     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3") {
         type <- match.arg(type)
         organism <- match.arg(organism)
         project_home <- match.arg(project_home)
         annotation <- match.arg(annotation)
+        jxn_format <- match.arg(jxn_format)
 
         ## Define the base directories
         base_dir <- switch(
@@ -107,7 +113,7 @@ file_locate_url <-
             metadata = "MD.gz",
             gene = paste0(ann_ext, ".gz"),
             exon = paste0(ann_ext, ".gz"),
-            jxn = c("MM.gz", "RR.gz"),
+            jxn = paste0(jxn_format, ".", c("MM.gz", "RR.gz")),
             bw = "ALL.bw"
         ))
 

@@ -18,9 +18,9 @@ annotation_options <- function(organism = c("human", "mouse")) {
         options <- c(
             "gencode_v26",
             "gencode_v29",
-            "ercc",
             "fantom6_cat",
             "refseq",
+            "ercc",
             "sirv"
         )
     } else if (organism == "mouse") {

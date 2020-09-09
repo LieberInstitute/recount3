@@ -12,6 +12,7 @@ create_rse_manual(
   organism = c("human", "mouse"),
   annotation = annotation_options(organism),
   bfc = BiocFileCache::BiocFileCache(),
+  jxn_format = c("ALL", "UNIQUE"),
   recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3"
 )
 }
@@ -32,6 +33,11 @@ download. Only used when \code{type} is either \code{gene} or \code{exon}.}
 
 \item{bfc}{A \link[BiocFileCache:BiocFileCache-class]{BiocFileCache-class}
 object where the files will be cached to.}
+
+\item{jxn_format}{A \code{character(1)} specifying whether the exon-exon junction
+files are derived from all the reads (\code{ALL}) or only the uniquely mapping
+read counts (\code{UNIQUE}). Note that \code{UNIQUE} is only available for some
+projects.}
 
 \item{recount3_url}{A \code{character(1)} specifying the home URL for \code{recount3}
 or a local directory where you have mirrored \code{recount3}.}

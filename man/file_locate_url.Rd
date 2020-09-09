@@ -12,6 +12,7 @@ file_locate_url(
   organism = c("human", "mouse"),
   sample = NULL,
   annotation = annotation_options(organism),
+  jxn_format = c("ALL", "UNIQUE"),
   recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3"
 )
 }
@@ -33,6 +34,11 @@ download.}
 
 \item{annotation}{A \code{character(1)} specifying which annotation you want to
 download. Only used when \code{type} is either \code{gene} or \code{exon}.}
+
+\item{jxn_format}{A \code{character(1)} specifying whether the exon-exon junction
+files are derived from all the reads (\code{ALL}) or only the uniquely mapping
+read counts (\code{UNIQUE}). Note that \code{UNIQUE} is only available for some
+projects.}
 
 \item{recount3_url}{A \code{character(1)} specifying the home URL for \code{recount3}
 or a local directory where you have mirrored \code{recount3}.}
