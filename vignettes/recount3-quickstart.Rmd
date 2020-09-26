@@ -137,6 +137,9 @@ citation("recount3")
 If you have identified a **study** of interest and want to access the gene level expression data, use `create_rse()` as shown below. `create_rse()` has arguments that will allow you to specify the  **annotation** of interest for the given organism, and whether you want to download **gene**, **exon** or **exon-exon junction** expression data. 
 
 ```{r 'quick_example'}
+## Load recount3
+library("recount3")
+
 ## Find a study of interest
 proj_info <- data.frame(
     project = "ERP110066",
