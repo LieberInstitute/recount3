@@ -20,7 +20,7 @@
 file_locate_url_annotation <- function(type = c("gene", "exon"),
     organism = c("human", "mouse"),
     annotation = annotation_options(organism),
-    recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3") {
+    recount3_url = "https://idies.jhu.edu/recount3/data") {
     type <- match.arg(type)
     organism <- match.arg(organism)
     annotation <- match.arg(annotation)

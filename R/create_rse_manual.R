@@ -79,7 +79,7 @@
 #' annotation <- "gencode_v26"
 #' jxn_format <- "ALL"
 #' bfc <- BiocFileCache::BiocFileCache()
-#' recount3_url <- "http://snaptron.cs.jhu.edu/data/temp/recount3"
+#' recount3_url <- "https://idies.jhu.edu/recount3/data"
 #' }
 create_rse_manual <- function(project,
     project_home = project_home_available(
@@ -92,7 +92,7 @@ create_rse_manual <- function(project,
     annotation = annotation_options(organism),
     bfc = BiocFileCache::BiocFileCache(),
     jxn_format = c("ALL", "UNIQUE"),
-    recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3") {
+    recount3_url = "https://idies.jhu.edu/recount3/data") {
     type <- match.arg(type)
     organism <- match.arg(organism)
     project_home <- match.arg(project_home)

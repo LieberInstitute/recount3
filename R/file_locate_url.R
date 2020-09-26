@@ -93,7 +93,7 @@ file_locate_url <-
     sample = NULL,
     annotation = annotation_options(organism),
     jxn_format = c("ALL", "UNIQUE"),
-    recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3") {
+    recount3_url = "https://idies.jhu.edu/recount3/data") {
         type <- match.arg(type)
         organism <- match.arg(organism)
         project_home <- match.arg(project_home)
@@ -144,7 +144,7 @@ file_locate_url <-
 
         ## Metadata case
         if (type == "metadata") {
-            file_tag <- c(basename(project_home), "recount_project", "recount_qc", "recount_pred")
+            file_tag <- c(basename(project_home), "recount_project", "recount_qc", "recount_seq_qc", "recount_pred")
         } else {
             file_tag <- base_dir
         }
