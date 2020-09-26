@@ -37,6 +37,13 @@
 #' )
 #' dim(ERP110066_collection_meta)
 #' colnames(ERP110066_collection_meta)
+#'
+#' ## Read the metadata for a mouse project
+#' SRP060340_meta <- read_metadata(
+#'     metadata_files = file_retrieve(
+#'         file_locate_url("SRP060340", "data_sources/sra", organism = "mouse")
+#'     )
+#' )
 #' \dontrun{
 #' ## Locate and read the GTEx bladder metadata
 #' gtex_bladder_meta <- read_metadata(
@@ -70,11 +77,24 @@ read_metadata <- function(metadata_files) {
     ## Key columns
     keys <- c("rail_id", "external_id", "study")
 
-    ## Merge the metadata files
+    ## Make column names consistent
     for (i in seq_along(meta_list)) {
         ## Make all column names consistently lower case
         colnames(meta_list[[i]]) <- tolower(colnames(meta_list[[i]]))
 
+        ## Add support for older recount3 files
+        if ("study_acc" %in% colnames(meta_list[[i]]) && !"study" %in% colnames(meta_list[[i]])) {
+            warning("Replacing study_acc by study in ", names(meta_list)[i], call. = FALSE)
+            colnames(meta_list[[i]])[colnames(meta_list[[i]]) == "study_acc"] <- "study"
+        }
+        if ("run_acc" %in% colnames(meta_list[[i]]) && !"external_id" %in% colnames(meta_list[[i]])) {
+            warning("Replacing run_acc by external_id in ", names(meta_list)[i], call. = FALSE)
+            colnames(meta_list[[i]])[colnames(meta_list[[i]]) == "run_acc"] <- "external_id"
+        }
+    }
+
+    ## Merge the metadata files
+    for (i in seq_along(meta_list)) {
         if (i == 1) {
             ## Initialize
             meta <- meta_list[[i]]

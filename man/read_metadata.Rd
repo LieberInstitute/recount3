@@ -43,6 +43,13 @@ ERP110066_collection_meta <- read_metadata(
 )
 dim(ERP110066_collection_meta)
 colnames(ERP110066_collection_meta)
+
+## Read the metadata for a mouse project
+SRP060340_meta <- read_metadata(
+    metadata_files = file_retrieve(
+        file_locate_url("SRP060340", "data_sources/sra", organism = "mouse")
+    )
+)
 \dontrun{
 ## Locate and read the GTEx bladder metadata
 gtex_bladder_meta <- read_metadata(
