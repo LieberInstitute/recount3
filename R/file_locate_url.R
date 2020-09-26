@@ -76,6 +76,12 @@
 #'     "data_sources/sra",
 #'     "jxn"
 #' )
+#'
+#' ## Example for metadata files from a project from SRA
+#' file_locate_url(
+#'     "ERP001942",
+#'     "data_sources/sra"
+#' )
 file_locate_url <-
     function(project,
     project_home = project_home_available(
@@ -113,7 +119,7 @@ file_locate_url <-
             metadata = "MD.gz",
             gene = paste0(ann_ext, ".gz"),
             exon = paste0(ann_ext, ".gz"),
-            jxn = paste0(jxn_format, ".", c("MM.gz", "RR.gz")),
+            jxn = paste0(jxn_format, ".", c("MM.gz", "RR.gz", "ID.gz")),
             bw = "ALL.bw"
         ))
 

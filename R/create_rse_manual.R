@@ -54,6 +54,13 @@
 #' ))
 #' rse_jxn_ERP110066_collection_manual
 #'
+#' system.time(rse_jxn_ERP001942_manual <- create_rse_manual(
+#'     "ERP001942",
+#'     "data_sources/sra",
+#'     type = "jxn"
+#' ))
+#' rse_jxn_ERP001942_manual
+#'
 #' ## Mouse example
 #' rse_gene_SRP060340_manual <- create_rse_manual(
 #'     "SRP060340",
@@ -64,9 +71,13 @@
 #' \dontrun{
 #' project <- "ERP110066"
 #' project_home <- "collections/geuvadis_smartseq"
+#'
+#' project <- "ERP001942"
+#' project_home <- "data_sources/sra"
 #' type <- "jxn"
 #' organism <- "human"
 #' annotation <- "gencode_v26"
+#' jxn_format <- "ALL"
 #' bfc <- BiocFileCache::BiocFileCache()
 #' recount3_url <- "http://snaptron.cs.jhu.edu/data/temp/recount3"
 #' }
@@ -89,7 +100,11 @@ create_rse_manual <- function(project,
     jxn_format <- match.arg(jxn_format)
 
     ## First the metadata which is the smallest
-    message(paste(Sys.time(), "downloading and reading the metadata"))
+    message(
+        Sys.time(),
+        " downloading and reading the metadata."
+    )
+
     metadata <- read_metadata(file_retrieve(
         url = file_locate_url(
             project = project,
@@ -128,10 +143,10 @@ create_rse_manual <- function(project,
         )
     }
 
-    message(paste(
+    message(
         Sys.time(),
-        "downloading and reading the feature information"
-    ))
+        " downloading and reading the feature information."
+    )
     ## Read the feature information
     if (type %in% c("gene", "exon")) {
         feature_info <-
@@ -153,15 +168,13 @@ create_rse_manual <- function(project,
     }
 
     message(
-        paste(
-            Sys.time(),
-            "downloading and reading the counts:",
-            nrow(metadata),
-            ifelse(nrow(metadata) > 1, "samples", "sample"),
-            "across",
-            length(feature_info),
-            "features."
-        )
+        Sys.time(),
+        " downloading and reading the counts: ",
+        nrow(metadata),
+        ifelse(nrow(metadata) > 1, " samples", " sample"),
+        " across ",
+        length(feature_info),
+        " features."
     )
     if (type %in% c("gene", "exon")) {
         counts <- read_counts(
@@ -184,30 +197,30 @@ create_rse_manual <- function(project,
             bfc = bfc
         ))
 
-        ## Read in the metadata again if needed (like with collections)
-        if (ncol(counts) > nrow(metadata)) {
-            metadata_full <- read_metadata(file_retrieve(
-                url = file_locate_url(
-                    project = project,
-                    project_home = project_home,
-                    type = "metadata",
-                    organism = organism,
-                    annotation = annotation,
-                    recount3_url = recount3_url
-                ),
-                bfc = bfc
-            ))
-            m <- match(metadata$external_id, metadata_full$external_id)
-            counts <- counts[, m, drop = FALSE]
-            colnames(counts) <- metadata$external_id
-        }
+        message(
+            Sys.time(),
+            " matching exon-exon junction counts with the metadata."
+        )
+        ## The samples in the MM jxn table are not in the same order as the
+        ## metadata!
+        jxn_rail <- read.delim(file_retrieve(
+            url = jxn_files[grep("\\.ID\\.gz$", jxn_files)],
+            bfc = bfc
+        ))
+        m <- match(metadata$rail_id, jxn_rail$rail_id)
+        stopifnot(
+            "Metadata rail_id and exon-exon junctions rail_id are not matching." =
+                !all(is.na(m))
+        )
+        counts <- counts[, m, drop = FALSE]
+        colnames(counts) <- metadata$external_id
     }
 
     ## Build the RSE object
-    message(paste(
+    message(
         Sys.time(),
-        "construcing the RangedSummarizedExperiment (rse) object"
-    ))
+        " construcing the RangedSummarizedExperiment (rse) object."
+    )
 
     stopifnot(
         "Metadata external_id and counts colnames are not matching." =
@@ -224,6 +237,8 @@ create_rse_manual <- function(project,
             "Exon names and count rownames are not matching." =
                 identical(feature_info$recount_exon_id, rownames(counts))
         )
+    } else if (type == "jxn") {
+        rownames(counts) <- as.character(feature_info)
     }
 
     ## Make names consistent
@@ -233,7 +248,18 @@ create_rse_manual <- function(project,
     rse <- SummarizedExperiment::SummarizedExperiment(
         assays = list(counts = counts),
         colData = S4Vectors::DataFrame(metadata, check.names = FALSE),
-        rowRanges = feature_info
+        rowRanges = feature_info,
+        metadata = list(
+            time_created = Sys.time(),
+            recount3_version = packageVersion("recount3"),
+            project = project,
+            project_home = project_home,
+            type = type,
+            organism = organism,
+            annotation = annotation,
+            jxn_format = jxn_format,
+            recount3_url = recount3_url
+        )
     )
     return(rse)
 }

@@ -82,6 +82,13 @@ system.time(rse_jxn_ERP110066_collection_manual <- create_rse_manual(
 ))
 rse_jxn_ERP110066_collection_manual
 
+system.time(rse_jxn_ERP001942_manual <- create_rse_manual(
+    "ERP001942",
+    "data_sources/sra",
+    type = "jxn"
+))
+rse_jxn_ERP001942_manual
+
 ## Mouse example
 rse_gene_SRP060340_manual <- create_rse_manual(
     "SRP060340",
@@ -92,9 +99,13 @@ rse_gene_SRP060340_manual
 \dontrun{
 project <- "ERP110066"
 project_home <- "collections/geuvadis_smartseq"
+
+project <- "ERP001942"
+project_home <- "data_sources/sra"
 type <- "jxn"
 organism <- "human"
 annotation <- "gencode_v26"
+jxn_format <- "ALL"
 bfc <- BiocFileCache::BiocFileCache()
 recount3_url <- "http://snaptron.cs.jhu.edu/data/temp/recount3"
 }

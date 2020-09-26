@@ -100,6 +100,12 @@ file_locate_url(
     "data_sources/sra",
     "jxn"
 )
+
+## Example for metadata files from a project from SRA
+file_locate_url(
+    "ERP001942",
+    "data_sources/sra"
+)
 }
 \seealso{
 Other internal functions for accessing the recount3 data: 

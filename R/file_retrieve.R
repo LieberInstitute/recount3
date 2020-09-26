@@ -51,7 +51,7 @@ file_retrieve <- function(url, bfc = BiocFileCache::BiocFileCache()) {
     if (!methods::is(bfc, "BiocFileCache")) {
         stop("'bfc' should be a BiocFileCache::BiocFileCache object.", call. = FALSE)
     }
-    message(paste("Caching file", basename(url)))
+    message(Sys.time(), " caching file ", basename(url), ".")
     res <- BiocFileCache::bfcrpath(bfc, url, exact = TRUE)
     names(res) <- names(url)
     return(res)
