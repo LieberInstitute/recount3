@@ -25,7 +25,11 @@ computer using \code{file_retrieve()}.
 \examples{
 
 ## Download the gene counts file for project ERP110066
-url_ERP110066_gene <- file_locate_url("ERP110066", "data_sources/sra", type = "gene")
+url_ERP110066_gene <- file_locate_url(
+    "ERP110066",
+    "data_sources/sra",
+    type = "gene"
+)
 local_ERP110066_gene <- file_retrieve(url = url_ERP110066_gene)
 
 ## Read the gene counts, take about 3 seconds

@@ -39,6 +39,7 @@
 #' file_locate_url(
 #'     "ERP110066",
 #'     "collections/geuvadis_smartseq",
+#'     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3"
 #' )
 #'
 #' ## Example for a BigWig file
@@ -67,7 +68,8 @@
 #' file_locate_url(
 #'     "ERP110066",
 #'     "collections/geuvadis_smartseq",
-#'     "gene"
+#'     "gene",
+#'     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3"
 #' )
 #'
 #' ## Locate example junction files

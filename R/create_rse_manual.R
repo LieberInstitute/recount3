@@ -19,6 +19,7 @@
 #' @importFrom rtracklayer import
 #' @importFrom Matrix readMM
 #' @importFrom GenomicRanges GRanges
+#' @importFrom sessioninfo package_info
 #' @references
 #'
 #' <https://doi.org/10.12688/f1000research.12223.1> for details on the
@@ -27,39 +28,29 @@
 #' @family internal functions for accessing the recount3 data
 #' @examples
 #'
+#' ## Unlike create_rse(), here we create an RSE object by
+#' ## fully specifying all the arguments for locating this study
 #' rse_gene_ERP110066_manual <- create_rse_manual(
 #'     "ERP110066",
 #'     "data_sources/sra"
 #' )
 #' rse_gene_ERP110066_manual
 #'
+#' ## Check how much memory this RSE object uses
+#' pryr::object_size(rse_gene_ERP110066_manual)
+#'
+#' ## Test with a collection that has a single sample
+#' ## NOTE: this requires loading the full data for this study when
+#' ## creating the RSE object
 #' rse_gene_ERP110066_collection_manual <- create_rse_manual(
 #'     "ERP110066",
-#'     "collections/geuvadis_smartseq"
+#'     "collections/geuvadis_smartseq",
+#'     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3"
 #' )
 #' rse_gene_ERP110066_collection_manual
 #'
-#'
-#' rse_exon_ERP110066_collection_manual <- create_rse_manual(
-#'     "ERP110066",
-#'     "collections/geuvadis_smartseq",
-#'     type = "exon"
-#' )
-#' rse_exon_ERP110066_collection_manual
-#'
-#' system.time(rse_jxn_ERP110066_collection_manual <- create_rse_manual(
-#'     "ERP110066",
-#'     "collections/geuvadis_smartseq",
-#'     type = "jxn"
-#' ))
-#' rse_jxn_ERP110066_collection_manual
-#'
-#' system.time(rse_jxn_ERP001942_manual <- create_rse_manual(
-#'     "ERP001942",
-#'     "data_sources/sra",
-#'     type = "jxn"
-#' ))
-#' rse_jxn_ERP001942_manual
+#' ## Check how much memory this RSE object uses
+#' pryr::object_size(rse_gene_ERP110066_collection_manual)
 #'
 #' ## Mouse example
 #' rse_gene_SRP060340_manual <- create_rse_manual(
@@ -68,6 +59,52 @@
 #'     organism = "mouse"
 #' )
 #' rse_gene_SRP060340_manual
+#'
+#' ## Information about how this RSE was made
+#' metadata(rse_gene_SRP060340_manual)
+#'
+#' ## Test with a collection that has one sample, at the exon level
+#' ## NOTE: this requires loading the full data for this study (nearly 6GB!)
+#' \dontrun{
+#' rse_exon_ERP110066_collection_manual <- create_rse_manual(
+#'     "ERP110066",
+#'     "collections/geuvadis_smartseq",
+#'     type = "exon",
+#'     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3"
+#' )
+#' rse_exon_ERP110066_collection_manual
+#'
+#'
+#' ## Check how much memory this RSE object uses
+#' pryr::object_size(rse_exon_ERP110066_collection_manual)
+#' # 409 MB
+#'
+#' ## Test with a collection that has one sample, at the junction level
+#' ## NOTE: this requires loading the full data for this study
+#' system.time(rse_jxn_ERP110066_collection_manual <- create_rse_manual(
+#'     "ERP110066",
+#'     "collections/geuvadis_smartseq",
+#'     type = "jxn",
+#'     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3"
+#' ))
+#' rse_jxn_ERP110066_collection_manual
+#'
+#' ## Check how much memory this RSE object uses
+#' ## NOTE: this doesn't run since 2 files are missing on the test site!
+#' pryr::object_size(rse_jxn_ERP110066_collection_manual)
+#'
+#' system.time(rse_jxn_ERP001942_manual <- create_rse_manual(
+#'     "ERP001942",
+#'     "data_sources/sra",
+#'     type = "jxn"
+#' ))
+#' rse_jxn_ERP001942_manual
+#'
+#' ## Check how much memory this RSE object uses
+#' pryr::object_size(rse_jxn_ERP001942_manual)
+#' # 2.42 GB
+#' }
+#'
 #' \dontrun{
 #' project <- "ERP110066"
 #' project_home <- "collections/geuvadis_smartseq"
@@ -118,6 +155,7 @@ create_rse_manual <- function(project,
     ))
 
     ## Update the project_home based on the metadata
+    project_home_original <- project_home
     project_home <- metadata$recount_project.file_source[1]
 
     ## Add the URLs to the BigWig files
@@ -160,11 +198,17 @@ create_rse_manual <- function(project,
                 bfc = bfc
             ))
     } else if (type == "jxn") {
-        feature_info <-
-            GenomicRanges::GRanges(utils::read.delim(file_retrieve(
-                url = jxn_files[grep("\\.RR\\.gz$", jxn_files)],
-                bfc = bfc
-            )))
+        feature_info <- utils::read.delim(file_retrieve(
+            url = jxn_files[grep("\\.RR\\.gz$", jxn_files)],
+            bfc = bfc
+        ))
+        ## Testing with ERP001942 revealed an issue here
+        # > table(x$strand)
+        #       -       ?       +
+        # 1409791    7842 1432569
+        feature_info$strand[feature_info$strand == "?"] <- "*"
+
+        feature_info <- GenomicRanges::GRanges(feature_info)
     }
 
     message(
@@ -244,6 +288,11 @@ create_rse_manual <- function(project,
     ## Make names consistent
     names(feature_info) <- rownames(counts)
     rownames(metadata) <- colnames(counts)
+    recount3_pkg <- sessioninfo::package_info(
+        pkgs = "recount3",
+        include_base = FALSE,
+        dependencies = FALSE
+    )
 
     rse <- SummarizedExperiment::SummarizedExperiment(
         assays = list(counts = counts),
@@ -251,9 +300,9 @@ create_rse_manual <- function(project,
         rowRanges = feature_info,
         metadata = list(
             time_created = Sys.time(),
-            recount3_version = packageVersion("recount3"),
+            recount3_version = as.data.frame(recount3_pkg),
             project = project,
-            project_home = project_home,
+            project_home = project_home_original,
             type = type,
             organism = organism,
             annotation = annotation,

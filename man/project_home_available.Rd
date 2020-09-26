@@ -6,7 +6,7 @@
 \usage{
 project_home_available(
   organism = c("human", "mouse"),
-  recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3",
+  recount3_url = "https://idies.jhu.edu/recount3/data",
   bfc = BiocFileCache::BiocFileCache()
 )
 }
@@ -33,6 +33,11 @@ on the \code{organism} and the \code{home_type}.
 ## arguments
 project_home_available("human")
 project_home_available("mouse")
+
+## Test files
+project_home_available("human",
+    recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3"
+)
 }
 \seealso{
 Other internal functions for accessing the recount3 data: 

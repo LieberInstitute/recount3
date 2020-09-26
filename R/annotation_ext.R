@@ -37,7 +37,7 @@ annotation_ext <- function(organism = c("human", "mouse"),
     } else if (organism == "mouse") {
         ann_ext <- switch(
             annotation,
-            gencode_v23 = "G023"
+            gencode_v23 = "M023"
         )
     }
 

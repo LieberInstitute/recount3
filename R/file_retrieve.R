@@ -45,7 +45,17 @@ file_retrieve <- function(url, bfc = BiocFileCache::BiocFileCache()) {
     if (file.exists(url)) {
         return(url)
     } else if (!url.exists(url)) {
-        stop("The 'url' <", url, "> does not exist or is not available.", call. = FALSE)
+        if (!grepl("tcga\\.recount_pred|gtex\\.recount_pred", url)) {
+            warning(
+                "The 'url' <",
+                url,
+                "> does not exist or is not available.",
+                call. = FALSE
+            )
+        }
+        res <- as.character(NA)
+        names(res) <- names(url)
+        return(res)
     }
 
     if (!methods::is(bfc, "BiocFileCache")) {

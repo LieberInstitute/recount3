@@ -17,6 +17,7 @@
 #' @examples
 #'
 #' file_locate_url_annotation()
+#' file_locate_url_annotation(organism = "mouse")
 file_locate_url_annotation <- function(type = c("gene", "exon"),
     organism = c("human", "mouse"),
     annotation = annotation_options(organism),

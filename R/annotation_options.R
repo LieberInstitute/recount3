@@ -24,7 +24,9 @@ annotation_options <- function(organism = c("human", "mouse")) {
             "sirv"
         )
     } else if (organism == "mouse") {
-        options <- c("gencode_v23")
+        options <- c(
+            "gencode_v23"
+        )
     }
     return(options)
 }

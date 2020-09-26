@@ -30,13 +30,20 @@
 #' colnames(ERP110066_meta)
 #'
 #' ## Read the metadata files for a project in a collection
+#' ## Note: using the test files since I can't access collections right now
+#' ## for this collection
 #' ERP110066_collection_meta <- read_metadata(
 #'     metadata_files = file_retrieve(
-#'         file_locate_url("ERP110066", "collections/geuvadis_smartseq")
+#'         file_locate_url(
+#'             "ERP110066",
+#'             "collections/geuvadis_smartseq",
+#'             recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3"
+#'         )
 #'     )
 #' )
 #' dim(ERP110066_collection_meta)
-#' colnames(ERP110066_collection_meta)
+#' ## New columns for this collection
+#' colnames(ERP110066_collection_meta)[!colnames(ERP110066_collection_meta) %in% colnames(ERP110066_meta)]
 #'
 #' ## Read the metadata for a mouse project
 #' SRP060340_meta <- read_metadata(
@@ -44,7 +51,8 @@
 #'         file_locate_url("SRP060340", "data_sources/sra", organism = "mouse")
 #'     )
 #' )
-#' \dontrun{
+#' dim(SRP060340_meta)
+#'
 #' ## Locate and read the GTEx bladder metadata
 #' gtex_bladder_meta <- read_metadata(
 #'     file_retrieve(
@@ -52,9 +60,9 @@
 #'     )
 #' )
 #'
-#' head(gtex_bladder_meta)
-#' }
+#' dim(gtex_bladder_meta)
 read_metadata <- function(metadata_files) {
+    metadata_files <- metadata_files[!is.na(metadata_files)]
 
     ## Check the inputs
     stopifnot(

@@ -32,15 +32,27 @@
 #' ## Explore the resulting RSE gene object
 #' rse_gene_ERP110066
 #'
+#' ## Information about how this RSE object was made
+#' metadata(rse_gene_ERP110066)
+#'
+#' ## Number of genes by number of samples
 #' dim(rse_gene_ERP110066)
+#'
+#' ## Information about the genes
 #' rowRanges(rse_gene_ERP110066)
+#'
+#' ## Sample metadata
 #' colnames(colData(rse_gene_ERP110066))
+#'
+#' ## Check how much memory this RSE object uses
+#' pryr::object_size(rse_gene_ERP110066)
 #'
 #' ## Create a second RSE object using another annotation
 #' rse_gene_ERP110066_gencode_v29 <- create_rse(
 #'     proj_info,
 #'     annotation = "gencode_v29"
 #' )
+#' rowRanges(rse_gene_ERP110066_gencode_v29)
 #'
 #' ## Doesn't work right now
 #' # rse_gene_ERP110066_refseq <- create_rse(
@@ -60,16 +72,32 @@
 #'
 #' dim(rse_exon_ERP110066)
 #' rowRanges(rse_exon_ERP110066)
-#' colData(rse_exon_ERP110066)
-#' colnames(colData(rse_exon_ERP110066))
+#' pryr::object_size(rse_exon_ERP110066)
+#' # 5.73 GB
 #' }
+#'
+#' ## Create a RSE object at the exon-exon junction level
+#' rse_jxn_ERP110066 <- create_rse(
+#'     proj_info,
+#'     type = "jxn"
+#' )
+#'
+#' ## Explore the resulting RSE exon object
+#' rse_jxn_ERP110066
+#'
+#' dim(rse_jxn_ERP110066)
+#' rowRanges(rse_jxn_ERP110066)
+#' pryr::object_size(rse_jxn_ERP110066)
+#'
+#' ## Remove the example rse_jxn for memory purposes
+#' rm(rse_jxn_ERP110066)
 create_rse <-
     function(project_info,
     type = c("gene", "exon", "jxn"),
     annotation = annotation_options(project_info$organism),
     bfc = BiocFileCache::BiocFileCache(),
     jxn_format = c("ALL", "UNIQUE"),
-    recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3") {
+    recount3_url = "https://idies.jhu.edu/recount3/data") {
         ## Check the inputs
         stopifnot(
             "'project_info' should be a data.frame" =

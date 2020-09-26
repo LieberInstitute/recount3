@@ -36,6 +36,7 @@ annotation file. This function is used by \code{create_rse_manual()}.
 \examples{
 
 file_locate_url_annotation()
+file_locate_url_annotation(organism = "mouse")
 }
 \seealso{
 Other internal functions for accessing the recount3 data: 

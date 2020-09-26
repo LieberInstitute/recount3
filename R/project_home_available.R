@@ -17,11 +17,24 @@
 #' ## arguments
 #' project_home_available("human")
 #' project_home_available("mouse")
+#'
+#' ## Test files
+#' project_home_available("human",
+#'     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3"
+#' )
 project_home_available <-
     function(organism = c("human", "mouse"),
-    recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3",
+    recount3_url = "https://idies.jhu.edu/recount3/data",
     bfc = BiocFileCache::BiocFileCache()) {
         organism <- match.arg(organism)
+
+        if (recount3_url == "https://idies.jhu.edu/recount3/data") {
+            if (organism == "mouse") {
+                return("data_sources/sra")
+            } else if (organism == "human") {
+                return(c("data_sources/sra", "data_sources/gtex", "data_sources/tcga"))
+            }
+        }
 
         ## Define the base directories
         base_dirs <- c(

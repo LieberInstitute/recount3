@@ -55,39 +55,29 @@ feature level for a given annotation.
 }
 \examples{
 
+## Unlike create_rse(), here we create an RSE object by
+## fully specifying all the arguments for locating this study
 rse_gene_ERP110066_manual <- create_rse_manual(
     "ERP110066",
     "data_sources/sra"
 )
 rse_gene_ERP110066_manual
 
+## Check how much memory this RSE object uses
+pryr::object_size(rse_gene_ERP110066_manual)
+
+## Test with a collection that has a single sample
+## NOTE: this requires loading the full data for this study when
+## creating the RSE object
 rse_gene_ERP110066_collection_manual <- create_rse_manual(
     "ERP110066",
-    "collections/geuvadis_smartseq"
+    "collections/geuvadis_smartseq",
+    recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3"
 )
 rse_gene_ERP110066_collection_manual
 
-
-rse_exon_ERP110066_collection_manual <- create_rse_manual(
-    "ERP110066",
-    "collections/geuvadis_smartseq",
-    type = "exon"
-)
-rse_exon_ERP110066_collection_manual
-
-system.time(rse_jxn_ERP110066_collection_manual <- create_rse_manual(
-    "ERP110066",
-    "collections/geuvadis_smartseq",
-    type = "jxn"
-))
-rse_jxn_ERP110066_collection_manual
-
-system.time(rse_jxn_ERP001942_manual <- create_rse_manual(
-    "ERP001942",
-    "data_sources/sra",
-    type = "jxn"
-))
-rse_jxn_ERP001942_manual
+## Check how much memory this RSE object uses
+pryr::object_size(rse_gene_ERP110066_collection_manual)
 
 ## Mouse example
 rse_gene_SRP060340_manual <- create_rse_manual(
@@ -96,6 +86,52 @@ rse_gene_SRP060340_manual <- create_rse_manual(
     organism = "mouse"
 )
 rse_gene_SRP060340_manual
+
+## Information about how this RSE was made
+metadata(rse_gene_SRP060340_manual)
+
+## Test with a collection that has one sample, at the exon level
+## NOTE: this requires loading the full data for this study (nearly 6GB!)
+\dontrun{
+rse_exon_ERP110066_collection_manual <- create_rse_manual(
+    "ERP110066",
+    "collections/geuvadis_smartseq",
+    type = "exon",
+    recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3"
+)
+rse_exon_ERP110066_collection_manual
+
+
+## Check how much memory this RSE object uses
+pryr::object_size(rse_exon_ERP110066_collection_manual)
+# 409 MB
+
+## Test with a collection that has one sample, at the junction level
+## NOTE: this requires loading the full data for this study
+system.time(rse_jxn_ERP110066_collection_manual <- create_rse_manual(
+    "ERP110066",
+    "collections/geuvadis_smartseq",
+    type = "jxn",
+    recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3"
+))
+rse_jxn_ERP110066_collection_manual
+
+## Check how much memory this RSE object uses
+## NOTE: this doesn't run since 2 files are missing on the test site!
+pryr::object_size(rse_jxn_ERP110066_collection_manual)
+
+system.time(rse_jxn_ERP001942_manual <- create_rse_manual(
+    "ERP001942",
+    "data_sources/sra",
+    type = "jxn"
+))
+rse_jxn_ERP001942_manual
+
+## Check how much memory this RSE object uses
+pryr::object_size(rse_jxn_ERP001942_manual)
+# 2.42 GB
+}
+
 \dontrun{
 project <- "ERP110066"
 project_home <- "collections/geuvadis_smartseq"
