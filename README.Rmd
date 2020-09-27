@@ -11,9 +11,10 @@ knitr::opts_chunk$set(
     fig.path = "man/figures/README-",
     out.width = "100%"
 )
+library("BiocStyle")
 ```
 
-# recount3 <img src="man/figures/logo.png" align="right" width="400px" />
+# recount3 <img src="man/figures/logo.png" align="right" width="400px" >
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
@@ -24,16 +25,27 @@ knitr::opts_chunk$set(
 [![Support site activity, last 6 months: tagged questions/avg. answers per question/avg. comments per question/accepted answers, or 0 if no tagged posts.](http://www.bioconductor.org/shields/posts/recount.svg)](https://support.bioconductor.org/t/recount/)
 <!-- badges: end -->
 
-Explore and download data from the recount project available at the [recount3 website](https://jhubiostatistics.shinyapps.io/recount3/). Using the `recount3` package you can download _RangedSummarizedExperiment_ objects at the gene, exon or exon-exon junctions level, the raw counts, the phenotype metadata used, the urls to the sample coverage bigWig files or the mean coverage bigWig file for a particular study. The _RangedSummarizedExperiment_ objects can be used by different packages for performing differential expression analysis. Using [derfinder](http://bioconductor.org/packages/derfinder) you can perform annotation-agnostic differential expression analyses with the data from the recount project. 
+The `r Biocpkg('recount3')` R/Bioconductor package is part of the `recount3` project and is the latest iteration of the `ReCount` family of projects that provide access to uniformly-processed RNA sequencing datasets. The **main documentation website** for all the `recount3`-related projects is available at [**recount.bio**](https://LieberInstitute/github.io/recount3-docs). Please check that website for more information about how this R/Bioconductor package and other tools are related to each other.
+
+
+### R packages
+
+To clarify the relationship between the R/Bioconductor packages and the phases of `ReCount` please check the table below:
+
+| Year | Phase | Main references | R/Bioconductor |
+| --- | --- | --- | --- |
+| 2011 | [`ReCount`](http://bowtie-bio.sourceforge.net/recount/) | DOI: [10.1186/1471-2105-12-449](https://doi.org/10.1186/1471-2105-12-449) | none |
+| 2017 | [`recount2`](https://jhubiostatistics.shinyapps.io/recount/) | DOI: [10.1038/nbt.3838](https://doi.org/10.1038/nbt.3838) [10.12688/f1000research.12223.1](https://doi.org/10.12688/f1000research.12223.1) | `r Biocpkg('recount')` |
+| 2020 | [`recount3`](https://LieberInstitute/github.io/recount3-docs) | DOI: [TODO](https://doi.org/TODO) | `r Biocpkg('recount3')` |
 
 
 ## Documentation
 
-For more information about `recount3` check the vignettes [through Bioconductor](http://bioconductor.org/packages/recount3) or at the [documentation website](http://lieberinstitute.github.io/recount3).
+For more information about `r Biocpkg('recount3')` check the vignettes [through Bioconductor](http://bioconductor.org/packages/recount3) or at the [documentation website](http://lieberinstitute.github.io/recount3).
 
 ## Installation instructions
 
-Get the latest stable `R` release from [CRAN](http://cran.r-project.org/). Then install `recount3` using from [Bioconductor](http://bioconductor.org/) the following code:
+Get the latest stable `R` release from [CRAN](http://cran.r-project.org/). Then install `r Biocpkg('recount3')` using from [Bioconductor](http://bioconductor.org/) the following code:
 
 ```{r 'install', eval = FALSE}
 if (!requireNamespace("BiocManager", quietly = TRUE)) {
@@ -52,7 +64,7 @@ run this yourself to check for any updates on how to cite __recount3__.
 print(citation("recount3"), bibtex = TRUE)
 ```
 
-Please note that the `recount3` was only made possible thanks to many other R and bioinformatics software authors, which are cited either in the vignettes and/or the paper(s) describing this package.
+Please note that `r Biocpkg('recount3')` was only made possible thanks to many other R and bioinformatics software authors, which are cited either in the vignettes and/or the paper(s) describing this package.
 
 ## Code of Conduct
   
@@ -70,11 +82,14 @@ For more details, check the `dev` directory.
 
 ## Teams involved
 
-* [Ben Langmead's lab at JHU Computer Science](http://www.langmead-lab.org/),
-* [Kasper Daniel Hansen's lab at JHBSPH Biostatistics Department](https://www.hansenlab.org/),
-* [Leonardo Collado-Torres](http://lcolladotor.github.io/) and [Andrew E. Jaffe](http://aejaffe.com/) from [LIBD](https://www.libd.org/),
-* [Abhinav Nellore's lab at OHSU](http://nellore.bio/),
-* Data hosted by [SciServer at JHU](https://www.sciserver.org/).
+The `ReCount` family involves the following teams:
+
+* [Ben Langmead's lab at JHU Computer Science](http://www.langmead-lab.org/)
+* [Kasper Daniel Hansen's lab at JHBSPH Biostatistics Department](https://www.hansenlab.org/)
+* [Leonardo Collado-Torres](http://lcolladotor.github.io/) and [Andrew E. Jaffe](http://aejaffe.com/) from [LIBD](https://www.libd.org/)
+* [Abhinav Nellore's lab at OHSU](http://nellore.bio/)
+* [Jeff Leek's lab at JHBSPH Biostatistics Deparment](http://jtleek.com/)
+* Data hosted by [SciServer from IDIES at JHU](https://www.sciserver.org/)
 
 
 | | | | |

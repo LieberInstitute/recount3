@@ -66,6 +66,8 @@ bib <- c(
 write.bibtex(bib, file = "quickstartRef.bib")
 ```
 
+<a href="https://lieberinstitute.github.io/recount3-docs"><img src="https://raw.githubusercontent.com/LieberInstitute/recount3/master/man/figures/logo.png" align="center" width="600"></a>
+
 # Overview
 
 The `r Biocpkg('recount3')` R/Bioconductor package is part of the `recount3` project and is the latest iteration of the `ReCount` family of projects that provide access to uniformly-processed RNA sequencing datasets. The **main documentation website** for all the `recount3`-related projects is available at [**recount.bio**](https://LieberInstitute/github.io/recount3-docs). Please check that website for more information about how this R/Bioconductor package and other tools are related to each other.
@@ -90,7 +92,7 @@ The `ReCount` family involves the following teams:
 * [Leonardo Collado-Torres](http://lcolladotor.github.io/) and [Andrew E. Jaffe](http://aejaffe.com/) from [LIBD](https://www.libd.org/)
 * [Abhinav Nellore's lab at OHSU](http://nellore.bio/)
 * [Jeff Leek's lab at JHBSPH Biostatistics Deparment](http://jtleek.com/)
-* Data hosted by [SciServer at JHU](https://www.sciserver.org/)
+* Data hosted by [SciServer from IDIES at JHU](https://www.sciserver.org/)
 
 # Basics
 
@@ -187,9 +189,9 @@ bfc_recount3 <- grep("recount3", bfc_files[["fpath"]])
 bfc_files[["fpath"]][bfc_recount3]
 
 ## You can remove the recount3 files from your cache if you want using bfcremove
-if(FALSE) {
+if (FALSE) {
     bfcremove(bfc, rids = bfc_files[["rid"]][bfc_recount3])
-    
+
     ## Verify that the recount3 files have been deleted
     bfcinfo()
 }
