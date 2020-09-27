@@ -89,12 +89,6 @@ annotation file. This function is used by create_rse_manual()." />
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -141,14 +135,14 @@ annotation file. This function is used by create_rse_manual()." />
     <div class="ref-description">
     <p>Given a expression feature <code>type</code>, <code>organism</code> and <code>annotation</code>, this
 function constructs the URL (or file path) to access a recount3
-annotation file. This function is used by <code>create_rse_manual()</code>.</p>
+annotation file. This function is used by <code><a href='create_rse_manual.html'>create_rse_manual()</a></code>.</p>
     </div>
 
     <pre class="usage"><span class='fu'>file_locate_url_annotation</span>(
   type = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"gene"</span>, <span class='st'>"exon"</span>),
   organism = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"human"</span>, <span class='st'>"mouse"</span>),
-  annotation = <span class='fu'>annotation_options</span>(<span class='kw'>organism</span>),
-  recount3_url = <span class='st'>"http://snaptron.cs.jhu.edu/data/temp/recount3"</span>
+  annotation = <span class='fu'><a href='annotation_options.html'>annotation_options</a></span>(<span class='kw'>organism</span>),
+  recount3_url = <span class='st'>"http://idies.jhu.edu/recount3/data"</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -183,18 +177,21 @@ recount3 annotation file.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other internal functions for accessing the recount3 data: 
-<code>annotation_ext()</code>,
-<code>create_rse_manual()</code>,
-<code>file_locate_url()</code>,
-<code>file_retrieve()</code>,
-<code>project_home_available()</code>,
-<code>read_counts()</code>,
-<code>read_metadata()</code></p></div>
+<code><a href='annotation_ext.html'>annotation_ext</a>()</code>,
+<code><a href='create_rse_manual.html'>create_rse_manual</a>()</code>,
+<code><a href='file_locate_url.html'>file_locate_url</a>()</code>,
+<code><a href='file_retrieve.html'>file_retrieve</a>()</code>,
+<code><a href='project_home_available.html'>project_home_available</a>()</code>,
+<code><a href='read_counts.html'>read_counts</a>()</code>,
+<code><a href='read_metadata.html'>read_metadata</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'>file_locate_url_annotation</span>()</div><div class='output co'>#&gt;                                                                             human.gene_sums.G026.gtf.gz 
-#&gt; "http://snaptron.cs.jhu.edu/data/temp/recount3/human/annotations/gene_sums/human.gene_sums.G026.gtf.gz" </div></pre>
+<span class='fu'>file_locate_url_annotation</span>()
+</div><div class='output co'>#&gt;                                                                  human.gene_sums.G026.gtf.gz 
+#&gt; "http://idies.jhu.edu/recount3/data/human/annotations/gene_sums/human.gene_sums.G026.gtf.gz" </div><div class='input'><span class='fu'>file_locate_url_annotation</span>(organism = <span class='st'>"mouse"</span>)
+</div><div class='output co'>#&gt;                                                                  mouse.gene_sums.M023.gtf.gz 
+#&gt; "http://idies.jhu.edu/recount3/data/mouse/annotations/gene_sums/mouse.gene_sums.M023.gtf.gz" </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -210,7 +207,7 @@ recount3 annotation file.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

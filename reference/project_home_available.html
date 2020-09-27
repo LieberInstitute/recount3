@@ -88,12 +88,6 @@ on the organism and the home_type." />
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -144,7 +138,7 @@ on the <code>organism</code> and the <code>home_type</code>.</p>
 
     <pre class="usage"><span class='fu'>project_home_available</span>(
   organism = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"human"</span>, <span class='st'>"mouse"</span>),
-  recount3_url = <span class='st'>"http://snaptron.cs.jhu.edu/data/temp/recount3"</span>,
+  recount3_url = <span class='st'>"http://idies.jhu.edu/recount3/data"</span>,
   bfc = <span class='kw'>BiocFileCache</span>::<span class='fu'><a href='https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html'>BiocFileCache</a></span>()
 )</pre>
 
@@ -174,19 +168,26 @@ object where the files will be cached to.</p></td>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other internal functions for accessing the recount3 data: 
-<code>annotation_ext()</code>,
-<code>create_rse_manual()</code>,
-<code>file_locate_url_annotation()</code>,
-<code>file_locate_url()</code>,
-<code>file_retrieve()</code>,
-<code>read_counts()</code>,
-<code>read_metadata()</code></p></div>
+<code><a href='annotation_ext.html'>annotation_ext</a>()</code>,
+<code><a href='create_rse_manual.html'>create_rse_manual</a>()</code>,
+<code><a href='file_locate_url_annotation.html'>file_locate_url_annotation</a>()</code>,
+<code><a href='file_locate_url.html'>file_locate_url</a>()</code>,
+<code><a href='file_retrieve.html'>file_retrieve</a>()</code>,
+<code><a href='read_counts.html'>read_counts</a>()</code>,
+<code><a href='read_metadata.html'>read_metadata</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'>## List the different available `project_home` options for the default</span>
 <span class='co'>## arguments</span>
-<span class='fu'>project_home_available</span>()</div><div class='output co'>#&gt; [1] "data_sources/gtex"             "data_sources/sra"             
+<span class='fu'>project_home_available</span>(<span class='st'>"human"</span>)
+</div><div class='output co'>#&gt; [1] "data_sources/sra"  "data_sources/gtex" "data_sources/tcga"</div><div class='input'><span class='fu'>project_home_available</span>(<span class='st'>"mouse"</span>)
+</div><div class='output co'>#&gt; [1] "data_sources/sra"</div><div class='input'>
+<span class='co'>## Test files</span>
+<span class='fu'>project_home_available</span>(<span class='st'>"human"</span>,
+    recount3_url = <span class='st'>"http://snaptron.cs.jhu.edu/data/temp/recount3"</span>
+)
+</div><div class='output co'>#&gt; [1] "data_sources/gtex"             "data_sources/sra"             
 #&gt; [3] "collections/ccle"              "collections/geuvadis_smartseq"
 #&gt; [5] "collections/gtex_geuvadis"    </div></pre>
   </div>
@@ -204,7 +205,7 @@ object where the files will be cached to.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

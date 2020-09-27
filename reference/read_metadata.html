@@ -89,12 +89,6 @@ using file_retrieve()." />
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -140,8 +134,8 @@ using file_retrieve()." />
 
     <div class="ref-description">
     <p>This function reads in the <code>recount3</code> metadata files into R. You can first
-locate the files using <code>file_locate_url()</code> then download it to your computer
-using <code>file_retrieve()</code>.</p>
+locate the files using <code><a href='file_locate_url.html'>file_locate_url()</a></code> then download it to your computer
+using <code><a href='file_retrieve.html'>file_retrieve()</a></code>.</p>
     </div>
 
     <pre class="usage"><span class='fu'>read_metadata</span>(<span class='kw'>metadata_files</span>)</pre>
@@ -163,317 +157,234 @@ metadata.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other internal functions for accessing the recount3 data: 
-<code>annotation_ext()</code>,
-<code>create_rse_manual()</code>,
-<code>file_locate_url_annotation()</code>,
-<code>file_locate_url()</code>,
-<code>file_retrieve()</code>,
-<code>project_home_available()</code>,
-<code>read_counts()</code></p></div>
+<code><a href='annotation_ext.html'>annotation_ext</a>()</code>,
+<code><a href='create_rse_manual.html'>create_rse_manual</a>()</code>,
+<code><a href='file_locate_url_annotation.html'>file_locate_url_annotation</a>()</code>,
+<code><a href='file_locate_url.html'>file_locate_url</a>()</code>,
+<code><a href='file_retrieve.html'>file_retrieve</a>()</code>,
+<code><a href='project_home_available.html'>project_home_available</a>()</code>,
+<code><a href='read_counts.html'>read_counts</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'>## Download the metadata files for project ERP110066</span>
-<span class='kw'>url_ERP110066_meta</span> <span class='op'>&lt;-</span> <span class='fu'>file_locate_url</span>(
+<span class='kw'>url_ERP110066_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(
     <span class='st'>"ERP110066"</span>,
     <span class='st'>"data_sources/sra"</span>
 )
-<span class='kw'>local_ERP110066_meta</span> <span class='op'>&lt;-</span> <span class='fu'>file_retrieve</span>(
+<span class='kw'>local_ERP110066_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span>(
     url = <span class='kw'>url_ERP110066_meta</span>
-)</div><div class='output co'>#&gt; <span class='message'>Caching file sra.sra.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_project.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_qc.ERP110066.MD.gz</span></div><div class='input'>
+)
+</div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:47:02 caching file sra.sra.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:47:03 caching file sra.recount_project.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:47:03 caching file sra.recount_qc.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:47:03 caching file sra.recount_seq_qc.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:47:03 caching file sra.recount_pred.ERP110066.MD.gz.</span></div><div class='input'>
 <span class='co'>## Read the metadata</span>
 <span class='kw'>ERP110066_meta</span> <span class='op'>&lt;-</span> <span class='fu'>read_metadata</span>(<span class='kw'>local_ERP110066_meta</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>ERP110066_meta</span>)</div><div class='output co'>#&gt; [1] 1024  138</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='kw'>ERP110066_meta</span>)</div><div class='output co'>#&gt;   [1] "rail_id"                                                       
-#&gt;   [2] "external_id"                                                   
-#&gt;   [3] "study"                                                         
-#&gt;   [4] "sra.sample_acc"                                                
-#&gt;   [5] "sra.experiment_acc"                                            
-#&gt;   [6] "sra.submission_acc"                                            
-#&gt;   [7] "sra.submission_center"                                         
-#&gt;   [8] "sra.submission_lab"                                            
-#&gt;   [9] "sra.study_title"                                               
-#&gt;  [10] "sra.study_abstract"                                            
-#&gt;  [11] "sra.study_description"                                         
-#&gt;  [12] "sra.experiment_title"                                          
-#&gt;  [13] "sra.design_description"                                        
-#&gt;  [14] "sra.sample_description"                                        
-#&gt;  [15] "sra.library_name"                                              
-#&gt;  [16] "sra.library_strategy"                                          
-#&gt;  [17] "sra.library_source"                                            
-#&gt;  [18] "sra.library_selection"                                         
-#&gt;  [19] "sra.library_layout"                                            
-#&gt;  [20] "sra.paired_nominal_length"                                     
-#&gt;  [21] "sra.paired_nominal_stdev"                                      
-#&gt;  [22] "sra.library_construction_protocol"                             
-#&gt;  [23] "sra.platform_model"                                            
-#&gt;  [24] "sra.sample_attributes"                                         
-#&gt;  [25] "sra.experiment_attributes"                                     
-#&gt;  [26] "sra.spot_length"                                               
-#&gt;  [27] "sra.sample_name"                                               
-#&gt;  [28] "sra.sample_title"                                              
-#&gt;  [29] "sra.sample_bases"                                              
-#&gt;  [30] "sra.sample_spots"                                              
-#&gt;  [31] "sra.run_published"                                             
-#&gt;  [32] "sra.size"                                                      
-#&gt;  [33] "sra.run_total_bases"                                           
-#&gt;  [34] "sra.run_total_spots"                                           
-#&gt;  [35] "sra.num_reads"                                                 
-#&gt;  [36] "sra.num_spots"                                                 
-#&gt;  [37] "sra.read_info"                                                 
-#&gt;  [38] "sra.run_alias"                                                 
-#&gt;  [39] "sra.run_center_name"                                           
-#&gt;  [40] "sra.run_broker_name"                                           
-#&gt;  [41] "sra.run_center"                                                
-#&gt;  [42] "recount_project.project"                                       
-#&gt;  [43] "recount_project.organism"                                      
-#&gt;  [44] "recount_project.file_source"                                   
-#&gt;  [45] "recount_project.metadata_source"                               
-#&gt;  [46] "recount_project.date_processed"                                
-#&gt;  [47] "recount_qc.aligned_reads%.chrm"                                
-#&gt;  [48] "recount_qc.aligned_reads%.chrx"                                
-#&gt;  [49] "recount_qc.aligned_reads%.chry"                                
-#&gt;  [50] "recount_qc.bc_auc.all_reads_all_bases"                         
-#&gt;  [51] "recount_qc.bc_auc.all_reads_annotated_bases"                   
-#&gt;  [52] "recount_qc.bc_auc.unique_reads_all_bases"                      
-#&gt;  [53] "recount_qc.bc_auc.unique_reads_annotated_bases"                
-#&gt;  [54] "recount_qc.bc_auc.all_%"                                       
-#&gt;  [55] "recount_qc.bc_auc.unique_%"                                    
-#&gt;  [56] "recount_qc.bc_frag.count"                                      
-#&gt;  [57] "recount_qc.bc_frag.kallisto_count"                             
-#&gt;  [58] "recount_qc.bc_frag.kallisto_mean_length"                       
-#&gt;  [59] "recount_qc.bc_frag.mean_length"                                
-#&gt;  [60] "recount_qc.bc_frag.mode_length"                                
-#&gt;  [61] "recount_qc.bc_frag.mode_length_count"                          
-#&gt;  [62] "recount_qc.exon_fc.all_%"                                      
-#&gt;  [63] "recount_qc.exon_fc.unique_%"                                   
-#&gt;  [64] "recount_qc.exon_fc_count_all.total"                            
-#&gt;  [65] "recount_qc.exon_fc_count_all.assigned"                         
-#&gt;  [66] "recount_qc.exon_fc_count_unique.total"                         
-#&gt;  [67] "recount_qc.exon_fc_count_unique.assigned"                      
-#&gt;  [68] "recount_qc.gene_fc.all_%"                                      
-#&gt;  [69] "recount_qc.gene_fc.unique_%"                                   
-#&gt;  [70] "recount_qc.gene_fc_count_all.total"                            
-#&gt;  [71] "recount_qc.gene_fc_count_all.assigned"                         
-#&gt;  [72] "recount_qc.gene_fc_count_unique.total"                         
-#&gt;  [73] "recount_qc.gene_fc_count_unique.assigned"                      
-#&gt;  [74] "recount_qc.intron_sum"                                         
-#&gt;  [75] "recount_qc.intron_sum_%"                                       
-#&gt;  [76] "recount_qc.star.%_of_chimeric_reads"                           
-#&gt;  [77] "recount_qc.star.%_of_chimeric_reads2"                          
-#&gt;  [78] "recount_qc.star.%_of_reads_mapped_to_multiple_loci"            
-#&gt;  [79] "recount_qc.star.%_of_reads_mapped_to_multiple_loci2"           
-#&gt;  [80] "recount_qc.star.%_of_reads_mapped_to_too_many_loci"            
-#&gt;  [81] "recount_qc.star.%_of_reads_mapped_to_too_many_loci2"           
-#&gt;  [82] "recount_qc.star.%_of_reads_unmapped:_other"                    
-#&gt;  [83] "recount_qc.star.%_of_reads_unmapped:_other2"                   
-#&gt;  [84] "recount_qc.star.%_of_reads_unmapped:_too_many_mismatches"      
-#&gt;  [85] "recount_qc.star.%_of_reads_unmapped:_too_many_mismatches2"     
-#&gt;  [86] "recount_qc.star.%_of_reads_unmapped:_too_short"                
-#&gt;  [87] "recount_qc.star.%_of_reads_unmapped:_too_short2"               
-#&gt;  [88] "recount_qc.star.all_mapped_reads"                              
-#&gt;  [89] "recount_qc.star.all_mapped_reads2"                             
-#&gt;  [90] "recount_qc.star.average_input_read_length"                     
-#&gt;  [91] "recount_qc.star.average_input_read_length2"                    
-#&gt;  [92] "recount_qc.star.average_mapped_length"                         
-#&gt;  [93] "recount_qc.star.average_mapped_length2"                        
-#&gt;  [94] "recount_qc.star.deletion_average_length"                       
-#&gt;  [95] "recount_qc.star.deletion_average_length2"                      
-#&gt;  [96] "recount_qc.star.deletion_rate_per_base"                        
-#&gt;  [97] "recount_qc.star.deletion_rate_per_base2"                       
-#&gt;  [98] "recount_qc.star.insertion_average_length"                      
-#&gt;  [99] "recount_qc.star.insertion_average_length2"                     
-#&gt; [100] "recount_qc.star.insertion_rate_per_base"                       
-#&gt; [101] "recount_qc.star.insertion_rate_per_base2"                      
-#&gt; [102] "recount_qc.star.mapping_speed,_million_of_reads_per_hour"      
-#&gt; [103] "recount_qc.star.mapping_speed,_million_of_reads_per_hour2"     
-#&gt; [104] "recount_qc.star.mismatch_rate_per_base,_%"                     
-#&gt; [105] "recount_qc.star.mismatch_rate_per_base,_%2"                    
-#&gt; [106] "recount_qc.star.number_of_chimeric_reads"                      
-#&gt; [107] "recount_qc.star.number_of_chimeric_reads2"                     
-#&gt; [108] "recount_qc.star.number_of_input_reads"                         
-#&gt; [109] "recount_qc.star.number_of_input_reads2"                        
-#&gt; [110] "recount_qc.star.number_of_reads_mapped_to_multiple_loci"       
-#&gt; [111] "recount_qc.star.number_of_reads_mapped_to_multiple_loci2"      
-#&gt; [112] "recount_qc.star.number_of_reads_mapped_to_too_many_loci"       
-#&gt; [113] "recount_qc.star.number_of_reads_mapped_to_too_many_loci2"      
-#&gt; [114] "recount_qc.star.number_of_reads_unmapped:_other"               
-#&gt; [115] "recount_qc.star.number_of_reads_unmapped:_other2"              
-#&gt; [116] "recount_qc.star.number_of_reads_unmapped:_too_many_mismatches" 
-#&gt; [117] "recount_qc.star.number_of_reads_unmapped:_too_many_mismatches2"
-#&gt; [118] "recount_qc.star.number_of_reads_unmapped:_too_short"           
-#&gt; [119] "recount_qc.star.number_of_reads_unmapped:_too_short2"          
-#&gt; [120] "recount_qc.star.number_of_splices:_at/ac"                      
-#&gt; [121] "recount_qc.star.number_of_splices:_at/ac2"                     
-#&gt; [122] "recount_qc.star.number_of_splices:_annotated_(sjdb)"           
-#&gt; [123] "recount_qc.star.number_of_splices:_annotated_(sjdb)2"          
-#&gt; [124] "recount_qc.star.number_of_splices:_gc/ag"                      
-#&gt; [125] "recount_qc.star.number_of_splices:_gc/ag2"                     
-#&gt; [126] "recount_qc.star.number_of_splices:_gt/ag"                      
-#&gt; [127] "recount_qc.star.number_of_splices:_gt/ag2"                     
-#&gt; [128] "recount_qc.star.number_of_splices:_non-canonical"              
-#&gt; [129] "recount_qc.star.number_of_splices:_non-canonical2"             
-#&gt; [130] "recount_qc.star.number_of_splices:_total"                      
-#&gt; [131] "recount_qc.star.number_of_splices:_total2"                     
-#&gt; [132] "recount_qc.star.uniquely_mapped_reads_%"                       
-#&gt; [133] "recount_qc.star.uniquely_mapped_reads_%2"                      
-#&gt; [134] "recount_qc.star.uniquely_mapped_reads_number"                  
-#&gt; [135] "recount_qc.star.uniquely_mapped_reads_number2"                 
-#&gt; [136] "recount_qc.junction_count"                                     
-#&gt; [137] "recount_qc.junction_coverage"                                  
-#&gt; [138] "recount_qc.junction_avg_coverage"                              </div><div class='input'>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: Replacing study_acc by study in sra.sra.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Replacing run_acc by external_id in sra.sra.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Replacing study_acc by study in sra.recount_qc.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Replacing run_acc by external_id in sra.recount_qc.ERP110066.MD.gz</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>ERP110066_meta</span>)
+</div><div class='output co'>#&gt; [1] 1024  172</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='kw'>ERP110066_meta</span>)
+</div><div class='output co'>#&gt;   [1] "rail_id"                                                           
+#&gt;   [2] "external_id"                                                       
+#&gt;   [3] "study"                                                             
+#&gt;   [4] "sra.sample_acc.x"                                                  
+#&gt;   [5] "sra.experiment_acc"                                                
+#&gt;   [6] "sra.submission_acc"                                                
+#&gt;   [7] "sra.submission_center"                                             
+#&gt;   [8] "sra.submission_lab"                                                
+#&gt;   [9] "sra.study_title"                                                   
+#&gt;  [10] "sra.study_abstract"                                                
+#&gt;  [11] "sra.study_description"                                             
+#&gt;  [12] "sra.experiment_title"                                              
+#&gt;  [13] "sra.design_description"                                            
+#&gt;  [14] "sra.sample_description"                                            
+#&gt;  [15] "sra.library_name"                                                  
+#&gt;  [16] "sra.library_strategy"                                              
+#&gt;  [17] "sra.library_source"                                                
+#&gt;  [18] "sra.library_selection"                                             
+#&gt;  [19] "sra.library_layout"                                                
+#&gt;  [20] "sra.paired_nominal_length"                                         
+#&gt;  [21] "sra.paired_nominal_stdev"                                          
+#&gt;  [22] "sra.library_construction_protocol"                                 
+#&gt;  [23] "sra.platform_model"                                                
+#&gt;  [24] "sra.sample_attributes"                                             
+#&gt;  [25] "sra.experiment_attributes"                                         
+#&gt;  [26] "sra.spot_length"                                                   
+#&gt;  [27] "sra.sample_name"                                                   
+#&gt;  [28] "sra.sample_title"                                                  
+#&gt;  [29] "sra.sample_bases"                                                  
+#&gt;  [30] "sra.sample_spots"                                                  
+#&gt;  [31] "sra.run_published"                                                 
+#&gt;  [32] "sra.size"                                                          
+#&gt;  [33] "sra.run_total_bases"                                               
+#&gt;  [34] "sra.run_total_spots"                                               
+#&gt;  [35] "sra.num_reads"                                                     
+#&gt;  [36] "sra.num_spots"                                                     
+#&gt;  [37] "sra.read_info"                                                     
+#&gt;  [38] "sra.run_alias"                                                     
+#&gt;  [39] "sra.run_center_name"                                               
+#&gt;  [40] "sra.run_broker_name"                                               
+#&gt;  [41] "sra.run_center"                                                    
+#&gt;  [42] "recount_project.project"                                           
+#&gt;  [43] "recount_project.organism"                                          
+#&gt;  [44] "recount_project.file_source"                                       
+#&gt;  [45] "recount_project.metadata_source"                                   
+#&gt;  [46] "recount_project.date_processed"                                    
+#&gt;  [47] "recount_qc.aligned_reads%.chrm"                                    
+#&gt;  [48] "recount_qc.aligned_reads%.chrx"                                    
+#&gt;  [49] "recount_qc.aligned_reads%.chry"                                    
+#&gt;  [50] "recount_qc.bc_auc.all_reads_all_bases"                             
+#&gt;  [51] "recount_qc.bc_auc.all_reads_annotated_bases"                       
+#&gt;  [52] "recount_qc.bc_auc.unique_reads_all_bases"                          
+#&gt;  [53] "recount_qc.bc_auc.unique_reads_annotated_bases"                    
+#&gt;  [54] "recount_qc.bc_auc.all_%"                                           
+#&gt;  [55] "recount_qc.bc_auc.unique_%"                                        
+#&gt;  [56] "recount_qc.bc_frag.count"                                          
+#&gt;  [57] "recount_qc.bc_frag.kallisto_count"                                 
+#&gt;  [58] "recount_qc.bc_frag.kallisto_mean_length"                           
+#&gt;  [59] "recount_qc.bc_frag.mean_length"                                    
+#&gt;  [60] "recount_qc.bc_frag.mode_length"                                    
+#&gt;  [61] "recount_qc.bc_frag.mode_length_count"                              
+#&gt;  [62] "recount_qc.exon_fc.all_%"                                          
+#&gt;  [63] "recount_qc.exon_fc.unique_%"                                       
+#&gt;  [64] "recount_qc.exon_fc_count_all.total"                                
+#&gt;  [65] "recount_qc.exon_fc_count_all.assigned"                             
+#&gt;  [66] "recount_qc.exon_fc_count_unique.total"                             
+#&gt;  [67] "recount_qc.exon_fc_count_unique.assigned"                          
+#&gt;  [68] "recount_qc.gene_fc.all_%"                                          
+#&gt;  [69] "recount_qc.gene_fc.unique_%"                                       
+#&gt;  [70] "recount_qc.gene_fc_count_all.total"                                
+#&gt;  [71] "recount_qc.gene_fc_count_all.assigned"                             
+#&gt;  [72] "recount_qc.gene_fc_count_unique.total"                             
+#&gt;  [73] "recount_qc.gene_fc_count_unique.assigned"                          
+#&gt;  [74] "recount_qc.intron_sum"                                             
+#&gt;  [75] "recount_qc.intron_sum_%"                                           
+#&gt;  [76] "recount_qc.star.%_of_chimeric_reads"                               
+#&gt;  [77] "recount_qc.star.%_of_chimeric_reads2"                              
+#&gt;  [78] "recount_qc.star.%_of_reads_mapped_to_multiple_loci"                
+#&gt;  [79] "recount_qc.star.%_of_reads_mapped_to_multiple_loci2"               
+#&gt;  [80] "recount_qc.star.%_of_reads_mapped_to_too_many_loci"                
+#&gt;  [81] "recount_qc.star.%_of_reads_mapped_to_too_many_loci2"               
+#&gt;  [82] "recount_qc.star.%_of_reads_unmapped:_other"                        
+#&gt;  [83] "recount_qc.star.%_of_reads_unmapped:_other2"                       
+#&gt;  [84] "recount_qc.star.%_of_reads_unmapped:_too_many_mismatches"          
+#&gt;  [85] "recount_qc.star.%_of_reads_unmapped:_too_many_mismatches2"         
+#&gt;  [86] "recount_qc.star.%_of_reads_unmapped:_too_short"                    
+#&gt;  [87] "recount_qc.star.%_of_reads_unmapped:_too_short2"                   
+#&gt;  [88] "recount_qc.star.all_mapped_reads"                                  
+#&gt;  [89] "recount_qc.star.all_mapped_reads2"                                 
+#&gt;  [90] "recount_qc.star.average_input_read_length"                         
+#&gt;  [91] "recount_qc.star.average_input_read_length2"                        
+#&gt;  [92] "recount_qc.star.average_mapped_length"                             
+#&gt;  [93] "recount_qc.star.average_mapped_length2"                            
+#&gt;  [94] "recount_qc.star.deletion_average_length"                           
+#&gt;  [95] "recount_qc.star.deletion_average_length2"                          
+#&gt;  [96] "recount_qc.star.deletion_rate_per_base"                            
+#&gt;  [97] "recount_qc.star.deletion_rate_per_base2"                           
+#&gt;  [98] "recount_qc.star.insertion_average_length"                          
+#&gt;  [99] "recount_qc.star.insertion_average_length2"                         
+#&gt; [100] "recount_qc.star.insertion_rate_per_base"                           
+#&gt; [101] "recount_qc.star.insertion_rate_per_base2"                          
+#&gt; [102] "recount_qc.star.mapping_speed,_million_of_reads_per_hour"          
+#&gt; [103] "recount_qc.star.mapping_speed,_million_of_reads_per_hour2"         
+#&gt; [104] "recount_qc.star.mismatch_rate_per_base,_%"                         
+#&gt; [105] "recount_qc.star.mismatch_rate_per_base,_%2"                        
+#&gt; [106] "recount_qc.star.number_of_chimeric_reads"                          
+#&gt; [107] "recount_qc.star.number_of_chimeric_reads2"                         
+#&gt; [108] "recount_qc.star.number_of_input_reads"                             
+#&gt; [109] "recount_qc.star.number_of_input_reads2"                            
+#&gt; [110] "recount_qc.star.number_of_reads_mapped_to_multiple_loci"           
+#&gt; [111] "recount_qc.star.number_of_reads_mapped_to_multiple_loci2"          
+#&gt; [112] "recount_qc.star.number_of_reads_mapped_to_too_many_loci"           
+#&gt; [113] "recount_qc.star.number_of_reads_mapped_to_too_many_loci2"          
+#&gt; [114] "recount_qc.star.number_of_reads_unmapped:_other"                   
+#&gt; [115] "recount_qc.star.number_of_reads_unmapped:_other2"                  
+#&gt; [116] "recount_qc.star.number_of_reads_unmapped:_too_many_mismatches"     
+#&gt; [117] "recount_qc.star.number_of_reads_unmapped:_too_many_mismatches2"    
+#&gt; [118] "recount_qc.star.number_of_reads_unmapped:_too_short"               
+#&gt; [119] "recount_qc.star.number_of_reads_unmapped:_too_short2"              
+#&gt; [120] "recount_qc.star.number_of_splices:_at/ac"                          
+#&gt; [121] "recount_qc.star.number_of_splices:_at/ac2"                         
+#&gt; [122] "recount_qc.star.number_of_splices:_annotated_(sjdb)"               
+#&gt; [123] "recount_qc.star.number_of_splices:_annotated_(sjdb)2"              
+#&gt; [124] "recount_qc.star.number_of_splices:_gc/ag"                          
+#&gt; [125] "recount_qc.star.number_of_splices:_gc/ag2"                         
+#&gt; [126] "recount_qc.star.number_of_splices:_gt/ag"                          
+#&gt; [127] "recount_qc.star.number_of_splices:_gt/ag2"                         
+#&gt; [128] "recount_qc.star.number_of_splices:_non-canonical"                  
+#&gt; [129] "recount_qc.star.number_of_splices:_non-canonical2"                 
+#&gt; [130] "recount_qc.star.number_of_splices:_total"                          
+#&gt; [131] "recount_qc.star.number_of_splices:_total2"                         
+#&gt; [132] "recount_qc.star.uniquely_mapped_reads_%"                           
+#&gt; [133] "recount_qc.star.uniquely_mapped_reads_%2"                          
+#&gt; [134] "recount_qc.star.uniquely_mapped_reads_number"                      
+#&gt; [135] "recount_qc.star.uniquely_mapped_reads_number2"                     
+#&gt; [136] "recount_qc.junction_count"                                         
+#&gt; [137] "recount_qc.junction_coverage"                                      
+#&gt; [138] "recount_qc.junction_avg_coverage"                                  
+#&gt; [139] "recount_qc.star.number_of_input_reads_both"                        
+#&gt; [140] "recount_qc.star.all_mapped_reads_both"                             
+#&gt; [141] "recount_qc.star.number_of_chimeric_reads_both"                     
+#&gt; [142] "recount_qc.star.number_of_reads_mapped_to_multiple_loci_both"      
+#&gt; [143] "recount_qc.star.number_of_reads_mapped_to_too_many_loci_both"      
+#&gt; [144] "recount_qc.star.number_of_reads_unmapped:_other_both"              
+#&gt; [145] "recount_qc.star.number_of_reads_unmapped:_too_many_mismatches_both"
+#&gt; [146] "recount_qc.star.number_of_reads_unmapped:_too_short_both"          
+#&gt; [147] "recount_qc.star.uniquely_mapped_reads_number_both"                 
+#&gt; [148] "recount_qc.star.%_mapped_reads_both"                               
+#&gt; [149] "recount_qc.star.%_chimeric_reads_both"                             
+#&gt; [150] "recount_qc.star.%_reads_mapped_to_multiple_loci_both"              
+#&gt; [151] "recount_qc.star.%_reads_mapped_to_too_many_loci_both"              
+#&gt; [152] "recount_qc.star.%_reads_unmapped:_other_both"                      
+#&gt; [153] "recount_qc.star.%_reads_unmapped:_too_many_mismatches_both"        
+#&gt; [154] "recount_qc.star.%_reads_unmapped:_too_short_both"                  
+#&gt; [155] "recount_qc.star.uniquely_mapped_reads_%_both"                      
+#&gt; [156] "recount_seq_qc.min_len"                                            
+#&gt; [157] "recount_seq_qc.max_len"                                            
+#&gt; [158] "recount_seq_qc.avg_len"                                            
+#&gt; [159] "recount_seq_qc.#distinct_quality_values"                           
+#&gt; [160] "recount_seq_qc.#bases"                                             
+#&gt; [161] "recount_seq_qc.%a"                                                 
+#&gt; [162] "recount_seq_qc.%c"                                                 
+#&gt; [163] "recount_seq_qc.%g"                                                 
+#&gt; [164] "recount_seq_qc.%t"                                                 
+#&gt; [165] "recount_seq_qc.%n"                                                 
+#&gt; [166] "recount_seq_qc.avgq"                                               
+#&gt; [167] "recount_seq_qc.errq"                                               
+#&gt; [168] "recount_pred.sample_acc.y"                                         
+#&gt; [169] "recount_pred.curated.type"                                         
+#&gt; [170] "recount_pred.curated.tissue"                                       
+#&gt; [171] "recount_pred.pattern.predict.type"                                 
+#&gt; [172] "recount_pred.pred.type"                                            </div><div class='input'>
 <span class='co'>## Read the metadata files for a project in a collection</span>
+<span class='co'>## Note: using the test files since I can't access collections right now</span>
+<span class='co'>## for this collection</span>
 <span class='kw'>ERP110066_collection_meta</span> <span class='op'>&lt;-</span> <span class='fu'>read_metadata</span>(
-    metadata_files = <span class='fu'>file_retrieve</span>(
-        <span class='fu'>file_locate_url</span>(<span class='st'>"ERP110066"</span>, <span class='st'>"collections/geuvadis_smartseq"</span>)
-    )
-)</div><div class='output co'>#&gt; <span class='message'>Caching file geuvadis_smartseq.recount_project.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.sra.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_project.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_qc.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file geuvadis_smartseq.custom.gz</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>ERP110066_collection_meta</span>)</div><div class='output co'>#&gt; [1]   1 139</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='kw'>ERP110066_collection_meta</span>)</div><div class='output co'>#&gt;   [1] "rail_id"                                                       
-#&gt;   [2] "external_id"                                                   
-#&gt;   [3] "study"                                                         
-#&gt;   [4] "sra.sample_acc"                                                
-#&gt;   [5] "sra.experiment_acc"                                            
-#&gt;   [6] "sra.submission_acc"                                            
-#&gt;   [7] "sra.submission_center"                                         
-#&gt;   [8] "sra.submission_lab"                                            
-#&gt;   [9] "sra.study_title"                                               
-#&gt;  [10] "sra.study_abstract"                                            
-#&gt;  [11] "sra.study_description"                                         
-#&gt;  [12] "sra.experiment_title"                                          
-#&gt;  [13] "sra.design_description"                                        
-#&gt;  [14] "sra.sample_description"                                        
-#&gt;  [15] "sra.library_name"                                              
-#&gt;  [16] "sra.library_strategy"                                          
-#&gt;  [17] "sra.library_source"                                            
-#&gt;  [18] "sra.library_selection"                                         
-#&gt;  [19] "sra.library_layout"                                            
-#&gt;  [20] "sra.paired_nominal_length"                                     
-#&gt;  [21] "sra.paired_nominal_stdev"                                      
-#&gt;  [22] "sra.library_construction_protocol"                             
-#&gt;  [23] "sra.platform_model"                                            
-#&gt;  [24] "sra.sample_attributes"                                         
-#&gt;  [25] "sra.experiment_attributes"                                     
-#&gt;  [26] "sra.spot_length"                                               
-#&gt;  [27] "sra.sample_name"                                               
-#&gt;  [28] "sra.sample_title"                                              
-#&gt;  [29] "sra.sample_bases"                                              
-#&gt;  [30] "sra.sample_spots"                                              
-#&gt;  [31] "sra.run_published"                                             
-#&gt;  [32] "sra.size"                                                      
-#&gt;  [33] "sra.run_total_bases"                                           
-#&gt;  [34] "sra.run_total_spots"                                           
-#&gt;  [35] "sra.num_reads"                                                 
-#&gt;  [36] "sra.num_spots"                                                 
-#&gt;  [37] "sra.read_info"                                                 
-#&gt;  [38] "sra.run_alias"                                                 
-#&gt;  [39] "sra.run_center_name"                                           
-#&gt;  [40] "sra.run_broker_name"                                           
-#&gt;  [41] "sra.run_center"                                                
-#&gt;  [42] "recount_project.project"                                       
-#&gt;  [43] "recount_project.organism"                                      
-#&gt;  [44] "recount_project.file_source"                                   
-#&gt;  [45] "recount_project.metadata_source"                               
-#&gt;  [46] "recount_project.date_processed"                                
-#&gt;  [47] "recount_qc.aligned_reads%.chrm"                                
-#&gt;  [48] "recount_qc.aligned_reads%.chrx"                                
-#&gt;  [49] "recount_qc.aligned_reads%.chry"                                
-#&gt;  [50] "recount_qc.bc_auc.all_reads_all_bases"                         
-#&gt;  [51] "recount_qc.bc_auc.all_reads_annotated_bases"                   
-#&gt;  [52] "recount_qc.bc_auc.unique_reads_all_bases"                      
-#&gt;  [53] "recount_qc.bc_auc.unique_reads_annotated_bases"                
-#&gt;  [54] "recount_qc.bc_auc.all_%"                                       
-#&gt;  [55] "recount_qc.bc_auc.unique_%"                                    
-#&gt;  [56] "recount_qc.bc_frag.count"                                      
-#&gt;  [57] "recount_qc.bc_frag.kallisto_count"                             
-#&gt;  [58] "recount_qc.bc_frag.kallisto_mean_length"                       
-#&gt;  [59] "recount_qc.bc_frag.mean_length"                                
-#&gt;  [60] "recount_qc.bc_frag.mode_length"                                
-#&gt;  [61] "recount_qc.bc_frag.mode_length_count"                          
-#&gt;  [62] "recount_qc.exon_fc.all_%"                                      
-#&gt;  [63] "recount_qc.exon_fc.unique_%"                                   
-#&gt;  [64] "recount_qc.exon_fc_count_all.total"                            
-#&gt;  [65] "recount_qc.exon_fc_count_all.assigned"                         
-#&gt;  [66] "recount_qc.exon_fc_count_unique.total"                         
-#&gt;  [67] "recount_qc.exon_fc_count_unique.assigned"                      
-#&gt;  [68] "recount_qc.gene_fc.all_%"                                      
-#&gt;  [69] "recount_qc.gene_fc.unique_%"                                   
-#&gt;  [70] "recount_qc.gene_fc_count_all.total"                            
-#&gt;  [71] "recount_qc.gene_fc_count_all.assigned"                         
-#&gt;  [72] "recount_qc.gene_fc_count_unique.total"                         
-#&gt;  [73] "recount_qc.gene_fc_count_unique.assigned"                      
-#&gt;  [74] "recount_qc.intron_sum"                                         
-#&gt;  [75] "recount_qc.intron_sum_%"                                       
-#&gt;  [76] "recount_qc.star.%_of_chimeric_reads"                           
-#&gt;  [77] "recount_qc.star.%_of_chimeric_reads2"                          
-#&gt;  [78] "recount_qc.star.%_of_reads_mapped_to_multiple_loci"            
-#&gt;  [79] "recount_qc.star.%_of_reads_mapped_to_multiple_loci2"           
-#&gt;  [80] "recount_qc.star.%_of_reads_mapped_to_too_many_loci"            
-#&gt;  [81] "recount_qc.star.%_of_reads_mapped_to_too_many_loci2"           
-#&gt;  [82] "recount_qc.star.%_of_reads_unmapped:_other"                    
-#&gt;  [83] "recount_qc.star.%_of_reads_unmapped:_other2"                   
-#&gt;  [84] "recount_qc.star.%_of_reads_unmapped:_too_many_mismatches"      
-#&gt;  [85] "recount_qc.star.%_of_reads_unmapped:_too_many_mismatches2"     
-#&gt;  [86] "recount_qc.star.%_of_reads_unmapped:_too_short"                
-#&gt;  [87] "recount_qc.star.%_of_reads_unmapped:_too_short2"               
-#&gt;  [88] "recount_qc.star.all_mapped_reads"                              
-#&gt;  [89] "recount_qc.star.all_mapped_reads2"                             
-#&gt;  [90] "recount_qc.star.average_input_read_length"                     
-#&gt;  [91] "recount_qc.star.average_input_read_length2"                    
-#&gt;  [92] "recount_qc.star.average_mapped_length"                         
-#&gt;  [93] "recount_qc.star.average_mapped_length2"                        
-#&gt;  [94] "recount_qc.star.deletion_average_length"                       
-#&gt;  [95] "recount_qc.star.deletion_average_length2"                      
-#&gt;  [96] "recount_qc.star.deletion_rate_per_base"                        
-#&gt;  [97] "recount_qc.star.deletion_rate_per_base2"                       
-#&gt;  [98] "recount_qc.star.insertion_average_length"                      
-#&gt;  [99] "recount_qc.star.insertion_average_length2"                     
-#&gt; [100] "recount_qc.star.insertion_rate_per_base"                       
-#&gt; [101] "recount_qc.star.insertion_rate_per_base2"                      
-#&gt; [102] "recount_qc.star.mapping_speed,_million_of_reads_per_hour"      
-#&gt; [103] "recount_qc.star.mapping_speed,_million_of_reads_per_hour2"     
-#&gt; [104] "recount_qc.star.mismatch_rate_per_base,_%"                     
-#&gt; [105] "recount_qc.star.mismatch_rate_per_base,_%2"                    
-#&gt; [106] "recount_qc.star.number_of_chimeric_reads"                      
-#&gt; [107] "recount_qc.star.number_of_chimeric_reads2"                     
-#&gt; [108] "recount_qc.star.number_of_input_reads"                         
-#&gt; [109] "recount_qc.star.number_of_input_reads2"                        
-#&gt; [110] "recount_qc.star.number_of_reads_mapped_to_multiple_loci"       
-#&gt; [111] "recount_qc.star.number_of_reads_mapped_to_multiple_loci2"      
-#&gt; [112] "recount_qc.star.number_of_reads_mapped_to_too_many_loci"       
-#&gt; [113] "recount_qc.star.number_of_reads_mapped_to_too_many_loci2"      
-#&gt; [114] "recount_qc.star.number_of_reads_unmapped:_other"               
-#&gt; [115] "recount_qc.star.number_of_reads_unmapped:_other2"              
-#&gt; [116] "recount_qc.star.number_of_reads_unmapped:_too_many_mismatches" 
-#&gt; [117] "recount_qc.star.number_of_reads_unmapped:_too_many_mismatches2"
-#&gt; [118] "recount_qc.star.number_of_reads_unmapped:_too_short"           
-#&gt; [119] "recount_qc.star.number_of_reads_unmapped:_too_short2"          
-#&gt; [120] "recount_qc.star.number_of_splices:_at/ac"                      
-#&gt; [121] "recount_qc.star.number_of_splices:_at/ac2"                     
-#&gt; [122] "recount_qc.star.number_of_splices:_annotated_(sjdb)"           
-#&gt; [123] "recount_qc.star.number_of_splices:_annotated_(sjdb)2"          
-#&gt; [124] "recount_qc.star.number_of_splices:_gc/ag"                      
-#&gt; [125] "recount_qc.star.number_of_splices:_gc/ag2"                     
-#&gt; [126] "recount_qc.star.number_of_splices:_gt/ag"                      
-#&gt; [127] "recount_qc.star.number_of_splices:_gt/ag2"                     
-#&gt; [128] "recount_qc.star.number_of_splices:_non-canonical"              
-#&gt; [129] "recount_qc.star.number_of_splices:_non-canonical2"             
-#&gt; [130] "recount_qc.star.number_of_splices:_total"                      
-#&gt; [131] "recount_qc.star.number_of_splices:_total2"                     
-#&gt; [132] "recount_qc.star.uniquely_mapped_reads_%"                       
-#&gt; [133] "recount_qc.star.uniquely_mapped_reads_%2"                      
-#&gt; [134] "recount_qc.star.uniquely_mapped_reads_number"                  
-#&gt; [135] "recount_qc.star.uniquely_mapped_reads_number2"                 
-#&gt; [136] "recount_qc.junction_count"                                     
-#&gt; [137] "recount_qc.junction_coverage"                                  
-#&gt; [138] "recount_qc.junction_avg_coverage"                              
-#&gt; [139] "custom.sequencing_type"                                        </div><div class='input'><span class='co'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='co'>## Locate and read the GTEx bladder metadata</span>
-<span class='kw'>gtex_bladder_meta</span> <span class='op'>&lt;-</span> <span class='fu'>read_metadata</span>(
-    <span class='fu'>file_retrieve</span>(
-        <span class='fu'>file_locate_url</span>(<span class='st'>"BLADDER"</span>, <span class='st'>"data_sources/gtex"</span>)
+    metadata_files = <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span>(
+        <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(
+            <span class='st'>"ERP110066"</span>,
+            <span class='st'>"collections/geuvadis_smartseq"</span>,
+            recount3_url = <span class='st'>"http://snaptron.cs.jhu.edu/data/temp/recount3"</span>
+        )
     )
 )
-
-<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='kw'>gtex_bladder_meta</span>)
-}</div></pre>
+</div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:47:04 caching file geuvadis_smartseq.recount_project.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:47:05 caching file sra.sra.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:47:05 caching file sra.recount_project.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:47:05 caching file sra.recount_qc.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: The 'url' &lt;http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_seq_qc.ERP110066.MD.gz&gt; does not exist or is not available.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:47:05 caching file sra.recount_pred.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:47:05 caching file geuvadis_smartseq.custom.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>ERP110066_collection_meta</span>)
+</div><div class='output co'>#&gt; [1]   1 161</div><div class='input'><span class='co'>## New columns for this collection</span>
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='kw'>ERP110066_collection_meta</span>)[<span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='kw'>ERP110066_collection_meta</span>) <span class='op'>%in%</span> <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='kw'>ERP110066_meta</span>)]
+</div><div class='output co'>#&gt; [1] "custom.sequencing_type"</div><div class='input'>
+<span class='co'>## Read the metadata for a mouse project</span>
+<span class='kw'>SRP060340_meta</span> <span class='op'>&lt;-</span> <span class='fu'>read_metadata</span>(
+    metadata_files = <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span>(
+        <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(<span class='st'>"SRP060340"</span>, <span class='st'>"data_sources/sra"</span>, organism = <span class='st'>"mouse"</span>)
+    )
+)
+</div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:47:06 caching file sra.sra.SRP060340.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:47:06 caching file sra.recount_project.SRP060340.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:47:06 caching file sra.recount_qc.SRP060340.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:47:06 caching file sra.recount_seq_qc.SRP060340.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:47:07 caching file sra.recount_pred.SRP060340.MD.gz.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Replacing study_acc by study in sra.sra.SRP060340.MD.gz</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Replacing run_acc by external_id in sra.sra.SRP060340.MD.gz</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Replacing study_acc by study in sra.recount_qc.SRP060340.MD.gz</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Replacing run_acc by external_id in sra.recount_qc.SRP060340.MD.gz</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>SRP060340_meta</span>)
+</div><div class='output co'>#&gt; [1]  25 176</div><div class='input'>
+<span class='co'>## Locate and read the GTEx bladder metadata</span>
+<span class='kw'>gtex_bladder_meta</span> <span class='op'>&lt;-</span> <span class='fu'>read_metadata</span>(
+    <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span>(
+        <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(<span class='st'>"BLADDER"</span>, <span class='st'>"data_sources/gtex"</span>)
+    )
+)
+</div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:47:07 caching file gtex.gtex.BLADDER.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/ER/BLADDER/gtex.gtex.BLADDER.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:47:07 caching file gtex.recount_project.BLADDER.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_project.BLADDER.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:47:07 caching file gtex.recount_qc.BLADDER.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_qc.BLADDER.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:47:08 caching file gtex.recount_seq_qc.BLADDER.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_seq_qc.BLADDER.MD.gz'</span></div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>gtex_bladder_meta</span>)
+</div><div class='output co'>#&gt; [1]  21 197</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -489,7 +400,7 @@ metadata.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

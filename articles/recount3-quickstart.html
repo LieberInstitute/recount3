@@ -45,12 +45,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -95,7 +89,7 @@
       Lieber Institute for Brain Development, Johns Hopkins Medical Campus<br><a class="author_email" href="mailto:#"></a><a href="mailto:lcolladotor@gmail.com" class="email">lcolladotor@gmail.com</a>
       </address>
                   
-            <h4 class="date">30 June 2020</h4>
+            <h4 class="date">27 September 2020</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/LieberInstitute/recount3/blob/master/vignettes/recount3-quickstart.Rmd"><code>vignettes/recount3-quickstart.Rmd</code></a></small>
       <div class="hidden name"><code>recount3-quickstart.Rmd</code></div>
@@ -104,6 +98,64 @@
 
     
     
+<p><a href="https://lieberinstitute.github.io/recount3-docs"><img src="https://raw.githubusercontent.com/LieberInstitute/recount3/master/man/figures/logo.png" align="center" width="600"></a></p>
+<div id="overview" class="section level1">
+<h1 class="hasAnchor">
+<a href="#overview" class="anchor"></a>Overview</h1>
+<p>The <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> R/Bioconductor package is part of the <code>recount3</code> project and is the latest iteration of the <code>ReCount</code> family of projects that provide access to uniformly-processed RNA sequencing datasets. The <strong>main documentation website</strong> for all the <code>recount3</code>-related projects is available at <a href="https://LieberInstitute/github.io/recount3-docs"><strong>recount.bio</strong></a>. Please check that website for more information about how this R/Bioconductor package and other tools are related to each other.</p>
+<div id="r-packages" class="section level2">
+<h2 class="hasAnchor">
+<a href="#r-packages" class="anchor"></a>R packages</h2>
+<p>To clarify the relationship between the R/Bioconductor packages and the phases of <code>ReCount</code> please check the table below:</p>
+<table class="table">
+<thead><tr class="header">
+<th>Year</th>
+<th>Phase</th>
+<th>Main references</th>
+<th>R/Bioconductor</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>2011</td>
+<td><a href="http://bowtie-bio.sourceforge.net/recount/"><code>ReCount</code></a></td>
+<td>DOI: <a href="https://doi.org/10.1186/1471-2105-12-449">10.1186/1471-2105-12-449</a>
+</td>
+<td>none</td>
+</tr>
+<tr class="even">
+<td>2017</td>
+<td><a href="https://jhubiostatistics.shinyapps.io/recount/"><code>recount2</code></a></td>
+<td>DOI: <a href="https://doi.org/10.1038/nbt.3838">10.1038/nbt.3838</a> <a href="https://doi.org/10.12688/f1000research.12223.1">10.12688/f1000research.12223.1</a>
+</td>
+<td><em><a href="https://bioconductor.org/packages/3.12/recount">recount</a></em></td>
+</tr>
+<tr class="odd">
+<td>2020</td>
+<td><a href="https://LieberInstitute/github.io/recount3-docs"><code>recount3</code></a></td>
+<td>DOI: <a href="https://doi.org/TODO">TODO</a>
+</td>
+<td><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="teams-involved" class="section level2">
+<h2 class="hasAnchor">
+<a href="#teams-involved" class="anchor"></a>Teams involved</h2>
+<p>The <code>ReCount</code> family involves the following teams:</p>
+<ul>
+<li><a href="http://www.langmead-lab.org/">Ben Langmead’s lab at JHU Computer Science</a></li>
+<li><a href="https://www.hansenlab.org/">Kasper Daniel Hansen’s lab at JHBSPH Biostatistics Department</a></li>
+<li>
+<a href="http://lcolladotor.github.io/">Leonardo Collado-Torres</a> and <a href="http://aejaffe.com/">Andrew E. Jaffe</a> from <a href="https://www.libd.org/">LIBD</a>
+</li>
+<li><a href="http://nellore.bio/">Abhinav Nellore’s lab at OHSU</a></li>
+<li><a href="http://jtleek.com/">Jeff Leek’s lab at JHBSPH Biostatistics Deparment</a></li>
+<li>Data hosted by <a href="https://www.sciserver.org/">SciServer from IDIES at JHU</a>
+</li>
+</ul>
+</div>
+</div>
 <div id="basics" class="section level1">
 <h1 class="hasAnchor">
 <a href="#basics" class="anchor"></a>Basics</h1>
@@ -126,10 +178,10 @@
 <div id="required-knowledge" class="section level2">
 <h2 class="hasAnchor">
 <a href="#required-knowledge" class="anchor"></a>Required knowledge</h2>
-<p><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> is based on many other packages and in particular in those that have implemented the infrastructure needed for dealing with RNA-seq data. That is, packages like <em><a href="https://bioconductor.org/packages/3.12/GenomicFeatures">GenomicFeatures</a></em> and <em><a href="https://bioconductor.org/packages/3.12/rtracklayer">rtracklayer</a></em> that allow you to import the data. A <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> user is not expected to deal with those packages directly but will need to be familiar with <em><a href="https://bioconductor.org/packages/3.12/SummarizedExperiment">SummarizedExperiment</a></em> to understand the results <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> generates. It might also prove to be highly beneficial to check the</p>
+<p><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> is based on many other packages and in particular in those that have implemented the infrastructure needed for dealing with RNA-seq data. A <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> user will benefit from being familiar with <em><a href="https://bioconductor.org/packages/3.12/SummarizedExperiment">SummarizedExperiment</a></em> to understand the objects <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> generates. It might also prove to be highly beneficial to check the</p>
 <ul>
 <li>
-<em><a href="https://bioconductor.org/packages/3.12/DESeq2">DESeq2</a></em> package for performing differential expression analysis with the <em>RangedSummarizedExperiment</em> objects,</li>
+<em><a href="https://bioconductor.org/packages/3.12/DESeq2">DESeq2</a></em> and <em><a href="https://bioconductor.org/packages/3.12/limma">limma</a></em> packages for performing differential expression analysis with the <em>RangedSummarizedExperiment</em> objects,</li>
 <li>
 <em><a href="https://bioconductor.org/packages/3.12/DEFormats">DEFormats</a></em> package for switching the objects to those used by other differential expression packages such as <em><a href="https://bioconductor.org/packages/3.12/edgeR">edgeR</a></em>,</li>
 <li>
@@ -172,9 +224,169 @@
 <h1 class="hasAnchor">
 <a href="#quick-start-to-using-to-recount3" class="anchor"></a>Quick start to using to <code>recount3</code>
 </h1>
+<p>If you have identified a <strong>study</strong> of interest and want to access the gene level expression data, use <code><a href="../reference/create_rse.html">create_rse()</a></code> as shown below. <code><a href="../reference/create_rse.html">create_rse()</a></code> has arguments that will allow you to specify the <strong>annotation</strong> of interest for the given organism, and whether you want to download <strong>gene</strong>, <strong>exon</strong> or <strong>exon-exon junction</strong> expression data.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="co">## Load recount3</span>
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="https://github.com/LieberInstitute/recount3">"recount3"</a></span>)
+<span class="co">#&gt; Loading required package: SummarizedExperiment</span>
+<span class="co">#&gt; Loading required package: GenomicRanges</span>
+<span class="co">#&gt; Loading required package: stats4</span>
+<span class="co">#&gt; Loading required package: BiocGenerics</span>
+<span class="co">#&gt; Loading required package: parallel</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Attaching package: 'BiocGenerics'</span>
+<span class="co">#&gt; The following objects are masked from 'package:parallel':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,</span>
+<span class="co">#&gt;     clusterExport, clusterMap, parApply, parCapply, parLapply,</span>
+<span class="co">#&gt;     parLapplyLB, parRapply, parSapply, parSapplyLB</span>
+<span class="co">#&gt; The following objects are masked from 'package:stats':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     IQR, mad, sd, var, xtabs</span>
+<span class="co">#&gt; The following objects are masked from 'package:base':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     anyDuplicated, append, as.data.frame, basename, cbind, colnames,</span>
+<span class="co">#&gt;     dirname, do.call, duplicated, eval, evalq, Filter, Find, get, grep,</span>
+<span class="co">#&gt;     grepl, intersect, is.unsorted, lapply, Map, mapply, match, mget,</span>
+<span class="co">#&gt;     order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,</span>
+<span class="co">#&gt;     rbind, Reduce, rownames, sapply, setdiff, sort, table, tapply,</span>
+<span class="co">#&gt;     union, unique, unsplit, which.max, which.min</span>
+<span class="co">#&gt; Loading required package: S4Vectors</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Attaching package: 'S4Vectors'</span>
+<span class="co">#&gt; The following object is masked from 'package:base':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     expand.grid</span>
+<span class="co">#&gt; Loading required package: IRanges</span>
+<span class="co">#&gt; Loading required package: GenomeInfoDb</span>
+<span class="co">#&gt; Loading required package: Biobase</span>
+<span class="co">#&gt; Welcome to Bioconductor</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     Vignettes contain introductory material; view with</span>
+<span class="co">#&gt;     'browseVignettes()'. To cite Bioconductor, see</span>
+<span class="co">#&gt;     'citation("Biobase")', and for packages 'citation("pkgname")'.</span>
+<span class="co">#&gt; Loading required package: DelayedArray</span>
+<span class="co">#&gt; Loading required package: Matrix</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Attaching package: 'Matrix'</span>
+<span class="co">#&gt; The following object is masked from 'package:S4Vectors':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     expand</span>
+<span class="co">#&gt; Loading required package: matrixStats</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Attaching package: 'matrixStats'</span>
+<span class="co">#&gt; The following objects are masked from 'package:Biobase':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     anyMissing, rowMedians</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Attaching package: 'DelayedArray'</span>
+<span class="co">#&gt; The following objects are masked from 'package:matrixStats':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     colMaxs, colMins, colRanges, rowMaxs, rowMins, rowRanges</span>
+<span class="co">#&gt; The following objects are masked from 'package:base':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     aperm, apply, rowsum</span>
+
+<span class="co">## Find a study of interest</span>
+<span class="kw">proj_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
+    project = <span class="st">"ERP110066"</span>,
+    project_home = <span class="st">"data_sources/sra"</span>,
+    organism = <span class="st">"human"</span>
+)
+
+<span class="co">## Create a RangedSummarizedExperiment (RSE) object at the gene level</span>
+<span class="kw">rse_gene_ERP110066</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_rse.html">create_rse</a></span>(<span class="kw">proj_info</span>)
+<span class="co">#&gt; 2020-09-27 21:47:18 downloading and reading the metadata.</span>
+<span class="co">#&gt; using temporary cache /tmp/RtmpwW2CX3/BiocFileCache</span>
+<span class="co">#&gt; 2020-09-27 21:47:18 caching file sra.sra.ERP110066.MD.gz.</span>
+<span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.sra.ERP110066.MD.gz'</span>
+<span class="co">#&gt; 2020-09-27 21:47:19 caching file sra.recount_project.ERP110066.MD.gz.</span>
+<span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.recount_project.ERP110066.MD.gz'</span>
+<span class="co">#&gt; 2020-09-27 21:47:19 caching file sra.recount_qc.ERP110066.MD.gz.</span>
+<span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.recount_qc.ERP110066.MD.gz'</span>
+<span class="co">#&gt; 2020-09-27 21:47:19 caching file sra.recount_seq_qc.ERP110066.MD.gz.</span>
+<span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.recount_seq_qc.ERP110066.MD.gz'</span>
+<span class="co">#&gt; 2020-09-27 21:47:20 caching file sra.recount_pred.ERP110066.MD.gz.</span>
+<span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.recount_pred.ERP110066.MD.gz'</span>
+<span class="co">#&gt; Warning: Replacing study_acc by study in sra.sra.ERP110066.MD.gz</span>
+<span class="co">#&gt; Warning: Replacing run_acc by external_id in sra.sra.ERP110066.MD.gz</span>
+<span class="co">#&gt; Warning: Replacing study_acc by study in sra.recount_qc.ERP110066.MD.gz</span>
+<span class="co">#&gt; Warning: Replacing run_acc by external_id in sra.recount_qc.ERP110066.MD.gz</span>
+<span class="co">#&gt; 2020-09-27 21:47:21 downloading and reading the feature information.</span>
+<span class="co">#&gt; 2020-09-27 21:47:21 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/annotations/gene_sums/human.gene_sums.G026.gtf.gz'</span>
+<span class="co">#&gt; 2020-09-27 21:47:22 downloading and reading the counts: 1024 samples across 63856 features.</span>
+<span class="co">#&gt; 2020-09-27 21:47:22 caching file sra.gene_sums.ERP110066.G026.gz.</span>
+<span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.G026.gz'</span>
+<span class="co">#&gt; 2020-09-27 21:47:30 construcing the RangedSummarizedExperiment (rse) object.</span>
+
+<span class="co">## Explore that RSE object</span>
+<span class="kw">rse_gene_ERP110066</span>
+<span class="co">#&gt; class: RangedSummarizedExperiment </span>
+<span class="co">#&gt; dim: 63856 1024 </span>
+<span class="co">#&gt; metadata(9): time_created recount3_version ... jxn_format recount3_url</span>
+<span class="co">#&gt; assays(1): counts</span>
+<span class="co">#&gt; rownames(63856): ENSG00000278704.1 ENSG00000277400.1 ...</span>
+<span class="co">#&gt;   ENSG00000182484.15_PAR_Y ENSG00000227159.8_PAR_Y</span>
+<span class="co">#&gt; rowData names(10): source type ... havana_gene tag</span>
+<span class="co">#&gt; colnames(1024): ERR2713604 ERR2713605 ... ERR2713998 ERR2713999</span>
+<span class="co">#&gt; colData names(173): rail_id external_id ... recount_pred.pred.type</span>
+<span class="co">#&gt;   BigWigURL</span>
+</pre></div>
+<p><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> also supports accessing the BigWig raw coverage files as well as specific study or compilation sample <strong>metadata</strong>. Please continue to the users guide for more detailed information.</p>
+</div>
+<div id="users-guide" class="section level1">
+<h1 class="hasAnchor">
+<a href="#users-guide" class="anchor"></a>Users guide</h1>
+<p><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> provides an interface for downloading the <a href="http://research.libd.org/recount3-docs/raw-files.html">recount3 raw files</a> and building Bioconductor-friendly R objects <a id="cite-Huber_2015"></a><a id="cite-SummarizedExperiment"></a>(<a href="https://doi.org/10.1038/nmeth.3252">Huber, Carey, Gentleman, Anders, et al., 2015</a>; <a href="https://doi.org/10.18129/B9.bioc.SummarizedExperiment">Morgan, Obenchain, Hester, and Pagès, 2019</a>) that can be used with many downstream packages. To achieve this, the raw data is organized by <strong>study</strong> from a specific <strong>data source</strong>. That same study can be a part of one or more <strong>compilation</strong>, which is a manually curated set of studies with compilation-specific sample metadata (see the <a href="http://research.libd.org/recount3-docs/raw-files.html#data-source-vs-collection">Data source vs collection</a> for details). To get started with <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em>, you will need to identify the ID for the study of interest from either <strong>human</strong> or <strong>mouse</strong> for a particular <strong>annotation</strong> of interest. Once you have identified study, data source or compilation, and annotation, <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> can be used to build a <code>RangedSummarizedExperiment</code> object (<a href="https://doi.org/10.18129/B9.bioc.SummarizedExperiment">Morgan, Obenchain, Hester, and Pagès, 2019</a>) for either <strong>gene</strong>, <strong>exon</strong> or <strong>exon-exon junction</strong> expression feature data. For more advanced use cases, <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> provides access to the coverage BigWig files that can be quantified for custom set of genomic regions using <em><a href="https://bioconductor.org/packages/3.12/megadepth">megadepth</a></em>. Furthermore, <em><a href="https://bioconductor.org/packages/3.12/snapcount">snapcount</a></em> allows fast-queries for custom exon-exon junctions and other custom input.</p>
+<div id="find-a-study" class="section level2">
+<h2 class="hasAnchor">
+<a href="#find-a-study" class="anchor"></a>Find a study</h2>
+</div>
+<div id="available-annotations" class="section level2">
+<h2 class="hasAnchor">
+<a href="#available-annotations" class="anchor"></a>Available annotations</h2>
+</div>
+<div id="local-files" class="section level2">
+<h2 class="hasAnchor">
+<a href="#local-files" class="anchor"></a>Local files</h2>
+<p><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> depends on <em><a href="https://bioconductor.org/packages/3.12/BiocFileCache">BiocFileCache</a></em> <a id="cite-Shepherd_2020"></a>(<a href="#bib-Shepherd_2020">Shepherd and Morgan, 2020</a>) for organizing the raw files and caching them, such that if you use the same file more than once, you only have to download it once. <em><a href="https://bioconductor.org/packages/3.12/BiocFileCache">BiocFileCache</a></em> will automatically update the file if it detects that the file has changed in the source</p>
+<p>If you want to inspect which files you have downloaded or even delete them, them you’ll want to use <em><a href="https://bioconductor.org/packages/3.12/BiocFileCache">BiocFileCache</a></em> functions such as <code><a href="https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html">BiocFileCache::bfcinfo()</a></code> and <code><a href="https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html">BiocFileCache::bfcremove()</a></code> as illustrated below.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"BiocFileCache"</span>)
+<span class="co">#&gt; Loading required package: dbplyr</span>
+
+<span class="co">## Set up your cache the same way you used the functions</span>
+<span class="kw">bfc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html">BiocFileCache</a></span>()
+
+<span class="co">## Locate all files</span>
+<span class="kw">bfc_files</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html">bfcinfo</a></span>()
+
+<span class="co">## Find files from recount3</span>
+<span class="kw">bfc_recount3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grep</a></span>(<span class="st">"recount3"</span>, <span class="kw">bfc_files</span>[[<span class="st">"fpath"</span>]])
+
+<span class="co">## List the original URLs for the data</span>
+<span class="kw">bfc_files</span>[[<span class="st">"fpath"</span>]][<span class="kw">bfc_recount3</span>]
+<span class="co">#&gt; [1] "http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.sra.ERP110066.MD.gz"            </span>
+<span class="co">#&gt; [2] "http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.recount_project.ERP110066.MD.gz"</span>
+<span class="co">#&gt; [3] "http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.recount_qc.ERP110066.MD.gz"     </span>
+<span class="co">#&gt; [4] "http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.recount_seq_qc.ERP110066.MD.gz" </span>
+<span class="co">#&gt; [5] "http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.recount_pred.ERP110066.MD.gz"   </span>
+<span class="co">#&gt; [6] "http://idies.jhu.edu/recount3/data/human/annotations/gene_sums/human.gene_sums.G026.gtf.gz"                         </span>
+<span class="co">#&gt; [7] "http://idies.jhu.edu/recount3/data/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.G026.gz"</span>
+
+<span class="co">## You can remove the recount3 files from your cache if you want using bfcremove</span>
+<span class="co">if</span> (<span class="fl">FALSE</span>) {
+    <span class="fu"><a href="https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html">bfcremove</a></span>(<span class="kw">bfc</span>, rids = <span class="kw">bfc_files</span>[[<span class="st">"rid"</span>]][<span class="kw">bfc_recount3</span>])
+
+    <span class="co">## Verify that the recount3 files have been deleted</span>
+    <span class="fu"><a href="https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html">bfcinfo</a></span>()
+}
+</pre></div>
 <p>Main updates:</p>
 <p>TODO</p>
 <p><code>recount3</code> project <a id="cite-Wilks_2020"></a>(<a href="https://www.biorxiv.org/content/10.1101/TODO">Wilks, Collado-Torres, Zheng, Jaffe, et al., 2020</a>).</p>
+</div>
 </div>
 <div id="reproducibility" class="section level1">
 <h1 class="hasAnchor">
@@ -185,7 +397,7 @@
 <li>
 <em><a href="https://bioconductor.org/packages/3.12/AnnotationHub">AnnotationHub</a></em> <a id="cite-Morgan_2020"></a>(<a href="#bib-Morgan_2020">Morgan and Shepherd, 2020</a>)</li>
 <li>
-<em><a href="https://bioconductor.org/packages/3.12/BiocFileCache">BiocFileCache</a></em> <a id="cite-Shepherd_2020"></a>(<a href="#bib-Shepherd_2020">Shepherd and Morgan, 2020</a>)</li>
+<em><a href="https://bioconductor.org/packages/3.12/BiocFileCache">BiocFileCache</a></em> (<a href="#bib-Shepherd_2020">Shepherd and Morgan, 2020</a>)</li>
 <li>
 <em><a href="https://bioconductor.org/packages/3.12/BiocStyle">BiocStyle</a></em> <a id="cite-Oles_2020"></a>(<a href="https://github.com/Bioconductor/BiocStyle">Oleś, Morgan, and Huber, 2020</a>)</li>
 <li>
@@ -196,12 +408,12 @@
 <li>
 <em><a href="https://CRAN.R-project.org/package=sessioninfo">sessioninfo</a></em> <a id="cite-Csardi_2018"></a>(<a href="https://github.com/r-lib/sessioninfo#readme">Csárdi, core, Wickham, Chang, et al., 2018</a>)</li>
 <li>
-<em><a href="https://bioconductor.org/packages/3.12/SummarizedExperiment">SummarizedExperiment</a></em> <a id="cite-SummarizedExperiment"></a>(<a href="https://doi.org/10.18129/B9.bioc.SummarizedExperiment">Morgan, Obenchain, Hester, and Pagès, 2019</a>)</li>
+<em><a href="https://bioconductor.org/packages/3.12/SummarizedExperiment">SummarizedExperiment</a></em> (<a href="https://doi.org/10.18129/B9.bioc.SummarizedExperiment">Morgan, Obenchain, Hester, and Pagès, 2019</a>)</li>
 <li>
 <em><a href="https://CRAN.R-project.org/package=testthat">testthat</a></em> <a id="cite-Wickham_2011"></a>(<a href="https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf">Wickham, 2011</a>)</li>
 </ul>
 <p>Code for creating the vignette</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
+<div class="sourceCode" id="cb5"><pre class="downlit">
 <span class="co">## Create the vignette</span>
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="https://github.com/rstudio/rmarkdown">"rmarkdown"</a></span>)
 <span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span>(<span class="fu"><a href="https://rdrr.io/pkg/rmarkdown/man/render.html">render</a></span>(<span class="st">"recount3-quickstart.Rmd"</span>, <span class="st">"BiocStyle::html_document"</span>))
@@ -210,68 +422,116 @@
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="https://yihui.org/knitr">"knitr"</a></span>)
 <span class="fu"><a href="https://rdrr.io/pkg/knitr/man/knit.html">knit</a></span>(<span class="st">"recount3-quickstart.Rmd"</span>, tangle = <span class="fl">TRUE</span>)
 </pre></div>
-<div class="sourceCode" id="cb4"><pre class="downlit">
+<div class="sourceCode" id="cb6"><pre class="downlit">
 <span class="co">## Clean up</span>
 <span class="fu"><a href="https://rdrr.io/r/base/files.html">file.remove</a></span>(<span class="st">"quickstartRef.bib"</span>)
 <span class="co">#&gt; [1] TRUE</span>
 </pre></div>
 <p>Date the vignette was generated.</p>
-<pre><code>#&gt; [1] "2020-06-30 14:10:42 UTC"</code></pre>
+<pre><code>#&gt; [1] "2020-09-27 21:47:31 UTC"</code></pre>
 <p>Wallclock time spent generating the vignette.</p>
-<pre><code>#&gt; Time difference of 0.899 secs</code></pre>
+<pre><code>#&gt; Time difference of 21.998 secs</code></pre>
 <p><code>R</code> session information.</p>
 <pre><code>#&gt; ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
-#&gt;  setting  value                       
-#&gt;  version  R version 4.0.0 (2020-04-24)
-#&gt;  os       Ubuntu 18.04.4 LTS          
-#&gt;  system   x86_64, linux-gnu           
-#&gt;  ui       X11                         
-#&gt;  language (EN)                        
-#&gt;  collate  en_US.UTF-8                 
-#&gt;  ctype    en_US.UTF-8                 
-#&gt;  tz       UTC                         
-#&gt;  date     2020-06-30                  
+#&gt;  setting  value                                      
+#&gt;  version  R version 4.0.2 Patched (2020-09-24 r79253)
+#&gt;  os       Ubuntu 20.04.1 LTS                         
+#&gt;  system   x86_64, linux-gnu                          
+#&gt;  ui       X11                                        
+#&gt;  language (EN)                                       
+#&gt;  collate  en_US.UTF-8                                
+#&gt;  ctype    en_US.UTF-8                                
+#&gt;  tz       UTC                                        
+#&gt;  date     2020-09-27                                 
 #&gt; 
 #&gt; ─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
-#&gt;  package       * version    date       lib source                        
-#&gt;  assertthat      0.2.1      2019-03-21 [2] RSPM (R 4.0.0)                
-#&gt;  backports       1.1.8      2020-06-17 [2] RSPM (R 4.0.1)                
-#&gt;  bibtex          0.4.2.2    2020-01-02 [1] RSPM (R 4.0.0)                
-#&gt;  BiocManager     1.30.10    2019-11-16 [2] CRAN (R 4.0.0)                
-#&gt;  BiocStyle     * 2.17.0     2020-04-27 [1] Bioconductor                  
-#&gt;  bookdown        0.20       2020-06-23 [1] RSPM (R 4.0.2)                
-#&gt;  cli             2.0.2      2020-02-28 [2] RSPM (R 4.0.0)                
-#&gt;  crayon          1.3.4      2017-09-16 [2] RSPM (R 4.0.0)                
-#&gt;  desc            1.2.0      2018-05-01 [2] RSPM (R 4.0.0)                
-#&gt;  digest          0.6.25     2020-02-23 [2] RSPM (R 4.0.0)                
-#&gt;  evaluate        0.14       2019-05-28 [2] RSPM (R 4.0.0)                
-#&gt;  fansi           0.4.1      2020-01-08 [2] RSPM (R 4.0.0)                
-#&gt;  fs              1.4.1      2020-04-04 [2] RSPM (R 4.0.0)                
-#&gt;  generics        0.0.2      2018-11-29 [1] RSPM (R 4.0.0)                
-#&gt;  glue            1.4.1      2020-05-13 [2] RSPM (R 4.0.0)                
-#&gt;  htmltools       0.5.0      2020-06-16 [2] RSPM (R 4.0.1)                
-#&gt;  httr            1.4.1      2019-08-05 [2] RSPM (R 4.0.0)                
-#&gt;  jsonlite        1.7.0      2020-06-25 [1] RSPM (R 4.0.2)                
-#&gt;  knitcitations * 1.0.10     2019-09-15 [1] RSPM (R 4.0.0)                
-#&gt;  knitr           1.29       2020-06-23 [2] RSPM (R 4.0.2)                
-#&gt;  lubridate       1.7.9      2020-06-08 [1] RSPM (R 4.0.0)                
-#&gt;  magrittr        1.5        2014-11-22 [2] RSPM (R 4.0.0)                
-#&gt;  memoise         1.1.0      2017-04-21 [2] RSPM (R 4.0.0)                
-#&gt;  pkgdown         1.5.1.9000 2020-06-23 [1] Github (r-lib/pkgdown@caf7cc7)
-#&gt;  plyr            1.8.6      2020-03-03 [1] RSPM (R 4.0.0)                
-#&gt;  R6              2.4.1      2019-11-12 [2] RSPM (R 4.0.0)                
-#&gt;  Rcpp            1.0.4.6    2020-04-09 [2] RSPM (R 4.0.0)                
-#&gt;  RefManageR      1.2.12     2019-04-03 [1] RSPM (R 4.0.0)                
-#&gt;  rlang           0.4.6      2020-05-02 [2] RSPM (R 4.0.0)                
-#&gt;  rmarkdown       2.3        2020-06-18 [1] RSPM (R 4.0.1)                
-#&gt;  rprojroot       1.3-2      2018-01-03 [2] RSPM (R 4.0.0)                
-#&gt;  sessioninfo   * 1.1.1      2018-11-05 [2] RSPM (R 4.0.0)                
-#&gt;  stringi         1.4.6      2020-02-17 [2] RSPM (R 4.0.0)                
-#&gt;  stringr         1.4.0      2019-02-10 [2] RSPM (R 4.0.0)                
-#&gt;  withr           2.2.0      2020-04-20 [2] RSPM (R 4.0.0)                
-#&gt;  xfun            0.15       2020-06-21 [1] RSPM (R 4.0.1)                
-#&gt;  xml2            1.3.2      2020-04-23 [2] RSPM (R 4.0.0)                
-#&gt;  yaml            2.2.1      2020-02-01 [2] RSPM (R 4.0.0)                
+#&gt;  package              * version    date       lib source                        
+#&gt;  assertthat             0.2.1      2019-03-21 [2] RSPM (R 4.0.0)                
+#&gt;  backports              1.1.10     2020-09-15 [2] RSPM (R 4.0.2)                
+#&gt;  bibtex                 0.4.2.3    2020-09-19 [1] RSPM (R 4.0.2)                
+#&gt;  Biobase              * 2.49.1     2020-09-03 [1] Bioconductor                  
+#&gt;  BiocFileCache        * 1.13.1     2020-08-04 [1] Bioconductor                  
+#&gt;  BiocGenerics         * 0.35.4     2020-06-04 [1] Bioconductor                  
+#&gt;  BiocManager            1.30.10    2019-11-16 [2] CRAN (R 4.0.2)                
+#&gt;  BiocParallel           1.23.2     2020-07-06 [1] Bioconductor                  
+#&gt;  BiocStyle            * 2.17.1     2020-09-24 [1] Bioconductor                  
+#&gt;  Biostrings             2.57.2     2020-06-09 [1] Bioconductor                  
+#&gt;  bit                    4.0.4      2020-08-04 [1] RSPM (R 4.0.2)                
+#&gt;  bit64                  4.0.5      2020-08-30 [1] RSPM (R 4.0.2)                
+#&gt;  bitops                 1.0-6      2013-08-17 [1] RSPM (R 4.0.0)                
+#&gt;  blob                   1.2.1      2020-01-20 [1] RSPM (R 4.0.0)                
+#&gt;  bookdown               0.20       2020-06-23 [1] RSPM (R 4.0.2)                
+#&gt;  cli                    2.0.2      2020-02-28 [2] RSPM (R 4.0.0)                
+#&gt;  cpp11                  0.2.1      2020-08-11 [1] RSPM (R 4.0.2)                
+#&gt;  crayon                 1.3.4      2017-09-16 [2] RSPM (R 4.0.0)                
+#&gt;  curl                   4.3        2019-12-02 [2] RSPM (R 4.0.0)                
+#&gt;  data.table             1.13.0     2020-07-24 [1] RSPM (R 4.0.2)                
+#&gt;  DBI                    1.1.0      2019-12-15 [1] RSPM (R 4.0.0)                
+#&gt;  dbplyr               * 1.4.4      2020-05-27 [1] RSPM (R 4.0.0)                
+#&gt;  DelayedArray         * 0.15.9     2020-09-25 [1] Bioconductor                  
+#&gt;  desc                   1.2.0      2018-05-01 [2] RSPM (R 4.0.0)                
+#&gt;  digest                 0.6.25     2020-02-23 [2] RSPM (R 4.0.0)                
+#&gt;  dplyr                  1.0.2      2020-08-18 [1] RSPM (R 4.0.2)                
+#&gt;  ellipsis               0.3.1      2020-05-15 [2] RSPM (R 4.0.0)                
+#&gt;  evaluate               0.14       2019-05-28 [2] RSPM (R 4.0.0)                
+#&gt;  fansi                  0.4.1      2020-01-08 [2] RSPM (R 4.0.0)                
+#&gt;  fs                     1.5.0      2020-07-31 [2] RSPM (R 4.0.2)                
+#&gt;  generics               0.0.2      2018-11-29 [1] RSPM (R 4.0.0)                
+#&gt;  GenomeInfoDb         * 1.25.11    2020-09-03 [1] Bioconductor                  
+#&gt;  GenomeInfoDbData       1.2.3      2020-09-27 [1] Bioconductor                  
+#&gt;  GenomicAlignments      1.25.3     2020-06-09 [1] Bioconductor                  
+#&gt;  GenomicRanges        * 1.41.6     2020-08-12 [1] Bioconductor                  
+#&gt;  glue                   1.4.2      2020-08-27 [2] RSPM (R 4.0.2)                
+#&gt;  htmltools              0.5.0      2020-06-16 [2] RSPM (R 4.0.1)                
+#&gt;  httr                   1.4.2      2020-07-20 [2] RSPM (R 4.0.2)                
+#&gt;  IRanges              * 2.23.10    2020-06-13 [1] Bioconductor                  
+#&gt;  jsonlite               1.7.1      2020-09-07 [2] RSPM (R 4.0.2)                
+#&gt;  knitcitations        * 1.0.10     2019-09-15 [1] RSPM (R 4.0.0)                
+#&gt;  knitr                  1.30       2020-09-22 [2] RSPM (R 4.0.2)                
+#&gt;  lattice                0.20-41    2020-04-02 [3] CRAN (R 4.0.2)                
+#&gt;  lifecycle              0.2.0      2020-03-06 [2] RSPM (R 4.0.0)                
+#&gt;  lubridate              1.7.9      2020-06-08 [1] RSPM (R 4.0.2)                
+#&gt;  magrittr               1.5        2014-11-22 [2] RSPM (R 4.0.0)                
+#&gt;  Matrix               * 1.2-18     2019-11-27 [3] CRAN (R 4.0.2)                
+#&gt;  matrixStats          * 0.56.0     2020-03-13 [1] RSPM (R 4.0.0)                
+#&gt;  memoise                1.1.0      2017-04-21 [2] RSPM (R 4.0.0)                
+#&gt;  pillar                 1.4.6      2020-07-10 [2] RSPM (R 4.0.2)                
+#&gt;  pkgconfig              2.0.3      2019-09-22 [2] RSPM (R 4.0.0)                
+#&gt;  pkgdown                1.6.1.9000 2020-09-27 [1] Github (r-lib/pkgdown@e1e46f2)
+#&gt;  plyr                   1.8.6      2020-03-03 [1] RSPM (R 4.0.2)                
+#&gt;  purrr                  0.3.4      2020-04-17 [2] RSPM (R 4.0.0)                
+#&gt;  R.methodsS3            1.8.1      2020-08-26 [1] RSPM (R 4.0.2)                
+#&gt;  R.oo                   1.24.0     2020-08-26 [1] RSPM (R 4.0.2)                
+#&gt;  R.utils                2.10.1     2020-08-26 [1] RSPM (R 4.0.2)                
+#&gt;  R6                     2.4.1      2019-11-12 [2] RSPM (R 4.0.0)                
+#&gt;  ragg                   0.3.1      2020-07-03 [1] RSPM (R 4.0.2)                
+#&gt;  rappdirs               0.3.1      2016-03-28 [1] RSPM (R 4.0.0)                
+#&gt;  Rcpp                   1.0.5      2020-07-06 [2] RSPM (R 4.0.2)                
+#&gt;  RCurl                  1.98-1.2   2020-04-18 [1] RSPM (R 4.0.0)                
+#&gt;  recount3             * 0.99.0     2020-09-27 [1] Bioconductor                  
+#&gt;  RefManageR             1.2.12     2019-04-03 [1] RSPM (R 4.0.0)                
+#&gt;  rlang                  0.4.7      2020-07-09 [2] RSPM (R 4.0.2)                
+#&gt;  rmarkdown              2.3        2020-06-18 [1] RSPM (R 4.0.1)                
+#&gt;  rprojroot              1.3-2      2018-01-03 [2] RSPM (R 4.0.0)                
+#&gt;  Rsamtools              2.5.3      2020-06-26 [1] Bioconductor                  
+#&gt;  RSQLite                2.2.0      2020-01-07 [1] RSPM (R 4.0.2)                
+#&gt;  rtracklayer            1.49.5     2020-08-07 [1] Bioconductor                  
+#&gt;  S4Vectors            * 0.27.13    2020-09-18 [1] Bioconductor                  
+#&gt;  sessioninfo          * 1.1.1      2018-11-05 [2] RSPM (R 4.0.0)                
+#&gt;  stringi                1.5.3      2020-09-09 [2] RSPM (R 4.0.2)                
+#&gt;  stringr                1.4.0      2019-02-10 [2] RSPM (R 4.0.0)                
+#&gt;  SummarizedExperiment * 1.19.6     2020-07-09 [1] Bioconductor                  
+#&gt;  systemfonts            0.3.1      2020-09-08 [1] RSPM (R 4.0.2)                
+#&gt;  tibble                 3.0.3      2020-07-10 [2] RSPM (R 4.0.2)                
+#&gt;  tidyselect             1.1.0      2020-05-11 [1] RSPM (R 4.0.0)                
+#&gt;  vctrs                  0.3.4      2020-08-29 [2] RSPM (R 4.0.2)                
+#&gt;  withr                  2.3.0      2020-09-22 [2] RSPM (R 4.0.2)                
+#&gt;  xfun                   0.17       2020-09-09 [2] RSPM (R 4.0.2)                
+#&gt;  XML                    3.99-0.5   2020-07-23 [1] RSPM (R 4.0.2)                
+#&gt;  xml2                   1.3.2      2020-04-23 [2] RSPM (R 4.0.0)                
+#&gt;  XVector                0.29.3     2020-06-25 [1] Bioconductor                  
+#&gt;  yaml                   2.2.1      2020-02-01 [2] RSPM (R 4.0.0)                
+#&gt;  zlibbioc               1.35.0     2020-04-27 [1] Bioconductor                  
 #&gt; 
 #&gt; [1] /usr/local/lib/R/host-site-library
 #&gt; [2] /usr/local/lib/R/site-library
@@ -285,14 +545,15 @@
 <p>[1] C. Boettiger. <em>knitcitations: Citations for ‘Knitr’ Markdown Files</em>. R package version 1.0.10. 2019. &lt;URL: <a href="https://github.com/cboettig/knitcitations" class="uri">https://github.com/cboettig/knitcitations</a>&gt;.</p>
 <p>[2] L. Collado-Torres. <em>Explore and download data from the recount3 project</em>. <a href="https://github.com/LieberInstitute/recount3" class="uri">https://github.com/LieberInstitute/recount3</a> - R package version 0.99.0. 2020. DOI: 10.18129/B9.bioc.recount3. &lt;URL: <a href="http://www.bioconductor.org/packages/recount3" class="uri">http://www.bioconductor.org/packages/recount3</a>&gt;.</p>
 <p>[3] G. Csárdi, R. core, H. Wickham, W. Chang, et al. <em>sessioninfo: R Session Information</em>. R package version 1.1.1. 2018. &lt;URL: <a href="https://github.com/r-lib/sessioninfo#readme" class="uri">https://github.com/r-lib/sessioninfo#readme</a>&gt;.</p>
-<p>[4] M. Morgan, V. Obenchain, J. Hester, and H. Pagès. <em>SummarizedExperiment: SummarizedExperiment container</em>. 2019. DOI: 10.18129/B9.bioc.SummarizedExperiment.</p>
-<p>[5] M. Morgan and L. Shepherd. <em>AnnotationHub: Client to access AnnotationHub resources</em>. R package version 2.21.1. 2020.</p>
-<p>[6] A. Oleś, M. Morgan, and W. Huber. <em>BiocStyle: Standard styles for vignettes and other Bioconductor documents</em>. R package version 2.17.0. 2020. &lt;URL: <a href="https://github.com/Bioconductor/BiocStyle" class="uri">https://github.com/Bioconductor/BiocStyle</a>&gt;.</p>
-<p>[7] R Core Team. <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing. Vienna, Austria, 2020. &lt;URL: <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>&gt;.</p>
-<p>[8] L. Shepherd and M. Morgan. <em>BiocFileCache: Manage Files Across Sessions</em>. R package version 1.13.0. 2020.</p>
-<p>[9] H. Wickham. “testthat: Get Started with Testing”. In: <em>The R Journal</em> 3 (2011), pp. 5-10. &lt;URL: <a href="https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf" class="uri">https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf</a>&gt;.</p>
-<p>[10] C. Wilks, L. Collado-Torres, S. C. Zheng, A. E. Jaffe, et al. “recount3 pre-print title TODO”. In: <em>bioRxiv</em> (2020). DOI: 10.1101/TODO. &lt;URL: <a href="https://www.biorxiv.org/content/10.1101/TODO" class="uri">https://www.biorxiv.org/content/10.1101/TODO</a>&gt;.</p>
-<p>[11] Y. Xie. “knitr: A Comprehensive Tool for Reproducible Research in R”. In: <em>Implementing Reproducible Computational Research</em>. Ed. by V. Stodden, F. Leisch and R. D. Peng. ISBN 978-1466561595. Chapman and Hall/CRC, 2014. &lt;URL: <a href="http://www.crcpress.com/product/isbn/9781466561595" class="uri">http://www.crcpress.com/product/isbn/9781466561595</a>&gt;.</p>
+<p>[4] W. Huber, V. J. Carey, R. Gentleman, S. Anders, et al. “Orchestrating high-throughput genomic analysis with Bioconductor”. In: <em>Nature Methods</em> 12.2 (Jan. 2015), pp. 115-121. DOI: 10.1038/nmeth.3252. &lt;URL: <a href="https://doi.org/10.1038/nmeth.3252" class="uri">https://doi.org/10.1038/nmeth.3252</a>&gt;.</p>
+<p>[5] M. Morgan, V. Obenchain, J. Hester, and H. Pagès. <em>SummarizedExperiment: SummarizedExperiment container</em>. 2019. DOI: 10.18129/B9.bioc.SummarizedExperiment.</p>
+<p>[6] M. Morgan and L. Shepherd. <em>AnnotationHub: Client to access AnnotationHub resources</em>. R package version 2.21.5. 2020.</p>
+<p>[7] A. Oleś, M. Morgan, and W. Huber. <em>BiocStyle: Standard styles for vignettes and other Bioconductor documents</em>. R package version 2.17.1. 2020. &lt;URL: <a href="https://github.com/Bioconductor/BiocStyle" class="uri">https://github.com/Bioconductor/BiocStyle</a>&gt;.</p>
+<p>[8] R Core Team. <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing. Vienna, Austria, 2020. &lt;URL: <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>&gt;.</p>
+<p>[9] L. Shepherd and M. Morgan. <em>BiocFileCache: Manage Files Across Sessions</em>. R package version 1.13.1. 2020.</p>
+<p>[10] H. Wickham. “testthat: Get Started with Testing”. In: <em>The R Journal</em> 3 (2011), pp. 5-10. &lt;URL: <a href="https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf" class="uri">https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf</a>&gt;.</p>
+<p>[11] C. Wilks, L. Collado-Torres, S. C. Zheng, A. E. Jaffe, et al. “recount3 pre-print title TODO”. In: <em>bioRxiv</em> (2020). DOI: 10.1101/TODO. &lt;URL: <a href="https://www.biorxiv.org/content/10.1101/TODO" class="uri">https://www.biorxiv.org/content/10.1101/TODO</a>&gt;.</p>
+<p>[12] Y. Xie. “knitr: A Comprehensive Tool for Reproducible Research in R”. In: <em>Implementing Reproducible Computational Research</em>. Ed. by V. Stodden, F. Leisch and R. D. Peng. ISBN 978-1466561595. Chapman and Hall/CRC, 2014. &lt;URL: <a href="http://www.crcpress.com/product/isbn/9781466561595" class="uri">http://www.crcpress.com/product/isbn/9781466561595</a>&gt;.</p>
 </div>
   </div>
 
@@ -311,7 +572,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

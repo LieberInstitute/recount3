@@ -87,12 +87,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -164,39 +158,47 @@ object where the files will be cached to.</p></td>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other internal functions for accessing the recount3 data: 
-<code>annotation_ext()</code>,
-<code>create_rse_manual()</code>,
-<code>file_locate_url_annotation()</code>,
-<code>file_locate_url()</code>,
-<code>project_home_available()</code>,
-<code>read_counts()</code>,
-<code>read_metadata()</code></p></div>
+<code><a href='annotation_ext.html'>annotation_ext</a>()</code>,
+<code><a href='create_rse_manual.html'>create_rse_manual</a>()</code>,
+<code><a href='file_locate_url_annotation.html'>file_locate_url_annotation</a>()</code>,
+<code><a href='file_locate_url.html'>file_locate_url</a>()</code>,
+<code><a href='project_home_available.html'>project_home_available</a>()</code>,
+<code><a href='read_counts.html'>read_counts</a>()</code>,
+<code><a href='read_metadata.html'>read_metadata</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'>## Download the metadata file for project ERP110066</span>
-<span class='kw'>url_ERP110066_meta</span> <span class='op'>&lt;-</span> <span class='fu'>file_locate_url</span>(
+<span class='kw'>url_ERP110066_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(
     <span class='st'>"ERP110066"</span>,
     <span class='st'>"data_sources/sra"</span>
 )
 <span class='kw'>local_ERP110066_meta</span> <span class='op'>&lt;-</span> <span class='fu'>file_retrieve</span>(
     url = <span class='kw'>url_ERP110066_meta</span>
-)</div><div class='output co'>#&gt; <span class='message'>Caching file sra.sra.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_project.ERP110066.MD.gz</span></div><div class='output co'>#&gt; <span class='message'>Caching file sra.recount_qc.ERP110066.MD.gz</span></div><div class='input'><span class='kw'>local_ERP110066_meta</span></div><div class='output co'>#&gt;                                                          sra.sra.ERP110066.MD.gz 
-#&gt;             "/tmp/RtmpfgHXIq/BiocFileCache/11d3719b7111_sra.sra.ERP110066.MD.gz" 
+)
+</div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:46:57 caching file sra.sra.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:46:57 caching file sra.recount_project.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:46:57 caching file sra.recount_qc.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:46:58 caching file sra.recount_seq_qc.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:46:58 caching file sra.recount_pred.ERP110066.MD.gz.</span></div><div class='input'><span class='kw'>local_ERP110066_meta</span>
+</div><div class='output co'>#&gt;                                                          sra.sra.ERP110066.MD.gz 
+#&gt;             "/tmp/RtmpjEQHEA/BiocFileCache/1e802895382a_sra.sra.ERP110066.MD.gz" 
 #&gt;                                              sra.recount_project.ERP110066.MD.gz 
-#&gt; "/tmp/RtmpfgHXIq/BiocFileCache/11d350b5d8be_sra.recount_project.ERP110066.MD.gz" 
+#&gt; "/tmp/RtmpjEQHEA/BiocFileCache/1e8072166f6c_sra.recount_project.ERP110066.MD.gz" 
 #&gt;                                                   sra.recount_qc.ERP110066.MD.gz 
-#&gt;      "/tmp/RtmpfgHXIq/BiocFileCache/11d36861a686_sra.recount_qc.ERP110066.MD.gz" </div><div class='input'>
+#&gt;      "/tmp/RtmpjEQHEA/BiocFileCache/1e8024a9d6b6_sra.recount_qc.ERP110066.MD.gz" 
+#&gt;                                               sra.recount_seq_qc.ERP110066.MD.gz 
+#&gt;  "/tmp/RtmpjEQHEA/BiocFileCache/1e8074a375cf_sra.recount_seq_qc.ERP110066.MD.gz" 
+#&gt;                                                 sra.recount_pred.ERP110066.MD.gz 
+#&gt;    "/tmp/RtmpjEQHEA/BiocFileCache/1e801ca842ea_sra.recount_pred.ERP110066.MD.gz" </div><div class='input'>
 <span class='co'>## Download the gene counts file for project ERP110066</span>
-<span class='kw'>url_ERP110066_gene</span> <span class='op'>&lt;-</span> <span class='fu'>file_locate_url</span>(
+<span class='kw'>url_ERP110066_gene</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(
     <span class='st'>"ERP110066"</span>,
     <span class='st'>"data_sources/sra"</span>,
     type = <span class='st'>"gene"</span>
 )
 <span class='kw'>local_ERP110066_gene</span> <span class='op'>&lt;-</span> <span class='fu'>file_retrieve</span>(
     url = <span class='kw'>url_ERP110066_gene</span>
-)</div><div class='output co'>#&gt; <span class='message'>Caching file sra.gene_sums.ERP110066.G026.gz</span></div><div class='input'><span class='kw'>local_ERP110066_gene</span></div><div class='output co'>#&gt;                                              sra.gene_sums.ERP110066.G026.gz 
-#&gt; "/tmp/RtmpfgHXIq/BiocFileCache/11d3175e50ea_sra.gene_sums.ERP110066.G026.gz" </div></pre>
+)
+</div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:46:58 caching file sra.gene_sums.ERP110066.G026.gz.</span></div><div class='input'><span class='kw'>local_ERP110066_gene</span>
+</div><div class='output co'>#&gt;                                              sra.gene_sums.ERP110066.G026.gz 
+#&gt; "/tmp/RtmpjEQHEA/BiocFileCache/1e80552ff51c_sra.gene_sums.ERP110066.G026.gz" </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -212,7 +214,7 @@ object where the files will be cached to.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>
