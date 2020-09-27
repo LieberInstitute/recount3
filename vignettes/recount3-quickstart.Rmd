@@ -100,7 +100,7 @@ The `ReCount` family involves the following teams:
 
 `R` is an open-source statistical environment which can be easily modified to enhance its functionality via packages. `r Biocpkg('recount3')` is a `R` package available via the [Bioconductor](http://bioconductor/packages/recount3) repository for packages. `R` can be installed on any operating system from [CRAN](https://cran.r-project.org/) after which you can install `r Biocpkg('recount3')` by using the following commands in your `R` session:
 
-```{r 'installDer', eval = FALSE}
+```{r 'install', eval = FALSE}
 if (!requireNamespace("BiocManager", quietly = TRUE)) {
       install.packages("BiocManager")
   }
@@ -109,6 +109,12 @@ BiocManager::install("recount3")
 
 ## Check that you have a valid Bioconductor installation
 BiocManager::valid()
+```
+
+You can install the development version from [GitHub](https://github.com/) with:
+
+```{r 'install_dev', eval = FALSE}
+BiocManager::install("LieberInstitute/recount3")
 ```
 
 ## Required knowledge
@@ -136,12 +142,17 @@ citation("recount3")
 
 # Quick start to using to `recount3`
 
+After installing `r Biocpkg('recount3')` `r citep(bib[['recount3paper']])`, we need to load the package, which will automatically load the required dependencies.
+
+```{r 'start', message=FALSE}
+## Load recount3 R package
+library("recount3")
+```
+
 If you have identified a **study** of interest and want to access the gene level expression data, use `create_rse()` as shown below. `create_rse()` has arguments that will allow you to specify the  **annotation** of interest for the given organism, and whether you want to download **gene**, **exon** or **exon-exon junction** expression data. 
 
-```{r 'quick_example'}
-## Load recount3
-library("recount3")
 
+```{r 'quick_example'}
 ## Find a study of interest
 proj_info <- data.frame(
     project = "ERP110066",
@@ -161,7 +172,7 @@ rse_gene_ERP110066
 
 # Users guide
 
-`r Biocpkg('recount3')` provides an interface for downloading the [recount3 raw files](http://research.libd.org/recount3-docs/raw-files.html) and building Bioconductor-friendly R objects `r citep(list("10.1038/nmeth.3252", bib[["SummarizedExperiment"]]))` that can be used with many downstream packages. To achieve this, the raw data is organized by **study** from a specific **data source**. That same study can be a part of one or more **compilation**, which is a manually curated set of studies with compilation-specific sample metadata (see the [Data source vs collection](http://research.libd.org/recount3-docs/raw-files.html#data-source-vs-collection) for details). To get started with `r Biocpkg('recount3')`, you will need to identify the ID for the study of interest from either **human** or **mouse** for a particular **annotation** of interest. Once you have identified study, data source or compilation, and annotation, `r Biocpkg('recount3')` can be used to build a `RangedSummarizedExperiment` object `r citep(bib[["SummarizedExperiment"]])` for either **gene**, **exon** or **exon-exon junction** expression feature data. For more advanced use cases, `r Biocpkg('recount3')` provides access to the coverage BigWig files that can be quantified for custom set of genomic regions using `r Biocpkg('megadepth')`. Furthermore, `r Biocpkg('snapcount')` allows fast-queries for custom exon-exon junctions and other custom input.
+`r Biocpkg('recount3')` `r citep(bib[['recount3paper']])` provides an interface for downloading the [recount3 raw files](http://research.libd.org/recount3-docs/raw-files.html) and building Bioconductor-friendly R objects `r citep(list("10.1038/nmeth.3252", bib[["SummarizedExperiment"]]))` that can be used with many downstream packages. To achieve this, the raw data is organized by **study** from a specific **data source**. That same study can be a part of one or more **compilations**, which is a manually curated set of studies with compilation-specific sample metadata (see the [Data source vs collection](http://research.libd.org/recount3-docs/raw-files.html#data-source-vs-collection) for details). To get started with `r Biocpkg('recount3')`, you will need to identify the ID for the study of interest from either **human** or **mouse** for a particular **annotation** of interest. Once you have identified study, data source or compilation, and annotation, `r Biocpkg('recount3')` can be used to build a `RangedSummarizedExperiment` object `r citep(bib[["SummarizedExperiment"]])` for either **gene**, **exon** or **exon-exon junction** expression feature data. For more advanced use cases, `r Biocpkg('recount3')` provides access to the coverage BigWig files that can be quantified for custom set of genomic regions using `r Biocpkg('megadepth')`. Furthermore, `r Biocpkg('snapcount')` allows fast-queries for custom exon-exon junctions and other custom input.
 
 ## Find a study
 
@@ -196,16 +207,6 @@ if (FALSE) {
     bfcinfo()
 }
 ```
-
-
-
-Main updates:
-
-TODO
-
-`recount3` project `r citep(bib[['recount3paper']])`.
-
-
 
 # Reproducibility
 

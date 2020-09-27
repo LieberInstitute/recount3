@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# recount3 <img src="man/figures/logo.png" align="right" width="400px" >
+# recount3 <img src="man/figures/logo.png" align="right" width="200px" >
 
 <!-- badges: start -->
 
@@ -18,7 +18,7 @@ status](https://github.com/LieberInstitute/recount3/workflows/R-CMD-check-bioc/b
 [![Support site activity, last 6 months: tagged questions/avg. answers
 per question/avg. comments per question/accepted answers, or 0 if no
 tagged
-posts.](http://www.bioconductor.org/shields/posts/recount.svg)](https://support.bioconductor.org/t/recount/)
+posts.](http://www.bioconductor.org/shields/posts/recount3.svg)](https://support.bioconductor.org/t/recount3/)
 <!-- badges: end -->
 
 The *[recount3](https://bioconductor.org/packages/3.12/recount3)*
