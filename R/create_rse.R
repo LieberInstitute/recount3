@@ -97,7 +97,7 @@ create_rse <-
     annotation = annotation_options(project_info$organism),
     bfc = BiocFileCache::BiocFileCache(),
     jxn_format = c("ALL", "UNIQUE"),
-    recount3_url = "https://idies.jhu.edu/recount3/data") {
+    recount3_url = "http://idies.jhu.edu/recount3/data") {
         ## Check the inputs
         stopifnot(
             "'project_info' should be a data.frame" =

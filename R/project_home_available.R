@@ -24,11 +24,11 @@
 #' )
 project_home_available <-
     function(organism = c("human", "mouse"),
-    recount3_url = "https://idies.jhu.edu/recount3/data",
+    recount3_url = "http://idies.jhu.edu/recount3/data",
     bfc = BiocFileCache::BiocFileCache()) {
         organism <- match.arg(organism)
 
-        if (recount3_url == "https://idies.jhu.edu/recount3/data") {
+        if (recount3_url == "http://idies.jhu.edu/recount3/data") {
             if (organism == "mouse") {
                 return("data_sources/sra")
             } else if (organism == "human") {

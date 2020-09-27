@@ -13,7 +13,7 @@ file_locate_url(
   sample = NULL,
   annotation = annotation_options(organism),
   jxn_format = c("ALL", "UNIQUE"),
-  recount3_url = "https://idies.jhu.edu/recount3/data"
+  recount3_url = "http://idies.jhu.edu/recount3/data"
 )
 }
 \arguments{

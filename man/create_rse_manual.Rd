@@ -13,7 +13,7 @@ create_rse_manual(
   annotation = annotation_options(organism),
   bfc = BiocFileCache::BiocFileCache(),
   jxn_format = c("ALL", "UNIQUE"),
-  recount3_url = "https://idies.jhu.edu/recount3/data"
+  recount3_url = "http://idies.jhu.edu/recount3/data"
 )
 }
 \arguments{
@@ -143,7 +143,7 @@ organism <- "human"
 annotation <- "gencode_v26"
 jxn_format <- "ALL"
 bfc <- BiocFileCache::BiocFileCache()
-recount3_url <- "https://idies.jhu.edu/recount3/data"
+recount3_url <- "http://idies.jhu.edu/recount3/data"
 }
 }
 \references{

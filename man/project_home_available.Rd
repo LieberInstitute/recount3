@@ -6,7 +6,7 @@
 \usage{
 project_home_available(
   organism = c("human", "mouse"),
-  recount3_url = "https://idies.jhu.edu/recount3/data",
+  recount3_url = "http://idies.jhu.edu/recount3/data",
   bfc = BiocFileCache::BiocFileCache()
 )
 }
