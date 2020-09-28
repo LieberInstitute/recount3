@@ -198,7 +198,23 @@ if (interactive()) {
 
 ## Find a study
 
+* ExperimentHub
+* List of projects
+  * interactiveDisplayBase
+
 ## Available annotations
+
+* Human
+* Mouse
+
+## Build a RSE
+
+* create_rse
+* metadata(rse)
+* colData(rse)
+* scale_counts(rse) TODO
+* junction-specific notes
+* collection vs data source
 
 ## Local files
 
@@ -229,6 +245,22 @@ if (FALSE) {
     bfcinfo()
 }
 ```
+
+## BigWig files
+
+* refer to megadepth
+* refer to derfinder
+
+## Your own mirror
+
+* file_locate_url() and file_locate_url_annotation() can be used to get the full list of URLs
+* available_projects() will show the data you have locally
+* file_retrieve() won't cache the data
+
+## Other related tools
+
+* mention snapcount
+* mention again the main documentation website
 
 # Reproducibility
 
