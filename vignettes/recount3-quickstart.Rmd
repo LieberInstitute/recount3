@@ -173,15 +173,15 @@ rse_gene_SRP009615
 if (interactive()) {
     ## Note that you can interactively explore the available projects
     proj_info_interactive <- interactiveDisplayBase::display(human_projects)
-    
+
     ## Select a single row, then hit "send". The following checks this.
     stopifnot(nrow(proj_info_interactive) == 1)
-    
+
     ## This is similar to using the following code to explore all of
     ## ExperimentHub, choosing one recount3 entry, then hitting "send"
     # eh2 <- AnnotationHub::display(ExperimentHub::ExperimentHub())
     # proj_info_interactive <- eh2[[1]]
-    
+
     ## Then create the RSE object
     rse_gene_interactive <- create_rse(proj_info_interactive)
 }
