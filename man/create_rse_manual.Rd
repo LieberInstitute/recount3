@@ -119,17 +119,6 @@ rse_jxn_ERP110066_collection_manual
 ## Check how much memory this RSE object uses
 ## NOTE: this doesn't run since 2 files are missing on the test site!
 pryr::object_size(rse_jxn_ERP110066_collection_manual)
-
-system.time(rse_jxn_ERP001942_manual <- create_rse_manual(
-    "ERP001942",
-    "data_sources/sra",
-    type = "jxn"
-))
-rse_jxn_ERP001942_manual
-
-## Check how much memory this RSE object uses
-pryr::object_size(rse_jxn_ERP001942_manual)
-# 2.42 GB
 }
 
 \dontrun{
