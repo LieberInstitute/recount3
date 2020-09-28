@@ -237,12 +237,12 @@
 <div class="sourceCode" id="cb5"><pre class="downlit">
 <span class="co">## Find all available human projects</span>
 <span class="kw">human_projects</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/available_projects.html">available_projects</a></span>()
-<span class="co">#&gt; using temporary cache /tmp/RtmprLojZU/BiocFileCache</span>
-<span class="co">#&gt; 2020-09-28 04:50:00 caching file sra.recount_project.MD.gz.</span>
+<span class="co">#&gt; using temporary cache /tmp/RtmpOR7GNk/BiocFileCache</span>
+<span class="co">#&gt; 2020-09-28 05:28:11 caching file sra.recount_project.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/sra.recount_project.MD.gz'</span>
-<span class="co">#&gt; 2020-09-28 04:50:01 caching file gtex.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-09-28 05:28:11 caching file gtex.recount_project.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/gtex.recount_project.MD.gz'</span>
-<span class="co">#&gt; 2020-09-28 04:50:01 caching file tcga.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-09-28 05:28:12 caching file tcga.recount_project.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/tcga/metadata/tcga.recount_project.MD.gz'</span>
 
 <span class="co">## Find the project you are interested in,</span>
@@ -254,28 +254,28 @@
 
 <span class="co">## Create a RangedSummarizedExperiment (RSE) object at the gene level</span>
 <span class="kw">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_rse.html">create_rse</a></span>(<span class="kw">proj_info</span>)
-<span class="co">#&gt; 2020-09-28 04:50:06 downloading and reading the metadata.</span>
-<span class="co">#&gt; 2020-09-28 04:50:06 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-28 05:28:16 downloading and reading the metadata.</span>
+<span class="co">#&gt; 2020-09-28 05:28:17 caching file sra.sra.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.sra.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-09-28 04:50:07 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-28 05:28:17 caching file sra.recount_project.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_project.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-09-28 04:50:07 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-28 05:28:17 caching file sra.recount_qc.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_qc.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-09-28 04:50:07 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-28 05:28:18 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_seq_qc.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-09-28 04:50:08 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-28 05:28:18 caching file sra.recount_pred.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_pred.SRP009615.MD.gz'</span>
 <span class="co">#&gt; Warning: Replacing study_acc by study in sra.sra.SRP009615.MD.gz</span>
 <span class="co">#&gt; Warning: Replacing run_acc by external_id in sra.sra.SRP009615.MD.gz</span>
 <span class="co">#&gt; Warning: Replacing study_acc by study in sra.recount_qc.SRP009615.MD.gz</span>
 <span class="co">#&gt; Warning: Replacing run_acc by external_id in sra.recount_qc.SRP009615.MD.gz</span>
-<span class="co">#&gt; 2020-09-28 04:50:08 downloading and reading the feature information.</span>
-<span class="co">#&gt; 2020-09-28 04:50:08 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="co">#&gt; 2020-09-28 05:28:18 downloading and reading the feature information.</span>
+<span class="co">#&gt; 2020-09-28 05:28:18 caching file human.gene_sums.G026.gtf.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/annotations/gene_sums/human.gene_sums.G026.gtf.gz'</span>
-<span class="co">#&gt; 2020-09-28 04:50:09 downloading and reading the counts: 12 samples across 63856 features.</span>
-<span class="co">#&gt; 2020-09-28 04:50:09 caching file sra.gene_sums.SRP009615.G026.gz.</span>
+<span class="co">#&gt; 2020-09-28 05:28:20 downloading and reading the counts: 12 samples across 63856 features.</span>
+<span class="co">#&gt; 2020-09-28 05:28:20 caching file sra.gene_sums.SRP009615.G026.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.G026.gz'</span>
-<span class="co">#&gt; 2020-09-28 04:50:10 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class="co">#&gt; 2020-09-28 05:28:20 construcing the RangedSummarizedExperiment (rse) object.</span>
 
 <span class="co">## Explore that RSE object</span>
 <span class="kw">rse_gene_SRP009615</span>
@@ -294,15 +294,15 @@
 <span class="co">if</span> (<span class="fu"><a href="https://rdrr.io/r/base/interactive.html">interactive</a></span>()) {
     <span class="co">## Note that you can interactively explore the available projects</span>
     <span class="kw">proj_info_interactive</span> <span class="op">&lt;-</span> <span class="kw">interactiveDisplayBase</span>::<span class="fu"><a href="https://rdrr.io/pkg/interactiveDisplayBase/man/interactiveDisplayBase-methods.html">display</a></span>(<span class="kw">human_projects</span>)
-    
-    <span class="co">## Select a single row, then hit "send". The following checks this.</span>
+
+    <span class="co">## Select a single row, then hit "send". The following code checks this.</span>
     <span class="fu"><a href="https://rdrr.io/r/base/stopifnot.html">stopifnot</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span>(<span class="kw">proj_info_interactive</span>) <span class="op">==</span> <span class="fl">1</span>)
-    
+
     <span class="co">## This is similar to using the following code to explore all of</span>
     <span class="co">## ExperimentHub, choosing one recount3 entry, then hitting "send"</span>
     <span class="co"># eh2 &lt;- AnnotationHub::display(ExperimentHub::ExperimentHub())</span>
     <span class="co"># proj_info_interactive &lt;- eh2[[1]]</span>
-    
+
     <span class="co">## Then create the RSE object</span>
     <span class="kw">rse_gene_interactive</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_rse.html">create_rse</a></span>(<span class="kw">proj_info_interactive</span>)
 }
@@ -318,10 +318,34 @@
 <div id="find-a-study" class="section level2">
 <h2 class="hasAnchor">
 <a href="#find-a-study" class="anchor"></a>Find a study</h2>
+<ul>
+<li>ExperimentHub</li>
+<li>List of projects
+<ul>
+<li>interactiveDisplayBase</li>
+</ul>
+</li>
+</ul>
 </div>
 <div id="available-annotations" class="section level2">
 <h2 class="hasAnchor">
 <a href="#available-annotations" class="anchor"></a>Available annotations</h2>
+<ul>
+<li>Human</li>
+<li>Mouse</li>
+</ul>
+</div>
+<div id="build-a-rse" class="section level2">
+<h2 class="hasAnchor">
+<a href="#build-a-rse" class="anchor"></a>Build a RSE</h2>
+<ul>
+<li>create_rse</li>
+<li>metadata(rse)</li>
+<li>colData(rse)</li>
+<li>scale_counts(rse) TODO</li>
+<li>junction-specific notes</li>
+<li>collection vs data source</li>
+</ul>
 </div>
 <div id="local-files" class="section level2">
 <h2 class="hasAnchor">
@@ -362,6 +386,31 @@
     <span class="fu"><a href="https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html">bfcinfo</a></span>()
 }
 </pre></div>
+</div>
+<div id="bigwig-files" class="section level2">
+<h2 class="hasAnchor">
+<a href="#bigwig-files" class="anchor"></a>BigWig files</h2>
+<ul>
+<li>refer to megadepth</li>
+<li>refer to derfinder</li>
+</ul>
+</div>
+<div id="your-own-mirror" class="section level2">
+<h2 class="hasAnchor">
+<a href="#your-own-mirror" class="anchor"></a>Your own mirror</h2>
+<ul>
+<li>file_locate_url() and file_locate_url_annotation() can be used to get the full list of URLs</li>
+<li>available_projects() will show the data you have locally</li>
+<li>file_retrieve() won’t cache the data</li>
+</ul>
+</div>
+<div id="other-related-tools" class="section level2">
+<h2 class="hasAnchor">
+<a href="#other-related-tools" class="anchor"></a>Other related tools</h2>
+<ul>
+<li>mention snapcount</li>
+<li>mention again the main documentation website</li>
+</ul>
 </div>
 </div>
 <div id="reproducibility" class="section level1">
@@ -404,9 +453,9 @@
 <span class="co">#&gt; [1] TRUE</span>
 </pre></div>
 <p>Date the vignette was generated.</p>
-<pre><code>#&gt; [1] "2020-09-28 04:50:11 UTC"</code></pre>
+<pre><code>#&gt; [1] "2020-09-28 05:28:22 UTC"</code></pre>
 <p>Wallclock time spent generating the vignette.</p>
-<pre><code>#&gt; Time difference of 23.085 secs</code></pre>
+<pre><code>#&gt; Time difference of 21.69 secs</code></pre>
 <p><code>R</code> session information.</p>
 <pre><code>#&gt; ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
 #&gt;  setting  value                                      
