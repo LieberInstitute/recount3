@@ -156,7 +156,8 @@ If you have identified a **study** of interest and want to access the gene level
 ## Find all available human projects
 human_projects <- available_projects()
 
-## Find the project you are interested in
+## Find the project you are interested in,
+## here we use SRP009615 as an example
 proj_info <- subset(
     human_projects,
     project == "SRP009615" & project_type == "data_sources"
@@ -167,6 +168,25 @@ rse_gene_SRP009615 <- create_rse(proj_info)
 
 ## Explore that RSE object
 rse_gene_SRP009615
+
+## You can also interactively choose your study of interest
+if (interactive()) {
+    ## Note that you can interactively explore the available projects
+    proj_info_interactive <- interactiveDisplayBase::display(human_projects)
+    
+    ## Select a single row, then hit "send". The following checks this.
+    stopifnot(nrow(proj_info_interactive) == 1)
+    
+    ## This is similar to using the following code to explore all of
+    ## ExperimentHub, choosing one recount3 entry, then hitting "send"
+    # eh2 <- AnnotationHub::display(ExperimentHub::ExperimentHub())
+    # proj_info_interactive <- eh2[[1]]
+    
+    ## Then create the RSE object
+    rse_gene_interactive <- create_rse(proj_info_interactive)
+}
+
+## TODO scale_counts
 ```
 
 `r Biocpkg('recount3')` also supports accessing the BigWig raw coverage files as well as specific study or compilation sample **metadata**. Please continue to the users guide for more detailed information.

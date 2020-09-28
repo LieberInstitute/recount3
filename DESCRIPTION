@@ -34,7 +34,8 @@ Suggests:
     RefManageR,
     rmarkdown,
     testthat,
-    pryr
+    pryr,
+    interactiveDisplayBase
 VignetteBuilder: knitr
 Depends: 
     SummarizedExperiment
@@ -51,4 +52,5 @@ Imports:
     R.utils,
     Matrix,
     GenomicRanges,
-    sessioninfo
+    sessioninfo,
+    ExperimentHub
