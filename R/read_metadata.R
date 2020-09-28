@@ -16,18 +16,18 @@
 #' @examples
 #'
 #' ## Download the metadata files for project ERP110066
-#' url_ERP110066_meta <- file_locate_url(
-#'     "ERP110066",
+#' url_SRP009615_meta <- file_locate_url(
+#'     "SRP009615",
 #'     "data_sources/sra"
 #' )
-#' local_ERP110066_meta <- file_retrieve(
-#'     url = url_ERP110066_meta
+#' local_SRP009615_meta <- file_retrieve(
+#'     url = url_SRP009615_meta
 #' )
 #'
 #' ## Read the metadata
-#' ERP110066_meta <- read_metadata(local_ERP110066_meta)
-#' dim(ERP110066_meta)
-#' colnames(ERP110066_meta)
+#' SRP009615_meta <- read_metadata(local_SRP009615_meta)
+#' dim(SRP009615_meta)
+#' colnames(SRP009615_meta)
 #'
 #' ## Read the metadata files for a project in a collection
 #' ## Note: using the test files since I can't access collections right now
@@ -46,12 +46,12 @@
 #' colnames(ERP110066_collection_meta)[!colnames(ERP110066_collection_meta) %in% colnames(ERP110066_meta)]
 #'
 #' ## Read the metadata for a mouse project
-#' SRP060340_meta <- read_metadata(
+#' DRP002367_meta <- read_metadata(
 #'     metadata_files = file_retrieve(
-#'         file_locate_url("SRP060340", "data_sources/sra", organism = "mouse")
+#'         file_locate_url("DRP002367", "data_sources/sra", organism = "mouse")
 #'     )
 #' )
-#' dim(SRP060340_meta)
+#' dim(DRP002367_meta)
 #'
 #' ## Locate and read the GTEx bladder metadata
 #' gtex_bladder_meta <- read_metadata(

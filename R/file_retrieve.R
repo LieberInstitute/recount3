@@ -15,26 +15,26 @@
 #' @family internal functions for accessing the recount3 data
 #' @examples
 #'
-#' ## Download the metadata file for project ERP110066
-#' url_ERP110066_meta <- file_locate_url(
-#'     "ERP110066",
+#' ## Download the metadata file for project SRP009615
+#' url_SRP009615_meta <- file_locate_url(
+#'     "SRP009615",
 #'     "data_sources/sra"
 #' )
-#' local_ERP110066_meta <- file_retrieve(
-#'     url = url_ERP110066_meta
+#' local_SRP009615_meta <- file_retrieve(
+#'     url = url_SRP009615_meta
 #' )
-#' local_ERP110066_meta
+#' local_SRP009615_meta
 #'
-#' ## Download the gene counts file for project ERP110066
-#' url_ERP110066_gene <- file_locate_url(
-#'     "ERP110066",
+#' ## Download the gene counts file for project SRP009615
+#' url_SRP009615_gene <- file_locate_url(
+#'     "SRP009615",
 #'     "data_sources/sra",
 #'     type = "gene"
 #' )
-#' local_ERP110066_gene <- file_retrieve(
-#'     url = url_ERP110066_gene
+#' local_SRP009615_gene <- file_retrieve(
+#'     url = url_SRP009615_gene
 #' )
-#' local_ERP110066_gene
+#' local_SRP009615_gene
 file_retrieve <- function(url, bfc = BiocFileCache::BiocFileCache()) {
     ## In case you are working with more than one url (like with metadata)
     if (length(url) > 1) {

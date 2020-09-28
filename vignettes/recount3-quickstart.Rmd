@@ -153,18 +153,20 @@ If you have identified a **study** of interest and want to access the gene level
 
 
 ```{r 'quick_example'}
-## Find a study of interest
-proj_info <- data.frame(
-    project = "ERP110066",
-    project_home = "data_sources/sra",
-    organism = "human"
+## Find all available human projects
+human_projects <- available_projects()
+
+## Find the project you are interested in
+proj_info <- subset(
+    human_projects,
+    project == "SRP009615" & project_type == "data_sources"
 )
 
 ## Create a RangedSummarizedExperiment (RSE) object at the gene level
-rse_gene_ERP110066 <- create_rse(proj_info)
+rse_gene_SRP009615 <- create_rse(proj_info)
 
 ## Explore that RSE object
-rse_gene_ERP110066
+rse_gene_SRP009615
 ```
 
 `r Biocpkg('recount3')` also supports accessing the BigWig raw coverage files as well as specific study or compilation sample **metadata**. Please continue to the users guide for more detailed information.

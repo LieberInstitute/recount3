@@ -14,6 +14,7 @@
 #' annotation_options("human")
 #' annotation_options("mouse")
 annotation_options <- function(organism = c("human", "mouse")) {
+    organism <- match.arg(organism)
     if (organism == "human") {
         options <- c(
             "gencode_v26",

@@ -31,7 +31,7 @@
 #'
 #' ## Example for metadata files from a project from SRA
 #' file_locate_url(
-#'     "ERP110066",
+#'     "SRP009615",
 #'     "data_sources/sra"
 #' )
 #'
@@ -44,7 +44,7 @@
 #'
 #' ## Example for a BigWig file
 #' file_locate_url(
-#'     "ERP110066",
+#'     "SRP009615",
 #'     "data_sources/sra",
 #'     "bw",
 #'     "human",
@@ -53,12 +53,12 @@
 #'
 #' ## Locate example gene count files
 #' file_locate_url(
-#'     "ERP110066",
+#'     "SRP009615",
 #'     "data_sources/sra",
 #'     "gene"
 #' )
 #' file_locate_url(
-#'     "ERP110066",
+#'     "SRP009615",
 #'     "data_sources/sra",
 #'     "gene",
 #'     annotation = "refseq"
@@ -74,7 +74,7 @@
 #'
 #' ## Locate example junction files
 #' file_locate_url(
-#'     "ERP110066",
+#'     "SRP009615",
 #'     "data_sources/sra",
 #'     "jxn"
 #' )

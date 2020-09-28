@@ -30,14 +30,14 @@
 #'
 #' ## Unlike create_rse(), here we create an RSE object by
 #' ## fully specifying all the arguments for locating this study
-#' rse_gene_ERP110066_manual <- create_rse_manual(
-#'     "ERP110066",
+#' rse_gene_SRP009615_manual <- create_rse_manual(
+#'     "SRP009615",
 #'     "data_sources/sra"
 #' )
-#' rse_gene_ERP110066_manual
+#' rse_gene_SRP009615_manual
 #'
 #' ## Check how much memory this RSE object uses
-#' pryr::object_size(rse_gene_ERP110066_manual)
+#' pryr::object_size(rse_gene_SRP009615_manual)
 #'
 #' ## Test with a collection that has a single sample
 #' ## NOTE: this requires loading the full data for this study when
@@ -53,15 +53,15 @@
 #' pryr::object_size(rse_gene_ERP110066_collection_manual)
 #'
 #' ## Mouse example
-#' rse_gene_SRP060340_manual <- create_rse_manual(
-#'     "SRP060340",
+#' rse_gene_DRP002367_manual <- create_rse_manual(
+#'     "DRP002367",
 #'     "data_sources/sra",
 #'     organism = "mouse"
 #' )
-#' rse_gene_SRP060340_manual
+#' rse_gene_DRP002367_manual
 #'
 #' ## Information about how this RSE was made
-#' metadata(rse_gene_SRP060340_manual)
+#' metadata(rse_gene_DRP002367_manual)
 #'
 #' ## Test with a collection that has one sample, at the exon level
 #' ## NOTE: this requires loading the full data for this study (nearly 6GB!)
@@ -106,14 +106,15 @@
 #' }
 #'
 #' \dontrun{
+#' ## For testing and debugging
 #' project <- "ERP110066"
 #' project_home <- "collections/geuvadis_smartseq"
 #'
-#' project <- "ERP001942"
+#' project <- "SRP009615"
 #' project_home <- "data_sources/sra"
-#' type <- "jxn"
+#' type <- "gene"
 #' organism <- "human"
-#' annotation <- "gencode_v26"
+#' annotation <- "refseq"
 #' jxn_format <- "ALL"
 #' bfc <- BiocFileCache::BiocFileCache()
 #' recount3_url <- "http://idies.jhu.edu/recount3/data"
@@ -197,6 +198,15 @@ create_rse_manual <- function(project,
                 ),
                 bfc = bfc
             ))
+
+        ## Fix some gene names
+        if(type == "gene") {
+            if (annotation == "sirv") {
+                feature_info$gene_id <- gsub("\\.SIRV", "", feature_info$gene_id)
+            } else if (annotation == "refseq") {
+                feature_info$gene_id <- gsub("gene\\.", "", feature_info$gene_id)
+            }
+        }
     } else if (type == "jxn") {
         feature_info <- utils::read.delim(file_retrieve(
             url = jxn_files[grep("\\.RR\\.gz$", jxn_files)],
@@ -310,5 +320,10 @@ create_rse_manual <- function(project,
             recount3_url = recount3_url
         )
     )
+    if(type %in% c("gene", "exon")) {
+        ## Change the name for gene and exons, just to highlight that these
+        ## are not read counts
+        assayNames(rse) <- "raw_counts"
+    }
     return(rse)
 }
