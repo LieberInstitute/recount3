@@ -215,26 +215,26 @@ or a local directory where you have mirrored <code>recount3</code>.</p></td>
     <pre class="examples"><div class='input'>
 <span class='co'>## Example for metadata files from a project from SRA</span>
 <span class='fu'>file_locate_url</span>(
-    <span class='st'>"ERP110066"</span>,
+    <span class='st'>"SRP009615"</span>,
     <span class='st'>"data_sources/sra"</span>
 )
-</div><div class='output co'>#&gt;                                                                                               sra.sra.ERP110066.MD.gz 
-#&gt;             "http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.sra.ERP110066.MD.gz" 
-#&gt;                                                                                   sra.recount_project.ERP110066.MD.gz 
-#&gt; "http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.recount_project.ERP110066.MD.gz" 
-#&gt;                                                                                        sra.recount_qc.ERP110066.MD.gz 
-#&gt;      "http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.recount_qc.ERP110066.MD.gz" 
-#&gt;                                                                                    sra.recount_seq_qc.ERP110066.MD.gz 
-#&gt;  "http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.recount_seq_qc.ERP110066.MD.gz" 
-#&gt;                                                                                      sra.recount_pred.ERP110066.MD.gz 
-#&gt;    "http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.recount_pred.ERP110066.MD.gz" </div><div class='input'>
+</div><div class='output co'>#&gt;                                                                                               sra.sra.SRP009615.MD.gz 
+#&gt;             "http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.sra.SRP009615.MD.gz" 
+#&gt;                                                                                   sra.recount_project.SRP009615.MD.gz 
+#&gt; "http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_project.SRP009615.MD.gz" 
+#&gt;                                                                                        sra.recount_qc.SRP009615.MD.gz 
+#&gt;      "http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_qc.SRP009615.MD.gz" 
+#&gt;                                                                                    sra.recount_seq_qc.SRP009615.MD.gz 
+#&gt;  "http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_seq_qc.SRP009615.MD.gz" 
+#&gt;                                                                                      sra.recount_pred.SRP009615.MD.gz 
+#&gt;    "http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_pred.SRP009615.MD.gz" </div><div class='input'>
 <span class='co'>## Example for metadata files from a project that is part of a collection</span>
 <span class='fu'>file_locate_url</span>(
     <span class='st'>"ERP110066"</span>,
     <span class='st'>"collections/geuvadis_smartseq"</span>,
     recount3_url = <span class='st'>"http://snaptron.cs.jhu.edu/data/temp/recount3"</span>
 )
-</div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:46:55 caching file geuvadis_smartseq.recount_project.gz.</span></div><div class='output co'>#&gt;                                                                                                          sra.sra.ERP110066.MD.gz 
+</div><div class='output co'>#&gt; <span class='message'>2020-09-28 02:43:33 caching file geuvadis_smartseq.recount_project.gz.</span></div><div class='output co'>#&gt;                                                                                                          sra.sra.ERP110066.MD.gz 
 #&gt;             "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.sra.ERP110066.MD.gz" 
 #&gt;                                                                                              sra.recount_project.ERP110066.MD.gz 
 #&gt; "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_project.ERP110066.MD.gz" 
@@ -248,29 +248,29 @@ or a local directory where you have mirrored <code>recount3</code>.</p></td>
 #&gt;         "http://snaptron.cs.jhu.edu/data/temp/recount3/human/collections/geuvadis_smartseq/metadata/geuvadis_smartseq.custom.gz" </div><div class='input'>
 <span class='co'>## Example for a BigWig file</span>
 <span class='fu'>file_locate_url</span>(
-    <span class='st'>"ERP110066"</span>,
+    <span class='st'>"SRP009615"</span>,
     <span class='st'>"data_sources/sra"</span>,
     <span class='st'>"bw"</span>,
     <span class='st'>"human"</span>,
     <span class='st'>"ERR204900"</span>
 )
-</div><div class='output co'>#&gt;                                                                                       sra.base_sums.ERP110066_ERR204900.ALL.bw 
-#&gt; "http://idies.jhu.edu/recount3/data/human/data_sources/sra/base_sums/66/ERP110066/00/sra.base_sums.ERP110066_ERR204900.ALL.bw" </div><div class='input'>
+</div><div class='output co'>#&gt;                                                                                       sra.base_sums.SRP009615_ERR204900.ALL.bw 
+#&gt; "http://idies.jhu.edu/recount3/data/human/data_sources/sra/base_sums/15/SRP009615/00/sra.base_sums.SRP009615_ERR204900.ALL.bw" </div><div class='input'>
 <span class='co'>## Locate example gene count files</span>
 <span class='fu'>file_locate_url</span>(
-    <span class='st'>"ERP110066"</span>,
+    <span class='st'>"SRP009615"</span>,
     <span class='st'>"data_sources/sra"</span>,
     <span class='st'>"gene"</span>
 )
-</div><div class='output co'>#&gt;                                                                                    sra.gene_sums.ERP110066.G026.gz 
-#&gt; "http://idies.jhu.edu/recount3/data/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.G026.gz" </div><div class='input'><span class='fu'>file_locate_url</span>(
-    <span class='st'>"ERP110066"</span>,
+</div><div class='output co'>#&gt;                                                                                    sra.gene_sums.SRP009615.G026.gz 
+#&gt; "http://idies.jhu.edu/recount3/data/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.G026.gz" </div><div class='input'><span class='fu'>file_locate_url</span>(
+    <span class='st'>"SRP009615"</span>,
     <span class='st'>"data_sources/sra"</span>,
     <span class='st'>"gene"</span>,
     annotation = <span class='st'>"refseq"</span>
 )
-</div><div class='output co'>#&gt;                                                                                    sra.gene_sums.ERP110066.R109.gz 
-#&gt; "http://idies.jhu.edu/recount3/data/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.R109.gz" </div><div class='input'>
+</div><div class='output co'>#&gt;                                                                                    sra.gene_sums.SRP009615.R109.gz 
+#&gt; "http://idies.jhu.edu/recount3/data/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.R109.gz" </div><div class='input'>
 <span class='co'>## Example for a gene count file from a project that is part of a collection</span>
 <span class='fu'>file_locate_url</span>(
     <span class='st'>"ERP110066"</span>,
@@ -278,20 +278,20 @@ or a local directory where you have mirrored <code>recount3</code>.</p></td>
     <span class='st'>"gene"</span>,
     recount3_url = <span class='st'>"http://snaptron.cs.jhu.edu/data/temp/recount3"</span>
 )
-</div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:46:56 caching file geuvadis_smartseq.recount_project.gz.</span></div><div class='output co'>#&gt;                                                                                               sra.gene_sums.ERP110066.G026.gz 
+</div><div class='output co'>#&gt; <span class='message'>2020-09-28 02:43:34 caching file geuvadis_smartseq.recount_project.gz.</span></div><div class='output co'>#&gt;                                                                                               sra.gene_sums.ERP110066.G026.gz 
 #&gt; "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.G026.gz" </div><div class='input'>
 <span class='co'>## Locate example junction files</span>
 <span class='fu'>file_locate_url</span>(
-    <span class='st'>"ERP110066"</span>,
+    <span class='st'>"SRP009615"</span>,
     <span class='st'>"data_sources/sra"</span>,
     <span class='st'>"jxn"</span>
 )
-</div><div class='output co'>#&gt;                                                                                    sra.junctions.ERP110066.ALL.MM.gz 
-#&gt; "http://idies.jhu.edu/recount3/data/human/data_sources/sra/junctions/66/ERP110066/sra.junctions.ERP110066.ALL.MM.gz" 
-#&gt;                                                                                    sra.junctions.ERP110066.ALL.RR.gz 
-#&gt; "http://idies.jhu.edu/recount3/data/human/data_sources/sra/junctions/66/ERP110066/sra.junctions.ERP110066.ALL.RR.gz" 
-#&gt;                                                                                    sra.junctions.ERP110066.ALL.ID.gz 
-#&gt; "http://idies.jhu.edu/recount3/data/human/data_sources/sra/junctions/66/ERP110066/sra.junctions.ERP110066.ALL.ID.gz" </div><div class='input'>
+</div><div class='output co'>#&gt;                                                                                    sra.junctions.SRP009615.ALL.MM.gz 
+#&gt; "http://idies.jhu.edu/recount3/data/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.MM.gz" 
+#&gt;                                                                                    sra.junctions.SRP009615.ALL.RR.gz 
+#&gt; "http://idies.jhu.edu/recount3/data/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.RR.gz" 
+#&gt;                                                                                    sra.junctions.SRP009615.ALL.ID.gz 
+#&gt; "http://idies.jhu.edu/recount3/data/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.ID.gz" </div><div class='input'>
 <span class='co'>## Example for metadata files from a project from SRA</span>
 <span class='fu'>file_locate_url</span>(
     <span class='st'>"ERP001942"</span>,

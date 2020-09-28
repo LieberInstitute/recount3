@@ -176,51 +176,44 @@ base-pair coverage counts used in recount2 and recount3.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='co'>## Download the gene counts file for project ERP110066</span>
-<span class='kw'>url_ERP110066_gene</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(
-    <span class='st'>"ERP110066"</span>,
+<span class='co'>## Download the gene counts file for project SRP009615</span>
+<span class='kw'>url_SRP009615_gene</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(
+    <span class='st'>"SRP009615"</span>,
     <span class='st'>"data_sources/sra"</span>,
     type = <span class='st'>"gene"</span>
 )
-<span class='kw'>local_ERP110066_gene</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span>(url = <span class='kw'>url_ERP110066_gene</span>)
-</div><div class='output co'>#&gt; <span class='message'>2020-09-27 21:46:59 caching file sra.gene_sums.ERP110066.G026.gz.</span></div><div class='input'>
+<span class='kw'>local_SRP009615_gene</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span>(url = <span class='kw'>url_SRP009615_gene</span>)
+</div><div class='output co'>#&gt; <span class='message'>2020-09-28 02:43:37 caching file sra.gene_sums.SRP009615.G026.gz.</span></div><div class='input'>
 <span class='co'>## Read the gene counts, take about 3 seconds</span>
-<span class='fu'><a href='https://rdrr.io/r/base/system.time.html'>system.time</a></span>(<span class='kw'>ERP110066_gene_counts</span> <span class='op'>&lt;-</span> <span class='fu'>read_counts</span>(<span class='kw'>local_ERP110066_gene</span>))
+<span class='fu'><a href='https://rdrr.io/r/base/system.time.html'>system.time</a></span>(<span class='kw'>SRP009615_gene_counts</span> <span class='op'>&lt;-</span> <span class='fu'>read_counts</span>(<span class='kw'>local_SRP009615_gene</span>))
 </div><div class='output co'>#&gt;    user  system elapsed 
-#&gt;   2.165   0.224   2.389 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>ERP110066_gene_counts</span>)
-</div><div class='output co'>#&gt; [1] 63856  1024</div><div class='input'>
+#&gt;    0.12    0.00    0.12 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>SRP009615_gene_counts</span>)
+</div><div class='output co'>#&gt; [1] 63856    12</div><div class='input'>
 <span class='co'>## Explore the top left corner</span>
-<span class='kw'>ERP110066_gene_counts</span>[<span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>), <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>)]
-</div><div class='output co'>#&gt;                   ERR2713300 ERR2713800 ERR2714100 ERR2713700 ERR2713600
-#&gt; ENSG00000278704.1          0          0          0          0          0
-#&gt; ENSG00000277400.1          0          0          0          0          0
-#&gt; ENSG00000274847.1          0          0          0          0          0
-#&gt; ENSG00000277428.1          0          0          0          0          0
-#&gt; ENSG00000276256.1          0          0          0          0          0
-#&gt; ENSG00000278198.1          0          0          0          0          0
-#&gt;                   ERR2713500
-#&gt; ENSG00000278704.1          0
-#&gt; ENSG00000277400.1          0
-#&gt; ENSG00000274847.1          0
-#&gt; ENSG00000277428.1          0
-#&gt; ENSG00000276256.1          0
-#&gt; ENSG00000278198.1          0</div><div class='input'>
+<span class='kw'>SRP009615_gene_counts</span>[<span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>), <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>)]
+</div><div class='output co'>#&gt;                   SRR389077 SRR387777 SRR387778 SRR389078 SRR387779 SRR389079
+#&gt; ENSG00000278704.1         0         0         0         0         0         0
+#&gt; ENSG00000277400.1         0         0         0         0         0         0
+#&gt; ENSG00000274847.1         0         0         0         0         0         0
+#&gt; ENSG00000277428.1         0         0         0         0         0         0
+#&gt; ENSG00000276256.1         0         0         0         0         0         0
+#&gt; ENSG00000278198.1         0         0         0         0         0         0</div><div class='input'>
 <span class='co'>## Explore the first 6 samples.</span>
-<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='kw'>ERP110066_gene_counts</span>[, <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>)])
-</div><div class='output co'>#&gt;    ERR2713300        ERR2713800        ERR2714100         ERR2713700     
-#&gt;  Min.   :      0   Min.   :      0   Min.   :     0.0   Min.   :      0  
-#&gt;  1st Qu.:      0   1st Qu.:      0   1st Qu.:     0.0   1st Qu.:      0  
-#&gt;  Median :      0   Median :      0   Median :     0.0   Median :      0  
-#&gt;  Mean   :   1268   Mean   :   1589   Mean   :   258.6   Mean   :   1786  
-#&gt;  3rd Qu.:      0   3rd Qu.:      0   3rd Qu.:     0.0   3rd Qu.:      0  
-#&gt;  Max.   :1904977   Max.   :2379433   Max.   :478870.0   Max.   :3229024  
-#&gt;    ERR2713600        ERR2713500     
-#&gt;  Min.   :      0   Min.   :      0  
-#&gt;  1st Qu.:      0   1st Qu.:      0  
-#&gt;  Median :      0   Median :      0  
-#&gt;  Mean   :   1602   Mean   :   1704  
-#&gt;  3rd Qu.:      0   3rd Qu.:      0  
-#&gt;  Max.   :2198999   Max.   :1446810  </div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='kw'>SRP009615_gene_counts</span>[, <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>)])
+</div><div class='output co'>#&gt;    SRR389077          SRR387777          SRR387778          SRR389078       
+#&gt;  Min.   :       0   Min.   :       0   Min.   :       0   Min.   :       0  
+#&gt;  1st Qu.:       0   1st Qu.:       0   1st Qu.:       0   1st Qu.:       0  
+#&gt;  Median :      36   Median :      68   Median :      72   Median :      61  
+#&gt;  Mean   :    7757   Mean   :   11897   Mean   :   13213   Mean   :    8473  
+#&gt;  3rd Qu.:    1483   3rd Qu.:    2496   3rd Qu.:    2832   3rd Qu.:    1505  
+#&gt;  Max.   :19403569   Max.   :10234801   Max.   :10622529   Max.   :20949547  
+#&gt;    SRR387779          SRR389079       
+#&gt;  Min.   :       0   Min.   :       0  
+#&gt;  1st Qu.:       0   1st Qu.:       0  
+#&gt;  Median :      60   Median :     144  
+#&gt;  Mean   :   18242   Mean   :   23159  
+#&gt;  3rd Qu.:    3479   3rd Qu.:    5661  
+#&gt;  Max.   :14667496   Max.   :14832424  </div><div class='input'>
 <span class='co'>## Note that the count units are in</span>
 <span class='co'>## base-pair coverage counts just like in the recount2 project.</span>
 <span class='co'>## See https://doi.org/10.12688/f1000research.12223.1 for more details</span>
@@ -230,32 +223,58 @@ base-pair coverage counts used in recount2 and recount3.</p>
 <span class='co'>## RangedSummarizedExperiment object.</span>
 
 <span class='co'>## Locate and retrieve an exon counts file</span>
-<span class='co'>## Requires about 5GB of RAM</span>
-<span class='co'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='kw'>local_ERP110066_exon</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span>(
+<span class='kw'>local_SRP009615_exon</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span>(
     <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(
-        <span class='st'>"ERP110066"</span>,
+        <span class='st'>"SRP009615"</span>,
         <span class='st'>"data_sources/sra"</span>,
         type = <span class='st'>"exon"</span>
     )
 )
-<span class='kw'>local_ERP110066_exon</span>
-
+</div><div class='output co'>#&gt; <span class='message'>2020-09-28 02:43:39 caching file sra.exon_sums.SRP009615.G026.gz.</span></div><div class='input'><span class='kw'>local_SRP009615_exon</span>
+</div><div class='output co'>#&gt;                                             sra.exon_sums.SRP009615.G026.gz 
+#&gt; "/tmp/RtmpvcoTE7/BiocFileCache/a1f69ff1fca_sra.exon_sums.SRP009615.G026.gz" </div><div class='input'>
 <span class='co'>## Read the exon counts, takes about 50-60 seconds</span>
 <span class='fu'><a href='https://rdrr.io/r/base/system.time.html'>system.time</a></span>(
-    <span class='kw'>ERP110066_exon_counts</span> <span class='op'>&lt;-</span> <span class='fu'>read_counts</span>(
-        <span class='kw'>local_ERP110066_exon</span>
+    <span class='kw'>SRP009615_exon_counts</span> <span class='op'>&lt;-</span> <span class='fu'>read_counts</span>(
+        <span class='kw'>local_SRP009615_exon</span>
     )
 )
-<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>ERP110066_exon_counts</span>)
-
+</div><div class='output co'>#&gt;    user  system elapsed 
+#&gt;   0.985   0.088   1.074 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>SRP009615_exon_counts</span>)
+</div><div class='output co'>#&gt; [1] 1299686      12</div><div class='input'><span class='kw'>pryr</span>::<span class='fu'><a href='https://rdrr.io/pkg/pryr/man/object_size.html'>object_size</a></span>(<span class='kw'>SRP009615_exon_counts</span>)
+</div><div class='output co'>#&gt; 123 MB</div><div class='input'>
 <span class='co'>## Explore the top left corner</span>
-<span class='kw'>ERP110066_exon_counts</span>[<span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>), <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>)]
-
+<span class='kw'>SRP009615_exon_counts</span>[<span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>), <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>)]
+</div><div class='output co'>#&gt;                            SRR389077 SRR387777 SRR387778 SRR389078 SRR387779
+#&gt; GL000009.2|56140|58376|-           0         0         0         0         0
+#&gt; GL000194.1|53594|54832|-           0         0         0         0         0
+#&gt; GL000194.1|55446|55676|-           0         0         0         0         0
+#&gt; GL000194.1|53590|55676|-           0         0         0         0         0
+#&gt; GL000194.1|112792|112850|-         0         0         0         0         0
+#&gt; GL000194.1|112792|112850|-         0         0         0         0         0
+#&gt;                            SRR389079
+#&gt; GL000009.2|56140|58376|-           0
+#&gt; GL000194.1|53594|54832|-           0
+#&gt; GL000194.1|55446|55676|-           0
+#&gt; GL000194.1|53590|55676|-           0
+#&gt; GL000194.1|112792|112850|-         0
+#&gt; GL000194.1|112792|112850|-         0</div><div class='input'>
 <span class='co'>## Explore the first 6 samples.</span>
-<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='kw'>ERP110066_exon_counts</span>[, <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>)])
-}
-</div></pre>
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='kw'>SRP009615_exon_counts</span>[, <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>)])
+</div><div class='output co'>#&gt;    SRR389077          SRR387777          SRR387778          SRR389078       
+#&gt;  Min.   :       0   Min.   :       0   Min.   :       0   Min.   :       0  
+#&gt;  1st Qu.:       0   1st Qu.:       0   1st Qu.:       0   1st Qu.:       0  
+#&gt;  Median :     105   Median :     186   Median :     213   Median :      93  
+#&gt;  Mean   :    1401   Mean   :    2334   Mean   :    2574   Mean   :    1491  
+#&gt;  3rd Qu.:     762   3rd Qu.:    1391   3rd Qu.:    1512   3rd Qu.:     741  
+#&gt;  Max.   :19403569   Max.   :10234801   Max.   :10622529   Max.   :20949547  
+#&gt;    SRR387779          SRR389079       
+#&gt;  Min.   :       0   Min.   :       0  
+#&gt;  1st Qu.:       0   1st Qu.:       0  
+#&gt;  Median :     225   Median :     397  
+#&gt;  Mean   :    3500   Mean   :    4457  
+#&gt;  3rd Qu.:    1768   3rd Qu.:    2425  
+#&gt;  Max.   :14667496   Max.   :14832424  </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
