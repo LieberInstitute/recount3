@@ -174,7 +174,7 @@ if (interactive()) {
     ## Note that you can interactively explore the available projects
     proj_info_interactive <- interactiveDisplayBase::display(human_projects)
 
-    ## Select a single row, then hit "send". The following checks this.
+    ## Select a single row, then hit "send". The following code checks this.
     stopifnot(nrow(proj_info_interactive) == 1)
 
     ## This is similar to using the following code to explore all of
