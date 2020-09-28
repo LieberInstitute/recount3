@@ -14,7 +14,7 @@
 #' `project_type` that differentiates between `data_sources` and `compilations`.
 #'
 #' @export
-#' @importFrom util read.delim
+#' @importFrom utils read.delim
 #'
 #' @examples
 #'
@@ -41,7 +41,6 @@
 available_samples <- function(organism = c("human", "mouse"),
     recount3_url = "http://idies.jhu.edu/recount3/data",
     bfc = BiocFileCache::BiocFileCache()) {
-
     organism <- match.arg(organism)
 
     homes <- project_home_available(
@@ -146,7 +145,6 @@ available_samples <- function(organism = c("human", "mouse"),
 available_projects <- function(organism = c("human", "mouse"),
     recount3_url = "http://idies.jhu.edu/recount3/data",
     bfc = BiocFileCache::BiocFileCache()) {
-
     organism <- match.arg(organism)
 
     samples <- available_samples(

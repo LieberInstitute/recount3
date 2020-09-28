@@ -2,6 +2,8 @@
 
 export(annotation_ext)
 export(annotation_options)
+export(available_projects)
+export(available_samples)
 export(create_rse)
 export(create_rse_manual)
 export(file_list)

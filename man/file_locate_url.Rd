@@ -55,7 +55,7 @@ the file using \code{file_retrieve()}.
 
 ## Example for metadata files from a project from SRA
 file_locate_url(
-    "ERP110066",
+    "SRP009615",
     "data_sources/sra"
 )
 
@@ -68,7 +68,7 @@ file_locate_url(
 
 ## Example for a BigWig file
 file_locate_url(
-    "ERP110066",
+    "SRP009615",
     "data_sources/sra",
     "bw",
     "human",
@@ -77,12 +77,12 @@ file_locate_url(
 
 ## Locate example gene count files
 file_locate_url(
-    "ERP110066",
+    "SRP009615",
     "data_sources/sra",
     "gene"
 )
 file_locate_url(
-    "ERP110066",
+    "SRP009615",
     "data_sources/sra",
     "gene",
     annotation = "refseq"
@@ -98,7 +98,7 @@ file_locate_url(
 
 ## Locate example junction files
 file_locate_url(
-    "ERP110066",
+    "SRP009615",
     "data_sources/sra",
     "jxn"
 )

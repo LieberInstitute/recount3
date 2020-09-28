@@ -200,7 +200,7 @@ create_rse_manual <- function(project,
             ))
 
         ## Fix some gene names
-        if(type == "gene") {
+        if (type == "gene") {
             if (annotation == "sirv") {
                 feature_info$gene_id <- gsub("\\.SIRV", "", feature_info$gene_id)
             } else if (annotation == "refseq") {
@@ -320,10 +320,13 @@ create_rse_manual <- function(project,
             recount3_url = recount3_url
         )
     )
-    if(type %in% c("gene", "exon")) {
+    if (type %in% c("gene", "exon")) {
         ## Change the name for gene and exons, just to highlight that these
         ## are not read counts
         assayNames(rse) <- "raw_counts"
+
+        ## Remove jxn_format since it has nothing to do with genes/exons
+        metadata(rse)$jxn_format <- NULL
     }
     return(rse)
 }

@@ -111,6 +111,14 @@
 #' dim(rse_jxn_SRP009615)
 #' rowRanges(rse_jxn_SRP009615)
 #' pryr::object_size(rse_jxn_SRP009615)
+#'
+#' ## Obtain a list of RSE objects for all exon annotations
+#' \dontrun{
+#' rses_exon <- lapply(annotation_options(), function(x) {
+#'     create_rse(proj_info, type = "exon", annotation = x)
+#' })
+#' names(rses_exon) <- annotation_options()
+#' }
 create_rse <-
     function(project_info,
     type = c("gene", "exon", "jxn"),

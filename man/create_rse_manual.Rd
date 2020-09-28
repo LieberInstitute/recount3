@@ -57,14 +57,14 @@ feature level for a given annotation.
 
 ## Unlike create_rse(), here we create an RSE object by
 ## fully specifying all the arguments for locating this study
-rse_gene_ERP110066_manual <- create_rse_manual(
-    "ERP110066",
+rse_gene_SRP009615_manual <- create_rse_manual(
+    "SRP009615",
     "data_sources/sra"
 )
-rse_gene_ERP110066_manual
+rse_gene_SRP009615_manual
 
 ## Check how much memory this RSE object uses
-pryr::object_size(rse_gene_ERP110066_manual)
+pryr::object_size(rse_gene_SRP009615_manual)
 
 ## Test with a collection that has a single sample
 ## NOTE: this requires loading the full data for this study when
@@ -80,15 +80,15 @@ rse_gene_ERP110066_collection_manual
 pryr::object_size(rse_gene_ERP110066_collection_manual)
 
 ## Mouse example
-rse_gene_SRP060340_manual <- create_rse_manual(
-    "SRP060340",
+rse_gene_DRP002367_manual <- create_rse_manual(
+    "DRP002367",
     "data_sources/sra",
     organism = "mouse"
 )
-rse_gene_SRP060340_manual
+rse_gene_DRP002367_manual
 
 ## Information about how this RSE was made
-metadata(rse_gene_SRP060340_manual)
+metadata(rse_gene_DRP002367_manual)
 
 ## Test with a collection that has one sample, at the exon level
 ## NOTE: this requires loading the full data for this study (nearly 6GB!)
@@ -133,14 +133,15 @@ pryr::object_size(rse_jxn_ERP001942_manual)
 }
 
 \dontrun{
+## For testing and debugging
 project <- "ERP110066"
 project_home <- "collections/geuvadis_smartseq"
 
-project <- "ERP001942"
+project <- "SRP009615"
 project_home <- "data_sources/sra"
-type <- "jxn"
+type <- "gene"
 organism <- "human"
-annotation <- "gencode_v26"
+annotation <- "refseq"
 jxn_format <- "ALL"
 bfc <- BiocFileCache::BiocFileCache()
 recount3_url <- "http://idies.jhu.edu/recount3/data"

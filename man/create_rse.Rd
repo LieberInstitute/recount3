@@ -49,77 +49,105 @@ retrieve the data, cache it, then assemble the RSE object.
 }
 \examples{
 
+## Find all available human projects
+human_projects <- available_projects()
+
 ## Find the project you are interested in
-## (temporarily build this data.frame)
-proj_info <- data.frame(
-    project = "ERP110066",
-    project_home = "data_sources/sra",
-    organism = "human"
+proj_info <- subset(
+    human_projects,
+    project == "SRP009615" & project_type == "data_sources"
 )
 
 ## Create a RSE object at the gene level
-rse_gene_ERP110066 <- create_rse(proj_info)
+rse_gene_SRP009615 <- create_rse(proj_info)
 
 ## Explore the resulting RSE gene object
-rse_gene_ERP110066
+rse_gene_SRP009615
 
 ## Information about how this RSE object was made
-metadata(rse_gene_ERP110066)
+metadata(rse_gene_SRP009615)
 
 ## Number of genes by number of samples
-dim(rse_gene_ERP110066)
+dim(rse_gene_SRP009615)
 
 ## Information about the genes
-rowRanges(rse_gene_ERP110066)
+rowRanges(rse_gene_SRP009615)
 
 ## Sample metadata
-colnames(colData(rse_gene_ERP110066))
+colnames(colData(rse_gene_SRP009615))
 
 ## Check how much memory this RSE object uses
-pryr::object_size(rse_gene_ERP110066)
+pryr::object_size(rse_gene_SRP009615)
 
-## Create a second RSE object using another annotation
-rse_gene_ERP110066_gencode_v29 <- create_rse(
+## Create an RSE object using gencode_v29 instead of gencode_v26
+rse_gene_SRP009615_gencode_v29 <- create_rse(
     proj_info,
     annotation = "gencode_v29"
 )
-rowRanges(rse_gene_ERP110066_gencode_v29)
+rowRanges(rse_gene_SRP009615_gencode_v29)
 
-## Doesn't work right now
-# rse_gene_ERP110066_refseq <- create_rse(
-#     proj_info,
-#     annotation = "refseq"
-# )
+## Create an RSE object using fantom6_cat instead of gencode_v26
+rse_gene_SRP009615_fantom6_cat <- create_rse(
+    proj_info,
+    annotation = "fantom6_cat"
+)
+rowRanges(rse_gene_SRP009615_fantom6_cat)
+
+\dontrun{
+## TODO: fix this!
+## Create an RSE object using refseq instead of gencode_v26
+rse_gene_SRP009615_refseq <- create_rse(
+    proj_info,
+    annotation = "refseq"
+)
+rowRanges(rse_gene_SRP009615_refseq)
+}
+
+## Create an RSE object using refseq instead of gencode_v26
+rse_gene_SRP009615_ercc <- create_rse(
+    proj_info,
+    annotation = "ercc"
+)
+rowRanges(rse_gene_SRP009615_ercc)
+
+## Create an RSE object using sirv instead of gencode_v26
+rse_gene_SRP009615_sirv <- create_rse(
+    proj_info,
+    annotation = "sirv"
+)
+rowRanges(rse_gene_SRP009615_sirv)
 
 ## Create a RSE object at the exon level
-\dontrun{
-rse_exon_ERP110066 <- create_rse(
+rse_exon_SRP009615 <- create_rse(
     proj_info,
     type = "exon"
 )
 
 ## Explore the resulting RSE exon object
-rse_exon_ERP110066
+rse_exon_SRP009615
 
-dim(rse_exon_ERP110066)
-rowRanges(rse_exon_ERP110066)
-pryr::object_size(rse_exon_ERP110066)
-# 5.73 GB
-}
+dim(rse_exon_SRP009615)
+rowRanges(rse_exon_SRP009615)
+pryr::object_size(rse_exon_SRP009615)
 
 ## Create a RSE object at the exon-exon junction level
-rse_jxn_ERP110066 <- create_rse(
+rse_jxn_SRP009615 <- create_rse(
     proj_info,
     type = "jxn"
 )
 
-## Explore the resulting RSE exon object
-rse_jxn_ERP110066
+## Explore the resulting RSE exon-exon junctions object
+rse_jxn_SRP009615
 
-dim(rse_jxn_ERP110066)
-rowRanges(rse_jxn_ERP110066)
-pryr::object_size(rse_jxn_ERP110066)
+dim(rse_jxn_SRP009615)
+rowRanges(rse_jxn_SRP009615)
+pryr::object_size(rse_jxn_SRP009615)
 
-## Remove the example rse_jxn for memory purposes
-rm(rse_jxn_ERP110066)
+## Obtain a list of RSE objects for all exon annotations
+\dontrun{
+rses_exon <- lapply(annotation_options(), function(x) {
+    create_rse(proj_info, type = "exon", annotation = x)
+})
+names(rses_exon) <- annotation_options()
+}
 }

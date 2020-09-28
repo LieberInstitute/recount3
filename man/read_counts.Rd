@@ -24,23 +24,23 @@ computer using \code{file_retrieve()}.
 }
 \examples{
 
-## Download the gene counts file for project ERP110066
-url_ERP110066_gene <- file_locate_url(
-    "ERP110066",
+## Download the gene counts file for project SRP009615
+url_SRP009615_gene <- file_locate_url(
+    "SRP009615",
     "data_sources/sra",
     type = "gene"
 )
-local_ERP110066_gene <- file_retrieve(url = url_ERP110066_gene)
+local_SRP009615_gene <- file_retrieve(url = url_SRP009615_gene)
 
 ## Read the gene counts, take about 3 seconds
-system.time(ERP110066_gene_counts <- read_counts(local_ERP110066_gene))
-dim(ERP110066_gene_counts)
+system.time(SRP009615_gene_counts <- read_counts(local_SRP009615_gene))
+dim(SRP009615_gene_counts)
 
 ## Explore the top left corner
-ERP110066_gene_counts[seq_len(6), seq_len(6)]
+SRP009615_gene_counts[seq_len(6), seq_len(6)]
 
 ## Explore the first 6 samples.
-summary(ERP110066_gene_counts[, seq_len(6)])
+summary(SRP009615_gene_counts[, seq_len(6)])
 
 ## Note that the count units are in
 ## base-pair coverage counts just like in the recount2 project.
@@ -51,31 +51,29 @@ summary(ERP110066_gene_counts[, seq_len(6)])
 ## RangedSummarizedExperiment object.
 
 ## Locate and retrieve an exon counts file
-## Requires about 5GB of RAM
-\dontrun{
-local_ERP110066_exon <- file_retrieve(
+local_SRP009615_exon <- file_retrieve(
     file_locate_url(
-        "ERP110066",
+        "SRP009615",
         "data_sources/sra",
         type = "exon"
     )
 )
-local_ERP110066_exon
+local_SRP009615_exon
 
 ## Read the exon counts, takes about 50-60 seconds
 system.time(
-    ERP110066_exon_counts <- read_counts(
-        local_ERP110066_exon
+    SRP009615_exon_counts <- read_counts(
+        local_SRP009615_exon
     )
 )
-dim(ERP110066_exon_counts)
+dim(SRP009615_exon_counts)
+pryr::object_size(SRP009615_exon_counts)
 
 ## Explore the top left corner
-ERP110066_exon_counts[seq_len(6), seq_len(6)]
+SRP009615_exon_counts[seq_len(6), seq_len(6)]
 
 ## Explore the first 6 samples.
-summary(ERP110066_exon_counts[, seq_len(6)])
-}
+summary(SRP009615_exon_counts[, seq_len(6)])
 }
 \references{
 \url{https://doi.org/10.12688/f1000research.12223.1} for details on the
