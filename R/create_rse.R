@@ -55,35 +55,40 @@
 #' )
 #' rowRanges(rse_gene_SRP009615_gencode_v29)
 #'
-#' ## Create an RSE object using fantom6_cat instead of gencode_v26
+#' ## Create an RSE object using FANTOM6_CAT instead of gencode_v26
 #' rse_gene_SRP009615_fantom6_cat <- create_rse(
 #'     proj_info,
 #'     annotation = "fantom6_cat"
 #' )
 #' rowRanges(rse_gene_SRP009615_fantom6_cat)
-#' \dontrun{
-#' ## TODO: fix this!
-#' ## Create an RSE object using refseq instead of gencode_v26
+#'
+#' ## Create an RSE object using RefSeq instead of gencode_v26
 #' rse_gene_SRP009615_refseq <- create_rse(
 #'     proj_info,
 #'     annotation = "refseq"
 #' )
 #' rowRanges(rse_gene_SRP009615_refseq)
-#' }
 #'
-#' ## Create an RSE object using refseq instead of gencode_v26
+#' ## Create an RSE object using ERCC instead of gencode_v26
 #' rse_gene_SRP009615_ercc <- create_rse(
 #'     proj_info,
 #'     annotation = "ercc"
 #' )
 #' rowRanges(rse_gene_SRP009615_ercc)
 #'
-#' ## Create an RSE object using sirv instead of gencode_v26
+#' ## Create an RSE object using SIRV instead of gencode_v26
 #' rse_gene_SRP009615_sirv <- create_rse(
 #'     proj_info,
 #'     annotation = "sirv"
 #' )
 #' rowRanges(rse_gene_SRP009615_sirv)
+#'
+#' ## Obtain a list of RSE objects for all gene annotations
+#' rses_gene <- lapply(annotation_options(), function(x) {
+#'     create_rse(proj_info, type = "gene", annotation = x)
+#' })
+#' names(rses_gene) <- annotation_options()
+#' rses_gene
 #'
 #' ## Create a RSE object at the exon level
 #' rse_exon_SRP009615 <- create_rse(

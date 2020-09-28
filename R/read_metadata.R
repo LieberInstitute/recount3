@@ -64,6 +64,9 @@
 #' colnames(gtex_bladder_meta)
 read_metadata <- function(metadata_files) {
     metadata_files <- metadata_files[!is.na(metadata_files)]
+    if (length(metadata_files) == 0) {
+        stop("The are no metadata files to work with.", call. = FALSE)
+    }
 
     ## Check the inputs
     stopifnot(

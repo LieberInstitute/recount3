@@ -188,15 +188,6 @@ create_rse_manual <- function(project,
                 ),
                 bfc = bfc
             ))
-
-        ## Fix some gene names
-        if (type == "gene") {
-            if (annotation == "sirv") {
-                feature_info$gene_id <- gsub("\\.SIRV", "", feature_info$gene_id)
-            } else if (annotation == "refseq") {
-                feature_info$gene_id <- gsub("gene\\.", "", feature_info$gene_id)
-            }
-        }
     } else if (type == "jxn") {
         feature_info <- utils::read.delim(file_retrieve(
             url = jxn_files[grep("\\.RR\\.gz$", jxn_files)],

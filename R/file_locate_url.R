@@ -19,7 +19,7 @@
 #' @param jxn_format A `character(1)` specifying whether the exon-exon junction
 #' files are derived from all the reads (`ALL`) or only the uniquely mapping
 #' read counts (`UNIQUE`). Note that `UNIQUE` is only available for some
-#' projects.
+#' projects: GTEx and TCGA for human.
 #' @param recount3_url A `character(1)` specifying the home URL for `recount3`
 #' or a local directory where you have mirrored `recount3`.
 #'

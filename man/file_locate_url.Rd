@@ -38,7 +38,7 @@ download. Only used when \code{type} is either \code{gene} or \code{exon}.}
 \item{jxn_format}{A \code{character(1)} specifying whether the exon-exon junction
 files are derived from all the reads (\code{ALL}) or only the uniquely mapping
 read counts (\code{UNIQUE}). Note that \code{UNIQUE} is only available for some
-projects.}
+projects: GTEx and TCGA for human.}
 
 \item{recount3_url}{A \code{character(1)} specifying the home URL for \code{recount3}
 or a local directory where you have mirrored \code{recount3}.}
