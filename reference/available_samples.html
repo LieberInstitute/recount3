@@ -177,7 +177,7 @@ the <code>recount3</code> project home location (<code>project_home</code>), and
     <pre class="examples"><div class='input'>
 <span class='co'>## Find all the human samples available from recount3</span>
 <span class='kw'>human_samples</span> <span class='op'>&lt;-</span> <span class='fu'>available_samples</span>()
-</div><div class='output co'>#&gt; <span class='message'>2020-09-28 02:41:59 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-28 02:41:59 caching file gtex.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-28 02:42:00 caching file tcga.recount_project.MD.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>human_samples</span>)
+</div><div class='output co'>#&gt; <span class='message'>2020-09-28 03:09:52 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-28 03:09:52 caching file gtex.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-28 03:09:52 caching file tcga.recount_project.MD.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>human_samples</span>)
 </div><div class='output co'>#&gt; [1] 347011      7</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='kw'>human_samples</span>)
 </div><div class='output co'>#&gt;   external_id   project organism file_source date_processed     project_home
 #&gt; 1   ERR850606 ERP010136    human         sra     2019-10-01 data_sources/sra
@@ -207,7 +207,7 @@ the <code>recount3</code> project home location (<code>project_home</code>), and
 #&gt;  19214 316449  11348 </div><div class='input'>
 <span class='co'>## Find all the mouse samples available from recount3</span>
 <span class='kw'>mouse_samples</span> <span class='op'>&lt;-</span> <span class='fu'>available_samples</span>(<span class='st'>"mouse"</span>)
-</div><div class='output co'>#&gt; <span class='message'>2020-09-28 02:42:03 caching file sra.recount_project.MD.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>mouse_samples</span>)
+</div><div class='output co'>#&gt; <span class='message'>2020-09-28 03:09:56 caching file sra.recount_project.MD.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>mouse_samples</span>)
 </div><div class='output co'>#&gt; [1] 416903      7</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='kw'>mouse_samples</span>)
 </div><div class='output co'>#&gt;   external_id   project organism file_source date_processed     project_home
 #&gt; 1   DRR001496 DRP000465    mouse         sra     2020-01-01 data_sources/sra

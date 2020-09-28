@@ -237,12 +237,12 @@
 <div class="sourceCode" id="cb5"><pre class="downlit">
 <span class="co">## Find all available human projects</span>
 <span class="kw">human_projects</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/available_projects.html">available_projects</a></span>()
-<span class="co">#&gt; using temporary cache /tmp/RtmpV8sJGC/BiocFileCache</span>
-<span class="co">#&gt; 2020-09-28 02:44:11 caching file sra.recount_project.MD.gz.</span>
+<span class="co">#&gt; using temporary cache /tmp/RtmpTCkvWZ/BiocFileCache</span>
+<span class="co">#&gt; 2020-09-28 03:12:05 caching file sra.recount_project.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/sra.recount_project.MD.gz'</span>
-<span class="co">#&gt; 2020-09-28 02:44:12 caching file gtex.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-09-28 03:12:06 caching file gtex.recount_project.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/gtex.recount_project.MD.gz'</span>
-<span class="co">#&gt; 2020-09-28 02:44:13 caching file tcga.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-09-28 03:12:07 caching file tcga.recount_project.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/tcga/metadata/tcga.recount_project.MD.gz'</span>
 
 <span class="co">## Find the project you are interested in</span>
@@ -253,28 +253,28 @@
 
 <span class="co">## Create a RangedSummarizedExperiment (RSE) object at the gene level</span>
 <span class="kw">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_rse.html">create_rse</a></span>(<span class="kw">proj_info</span>)
-<span class="co">#&gt; 2020-09-28 02:44:18 downloading and reading the metadata.</span>
-<span class="co">#&gt; 2020-09-28 02:44:18 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-28 03:12:12 downloading and reading the metadata.</span>
+<span class="co">#&gt; 2020-09-28 03:12:12 caching file sra.sra.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.sra.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-09-28 02:44:19 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-28 03:12:13 caching file sra.recount_project.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_project.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-09-28 02:44:19 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-28 03:12:13 caching file sra.recount_qc.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_qc.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-09-28 02:44:19 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-28 03:12:13 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_seq_qc.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-09-28 02:44:20 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-28 03:12:14 caching file sra.recount_pred.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_pred.SRP009615.MD.gz'</span>
 <span class="co">#&gt; Warning: Replacing study_acc by study in sra.sra.SRP009615.MD.gz</span>
 <span class="co">#&gt; Warning: Replacing run_acc by external_id in sra.sra.SRP009615.MD.gz</span>
 <span class="co">#&gt; Warning: Replacing study_acc by study in sra.recount_qc.SRP009615.MD.gz</span>
 <span class="co">#&gt; Warning: Replacing run_acc by external_id in sra.recount_qc.SRP009615.MD.gz</span>
-<span class="co">#&gt; 2020-09-28 02:44:21 downloading and reading the feature information.</span>
-<span class="co">#&gt; 2020-09-28 02:44:21 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="co">#&gt; 2020-09-28 03:12:15 downloading and reading the feature information.</span>
+<span class="co">#&gt; 2020-09-28 03:12:15 caching file human.gene_sums.G026.gtf.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/annotations/gene_sums/human.gene_sums.G026.gtf.gz'</span>
-<span class="co">#&gt; 2020-09-28 02:44:22 downloading and reading the counts: 12 samples across 63856 features.</span>
-<span class="co">#&gt; 2020-09-28 02:44:22 caching file sra.gene_sums.SRP009615.G026.gz.</span>
+<span class="co">#&gt; 2020-09-28 03:12:16 downloading and reading the counts: 12 samples across 63856 features.</span>
+<span class="co">#&gt; 2020-09-28 03:12:16 caching file sra.gene_sums.SRP009615.G026.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.G026.gz'</span>
-<span class="co">#&gt; 2020-09-28 02:44:23 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class="co">#&gt; 2020-09-28 03:12:17 construcing the RangedSummarizedExperiment (rse) object.</span>
 
 <span class="co">## Explore that RSE object</span>
 <span class="kw">rse_gene_SRP009615</span>
@@ -384,9 +384,9 @@
 <span class="co">#&gt; [1] TRUE</span>
 </pre></div>
 <p>Date the vignette was generated.</p>
-<pre><code>#&gt; [1] "2020-09-28 02:44:24 UTC"</code></pre>
+<pre><code>#&gt; [1] "2020-09-28 03:12:18 UTC"</code></pre>
 <p>Wallclock time spent generating the vignette.</p>
-<pre><code>#&gt; Time difference of 23.739 secs</code></pre>
+<pre><code>#&gt; Time difference of 23.532 secs</code></pre>
 <p><code>R</code> session information.</p>
 <pre><code>#&gt; ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
 #&gt;  setting  value                                      
