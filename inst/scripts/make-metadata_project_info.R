@@ -1,3 +1,5 @@
+# Rscript make-metadata_project_info.R &> make_metadata_project_info.txt
+
 library("here")
 library("sessioninfo")
 
@@ -15,7 +17,7 @@ names(proj_files) <-
     )
 
 ## Update this query date
-query_date <- "2020-05-05"
+query_date <- "2020-09-27"
 
 ## Subset to the files newer or equal to the query_date
 proj_files <- proj_files[as.Date(names(proj_files)) >= query_date]
@@ -43,10 +45,10 @@ meta <- data.frame(
         "running the user-friendly recount3::create_rse() and other functions",
         "for accessing the uniformly processed data from the recount3 project.",
         "This file is specifically tailored for the recount3 Bioconductor",
-        "package. Please check the recount3 vignette for more information on
-        how to use this file."
+        "package. Please check the recount3 vignette for more information on",
+        "how to use this file."
     ),
-    BiocVersion = "3.11",
+    BiocVersion = "3.12",
     Genome = ifelse(proj_info$organism == "human", "hg38", "mm10"),
     SourceType = "RData",
     SourceUrl = "https://bioconductor.org/packages/recount3",
@@ -62,11 +64,11 @@ meta <- data.frame(
         pkgname,
         outdir,
         paste0(
-            project_info$organism,
+            proj_info$organism,
             ".",
-            basename(project_info$project_home),
+            basename(proj_info$project_home),
             ".",
-            project_info$project,
+            proj_info$project,
             ".RData"
         )
     ),
