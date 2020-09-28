@@ -48,6 +48,9 @@ recount3_hub <- function(
     organism = c("human", "mouse"),
     eh = ExperimentHub::ExperimentHub()) {
 
+    ## For R CMD check
+    file_source <- project_type <- NULL
+
     ## Check inputs
     stopifnot(methods::is(eh, "ExperimentHub"))
 

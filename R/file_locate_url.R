@@ -146,7 +146,13 @@ file_locate_url <-
 
         ## Metadata case
         if (type == "metadata") {
-            file_tag <- c(basename(project_home), "recount_project", "recount_qc", "recount_seq_qc", "recount_pred")
+            file_tag <- c(
+                basename(project_home),
+                "recount_project",
+                "recount_qc",
+                "recount_seq_qc",
+                "recount_pred"
+            )
         } else {
             file_tag <- base_dir
         }

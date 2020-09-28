@@ -14,7 +14,8 @@
 #'  [RangedSummarizedExperiment-class][SummarizedExperiment::RangedSummarizedExperiment-class]
 #'  object.
 #' @export
-#' @importFrom SummarizedExperiment SummarizedExperiment
+#' @importFrom SummarizedExperiment SummarizedExperiment "assayNames<-"
+#' "metadata<-"
 #' @importFrom S4Vectors DataFrame
 #' @importFrom rtracklayer import
 #' @importFrom Matrix readMM
