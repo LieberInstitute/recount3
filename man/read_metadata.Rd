@@ -22,18 +22,18 @@ using \code{file_retrieve()}.
 \examples{
 
 ## Download the metadata files for project ERP110066
-url_SRP009615_meta <- file_locate_url(
-    "SRP009615",
+url_ERP110066_meta <- file_locate_url(
+    "ERP110066",
     "data_sources/sra"
 )
-local_SRP009615_meta <- file_retrieve(
-    url = url_SRP009615_meta
+local_ERP110066_meta <- file_retrieve(
+    url = url_ERP110066_meta
 )
 
 ## Read the metadata
-SRP009615_meta <- read_metadata(local_SRP009615_meta)
-dim(SRP009615_meta)
-colnames(SRP009615_meta)
+ERP110066_meta <- read_metadata(local_ERP110066_meta)
+dim(ERP110066_meta)
+colnames(ERP110066_meta)
 
 ## Read the metadata files for a project in a collection
 ## Note: using the test files since I can't access collections right now
@@ -67,6 +67,7 @@ gtex_bladder_meta <- read_metadata(
 )
 
 dim(gtex_bladder_meta)
+colnames(gtex_bladder_meta)
 }
 \seealso{
 Other internal functions for accessing the recount3 data: 

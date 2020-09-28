@@ -92,7 +92,6 @@ rse_gene_SRP009615_fantom6_cat <- create_rse(
     annotation = "fantom6_cat"
 )
 rowRanges(rse_gene_SRP009615_fantom6_cat)
-
 \dontrun{
 ## TODO: fix this!
 ## Create an RSE object using refseq instead of gencode_v26
