@@ -210,9 +210,9 @@ if (interactive()) {
 ## Build a RSE
 
 * create_rse
-* metadata(rse)
-* colData(rse)
-* scale_counts(rse) TODO
+* `metadata(rse)`
+* `colData(rse)`
+* `scale_counts(rse)` TODO
 * junction-specific notes
 * collection vs data source
 
@@ -253,9 +253,9 @@ if (FALSE) {
 
 ## Your own mirror
 
-* file_locate_url() and file_locate_url_annotation() can be used to get the full list of URLs
-* available_projects() will show the data you have locally
-* file_retrieve() won't cache the data
+* `file_locate_url()` and `file_locate_url_annotation()` can be used to get the full list of URLs
+* `available_projects()` will show the data you have locally
+* `file_retrieve()` won't cache the data
 
 ## Other related tools
 
