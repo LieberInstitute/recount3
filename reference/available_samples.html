@@ -177,15 +177,15 @@ the <code>recount3</code> project home location (<code>project_home</code>), and
     <pre class="examples"><div class='input'>
 <span class='co'>## Find all the human samples available from recount3</span>
 <span class='kw'>human_samples</span> <span class='op'>&lt;-</span> <span class='fu'>available_samples</span>()
-</div><div class='output co'>#&gt; <span class='message'>2020-09-28 05:25:56 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-28 05:25:57 caching file gtex.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-28 05:25:57 caching file tcga.recount_project.MD.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>human_samples</span>)
+</div><div class='output co'>#&gt; <span class='message'>2020-09-29 22:50:27 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-29 22:50:27 caching file gtex.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-29 22:50:27 caching file tcga.recount_project.MD.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>human_samples</span>)
 </div><div class='output co'>#&gt; [1] 347011      7</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='kw'>human_samples</span>)
 </div><div class='output co'>#&gt;   external_id   project organism file_source date_processed     project_home
-#&gt; 1   ERR850606 ERP010136    human         sra     2019-10-01 data_sources/sra
-#&gt; 2   ERR850607 ERP010136    human         sra     2019-10-01 data_sources/sra
-#&gt; 3   ERR850610 ERP010136    human         sra     2019-10-01 data_sources/sra
-#&gt; 4  SRR7526842 SRP153936    human         sra     2019-10-01 data_sources/sra
-#&gt; 5  SRR7526843 SRP153936    human         sra     2019-10-01 data_sources/sra
-#&gt; 6  SRR7526844 SRP153936    human         sra     2019-10-01 data_sources/sra
+#&gt; 1  SRR5579327 SRP107565    human         sra     2019-10-01 data_sources/sra
+#&gt; 2  SRR5579328 SRP107565    human         sra     2019-10-01 data_sources/sra
+#&gt; 3  SRR5579329 SRP107565    human         sra     2019-10-01 data_sources/sra
+#&gt; 4  SRR5579330 SRP107565    human         sra     2019-10-01 data_sources/sra
+#&gt; 5  SRR5579331 SRP107565    human         sra     2019-10-01 data_sources/sra
+#&gt; 6  SRR5579332 SRP107565    human         sra     2019-10-01 data_sources/sra
 #&gt;   project_type
 #&gt; 1 data_sources
 #&gt; 2 data_sources
@@ -207,15 +207,15 @@ the <code>recount3</code> project home location (<code>project_home</code>), and
 #&gt;  19214 316449  11348 </div><div class='input'>
 <span class='co'>## Find all the mouse samples available from recount3</span>
 <span class='kw'>mouse_samples</span> <span class='op'>&lt;-</span> <span class='fu'>available_samples</span>(<span class='st'>"mouse"</span>)
-</div><div class='output co'>#&gt; <span class='message'>2020-09-28 05:26:00 caching file sra.recount_project.MD.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>mouse_samples</span>)
+</div><div class='output co'>#&gt; <span class='message'>2020-09-29 22:50:31 caching file sra.recount_project.MD.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>mouse_samples</span>)
 </div><div class='output co'>#&gt; [1] 416903      7</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='kw'>mouse_samples</span>)
 </div><div class='output co'>#&gt;   external_id   project organism file_source date_processed     project_home
-#&gt; 1   DRR001496 DRP000465    mouse         sra     2020-01-01 data_sources/sra
-#&gt; 2   DRR001497 DRP000465    mouse         sra     2020-01-01 data_sources/sra
-#&gt; 3   DRR001494 DRP000467    mouse         sra     2020-01-01 data_sources/sra
-#&gt; 4   DRR001495 DRP000467    mouse         sra     2020-01-01 data_sources/sra
-#&gt; 5   DRR001701 DRP000508    mouse         sra     2020-01-01 data_sources/sra
-#&gt; 6   DRR001702 DRP000508    mouse         sra     2020-01-01 data_sources/sra
+#&gt; 1  SRR8249198 SRP170963    mouse         sra     2020-01-01 data_sources/sra
+#&gt; 2  SRR8249199 SRP170963    mouse         sra     2020-01-01 data_sources/sra
+#&gt; 3  SRR8249200 SRP170963    mouse         sra     2020-01-01 data_sources/sra
+#&gt; 4  SRR8249201 SRP170963    mouse         sra     2020-01-01 data_sources/sra
+#&gt; 5  SRR8249202 SRP170963    mouse         sra     2020-01-01 data_sources/sra
+#&gt; 6  SRR8249205 SRP170963    mouse         sra     2020-01-01 data_sources/sra
 #&gt;   project_type
 #&gt; 1 data_sources
 #&gt; 2 data_sources
