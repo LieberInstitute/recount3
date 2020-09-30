@@ -491,7 +491,7 @@ The main documentation website documents how the raw files should be organized i
 
 In particular, this functionality can be useful if you want to access the data at [IDIES](https://idies.jhu.edu/) using [SciServer Compute](https://apps.sciserver.org/compute/).
 
-<a href="https://apps.sciserver.org/compute/"><img src="https://apps.sciserver.org/compute/static/img/sciserverlogo.png", width="600px"></a>
+<a href="https://apps.sciserver.org/compute/"><img src="https://apps.sciserver.org/compute/static/img/sciserverlogo.png" width="600px"></a>
 
 ## Other related tools
 
