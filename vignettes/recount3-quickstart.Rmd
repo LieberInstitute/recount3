@@ -273,7 +273,7 @@ if (interactive()) {
 
 The process of retrieving the project information from `r Biocpkg('ExperimentHub')` is simplified in `recount3_hub()` for situations where you know the project ID already as shown for `SRP009615`. 
 
-```{r "proj_info_sSRP009615"}
+```{r "proj_info_SRP009615"}
 project_info <- recount3_hub("SRP009615")
 ```
 
@@ -502,7 +502,7 @@ The main documentation website documents how the raw files should be organized i
 
 In particular, this functionality can be useful if you want to access the data at [IDIES](https://idies.jhu.edu/) using [SciServer Compute](https://apps.sciserver.org/compute/).
 
-<a href="https://apps.sciserver.org/compute/"><img src="https://apps.sciserver.org/compute/static/img/sciserverlogo.png" width="600px"></a>
+<a href="https://apps.sciserver.org/compute/"><img src="https://skyserver.sdss.org/dr14/en/images/sciserver_logo_inverted_vertical.png" width="800px"></a>
 
 ## Other related tools
 
