@@ -60,7 +60,20 @@ bib <- c(
         title = "SummarizedExperiment: SummarizedExperiment container",
         year = 2019, doi = "10.18129/B9.bioc.SummarizedExperiment"
     ),
-    testthat = citation("testthat")
+    testthat = citation("testthat"),
+    covr = citation("covr"),
+    RefManageR = citation("RefManageR"),
+    pryr = citation("pryr"),
+    interactiveDisplayBase = citation("interactiveDisplayBase"),
+    rtracklayer = citation("rtracklayer"),
+    S4Vectors = citation("S4Vectors"),
+    XML = citation("XML"),
+    RCurl = citation("RCurl"),
+    data.table = citation("data.table"),
+    R.utils = citation("R.utils"),
+    Matrix = citation("Matrix"),
+    GenomicRanges = citation("GenomicRanges"),
+    ExperimentHub = citation("ExperimentHub")
 )
 
 write.bibtex(bib, file = "quickstartRef.bib")
@@ -194,27 +207,235 @@ if (interactive()) {
 
 # Users guide
 
-`r Biocpkg('recount3')` `r citep(bib[['recount3paper']])` provides an interface for downloading the [recount3 raw files](http://research.libd.org/recount3-docs/raw-files.html) and building Bioconductor-friendly R objects `r citep(list("10.1038/nmeth.3252", bib[["SummarizedExperiment"]]))` that can be used with many downstream packages. To achieve this, the raw data is organized by **study** from a specific **data source**. That same study can be a part of one or more **compilations**, which is a manually curated set of studies with compilation-specific sample metadata (see the [Data source vs collection](http://research.libd.org/recount3-docs/raw-files.html#data-source-vs-collection) for details). To get started with `r Biocpkg('recount3')`, you will need to identify the ID for the study of interest from either **human** or **mouse** for a particular **annotation** of interest. Once you have identified study, data source or compilation, and annotation, `r Biocpkg('recount3')` can be used to build a `RangedSummarizedExperiment` object `r citep(bib[["SummarizedExperiment"]])` for either **gene**, **exon** or **exon-exon junction** expression feature data. For more advanced use cases, `r Biocpkg('recount3')` provides access to the coverage BigWig files that can be quantified for custom set of genomic regions using `r Biocpkg('megadepth')`. Furthermore, `r Biocpkg('snapcount')` allows fast-queries for custom exon-exon junctions and other custom input.
+`r Biocpkg('recount3')` `r citep(bib[['recount3paper']])` provides an interface for downloading the [recount3 raw files](https://LieberInstitute.github.io/recount3-docs/raw-files.html) and building Bioconductor-friendly R objects `r citep(list("10.1038/nmeth.3252", bib[["SummarizedExperiment"]]))` that can be used with many downstream packages. To achieve this, the raw data is organized by **study** from a specific **data source**. That same study can be a part of one or more **compilations**, which is a manually curated set of studies with compilation-specific sample metadata (see the [Data source vs collection](https://LieberInstitute.github.io/recount3-docs/raw-files.html#data-source-vs-collection) for details). To get started with `r Biocpkg('recount3')`, you will need to identify the ID for the study of interest from either **human** or **mouse** for a particular **annotation** of interest. Once you have identified study, data source or compilation, and annotation, `r Biocpkg('recount3')` can be used to build a `RangedSummarizedExperiment` object `r citep(bib[["SummarizedExperiment"]])` for either **gene**, **exon** or **exon-exon junction** expression feature data. For more advanced use cases, `r Biocpkg('recount3')` provides access to the coverage BigWig files that can be quantified for custom set of genomic regions using `r Biocpkg('megadepth')`. Furthermore, `r Biocpkg('snapcount')` allows fast-queries for custom exon-exon junctions and other custom input.
 
 ## Find a study
 
-* ExperimentHub
-* List of projects
-  * interactiveDisplayBase
+In order to access data from `r Biocpkg('recount3')`, the first step is to identify a **project** that you are interested in working with. Most of the project IDs are the ones you can find on the Sequence Read Archive ([SRA](https://www.ncbi.nlm.nih.gov/sra)). For example, [SRP009615](https://www.ncbi.nlm.nih.gov/sra/?term=SRP009615) which we use in the examples in this vignette.The exceptions are the Genotype-Expression and The Cancer Genome Atlas human studies, commonly known as [GTEx](https://gtexportal.org/home/) and [TCGA](https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga). Both GTEx and TCGA are available in `r Biocpkg('recount3')` by tissue. 
+
+### Through `available_projects()`
+
+While you can use external websites to find a study of interest, you can also use `available_projects()` to list the projects that are available in `r Biocpkg('recount3')` as shown below. This will return a `data.frame()` object that lists the unique project IDs.
+
+```{r "human_projects"}
+human_projects <- available_projects()
+dim(human_projects)
+head(human_projects)
+
+## Select a study of interest
+project_info <- subset(
+    human_projects,
+    project == "SRP009615" & project_type == "data_sources"
+)
+project_info
+```
+
+Let's say that you are interested in the GTEx projects, you could then filter by `file_source`. We'll focus only on those entries that from a data source, and not from a collection for now.
+
+```{r "gtex_projects"}
+subset(human_projects, file_source == "gtex" & project_type == "data_sources")
+```
+
+Note that one of the projects for GTEx is `STUDY_NA`, that's because in `r Biocpkg('recount3')` we processed all GTEx samples, including some that had no tissue assigned and were not used by the GTEx consortium. 
+
+If you prefer to view the list of available studies interactively, you can do so with `r Biocpkg('interactiveDisplayBase')` as shown below. You'll want to assign the output of `interactiveDisplayBase::display()` to an object so you can save your selections and use them later. By doing so, you'll be able to select a study of interest, and save the information for later use after you hit the "send" button.
+
+```{r "select_interactively"}
+if (interactive()) {
+    ## Interactively browse the human projects, select one, then hit send
+    selected_study <- interactiveDisplayBase::display(human_projects)
+}
+```
+
+### Through `recount3_hub()`
+
+Alternatively, you can use `r Biocpkg('ExperimentHub')` to search all of the available studies, filter the ones that have a `recount3` tag, and then use that information with this package to retrieve the data. Just like with our approach using `interactiveDisplayBase::display()` and `available_projects()`, you can also interactively explore the data from r `r Biocpkg('ExperimentHub')`.
+
+```{r "experiment_hub"}
+## Retrieve the experiments in ExperimentHub
+eh <- ExperimentHub::ExperimentHub()
+
+if (interactive()) {
+    ## Search for the recount3 tag, find a study of interest, select it, then
+    ## hit send
+    eh2 <- AnnotationHub::display(ExperimentHub::ExperimentHub())
+
+    ## Retrieve the study data from ExperimentHub
+    selected_study_eh <- eh2[[1]]
+}
+```
+
+The process of retrieving the project information from `r Biocpkg('ExperimentHub')` is simplified in `recount3_hub()` for situations where you know the project ID already as shown for `SRP009615`. 
+
+```{r "proj_info_sSRP009615"}
+project_info <- recount3_hub("SRP009615")
+```
+
+Ultimately, we need three pieces of information in order to download a specific dataset from `r Biocpkg('recount3')`. Those are:
+
+* **project**: the project ID,
+* **organism**: either human or mouse,
+* **project_home**: where the data lives which varies between data sources and collections.
+
+```{r "display_proj_info"}
+project_info
+```
 
 ## Available annotations
 
-* Human
-* Mouse
+Now that we have identified our project of interest, the next step is to choose an annotation that we want to work with. The annotation files available depend on the organism. To facilitate finding the specific names we use in `r Biocpkg('recount3')`, we have provided the function `annotation_options()`.
+
+```{r "annotations"}
+annotation_options("human")
+annotation_options("mouse")
+```
+
+The main sources are:
+
+* [GENCODE](https://www.gencodegenes.org/) project
+* [RefSeq](https://www.ncbi.nlm.nih.gov/refseq/): NCBI Reference Sequence Database
+* FANTOM6_CAT is described at DOI [10.1101/gr.254656.119](https://doi.org/10.1101/gr.254656.119)
+* [ERCC](https://www.nist.gov/programs-projects/external-rna-controls-consortium): External RNA Controls Consortium ^[These are 92 control spike-in sequences that are commonly used in bulk RNA-seq projects.], commercially available from [ThermoFisher Scientific](https://www.thermofisher.com/order/catalog/product/4456740#/4456740)
+* [SIRV](https://www.biorxiv.org/content/10.1101/080747v1) ^[69 controls sequences.], commercially available from [Lexogen](https://www.lexogen.com/sirvs/)
+
+In `r Biocpkg('recount3')` we have provided multiple annotations, which is different from `r Biocpkg('recount')` (`recount2` R/Bioconductor package) where all files were computed using GENCODE version 25. However, in both, you might be interested in quantifying your annotation of interest, as described further below in the BigWig files section.
 
 ## Build a RSE
 
-* create_rse
-* `metadata(rse)`
-* `colData(rse)`
-* `scale_counts(rse)` TODO
-* junction-specific notes
-* collection vs data source
+Once you have chosen an annotation and a project, you can now build a `RangedSummarizedExperiment` object `r citep(list("10.1038/nmeth.3252", bib[["SummarizedExperiment"]]))`. To do so, we recommend using the `create_rse()` function as shown below for GENCODE v26 (the default annotation for human files). `create_rse()` internally uses several other `r Biocpkg('recount3')` functions for locating the necessary raw files, downloading them, reading them, and building the `RangedSummarizedExperiment` (RSE) object. `create_rse()` shows several status message updates that you can silence with `suppressMessages(create_rse())` if you want to.
+
+```{r "rse_gencode_v26"}
+## Create a RSE object at the gene level
+rse_gene_SRP009615 <- create_rse(project_info)
+
+## Explore the resulting RSE gene object
+rse_gene_SRP009615
+```
+
+## Explore the RSE
+
+Because the RSE object is created at run-time in `r Biocpkg('recount3')`, unlike the static files provided by `r Biocpkg('recount')` for `recount2`, `create_rse()` stores information about how this RSE object was made under `metadata()`. This information is useful in case you share the RSE object and someone else wants to be able to re-make the object with the latest data ^[This new design allows us to couple the expression data with metadata on the fly, as well as have flexibility in case we uncover an error in the files.].
+
+```{r "metadata_rse"}
+## Information about how this RSE object was made
+metadata(rse_gene_SRP009615)
+```
+
+The SRP009615 study was composed of 12 samples, for which we have 63,856 genes in GENCODE v26. The annotation-specific information is available through `rowRanges()` as shown below with the `gene_id` column used to identify genes in each of the annotations ^[Although ERCC and SIRV are technically not genes.].
+
+```{r "row_ranges"}
+## Number of genes by number of samples
+dim(rse_gene_SRP009615)
+
+## Information about the genes
+rowRanges(rse_gene_SRP009615)
+```
+
+## Sample metadata
+
+The sample metadata provided in `r Biocpkg('recount3')` is much more extensive than the one in `r Biocpkg('recount')` for the `recount2` project because it's includes for [**quality control metrics**](https://LieberInstitute.github.io/recount3-docs/quality-check-fields.html), predictions, and information used internally by `r Biocpkg('recount3')` functions such as `create_rse()`. All individual metadata tables include the columns **rail_id**, **external_id** and **study** which are used for merging the different tables. Finally, **BigWigUrl* provides the URL for the BigWig file for the given sample.
+
+```{r "recount3_meta_cols"}
+## Sample metadata
+recount3_cols <- colnames(colData(rse_gene_SRP009615))
+
+## How many are there?
+length(recount3_cols)
+
+## View the first few ones
+head(recount3_cols)
+
+## Group them by source
+recount3_cols_groups <- table(gsub("\\..*", "", recount3_cols))
+
+## Common sources and number of columns per source
+recount3_cols_groups[recount3_cols_groups > 1]
+
+## Unique columns
+recount3_cols_groups[recount3_cols_groups == 1]
+
+## Explore them all
+if (interactive()) {
+    recount3_cols
+}
+```
+
+## Counts
+
+The counts in `r Biocpkg('recount3')` are raw base-pair coverage counts, similar to those in `r Biocpkg('recount')`. To further understand them, check the `r Biocpkg('recountWorkflow')` DOI [10.12688/f1000research.12223.1](https://doi.org/10.12688/f1000research.12223.1). To highlight that these arw raw base-pair coverage counts, they are stored in the "raw_counts" assay
+
+```{r "raw_counts"}
+assayNames(rse_gene_SRP009615)
+```
+
+Using TODO you can scale the counts and assign them to the "counts" slot to use them in downstream packages such as `r Biocpkg('DESeq2')` and `r Biocpkg('limma')`.
+
+```{r "scaling_counts"}
+## TODO
+```
+
+# Advanced features
+
+`r Biocpkg('recount3')` provides an interface to [raw files](https://LieberInstitute.github.io/recount3-docs/raw-files.html) that go beyond gene counts, as well as other features you might be interested in. 
+
+## Exon
+
+First, you might want to study expression at the **exon** expression level instead of **gene**. To do so, use the `type` argument in `create_rse()` as shown below.
+
+```{r "rse_exon"}
+## Create a RSE object at the exon level
+rse_exon_SRP009615 <- create_rse(
+    proj_info,
+    type = "exon"
+)
+
+## Explore the resulting RSE exon object
+rse_exon_SRP009615
+
+## Explore the object
+dim(rse_exon_SRP009615)
+```
+
+Each exon is shown in this output, so, you might have to filter the exons of interest. Unlike in `recount2`, these are actual exons and not disjoint exons ^[Check the BigWig files section further below.]. 
+
+```{r "exon_ranges"}
+## Exon annotation information
+rowRanges(rse_exon_SRP009615)
+
+## Exon ids are repeated because a given exon can be part of
+## more than one transcript
+length(unique(rowRanges(rse_exon_SRP009615)$exon_id))
+```
+
+Because there are many more exons than genes, this type of analysis uses more computational resources. Thus, for some large projects you might need to use a high performance computing environment. To help you proceed with caution, `create_rse()` shows how many features and samples it's trying to access. So if you get an out of memory error, you'll know why that happened.
+
+```{r "exon_memory"}
+## Check how much memory the gene and exon RSE objects use
+pryr::object_size(rse_gene_SRP009615)
+pryr::object_size(rse_exon_SRP009615)
+```
+
+## Exon-exon junctions
+
+In `r Biocpkg('recount3')` we have also provided the option to create RSE files for exon-exon junctions. Unlike the gene/exon RSE files, only the junctions present in a given project are included in the files, so you'll have to be more careful when merging exon-exon junction RSE files. Furthermore, these are actual read counts and not raw base-pair counts. Given the sparsity of the data, the counts are provided using a sparse matrix object from `r CRANpkg("Matrix")`. Thus exon-exon junction files can be less memory demanding than the exon RSE files.
+
+```{r "rse_jxn"}
+## Create a RSE object at the exon-exon junction level
+rse_jxn_SRP009615 <- create_rse(
+    proj_info,
+    type = "jxn"
+)
+
+## Explore the resulting RSE exon-exon junctions object
+rse_jxn_SRP009615
+dim(rse_jxn_SRP009615)
+
+## Exon-exon junction information
+rowRanges(rse_jxn_SRP009615)
+
+## Memory used
+pryr::object_size(rse_jxn_SRP009615)
+```
 
 ## Local files
 
@@ -238,7 +459,7 @@ bfc_recount3 <- grep("recount3", bfc_files[["fpath"]])
 bfc_files[["fpath"]][bfc_recount3]
 
 ## You can remove the recount3 files from your cache if you want using bfcremove
-if (FALSE) {
+if (interactive()) {
     bfcremove(bfc, rids = bfc_files[["rid"]][bfc_recount3])
 
     ## Verify that the recount3 files have been deleted
@@ -248,19 +469,39 @@ if (FALSE) {
 
 ## BigWig files
 
-* refer to megadepth
-* refer to derfinder
+Internally we used `GenomicFeatures::exonicParts()` when processing all annotations in `r Biocpkg('recount3')` instead of `GenomicRanges::disjoin()` that was used in `recount2`. We then re-assembled the counts for each exon/gene to create the count files provided in `r Biocpkg('recount3')`. However, you might want to exclude the overlapping exonic parts from the counts. If that's the case or if you are interested in specific regions of the `hg38`/`mm10` genomes, you might want to access the coverage BigWig files. 
+
+```{r "BigWigURLs"}
+## BigWig file names
+## The full URL is stored in BigWigUrl
+basename(head(rse_gene_SRP009615$BigWigURL))
+```
+
+These BigWig files can be accessed using `rtracklayer::import.bw()` from R, or other tools such as [bwtool](https://github.com/CRG-Barcelona/bwtool/wiki) that we've used in the past ^[For example in *[recount.bwtool](https://github.com/LieberInstitute/recount.bwtool)* .]. Using them, you can compute a coverage matrix for a given set of regions.
+
+One new software we developed is `r Biocpkg("megadepth")` for which we have provided an R/Bioconductor package interface. `r Biocpkg("megadepth")` is faster at accessing BigWig files and is the software we used internally for generating the `recount3` data. `r Biocpkg("megadepth")` provides convenient to use functions for quantifying a set of regions, which might be of interest for co-expression analyses where double counting exonic parts can be problematic.
+
+You can also use `r Biocpkg("derfinder")` and `r Biocpkg("derfinderPlot")` if you are interested in visualizing the base-pair coverage data for a specific region using these BigWig coverage files. 
 
 ## Your own mirror
 
-* `file_locate_url()` and `file_locate_url_annotation()` can be used to get the full list of URLs
-* `available_projects()` will show the data you have locally
-* `file_retrieve()` won't cache the data
+`r Biocpkg('recount3')` functions such as `create_rse()` have a `recount3_url` argument that can be changed to point to a mirror or to a path in your computing system. This argument enables using `r Biocpkg('recount3')` with data stored in other locations, or even generated using the same processing pipeline that was used for `r Biocpkg('recount3')` but for your own/private data.
+
+The main documentation website documents how the raw files should be organized in your mirror or for your own data. You can inspect the structure of the data by checking the internals of `file_locate_url()` and `file_locate_url_annotation()`. Both functions can be used to get the full list of URLs. In addition, for a given mirror, `available_projects()` will show the local data sources and collections. Finally, `file_retrieve()` won't cache the data if it detects that the data already exists in the local disk.
+
+In particular, this functionality can be useful if you want to access the data at [IDIES](https://idies.jhu.edu/) using [SciServer Compute](https://apps.sciserver.org/compute/).
+
+<a href="https://apps.sciserver.org/compute/"><img src="https://apps.sciserver.org/compute/static/img/sciserverlogo.png", width="600px"></a>
 
 ## Other related tools
 
-* mention snapcount
-* mention again the main documentation website
+The `ReCount` team has worked on several software solutions and projects that complement each other and enable you to re-use public RNA-seq data. Another Bioconductor package that you might be highly interested in is `r Biocpkg("snapcount")`, which allows you to use the [Snaptron web services](http://snaptron.cs.jhu.edu/). In particular, `r Biocpkg("snapcount")` is best for queries over a particular subset of genes or intervals across all or most of the samples in `recount2`/`Snaptron`.
+
+We remind you that the **main documentation website** for all the `recount3`-related projects is available at [**recount.bio**](https://LieberInstitute/github.io/recount3-docs). Please check that website for more information about how this R/Bioconductor package and other tools are related to each other.
+
+**Thank you!**
+
+P.S. An [alternative version of this vignette is available](http://research.libd.org/recount3/) that was made using `r CRANpkg("pkgdown")`.
 
 # Reproducibility
 
@@ -270,13 +511,26 @@ The `r Biocpkg('recount3')` package `r citep(bib[['recount3']])` was made possib
 * `r Biocpkg('AnnotationHub')` `r citep(bib[['AnnotationHub']])`
 * `r Biocpkg('BiocFileCache')` `r citep(bib[['BiocFileCache']])`
 * `r Biocpkg('BiocStyle')` `r citep(bib[['BiocStyle']])`
+* `r Githubpkg("lcolladotor/biocthis")`
+* `r CRANpkg('covr')` `r citep(bib[['covr']])`
+* `r CRANpkg('data.table')` `r citep(bib[['data.table']])`
+* `r Biocpkg('ExperimentHub')` `r citep(bib[['ExperimentHub']])`
+* `r Biocpkg('GenomicRanges')` `r citep(bib[['GenomicRanges']])`
+* `r Biocpkg('interactiveDisplayBase')` `r citep(bib[['interactiveDisplayBase']])`
 * `r CRANpkg('knitcitations')` `r citep(bib[['knitcitations']])`
 * `r CRANpkg('knitr')` `r citep(bib[['knitr']])`
+* `r CRANpkg('Matrix')` `r citep(bib[['Matrix']])`
+* `r CRANpkg('pryr')` `r citep(bib[['pryr']])`
+* `r CRANpkg('RefManageR')` `r citep(bib[['RefManageR']])`
+* `r CRANpkg('RCurl')` `r citep(bib[['RCurl']])`
 * `r CRANpkg('rmarkdown')` `r citep(bib[['rmarkdown']])`
+* `r Biocpkg('rtracklayer')` `r citep(bib[['rtracklayer']])`
+* `r CRANpkg('R.utils')` `r citep(bib[['R.utils']])`
+* `r Biocpkg('S4Vectors')` `r citep(bib[['S4Vectors']])`
 * `r CRANpkg('sessioninfo')` `r citep(bib[['sessioninfo']])`
 * `r Biocpkg('SummarizedExperiment')` `r citep(bib[['SummarizedExperiment']])`
 * `r CRANpkg('testthat')` `r citep(bib[['testthat']])`
-
+* `r CRANpkg('XML')` `r citep(bib[['XML']])`
 
 Code for creating the vignette
 

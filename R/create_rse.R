@@ -8,7 +8,7 @@
 #'
 #' @param project_info A `data.frame()` with one row that contains the
 #' information for the project you are interested in. You can find which
-#' project to work on using `todo()`.
+#' project to work on using `available_projects()` or `recount3_hub()`..
 #' @inheritParams create_rse_manual
 #'
 #' @return A
