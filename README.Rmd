@@ -27,18 +27,6 @@ library("BiocStyle")
 
 The `r Biocpkg('recount3')` R/Bioconductor package is part of the `recount3` project and is the latest iteration of the `ReCount` family of projects that provide access to uniformly-processed RNA sequencing datasets. The **main documentation website** for all the `recount3`-related projects is available at [**recount.bio**](https://LieberInstitute/github.io/recount3-docs). Please check that website for more information about how this R/Bioconductor package and other tools are related to each other.
 
-
-### R packages
-
-To clarify the relationship between the R/Bioconductor packages and the phases of `ReCount` please check the table below:
-
-| Year | Phase | Main references | R/Bioconductor |
-| --- | --- | --- | --- |
-| 2011 | [`ReCount`](http://bowtie-bio.sourceforge.net/recount/) | DOI: [10.1186/1471-2105-12-449](https://doi.org/10.1186/1471-2105-12-449) | none |
-| 2017 | [`recount2`](https://jhubiostatistics.shinyapps.io/recount/) | DOI: [10.1038/nbt.3838](https://doi.org/10.1038/nbt.3838) [10.12688/f1000research.12223.1](https://doi.org/10.12688/f1000research.12223.1) | `r Biocpkg('recount')` |
-| 2020 | [`recount3`](https://LieberInstitute/github.io/recount3-docs) | DOI: [TODO](https://doi.org/TODO) | `r Biocpkg('recount3')` |
-
-
 ## Documentation
 
 For more information about `r Biocpkg('recount3')` check the vignettes [through Bioconductor](http://bioconductor.org/packages/recount3) or at the [documentation website](http://lieberinstitute.github.io/recount3).
@@ -79,6 +67,16 @@ Please note that the derfinderPlot project is released with a [Contributor Code 
 * The documentation is formatted thanks to `r BiocStyle::CRANpkg('devtools')` and `r BiocStyle::CRANpkg('roxygen2')`.
 
 For more details, check the `dev` directory.
+
+## Project history
+
+To clarify the relationship between the R/Bioconductor packages and the phases of `ReCount` please check the table below:
+
+| Year | Phase | Main references | R/Bioconductor |
+| --- | --- | --- | --- |
+| 2011 | [`ReCount`](http://bowtie-bio.sourceforge.net/recount/) | DOI: [10.1186/1471-2105-12-449](https://doi.org/10.1186/1471-2105-12-449) | none |
+| 2017 | [`recount2`](https://jhubiostatistics.shinyapps.io/recount/) | DOI: [10.1038/nbt.3838](https://doi.org/10.1038/nbt.3838) [10.12688/f1000research.12223.1](https://doi.org/10.12688/f1000research.12223.1) | `r Biocpkg('recount')` |
+| 2020 | [`recount3`](https://LieberInstitute/github.io/recount3-docs) | DOI: [TODO](https://doi.org/TODO) | `r Biocpkg('recount3')` |
 
 ## Teams involved
 

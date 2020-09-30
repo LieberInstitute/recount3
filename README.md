@@ -30,17 +30,6 @@ website** for all the `recount3`-related projects is available at
 Please check that website for more information about how this
 R/Bioconductor package and other tools are related to each other.
 
-### R packages
-
-To clarify the relationship between the R/Bioconductor packages and the
-phases of `ReCount` please check the table below:
-
-| Year | Phase                                                         | Main references                                                                                                                            | R/Bioconductor                                                |
-| ---- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------- |
-| 2011 | [`ReCount`](http://bowtie-bio.sourceforge.net/recount/)       | DOI: [10.1186/1471-2105-12-449](https://doi.org/10.1186/1471-2105-12-449)                                                                  | none                                                          |
-| 2017 | [`recount2`](https://jhubiostatistics.shinyapps.io/recount/)  | DOI: [10.1038/nbt.3838](https://doi.org/10.1038/nbt.3838) [10.12688/f1000research.12223.1](https://doi.org/10.12688/f1000research.12223.1) | *[recount](https://bioconductor.org/packages/3.12/recount)*   |
-| 2020 | [`recount3`](https://LieberInstitute/github.io/recount3-docs) | DOI: [TODO](https://doi.org/TODO)                                                                                                          | *[recount3](https://bioconductor.org/packages/3.12/recount3)* |
-
 ## Documentation
 
 For more information about
@@ -145,6 +134,17 @@ By contributing to this project, you agree to abide by its terms.
     *[roxygen2](https://CRAN.R-project.org/package=roxygen2)*.
 
 For more details, check the `dev` directory.
+
+## Project history
+
+To clarify the relationship between the R/Bioconductor packages and the
+phases of `ReCount` please check the table below:
+
+| Year | Phase                                                         | Main references                                                                                                                            | R/Bioconductor                                                |
+| ---- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------- |
+| 2011 | [`ReCount`](http://bowtie-bio.sourceforge.net/recount/)       | DOI: [10.1186/1471-2105-12-449](https://doi.org/10.1186/1471-2105-12-449)                                                                  | none                                                          |
+| 2017 | [`recount2`](https://jhubiostatistics.shinyapps.io/recount/)  | DOI: [10.1038/nbt.3838](https://doi.org/10.1038/nbt.3838) [10.12688/f1000research.12223.1](https://doi.org/10.12688/f1000research.12223.1) | *[recount](https://bioconductor.org/packages/3.12/recount)*   |
+| 2020 | [`recount3`](https://LieberInstitute/github.io/recount3-docs) | DOI: [TODO](https://doi.org/TODO)                                                                                                          | *[recount3](https://bioconductor.org/packages/3.12/recount3)* |
 
 ## Teams involved
 
