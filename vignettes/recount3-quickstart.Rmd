@@ -199,7 +199,12 @@ if (interactive()) {
     rse_gene_interactive <- create_rse(proj_info_interactive)
 }
 
-## TODO scale_counts
+## Once you have your RSE object, you can transform the raw coverage
+## files using transform_counts().
+## For RPKM, TPM or read outputs, check the details in transform_counts().
+assay(rse_gene_SRP009615, "counts") <- transform_counts(rse_gene_SRP009615)
+
+## Now you are ready to continue with downstream analysis software
 ```
 
 `r Biocpkg('recount3')` also supports accessing the BigWig raw coverage files as well as specific study or compilation sample **metadata**. Please continue to the users guide for more detailed information.
@@ -368,11 +373,16 @@ The counts in `r Biocpkg('recount3')` are raw base-pair coverage counts, similar
 assayNames(rse_gene_SRP009615)
 ```
 
-Using TODO you can scale the counts and assign them to the "counts" slot to use them in downstream packages such as `r Biocpkg('DESeq2')` and `r Biocpkg('limma')`.
+Using `transform_counts()` you can scale the counts and assign them to the "counts" assays slot to use them in downstream packages such as `r Biocpkg('DESeq2')` and `r Biocpkg('limma')`.
 
 ```{r "scaling_counts"}
-## TODO
+## Once you have your RSE object, you can transform the raw coverage
+## files using transform_counts().
+## For RPKM, TPM or read outputs, check the details in transform_counts().
+assay(rse_gene_SRP009615, "counts") <- transform_counts(rse_gene_SRP009615)
 ```
+
+Just like with `r Biocpkg('recount')` for `recount2`, you can transform the raw base-pair coverage counts `r citep("10.12688/f1000research.12223.1")` to read counts with `compute_read_counts()`, RPKM with `recount::getRPKM()` or TPM values with `recount::getTPM()`. Check `transform_counts()` from `r Biocpkg('recount3')` for more details.
 
 # Advanced features
 
