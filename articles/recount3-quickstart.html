@@ -89,7 +89,7 @@
       Lieber Institute for Brain Development, Johns Hopkins Medical Campus<br><a class="author_email" href="mailto:#"></a><a href="mailto:lcolladotor@gmail.com" class="email">lcolladotor@gmail.com</a>
       </address>
                   
-            <h4 class="date">29 September 2020</h4>
+            <h4 class="date">30 September 2020</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/LieberInstitute/recount3/blob/master/vignettes/recount3-quickstart.Rmd"><code>vignettes/recount3-quickstart.Rmd</code></a></small>
       <div class="hidden name"><code>recount3-quickstart.Rmd</code></div>
@@ -237,12 +237,12 @@
 <div class="sourceCode" id="cb5"><pre class="downlit">
 <span class="co">## Find all available human projects</span>
 <span class="kw">human_projects</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/available_projects.html">available_projects</a></span>()
-<span class="co">#&gt; using temporary cache /tmp/RtmpYIEW5f/BiocFileCache</span>
-<span class="co">#&gt; 2020-09-29 22:53:05 caching file sra.recount_project.MD.gz.</span>
+<span class="co">#&gt; using temporary cache /tmp/RtmpzRA8hK/BiocFileCache</span>
+<span class="co">#&gt; 2020-09-30 01:43:32 caching file sra.recount_project.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/sra.recount_project.MD.gz'</span>
-<span class="co">#&gt; 2020-09-29 22:53:05 caching file gtex.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:32 caching file gtex.recount_project.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/gtex.recount_project.MD.gz'</span>
-<span class="co">#&gt; 2020-09-29 22:53:06 caching file tcga.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:33 caching file tcga.recount_project.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/tcga/metadata/tcga.recount_project.MD.gz'</span>
 
 <span class="co">## Find the project you are interested in,</span>
@@ -254,24 +254,24 @@
 
 <span class="co">## Create a RangedSummarizedExperiment (RSE) object at the gene level</span>
 <span class="kw">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_rse.html">create_rse</a></span>(<span class="kw">proj_info</span>)
-<span class="co">#&gt; 2020-09-29 22:53:11 downloading and reading the metadata.</span>
-<span class="co">#&gt; 2020-09-29 22:53:11 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:38 downloading and reading the metadata.</span>
+<span class="co">#&gt; 2020-09-30 01:43:38 caching file sra.sra.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.sra.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-09-29 22:53:11 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:38 caching file sra.recount_project.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_project.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-09-29 22:53:12 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:38 caching file sra.recount_qc.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_qc.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-09-29 22:53:12 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:39 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_seq_qc.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-09-29 22:53:13 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:39 caching file sra.recount_pred.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_pred.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-09-29 22:53:13 downloading and reading the feature information.</span>
-<span class="co">#&gt; 2020-09-29 22:53:13 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:39 downloading and reading the feature information.</span>
+<span class="co">#&gt; 2020-09-30 01:43:39 caching file human.gene_sums.G026.gtf.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/annotations/gene_sums/human.gene_sums.G026.gtf.gz'</span>
-<span class="co">#&gt; 2020-09-29 22:53:14 downloading and reading the counts: 12 samples across 63856 features.</span>
-<span class="co">#&gt; 2020-09-29 22:53:14 caching file sra.gene_sums.SRP009615.G026.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:42 downloading and reading the counts: 12 samples across 63856 features.</span>
+<span class="co">#&gt; 2020-09-30 01:43:42 caching file sra.gene_sums.SRP009615.G026.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.G026.gz'</span>
-<span class="co">#&gt; 2020-09-29 22:53:15 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class="co">#&gt; 2020-09-30 01:43:42 construcing the RangedSummarizedExperiment (rse) object.</span>
 
 <span class="co">## Explore that RSE object</span>
 <span class="kw">rse_gene_SRP009615</span>
@@ -310,46 +310,633 @@
 <div id="users-guide" class="section level1">
 <h1 class="hasAnchor">
 <a href="#users-guide" class="anchor"></a>Users guide</h1>
-<p><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> (<a href="https://www.biorxiv.org/content/10.1101/TODO">Wilks, Collado-Torres, Zheng, Jaffe, et al., 2020</a>) provides an interface for downloading the <a href="http://research.libd.org/recount3-docs/raw-files.html">recount3 raw files</a> and building Bioconductor-friendly R objects <a id="cite-Huber_2015"></a><a id="cite-SummarizedExperiment"></a>(<a href="https://doi.org/10.1038/nmeth.3252">Huber, Carey, Gentleman, Anders, et al., 2015</a>; <a href="https://doi.org/10.18129/B9.bioc.SummarizedExperiment">Morgan, Obenchain, Hester, and Pagès, 2019</a>) that can be used with many downstream packages. To achieve this, the raw data is organized by <strong>study</strong> from a specific <strong>data source</strong>. That same study can be a part of one or more <strong>compilations</strong>, which is a manually curated set of studies with compilation-specific sample metadata (see the <a href="http://research.libd.org/recount3-docs/raw-files.html#data-source-vs-collection">Data source vs collection</a> for details). To get started with <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em>, you will need to identify the ID for the study of interest from either <strong>human</strong> or <strong>mouse</strong> for a particular <strong>annotation</strong> of interest. Once you have identified study, data source or compilation, and annotation, <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> can be used to build a <code>RangedSummarizedExperiment</code> object (<a href="https://doi.org/10.18129/B9.bioc.SummarizedExperiment">Morgan, Obenchain, Hester, and Pagès, 2019</a>) for either <strong>gene</strong>, <strong>exon</strong> or <strong>exon-exon junction</strong> expression feature data. For more advanced use cases, <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> provides access to the coverage BigWig files that can be quantified for custom set of genomic regions using <em><a href="https://bioconductor.org/packages/3.12/megadepth">megadepth</a></em>. Furthermore, <em><a href="https://bioconductor.org/packages/3.12/snapcount">snapcount</a></em> allows fast-queries for custom exon-exon junctions and other custom input.</p>
+<p><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> (<a href="https://www.biorxiv.org/content/10.1101/TODO">Wilks, Collado-Torres, Zheng, Jaffe, et al., 2020</a>) provides an interface for downloading the <a href="https://LieberInstitute.github.io/recount3-docs/raw-files.html">recount3 raw files</a> and building Bioconductor-friendly R objects <a id="cite-Huber_2015"></a><a id="cite-SummarizedExperiment"></a>(<a href="https://doi.org/10.1038/nmeth.3252">Huber, Carey, Gentleman, Anders, et al., 2015</a>; <a href="https://doi.org/10.18129/B9.bioc.SummarizedExperiment">Morgan, Obenchain, Hester, and Pagès, 2019</a>) that can be used with many downstream packages. To achieve this, the raw data is organized by <strong>study</strong> from a specific <strong>data source</strong>. That same study can be a part of one or more <strong>compilations</strong>, which is a manually curated set of studies with compilation-specific sample metadata (see the <a href="https://LieberInstitute.github.io/recount3-docs/raw-files.html#data-source-vs-collection">Data source vs collection</a> for details). To get started with <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em>, you will need to identify the ID for the study of interest from either <strong>human</strong> or <strong>mouse</strong> for a particular <strong>annotation</strong> of interest. Once you have identified study, data source or compilation, and annotation, <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> can be used to build a <code>RangedSummarizedExperiment</code> object (<a href="https://doi.org/10.18129/B9.bioc.SummarizedExperiment">Morgan, Obenchain, Hester, and Pagès, 2019</a>) for either <strong>gene</strong>, <strong>exon</strong> or <strong>exon-exon junction</strong> expression feature data. For more advanced use cases, <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> provides access to the coverage BigWig files that can be quantified for custom set of genomic regions using <em><a href="https://bioconductor.org/packages/3.12/megadepth">megadepth</a></em>. Furthermore, <em><a href="https://bioconductor.org/packages/3.12/snapcount">snapcount</a></em> allows fast-queries for custom exon-exon junctions and other custom input.</p>
 <div id="find-a-study" class="section level2">
 <h2 class="hasAnchor">
 <a href="#find-a-study" class="anchor"></a>Find a study</h2>
+<p>In order to access data from <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em>, the first step is to identify a <strong>project</strong> that you are interested in working with. Most of the project IDs are the ones you can find on the Sequence Read Archive (<a href="https://www.ncbi.nlm.nih.gov/sra">SRA</a>). For example, <a href="https://www.ncbi.nlm.nih.gov/sra/?term=SRP009615">SRP009615</a> which we use in the examples in this vignette.The exceptions are the Genotype-Expression and The Cancer Genome Atlas human studies, commonly known as <a href="https://gtexportal.org/home/">GTEx</a> and <a href="https://www.cancer.gov/about-nci/organization/ccg/research/structural-genomics/tcga">TCGA</a>. Both GTEx and TCGA are available in <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> by tissue.</p>
+<div id="through-available_projects" class="section level3">
+<h3 class="hasAnchor">
+<a href="#through-available_projects" class="anchor"></a>Through <code>available_projects()</code>
+</h3>
+<p>While you can use external websites to find a study of interest, you can also use <code><a href="../reference/available_projects.html">available_projects()</a></code> to list the projects that are available in <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> as shown below. This will return a <code><a href="https://rdrr.io/r/base/data.frame.html">data.frame()</a></code> object that lists the unique project IDs.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit">
+<span class="kw">human_projects</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/available_projects.html">available_projects</a></span>()
+<span class="co">#&gt; 2020-09-30 01:43:43 caching file sra.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:43 caching file gtex.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:43 caching file tcga.recount_project.MD.gz.</span>
+<span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(<span class="kw">human_projects</span>)
+<span class="co">#&gt; [1] 8742    5</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="kw">human_projects</span>)
+<span class="co">#&gt;       project organism file_source     project_home project_type</span>
+<span class="co">#&gt; 1   SRP107565    human         sra data_sources/sra data_sources</span>
+<span class="co">#&gt; 217 SRP149665    human         sra data_sources/sra data_sources</span>
+<span class="co">#&gt; 221 SRP017465    human         sra data_sources/sra data_sources</span>
+<span class="co">#&gt; 244 SRP119165    human         sra data_sources/sra data_sources</span>
+<span class="co">#&gt; 250 SRP133965    human         sra data_sources/sra data_sources</span>
+<span class="co">#&gt; 262 SRP096765    human         sra data_sources/sra data_sources</span>
+
+<span class="co">## Select a study of interest</span>
+<span class="kw">project_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span>(
+    <span class="kw">human_projects</span>,
+    <span class="kw">project</span> <span class="op">==</span> <span class="st">"SRP009615"</span> <span class="op">&amp;</span> <span class="kw">project_type</span> <span class="op">==</span> <span class="st">"data_sources"</span>
+)
+<span class="kw">project_info</span>
+<span class="co">#&gt;         project organism file_source     project_home project_type</span>
+<span class="co">#&gt; 65312 SRP009615    human         sra data_sources/sra data_sources</span>
+</pre></div>
+<p>Let’s say that you are interested in the GTEx projects, you could then filter by <code>file_source</code>. We’ll focus only on those entries that from a data source, and not from a collection for now.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span>(<span class="kw">human_projects</span>, <span class="kw">file_source</span> <span class="op">==</span> <span class="st">"gtex"</span> <span class="op">&amp;</span> <span class="kw">project_type</span> <span class="op">==</span> <span class="st">"data_sources"</span>)
+<span class="co">#&gt;                project organism file_source      project_home project_type</span>
+<span class="co">#&gt; 316450  ADIPOSE_TISSUE    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316451          MUSCLE    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316452    BLOOD_VESSEL    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316454           HEART    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316456           OVARY    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316457          UTERUS    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316458          VAGINA    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316459          BREAST    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316460            SKIN    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316461  SALIVARY_GLAND    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316462           BRAIN    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316463   ADRENAL_GLAND    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316464         THYROID    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316465            LUNG    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316466          SPLEEN    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316467        PANCREAS    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316468       ESOPHAGUS    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316471         STOMACH    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316474           COLON    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316475 SMALL_INTESTINE    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316477        PROSTATE    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316478          TESTIS    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316482           NERVE    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316498       PITUITARY    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316512           BLOOD    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316675           LIVER    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 316952          KIDNEY    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 329381    CERVIX_UTERI    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 329576  FALLOPIAN_TUBE    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 329668         BLADDER    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 331476        STUDY_NA    human        gtex data_sources/gtex data_sources</span>
+<span class="co">#&gt; 335460     BONE_MARROW    human        gtex data_sources/gtex data_sources</span>
+</pre></div>
+<p>Note that one of the projects for GTEx is <code>STUDY_NA</code>, that’s because in <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> we processed all GTEx samples, including some that had no tissue assigned and were not used by the GTEx consortium.</p>
+<p>If you prefer to view the list of available studies interactively, you can do so with <em><a href="https://bioconductor.org/packages/3.12/interactiveDisplayBase">interactiveDisplayBase</a></em> as shown below. You’ll want to assign the output of <code><a href="https://rdrr.io/pkg/interactiveDisplayBase/man/interactiveDisplayBase-methods.html">interactiveDisplayBase::display()</a></code> to an object so you can save your selections and use them later. By doing so, you’ll be able to select a study of interest, and save the information for later use after you hit the “send” button.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit">
+<span class="co">if</span> (<span class="fu"><a href="https://rdrr.io/r/base/interactive.html">interactive</a></span>()) {
+    <span class="co">## Interactively browse the human projects, select one, then hit send</span>
+    <span class="kw">selected_study</span> <span class="op">&lt;-</span> <span class="kw">interactiveDisplayBase</span>::<span class="fu"><a href="https://rdrr.io/pkg/interactiveDisplayBase/man/interactiveDisplayBase-methods.html">display</a></span>(<span class="kw">human_projects</span>)
+}
+</pre></div>
+</div>
+<div id="through-recount3_hub" class="section level3">
+<h3 class="hasAnchor">
+<a href="#through-recount3_hub" class="anchor"></a>Through <code>recount3_hub()</code>
+</h3>
+<p>Alternatively, you can use <em><a href="https://bioconductor.org/packages/3.12/ExperimentHub">ExperimentHub</a></em> to search all of the available studies, filter the ones that have a <code>recount3</code> tag, and then use that information with this package to retrieve the data. Just like with our approach using <code><a href="https://rdrr.io/pkg/interactiveDisplayBase/man/interactiveDisplayBase-methods.html">interactiveDisplayBase::display()</a></code> and <code><a href="../reference/available_projects.html">available_projects()</a></code>, you can also interactively explore the data from r <em><a href="https://bioconductor.org/packages/3.12/ExperimentHub">ExperimentHub</a></em>.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit">
+<span class="co">## Retrieve the experiments in ExperimentHub</span>
+<span class="kw">eh</span> <span class="op">&lt;-</span> <span class="kw">ExperimentHub</span>::<span class="fu"><a href="https://rdrr.io/pkg/ExperimentHub/man/ExperimentHub-class.html">ExperimentHub</a></span>()
+<span class="co">#&gt; snapshotDate(): 2020-09-24</span>
+
+<span class="co">if</span> (<span class="fu"><a href="https://rdrr.io/r/base/interactive.html">interactive</a></span>()) {
+    <span class="co">## Search for the recount3 tag, find a study of interest, select it, then</span>
+    <span class="co">## hit send</span>
+    <span class="kw">eh2</span> <span class="op">&lt;-</span> <span class="kw">AnnotationHub</span>::<span class="fu"><a href="https://rdrr.io/pkg/AnnotationHub/man/AnnotationHub-class.html">display</a></span>(<span class="kw">ExperimentHub</span>::<span class="fu"><a href="https://rdrr.io/pkg/ExperimentHub/man/ExperimentHub-class.html">ExperimentHub</a></span>())
+
+    <span class="co">## Retrieve the study data from ExperimentHub</span>
+    <span class="kw">selected_study_eh</span> <span class="op">&lt;-</span> <span class="kw">eh2</span>[[<span class="fl">1</span>]]
+}
+</pre></div>
+<p>The process of retrieving the project information from <em><a href="https://bioconductor.org/packages/3.12/ExperimentHub">ExperimentHub</a></em> is simplified in <code><a href="../reference/recount3_hub.html">recount3_hub()</a></code> for situations where you know the project ID already as shown for <code>SRP009615</code>.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit">
+<span class="kw">project_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/recount3_hub.html">recount3_hub</a></span>(<span class="st">"SRP009615"</span>)
+<span class="co">#&gt; snapshotDate(): 2020-09-24</span>
+<span class="co">#&gt; 2020-09-30 01:43:51 the project SRP009615 was not found on ExperimentHub.</span>
+<span class="co">#&gt; Using a backup mechanism powered by recount3::available_projects().</span>
+<span class="co">#&gt; 2020-09-30 01:43:51 caching file sra.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:51 caching file gtex.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:51 caching file tcga.recount_project.MD.gz.</span>
+</pre></div>
+<p>Ultimately, we need three pieces of information in order to download a specific dataset from <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em>. Those are:</p>
 <ul>
-<li>ExperimentHub</li>
-<li>List of projects
-<ul>
-<li>interactiveDisplayBase</li>
+<li>
+<strong>project</strong>: the project ID,</li>
+<li>
+<strong>organism</strong>: either human or mouse,</li>
+<li>
+<strong>project_home</strong>: where the data lives which varies between data sources and collections.</li>
 </ul>
-</li>
-</ul>
+<div class="sourceCode" id="cb11"><pre class="downlit">
+<span class="kw">project_info</span>
+<span class="co">#&gt;     project organism     project_home</span>
+<span class="co">#&gt; 1 SRP009615    human data_sources/sra</span>
+</pre></div>
+</div>
 </div>
 <div id="available-annotations" class="section level2">
 <h2 class="hasAnchor">
 <a href="#available-annotations" class="anchor"></a>Available annotations</h2>
+<p>Now that we have identified our project of interest, the next step is to choose an annotation that we want to work with. The annotation files available depend on the organism. To facilitate finding the specific names we use in <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em>, we have provided the function <code><a href="../reference/annotation_options.html">annotation_options()</a></code>.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit">
+<span class="fu"><a href="../reference/annotation_options.html">annotation_options</a></span>(<span class="st">"human"</span>)
+<span class="co">#&gt; [1] "gencode_v26" "gencode_v29" "fantom6_cat" "refseq"      "ercc"       </span>
+<span class="co">#&gt; [6] "sirv"</span>
+<span class="fu"><a href="../reference/annotation_options.html">annotation_options</a></span>(<span class="st">"mouse"</span>)
+<span class="co">#&gt; [1] "gencode_v23"</span>
+</pre></div>
+<p>The main sources are:</p>
 <ul>
-<li>Human</li>
-<li>Mouse</li>
+<li>
+<a href="https://www.gencodegenes.org/">GENCODE</a> project</li>
+<li>
+<a href="https://www.ncbi.nlm.nih.gov/refseq/">RefSeq</a>: NCBI Reference Sequence Database</li>
+<li>FANTOM6_CAT is described at DOI <a href="https://doi.org/10.1101/gr.254656.119">10.1101/gr.254656.119</a>
+</li>
+<li>
+<a href="https://www.nist.gov/programs-projects/external-rna-controls-consortium">ERCC</a>: External RNA Controls Consortium <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, commercially available from <a href="https://www.thermofisher.com/order/catalog/product/4456740#/4456740">ThermoFisher Scientific</a>
+</li>
+<li>
+<a href="https://www.biorxiv.org/content/10.1101/080747v1">SIRV</a> <a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>, commercially available from <a href="https://www.lexogen.com/sirvs/">Lexogen</a>
+</li>
 </ul>
+<p>In <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> we have provided multiple annotations, which is different from <em><a href="https://bioconductor.org/packages/3.12/recount">recount</a></em> (<code>recount2</code> R/Bioconductor package) where all files were computed using GENCODE version 25. However, in both, you might be interested in quantifying your annotation of interest, as described further below in the BigWig files section.</p>
 </div>
 <div id="build-a-rse" class="section level2">
 <h2 class="hasAnchor">
 <a href="#build-a-rse" class="anchor"></a>Build a RSE</h2>
-<ul>
-<li>create_rse</li>
-<li><code><a href="https://rdrr.io/pkg/rmarkdown/man/metadata.html">metadata(rse)</a></code></li>
-<li><code>colData(rse)</code></li>
-<li>
-<code>scale_counts(rse)</code> TODO</li>
-<li>junction-specific notes</li>
-<li>collection vs data source</li>
-</ul>
+<p>Once you have chosen an annotation and a project, you can now build a <code>RangedSummarizedExperiment</code> object (<a href="https://doi.org/10.1038/nmeth.3252">Huber, Carey, Gentleman, Anders, et al., 2015</a>; <a href="https://doi.org/10.18129/B9.bioc.SummarizedExperiment">Morgan, Obenchain, Hester, and Pagès, 2019</a>). To do so, we recommend using the <code><a href="../reference/create_rse.html">create_rse()</a></code> function as shown below for GENCODE v26 (the default annotation for human files). <code><a href="../reference/create_rse.html">create_rse()</a></code> internally uses several other <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> functions for locating the necessary raw files, downloading them, reading them, and building the <code>RangedSummarizedExperiment</code> (RSE) object. <code><a href="../reference/create_rse.html">create_rse()</a></code> shows several status message updates that you can silence with <code><a href="https://rdrr.io/r/base/message.html">suppressMessages(create_rse())</a></code> if you want to.</p>
+<div class="sourceCode" id="cb13"><pre class="downlit">
+<span class="co">## Create a RSE object at the gene level</span>
+<span class="kw">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_rse.html">create_rse</a></span>(<span class="kw">project_info</span>)
+<span class="co">#&gt; 2020-09-30 01:43:55 downloading and reading the metadata.</span>
+<span class="co">#&gt; 2020-09-30 01:43:55 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:55 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:56 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:56 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:56 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:56 downloading and reading the feature information.</span>
+<span class="co">#&gt; 2020-09-30 01:43:56 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:57 downloading and reading the counts: 12 samples across 63856 features.</span>
+<span class="co">#&gt; 2020-09-30 01:43:57 caching file sra.gene_sums.SRP009615.G026.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:58 construcing the RangedSummarizedExperiment (rse) object.</span>
+
+<span class="co">## Explore the resulting RSE gene object</span>
+<span class="kw">rse_gene_SRP009615</span>
+<span class="co">#&gt; class: RangedSummarizedExperiment </span>
+<span class="co">#&gt; dim: 63856 12 </span>
+<span class="co">#&gt; metadata(8): time_created recount3_version ... annotation recount3_url</span>
+<span class="co">#&gt; assays(1): raw_counts</span>
+<span class="co">#&gt; rownames(63856): ENSG00000278704.1 ENSG00000277400.1 ...</span>
+<span class="co">#&gt;   ENSG00000182484.15_PAR_Y ENSG00000227159.8_PAR_Y</span>
+<span class="co">#&gt; rowData names(10): source type ... havana_gene tag</span>
+<span class="co">#&gt; colnames(12): SRR387777 SRR387778 ... SRR389077 SRR389078</span>
+<span class="co">#&gt; colData names(173): rail_id external_id ... recount_pred.pred.type</span>
+<span class="co">#&gt;   BigWigURL</span>
+</pre></div>
+</div>
+<div id="explore-the-rse" class="section level2">
+<h2 class="hasAnchor">
+<a href="#explore-the-rse" class="anchor"></a>Explore the RSE</h2>
+<p>Because the RSE object is created at run-time in <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em>, unlike the static files provided by <em><a href="https://bioconductor.org/packages/3.12/recount">recount</a></em> for <code>recount2</code>, <code><a href="../reference/create_rse.html">create_rse()</a></code> stores information about how this RSE object was made under <code><a href="https://rdrr.io/pkg/rmarkdown/man/metadata.html">metadata()</a></code>. This information is useful in case you share the RSE object and someone else wants to be able to re-make the object with the latest data <a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
+<div class="sourceCode" id="cb14"><pre class="downlit">
+<span class="co">## Information about how this RSE object was made</span>
+<span class="fu">metadata</span>(<span class="kw">rse_gene_SRP009615</span>)
+<span class="co">#&gt; $time_created</span>
+<span class="co">#&gt; [1] "2020-09-30 01:43:58 UTC"</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $recount3_version</span>
+<span class="co">#&gt;           package ondiskversion loadedversion</span>
+<span class="co">#&gt; recount3 recount3        0.99.0        0.99.0</span>
+<span class="co">#&gt;                                                 path</span>
+<span class="co">#&gt; recount3 /usr/local/lib/R/host-site-library/recount3</span>
+<span class="co">#&gt;                                           loadedpath attached is_base</span>
+<span class="co">#&gt; recount3 /usr/local/lib/R/host-site-library/recount3     TRUE   FALSE</span>
+<span class="co">#&gt;                date       source md5ok                            library</span>
+<span class="co">#&gt; recount3 2020-09-30 Bioconductor    NA /usr/local/lib/R/host-site-library</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $project</span>
+<span class="co">#&gt; [1] "SRP009615"</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $project_home</span>
+<span class="co">#&gt; [1] "data_sources/sra"</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $type</span>
+<span class="co">#&gt; [1] "gene"</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $organism</span>
+<span class="co">#&gt; [1] "human"</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $annotation</span>
+<span class="co">#&gt; [1] "gencode_v26"</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $recount3_url</span>
+<span class="co">#&gt; [1] "http://idies.jhu.edu/recount3/data"</span>
+</pre></div>
+<p>The SRP009615 study was composed of 12 samples, for which we have 63,856 genes in GENCODE v26. The annotation-specific information is available through <code>rowRanges()</code> as shown below with the <code>gene_id</code> column used to identify genes in each of the annotations <a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>.</p>
+<div class="sourceCode" id="cb15"><pre class="downlit">
+<span class="co">## Number of genes by number of samples</span>
+<span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(<span class="kw">rse_gene_SRP009615</span>)
+<span class="co">#&gt; [1] 63856    12</span>
+
+<span class="co">## Information about the genes</span>
+<span class="fu">rowRanges</span>(<span class="kw">rse_gene_SRP009615</span>)
+<span class="co">#&gt; GRanges object with 63856 ranges and 10 metadata columns:</span>
+<span class="co">#&gt;                              seqnames            ranges strand |   source</span>
+<span class="co">#&gt;                                 &lt;Rle&gt;         &lt;IRanges&gt;  &lt;Rle&gt; | &lt;factor&gt;</span>
+<span class="co">#&gt;          ENSG00000278704.1 GL000009.2       56140-58376      - |  ENSEMBL</span>
+<span class="co">#&gt;          ENSG00000277400.1 GL000194.1      53590-115018      - |  ENSEMBL</span>
+<span class="co">#&gt;          ENSG00000274847.1 GL000194.1      53594-115055      - |  ENSEMBL</span>
+<span class="co">#&gt;          ENSG00000277428.1 GL000195.1       37434-37534      - |  ENSEMBL</span>
+<span class="co">#&gt;          ENSG00000276256.1 GL000195.1       42939-49164      - |  ENSEMBL</span>
+<span class="co">#&gt;                        ...        ...               ...    ... .      ...</span>
+<span class="co">#&gt;   ENSG00000124334.17_PAR_Y       chrY 57184101-57197337      + |   HAVANA</span>
+<span class="co">#&gt;   ENSG00000185203.12_PAR_Y       chrY 57201143-57203357      - |   HAVANA</span>
+<span class="co">#&gt;    ENSG00000270726.6_PAR_Y       chrY 57190738-57208756      + |   HAVANA</span>
+<span class="co">#&gt;   ENSG00000182484.15_PAR_Y       chrY 57207346-57212230      + |   HAVANA</span>
+<span class="co">#&gt;    ENSG00000227159.8_PAR_Y       chrY 57212184-57214397      - |   HAVANA</span>
+<span class="co">#&gt;                                type     score     phase                gene_id</span>
+<span class="co">#&gt;                            &lt;factor&gt; &lt;numeric&gt; &lt;integer&gt;            &lt;character&gt;</span>
+<span class="co">#&gt;          ENSG00000278704.1     gene      2237      &lt;NA&gt;      ENSG00000278704.1</span>
+<span class="co">#&gt;          ENSG00000277400.1     gene      2179      &lt;NA&gt;      ENSG00000277400.1</span>
+<span class="co">#&gt;          ENSG00000274847.1     gene      1599      &lt;NA&gt;      ENSG00000274847.1</span>
+<span class="co">#&gt;          ENSG00000277428.1     gene       101      &lt;NA&gt;      ENSG00000277428.1</span>
+<span class="co">#&gt;          ENSG00000276256.1     gene      2195      &lt;NA&gt;      ENSG00000276256.1</span>
+<span class="co">#&gt;                        ...      ...       ...       ...                    ...</span>
+<span class="co">#&gt;   ENSG00000124334.17_PAR_Y     gene      2504      &lt;NA&gt; ENSG00000124334.17_P..</span>
+<span class="co">#&gt;   ENSG00000185203.12_PAR_Y     gene      1054      &lt;NA&gt; ENSG00000185203.12_P..</span>
+<span class="co">#&gt;    ENSG00000270726.6_PAR_Y     gene       773      &lt;NA&gt; ENSG00000270726.6_PA..</span>
+<span class="co">#&gt;   ENSG00000182484.15_PAR_Y     gene      4618      &lt;NA&gt; ENSG00000182484.15_P..</span>
+<span class="co">#&gt;    ENSG00000227159.8_PAR_Y     gene      1306      &lt;NA&gt; ENSG00000227159.8_PA..</span>
+<span class="co">#&gt;                                         gene_type   gene_name       level</span>
+<span class="co">#&gt;                                       &lt;character&gt; &lt;character&gt; &lt;character&gt;</span>
+<span class="co">#&gt;          ENSG00000278704.1         protein_coding  BX004987.1           3</span>
+<span class="co">#&gt;          ENSG00000277400.1         protein_coding  AC145212.2           3</span>
+<span class="co">#&gt;          ENSG00000274847.1         protein_coding  AC145212.1           3</span>
+<span class="co">#&gt;          ENSG00000277428.1               misc_RNA       Y_RNA           3</span>
+<span class="co">#&gt;          ENSG00000276256.1         protein_coding  AC011043.1           3</span>
+<span class="co">#&gt;                        ...                    ...         ...         ...</span>
+<span class="co">#&gt;   ENSG00000124334.17_PAR_Y         protein_coding        IL9R           2</span>
+<span class="co">#&gt;   ENSG00000185203.12_PAR_Y              antisense      WASIR1           2</span>
+<span class="co">#&gt;    ENSG00000270726.6_PAR_Y   processed_transcript AJ271736.10           2</span>
+<span class="co">#&gt;   ENSG00000182484.15_PAR_Y transcribed_unproces..      WASH6P           2</span>
+<span class="co">#&gt;    ENSG00000227159.8_PAR_Y unprocessed_pseudogene    DDX11L16           2</span>
+<span class="co">#&gt;                                     havana_gene         tag</span>
+<span class="co">#&gt;                                     &lt;character&gt; &lt;character&gt;</span>
+<span class="co">#&gt;          ENSG00000278704.1                 &lt;NA&gt;        &lt;NA&gt;</span>
+<span class="co">#&gt;          ENSG00000277400.1                 &lt;NA&gt;        &lt;NA&gt;</span>
+<span class="co">#&gt;          ENSG00000274847.1                 &lt;NA&gt;        &lt;NA&gt;</span>
+<span class="co">#&gt;          ENSG00000277428.1                 &lt;NA&gt;        &lt;NA&gt;</span>
+<span class="co">#&gt;          ENSG00000276256.1                 &lt;NA&gt;        &lt;NA&gt;</span>
+<span class="co">#&gt;                        ...                  ...         ...</span>
+<span class="co">#&gt;   ENSG00000124334.17_PAR_Y OTTHUMG00000022720.1         PAR</span>
+<span class="co">#&gt;   ENSG00000185203.12_PAR_Y OTTHUMG00000022676.3         PAR</span>
+<span class="co">#&gt;    ENSG00000270726.6_PAR_Y OTTHUMG00000184987.2         PAR</span>
+<span class="co">#&gt;   ENSG00000182484.15_PAR_Y OTTHUMG00000022677.5         PAR</span>
+<span class="co">#&gt;    ENSG00000227159.8_PAR_Y OTTHUMG00000022678.1         PAR</span>
+<span class="co">#&gt;   -------</span>
+<span class="co">#&gt;   seqinfo: 374 sequences from an unspecified genome; no seqlengths</span>
+</pre></div>
+</div>
+<div id="sample-metadata" class="section level2">
+<h2 class="hasAnchor">
+<a href="#sample-metadata" class="anchor"></a>Sample metadata</h2>
+<p>The sample metadata provided in <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> is much more extensive than the one in <em><a href="https://bioconductor.org/packages/3.12/recount">recount</a></em> for the <code>recount2</code> project because it’s includes for <a href="https://LieberInstitute.github.io/recount3-docs/quality-check-fields.html"><strong>quality control metrics</strong></a>, predictions, and information used internally by <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> functions such as <code><a href="../reference/create_rse.html">create_rse()</a></code>. All individual metadata tables include the columns <strong>rail_id</strong>, <strong>external_id</strong> and <strong>study</strong> which are used for merging the different tables. Finally, **BigWigUrl* provides the URL for the BigWig file for the given sample.</p>
+<div class="sourceCode" id="cb16"><pre class="downlit">
+<span class="co">## Sample metadata</span>
+<span class="kw">recount3_cols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span>(<span class="fu">colData</span>(<span class="kw">rse_gene_SRP009615</span>))
+
+<span class="co">## How many are there?</span>
+<span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span>(<span class="kw">recount3_cols</span>)
+<span class="co">#&gt; [1] 173</span>
+
+<span class="co">## View the first few ones</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="kw">recount3_cols</span>)
+<span class="co">#&gt; [1] "rail_id"            "external_id"        "study"             </span>
+<span class="co">#&gt; [4] "sra.sample_acc.x"   "sra.experiment_acc" "sra.submission_acc"</span>
+
+<span class="co">## Group them by source</span>
+<span class="kw">recount3_cols_groups</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span>(<span class="st">"\\..*"</span>, <span class="st">""</span>, <span class="kw">recount3_cols</span>))
+
+<span class="co">## Common sources and number of columns per source</span>
+<span class="kw">recount3_cols_groups</span>[<span class="kw">recount3_cols_groups</span> <span class="op">&gt;</span> <span class="fl">1</span>]
+<span class="co">#&gt; </span>
+<span class="co">#&gt;    recount_pred recount_project      recount_qc  recount_seq_qc             sra </span>
+<span class="co">#&gt;               5               5             109              12              38</span>
+
+<span class="co">## Unique columns</span>
+<span class="kw">recount3_cols_groups</span>[<span class="kw">recount3_cols_groups</span> <span class="op">==</span> <span class="fl">1</span>]
+<span class="co">#&gt; </span>
+<span class="co">#&gt;   BigWigURL external_id     rail_id       study </span>
+<span class="co">#&gt;           1           1           1           1</span>
+
+<span class="co">## Explore them all</span>
+<span class="co">if</span> (<span class="fu"><a href="https://rdrr.io/r/base/interactive.html">interactive</a></span>()) {
+    <span class="kw">recount3_cols</span>
+}
+</pre></div>
+</div>
+<div id="counts" class="section level2">
+<h2 class="hasAnchor">
+<a href="#counts" class="anchor"></a>Counts</h2>
+<p>The counts in <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> are raw base-pair coverage counts, similar to those in <em><a href="https://bioconductor.org/packages/3.12/recount">recount</a></em>. To further understand them, check the <em><a href="https://bioconductor.org/packages/3.12/recountWorkflow">recountWorkflow</a></em> DOI <a href="https://doi.org/10.12688/f1000research.12223.1">10.12688/f1000research.12223.1</a>. To highlight that these arw raw base-pair coverage counts, they are stored in the “raw_counts” assay</p>
+<div class="sourceCode" id="cb17"><pre class="downlit">
+<span class="fu">assayNames</span>(<span class="kw">rse_gene_SRP009615</span>)
+<span class="co">#&gt; [1] "raw_counts"</span>
+</pre></div>
+<p>Using TODO you can scale the counts and assign them to the “counts” slot to use them in downstream packages such as <em><a href="https://bioconductor.org/packages/3.12/DESeq2">DESeq2</a></em> and <em><a href="https://bioconductor.org/packages/3.12/limma">limma</a></em>.</p>
+<div class="sourceCode" id="cb18"><pre class="downlit">
+<span class="co">## TODO</span>
+</pre></div>
+</div>
+</div>
+<div id="advanced-features" class="section level1">
+<h1 class="hasAnchor">
+<a href="#advanced-features" class="anchor"></a>Advanced features</h1>
+<p><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> provides an interface to <a href="https://LieberInstitute.github.io/recount3-docs/raw-files.html">raw files</a> that go beyond gene counts, as well as other features you might be interested in.</p>
+<div id="exon" class="section level2">
+<h2 class="hasAnchor">
+<a href="#exon" class="anchor"></a>Exon</h2>
+<p>First, you might want to study expression at the <strong>exon</strong> expression level instead of <strong>gene</strong>. To do so, use the <code>type</code> argument in <code><a href="../reference/create_rse.html">create_rse()</a></code> as shown below.</p>
+<div class="sourceCode" id="cb19"><pre class="downlit">
+<span class="co">## Create a RSE object at the exon level</span>
+<span class="kw">rse_exon_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_rse.html">create_rse</a></span>(
+    <span class="kw">proj_info</span>,
+    type = <span class="st">"exon"</span>
+)
+<span class="co">#&gt; 2020-09-30 01:43:58 downloading and reading the metadata.</span>
+<span class="co">#&gt; 2020-09-30 01:43:58 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:58 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:59 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:59 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:59 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:43:59 downloading and reading the feature information.</span>
+<span class="co">#&gt; 2020-09-30 01:43:59 caching file human.exon_sums.G026.gtf.gz.</span>
+<span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/annotations/exon_sums/human.exon_sums.G026.gtf.gz'</span>
+<span class="co">#&gt; 2020-09-30 01:44:28 downloading and reading the counts: 12 samples across 1299686 features.</span>
+<span class="co">#&gt; 2020-09-30 01:44:28 caching file sra.exon_sums.SRP009615.G026.gz.</span>
+<span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/exon_sums/15/SRP009615/sra.exon_sums.SRP009615.G026.gz'</span>
+<span class="co">#&gt; 2020-09-30 01:44:32 construcing the RangedSummarizedExperiment (rse) object.</span>
+
+<span class="co">## Explore the resulting RSE exon object</span>
+<span class="kw">rse_exon_SRP009615</span>
+<span class="co">#&gt; class: RangedSummarizedExperiment </span>
+<span class="co">#&gt; dim: 1299686 12 </span>
+<span class="co">#&gt; metadata(8): time_created recount3_version ... annotation recount3_url</span>
+<span class="co">#&gt; assays(1): raw_counts</span>
+<span class="co">#&gt; rownames(1299686): GL000009.2|56140|58376|- GL000194.1|53594|54832|-</span>
+<span class="co">#&gt;   ... chrY|57213880|57213964|- chrY|57214350|57214397|-</span>
+<span class="co">#&gt; rowData names(21): source type ... ont ccdsid</span>
+<span class="co">#&gt; colnames(12): SRR387777 SRR387778 ... SRR389077 SRR389078</span>
+<span class="co">#&gt; colData names(173): rail_id external_id ... recount_pred.pred.type</span>
+<span class="co">#&gt;   BigWigURL</span>
+
+<span class="co">## Explore the object</span>
+<span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(<span class="kw">rse_exon_SRP009615</span>)
+<span class="co">#&gt; [1] 1299686      12</span>
+</pre></div>
+<p>Each exon is shown in this output, so, you might have to filter the exons of interest. Unlike in <code>recount2</code>, these are actual exons and not disjoint exons <a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>.</p>
+<div class="sourceCode" id="cb20"><pre class="downlit">
+<span class="co">## Exon annotation information</span>
+<span class="fu">rowRanges</span>(<span class="kw">rse_exon_SRP009615</span>)
+<span class="co">#&gt; GRanges object with 1299686 ranges and 21 metadata columns:</span>
+<span class="co">#&gt;                                seqnames            ranges strand |   source</span>
+<span class="co">#&gt;                                   &lt;Rle&gt;         &lt;IRanges&gt;  &lt;Rle&gt; | &lt;factor&gt;</span>
+<span class="co">#&gt;     GL000009.2|56140|58376|- GL000009.2       56140-58376      - |  ENSEMBL</span>
+<span class="co">#&gt;     GL000194.1|53594|54832|- GL000194.1       53594-54832      - |  ENSEMBL</span>
+<span class="co">#&gt;     GL000194.1|55446|55676|- GL000194.1       55446-55676      - |  ENSEMBL</span>
+<span class="co">#&gt;     GL000194.1|53590|55676|- GL000194.1       53590-55676      - |  ENSEMBL</span>
+<span class="co">#&gt;   GL000194.1|112792|112850|- GL000194.1     112792-112850      - |  ENSEMBL</span>
+<span class="co">#&gt;                          ...        ...               ...    ... .      ...</span>
+<span class="co">#&gt;     chrY|57212184|57213125|-       chrY 57212184-57213125      - |   HAVANA</span>
+<span class="co">#&gt;     chrY|57213204|57213357|-       chrY 57213204-57213357      - |   HAVANA</span>
+<span class="co">#&gt;     chrY|57213526|57213602|-       chrY 57213526-57213602      - |   HAVANA</span>
+<span class="co">#&gt;     chrY|57213880|57213964|-       chrY 57213880-57213964      - |   HAVANA</span>
+<span class="co">#&gt;     chrY|57214350|57214397|-       chrY 57214350-57214397      - |   HAVANA</span>
+<span class="co">#&gt;                                  type     score     phase</span>
+<span class="co">#&gt;                              &lt;factor&gt; &lt;numeric&gt; &lt;integer&gt;</span>
+<span class="co">#&gt;     GL000009.2|56140|58376|-     exon      2237      &lt;NA&gt;</span>
+<span class="co">#&gt;     GL000194.1|53594|54832|-     exon      1239      &lt;NA&gt;</span>
+<span class="co">#&gt;     GL000194.1|55446|55676|-     exon       231      &lt;NA&gt;</span>
+<span class="co">#&gt;     GL000194.1|53590|55676|-     exon      2087      &lt;NA&gt;</span>
+<span class="co">#&gt;   GL000194.1|112792|112850|-     exon        59      &lt;NA&gt;</span>
+<span class="co">#&gt;                          ...      ...       ...       ...</span>
+<span class="co">#&gt;     chrY|57212184|57213125|-     exon       942      &lt;NA&gt;</span>
+<span class="co">#&gt;     chrY|57213204|57213357|-     exon       154      &lt;NA&gt;</span>
+<span class="co">#&gt;     chrY|57213526|57213602|-     exon        77      &lt;NA&gt;</span>
+<span class="co">#&gt;     chrY|57213880|57213964|-     exon        85      &lt;NA&gt;</span>
+<span class="co">#&gt;     chrY|57214350|57214397|-     exon        48      &lt;NA&gt;</span>
+<span class="co">#&gt;                                             gene_id          transcript_id</span>
+<span class="co">#&gt;                                         &lt;character&gt;            &lt;character&gt;</span>
+<span class="co">#&gt;     GL000009.2|56140|58376|-      ENSG00000278704.1      ENST00000618686.1</span>
+<span class="co">#&gt;     GL000194.1|53594|54832|-      ENSG00000274847.1      ENST00000400754.4</span>
+<span class="co">#&gt;     GL000194.1|55446|55676|-      ENSG00000274847.1      ENST00000400754.4</span>
+<span class="co">#&gt;     GL000194.1|53590|55676|-      ENSG00000277400.1      ENST00000613230.1</span>
+<span class="co">#&gt;   GL000194.1|112792|112850|-      ENSG00000274847.1      ENST00000400754.4</span>
+<span class="co">#&gt;                          ...                    ...                    ...</span>
+<span class="co">#&gt;     chrY|57212184|57213125|- ENSG00000227159.8_PA.. ENST00000507418.6_PA..</span>
+<span class="co">#&gt;     chrY|57213204|57213357|- ENSG00000227159.8_PA.. ENST00000507418.6_PA..</span>
+<span class="co">#&gt;     chrY|57213526|57213602|- ENSG00000227159.8_PA.. ENST00000507418.6_PA..</span>
+<span class="co">#&gt;     chrY|57213880|57213964|- ENSG00000227159.8_PA.. ENST00000507418.6_PA..</span>
+<span class="co">#&gt;     chrY|57214350|57214397|- ENSG00000227159.8_PA.. ENST00000507418.6_PA..</span>
+<span class="co">#&gt;                                           gene_type   gene_name</span>
+<span class="co">#&gt;                                         &lt;character&gt; &lt;character&gt;</span>
+<span class="co">#&gt;     GL000009.2|56140|58376|-         protein_coding  BX004987.1</span>
+<span class="co">#&gt;     GL000194.1|53594|54832|-         protein_coding  AC145212.1</span>
+<span class="co">#&gt;     GL000194.1|55446|55676|-         protein_coding  AC145212.1</span>
+<span class="co">#&gt;     GL000194.1|53590|55676|-         protein_coding  AC145212.2</span>
+<span class="co">#&gt;   GL000194.1|112792|112850|-         protein_coding  AC145212.1</span>
+<span class="co">#&gt;                          ...                    ...         ...</span>
+<span class="co">#&gt;     chrY|57212184|57213125|- unprocessed_pseudogene    DDX11L16</span>
+<span class="co">#&gt;     chrY|57213204|57213357|- unprocessed_pseudogene    DDX11L16</span>
+<span class="co">#&gt;     chrY|57213526|57213602|- unprocessed_pseudogene    DDX11L16</span>
+<span class="co">#&gt;     chrY|57213880|57213964|- unprocessed_pseudogene    DDX11L16</span>
+<span class="co">#&gt;     chrY|57214350|57214397|- unprocessed_pseudogene    DDX11L16</span>
+<span class="co">#&gt;                                     transcript_type transcript_name exon_number</span>
+<span class="co">#&gt;                                         &lt;character&gt;     &lt;character&gt; &lt;character&gt;</span>
+<span class="co">#&gt;     GL000009.2|56140|58376|-         protein_coding  BX004987.1-201           1</span>
+<span class="co">#&gt;     GL000194.1|53594|54832|-         protein_coding  AC145212.1-201           4</span>
+<span class="co">#&gt;     GL000194.1|55446|55676|-         protein_coding  AC145212.1-201           3</span>
+<span class="co">#&gt;     GL000194.1|53590|55676|-         protein_coding  AC145212.2-201           3</span>
+<span class="co">#&gt;   GL000194.1|112792|112850|-         protein_coding  AC145212.1-201           2</span>
+<span class="co">#&gt;                          ...                    ...             ...         ...</span>
+<span class="co">#&gt;     chrY|57212184|57213125|- unprocessed_pseudogene    DDX11L16-001           5</span>
+<span class="co">#&gt;     chrY|57213204|57213357|- unprocessed_pseudogene    DDX11L16-001           4</span>
+<span class="co">#&gt;     chrY|57213526|57213602|- unprocessed_pseudogene    DDX11L16-001           3</span>
+<span class="co">#&gt;     chrY|57213880|57213964|- unprocessed_pseudogene    DDX11L16-001           2</span>
+<span class="co">#&gt;     chrY|57214350|57214397|- unprocessed_pseudogene    DDX11L16-001           1</span>
+<span class="co">#&gt;                                        exon_id       level        protein_id</span>
+<span class="co">#&gt;                                    &lt;character&gt; &lt;character&gt;       &lt;character&gt;</span>
+<span class="co">#&gt;     GL000009.2|56140|58376|- ENSE00003753029.1           3 ENSP00000484918.1</span>
+<span class="co">#&gt;     GL000194.1|53594|54832|- ENSE00002218789.2           3 ENSP00000478910.1</span>
+<span class="co">#&gt;     GL000194.1|55446|55676|- ENSE00003714436.1           3 ENSP00000478910.1</span>
+<span class="co">#&gt;     GL000194.1|53590|55676|- ENSE00003723764.1           3 ENSP00000483280.1</span>
+<span class="co">#&gt;   GL000194.1|112792|112850|- ENSE00003713687.1           3 ENSP00000478910.1</span>
+<span class="co">#&gt;                          ...               ...         ...               ...</span>
+<span class="co">#&gt;     chrY|57212184|57213125|- ENSE00002023900.1           2              &lt;NA&gt;</span>
+<span class="co">#&gt;     chrY|57213204|57213357|- ENSE00002036959.1           2              &lt;NA&gt;</span>
+<span class="co">#&gt;     chrY|57213526|57213602|- ENSE00002021169.1           2              &lt;NA&gt;</span>
+<span class="co">#&gt;     chrY|57213880|57213964|- ENSE00002046926.1           2              &lt;NA&gt;</span>
+<span class="co">#&gt;     chrY|57214350|57214397|- ENSE00002072208.1           2              &lt;NA&gt;</span>
+<span class="co">#&gt;                              transcript_support_level         tag</span>
+<span class="co">#&gt;                                           &lt;character&gt; &lt;character&gt;</span>
+<span class="co">#&gt;     GL000009.2|56140|58376|-                       NA       basic</span>
+<span class="co">#&gt;     GL000194.1|53594|54832|-                        1       basic</span>
+<span class="co">#&gt;     GL000194.1|55446|55676|-                        1       basic</span>
+<span class="co">#&gt;     GL000194.1|53590|55676|-                        1       basic</span>
+<span class="co">#&gt;   GL000194.1|112792|112850|-                        1       basic</span>
+<span class="co">#&gt;                          ...                      ...         ...</span>
+<span class="co">#&gt;     chrY|57212184|57213125|-                       NA         PAR</span>
+<span class="co">#&gt;     chrY|57213204|57213357|-                       NA         PAR</span>
+<span class="co">#&gt;     chrY|57213526|57213602|-                       NA         PAR</span>
+<span class="co">#&gt;     chrY|57213880|57213964|-                       NA         PAR</span>
+<span class="co">#&gt;     chrY|57214350|57214397|-                       NA         PAR</span>
+<span class="co">#&gt;                                     recount_exon_id          havana_gene</span>
+<span class="co">#&gt;                                         &lt;character&gt;          &lt;character&gt;</span>
+<span class="co">#&gt;     GL000009.2|56140|58376|- GL000009.2|56140|583..                 &lt;NA&gt;</span>
+<span class="co">#&gt;     GL000194.1|53594|54832|- GL000194.1|53594|548..                 &lt;NA&gt;</span>
+<span class="co">#&gt;     GL000194.1|55446|55676|- GL000194.1|55446|556..                 &lt;NA&gt;</span>
+<span class="co">#&gt;     GL000194.1|53590|55676|- GL000194.1|53590|556..                 &lt;NA&gt;</span>
+<span class="co">#&gt;   GL000194.1|112792|112850|- GL000194.1|112792|11..                 &lt;NA&gt;</span>
+<span class="co">#&gt;                          ...                    ...                  ...</span>
+<span class="co">#&gt;     chrY|57212184|57213125|- chrY|57212184|572131.. OTTHUMG00000022678.1</span>
+<span class="co">#&gt;     chrY|57213204|57213357|- chrY|57213204|572133.. OTTHUMG00000022678.1</span>
+<span class="co">#&gt;     chrY|57213526|57213602|- chrY|57213526|572136.. OTTHUMG00000022678.1</span>
+<span class="co">#&gt;     chrY|57213880|57213964|- chrY|57213880|572139.. OTTHUMG00000022678.1</span>
+<span class="co">#&gt;     chrY|57214350|57214397|- chrY|57214350|572143.. OTTHUMG00000022678.1</span>
+<span class="co">#&gt;                                 havana_transcript         ont      ccdsid</span>
+<span class="co">#&gt;                                       &lt;character&gt; &lt;character&gt; &lt;character&gt;</span>
+<span class="co">#&gt;     GL000009.2|56140|58376|-                 &lt;NA&gt;        &lt;NA&gt;        &lt;NA&gt;</span>
+<span class="co">#&gt;     GL000194.1|53594|54832|-                 &lt;NA&gt;        &lt;NA&gt;        &lt;NA&gt;</span>
+<span class="co">#&gt;     GL000194.1|55446|55676|-                 &lt;NA&gt;        &lt;NA&gt;        &lt;NA&gt;</span>
+<span class="co">#&gt;     GL000194.1|53590|55676|-                 &lt;NA&gt;        &lt;NA&gt;        &lt;NA&gt;</span>
+<span class="co">#&gt;   GL000194.1|112792|112850|-                 &lt;NA&gt;        &lt;NA&gt;        &lt;NA&gt;</span>
+<span class="co">#&gt;                          ...                  ...         ...         ...</span>
+<span class="co">#&gt;     chrY|57212184|57213125|- OTTHUMT00000058841.1 PGO:0000005        &lt;NA&gt;</span>
+<span class="co">#&gt;     chrY|57213204|57213357|- OTTHUMT00000058841.1 PGO:0000005        &lt;NA&gt;</span>
+<span class="co">#&gt;     chrY|57213526|57213602|- OTTHUMT00000058841.1 PGO:0000005        &lt;NA&gt;</span>
+<span class="co">#&gt;     chrY|57213880|57213964|- OTTHUMT00000058841.1 PGO:0000005        &lt;NA&gt;</span>
+<span class="co">#&gt;     chrY|57214350|57214397|- OTTHUMT00000058841.1 PGO:0000005        &lt;NA&gt;</span>
+<span class="co">#&gt;   -------</span>
+<span class="co">#&gt;   seqinfo: 374 sequences from an unspecified genome; no seqlengths</span>
+
+<span class="co">## Exon ids are repeated because a given exon can be part of</span>
+<span class="co">## more than one transcript</span>
+<span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span>(<span class="fu">rowRanges</span>(<span class="kw">rse_exon_SRP009615</span>)<span class="op">$</span><span class="kw">exon_id</span>))
+<span class="co">#&gt; [1] 742049</span>
+</pre></div>
+<p>Because there are many more exons than genes, this type of analysis uses more computational resources. Thus, for some large projects you might need to use a high performance computing environment. To help you proceed with caution, <code><a href="../reference/create_rse.html">create_rse()</a></code> shows how many features and samples it’s trying to access. So if you get an out of memory error, you’ll know why that happened.</p>
+<div class="sourceCode" id="cb21"><pre class="downlit">
+<span class="co">## Check how much memory the gene and exon RSE objects use</span>
+<span class="kw">pryr</span>::<span class="fu"><a href="https://rdrr.io/pkg/pryr/man/object_size.html">object_size</a></span>(<span class="kw">rse_gene_SRP009615</span>)
+<span class="co">#&gt; Registered S3 method overwritten by 'pryr':</span>
+<span class="co">#&gt;   method      from</span>
+<span class="co">#&gt;   print.bytes Rcpp</span>
+<span class="co">#&gt; 21.7 MB</span>
+<span class="kw">pryr</span>::<span class="fu"><a href="https://rdrr.io/pkg/pryr/man/object_size.html">object_size</a></span>(<span class="kw">rse_exon_SRP009615</span>)
+<span class="co">#&gt; 466 MB</span>
+</pre></div>
+</div>
+<div id="exon-exon-junctions" class="section level2">
+<h2 class="hasAnchor">
+<a href="#exon-exon-junctions" class="anchor"></a>Exon-exon junctions</h2>
+<p>In <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> we have also provided the option to create RSE files for exon-exon junctions. Unlike the gene/exon RSE files, only the junctions present in a given project are included in the files, so you’ll have to be more careful when merging exon-exon junction RSE files. Furthermore, these are actual read counts and not raw base-pair counts. Given the sparsity of the data, the counts are provided using a sparse matrix object from <em><a href="https://CRAN.R-project.org/package=Matrix">Matrix</a></em>. Thus exon-exon junction files can be less memory demanding than the exon RSE files.</p>
+<div class="sourceCode" id="cb22"><pre class="downlit">
+<span class="co">## Create a RSE object at the exon-exon junction level</span>
+<span class="kw">rse_jxn_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_rse.html">create_rse</a></span>(
+    <span class="kw">proj_info</span>,
+    type = <span class="st">"jxn"</span>
+)
+<span class="co">#&gt; 2020-09-30 01:44:36 downloading and reading the metadata.</span>
+<span class="co">#&gt; 2020-09-30 01:44:36 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:44:37 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:44:37 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:44:37 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:44:37 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 01:44:38 downloading and reading the feature information.</span>
+<span class="co">#&gt; 2020-09-30 01:44:38 caching file sra.junctions.SRP009615.ALL.RR.gz.</span>
+<span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.RR.gz'</span>
+<span class="co">#&gt; 2020-09-30 01:44:41 downloading and reading the counts: 12 samples across 281448 features.</span>
+<span class="co">#&gt; 2020-09-30 01:44:41 caching file sra.junctions.SRP009615.ALL.MM.gz.</span>
+<span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.MM.gz'</span>
+<span class="co">#&gt; 2020-09-30 01:44:42 matching exon-exon junction counts with the metadata.</span>
+<span class="co">#&gt; 2020-09-30 01:44:42 caching file sra.junctions.SRP009615.ALL.ID.gz.</span>
+<span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.ID.gz'</span>
+<span class="co">#&gt; 2020-09-30 01:44:43 construcing the RangedSummarizedExperiment (rse) object.</span>
+
+<span class="co">## Explore the resulting RSE exon-exon junctions object</span>
+<span class="kw">rse_jxn_SRP009615</span>
+<span class="co">#&gt; class: RangedSummarizedExperiment </span>
+<span class="co">#&gt; dim: 281448 12 </span>
+<span class="co">#&gt; metadata(9): time_created recount3_version ... jxn_format recount3_url</span>
+<span class="co">#&gt; assays(1): counts</span>
+<span class="co">#&gt; rownames(281448): chr1:11845-12009:+ chr1:12698-13220:+ ...</span>
+<span class="co">#&gt;   chrY:56848810-56851543:- chrY:56850515-56850921:+</span>
+<span class="co">#&gt; rowData names(6): length annotated ... left_annotated right_annotated</span>
+<span class="co">#&gt; colnames(12): SRR387777 SRR387778 ... SRR389077 SRR389078</span>
+<span class="co">#&gt; colData names(173): rail_id external_id ... recount_pred.pred.type</span>
+<span class="co">#&gt;   BigWigURL</span>
+<span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(<span class="kw">rse_jxn_SRP009615</span>)
+<span class="co">#&gt; [1] 281448     12</span>
+
+<span class="co">## Exon-exon junction information</span>
+<span class="fu">rowRanges</span>(<span class="kw">rse_jxn_SRP009615</span>)
+<span class="co">#&gt; GRanges object with 281448 ranges and 6 metadata columns:</span>
+<span class="co">#&gt;                            seqnames            ranges strand |    length</span>
+<span class="co">#&gt;                               &lt;Rle&gt;         &lt;IRanges&gt;  &lt;Rle&gt; | &lt;integer&gt;</span>
+<span class="co">#&gt;         chr1:11845-12009:+     chr1       11845-12009      + |       165</span>
+<span class="co">#&gt;         chr1:12698-13220:+     chr1       12698-13220      + |       523</span>
+<span class="co">#&gt;        chr1:14696-185174:-     chr1      14696-185174      - |    170479</span>
+<span class="co">#&gt;         chr1:14830-14969:-     chr1       14830-14969      - |       140</span>
+<span class="co">#&gt;         chr1:14830-15020:-     chr1       14830-15020      - |       191</span>
+<span class="co">#&gt;                        ...      ...               ...    ... .       ...</span>
+<span class="co">#&gt;   chrY:56846131-56846553:+     chrY 56846131-56846553      + |       423</span>
+<span class="co">#&gt;   chrY:56846268-56846553:+     chrY 56846268-56846553      + |       286</span>
+<span class="co">#&gt;   chrY:56846486-56846553:+     chrY 56846486-56846553      + |        68</span>
+<span class="co">#&gt;   chrY:56848810-56851543:-     chrY 56848810-56851543      - |      2734</span>
+<span class="co">#&gt;   chrY:56850515-56850921:+     chrY 56850515-56850921      + |       407</span>
+<span class="co">#&gt;                            annotated  left_motif right_motif</span>
+<span class="co">#&gt;                            &lt;integer&gt; &lt;character&gt; &lt;character&gt;</span>
+<span class="co">#&gt;         chr1:11845-12009:+         0          GT          AG</span>
+<span class="co">#&gt;         chr1:12698-13220:+         1          GT          AG</span>
+<span class="co">#&gt;        chr1:14696-185174:-         0          CT          AC</span>
+<span class="co">#&gt;         chr1:14830-14969:-         1          CT          AC</span>
+<span class="co">#&gt;         chr1:14830-15020:-         0          CT          AC</span>
+<span class="co">#&gt;                        ...       ...         ...         ...</span>
+<span class="co">#&gt;   chrY:56846131-56846553:+         0          GT          AG</span>
+<span class="co">#&gt;   chrY:56846268-56846553:+         0          GT          AG</span>
+<span class="co">#&gt;   chrY:56846486-56846553:+         0          GT          AG</span>
+<span class="co">#&gt;   chrY:56848810-56851543:-         0          CT          AC</span>
+<span class="co">#&gt;   chrY:56850515-56850921:+         0          GT          AG</span>
+<span class="co">#&gt;                                    left_annotated        right_annotated</span>
+<span class="co">#&gt;                                       &lt;character&gt;            &lt;character&gt;</span>
+<span class="co">#&gt;         chr1:11845-12009:+                      0              aC19,sG19</span>
+<span class="co">#&gt;         chr1:12698-13220:+ aC19,gC19,gC24,gC25,.. aC19,cH38,gC19,gC24,..</span>
+<span class="co">#&gt;        chr1:14696-185174:-                      0                      0</span>
+<span class="co">#&gt;         chr1:14830-14969:- aC19,cH38,gC19,kG19,.. aC19,cH38,gC19,kG19,..</span>
+<span class="co">#&gt;         chr1:14830-15020:- aC19,cH38,gC19,kG19,..                      0</span>
+<span class="co">#&gt;                        ...                    ...                    ...</span>
+<span class="co">#&gt;   chrY:56846131-56846553:+                      0                      0</span>
+<span class="co">#&gt;   chrY:56846268-56846553:+                      0                      0</span>
+<span class="co">#&gt;   chrY:56846486-56846553:+                      0                      0</span>
+<span class="co">#&gt;   chrY:56848810-56851543:-                      0                      0</span>
+<span class="co">#&gt;   chrY:56850515-56850921:+                      0                      0</span>
+<span class="co">#&gt;   -------</span>
+<span class="co">#&gt;   seqinfo: 97 sequences from an unspecified genome; no seqlengths</span>
+
+<span class="co">## Memory used</span>
+<span class="kw">pryr</span>::<span class="fu"><a href="https://rdrr.io/pkg/pryr/man/object_size.html">object_size</a></span>(<span class="kw">rse_jxn_SRP009615</span>)
+<span class="co">#&gt; 60.3 MB</span>
+</pre></div>
 </div>
 <div id="local-files" class="section level2">
 <h2 class="hasAnchor">
 <a href="#local-files" class="anchor"></a>Local files</h2>
 <p><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> depends on <em><a href="https://bioconductor.org/packages/3.12/BiocFileCache">BiocFileCache</a></em> <a id="cite-Shepherd_2020"></a>(<a href="#bib-Shepherd_2020">Shepherd and Morgan, 2020</a>) for organizing the raw files and caching them, such that if you use the same file more than once, you only have to download it once. <em><a href="https://bioconductor.org/packages/3.12/BiocFileCache">BiocFileCache</a></em> will automatically update the file if it detects that the file has changed in the source</p>
 <p>If you want to inspect which files you have downloaded or even delete them, them you’ll want to use <em><a href="https://bioconductor.org/packages/3.12/BiocFileCache">BiocFileCache</a></em> functions such as <code><a href="https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html">BiocFileCache::bfcinfo()</a></code> and <code><a href="https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html">BiocFileCache::bfcremove()</a></code> as illustrated below.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit">
+<div class="sourceCode" id="cb23"><pre class="downlit">
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"BiocFileCache"</span>)
 <span class="co">#&gt; Loading required package: dbplyr</span>
 
@@ -373,10 +960,15 @@
 <span class="co">#&gt;  [7] "http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_seq_qc.SRP009615.MD.gz" </span>
 <span class="co">#&gt;  [8] "http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_pred.SRP009615.MD.gz"   </span>
 <span class="co">#&gt;  [9] "http://idies.jhu.edu/recount3/data/human/annotations/gene_sums/human.gene_sums.G026.gtf.gz"                         </span>
-<span class="co">#&gt; [10] "http://idies.jhu.edu/recount3/data/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.G026.gz"</span>
+<span class="co">#&gt; [10] "http://idies.jhu.edu/recount3/data/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.G026.gz"   </span>
+<span class="co">#&gt; [11] "http://idies.jhu.edu/recount3/data/human/annotations/exon_sums/human.exon_sums.G026.gtf.gz"                         </span>
+<span class="co">#&gt; [12] "http://idies.jhu.edu/recount3/data/human/data_sources/sra/exon_sums/15/SRP009615/sra.exon_sums.SRP009615.G026.gz"   </span>
+<span class="co">#&gt; [13] "http://idies.jhu.edu/recount3/data/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.RR.gz" </span>
+<span class="co">#&gt; [14] "http://idies.jhu.edu/recount3/data/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.MM.gz" </span>
+<span class="co">#&gt; [15] "http://idies.jhu.edu/recount3/data/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.ID.gz"</span>
 
 <span class="co">## You can remove the recount3 files from your cache if you want using bfcremove</span>
-<span class="co">if</span> (<span class="fl">FALSE</span>) {
+<span class="co">if</span> (<span class="fu"><a href="https://rdrr.io/r/base/interactive.html">interactive</a></span>()) {
     <span class="fu"><a href="https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html">bfcremove</a></span>(<span class="kw">bfc</span>, rids = <span class="kw">bfc_files</span>[[<span class="st">"rid"</span>]][<span class="kw">bfc_recount3</span>])
 
     <span class="co">## Verify that the recount3 files have been deleted</span>
@@ -387,30 +979,37 @@
 <div id="bigwig-files" class="section level2">
 <h2 class="hasAnchor">
 <a href="#bigwig-files" class="anchor"></a>BigWig files</h2>
-<ul>
-<li>refer to megadepth</li>
-<li>refer to derfinder</li>
-</ul>
+<p>Internally we used <code>GenomicFeatures::exonicParts()</code> when processing all annotations in <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> instead of <code><a href="https://rdrr.io/pkg/GenomicRanges/man/inter-range-methods.html">GenomicRanges::disjoin()</a></code> that was used in <code>recount2</code>. We then re-assembled the counts for each exon/gene to create the count files provided in <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em>. However, you might want to exclude the overlapping exonic parts from the counts. If that’s the case or if you are interested in specific regions of the <code>hg38</code>/<code>mm10</code> genomes, you might want to access the coverage BigWig files.</p>
+<div class="sourceCode" id="cb24"><pre class="downlit">
+<span class="co">## BigWig file names</span>
+<span class="co">## The full URL is stored in BigWigUrl</span>
+<span class="fu"><a href="https://rdrr.io/r/base/basename.html">basename</a></span>(<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="kw">rse_gene_SRP009615</span><span class="op">$</span><span class="kw">BigWigURL</span>))
+<span class="co">#&gt; [1] "sra.base_sums.SRP009615_SRR387777.ALL.bw"</span>
+<span class="co">#&gt; [2] "sra.base_sums.SRP009615_SRR387778.ALL.bw"</span>
+<span class="co">#&gt; [3] "sra.base_sums.SRP009615_SRR387779.ALL.bw"</span>
+<span class="co">#&gt; [4] "sra.base_sums.SRP009615_SRR387780.ALL.bw"</span>
+<span class="co">#&gt; [5] "sra.base_sums.SRP009615_SRR389079.ALL.bw"</span>
+<span class="co">#&gt; [6] "sra.base_sums.SRP009615_SRR389080.ALL.bw"</span>
+</pre></div>
+<p>These BigWig files can be accessed using <code><a href="https://rdrr.io/pkg/rtracklayer/man/BigWigFile.html">rtracklayer::import.bw()</a></code> from R, or other tools such as <a href="https://github.com/CRG-Barcelona/bwtool/wiki">bwtool</a> that we’ve used in the past <a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>. Using them, you can compute a coverage matrix for a given set of regions.</p>
+<p>One new software we developed is <em><a href="https://bioconductor.org/packages/3.12/megadepth">megadepth</a></em> for which we have provided an R/Bioconductor package interface. <em><a href="https://bioconductor.org/packages/3.12/megadepth">megadepth</a></em> is faster at accessing BigWig files and is the software we used internally for generating the <code>recount3</code> data. <em><a href="https://bioconductor.org/packages/3.12/megadepth">megadepth</a></em> provides convenient to use functions for quantifying a set of regions, which might be of interest for co-expression analyses where double counting exonic parts can be problematic.</p>
+<p>You can also use <em><a href="https://bioconductor.org/packages/3.12/derfinder">derfinder</a></em> and <em><a href="https://bioconductor.org/packages/3.12/derfinderPlot">derfinderPlot</a></em> if you are interested in visualizing the base-pair coverage data for a specific region using these BigWig coverage files.</p>
 </div>
 <div id="your-own-mirror" class="section level2">
 <h2 class="hasAnchor">
 <a href="#your-own-mirror" class="anchor"></a>Your own mirror</h2>
-<ul>
-<li>
-<code><a href="../reference/file_locate_url.html">file_locate_url()</a></code> and <code><a href="../reference/file_locate_url_annotation.html">file_locate_url_annotation()</a></code> can be used to get the full list of URLs</li>
-<li>
-<code><a href="../reference/available_projects.html">available_projects()</a></code> will show the data you have locally</li>
-<li>
-<code><a href="../reference/file_retrieve.html">file_retrieve()</a></code> won’t cache the data</li>
-</ul>
+<p><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> functions such as <code><a href="../reference/create_rse.html">create_rse()</a></code> have a <code>recount3_url</code> argument that can be changed to point to a mirror or to a path in your computing system. This argument enables using <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> with data stored in other locations, or even generated using the same processing pipeline that was used for <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> but for your own/private data.</p>
+<p>The main documentation website documents how the raw files should be organized in your mirror or for your own data. You can inspect the structure of the data by checking the internals of <code><a href="../reference/file_locate_url.html">file_locate_url()</a></code> and <code><a href="../reference/file_locate_url_annotation.html">file_locate_url_annotation()</a></code>. Both functions can be used to get the full list of URLs. In addition, for a given mirror, <code><a href="../reference/available_projects.html">available_projects()</a></code> will show the local data sources and collections. Finally, <code><a href="../reference/file_retrieve.html">file_retrieve()</a></code> won’t cache the data if it detects that the data already exists in the local disk.</p>
+<p>In particular, this functionality can be useful if you want to access the data at <a href="https://idies.jhu.edu/">IDIES</a> using <a href="https://apps.sciserver.org/compute/">SciServer Compute</a>.</p>
+<p><a href="https://apps.sciserver.org/compute/">&lt;img src=“</a><a href="https://apps.sciserver.org/compute/static/img/sciserverlogo.png" class="uri">https://apps.sciserver.org/compute/static/img/sciserverlogo.png</a>”, width=“600px”&gt;</p>
 </div>
 <div id="other-related-tools" class="section level2">
 <h2 class="hasAnchor">
 <a href="#other-related-tools" class="anchor"></a>Other related tools</h2>
-<ul>
-<li>mention snapcount</li>
-<li>mention again the main documentation website</li>
-</ul>
+<p>The <code>ReCount</code> team has worked on several software solutions and projects that complement each other and enable you to re-use public RNA-seq data. Another Bioconductor package that you might be highly interested in is <em><a href="https://bioconductor.org/packages/3.12/snapcount">snapcount</a></em>, which allows you to use the <a href="http://snaptron.cs.jhu.edu/">Snaptron web services</a>. In particular, <em><a href="https://bioconductor.org/packages/3.12/snapcount">snapcount</a></em> is best for queries over a particular subset of genes or intervals across all or most of the samples in <code>recount2</code>/<code>Snaptron</code>.</p>
+<p>We remind you that the <strong>main documentation website</strong> for all the <code>recount3</code>-related projects is available at <a href="https://LieberInstitute/github.io/recount3-docs"><strong>recount.bio</strong></a>. Please check that website for more information about how this R/Bioconductor package and other tools are related to each other.</p>
+<p><strong>Thank you!</strong></p>
+<p>P.S. An <a href="http://research.libd.org/recount3/">alternative version of this vignette is available</a> that was made using <em><a href="https://CRAN.R-project.org/package=pkgdown">pkgdown</a></em>.</p>
 </div>
 </div>
 <div id="reproducibility" class="section level1">
@@ -425,20 +1024,46 @@
 <em><a href="https://bioconductor.org/packages/3.12/BiocFileCache">BiocFileCache</a></em> (<a href="#bib-Shepherd_2020">Shepherd and Morgan, 2020</a>)</li>
 <li>
 <em><a href="https://bioconductor.org/packages/3.12/BiocStyle">BiocStyle</a></em> <a id="cite-Oles_2020"></a>(<a href="https://github.com/Bioconductor/BiocStyle">Oleś, Morgan, and Huber, 2020</a>)</li>
+<li><em><a href="https://github.com/lcolladotor/biocthis">biocthis</a></em></li>
+<li>
+<em><a href="https://CRAN.R-project.org/package=covr">covr</a></em> <a id="cite-Hester_2020"></a>(<a href="#bib-Hester_2020">Hester, 2020</a>)</li>
+<li>
+<em><a href="https://CRAN.R-project.org/package=data.table">data.table</a></em> <a id="cite-Dowle_2020"></a>(<a href="#bib-Dowle_2020">Dowle and Srinivasan, 2020</a>)</li>
+<li>
+<em><a href="https://bioconductor.org/packages/3.12/ExperimentHub">ExperimentHub</a></em> <a id="cite-Morgan_2020a"></a>(<a href="#bib-Morgan_2020a">Morgan and Shepherd, 2020</a>)</li>
+<li>
+<em><a href="https://bioconductor.org/packages/3.12/GenomicRanges">GenomicRanges</a></em> <a id="cite-Lawrence_2013"></a>(<a href="http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003118">Lawrence, Huber, Pagès, Aboyoun, et al., 2013</a>)</li>
+<li>
+<em><a href="https://bioconductor.org/packages/3.12/interactiveDisplayBase">interactiveDisplayBase</a></em> <a id="cite-Balcome_2020"></a>(<a href="#bib-Balcome_2020">Balcome, 2020</a>)</li>
 <li>
 <em><a href="https://CRAN.R-project.org/package=knitcitations">knitcitations</a></em> <a id="cite-Boettiger_2019"></a>(<a href="https://github.com/cboettig/knitcitations">Boettiger, 2019</a>)</li>
 <li>
 <em><a href="https://CRAN.R-project.org/package=knitr">knitr</a></em> <a id="cite-Xie_2014"></a>(<a href="http://www.crcpress.com/product/isbn/9781466561595">Xie, 2014</a>)</li>
+<li>
+<em><a href="https://CRAN.R-project.org/package=Matrix">Matrix</a></em> <a id="cite-Bates_2019"></a>(<a href="https://CRAN.R-project.org/package=Matrix">Bates and Maechler, 2019</a>)</li>
+<li>
+<em><a href="https://CRAN.R-project.org/package=pryr">pryr</a></em> <a id="cite-Wickham_2018"></a>(<a href="https://github.com/hadley/pryr">Wickham, 2018</a>)</li>
+<li><em><a href="https://CRAN.R-project.org/package=RefManageR">RefManageR</a></em></li>
+<li>
+<em><a href="https://CRAN.R-project.org/package=RCurl">RCurl</a></em> <a id="cite-Temple_Lang_2020"></a>(<a href="#bib-Temple_Lang_2020">Temple Lang, 2020</a>)</li>
 <li><em><a href="https://CRAN.R-project.org/package=rmarkdown">rmarkdown</a></em></li>
+<li>
+<em><a href="https://bioconductor.org/packages/3.12/rtracklayer">rtracklayer</a></em> <a id="cite-Lawrence_2009"></a>(<a href="http://bioinformatics.oxfordjournals.org/content/25/14/1841.abstract">Lawrence, Gentleman, and Carey, 2009</a>)</li>
+<li>
+<em><a href="https://CRAN.R-project.org/package=R.utils">R.utils</a></em> <a id="cite-Bengtsson_2020"></a>(<a href="https://github.com/HenrikBengtsson/R.utils">Bengtsson, 2020</a>)</li>
+<li>
+<em><a href="https://bioconductor.org/packages/3.12/S4Vectors">S4Vectors</a></em> <a id="cite-Pages_2020"></a>(<a href="#bib-Pages_2020">Pagès, Lawrence, and Aboyoun, 2020</a>)</li>
 <li>
 <em><a href="https://CRAN.R-project.org/package=sessioninfo">sessioninfo</a></em> <a id="cite-Csardi_2018"></a>(<a href="https://github.com/r-lib/sessioninfo#readme">Csárdi, core, Wickham, Chang, et al., 2018</a>)</li>
 <li>
 <em><a href="https://bioconductor.org/packages/3.12/SummarizedExperiment">SummarizedExperiment</a></em> (<a href="https://doi.org/10.18129/B9.bioc.SummarizedExperiment">Morgan, Obenchain, Hester, and Pagès, 2019</a>)</li>
 <li>
 <em><a href="https://CRAN.R-project.org/package=testthat">testthat</a></em> <a id="cite-Wickham_2011"></a>(<a href="https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf">Wickham, 2011</a>)</li>
+<li>
+<em><a href="https://CRAN.R-project.org/package=XML">XML</a></em> <a id="cite-Temple_Lang_2020a"></a>(<a href="http://www.omegahat.net/RSXML">Temple Lang, 2020</a>)</li>
 </ul>
 <p>Code for creating the vignette</p>
-<div class="sourceCode" id="cb7"><pre class="downlit">
+<div class="sourceCode" id="cb25"><pre class="downlit">
 <span class="co">## Create the vignette</span>
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="https://github.com/rstudio/rmarkdown">"rmarkdown"</a></span>)
 <span class="fu"><a href="https://rdrr.io/r/base/system.time.html">system.time</a></span>(<span class="fu"><a href="https://rdrr.io/pkg/rmarkdown/man/render.html">render</a></span>(<span class="st">"recount3-quickstart.Rmd"</span>, <span class="st">"BiocStyle::html_document"</span>))
@@ -447,15 +1072,15 @@
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="https://yihui.org/knitr">"knitr"</a></span>)
 <span class="fu"><a href="https://rdrr.io/pkg/knitr/man/knit.html">knit</a></span>(<span class="st">"recount3-quickstart.Rmd"</span>, tangle = <span class="fl">TRUE</span>)
 </pre></div>
-<div class="sourceCode" id="cb8"><pre class="downlit">
+<div class="sourceCode" id="cb26"><pre class="downlit">
 <span class="co">## Clean up</span>
 <span class="fu"><a href="https://rdrr.io/r/base/files.html">file.remove</a></span>(<span class="st">"quickstartRef.bib"</span>)
 <span class="co">#&gt; [1] TRUE</span>
 </pre></div>
 <p>Date the vignette was generated.</p>
-<pre><code>#&gt; [1] "2020-09-29 22:53:21 UTC"</code></pre>
+<pre><code>#&gt; [1] "2020-09-30 01:44:45 UTC"</code></pre>
 <p>Wallclock time spent generating the vignette.</p>
-<pre><code>#&gt; Time difference of 27.357 secs</code></pre>
+<pre><code>#&gt; Time difference of 1.415 mins</code></pre>
 <p><code>R</code> session information.</p>
 <pre><code>#&gt; ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
 #&gt;  setting  value                                      
@@ -467,7 +1092,7 @@
 #&gt;  collate  en_US.UTF-8                                
 #&gt;  ctype    en_US.UTF-8                                
 #&gt;  tz       UTC                                        
-#&gt;  date     2020-09-29                                 
+#&gt;  date     2020-09-30                                 
 #&gt; 
 #&gt; ─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
 #&gt;  package                * version    date       lib source                        
@@ -490,6 +1115,7 @@
 #&gt;  blob                     1.2.1      2020-01-20 [1] RSPM (R 4.0.0)                
 #&gt;  bookdown                 0.20       2020-06-23 [1] RSPM (R 4.0.2)                
 #&gt;  cli                      2.0.2      2020-02-28 [2] RSPM (R 4.0.0)                
+#&gt;  codetools                0.2-16     2018-12-24 [3] CRAN (R 4.0.2)                
 #&gt;  cpp11                    0.2.1      2020-08-11 [1] RSPM (R 4.0.2)                
 #&gt;  crayon                   1.3.4      2017-09-16 [2] RSPM (R 4.0.0)                
 #&gt;  curl                     4.3        2019-12-02 [2] RSPM (R 4.0.0)                
@@ -534,6 +1160,7 @@
 #&gt;  pkgdown                  1.6.1.9000 2020-09-27 [1] Github (r-lib/pkgdown@e1e46f2)
 #&gt;  plyr                     1.8.6      2020-03-03 [1] RSPM (R 4.0.2)                
 #&gt;  promises                 1.1.1      2020-06-09 [2] RSPM (R 4.0.2)                
+#&gt;  pryr                     0.1.4      2018-02-18 [1] RSPM (R 4.0.2)                
 #&gt;  purrr                    0.3.4      2020-04-17 [2] RSPM (R 4.0.0)                
 #&gt;  R.methodsS3              1.8.1      2020-08-26 [1] RSPM (R 4.0.2)                
 #&gt;  R.oo                     1.24.0     2020-08-26 [1] RSPM (R 4.0.2)                
@@ -543,7 +1170,7 @@
 #&gt;  rappdirs                 0.3.1      2016-03-28 [1] RSPM (R 4.0.0)                
 #&gt;  Rcpp                     1.0.5      2020-07-06 [2] RSPM (R 4.0.2)                
 #&gt;  RCurl                    1.98-1.2   2020-04-18 [1] RSPM (R 4.0.0)                
-#&gt;  recount3               * 0.99.0     2020-09-29 [1] Bioconductor                  
+#&gt;  recount3               * 0.99.0     2020-09-30 [1] Bioconductor                  
 #&gt;  RefManageR               1.2.12     2019-04-03 [1] RSPM (R 4.0.0)                
 #&gt;  rlang                    0.4.7      2020-07-09 [2] RSPM (R 4.0.2)                
 #&gt;  rmarkdown                2.3        2020-06-18 [1] RSPM (R 4.0.1)                
@@ -579,18 +1206,41 @@
 <a href="#bibliography" class="anchor"></a>Bibliography</h1>
 <p>This vignette was generated using <em><a href="https://bioconductor.org/packages/3.12/BiocStyle">BiocStyle</a></em> (<a href="https://github.com/Bioconductor/BiocStyle">Oleś, Morgan, and Huber, 2020</a>) with <em><a href="https://CRAN.R-project.org/package=knitr">knitr</a></em> (<a href="http://www.crcpress.com/product/isbn/9781466561595">Xie, 2014</a>) and <em><a href="https://CRAN.R-project.org/package=rmarkdown">rmarkdown</a></em> running behind the scenes.</p>
 <p>Citations made with <em><a href="https://CRAN.R-project.org/package=knitcitations">knitcitations</a></em> (<a href="https://github.com/cboettig/knitcitations">Boettiger, 2019</a>).</p>
-<p>[1] C. Boettiger. <em>knitcitations: Citations for ‘Knitr’ Markdown Files</em>. R package version 1.0.10. 2019. &lt;URL: <a href="https://github.com/cboettig/knitcitations" class="uri">https://github.com/cboettig/knitcitations</a>&gt;.</p>
-<p>[2] L. Collado-Torres. <em>Explore and download data from the recount3 project</em>. <a href="https://github.com/LieberInstitute/recount3" class="uri">https://github.com/LieberInstitute/recount3</a> - R package version 0.99.0. 2020. DOI: 10.18129/B9.bioc.recount3. &lt;URL: <a href="http://www.bioconductor.org/packages/recount3" class="uri">http://www.bioconductor.org/packages/recount3</a>&gt;.</p>
-<p>[3] G. Csárdi, R. core, H. Wickham, W. Chang, et al. <em>sessioninfo: R Session Information</em>. R package version 1.1.1. 2018. &lt;URL: <a href="https://github.com/r-lib/sessioninfo#readme" class="uri">https://github.com/r-lib/sessioninfo#readme</a>&gt;.</p>
-<p>[4] W. Huber, V. J. Carey, R. Gentleman, S. Anders, et al. “Orchestrating high-throughput genomic analysis with Bioconductor”. In: <em>Nature Methods</em> 12.2 (Jan. 2015), pp. 115-121. DOI: 10.1038/nmeth.3252. &lt;URL: <a href="https://doi.org/10.1038/nmeth.3252" class="uri">https://doi.org/10.1038/nmeth.3252</a>&gt;.</p>
-<p>[5] M. Morgan, V. Obenchain, J. Hester, and H. Pagès. <em>SummarizedExperiment: SummarizedExperiment container</em>. 2019. DOI: 10.18129/B9.bioc.SummarizedExperiment.</p>
-<p>[6] M. Morgan and L. Shepherd. <em>AnnotationHub: Client to access AnnotationHub resources</em>. R package version 2.21.5. 2020.</p>
-<p>[7] A. Oleś, M. Morgan, and W. Huber. <em>BiocStyle: Standard styles for vignettes and other Bioconductor documents</em>. R package version 2.17.1. 2020. &lt;URL: <a href="https://github.com/Bioconductor/BiocStyle" class="uri">https://github.com/Bioconductor/BiocStyle</a>&gt;.</p>
-<p>[8] R Core Team. <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing. Vienna, Austria, 2020. &lt;URL: <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>&gt;.</p>
-<p>[9] L. Shepherd and M. Morgan. <em>BiocFileCache: Manage Files Across Sessions</em>. R package version 1.13.1. 2020.</p>
-<p>[10] H. Wickham. “testthat: Get Started with Testing”. In: <em>The R Journal</em> 3 (2011), pp. 5-10. &lt;URL: <a href="https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf" class="uri">https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf</a>&gt;.</p>
-<p>[11] C. Wilks, L. Collado-Torres, S. C. Zheng, A. E. Jaffe, et al. “recount3 pre-print title TODO”. In: <em>bioRxiv</em> (2020). DOI: 10.1101/TODO. &lt;URL: <a href="https://www.biorxiv.org/content/10.1101/TODO" class="uri">https://www.biorxiv.org/content/10.1101/TODO</a>&gt;.</p>
-<p>[12] Y. Xie. “knitr: A Comprehensive Tool for Reproducible Research in R”. In: <em>Implementing Reproducible Computational Research</em>. Ed. by V. Stodden, F. Leisch and R. D. Peng. ISBN 978-1466561595. Chapman and Hall/CRC, 2014. &lt;URL: <a href="http://www.crcpress.com/product/isbn/9781466561595" class="uri">http://www.crcpress.com/product/isbn/9781466561595</a>&gt;.</p>
+<p>[1] S. Balcome. <em>interactiveDisplayBase: Base package for enabling powerful shiny web displays of Bioconductor objects</em>. R package version 1.27.5. 2020.</p>
+<p>[2] D. Bates and M. Maechler. <em>Matrix: Sparse and Dense Matrix Classes and Methods</em>. R package version 1.2-18. 2019. &lt;URL: <a href="https://CRAN.R-project.org/package=Matrix" class="uri">https://CRAN.R-project.org/package=Matrix</a>&gt;.</p>
+<p>[3] H. Bengtsson. <em>R.utils: Various Programming Utilities</em>. R package version 2.10.1. 2020. &lt;URL: <a href="https://github.com/HenrikBengtsson/R.utils" class="uri">https://github.com/HenrikBengtsson/R.utils</a>&gt;.</p>
+<p>[4] C. Boettiger. <em>knitcitations: Citations for ‘Knitr’ Markdown Files</em>. R package version 1.0.10. 2019. &lt;URL: <a href="https://github.com/cboettig/knitcitations" class="uri">https://github.com/cboettig/knitcitations</a>&gt;.</p>
+<p>[5] L. Collado-Torres. <em>Explore and download data from the recount3 project</em>. <a href="https://github.com/LieberInstitute/recount3" class="uri">https://github.com/LieberInstitute/recount3</a> - R package version 0.99.0. 2020. DOI: 10.18129/B9.bioc.recount3. &lt;URL: <a href="http://www.bioconductor.org/packages/recount3" class="uri">http://www.bioconductor.org/packages/recount3</a>&gt;.</p>
+<p>[6] G. Csárdi, R. core, H. Wickham, W. Chang, et al. <em>sessioninfo: R Session Information</em>. R package version 1.1.1. 2018. &lt;URL: <a href="https://github.com/r-lib/sessioninfo#readme" class="uri">https://github.com/r-lib/sessioninfo#readme</a>&gt;.</p>
+<p>[7] M. Dowle and A. Srinivasan. <em>data.table: Extension of <code>data.frame</code></em>. <a href="http://r-datatable.com" class="uri">http://r-datatable.com</a>, <a href="https://Rdatatable.gitlab.io/data.table" class="uri">https://Rdatatable.gitlab.io/data.table</a>, <a href="https://github.com/Rdatatable/data.table" class="uri">https://github.com/Rdatatable/data.table</a>. 2020.</p>
+<p>[8] J. Hester. <em>covr: Test Coverage for Packages</em>. <a href="https://covr.r-lib.org" class="uri">https://covr.r-lib.org</a>, <a href="https://github.com/r-lib/covr" class="uri">https://github.com/r-lib/covr</a>. 2020.</p>
+<p>[9] W. Huber, V. J. Carey, R. Gentleman, S. Anders, et al. “Orchestrating high-throughput genomic analysis with Bioconductor”. In: <em>Nature Methods</em> 12.2 (Jan. 2015), pp. 115-121. DOI: 10.1038/nmeth.3252. &lt;URL: <a href="https://doi.org/10.1038/nmeth.3252" class="uri">https://doi.org/10.1038/nmeth.3252</a>&gt;.</p>
+<p>[10] M. Lawrence, R. Gentleman, and V. Carey. “rtracklayer: an R package for interfacing with genome browsers”. In: <em>Bioinformatics</em> 25 (2009), pp. 1841-1842. DOI: 10.1093/bioinformatics/btp328. &lt;URL: <a href="http://bioinformatics.oxfordjournals.org/content/25/14/1841.abstract" class="uri">http://bioinformatics.oxfordjournals.org/content/25/14/1841.abstract</a>&gt;.</p>
+<p>[11] M. Lawrence, W. Huber, H. Pagès, P. Aboyoun, et al. “Software for Computing and Annotating Genomic Ranges”. In: <em>PLoS Computational Biology</em> 9 (8 2013). DOI: 10.1371/journal.pcbi.1003118. &lt;URL: <a href="http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003118" class="uri">http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003118</a>}.&gt;</p>
+<p>[12] M. Morgan, V. Obenchain, J. Hester, and H. Pagès. <em>SummarizedExperiment: SummarizedExperiment container</em>. 2019. DOI: 10.18129/B9.bioc.SummarizedExperiment.</p>
+<p>[13] M. Morgan and L. Shepherd. <em>AnnotationHub: Client to access AnnotationHub resources</em>. R package version 2.21.5. 2020.</p>
+<p>[14] M. Morgan and L. Shepherd. <em>ExperimentHub: Client to access ExperimentHub resources</em>. R package version 1.15.3. 2020.</p>
+<p>[15] A. Oleś, M. Morgan, and W. Huber. <em>BiocStyle: Standard styles for vignettes and other Bioconductor documents</em>. R package version 2.17.1. 2020. &lt;URL: <a href="https://github.com/Bioconductor/BiocStyle" class="uri">https://github.com/Bioconductor/BiocStyle</a>&gt;.</p>
+<p>[16] H. Pagès, M. Lawrence, and P. Aboyoun. <em>S4Vectors: Foundation of vector-like and list-like containers in Bioconductor</em>. R package version 0.27.13. 2020.</p>
+<p>[17] R Core Team. <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing. Vienna, Austria, 2020. &lt;URL: <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>&gt;.</p>
+<p>[18] L. Shepherd and M. Morgan. <em>BiocFileCache: Manage Files Across Sessions</em>. R package version 1.13.1. 2020.</p>
+<p>[19] D. Temple Lang. <em>RCurl: General Network (HTTP/FTP/…) Client Interface for R</em>. R package version 1.98-1.2. 2020.</p>
+<p>[20] D. Temple Lang. <em>XML: Tools for Parsing and Generating XML Within R and S-Plus</em>. R package version 3.99-0.5. 2020. &lt;URL: <a href="http://www.omegahat.net/RSXML" class="uri">http://www.omegahat.net/RSXML</a>&gt;.</p>
+<p>[21] H. Wickham. <em>pryr: Tools for Computing on the Language</em>. R package version 0.1.4. 2018. &lt;URL: <a href="https://github.com/hadley/pryr" class="uri">https://github.com/hadley/pryr</a>&gt;.</p>
+<p>[22] H. Wickham. “testthat: Get Started with Testing”. In: <em>The R Journal</em> 3 (2011), pp. 5-10. &lt;URL: <a href="https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf" class="uri">https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf</a>&gt;.</p>
+<p>[23] C. Wilks, L. Collado-Torres, S. C. Zheng, A. E. Jaffe, et al. “recount3 pre-print title TODO”. In: <em>bioRxiv</em> (2020). DOI: 10.1101/TODO. &lt;URL: <a href="https://www.biorxiv.org/content/10.1101/TODO" class="uri">https://www.biorxiv.org/content/10.1101/TODO</a>&gt;.</p>
+<p>[24] Y. Xie. “knitr: A Comprehensive Tool for Reproducible Research in R”. In: <em>Implementing Reproducible Computational Research</em>. Ed. by V. Stodden, F. Leisch and R. D. Peng. ISBN 978-1466561595. Chapman and Hall/CRC, 2014. &lt;URL: <a href="http://www.crcpress.com/product/isbn/9781466561595" class="uri">http://www.crcpress.com/product/isbn/9781466561595</a>&gt;.</p>
+</div>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn1"><p>These are 92 control spike-in sequences that are commonly used in bulk RNA-seq projects.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>69 controls sequences.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>This new design allows us to couple the expression data with metadata on the fly, as well as have flexibility in case we uncover an error in the files.<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Although ERCC and SIRV are technically not genes.<a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Check the BigWig files section further below.<a href="#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>For example in <em><a href="https://github.com/LieberInstitute/recount.bwtool">recount.bwtool</a></em> .<a href="#fnref6" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
   </div>
 
