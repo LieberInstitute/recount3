@@ -129,8 +129,10 @@ transform_counts <- function(
 #' sample is paired-end or not.
 #' @inheritParams is_paired_end
 #'
-#' @return
+#' @return A `numeric()` with the sample scale factors that are used by
+#' `transform_counts()`.
 #' @export
+#' @importFrom SummarizedExperiment assayNames colData assays
 #' @family count transformation functions
 #'
 #' @examples
@@ -302,6 +304,7 @@ is_paired_end <- function(x,
 #' was done to match the default value of `round` in `transform_counts()`.
 #'
 #' @inheritParams transform_counts
+#' @inheritParams is_paired_end
 #'
 #' @return A `matrix()` with the read counts. By default this function uses
 #' the average read length to the QC annotation.

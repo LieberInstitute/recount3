@@ -17,6 +17,10 @@ created by \code{create_rse()}.}
 
 \item{round}{A \code{logical(1)} specifying whether to round the transformed
 counts or not.}
+
+\item{avg_mapped_read_length}{A \code{character(1)} specifying the metdata column
+name that contains the average fragment length after aligning. This is
+typically twice the average read length for paired-end reads.}
 }
 \value{
 A \code{matrix()} with the read counts. By default this function uses

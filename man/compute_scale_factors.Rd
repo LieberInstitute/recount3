@@ -50,7 +50,8 @@ name that contains the number of mapped reads.}
 sample is paired-end or not.}
 }
 \value{
-
+A \code{numeric()} with the sample scale factors that are used by
+\code{transform_counts()}.
 }
 \description{
 This function computes the count scaling factors used by
