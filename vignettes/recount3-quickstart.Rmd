@@ -155,7 +155,7 @@ We hope that `r Biocpkg('recount3')` will be useful for your research. Please us
 citation("recount3")
 ```
 
-# Quick start to using to `recount3`
+# Quick start
 
 After installing `r Biocpkg('recount3')` `r citep(bib[['recount3paper']])`, we need to load the package, which will automatically load the required dependencies.
 
