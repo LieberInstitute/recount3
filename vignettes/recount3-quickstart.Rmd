@@ -73,7 +73,19 @@ bib <- c(
     R.utils = citation("R.utils"),
     Matrix = citation("Matrix"),
     GenomicRanges = citation("GenomicRanges"),
-    ExperimentHub = citation("ExperimentHub")
+    ExperimentHub = citation("ExperimentHub"),
+    recount2paper = citation("recount")[1],
+    recount2workflow = citation("recount")[2],
+    recount1paper = citation("recount")[5],
+    bioconductor2015 = RefManageR::BibEntry(
+        bibtype = "Article",
+        key = "bioconductor2015",
+        author = "Wolfgang Huber and Vincent J Carey and Robert Gentleman and Simon Anders and Marc Carlson and Benilton S Carvalho and Hector Corrada Bravo and Sean Davis and Laurent Gatto and Thomas Girke and Raphael Gottardo and Florian Hahne and Kasper D Hansen and Rafael A Irizarry and Michael Lawrence and Michael I Love and James MacDonald and Valerie Obenchain and Andrzej K Oleś and Hervé Pagès and Alejandro Reyes and Paul Shannon and Gordon K Smyth and Dan Tenenbaum and Levi Waldron and Martin Morgan",
+        title = "Orchestrating high-throughput genomic analysis with Bioconductor",
+        year = 2015, doi = "10.1038/nmeth.3252",
+        journal = "Nature Methods",
+        journaltitle = "Nat Methods"
+    )
 )
 
 write.bibtex(bib, file = "quickstartRef.bib")
@@ -88,7 +100,7 @@ The `r Biocpkg('recount3')` R/Bioconductor package is part of the `recount3` pro
 
 ## R packages
 
-To clarify the relationship between the R/Bioconductor packages and the phases of `ReCount` `r citep("10.1186/1471-2105-12-449")` please check the table below:
+To clarify the relationship between the R/Bioconductor packages and the phases of `ReCount` `r citep(bib[["recount1paper"]])` please check the table below:
 
 | Year | Phase | Main references | R/Bioconductor |
 | --- | --- | --- | --- |
@@ -137,7 +149,7 @@ BiocManager::install("LieberInstitute/recount3")
 * `r Biocpkg('DESeq2')` and `r Biocpkg("limma")` packages for performing differential expression analysis with the _RangedSummarizedExperiment_ objects,
 * `r Biocpkg('DEFormats')` package for switching the objects to those used by other differential expression packages such as `r Biocpkg('edgeR')`,
 * `r Biocpkg('derfinder')` package for performing annotation-agnostic differential expression analysis.
-* `r Biocpkg('recount')` package which provided an R/Bioconductor interface to the data in the `recount2` project `r citep(list("10.1038/nbt.3838", "10.12688/f1000research.12223.1"))`.
+* `r Biocpkg('recount')` package which provided an R/Bioconductor interface to the data in the `recount2` project `r citep(list(bib[["recount2paper"]], bib[["recount2workflow"]]))`.
 
 If you are asking yourself the question "Where do I start using Bioconductor?" you might be interested in [this blog post](http://lcolladotor.github.io/2014/10/16/startbioc/#.VkOKbq6rRuU).
 
@@ -213,7 +225,7 @@ assay(rse_gene_SRP009615, "counts") <- transform_counts(rse_gene_SRP009615)
 
 # Users guide
 
-`r Biocpkg('recount3')` `r citep(bib[['recount3paper']])` provides an interface for downloading the [recount3 raw files](https://LieberInstitute.github.io/recount3-docs/raw-files.html) and building Bioconductor-friendly R objects `r citep(list("10.1038/nmeth.3252", bib[["SummarizedExperiment"]]))` that can be used with many downstream packages. To achieve this, the raw data is organized by **study** from a specific **data source**. That same study can be a part of one or more **compilations**, which is a manually curated set of studies with compilation-specific sample metadata (see the [Data source vs collection](https://LieberInstitute.github.io/recount3-docs/raw-files.html#data-source-vs-collection) for details). To get started with `r Biocpkg('recount3')`, you will need to identify the ID for the study of interest from either **human** or **mouse** for a particular **annotation** of interest. Once you have identified study, data source or compilation, and annotation, `r Biocpkg('recount3')` can be used to build a `RangedSummarizedExperiment` object `r citep(bib[["SummarizedExperiment"]])` for either **gene**, **exon** or **exon-exon junction** expression feature data. For more advanced use cases, `r Biocpkg('recount3')` provides access to the coverage BigWig files that can be quantified for custom set of genomic regions using `r Biocpkg('megadepth')`. Furthermore, `r Biocpkg('snapcount')` allows fast-queries for custom exon-exon junctions and other custom input.
+`r Biocpkg('recount3')` `r citep(bib[['recount3paper']])` provides an interface for downloading the [recount3 raw files](https://LieberInstitute.github.io/recount3-docs/raw-files.html) and building Bioconductor-friendly R objects `r citep(list(bib[["bioconductor2015"]], bib[["SummarizedExperiment"]]))` that can be used with many downstream packages. To achieve this, the raw data is organized by **study** from a specific **data source**. That same study can be a part of one or more **compilations**, which is a manually curated set of studies with compilation-specific sample metadata (see the [Data source vs collection](https://LieberInstitute.github.io/recount3-docs/raw-files.html#data-source-vs-collection) for details). To get started with `r Biocpkg('recount3')`, you will need to identify the ID for the study of interest from either **human** or **mouse** for a particular **annotation** of interest. Once you have identified study, data source or compilation, and annotation, `r Biocpkg('recount3')` can be used to build a `RangedSummarizedExperiment` object `r citep(bib[["SummarizedExperiment"]])` for either **gene**, **exon** or **exon-exon junction** expression feature data. For more advanced use cases, `r Biocpkg('recount3')` provides access to the coverage BigWig files that can be quantified for custom set of genomic regions using `r Biocpkg('megadepth')`. Furthermore, `r Biocpkg('snapcount')` allows fast-queries for custom exon-exon junctions and other custom input.
 
 ## Find a study
 
@@ -308,7 +320,7 @@ In `r Biocpkg('recount3')` we have provided multiple annotations, which is diffe
 
 ## Build a RSE
 
-Once you have chosen an annotation and a project, you can now build a `RangedSummarizedExperiment` object `r citep(list("10.1038/nmeth.3252", bib[["SummarizedExperiment"]]))`. To do so, we recommend using the `create_rse()` function as shown below for GENCODE v26 (the default annotation for human files). `create_rse()` internally uses several other `r Biocpkg('recount3')` functions for locating the necessary raw files, downloading them, reading them, and building the `RangedSummarizedExperiment` (RSE) object. `create_rse()` shows several status message updates that you can silence with `suppressMessages(create_rse())` if you want to.
+Once you have chosen an annotation and a project, you can now build a `RangedSummarizedExperiment` object `r citep(list(bib[["bioconductor2015"]], bib[["SummarizedExperiment"]]))`. To do so, we recommend using the `create_rse()` function as shown below for GENCODE v26 (the default annotation for human files). `create_rse()` internally uses several other `r Biocpkg('recount3')` functions for locating the necessary raw files, downloading them, reading them, and building the `RangedSummarizedExperiment` (RSE) object. `create_rse()` shows several status message updates that you can silence with `suppressMessages(create_rse())` if you want to.
 
 ```{r "rse_gencode_v26"}
 ## Create a RSE object at the gene level
@@ -383,7 +395,7 @@ Using `transform_counts()` you can scale the counts and assign them to the "coun
 assay(rse_gene_SRP009615, "counts") <- transform_counts(rse_gene_SRP009615)
 ```
 
-Just like with `r Biocpkg('recount')` for `recount2`, you can transform the raw base-pair coverage counts `r citep("10.12688/f1000research.12223.1")` to read counts with `compute_read_counts()`, RPKM with `recount::getRPKM()` or TPM values with `recount::getTPM()`. Check `transform_counts()` from `r Biocpkg('recount3')` for more details.
+Just like with `r Biocpkg('recount')` for `recount2`, you can transform the raw base-pair coverage counts `r citep(bib[["recount2workflow"]])` to read counts with `compute_read_counts()`, RPKM with `recount::getRPKM()` or TPM values with `recount::getTPM()`. Check `transform_counts()` from `r Biocpkg('recount3')` for more details.
 
 # Advanced features
 
@@ -502,7 +514,7 @@ The main documentation website documents how the raw files should be organized i
 
 In particular, this functionality can be useful if you want to access the data at [IDIES](https://idies.jhu.edu/) using [SciServer Compute](https://apps.sciserver.org/compute/).
 
-<a href="https://apps.sciserver.org/compute/"><img src="https://skyserver.sdss.org/dr14/en/images/sciserver_logo_inverted_vertical.png" width="800px"></a>
+<a href="https://apps.sciserver.org/compute/"><img src="https://skyserver.sdss.org/dr14/en/images/sciserver_logo_inverted_vertical.png" width="400px"></a>
 
 ## Other related tools
 

@@ -35,7 +35,8 @@ Suggests:
     rmarkdown,
     testthat,
     pryr,
-    interactiveDisplayBase
+    interactiveDisplayBase,
+    recount
 VignetteBuilder: knitr
 Depends: 
     SummarizedExperiment
