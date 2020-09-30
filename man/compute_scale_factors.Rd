@@ -87,7 +87,7 @@ DRP000499_meta <- read_metadata(
 ## Compute the scaling factors
 compute_scale_factors(DRP000499_meta, by = "auc")
 compute_scale_factors(DRP000499_meta, by = "mapped_reads")
-\dontrun{
+
 ## You can compare the factors against those from recount::scale_counts()
 ## from the recount2 project which used a different RNA-seq aligner
 ## If needed, install recount, the R/Bioconductor package for recount2:
@@ -103,7 +103,7 @@ recount_factors <- data.frame(
 )
 plot(recount2 ~ recount3, data = recount_factors)
 abline(a = 0, b = 1, col = "purple", lwd = 2, lty = 2)
-}
+
 
 }
 \seealso{

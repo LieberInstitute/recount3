@@ -72,7 +72,7 @@ assays(rse_gene_SRP009615)$counts <- transform_counts(rse_gene_SRP009615)
 ## See that now we have two assayNames()
 rse_gene_SRP009615
 assayNames(rse_gene_SRP009615)
-\dontrun{
+
 ## You can compare the scaled counts against those from
 ## recount::scale_counts() from the recount2 project
 ## which used a different RNA-seq aligner
@@ -97,7 +97,7 @@ colSums(assay(rse_gene_SRP009615, "RPKM"))
 ## Compute TPMs
 assays(rse_gene_SRP009615)$TPM <- recount::getTPM(rse_gene_SRP009615, length_var = "score")
 colSums(assay(rse_gene_SRP009615, "TPM")) / 1e6 ## Should all be equal to 1
-}
+
 }
 \seealso{
 Other count transformation functions: 

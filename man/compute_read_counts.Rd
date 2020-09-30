@@ -47,7 +47,7 @@ colSums(compute_read_counts(rse_gene_SRP009615)) / 1e6
 ## Create a RSE object at the gene level
 rse_gene_DRP000499 <- create_rse(recount3_hub("DRP000499"))
 colSums(compute_read_counts(rse_gene_DRP000499)) / 1e6
-\dontrun{
+
 ## You can compare the read counts against those from recount::read_counts()
 ## from the recount2 project which used a different RNA-seq aligner
 ## If needed, install recount, the R/Bioconductor package for recount2:
@@ -77,7 +77,6 @@ recount_readsums <- data.frame(
 )
 plot(recount2 ~ recount3, data = recount_readsums)
 abline(a = 0, b = 1, col = "purple", lwd = 2, lty = 2)
-}
 
 }
 \references{

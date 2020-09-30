@@ -43,7 +43,7 @@
 #' ## See that now we have two assayNames()
 #' rse_gene_SRP009615
 #' assayNames(rse_gene_SRP009615)
-#' \dontrun{
+#'
 #' ## You can compare the scaled counts against those from
 #' ## recount::scale_counts() from the recount2 project
 #' ## which used a different RNA-seq aligner
@@ -68,7 +68,7 @@
 #' ## Compute TPMs
 #' assays(rse_gene_SRP009615)$TPM <- recount::getTPM(rse_gene_SRP009615, length_var = "score")
 #' colSums(assay(rse_gene_SRP009615, "TPM")) / 1e6 ## Should all be equal to 1
-#' }
+#'
 transform_counts <- function(
     rse,
     by = c("auc", "mapped_reads"),
@@ -164,7 +164,7 @@ transform_counts <- function(
 #' ## Compute the scaling factors
 #' compute_scale_factors(DRP000499_meta, by = "auc")
 #' compute_scale_factors(DRP000499_meta, by = "mapped_reads")
-#' \dontrun{
+#'
 #' ## You can compare the factors against those from recount::scale_counts()
 #' ## from the recount2 project which used a different RNA-seq aligner
 #' ## If needed, install recount, the R/Bioconductor package for recount2:
@@ -180,7 +180,7 @@ transform_counts <- function(
 #' )
 #' plot(recount2 ~ recount3, data = recount_factors)
 #' abline(a = 0, b = 1, col = "purple", lwd = 2, lty = 2)
-#' }
+#'
 #'
 compute_scale_factors <- function(
     x,
@@ -326,7 +326,7 @@ is_paired_end <- function(x,
 #' ## Create a RSE object at the gene level
 #' rse_gene_DRP000499 <- create_rse(recount3_hub("DRP000499"))
 #' colSums(compute_read_counts(rse_gene_DRP000499)) / 1e6
-#' \dontrun{
+#'
 #' ## You can compare the read counts against those from recount::read_counts()
 #' ## from the recount2 project which used a different RNA-seq aligner
 #' ## If needed, install recount, the R/Bioconductor package for recount2:
@@ -356,7 +356,6 @@ is_paired_end <- function(x,
 #' )
 #' plot(recount2 ~ recount3, data = recount_readsums)
 #' abline(a = 0, b = 1, col = "purple", lwd = 2, lty = 2)
-#' }
 #'
 compute_read_counts <- function(rse, round = TRUE, avg_mapped_read_length = "recount_qc.star.average_mapped_length") {
     stopifnot(is(rse, "RangedSummarizedExperiment"))
