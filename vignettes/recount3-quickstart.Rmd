@@ -77,6 +77,7 @@ bib <- c(
     recount2paper = citation("recount")[1],
     recount2workflow = citation("recount")[2],
     recount1paper = citation("recount")[5],
+    recount2fantom = citation("recount")[7],
     bioconductor2015 = RefManageR::BibEntry(
         bibtype = "Article",
         key = "bioconductor2015",
@@ -301,7 +302,7 @@ The main sources are:
 
 * [GENCODE](https://www.gencodegenes.org/) project
 * [RefSeq](https://www.ncbi.nlm.nih.gov/refseq/): NCBI Reference Sequence Database
-* FANTOM6_CAT is described at DOI [10.1101/gr.254656.119](https://doi.org/10.1101/gr.254656.119) `r citep("10.1101/gr.254656.119")`
+* FANTOM6_CAT which was first used with `recount2` `r citep(bib[["recount2fantom"]])`
 * [ERCC](https://www.nist.gov/programs-projects/external-rna-controls-consortium): External RNA Controls Consortium ^[These are 92 control spike-in sequences that are commonly used in bulk RNA-seq projects.], commercially available from [ThermoFisher Scientific](https://www.thermofisher.com/order/catalog/product/4456740#/4456740)
 * [SIRV](https://www.biorxiv.org/content/10.1101/080747v1) ^[69 controls sequences.], commercially available from [Lexogen](https://www.lexogen.com/sirvs/)
 
