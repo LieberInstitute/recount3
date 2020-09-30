@@ -135,7 +135,7 @@ recount::scale_counts(factor_only = TRUE), but it is more general." />
     <div class="ref-description">
     <p>This function computes the count scaling factors used by
 <code><a href='transform_counts.html'>transform_counts()</a></code>. This function is similar to
-<code>recount::scale_counts(factor_only = TRUE)</code>, but it is more general.</p>
+<code><a href='https://rdrr.io/pkg/recount/man/scale_counts.html'>recount::scale_counts(factor_only = TRUE)</a></code>, but it is more general.</p>
     </div>
 
     <pre class="usage"><span class='fu'>compute_scale_factors</span>(
@@ -225,7 +225,7 @@ sample is paired-end or not.</p></td>
         )
     )
 )
-</div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:35:55 caching file sra.sra.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:35:55 caching file sra.recount_project.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:35:56 caching file sra.recount_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:35:56 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:35:56 caching file sra.recount_pred.SRP009615.MD.gz.</span></div><div class='input'>
+</div><div class='output co'>#&gt; <span class='message'>2020-09-30 16:46:06 caching file sra.sra.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 16:46:06 caching file sra.recount_project.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 16:46:06 caching file sra.recount_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 16:46:06 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 16:46:06 caching file sra.recount_pred.SRP009615.MD.gz.</span></div><div class='input'>
 <span class='co'>## Compute the scaling factors</span>
 <span class='fu'>compute_scale_factors</span>(<span class='kw'>SRP009615_meta</span>, by = <span class='st'>"auc"</span>)
 </div><div class='output co'>#&gt;  SRR387777  SRR387778  SRR387779  SRR387780  SRR389079  SRR389080  SRR389081 
@@ -245,7 +245,7 @@ sample is paired-end or not.</p></td>
         )
     )
 )
-</div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:35:57 caching file sra.sra.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:35:57 caching file sra.recount_project.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:35:58 caching file sra.recount_qc.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:35:58 caching file sra.recount_seq_qc.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:35:58 caching file sra.recount_pred.DRP000499.MD.gz.</span></div><div class='input'>
+</div><div class='output co'>#&gt; <span class='message'>2020-09-30 16:46:07 caching file sra.sra.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 16:46:07 caching file sra.recount_project.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 16:46:07 caching file sra.recount_qc.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 16:46:07 caching file sra.recount_seq_qc.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 16:46:08 caching file sra.recount_pred.DRP000499.MD.gz.</span></div><div class='input'>
 <span class='co'>## Compute the scaling factors</span>
 <span class='fu'>compute_scale_factors</span>(<span class='kw'>DRP000499_meta</span>, by = <span class='st'>"auc"</span>)
 </div><div class='output co'>#&gt;   DRR001622   DRR001623   DRR001624   DRR001625   DRR001626   DRR001627 
@@ -263,13 +263,13 @@ sample is paired-end or not.</p></td>
 #&gt;   DRR001634   DRR001635   DRR001636   DRR001637   DRR001638   DRR001639 
 #&gt; 0.009455928 0.010047395 0.008369215 0.007094889 0.009827127 0.011310495 
 #&gt;   DRR001640   DRR001641   DRR001642 
-#&gt; 0.015537455 0.016555494 0.012514436 </div><div class='input'><span class='co'>if</span> (<span class='fl'>FALSE</span>) {
+#&gt; 0.015537455 0.016555494 0.012514436 </div><div class='input'>
 <span class='co'>## You can compare the factors against those from recount::scale_counts()</span>
 <span class='co'>## from the recount2 project which used a different RNA-seq aligner</span>
 <span class='co'>## If needed, install recount, the R/Bioconductor package for recount2:</span>
 <span class='co'># BiocManager::install("recount")</span>
-<span class='kw'>recount2_factors</span> <span class='op'>&lt;-</span> <span class='kw'>recount</span>::<span class='fu'>scale_counts</span>(
-    <span class='kw'>recount</span>::<span class='kw'>rse_gene_SRP009615</span>,
+<span class='kw'>recount2_factors</span> <span class='op'>&lt;-</span> <span class='kw'>recount</span>::<span class='fu'><a href='https://rdrr.io/pkg/recount/man/scale_counts.html'>scale_counts</a></span>(
+    <span class='kw'>recount</span>::<span class='kw'><a href='https://rdrr.io/pkg/recount/man/rse_gene_SRP009615.html'>rse_gene_SRP009615</a></span>,
     by = <span class='st'>"auc"</span>, factor_only = <span class='fl'>TRUE</span>
 )
 <span class='kw'>recount3_factors</span> <span class='op'>&lt;-</span> <span class='fu'>compute_scale_factors</span>(<span class='kw'>SRP009615_meta</span>, by = <span class='st'>"auc"</span>)
@@ -278,8 +278,8 @@ sample is paired-end or not.</p></td>
     recount3 = <span class='kw'>recount3_factors</span>[<span class='fu'><a href='https://rdrr.io/r/base/order.html'>order</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span>(<span class='kw'>recount3_factors</span>))]
 )
 <span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span>(<span class='kw'>recount2</span> <span class='op'>~</span> <span class='kw'>recount3</span>, data = <span class='kw'>recount_factors</span>)
-<span class='fu'><a href='https://rdrr.io/r/graphics/abline.html'>abline</a></span>(a = <span class='fl'>0</span>, b = <span class='fl'>1</span>, col = <span class='st'>"purple"</span>, lwd = <span class='fl'>2</span>, lty = <span class='fl'>2</span>)
-}
+</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/abline.html'>abline</a></span>(a = <span class='fl'>0</span>, b = <span class='fl'>1</span>, col = <span class='st'>"purple"</span>, lwd = <span class='fl'>2</span>, lty = <span class='fl'>2</span>)
+</div><div class='img'><img src='compute_scale_factors-1.png' alt='' width='700' height='433' /></div><div class='input'>
 
 </div></pre>
   </div>

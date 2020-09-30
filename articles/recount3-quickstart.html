@@ -103,42 +103,6 @@
 <h1 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h1>
 <p>The <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> R/Bioconductor package is part of the <code>recount3</code> project and is the latest iteration of the <code>ReCount</code> family of projects that provide access to uniformly-processed RNA sequencing datasets. The <strong>main documentation website</strong> for all the <code>recount3</code>-related projects is available at <a href="https://LieberInstitute/github.io/recount3-docs"><strong>recount.bio</strong></a>. Please check that website for more information about how this R/Bioconductor package and other tools are related to each other.</p>
-<div id="r-packages" class="section level2">
-<h2 class="hasAnchor">
-<a href="#r-packages" class="anchor"></a>R packages</h2>
-<p>To clarify the relationship between the R/Bioconductor packages and the phases of <code>ReCount</code> <a id="cite-Frazee_2011"></a>(<a href="https://doi.org/10.1186/1471-2105-12-449">Frazee, Langmead, and Leek, 2011</a>) please check the table below:</p>
-<table class="table">
-<thead><tr class="header">
-<th>Year</th>
-<th>Phase</th>
-<th>Main references</th>
-<th>R/Bioconductor</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>2011</td>
-<td><a href="http://bowtie-bio.sourceforge.net/recount/"><code>ReCount</code></a></td>
-<td>DOI: <a href="https://doi.org/10.1186/1471-2105-12-449">10.1186/1471-2105-12-449</a>
-</td>
-<td>none</td>
-</tr>
-<tr class="even">
-<td>2017</td>
-<td><a href="https://jhubiostatistics.shinyapps.io/recount/"><code>recount2</code></a></td>
-<td>DOI: <a href="https://doi.org/10.1038/nbt.3838">10.1038/nbt.3838</a> <a href="https://doi.org/10.12688/f1000research.12223.1">10.12688/f1000research.12223.1</a>
-</td>
-<td><em><a href="https://bioconductor.org/packages/3.12/recount">recount</a></em></td>
-</tr>
-<tr class="odd">
-<td>2020</td>
-<td><a href="https://LieberInstitute/github.io/recount3-docs"><code>recount3</code></a></td>
-<td>DOI: <a href="https://doi.org/TODO">TODO</a>
-</td>
-<td><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em></td>
-</tr>
-</tbody>
-</table>
-</div>
 <div id="teams-involved" class="section level2">
 <h2 class="hasAnchor">
 <a href="#teams-involved" class="anchor"></a>Teams involved</h2>
@@ -191,7 +155,7 @@
 <li>
 <em><a href="https://bioconductor.org/packages/3.12/derfinder">derfinder</a></em> package for performing annotation-agnostic differential expression analysis.</li>
 <li>
-<em><a href="https://bioconductor.org/packages/3.12/recount">recount</a></em> package which provided an R/Bioconductor interface to the data in the <code>recount2</code> project <a id="cite-Collado_Torres_2017"></a><a id="cite-Collado_Torres_2017a"></a>(<a href="https://doi.org/10.1038/nbt.3838">Collado-Torres, Nellore, Kammers, Ellis, et al., 2017</a>; <a href="http://dx.doi.org/10.12688/f1000research.12223.1">Collado-Torres, Nellore, and Jaffe, 2017</a>).</li>
+<em><a href="https://bioconductor.org/packages/3.12/recount">recount</a></em> package which provided an R/Bioconductor interface to the data in the <code>recount2</code> project <a id="cite-Collado-Torres_2017"></a><a id="cite-Collado-Torres_2017a"></a>(<a href="http://www.nature.com/nbt/journal/v35/n4/full/nbt.3838.html">Collado-Torres, Nellore, Kammers, Ellis, et al., 2017</a>; <a href="https://f1000research.com/articles/6-1558/v1">Collado-Torres, Nellore, and Jaffe, 2017</a>).</li>
 </ul>
 <p>If you are asking yourself the question “Where do I start using Bioconductor?” you might be interested in <a href="http://lcolladotor.github.io/2014/10/16/startbioc/#.VkOKbq6rRuU">this blog post</a>.</p>
 </div>
@@ -226,10 +190,9 @@
 </pre></div>
 </div>
 </div>
-<div id="quick-start-to-using-to-recount3" class="section level1">
+<div id="quick-start" class="section level1">
 <h1 class="hasAnchor">
-<a href="#quick-start-to-using-to-recount3" class="anchor"></a>Quick start to using to <code>recount3</code>
-</h1>
+<a href="#quick-start" class="anchor"></a>Quick start</h1>
 <p>After installing <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> <a id="cite-Wilks_2020"></a>(<a href="https://www.biorxiv.org/content/10.1101/TODO">Wilks, Collado-Torres, Zheng, Jaffe, et al., 2020</a>), we need to load the package, which will automatically load the required dependencies.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit">
 <span class="co">## Load recount3 R package</span>
@@ -239,12 +202,12 @@
 <div class="sourceCode" id="cb5"><pre class="downlit">
 <span class="co">## Find all available human projects</span>
 <span class="kw">human_projects</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/available_projects.html">available_projects</a></span>()
-<span class="co">#&gt; using temporary cache /tmp/RtmpwB2Xiq/BiocFileCache</span>
-<span class="co">#&gt; 2020-09-30 06:39:59 caching file sra.recount_project.MD.gz.</span>
+<span class="co">#&gt; using temporary cache /tmp/Rtmp2TLlMo/BiocFileCache</span>
+<span class="co">#&gt; 2020-09-30 16:48:28 caching file sra.recount_project.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/sra.recount_project.MD.gz'</span>
-<span class="co">#&gt; 2020-09-30 06:40:03 caching file gtex.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:29 caching file gtex.recount_project.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/gtex.recount_project.MD.gz'</span>
-<span class="co">#&gt; 2020-09-30 06:40:04 caching file tcga.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:29 caching file tcga.recount_project.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/tcga/metadata/tcga.recount_project.MD.gz'</span>
 
 <span class="co">## Find the project you are interested in,</span>
@@ -256,24 +219,24 @@
 
 <span class="co">## Create a RangedSummarizedExperiment (RSE) object at the gene level</span>
 <span class="kw">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_rse.html">create_rse</a></span>(<span class="kw">proj_info</span>)
-<span class="co">#&gt; 2020-09-30 06:40:10 downloading and reading the metadata.</span>
-<span class="co">#&gt; 2020-09-30 06:40:10 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:33 downloading and reading the metadata.</span>
+<span class="co">#&gt; 2020-09-30 16:48:33 caching file sra.sra.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.sra.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-09-30 06:40:11 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:34 caching file sra.recount_project.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_project.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-09-30 06:40:11 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:34 caching file sra.recount_qc.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_qc.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-09-30 06:40:12 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:35 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_seq_qc.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-09-30 06:40:13 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:35 caching file sra.recount_pred.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_pred.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-09-30 06:40:14 downloading and reading the feature information.</span>
-<span class="co">#&gt; 2020-09-30 06:40:14 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:35 downloading and reading the feature information.</span>
+<span class="co">#&gt; 2020-09-30 16:48:35 caching file human.gene_sums.G026.gtf.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/annotations/gene_sums/human.gene_sums.G026.gtf.gz'</span>
-<span class="co">#&gt; 2020-09-30 06:40:18 downloading and reading the counts: 12 samples across 63856 features.</span>
-<span class="co">#&gt; 2020-09-30 06:40:18 caching file sra.gene_sums.SRP009615.G026.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:36 downloading and reading the counts: 12 samples across 63856 features.</span>
+<span class="co">#&gt; 2020-09-30 16:48:36 caching file sra.gene_sums.SRP009615.G026.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.G026.gz'</span>
-<span class="co">#&gt; 2020-09-30 06:40:21 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class="co">#&gt; 2020-09-30 16:48:37 construcing the RangedSummarizedExperiment (rse) object.</span>
 
 <span class="co">## Explore that RSE object</span>
 <span class="kw">rse_gene_SRP009615</span>
@@ -312,12 +275,12 @@
 
 <span class="co">## Now you are ready to continue with downstream analysis software</span>
 </pre></div>
-<p><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> also supports accessing the BigWig raw coverage files as well as specific study or compilation sample <strong>metadata</strong>. Please continue to the users guide for more detailed information.</p>
+<p><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> also supports accessing the BigWig raw coverage files as well as specific study or collection sample <strong>metadata</strong>. Please continue to the users guide for more detailed information.</p>
 </div>
 <div id="users-guide" class="section level1">
 <h1 class="hasAnchor">
 <a href="#users-guide" class="anchor"></a>Users guide</h1>
-<p><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> (<a href="https://www.biorxiv.org/content/10.1101/TODO">Wilks, Collado-Torres, Zheng, Jaffe, et al., 2020</a>) provides an interface for downloading the <a href="https://LieberInstitute.github.io/recount3-docs/raw-files.html">recount3 raw files</a> and building Bioconductor-friendly R objects <a id="cite-Huber_2015"></a><a id="cite-SummarizedExperiment"></a>(<a href="https://doi.org/10.1038/nmeth.3252">Huber, Carey, Gentleman, Anders, et al., 2015</a>; <a href="https://doi.org/10.18129/B9.bioc.SummarizedExperiment">Morgan, Obenchain, Hester, and Pagès, 2019</a>) that can be used with many downstream packages. To achieve this, the raw data is organized by <strong>study</strong> from a specific <strong>data source</strong>. That same study can be a part of one or more <strong>compilations</strong>, which is a manually curated set of studies with compilation-specific sample metadata (see the <a href="https://LieberInstitute.github.io/recount3-docs/raw-files.html#data-source-vs-collection">Data source vs collection</a> for details). To get started with <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em>, you will need to identify the ID for the study of interest from either <strong>human</strong> or <strong>mouse</strong> for a particular <strong>annotation</strong> of interest. Once you have identified study, data source or compilation, and annotation, <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> can be used to build a <code>RangedSummarizedExperiment</code> object (<a href="https://doi.org/10.18129/B9.bioc.SummarizedExperiment">Morgan, Obenchain, Hester, and Pagès, 2019</a>) for either <strong>gene</strong>, <strong>exon</strong> or <strong>exon-exon junction</strong> expression feature data. For more advanced use cases, <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> provides access to the coverage BigWig files that can be quantified for custom set of genomic regions using <em><a href="https://bioconductor.org/packages/3.12/megadepth">megadepth</a></em>. Furthermore, <em><a href="https://bioconductor.org/packages/3.12/snapcount">snapcount</a></em> allows fast-queries for custom exon-exon junctions and other custom input.</p>
+<p><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> (<a href="https://www.biorxiv.org/content/10.1101/TODO">Wilks, Collado-Torres, Zheng, Jaffe, et al., 2020</a>) provides an interface for downloading the <a href="https://LieberInstitute.github.io/recount3-docs/raw-files.html">recount3 raw files</a> and building Bioconductor-friendly R objects <a id="cite-bioconductor2015"></a><a id="cite-SummarizedExperiment"></a>(<a href="https://doi.org/10.1038/nmeth.3252">Huber, Carey, Gentleman, Anders, et al., 2015</a>; <a href="https://doi.org/10.18129/B9.bioc.SummarizedExperiment">Morgan, Obenchain, Hester, and Pagès, 2019</a>) that can be used with many downstream packages. To achieve this, the raw data is organized by <strong>study</strong> from a specific <strong>data source</strong>. That same study can be a part of one or more <strong>collections</strong>, which is a manually curated set of studies with collection-specific sample metadata (see the <a href="https://LieberInstitute.github.io/recount3-docs/raw-files.html#data-source-vs-collection">Data source vs collection</a> for details). To get started with <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em>, you will need to identify the ID for the study of interest from either <strong>human</strong> or <strong>mouse</strong> for a particular <strong>annotation</strong> of interest. Once you have identified study, data source or collection, and annotation, <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> can be used to build a <code>RangedSummarizedExperiment</code> object (<a href="https://doi.org/10.18129/B9.bioc.SummarizedExperiment">Morgan, Obenchain, Hester, and Pagès, 2019</a>) for either <strong>gene</strong>, <strong>exon</strong> or <strong>exon-exon junction</strong> expression feature data. Furthermore, <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> provides access to the coverage BigWig files that can be quantified for custom set of genomic regions using <em><a href="https://bioconductor.org/packages/3.12/megadepth">megadepth</a></em>. Furthermore, <em><a href="https://bioconductor.org/packages/3.12/snapcount">snapcount</a></em> allows fast-queries for custom exon-exon junctions and other custom input.</p>
 <div id="find-a-study" class="section level2">
 <h2 class="hasAnchor">
 <a href="#find-a-study" class="anchor"></a>Find a study</h2>
@@ -329,9 +292,9 @@
 <p>While you can use external websites to find a study of interest, you can also use <code><a href="../reference/available_projects.html">available_projects()</a></code> to list the projects that are available in <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> as shown below. This will return a <code><a href="https://rdrr.io/r/base/data.frame.html">data.frame()</a></code> object that lists the unique project IDs.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit">
 <span class="kw">human_projects</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/available_projects.html">available_projects</a></span>()
-<span class="co">#&gt; 2020-09-30 06:40:24 caching file sra.recount_project.MD.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:40:24 caching file gtex.recount_project.MD.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:40:24 caching file tcga.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:38 caching file sra.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:38 caching file gtex.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:38 caching file tcga.recount_project.MD.gz.</span>
 <span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span>(<span class="kw">human_projects</span>)
 <span class="co">#&gt; [1] 8742    5</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="kw">human_projects</span>)
@@ -421,11 +384,11 @@
 <div class="sourceCode" id="cb10"><pre class="downlit">
 <span class="kw">project_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/recount3_hub.html">recount3_hub</a></span>(<span class="st">"SRP009615"</span>)
 <span class="co">#&gt; snapshotDate(): 2020-09-24</span>
-<span class="co">#&gt; 2020-09-30 06:40:32 the project SRP009615 was not found on ExperimentHub.</span>
+<span class="co">#&gt; 2020-09-30 16:48:44 the project SRP009615 was not found on ExperimentHub.</span>
 <span class="co">#&gt; Using a backup mechanism powered by recount3::available_projects().</span>
-<span class="co">#&gt; 2020-09-30 06:40:32 caching file sra.recount_project.MD.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:40:33 caching file gtex.recount_project.MD.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:40:33 caching file tcga.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:44 caching file sra.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:44 caching file gtex.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:44 caching file tcga.recount_project.MD.gz.</span>
 </pre></div>
 <p>Ultimately, we need three pieces of information in order to download a specific dataset from <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em>. Those are:</p>
 <ul>
@@ -477,17 +440,17 @@
 <div class="sourceCode" id="cb13"><pre class="downlit">
 <span class="co">## Create a RSE object at the gene level</span>
 <span class="kw">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_rse.html">create_rse</a></span>(<span class="kw">project_info</span>)
-<span class="co">#&gt; 2020-09-30 06:40:42 downloading and reading the metadata.</span>
-<span class="co">#&gt; 2020-09-30 06:40:43 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:40:43 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:40:43 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:40:44 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:40:44 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:40:44 downloading and reading the feature information.</span>
-<span class="co">#&gt; 2020-09-30 06:40:44 caching file human.gene_sums.G026.gtf.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:40:45 downloading and reading the counts: 12 samples across 63856 features.</span>
-<span class="co">#&gt; 2020-09-30 06:40:45 caching file sra.gene_sums.SRP009615.G026.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:40:46 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class="co">#&gt; 2020-09-30 16:48:51 downloading and reading the metadata.</span>
+<span class="co">#&gt; 2020-09-30 16:48:51 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:51 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:51 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:52 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:52 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:52 downloading and reading the feature information.</span>
+<span class="co">#&gt; 2020-09-30 16:48:52 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:53 downloading and reading the counts: 12 samples across 63856 features.</span>
+<span class="co">#&gt; 2020-09-30 16:48:53 caching file sra.gene_sums.SRP009615.G026.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:53 construcing the RangedSummarizedExperiment (rse) object.</span>
 
 <span class="co">## Explore the resulting RSE gene object</span>
 <span class="kw">rse_gene_SRP009615</span>
@@ -511,7 +474,7 @@
 <span class="co">## Information about how this RSE object was made</span>
 <span class="fu">metadata</span>(<span class="kw">rse_gene_SRP009615</span>)
 <span class="co">#&gt; $time_created</span>
-<span class="co">#&gt; [1] "2020-09-30 06:40:46 UTC"</span>
+<span class="co">#&gt; [1] "2020-09-30 16:48:53 UTC"</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $recount3_version</span>
 <span class="co">#&gt;           package ondiskversion loadedversion</span>
@@ -659,36 +622,31 @@
 <span class="co">## For RPKM, TPM or read outputs, check the details in transform_counts().</span>
 <span class="fu">assay</span>(<span class="kw">rse_gene_SRP009615</span>, <span class="st">"counts"</span>) <span class="op">&lt;-</span> <span class="fu"><a href="../reference/transform_counts.html">transform_counts</a></span>(<span class="kw">rse_gene_SRP009615</span>)
 </pre></div>
-<p>Just like with <em><a href="https://bioconductor.org/packages/3.12/recount">recount</a></em> for <code>recount2</code>, you can transform the raw base-pair coverage counts <a id="cite-Collado_Torres_2017ab"></a>(<a href="https://doi.org/10.12688/f1000research.12223.1">Collado-Torres, Nellore, and Jaffe, 2017</a>) to read counts with <code><a href="../reference/compute_read_counts.html">compute_read_counts()</a></code>, RPKM with <code>recount::getRPKM()</code> or TPM values with <code>recount::getTPM()</code>. Check <code><a href="../reference/transform_counts.html">transform_counts()</a></code> from <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> for more details.</p>
+<p>Just like with <em><a href="https://bioconductor.org/packages/3.12/recount">recount</a></em> for <code>recount2</code>, you can transform the raw base-pair coverage counts (<a href="https://f1000research.com/articles/6-1558/v1">Collado-Torres, Nellore, and Jaffe, 2017</a>) to read counts with <code><a href="../reference/compute_read_counts.html">compute_read_counts()</a></code>, RPKM with <code><a href="https://rdrr.io/pkg/recount/man/getRPKM.html">recount::getRPKM()</a></code> or TPM values with <code><a href="https://rdrr.io/pkg/recount/man/getTPM.html">recount::getTPM()</a></code>. Check <code><a href="../reference/transform_counts.html">transform_counts()</a></code> from <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> for more details.</p>
 </div>
-</div>
-<div id="advanced-features" class="section level1">
-<h1 class="hasAnchor">
-<a href="#advanced-features" class="anchor"></a>Advanced features</h1>
-<p><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> provides an interface to <a href="https://LieberInstitute.github.io/recount3-docs/raw-files.html">raw files</a> that go beyond gene counts, as well as other features you might be interested in.</p>
 <div id="exon" class="section level2">
 <h2 class="hasAnchor">
 <a href="#exon" class="anchor"></a>Exon</h2>
-<p>First, you might want to study expression at the <strong>exon</strong> expression level instead of <strong>gene</strong>. To do so, use the <code>type</code> argument in <code><a href="../reference/create_rse.html">create_rse()</a></code> as shown below.</p>
+<p><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> provides an interface to <a href="https://LieberInstitute.github.io/recount3-docs/raw-files.html">raw files</a> that go beyond gene counts, as well as other features you might be interested in. For instance, you might want to study expression at the <strong>exon</strong> expression level instead of <strong>gene</strong>. To do so, use the <code>type</code> argument in <code><a href="../reference/create_rse.html">create_rse()</a></code> as shown below.</p>
 <div class="sourceCode" id="cb19"><pre class="downlit">
 <span class="co">## Create a RSE object at the exon level</span>
 <span class="kw">rse_exon_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_rse.html">create_rse</a></span>(
     <span class="kw">proj_info</span>,
     type = <span class="st">"exon"</span>
 )
-<span class="co">#&gt; 2020-09-30 06:40:49 downloading and reading the metadata.</span>
-<span class="co">#&gt; 2020-09-30 06:40:49 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:40:49 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:40:50 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:40:50 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:40:50 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:40:51 downloading and reading the feature information.</span>
-<span class="co">#&gt; 2020-09-30 06:40:51 caching file human.exon_sums.G026.gtf.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:54 downloading and reading the metadata.</span>
+<span class="co">#&gt; 2020-09-30 16:48:54 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:54 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:54 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:54 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:54 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:48:54 downloading and reading the feature information.</span>
+<span class="co">#&gt; 2020-09-30 16:48:55 caching file human.exon_sums.G026.gtf.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/annotations/exon_sums/human.exon_sums.G026.gtf.gz'</span>
-<span class="co">#&gt; 2020-09-30 06:41:26 downloading and reading the counts: 12 samples across 1299686 features.</span>
-<span class="co">#&gt; 2020-09-30 06:41:26 caching file sra.exon_sums.SRP009615.G026.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:49:21 downloading and reading the counts: 12 samples across 1299686 features.</span>
+<span class="co">#&gt; 2020-09-30 16:49:21 caching file sra.exon_sums.SRP009615.G026.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/exon_sums/15/SRP009615/sra.exon_sums.SRP009615.G026.gz'</span>
-<span class="co">#&gt; 2020-09-30 06:41:37 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class="co">#&gt; 2020-09-30 16:49:25 construcing the RangedSummarizedExperiment (rse) object.</span>
 
 <span class="co">## Explore the resulting RSE exon object</span>
 <span class="kw">rse_exon_SRP009615</span>
@@ -859,22 +817,22 @@
     <span class="kw">proj_info</span>,
     type = <span class="st">"jxn"</span>
 )
-<span class="co">#&gt; 2020-09-30 06:41:40 downloading and reading the metadata.</span>
-<span class="co">#&gt; 2020-09-30 06:41:41 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:41:41 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:41:41 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:41:42 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:41:42 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-09-30 06:41:42 downloading and reading the feature information.</span>
-<span class="co">#&gt; 2020-09-30 06:41:42 caching file sra.junctions.SRP009615.ALL.RR.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:49:29 downloading and reading the metadata.</span>
+<span class="co">#&gt; 2020-09-30 16:49:29 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:49:29 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:49:29 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:49:29 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:49:29 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:49:30 downloading and reading the feature information.</span>
+<span class="co">#&gt; 2020-09-30 16:49:30 caching file sra.junctions.SRP009615.ALL.RR.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.RR.gz'</span>
-<span class="co">#&gt; 2020-09-30 06:41:50 downloading and reading the counts: 12 samples across 281448 features.</span>
-<span class="co">#&gt; 2020-09-30 06:41:50 caching file sra.junctions.SRP009615.ALL.MM.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:49:32 downloading and reading the counts: 12 samples across 281448 features.</span>
+<span class="co">#&gt; 2020-09-30 16:49:32 caching file sra.junctions.SRP009615.ALL.MM.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.MM.gz'</span>
-<span class="co">#&gt; 2020-09-30 06:41:56 matching exon-exon junction counts with the metadata.</span>
-<span class="co">#&gt; 2020-09-30 06:41:56 caching file sra.junctions.SRP009615.ALL.ID.gz.</span>
+<span class="co">#&gt; 2020-09-30 16:49:34 matching exon-exon junction counts with the metadata.</span>
+<span class="co">#&gt; 2020-09-30 16:49:34 caching file sra.junctions.SRP009615.ALL.ID.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.ID.gz'</span>
-<span class="co">#&gt; 2020-09-30 06:41:57 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class="co">#&gt; 2020-09-30 16:49:34 construcing the RangedSummarizedExperiment (rse) object.</span>
 
 <span class="co">## Explore the resulting RSE exon-exon junctions object</span>
 <span class="kw">rse_jxn_SRP009615</span>
@@ -941,12 +899,31 @@
 <span class="co">#&gt; 60.3 MB</span>
 </pre></div>
 </div>
+<div id="bigwig-files" class="section level2">
+<h2 class="hasAnchor">
+<a href="#bigwig-files" class="anchor"></a>BigWig files</h2>
+<p>Internally we used <code><a href="https://rdrr.io/pkg/GenomicFeatures/man/exonicParts.html">GenomicFeatures::exonicParts()</a></code> when processing all annotations in <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> instead of <code><a href="https://rdrr.io/pkg/GenomicRanges/man/inter-range-methods.html">GenomicRanges::disjoin()</a></code> that was used in <code>recount2</code>. We then re-assembled the counts for each exon/gene to create the count files provided in <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em>. However, you might want to exclude the overlapping exonic parts from the counts. If that’s the case or if you are interested in specific regions of the <code>hg38</code>/<code>mm10</code> genomes, you might want to access the coverage BigWig files.</p>
+<div class="sourceCode" id="cb23"><pre class="downlit">
+<span class="co">## BigWig file names</span>
+<span class="co">## The full URL is stored in BigWigUrl</span>
+<span class="fu"><a href="https://rdrr.io/r/base/basename.html">basename</a></span>(<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="kw">rse_gene_SRP009615</span><span class="op">$</span><span class="kw">BigWigURL</span>))
+<span class="co">#&gt; [1] "sra.base_sums.SRP009615_SRR387777.ALL.bw"</span>
+<span class="co">#&gt; [2] "sra.base_sums.SRP009615_SRR387778.ALL.bw"</span>
+<span class="co">#&gt; [3] "sra.base_sums.SRP009615_SRR387779.ALL.bw"</span>
+<span class="co">#&gt; [4] "sra.base_sums.SRP009615_SRR387780.ALL.bw"</span>
+<span class="co">#&gt; [5] "sra.base_sums.SRP009615_SRR389079.ALL.bw"</span>
+<span class="co">#&gt; [6] "sra.base_sums.SRP009615_SRR389080.ALL.bw"</span>
+</pre></div>
+<p>These BigWig files can be accessed using <code><a href="https://rdrr.io/pkg/rtracklayer/man/BigWigFile.html">rtracklayer::import.bw()</a></code> from R, or other tools such as <a href="https://github.com/CRG-Barcelona/bwtool/wiki">bwtool</a> that we’ve used in the past <a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>. Using them, you can compute a coverage matrix for a given set of regions.</p>
+<p>One new software we developed is <em><a href="https://bioconductor.org/packages/3.12/megadepth">megadepth</a></em> for which we have provided an R/Bioconductor package interface. <em><a href="https://bioconductor.org/packages/3.12/megadepth">megadepth</a></em> is faster at accessing BigWig files and is the software we used internally for generating the <code>recount3</code> data. <em><a href="https://bioconductor.org/packages/3.12/megadepth">megadepth</a></em> provides convenient to use functions for quantifying a set of regions, which might be of interest for co-expression analyses where double counting exonic parts can be problematic.</p>
+<p>You can also use <em><a href="https://bioconductor.org/packages/3.12/derfinder">derfinder</a></em> and <em><a href="https://bioconductor.org/packages/3.12/derfinderPlot">derfinderPlot</a></em> if you are interested in visualizing the base-pair coverage data for a specific region using these BigWig coverage files.</p>
+</div>
 <div id="local-files" class="section level2">
 <h2 class="hasAnchor">
 <a href="#local-files" class="anchor"></a>Local files</h2>
 <p><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> depends on <em><a href="https://bioconductor.org/packages/3.12/BiocFileCache">BiocFileCache</a></em> <a id="cite-Shepherd_2020"></a>(<a href="#bib-Shepherd_2020">Shepherd and Morgan, 2020</a>) for organizing the raw files and caching them, such that if you use the same file more than once, you only have to download it once. <em><a href="https://bioconductor.org/packages/3.12/BiocFileCache">BiocFileCache</a></em> will automatically update the file if it detects that the file has changed in the source</p>
 <p>If you want to inspect which files you have downloaded or even delete them, them you’ll want to use <em><a href="https://bioconductor.org/packages/3.12/BiocFileCache">BiocFileCache</a></em> functions such as <code><a href="https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html">BiocFileCache::bfcinfo()</a></code> and <code><a href="https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html">BiocFileCache::bfcremove()</a></code> as illustrated below.</p>
-<div class="sourceCode" id="cb23"><pre class="downlit">
+<div class="sourceCode" id="cb24"><pre class="downlit">
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"BiocFileCache"</span>)
 <span class="co">#&gt; Loading required package: dbplyr</span>
 
@@ -986,32 +963,49 @@
 }
 </pre></div>
 </div>
-<div id="bigwig-files" class="section level2">
-<h2 class="hasAnchor">
-<a href="#bigwig-files" class="anchor"></a>BigWig files</h2>
-<p>Internally we used <code>GenomicFeatures::exonicParts()</code> when processing all annotations in <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> instead of <code><a href="https://rdrr.io/pkg/GenomicRanges/man/inter-range-methods.html">GenomicRanges::disjoin()</a></code> that was used in <code>recount2</code>. We then re-assembled the counts for each exon/gene to create the count files provided in <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em>. However, you might want to exclude the overlapping exonic parts from the counts. If that’s the case or if you are interested in specific regions of the <code>hg38</code>/<code>mm10</code> genomes, you might want to access the coverage BigWig files.</p>
-<div class="sourceCode" id="cb24"><pre class="downlit">
-<span class="co">## BigWig file names</span>
-<span class="co">## The full URL is stored in BigWigUrl</span>
-<span class="fu"><a href="https://rdrr.io/r/base/basename.html">basename</a></span>(<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="kw">rse_gene_SRP009615</span><span class="op">$</span><span class="kw">BigWigURL</span>))
-<span class="co">#&gt; [1] "sra.base_sums.SRP009615_SRR387777.ALL.bw"</span>
-<span class="co">#&gt; [2] "sra.base_sums.SRP009615_SRR387778.ALL.bw"</span>
-<span class="co">#&gt; [3] "sra.base_sums.SRP009615_SRR387779.ALL.bw"</span>
-<span class="co">#&gt; [4] "sra.base_sums.SRP009615_SRR387780.ALL.bw"</span>
-<span class="co">#&gt; [5] "sra.base_sums.SRP009615_SRR389079.ALL.bw"</span>
-<span class="co">#&gt; [6] "sra.base_sums.SRP009615_SRR389080.ALL.bw"</span>
-</pre></div>
-<p>These BigWig files can be accessed using <code><a href="https://rdrr.io/pkg/rtracklayer/man/BigWigFile.html">rtracklayer::import.bw()</a></code> from R, or other tools such as <a href="https://github.com/CRG-Barcelona/bwtool/wiki">bwtool</a> that we’ve used in the past <a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>. Using them, you can compute a coverage matrix for a given set of regions.</p>
-<p>One new software we developed is <em><a href="https://bioconductor.org/packages/3.12/megadepth">megadepth</a></em> for which we have provided an R/Bioconductor package interface. <em><a href="https://bioconductor.org/packages/3.12/megadepth">megadepth</a></em> is faster at accessing BigWig files and is the software we used internally for generating the <code>recount3</code> data. <em><a href="https://bioconductor.org/packages/3.12/megadepth">megadepth</a></em> provides convenient to use functions for quantifying a set of regions, which might be of interest for co-expression analyses where double counting exonic parts can be problematic.</p>
-<p>You can also use <em><a href="https://bioconductor.org/packages/3.12/derfinder">derfinder</a></em> and <em><a href="https://bioconductor.org/packages/3.12/derfinderPlot">derfinderPlot</a></em> if you are interested in visualizing the base-pair coverage data for a specific region using these BigWig coverage files.</p>
-</div>
 <div id="your-own-mirror" class="section level2">
 <h2 class="hasAnchor">
 <a href="#your-own-mirror" class="anchor"></a>Your own mirror</h2>
 <p><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> functions such as <code><a href="../reference/create_rse.html">create_rse()</a></code> have a <code>recount3_url</code> argument that can be changed to point to a mirror or to a path in your computing system. This argument enables using <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> with data stored in other locations, or even generated using the same processing pipeline that was used for <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> but for your own/private data.</p>
 <p>The main documentation website documents how the raw files should be organized in your mirror or for your own data. You can inspect the structure of the data by checking the internals of <code><a href="../reference/file_locate_url.html">file_locate_url()</a></code> and <code><a href="../reference/file_locate_url_annotation.html">file_locate_url_annotation()</a></code>. Both functions can be used to get the full list of URLs. In addition, for a given mirror, <code><a href="../reference/available_projects.html">available_projects()</a></code> will show the local data sources and collections. Finally, <code><a href="../reference/file_retrieve.html">file_retrieve()</a></code> won’t cache the data if it detects that the data already exists in the local disk.</p>
 <p>In particular, this functionality can be useful if you want to access the data at <a href="https://idies.jhu.edu/">IDIES</a> using <a href="https://apps.sciserver.org/compute/">SciServer Compute</a>.</p>
-<p><a href="https://apps.sciserver.org/compute/"><img src="https://skyserver.sdss.org/dr14/en/images/sciserver_logo_inverted_vertical.png" width="800px"></a></p>
+<p><a href="https://apps.sciserver.org/compute/"><img src="https://skyserver.sdss.org/dr14/en/images/sciserver_logo_inverted_vertical.png" width="400px"></a></p>
+</div>
+<div id="project-history" class="section level2">
+<h2 class="hasAnchor">
+<a href="#project-history" class="anchor"></a>Project history</h2>
+<p>To clarify the relationship between the R/Bioconductor packages and the phases of <code>ReCount</code> <a id="cite-Frazee_2011"></a>(<a href="https://doi.org/10.1186/1471-2105-12-449">Frazee, Langmead, and Leek, 2011</a>) please check the table below:</p>
+<table class="table">
+<thead><tr class="header">
+<th>Year</th>
+<th>Phase</th>
+<th>Main references</th>
+<th>R/Bioconductor</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>2011</td>
+<td><a href="http://bowtie-bio.sourceforge.net/recount/"><code>ReCount</code></a></td>
+<td>DOI: <a href="https://doi.org/10.1186/1471-2105-12-449">10.1186/1471-2105-12-449</a>
+</td>
+<td>none</td>
+</tr>
+<tr class="even">
+<td>2017</td>
+<td><a href="https://jhubiostatistics.shinyapps.io/recount/"><code>recount2</code></a></td>
+<td>DOI: <a href="https://doi.org/10.1038/nbt.3838">10.1038/nbt.3838</a> <a href="https://doi.org/10.12688/f1000research.12223.1">10.12688/f1000research.12223.1</a>
+</td>
+<td><em><a href="https://bioconductor.org/packages/3.12/recount">recount</a></em></td>
+</tr>
+<tr class="odd">
+<td>2020</td>
+<td><a href="https://LieberInstitute/github.io/recount3-docs"><code>recount3</code></a></td>
+<td>DOI: <a href="https://doi.org/TODO">TODO</a>
+</td>
+<td><em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="other-related-tools" class="section level2">
 <h2 class="hasAnchor">
@@ -1088,9 +1082,9 @@
 <span class="co">#&gt; [1] TRUE</span>
 </pre></div>
 <p>Date the vignette was generated.</p>
-<pre><code>#&gt; [1] "2020-09-30 06:41:59 UTC"</code></pre>
+<pre><code>#&gt; [1] "2020-09-30 16:49:36 UTC"</code></pre>
 <p>Wallclock time spent generating the vignette.</p>
-<pre><code>#&gt; Time difference of 2.514 mins</code></pre>
+<pre><code>#&gt; Time difference of 1.301 mins</code></pre>
 <p><code>R</code> session information.</p>
 <pre><code>#&gt; ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
 #&gt;  setting  value                                      
@@ -1199,7 +1193,7 @@
 #&gt;  tidyselect               1.1.0      2020-05-11 [1] RSPM (R 4.0.0)                
 #&gt;  vctrs                    0.3.4      2020-08-29 [2] RSPM (R 4.0.2)                
 #&gt;  withr                    2.3.0      2020-09-22 [2] RSPM (R 4.0.2)                
-#&gt;  xfun                     0.17       2020-09-09 [2] RSPM (R 4.0.2)                
+#&gt;  xfun                     0.18       2020-09-29 [1] RSPM (R 4.0.2)                
 #&gt;  XML                      3.99-0.5   2020-07-23 [1] RSPM (R 4.0.2)                
 #&gt;  xml2                     1.3.2      2020-04-23 [2] RSPM (R 4.0.0)                
 #&gt;  xtable                   1.8-4      2019-04-21 [1] RSPM (R 4.0.0)                
@@ -1221,30 +1215,29 @@
 <p>[3] H. Bengtsson. <em>R.utils: Various Programming Utilities</em>. R package version 2.10.1. 2020. &lt;URL: <a href="https://github.com/HenrikBengtsson/R.utils" class="uri">https://github.com/HenrikBengtsson/R.utils</a>&gt;.</p>
 <p>[4] C. Boettiger. <em>knitcitations: Citations for ‘Knitr’ Markdown Files</em>. R package version 1.0.10. 2019. &lt;URL: <a href="https://github.com/cboettig/knitcitations" class="uri">https://github.com/cboettig/knitcitations</a>&gt;.</p>
 <p>[5] L. Collado-Torres. <em>Explore and download data from the recount3 project</em>. <a href="https://github.com/LieberInstitute/recount3" class="uri">https://github.com/LieberInstitute/recount3</a> - R package version 0.99.0. 2020. DOI: 10.18129/B9.bioc.recount3. &lt;URL: <a href="http://www.bioconductor.org/packages/recount3" class="uri">http://www.bioconductor.org/packages/recount3</a>&gt;.</p>
-<p>[6] L. Collado-Torres, A. Nellore, and A. E. Jaffe. “recount workflow: Accessing over 70,000 human RNA-seq samples with Bioconductor”. In: <em>F1000Research</em> 6 (Aug. 2017), p. 1558. DOI: 10.12688/f1000research.12223.1. &lt;URL: <a href="https://doi.org/10.12688/f1000research.12223.1" class="uri">https://doi.org/10.12688/f1000research.12223.1</a>&gt;.</p>
-<p>[7] L. Collado-Torres, A. Nellore, and A. E. Jaffe. “recount workflow: Accessing over 70,000 human RNA-seq samples with Bioconductor”. In: <em>F1000Research</em> 6 (Aug. 2017), p. 1558. ISSN: 2046-1402. DOI: 10.12688/f1000research.12223.1. &lt;URL: <a href="http://dx.doi.org/10.12688/f1000research.12223.1" class="uri">http://dx.doi.org/10.12688/f1000research.12223.1</a>&gt;.</p>
-<p>[8] L. Collado-Torres, A. Nellore, K. Kammers, S. E. Ellis, et al. “Reproducible RNA-seq analysis using recount2”. In: <em>Nature Biotechnology</em> 35.4 (Apr. 2017), pp. 319-321. DOI: 10.1038/nbt.3838. &lt;URL: <a href="https://doi.org/10.1038/nbt.3838" class="uri">https://doi.org/10.1038/nbt.3838</a>&gt;.</p>
-<p>[9] G. Csárdi, R. core, H. Wickham, W. Chang, et al. <em>sessioninfo: R Session Information</em>. R package version 1.1.1. 2018. &lt;URL: <a href="https://github.com/r-lib/sessioninfo#readme" class="uri">https://github.com/r-lib/sessioninfo#readme</a>&gt;.</p>
-<p>[10] M. Dowle and A. Srinivasan. <em>data.table: Extension of <code>data.frame</code></em>. <a href="http://r-datatable.com" class="uri">http://r-datatable.com</a>, <a href="https://Rdatatable.gitlab.io/data.table" class="uri">https://Rdatatable.gitlab.io/data.table</a>, <a href="https://github.com/Rdatatable/data.table" class="uri">https://github.com/Rdatatable/data.table</a>. 2020.</p>
-<p>[11] A. C. Frazee, B. Langmead, and J. T. Leek. “ReCount: A multi-experiment resource of analysis-ready RNA-seq gene count datasets”. In: <em>BMC Bioinformatics</em> 12.1 (2011), p. 449. DOI: 10.1186/1471-2105-12-449. &lt;URL: <a href="https://doi.org/10.1186/1471-2105-12-449" class="uri">https://doi.org/10.1186/1471-2105-12-449</a>&gt;.</p>
-<p>[12] J. Hester. <em>covr: Test Coverage for Packages</em>. <a href="https://covr.r-lib.org" class="uri">https://covr.r-lib.org</a>, <a href="https://github.com/r-lib/covr" class="uri">https://github.com/r-lib/covr</a>. 2020.</p>
-<p>[13] W. Huber, V. J. Carey, R. Gentleman, S. Anders, et al. “Orchestrating high-throughput genomic analysis with Bioconductor”. In: <em>Nature Methods</em> 12.2 (Jan. 2015), pp. 115-121. DOI: 10.1038/nmeth.3252. &lt;URL: <a href="https://doi.org/10.1038/nmeth.3252" class="uri">https://doi.org/10.1038/nmeth.3252</a>&gt;.</p>
-<p>[14] E. L. Imada, D. F. Sanchez, L. Collado-Torres, C. Wilks, et al. “Recounting the FANTOM CAGE-Associated Transcriptome”. In: <em>Genome Research</em> 30.7 (Feb. 2020), pp. 1073-1081. DOI: 10.1101/gr.254656.119. &lt;URL: <a href="https://doi.org/10.1101/gr.254656.119" class="uri">https://doi.org/10.1101/gr.254656.119</a>&gt;.</p>
-<p>[15] M. Lawrence, R. Gentleman, and V. Carey. “rtracklayer: an R package for interfacing with genome browsers”. In: <em>Bioinformatics</em> 25 (2009), pp. 1841-1842. DOI: 10.1093/bioinformatics/btp328. &lt;URL: <a href="http://bioinformatics.oxfordjournals.org/content/25/14/1841.abstract" class="uri">http://bioinformatics.oxfordjournals.org/content/25/14/1841.abstract</a>&gt;.</p>
-<p>[16] M. Lawrence, W. Huber, H. Pagès, P. Aboyoun, et al. “Software for Computing and Annotating Genomic Ranges”. In: <em>PLoS Computational Biology</em> 9 (8 2013). DOI: 10.1371/journal.pcbi.1003118. &lt;URL: <a href="http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003118" class="uri">http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003118</a>}.&gt;</p>
-<p>[17] M. Morgan, V. Obenchain, J. Hester, and H. Pagès. <em>SummarizedExperiment: SummarizedExperiment container</em>. 2019. DOI: 10.18129/B9.bioc.SummarizedExperiment.</p>
-<p>[18] M. Morgan and L. Shepherd. <em>AnnotationHub: Client to access AnnotationHub resources</em>. R package version 2.21.5. 2020.</p>
-<p>[19] M. Morgan and L. Shepherd. <em>ExperimentHub: Client to access ExperimentHub resources</em>. R package version 1.15.3. 2020.</p>
-<p>[20] A. Oleś, M. Morgan, and W. Huber. <em>BiocStyle: Standard styles for vignettes and other Bioconductor documents</em>. R package version 2.17.1. 2020. &lt;URL: <a href="https://github.com/Bioconductor/BiocStyle" class="uri">https://github.com/Bioconductor/BiocStyle</a>&gt;.</p>
-<p>[21] H. Pagès, M. Lawrence, and P. Aboyoun. <em>S4Vectors: Foundation of vector-like and list-like containers in Bioconductor</em>. R package version 0.27.13. 2020.</p>
-<p>[22] R Core Team. <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing. Vienna, Austria, 2020. &lt;URL: <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>&gt;.</p>
-<p>[23] L. Shepherd and M. Morgan. <em>BiocFileCache: Manage Files Across Sessions</em>. R package version 1.13.1. 2020.</p>
-<p>[24] D. Temple Lang. <em>RCurl: General Network (HTTP/FTP/…) Client Interface for R</em>. R package version 1.98-1.2. 2020.</p>
-<p>[25] D. Temple Lang. <em>XML: Tools for Parsing and Generating XML Within R and S-Plus</em>. R package version 3.99-0.5. 2020. &lt;URL: <a href="http://www.omegahat.net/RSXML" class="uri">http://www.omegahat.net/RSXML</a>&gt;.</p>
-<p>[26] H. Wickham. <em>pryr: Tools for Computing on the Language</em>. R package version 0.1.4. 2018. &lt;URL: <a href="https://github.com/hadley/pryr" class="uri">https://github.com/hadley/pryr</a>&gt;.</p>
-<p>[27] H. Wickham. “testthat: Get Started with Testing”. In: <em>The R Journal</em> 3 (2011), pp. 5-10. &lt;URL: <a href="https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf" class="uri">https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf</a>&gt;.</p>
-<p>[28] C. Wilks, L. Collado-Torres, S. C. Zheng, A. E. Jaffe, et al. “recount3 pre-print title TODO”. In: <em>bioRxiv</em> (2020). DOI: 10.1101/TODO. &lt;URL: <a href="https://www.biorxiv.org/content/10.1101/TODO" class="uri">https://www.biorxiv.org/content/10.1101/TODO</a>&gt;.</p>
-<p>[29] Y. Xie. “knitr: A Comprehensive Tool for Reproducible Research in R”. In: <em>Implementing Reproducible Computational Research</em>. Ed. by V. Stodden, F. Leisch and R. D. Peng. ISBN 978-1466561595. Chapman and Hall/CRC, 2014. &lt;URL: <a href="http://www.crcpress.com/product/isbn/9781466561595" class="uri">http://www.crcpress.com/product/isbn/9781466561595</a>&gt;.</p>
+<p>[6] L. Collado-Torres, A. Nellore, and A. E. Jaffe. “recount workflow: Accessing over 70,000 human RNA-seq samples with Bioconductor [version 1; referees: 1 approved, 2 approved with reservations]”. In: <em>F1000Research</em> (2017). DOI: 10.12688/f1000research.12223.1. &lt;URL: <a href="https://f1000research.com/articles/6-1558/v1" class="uri">https://f1000research.com/articles/6-1558/v1</a>&gt;.</p>
+<p>[7] L. Collado-Torres, A. Nellore, K. Kammers, S. E. Ellis, et al. “Reproducible RNA-seq analysis using recount2”. In: <em>Nature Biotechnology</em> (2017). DOI: 10.1038/nbt.3838. &lt;URL: <a href="http://www.nature.com/nbt/journal/v35/n4/full/nbt.3838.html" class="uri">http://www.nature.com/nbt/journal/v35/n4/full/nbt.3838.html</a>&gt;.</p>
+<p>[8] G. Csárdi, R. core, H. Wickham, W. Chang, et al. <em>sessioninfo: R Session Information</em>. R package version 1.1.1. 2018. &lt;URL: <a href="https://github.com/r-lib/sessioninfo#readme" class="uri">https://github.com/r-lib/sessioninfo#readme</a>&gt;.</p>
+<p>[9] M. Dowle and A. Srinivasan. <em>data.table: Extension of <code>data.frame</code></em>. <a href="http://r-datatable.com" class="uri">http://r-datatable.com</a>, <a href="https://Rdatatable.gitlab.io/data.table" class="uri">https://Rdatatable.gitlab.io/data.table</a>, <a href="https://github.com/Rdatatable/data.table" class="uri">https://github.com/Rdatatable/data.table</a>. 2020.</p>
+<p>[10] A. C. Frazee, B. Langmead, and J. T. Leek. “ReCount: A multi-experiment resource of analysis-ready RNA-seq gene count datasets”. In: <em>BMC Bioinformatics</em> (2011). DOI: 10.1186/1471-2105-12-449. &lt;URL: <a href="https://doi.org/10.1186/1471-2105-12-449" class="uri">https://doi.org/10.1186/1471-2105-12-449</a>&gt;.</p>
+<p>[11] J. Hester. <em>covr: Test Coverage for Packages</em>. <a href="https://covr.r-lib.org" class="uri">https://covr.r-lib.org</a>, <a href="https://github.com/r-lib/covr" class="uri">https://github.com/r-lib/covr</a>. 2020.</p>
+<p>[12] W. Huber, V. J. Carey, R. Gentleman, S. Anders, et al. “Orchestrating high-throughput genomic analysis with Bioconductor”. In: <em>Nat Methods</em> (2015). DOI: 10.1038/nmeth.3252.</p>
+<p>[13] E. L. Imada, D. F. Sanchez, L. Collado-Torres, C. Wilks, et al. “Recounting the FANTOM CAGE-Associated Transcriptome”. In: <em>Genome Research</em> 30.7 (Feb. 2020), pp. 1073-1081. DOI: 10.1101/gr.254656.119. &lt;URL: <a href="https://doi.org/10.1101/gr.254656.119" class="uri">https://doi.org/10.1101/gr.254656.119</a>&gt;.</p>
+<p>[14] M. Lawrence, R. Gentleman, and V. Carey. “rtracklayer: an R package for interfacing with genome browsers”. In: <em>Bioinformatics</em> 25 (2009), pp. 1841-1842. DOI: 10.1093/bioinformatics/btp328. &lt;URL: <a href="http://bioinformatics.oxfordjournals.org/content/25/14/1841.abstract" class="uri">http://bioinformatics.oxfordjournals.org/content/25/14/1841.abstract</a>&gt;.</p>
+<p>[15] M. Lawrence, W. Huber, H. Pagès, P. Aboyoun, et al. “Software for Computing and Annotating Genomic Ranges”. In: <em>PLoS Computational Biology</em> 9 (8 2013). DOI: 10.1371/journal.pcbi.1003118. &lt;URL: <a href="http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003118" class="uri">http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003118</a>}.&gt;</p>
+<p>[16] M. Morgan, V. Obenchain, J. Hester, and H. Pagès. <em>SummarizedExperiment: SummarizedExperiment container</em>. 2019. DOI: 10.18129/B9.bioc.SummarizedExperiment.</p>
+<p>[17] M. Morgan and L. Shepherd. <em>AnnotationHub: Client to access AnnotationHub resources</em>. R package version 2.21.5. 2020.</p>
+<p>[18] M. Morgan and L. Shepherd. <em>ExperimentHub: Client to access ExperimentHub resources</em>. R package version 1.15.3. 2020.</p>
+<p>[19] A. Oleś, M. Morgan, and W. Huber. <em>BiocStyle: Standard styles for vignettes and other Bioconductor documents</em>. R package version 2.17.1. 2020. &lt;URL: <a href="https://github.com/Bioconductor/BiocStyle" class="uri">https://github.com/Bioconductor/BiocStyle</a>&gt;.</p>
+<p>[20] H. Pagès, M. Lawrence, and P. Aboyoun. <em>S4Vectors: Foundation of vector-like and list-like containers in Bioconductor</em>. R package version 0.27.13. 2020.</p>
+<p>[21] R Core Team. <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing. Vienna, Austria, 2020. &lt;URL: <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>&gt;.</p>
+<p>[22] L. Shepherd and M. Morgan. <em>BiocFileCache: Manage Files Across Sessions</em>. R package version 1.13.1. 2020.</p>
+<p>[23] D. Temple Lang. <em>RCurl: General Network (HTTP/FTP/…) Client Interface for R</em>. R package version 1.98-1.2. 2020.</p>
+<p>[24] D. Temple Lang. <em>XML: Tools for Parsing and Generating XML Within R and S-Plus</em>. R package version 3.99-0.5. 2020. &lt;URL: <a href="http://www.omegahat.net/RSXML" class="uri">http://www.omegahat.net/RSXML</a>&gt;.</p>
+<p>[25] H. Wickham. <em>pryr: Tools for Computing on the Language</em>. R package version 0.1.4. 2018. &lt;URL: <a href="https://github.com/hadley/pryr" class="uri">https://github.com/hadley/pryr</a>&gt;.</p>
+<p>[26] H. Wickham. “testthat: Get Started with Testing”. In: <em>The R Journal</em> 3 (2011), pp. 5-10. &lt;URL: <a href="https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf" class="uri">https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf</a>&gt;.</p>
+<p>[27] C. Wilks, L. Collado-Torres, S. C. Zheng, A. E. Jaffe, et al. “recount3 pre-print title TODO”. In: <em>bioRxiv</em> (2020). DOI: 10.1101/TODO. &lt;URL: <a href="https://www.biorxiv.org/content/10.1101/TODO" class="uri">https://www.biorxiv.org/content/10.1101/TODO</a>&gt;.</p>
+<p>[28] Y. Xie. “knitr: A Comprehensive Tool for Reproducible Research in R”. In: <em>Implementing Reproducible Computational Research</em>. Ed. by V. Stodden, F. Leisch and R. D. Peng. ISBN 978-1466561595. Chapman and Hall/CRC, 2014. &lt;URL: <a href="http://www.crcpress.com/product/isbn/9781466561595" class="uri">http://www.crcpress.com/product/isbn/9781466561595</a>&gt;.</p>
 </div>
 <div class="footnotes">
 <hr>
