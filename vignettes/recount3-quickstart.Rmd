@@ -209,12 +209,12 @@ assay(rse_gene_SRP009615, "counts") <- transform_counts(rse_gene_SRP009615)
 ## Now you are ready to continue with downstream analysis software
 ```
 
-`r Biocpkg('recount3')` also supports accessing the BigWig raw coverage files as well as specific study or compilation sample **metadata**. Please continue to the users guide for more detailed information.
+`r Biocpkg('recount3')` also supports accessing the BigWig raw coverage files as well as specific study or collection sample **metadata**. Please continue to the users guide for more detailed information.
 
 
 # Users guide
 
-`r Biocpkg('recount3')` `r citep(bib[['recount3paper']])` provides an interface for downloading the [recount3 raw files](https://LieberInstitute.github.io/recount3-docs/raw-files.html) and building Bioconductor-friendly R objects `r citep(list(bib[["bioconductor2015"]], bib[["SummarizedExperiment"]]))` that can be used with many downstream packages. To achieve this, the raw data is organized by **study** from a specific **data source**. That same study can be a part of one or more **compilations**, which is a manually curated set of studies with compilation-specific sample metadata (see the [Data source vs collection](https://LieberInstitute.github.io/recount3-docs/raw-files.html#data-source-vs-collection) for details). To get started with `r Biocpkg('recount3')`, you will need to identify the ID for the study of interest from either **human** or **mouse** for a particular **annotation** of interest. Once you have identified study, data source or compilation, and annotation, `r Biocpkg('recount3')` can be used to build a `RangedSummarizedExperiment` object `r citep(bib[["SummarizedExperiment"]])` for either **gene**, **exon** or **exon-exon junction** expression feature data. For more advanced use cases, `r Biocpkg('recount3')` provides access to the coverage BigWig files that can be quantified for custom set of genomic regions using `r Biocpkg('megadepth')`. Furthermore, `r Biocpkg('snapcount')` allows fast-queries for custom exon-exon junctions and other custom input.
+`r Biocpkg('recount3')` `r citep(bib[['recount3paper']])` provides an interface for downloading the [recount3 raw files](https://LieberInstitute.github.io/recount3-docs/raw-files.html) and building Bioconductor-friendly R objects `r citep(list(bib[["bioconductor2015"]], bib[["SummarizedExperiment"]]))` that can be used with many downstream packages. To achieve this, the raw data is organized by **study** from a specific **data source**. That same study can be a part of one or more **collections**, which is a manually curated set of studies with collection-specific sample metadata (see the [Data source vs collection](https://LieberInstitute.github.io/recount3-docs/raw-files.html#data-source-vs-collection) for details). To get started with `r Biocpkg('recount3')`, you will need to identify the ID for the study of interest from either **human** or **mouse** for a particular **annotation** of interest. Once you have identified study, data source or collection, and annotation, `r Biocpkg('recount3')` can be used to build a `RangedSummarizedExperiment` object `r citep(bib[["SummarizedExperiment"]])` for either **gene**, **exon** or **exon-exon junction** expression feature data. Furthermore, `r Biocpkg('recount3')` provides access to the coverage BigWig files that can be quantified for custom set of genomic regions using `r Biocpkg('megadepth')`. Furthermore, `r Biocpkg('snapcount')` allows fast-queries for custom exon-exon junctions and other custom input.
 
 ## Find a study
 
@@ -386,13 +386,11 @@ assay(rse_gene_SRP009615, "counts") <- transform_counts(rse_gene_SRP009615)
 
 Just like with `r Biocpkg('recount')` for `recount2`, you can transform the raw base-pair coverage counts `r citep(bib[["recount2workflow"]])` to read counts with `compute_read_counts()`, RPKM with `recount::getRPKM()` or TPM values with `recount::getTPM()`. Check `transform_counts()` from `r Biocpkg('recount3')` for more details.
 
-# Advanced features
 
-`r Biocpkg('recount3')` provides an interface to [raw files](https://LieberInstitute.github.io/recount3-docs/raw-files.html) that go beyond gene counts, as well as other features you might be interested in. 
 
 ## Exon
 
-First, you might want to study expression at the **exon** expression level instead of **gene**. To do so, use the `type` argument in `create_rse()` as shown below.
+`r Biocpkg('recount3')` provides an interface to [raw files](https://LieberInstitute.github.io/recount3-docs/raw-files.html) that go beyond gene counts, as well as other features you might be interested in. For instance, you might want to study expression at the **exon** expression level instead of **gene**. To do so, use the `type` argument in `create_rse()` as shown below.
 
 ```{r "rse_exon"}
 ## Create a RSE object at the exon level
@@ -449,6 +447,22 @@ rowRanges(rse_jxn_SRP009615)
 pryr::object_size(rse_jxn_SRP009615)
 ```
 
+## BigWig files
+
+Internally we used `GenomicFeatures::exonicParts()` when processing all annotations in `r Biocpkg('recount3')` instead of `GenomicRanges::disjoin()` that was used in `recount2`. We then re-assembled the counts for each exon/gene to create the count files provided in `r Biocpkg('recount3')`. However, you might want to exclude the overlapping exonic parts from the counts. If that's the case or if you are interested in specific regions of the `hg38`/`mm10` genomes, you might want to access the coverage BigWig files. 
+
+```{r "BigWigURLs"}
+## BigWig file names
+## The full URL is stored in BigWigUrl
+basename(head(rse_gene_SRP009615$BigWigURL))
+```
+
+These BigWig files can be accessed using `rtracklayer::import.bw()` from R, or other tools such as [bwtool](https://github.com/CRG-Barcelona/bwtool/wiki) that we've used in the past ^[For example in *[recount.bwtool](https://github.com/LieberInstitute/recount.bwtool)* .]. Using them, you can compute a coverage matrix for a given set of regions.
+
+One new software we developed is `r Biocpkg("megadepth")` for which we have provided an R/Bioconductor package interface. `r Biocpkg("megadepth")` is faster at accessing BigWig files and is the software we used internally for generating the `recount3` data. `r Biocpkg("megadepth")` provides convenient to use functions for quantifying a set of regions, which might be of interest for co-expression analyses where double counting exonic parts can be problematic.
+
+You can also use `r Biocpkg("derfinder")` and `r Biocpkg("derfinderPlot")` if you are interested in visualizing the base-pair coverage data for a specific region using these BigWig coverage files. 
+
 ## Local files
 
 `r Biocpkg('recount3')` depends on `r Biocpkg('BiocFileCache')` `r citep(bib[['BiocFileCache']])` for organizing the raw files and caching them, such that if you use the same file more than once, you only have to download it once. `r Biocpkg('BiocFileCache')` will automatically update the file if it detects that the file has changed in the source
@@ -478,22 +492,6 @@ if (interactive()) {
     bfcinfo()
 }
 ```
-
-## BigWig files
-
-Internally we used `GenomicFeatures::exonicParts()` when processing all annotations in `r Biocpkg('recount3')` instead of `GenomicRanges::disjoin()` that was used in `recount2`. We then re-assembled the counts for each exon/gene to create the count files provided in `r Biocpkg('recount3')`. However, you might want to exclude the overlapping exonic parts from the counts. If that's the case or if you are interested in specific regions of the `hg38`/`mm10` genomes, you might want to access the coverage BigWig files. 
-
-```{r "BigWigURLs"}
-## BigWig file names
-## The full URL is stored in BigWigUrl
-basename(head(rse_gene_SRP009615$BigWigURL))
-```
-
-These BigWig files can be accessed using `rtracklayer::import.bw()` from R, or other tools such as [bwtool](https://github.com/CRG-Barcelona/bwtool/wiki) that we've used in the past ^[For example in *[recount.bwtool](https://github.com/LieberInstitute/recount.bwtool)* .]. Using them, you can compute a coverage matrix for a given set of regions.
-
-One new software we developed is `r Biocpkg("megadepth")` for which we have provided an R/Bioconductor package interface. `r Biocpkg("megadepth")` is faster at accessing BigWig files and is the software we used internally for generating the `recount3` data. `r Biocpkg("megadepth")` provides convenient to use functions for quantifying a set of regions, which might be of interest for co-expression analyses where double counting exonic parts can be problematic.
-
-You can also use `r Biocpkg("derfinder")` and `r Biocpkg("derfinderPlot")` if you are interested in visualizing the base-pair coverage data for a specific region using these BigWig coverage files. 
 
 ## Your own mirror
 
