@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Download a remote file and cache it to re-use later — file_retrieve • recount3</title>
+<title>Guess whether the samples are paired end — is_paired_end • recount3</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,9 @@
 
 
 
-<meta property="og:title" content="Download a remote file and cache it to re-use later — file_retrieve" />
-<meta property="og:description" content="Download a remote file and cache it to re-use later" />
+<meta property="og:title" content="Guess whether the samples are paired end — is_paired_end" />
+<meta property="og:description" content="Based on two alignment metrics, this function guesses the samples are paired
+end or not." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -125,80 +126,90 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Download a remote file and cache it to re-use later</h1>
-    <small class="dont-index">Source: <a href='https://github.com/LieberInstitute/recount3/blob/master/R/file_retrieve.R'><code>R/file_retrieve.R</code></a></small>
-    <div class="hidden name"><code>file_retrieve.Rd</code></div>
+    <h1>Guess whether the samples are paired end</h1>
+    <small class="dont-index">Source: <a href='https://github.com/LieberInstitute/recount3/blob/master/R/transform_counts.R'><code>R/transform_counts.R</code></a></small>
+    <div class="hidden name"><code>is_paired_end.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Download a remote file and cache it to re-use later</p>
+    <p>Based on two alignment metrics, this function guesses the samples are paired
+end or not.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>file_retrieve</span>(<span class='kw'>url</span>, bfc = <span class='kw'>BiocFileCache</span>::<span class='fu'><a href='https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html'>BiocFileCache</a></span>())</pre>
+    <pre class="usage"><span class='fu'>is_paired_end</span>(
+  <span class='kw'>x</span>,
+  avg_mapped_read_length = <span class='st'>"recount_qc.star.average_mapped_length"</span>,
+  avg_read_length = <span class='st'>"recount_seq_qc.avg_len"</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>url</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> with the file URL or the actual local path in
-which case, it won't be cached. If <code>length(url) &gt; 1</code> , this function
-will be used recursively.</p></td>
+      <th>x</th>
+      <td><p>Either a
+<a href='https://rdrr.io/pkg/SummarizedExperiment/man/RangedSummarizedExperiment-class.html'>RangedSummarizedExperiment-class</a>
+created by <code><a href='create_rse.html'>create_rse()</a></code> or the sample metadata created by
+<code><a href='read_metadata.html'>read_metadata()</a></code>.</p></td>
     </tr>
     <tr>
-      <th>bfc</th>
-      <td><p>A <a href='https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html'>BiocFileCache-class</a>
-object where the files will be cached to.</p></td>
+      <th>avg_mapped_read_length</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> specifying the metdata column
+name that contains the average fragment length after aligning. This is
+typically twice the average read length for paired-end reads.</p></td>
+    </tr>
+    <tr>
+      <th>avg_read_length</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> specifying the metadata column
+name that contains the average read length prior to aligning.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> with the path to the cached file.</p>
+    <p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical()</a></code> vector specifying whether each sample was likely
+paired-end or not.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other internal functions for accessing the recount3 data: 
-<code><a href='annotation_ext.html'>annotation_ext</a>()</code>,
-<code><a href='create_rse_manual.html'>create_rse_manual</a>()</code>,
-<code><a href='file_locate_url_annotation.html'>file_locate_url_annotation</a>()</code>,
-<code><a href='file_locate_url.html'>file_locate_url</a>()</code>,
-<code><a href='project_home_available.html'>project_home_available</a>()</code>,
-<code><a href='read_counts.html'>read_counts</a>()</code>,
-<code><a href='read_metadata.html'>read_metadata</a>()</code></p></div>
+    <div class='dont-index'><p>Other count transformation functions: 
+<code><a href='compute_read_counts.html'>compute_read_counts</a>()</code>,
+<code><a href='compute_scale_factors.html'>compute_scale_factors</a>()</code>,
+<code><a href='transform_counts.html'>transform_counts</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='co'>## Download the metadata file for project SRP009615</span>
-<span class='kw'>url_SRP009615_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(
-    <span class='st'>"SRP009615"</span>,
-    <span class='st'>"data_sources/sra"</span>
+<span class='co'>## Download the metadata for SRP009615, a single-end study</span>
+<span class='kw'>SRP009615_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read_metadata.html'>read_metadata</a></span>(
+    metadata_files = <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span>(
+        <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(
+            <span class='st'>"SRP009615"</span>,
+            <span class='st'>"data_sources/sra"</span>,
+        )
+    )
 )
-<span class='kw'>local_SRP009615_meta</span> <span class='op'>&lt;-</span> <span class='fu'>file_retrieve</span>(
-    url = <span class='kw'>url_SRP009615_meta</span>
+</div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:17:39 caching file sra.sra.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:17:39 caching file sra.recount_project.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:17:39 caching file sra.recount_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:17:39 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:17:40 caching file sra.recount_pred.SRP009615.MD.gz.</span></div><div class='input'>
+<span class='co'>## Are the samples paired end?</span>
+<span class='fu'>is_paired_end</span>(<span class='kw'>SRP009615_meta</span>)
+</div><div class='output co'>#&gt; SRR387777 SRR387778 SRR387779 SRR387780 SRR389079 SRR389080 SRR389081 SRR389082 
+#&gt;     FALSE     FALSE     FALSE     FALSE     FALSE     FALSE     FALSE     FALSE 
+#&gt; SRR389083 SRR389084 SRR389077 SRR389078 
+#&gt;     FALSE     FALSE     FALSE     FALSE </div><div class='input'>
+<span class='co'>## Download the metadata for DRP000499, a paired-end study</span>
+<span class='kw'>DRP000499_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read_metadata.html'>read_metadata</a></span>(
+    metadata_files = <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span>(
+        <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(
+            <span class='st'>"DRP000499"</span>,
+            <span class='st'>"data_sources/sra"</span>,
+        )
+    )
 )
-</div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:17:37 caching file sra.sra.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:17:37 caching file sra.recount_project.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:17:38 caching file sra.recount_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:17:38 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:17:38 caching file sra.recount_pred.SRP009615.MD.gz.</span></div><div class='input'><span class='kw'>local_SRP009615_meta</span>
-</div><div class='output co'>#&gt;                                                         sra.sra.SRP009615.MD.gz 
-#&gt;             "/tmp/RtmpS4gf4o/BiocFileCache/bbd188ce558_sra.sra.SRP009615.MD.gz" 
-#&gt;                                             sra.recount_project.SRP009615.MD.gz 
-#&gt; "/tmp/RtmpS4gf4o/BiocFileCache/bbd5995426a_sra.recount_project.SRP009615.MD.gz" 
-#&gt;                                                  sra.recount_qc.SRP009615.MD.gz 
-#&gt;      "/tmp/RtmpS4gf4o/BiocFileCache/bbd7cf36d43_sra.recount_qc.SRP009615.MD.gz" 
-#&gt;                                              sra.recount_seq_qc.SRP009615.MD.gz 
-#&gt;  "/tmp/RtmpS4gf4o/BiocFileCache/bbd4fa3b61c_sra.recount_seq_qc.SRP009615.MD.gz" 
-#&gt;                                                sra.recount_pred.SRP009615.MD.gz 
-#&gt;    "/tmp/RtmpS4gf4o/BiocFileCache/bbd5c8c70b3_sra.recount_pred.SRP009615.MD.gz" </div><div class='input'>
-<span class='co'>## Download the gene counts file for project SRP009615</span>
-<span class='kw'>url_SRP009615_gene</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(
-    <span class='st'>"SRP009615"</span>,
-    <span class='st'>"data_sources/sra"</span>,
-    type = <span class='st'>"gene"</span>
-)
-<span class='kw'>local_SRP009615_gene</span> <span class='op'>&lt;-</span> <span class='fu'>file_retrieve</span>(
-    url = <span class='kw'>url_SRP009615_gene</span>
-)
-</div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:17:38 caching file sra.gene_sums.SRP009615.G026.gz.</span></div><div class='input'><span class='kw'>local_SRP009615_gene</span>
-</div><div class='output co'>#&gt;                                             sra.gene_sums.SRP009615.G026.gz 
-#&gt; "/tmp/RtmpS4gf4o/BiocFileCache/bbd105b104e_sra.gene_sums.SRP009615.G026.gz" </div></pre>
+</div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:17:40 caching file sra.sra.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:17:40 caching file sra.recount_project.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:17:40 caching file sra.recount_qc.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:17:40 caching file sra.recount_seq_qc.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 06:17:41 caching file sra.recount_pred.DRP000499.MD.gz.</span></div><div class='input'><span class='fu'>is_paired_end</span>(<span class='kw'>DRP000499_meta</span>)
+</div><div class='output co'>#&gt; <span class='warning'>Warning: is_paired_end(): Looks like some samples failed to align and will return NA.</span></div><div class='output co'>#&gt; DRR001622 DRR001623 DRR001624 DRR001625 DRR001626 DRR001627 DRR001628 DRR001629 
+#&gt;      TRUE      TRUE      TRUE        NA      TRUE      TRUE      TRUE      TRUE 
+#&gt; DRR001630 DRR001631 DRR001632 DRR001633 DRR001634 DRR001635 DRR001636 DRR001637 
+#&gt;      TRUE      TRUE      TRUE      TRUE      TRUE      TRUE      TRUE      TRUE 
+#&gt; DRR001638 DRR001639 DRR001640 DRR001641 DRR001642 
+#&gt;      TRUE      TRUE      TRUE      TRUE      TRUE </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
