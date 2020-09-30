@@ -88,7 +88,7 @@ The `r Biocpkg('recount3')` R/Bioconductor package is part of the `recount3` pro
 
 ## R packages
 
-To clarify the relationship between the R/Bioconductor packages and the phases of `ReCount` please check the table below:
+To clarify the relationship between the R/Bioconductor packages and the phases of `ReCount` `r citep("10.1186/1471-2105-12-449")` please check the table below:
 
 | Year | Phase | Main references | R/Bioconductor |
 | --- | --- | --- | --- |
@@ -137,6 +137,7 @@ BiocManager::install("LieberInstitute/recount3")
 * `r Biocpkg('DESeq2')` and `r Biocpkg("limma")` packages for performing differential expression analysis with the _RangedSummarizedExperiment_ objects,
 * `r Biocpkg('DEFormats')` package for switching the objects to those used by other differential expression packages such as `r Biocpkg('edgeR')`,
 * `r Biocpkg('derfinder')` package for performing annotation-agnostic differential expression analysis.
+* `r Biocpkg('recount')` package which provided an R/Bioconductor interface to the data in the `recount2` project `r citep(list("10.1038/nbt.3838", "10.12688/f1000research.12223.1"))`.
 
 If you are asking yourself the question "Where do I start using Bioconductor?" you might be interested in [this blog post](http://lcolladotor.github.io/2014/10/16/startbioc/#.VkOKbq6rRuU).
 
@@ -200,7 +201,7 @@ if (interactive()) {
 }
 
 ## Once you have your RSE object, you can transform the raw coverage
-## files using transform_counts().
+## base-pair coverage counts using transform_counts().
 ## For RPKM, TPM or read outputs, check the details in transform_counts().
 assay(rse_gene_SRP009615, "counts") <- transform_counts(rse_gene_SRP009615)
 
@@ -299,7 +300,7 @@ The main sources are:
 
 * [GENCODE](https://www.gencodegenes.org/) project
 * [RefSeq](https://www.ncbi.nlm.nih.gov/refseq/): NCBI Reference Sequence Database
-* FANTOM6_CAT is described at DOI [10.1101/gr.254656.119](https://doi.org/10.1101/gr.254656.119)
+* FANTOM6_CAT is described at DOI [10.1101/gr.254656.119](https://doi.org/10.1101/gr.254656.119) `r citep("10.1101/gr.254656.119")`
 * [ERCC](https://www.nist.gov/programs-projects/external-rna-controls-consortium): External RNA Controls Consortium ^[These are 92 control spike-in sequences that are commonly used in bulk RNA-seq projects.], commercially available from [ThermoFisher Scientific](https://www.thermofisher.com/order/catalog/product/4456740#/4456740)
 * [SIRV](https://www.biorxiv.org/content/10.1101/080747v1) ^[69 controls sequences.], commercially available from [Lexogen](https://www.lexogen.com/sirvs/)
 
@@ -367,7 +368,7 @@ if (interactive()) {
 
 ## Counts
 
-The counts in `r Biocpkg('recount3')` are raw base-pair coverage counts, similar to those in `r Biocpkg('recount')`. To further understand them, check the `r Biocpkg('recountWorkflow')` DOI [10.12688/f1000research.12223.1](https://doi.org/10.12688/f1000research.12223.1). To highlight that these arw raw base-pair coverage counts, they are stored in the "raw_counts" assay
+The counts in `r Biocpkg('recount3')` are raw base-pair coverage counts, similar to those in `r Biocpkg('recount')`. To further understand them, check the `r Biocpkg('recountWorkflow')` DOI [10.12688/f1000research.12223.1](https://doi.org/10.12688/f1000research.12223.1). To highlight that these are raw base-pair coverage counts, they are stored in the "raw_counts" assay
 
 ```{r "raw_counts"}
 assayNames(rse_gene_SRP009615)
@@ -377,7 +378,7 @@ Using `transform_counts()` you can scale the counts and assign them to the "coun
 
 ```{r "scaling_counts"}
 ## Once you have your RSE object, you can transform the raw coverage
-## files using transform_counts().
+## base-pair coverage counts using transform_counts().
 ## For RPKM, TPM or read outputs, check the details in transform_counts().
 assay(rse_gene_SRP009615, "counts") <- transform_counts(rse_gene_SRP009615)
 ```
