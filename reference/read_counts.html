@@ -183,11 +183,11 @@ base-pair coverage counts used in recount2 and recount3.</p>
     type = <span class='st'>"gene"</span>
 )
 <span class='kw'>local_SRP009615_gene</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span>(url = <span class='kw'>url_SRP009615_gene</span>)
-</div><div class='output co'>#&gt; <span class='message'>2020-09-30 16:47:44 caching file sra.gene_sums.SRP009615.G026.gz.</span></div><div class='input'>
+</div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:26:49 caching file sra.gene_sums.SRP009615.G026.gz.</span></div><div class='input'>
 <span class='co'>## Read the gene counts, take about 3 seconds</span>
 <span class='fu'><a href='https://rdrr.io/r/base/system.time.html'>system.time</a></span>(<span class='kw'>SRP009615_gene_counts</span> <span class='op'>&lt;-</span> <span class='fu'>read_counts</span>(<span class='kw'>local_SRP009615_gene</span>))
 </div><div class='output co'>#&gt;    user  system elapsed 
-#&gt;   0.097   0.004   0.102 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>SRP009615_gene_counts</span>)
+#&gt;   0.122   0.008   0.129 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>SRP009615_gene_counts</span>)
 </div><div class='output co'>#&gt; [1] 63856    12</div><div class='input'>
 <span class='co'>## Explore the top left corner</span>
 <span class='kw'>SRP009615_gene_counts</span>[<span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>), <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>6</span>)]
@@ -230,9 +230,9 @@ base-pair coverage counts used in recount2 and recount3.</p>
         type = <span class='st'>"exon"</span>
     )
 )
-</div><div class='output co'>#&gt; <span class='message'>2020-09-30 16:47:46 caching file sra.exon_sums.SRP009615.G026.gz.</span></div><div class='input'><span class='kw'>local_SRP009615_exon</span>
-</div><div class='output co'>#&gt;                                              sra.exon_sums.SRP009615.G026.gz 
-#&gt; "/tmp/RtmpZmaN69/BiocFileCache/1256795944cc_sra.exon_sums.SRP009615.G026.gz" </div><div class='input'>
+</div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:26:51 caching file sra.exon_sums.SRP009615.G026.gz.</span></div><div class='input'><span class='kw'>local_SRP009615_exon</span>
+</div><div class='output co'>#&gt;                                             sra.exon_sums.SRP009615.G026.gz 
+#&gt; "/tmp/RtmpULX18T/BiocFileCache/c2d324efaa2_sra.exon_sums.SRP009615.G026.gz" </div><div class='input'>
 <span class='co'>## Read the exon counts, takes about 50-60 seconds</span>
 <span class='fu'><a href='https://rdrr.io/r/base/system.time.html'>system.time</a></span>(
     <span class='kw'>SRP009615_exon_counts</span> <span class='op'>&lt;-</span> <span class='fu'>read_counts</span>(
@@ -240,7 +240,7 @@ base-pair coverage counts used in recount2 and recount3.</p>
     )
 )
 </div><div class='output co'>#&gt;    user  system elapsed 
-#&gt;   0.802   0.064   0.866 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>SRP009615_exon_counts</span>)
+#&gt;   1.050   0.084   1.134 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>SRP009615_exon_counts</span>)
 </div><div class='output co'>#&gt; [1] 1299686      12</div><div class='input'><span class='kw'>pryr</span>::<span class='fu'><a href='https://rdrr.io/pkg/pryr/man/object_size.html'>object_size</a></span>(<span class='kw'>SRP009615_exon_counts</span>)
 </div><div class='output co'>#&gt; 123 MB</div><div class='input'>
 <span class='co'>## Explore the top left corner</span>
