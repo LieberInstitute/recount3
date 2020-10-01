@@ -138,7 +138,7 @@ locate the files using <code><a href='file_locate_url.html'>file_locate_url()</a
 using <code><a href='file_retrieve.html'>file_retrieve()</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>read_metadata</span>(<span class='kw'>metadata_files</span>)</pre>
+    <pre class="usage"><span class='fu'>read_metadata</span><span class='op'>(</span><span class='va'>metadata_files</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -168,18 +168,18 @@ metadata.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'>## Download the metadata files for project ERP110066</span>
-<span class='kw'>url_ERP110066_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(
+<span class='va'>url_ERP110066_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span><span class='op'>(</span>
     <span class='st'>"ERP110066"</span>,
     <span class='st'>"data_sources/sra"</span>
-)
-<span class='kw'>local_ERP110066_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span>(
-    url = <span class='kw'>url_ERP110066_meta</span>
-)
-</div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:27:04 caching file sra.sra.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.sra.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:27:05 caching file sra.recount_project.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.recount_project.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:27:05 caching file sra.recount_qc.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.recount_qc.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:27:05 caching file sra.recount_seq_qc.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.recount_seq_qc.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:27:05 caching file sra.recount_pred.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.recount_pred.ERP110066.MD.gz'</span></div><div class='input'>
+<span class='op'>)</span>
+<span class='va'>local_ERP110066_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span><span class='op'>(</span>
+    url <span class='op'>=</span> <span class='va'>url_ERP110066_meta</span>
+<span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:43 caching file sra.sra.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.sra.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:43 caching file sra.recount_project.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.recount_project.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:44 caching file sra.recount_qc.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.recount_qc.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:44 caching file sra.recount_seq_qc.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.recount_seq_qc.ERP110066.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:44 caching file sra.recount_pred.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/66/ERP110066/sra.recount_pred.ERP110066.MD.gz'</span></div><div class='input'>
 <span class='co'>## Read the metadata</span>
-<span class='kw'>ERP110066_meta</span> <span class='op'>&lt;-</span> <span class='fu'>read_metadata</span>(<span class='kw'>local_ERP110066_meta</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>ERP110066_meta</span>)
-</div><div class='output co'>#&gt; [1] 1024  172</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='kw'>ERP110066_meta</span>)
+<span class='va'>ERP110066_meta</span> <span class='op'>&lt;-</span> <span class='fu'>read_metadata</span><span class='op'>(</span><span class='va'>local_ERP110066_meta</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>ERP110066_meta</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 1024  172</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>ERP110066_meta</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;   [1] "rail_id"                                                           
 #&gt;   [2] "external_id"                                                       
 #&gt;   [3] "study"                                                             
@@ -355,36 +355,36 @@ metadata.</p>
 <span class='co'>## Read the metadata files for a project in a collection</span>
 <span class='co'>## Note: using the test files since I can't access collections right now</span>
 <span class='co'>## for this collection</span>
-<span class='kw'>ERP110066_collection_meta</span> <span class='op'>&lt;-</span> <span class='fu'>read_metadata</span>(
-    metadata_files = <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span>(
-        <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(
+<span class='va'>ERP110066_collection_meta</span> <span class='op'>&lt;-</span> <span class='fu'>read_metadata</span><span class='op'>(</span>
+    metadata_files <span class='op'>=</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span><span class='op'>(</span>
+        <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span><span class='op'>(</span>
             <span class='st'>"ERP110066"</span>,
             <span class='st'>"collections/geuvadis_smartseq"</span>,
-            recount3_url = <span class='st'>"http://snaptron.cs.jhu.edu/data/temp/recount3"</span>
-        )
-    )
-)
-</div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:27:06 caching file geuvadis_smartseq.recount_project.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:27:07 caching file sra.sra.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:27:07 caching file sra.recount_project.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:27:08 caching file sra.recount_qc.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: The 'url' &lt;http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_seq_qc.ERP110066.MD.gz&gt; does not exist or is not available.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:27:08 caching file sra.recount_pred.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:27:08 caching file geuvadis_smartseq.custom.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>ERP110066_collection_meta</span>)
+            recount3_url <span class='op'>=</span> <span class='st'>"http://snaptron.cs.jhu.edu/data/temp/recount3"</span>
+        <span class='op'>)</span>
+    <span class='op'>)</span>
+<span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:45 caching file geuvadis_smartseq.recount_project.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:46 caching file sra.sra.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:46 caching file sra.recount_project.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:46 caching file sra.recount_qc.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: The 'url' &lt;http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_seq_qc.ERP110066.MD.gz&gt; does not exist or is not available.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:47 caching file sra.recount_pred.ERP110066.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:47 caching file geuvadis_smartseq.custom.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>ERP110066_collection_meta</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; [1]   1 161</div><div class='input'><span class='co'>## New columns for this collection</span>
-<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='kw'>ERP110066_collection_meta</span>)[<span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='kw'>ERP110066_collection_meta</span>) <span class='op'>%in%</span> <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='kw'>ERP110066_meta</span>)]
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>ERP110066_collection_meta</span><span class='op'>)</span><span class='op'>[</span><span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>ERP110066_collection_meta</span><span class='op'>)</span> <span class='op'>%in%</span> <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>ERP110066_meta</span><span class='op'>)</span><span class='op'>]</span>
 </div><div class='output co'>#&gt; [1] "custom.sequencing_type"</div><div class='input'>
 <span class='co'>## Read the metadata for a mouse project</span>
-<span class='kw'>DRP002367_meta</span> <span class='op'>&lt;-</span> <span class='fu'>read_metadata</span>(
-    metadata_files = <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span>(
-        <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(<span class='st'>"DRP002367"</span>, <span class='st'>"data_sources/sra"</span>, organism = <span class='st'>"mouse"</span>)
-    )
-)
-</div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:27:08 caching file sra.sra.DRP002367.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:27:09 caching file sra.recount_project.DRP002367.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:27:09 caching file sra.recount_qc.DRP002367.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:27:09 caching file sra.recount_seq_qc.DRP002367.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:27:09 caching file sra.recount_pred.DRP002367.MD.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>DRP002367_meta</span>)
+<span class='va'>DRP002367_meta</span> <span class='op'>&lt;-</span> <span class='fu'>read_metadata</span><span class='op'>(</span>
+    metadata_files <span class='op'>=</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span><span class='op'>(</span>
+        <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span><span class='op'>(</span><span class='st'>"DRP002367"</span>, <span class='st'>"data_sources/sra"</span>, organism <span class='op'>=</span> <span class='st'>"mouse"</span><span class='op'>)</span>
+    <span class='op'>)</span>
+<span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:47 caching file sra.sra.DRP002367.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:47 caching file sra.recount_project.DRP002367.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:48 caching file sra.recount_qc.DRP002367.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:48 caching file sra.recount_seq_qc.DRP002367.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:48 caching file sra.recount_pred.DRP002367.MD.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>DRP002367_meta</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; [1]   4 176</div><div class='input'>
 <span class='co'>## Locate and read the GTEx bladder metadata</span>
-<span class='kw'>gtex_bladder_meta</span> <span class='op'>&lt;-</span> <span class='fu'>read_metadata</span>(
-    <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span>(
-        <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(<span class='st'>"BLADDER"</span>, <span class='st'>"data_sources/gtex"</span>)
-    )
-)
-</div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:27:10 caching file gtex.gtex.BLADDER.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/ER/BLADDER/gtex.gtex.BLADDER.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:27:10 caching file gtex.recount_project.BLADDER.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_project.BLADDER.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:27:10 caching file gtex.recount_qc.BLADDER.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_qc.BLADDER.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:27:11 caching file gtex.recount_seq_qc.BLADDER.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_seq_qc.BLADDER.MD.gz'</span></div><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>gtex_bladder_meta</span>)
-</div><div class='output co'>#&gt; [1]  21 197</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='kw'>gtex_bladder_meta</span>)
+<span class='va'>gtex_bladder_meta</span> <span class='op'>&lt;-</span> <span class='fu'>read_metadata</span><span class='op'>(</span>
+    <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span><span class='op'>(</span>
+        <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span><span class='op'>(</span><span class='st'>"BLADDER"</span>, <span class='st'>"data_sources/gtex"</span><span class='op'>)</span>
+    <span class='op'>)</span>
+<span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:48 caching file gtex.gtex.BLADDER.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/ER/BLADDER/gtex.gtex.BLADDER.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:49 caching file gtex.recount_project.BLADDER.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_project.BLADDER.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:49 caching file gtex.recount_qc.BLADDER.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_qc.BLADDER.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:49 caching file gtex.recount_seq_qc.BLADDER.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_seq_qc.BLADDER.MD.gz'</span></div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>gtex_bladder_meta</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1]  21 197</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>gtex_bladder_meta</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;   [1] "rail_id"                                                           
 #&gt;   [2] "external_id"                                                       
 #&gt;   [3] "study"                                                             

@@ -134,11 +134,11 @@
     <p>List available projects in recount3</p>
     </div>
 
-    <pre class="usage"><span class='fu'>available_projects</span>(
-  organism = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"human"</span>, <span class='st'>"mouse"</span>),
-  recount3_url = <span class='st'>"http://idies.jhu.edu/recount3/data"</span>,
-  bfc = <span class='kw'>BiocFileCache</span>::<span class='fu'><a href='https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html'>BiocFileCache</a></span>()
-)</pre>
+    <pre class="usage"><span class='fu'>available_projects</span><span class='op'>(</span>
+  organism <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"human"</span>, <span class='st'>"mouse"</span><span class='op'>)</span>,
+  recount3_url <span class='op'>=</span> <span class='st'>"http://idies.jhu.edu/recount3/data"</span>,
+  bfc <span class='op'>=</span> <span class='fu'>BiocFileCache</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html'>BiocFileCache</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -170,11 +170,11 @@ the <code>recount3</code> project home location (<code>project_home</code>), and
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'>## Find all the human projects</span>
-<span class='kw'>human_projects</span> <span class='op'>&lt;-</span> <span class='fu'>available_projects</span>()
-</div><div class='output co'>#&gt; <span class='message'>using temporary cache /tmp/RtmpULX18T/BiocFileCache</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:24:26 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/sra.recount_project.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:24:27 caching file gtex.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/gtex.recount_project.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:24:27 caching file tcga.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/tcga/metadata/tcga.recount_project.MD.gz'</span></div><div class='input'>
+<span class='va'>human_projects</span> <span class='op'>&lt;-</span> <span class='fu'>available_projects</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>using temporary cache /tmp/Rtmp0IiiwG/BiocFileCache</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:01:19 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/sra.recount_project.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:01:20 caching file gtex.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/gtex.recount_project.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:01:20 caching file tcga.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/tcga/metadata/tcga.recount_project.MD.gz'</span></div><div class='input'>
 <span class='co'>## Explore the results</span>
-<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>human_projects</span>)
-</div><div class='output co'>#&gt; [1] 8742    5</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='kw'>human_projects</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>human_projects</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 8742    5</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>human_projects</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;       project organism file_source     project_home project_type
 #&gt; 1   SRP107565    human         sra data_sources/sra data_sources
 #&gt; 217 SRP149665    human         sra data_sources/sra data_sources
@@ -183,27 +183,27 @@ the <code>recount3</code> project home location (<code>project_home</code>), and
 #&gt; 250 SRP133965    human         sra data_sources/sra data_sources
 #&gt; 262 SRP096765    human         sra data_sources/sra data_sources</div><div class='input'>
 <span class='co'>## How many are from a data source vs a compilation?</span>
-<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span>(<span class='kw'>human_projects</span><span class='op'>$</span><span class='kw'>project_type</span>, useNA = <span class='st'>"ifany"</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>human_projects</span><span class='op'>$</span><span class='va'>project_type</span>, useNA <span class='op'>=</span> <span class='st'>"ifany"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; 
 #&gt; data_sources 
 #&gt;         8742 </div><div class='input'>
 <span class='co'>## What are the unique file sources?</span>
-<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span>(
-    <span class='kw'>human_projects</span><span class='op'>$</span><span class='kw'>file_source</span>[<span class='kw'>human_projects</span><span class='op'>$</span><span class='kw'>project_type</span> <span class='op'>==</span> <span class='st'>"data_sources"</span>]
-)
+<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span>
+    <span class='va'>human_projects</span><span class='op'>$</span><span class='va'>file_source</span><span class='op'>[</span><span class='va'>human_projects</span><span class='op'>$</span><span class='va'>project_type</span> <span class='op'>==</span> <span class='st'>"data_sources"</span><span class='op'>]</span>
+<span class='op'>)</span>
 </div><div class='output co'>#&gt; 
 #&gt; gtex  sra tcga 
 #&gt;   32 8677   33 </div><div class='input'>
 <span class='co'>## Note that big projects are broken up to make them easier to access</span>
 <span class='co'>## For example, GTEx and TCGA are broken up by tissue</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span>(<span class='kw'>human_projects</span>, <span class='kw'>file_source</span> <span class='op'>==</span> <span class='st'>"gtex"</span>))
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span><span class='op'>(</span><span class='va'>human_projects</span>, <span class='va'>file_source</span> <span class='op'>==</span> <span class='st'>"gtex"</span><span class='op'>)</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;               project organism file_source      project_home project_type
 #&gt; 316450 ADIPOSE_TISSUE    human        gtex data_sources/gtex data_sources
 #&gt; 316451         MUSCLE    human        gtex data_sources/gtex data_sources
 #&gt; 316452   BLOOD_VESSEL    human        gtex data_sources/gtex data_sources
 #&gt; 316454          HEART    human        gtex data_sources/gtex data_sources
 #&gt; 316456          OVARY    human        gtex data_sources/gtex data_sources
-#&gt; 316457         UTERUS    human        gtex data_sources/gtex data_sources</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span>(<span class='kw'>human_projects</span>, <span class='kw'>file_source</span> <span class='op'>==</span> <span class='st'>"tcga"</span>))
+#&gt; 316457         UTERUS    human        gtex data_sources/gtex data_sources</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span><span class='op'>(</span><span class='va'>human_projects</span>, <span class='va'>file_source</span> <span class='op'>==</span> <span class='st'>"tcga"</span><span class='op'>)</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;        project organism file_source      project_home project_type
 #&gt; 335664     ACC    human        tcga data_sources/tcga data_sources
 #&gt; 335743    BLCA    human        tcga data_sources/tcga data_sources
@@ -212,11 +212,11 @@ the <code>recount3</code> project home location (<code>project_home</code>), and
 #&gt; 337741    CHOL    human        tcga data_sources/tcga data_sources
 #&gt; 337786    COAD    human        tcga data_sources/tcga data_sources</div><div class='input'>
 <span class='co'>## Find all the mouse projects</span>
-<span class='kw'>mouse_projects</span> <span class='op'>&lt;-</span> <span class='fu'>available_projects</span>(organism = <span class='st'>"mouse"</span>)
-</div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:24:33 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/mouse/data_sources/sra/metadata/sra.recount_project.MD.gz'</span></div><div class='input'>
+<span class='va'>mouse_projects</span> <span class='op'>&lt;-</span> <span class='fu'>available_projects</span><span class='op'>(</span>organism <span class='op'>=</span> <span class='st'>"mouse"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:01:25 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/mouse/data_sources/sra/metadata/sra.recount_project.MD.gz'</span></div><div class='input'>
 <span class='co'>## Explore the results</span>
-<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='kw'>mouse_projects</span>)
-</div><div class='output co'>#&gt; [1] 10088     5</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='kw'>mouse_projects</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>mouse_projects</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 10088     5</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>mouse_projects</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;       project organism file_source     project_home project_type
 #&gt; 1   SRP170963    mouse         sra data_sources/sra data_sources
 #&gt; 370 SRP045763    mouse         sra data_sources/sra data_sources
@@ -225,14 +225,14 @@ the <code>recount3</code> project home location (<code>project_home</code>), and
 #&gt; 412 SRP186363    mouse         sra data_sources/sra data_sources
 #&gt; 425 SRP101363    mouse         sra data_sources/sra data_sources</div><div class='input'>
 <span class='co'>## How many are from a data source vs a compilation?</span>
-<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span>(<span class='kw'>mouse_projects</span><span class='op'>$</span><span class='kw'>project_type</span>, useNA = <span class='st'>"ifany"</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>mouse_projects</span><span class='op'>$</span><span class='va'>project_type</span>, useNA <span class='op'>=</span> <span class='st'>"ifany"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; 
 #&gt; data_sources 
 #&gt;        10088 </div><div class='input'>
 <span class='co'>## What are the unique file sources?</span>
-<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span>(
-    <span class='kw'>mouse_projects</span><span class='op'>$</span><span class='kw'>file_source</span>[<span class='kw'>mouse_projects</span><span class='op'>$</span><span class='kw'>project_type</span> <span class='op'>==</span> <span class='st'>"data_sources"</span>]
-)
+<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span>
+    <span class='va'>mouse_projects</span><span class='op'>$</span><span class='va'>file_source</span><span class='op'>[</span><span class='va'>mouse_projects</span><span class='op'>$</span><span class='va'>project_type</span> <span class='op'>==</span> <span class='st'>"data_sources"</span><span class='op'>]</span>
+<span class='op'>)</span>
 </div><div class='output co'>#&gt; 
 #&gt;   sra 
 #&gt; 10088 </div></pre>

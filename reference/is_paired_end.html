@@ -136,11 +136,11 @@ end or not." />
 end or not.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>is_paired_end</span>(
-  <span class='kw'>x</span>,
-  avg_mapped_read_length = <span class='st'>"recount_qc.star.average_mapped_length"</span>,
-  avg_read_length = <span class='st'>"recount_seq_qc.avg_len"</span>
-)</pre>
+    <pre class="usage"><span class='fu'>is_paired_end</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  avg_mapped_read_length <span class='op'>=</span> <span class='st'>"recount_qc.star.average_mapped_length"</span>,
+  avg_read_length <span class='op'>=</span> <span class='st'>"recount_seq_qc.avg_len"</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -179,31 +179,31 @@ paired-end or not.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'>## Download the metadata for SRP009615, a single-end study</span>
-<span class='kw'>SRP009615_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read_metadata.html'>read_metadata</a></span>(
-    metadata_files = <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span>(
-        <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(
+<span class='va'>SRP009615_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read_metadata.html'>read_metadata</a></span><span class='op'>(</span>
+    metadata_files <span class='op'>=</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span><span class='op'>(</span>
+        <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span><span class='op'>(</span>
             <span class='st'>"SRP009615"</span>,
             <span class='st'>"data_sources/sra"</span>,
-        )
-    )
-)
-</div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:26:46 caching file sra.sra.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:26:47 caching file sra.recount_project.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:26:47 caching file sra.recount_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:26:47 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:26:47 caching file sra.recount_pred.SRP009615.MD.gz.</span></div><div class='input'>
+        <span class='op'>)</span>
+    <span class='op'>)</span>
+<span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:27 caching file sra.sra.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:28 caching file sra.recount_project.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:28 caching file sra.recount_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:28 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:28 caching file sra.recount_pred.SRP009615.MD.gz.</span></div><div class='input'>
 <span class='co'>## Are the samples paired end?</span>
-<span class='fu'>is_paired_end</span>(<span class='kw'>SRP009615_meta</span>)
+<span class='fu'>is_paired_end</span><span class='op'>(</span><span class='va'>SRP009615_meta</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; SRR387777 SRR387778 SRR387779 SRR387780 SRR389079 SRR389080 SRR389081 SRR389082 
 #&gt;     FALSE     FALSE     FALSE     FALSE     FALSE     FALSE     FALSE     FALSE 
 #&gt; SRR389083 SRR389084 SRR389077 SRR389078 
 #&gt;     FALSE     FALSE     FALSE     FALSE </div><div class='input'>
 <span class='co'>## Download the metadata for DRP000499, a paired-end study</span>
-<span class='kw'>DRP000499_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read_metadata.html'>read_metadata</a></span>(
-    metadata_files = <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span>(
-        <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span>(
+<span class='va'>DRP000499_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read_metadata.html'>read_metadata</a></span><span class='op'>(</span>
+    metadata_files <span class='op'>=</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span><span class='op'>(</span>
+        <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span><span class='op'>(</span>
             <span class='st'>"DRP000499"</span>,
             <span class='st'>"data_sources/sra"</span>,
-        )
-    )
-)
-</div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:26:47 caching file sra.sra.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:26:48 caching file sra.recount_project.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:26:48 caching file sra.recount_qc.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:26:48 caching file sra.recount_seq_qc.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-09-30 17:26:48 caching file sra.recount_pred.DRP000499.MD.gz.</span></div><div class='input'><span class='fu'>is_paired_end</span>(<span class='kw'>DRP000499_meta</span>)
+        <span class='op'>)</span>
+    <span class='op'>)</span>
+<span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:28 caching file sra.sra.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:29 caching file sra.recount_project.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:29 caching file sra.recount_qc.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:29 caching file sra.recount_seq_qc.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-01 15:03:29 caching file sra.recount_pred.DRP000499.MD.gz.</span></div><div class='input'><span class='fu'>is_paired_end</span><span class='op'>(</span><span class='va'>DRP000499_meta</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; <span class='warning'>Warning: is_paired_end(): Looks like some samples failed to align and will return NA.</span></div><div class='output co'>#&gt; DRR001622 DRR001623 DRR001624 DRR001625 DRR001626 DRR001627 DRR001628 DRR001629 
 #&gt;      TRUE      TRUE      TRUE        NA      TRUE      TRUE      TRUE      TRUE 
 #&gt; DRR001630 DRR001631 DRR001632 DRR001633 DRR001634 DRR001635 DRR001636 DRR001637 

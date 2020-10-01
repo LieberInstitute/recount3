@@ -136,10 +136,10 @@ corresponding file extension used in the recount3 files." />
 corresponding file extension used in the <code>recount3</code> files.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>annotation_ext</span>(
-  organism = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"human"</span>, <span class='st'>"mouse"</span>),
-  annotation = <span class='fu'><a href='annotation_options.html'>annotation_options</a></span>(<span class='kw'>organism</span>)
-)</pre>
+    <pre class="usage"><span class='fu'>annotation_ext</span><span class='op'>(</span>
+  organism <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"human"</span>, <span class='st'>"mouse"</span><span class='op'>)</span>,
+  annotation <span class='op'>=</span> <span class='fu'><a href='annotation_options.html'>annotation_options</a></span><span class='op'>(</span><span class='va'>organism</span><span class='op'>)</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -172,10 +172,10 @@ use.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'>annotation_ext</span>(<span class='st'>"human"</span>)
-</div><div class='output co'>#&gt; [1] "G026"</div><div class='input'><span class='fu'>annotation_ext</span>(<span class='st'>"human"</span>, <span class='st'>"fantom6_cat"</span>)
-</div><div class='output co'>#&gt; [1] "F006"</div><div class='input'><span class='fu'>annotation_ext</span>(<span class='st'>"human"</span>, <span class='st'>"refseq"</span>)
-</div><div class='output co'>#&gt; [1] "R109"</div><div class='input'><span class='fu'>annotation_ext</span>(<span class='st'>"mouse"</span>)
+<span class='fu'>annotation_ext</span><span class='op'>(</span><span class='st'>"human"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "G026"</div><div class='input'><span class='fu'>annotation_ext</span><span class='op'>(</span><span class='st'>"human"</span>, <span class='st'>"fantom6_cat"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "F006"</div><div class='input'><span class='fu'>annotation_ext</span><span class='op'>(</span><span class='st'>"human"</span>, <span class='st'>"refseq"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "R109"</div><div class='input'><span class='fu'>annotation_ext</span><span class='op'>(</span><span class='st'>"mouse"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; [1] "M023"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
