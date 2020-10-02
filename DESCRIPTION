@@ -40,8 +40,7 @@ Suggests:
 VignetteBuilder: knitr
 Depends: 
     SummarizedExperiment
-Imports: 
-    AnnotationHub,
+Imports:
     BiocFileCache,
     methods,
     rtracklayer,
@@ -53,5 +52,4 @@ Imports:
     R.utils,
     Matrix,
     GenomicRanges,
-    sessioninfo,
-    ExperimentHub
+    sessioninfo

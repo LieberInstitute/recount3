@@ -35,7 +35,7 @@
 #' @examples
 #'
 #' ## Create a RSE object at the gene level
-#' rse_gene_SRP009615 <- create_rse(recount3_hub("SRP009615"))
+#' rse_gene_SRP009615 <- create_rse_manual("SRP009615")
 #'
 #' ## Scale the counts using the AUC
 #' assays(rse_gene_SRP009615)$counts <- transform_counts(rse_gene_SRP009615)
@@ -320,11 +320,11 @@ is_paired_end <- function(x,
 #' @examples
 #'
 #' ## Create a RSE object at the gene level
-#' rse_gene_SRP009615 <- create_rse(recount3_hub("SRP009615"))
+#' rse_gene_SRP009615 <- create_rse_manual("SRP009615")
 #' colSums(compute_read_counts(rse_gene_SRP009615)) / 1e6
 #'
 #' ## Create a RSE object at the gene level
-#' rse_gene_DRP000499 <- create_rse(recount3_hub("DRP000499"))
+#' rse_gene_DRP000499 <- create_rse_manual("DRP000499")
 #' colSums(compute_read_counts(rse_gene_DRP000499)) / 1e6
 #'
 #' ## You can compare the read counts against those from recount::read_counts()

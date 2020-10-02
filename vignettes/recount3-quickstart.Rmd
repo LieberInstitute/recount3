@@ -44,7 +44,6 @@ cite_options(hyperlink = "to.doc", citation_format = "text", style = "html")
 ## Write bibliography information
 bib <- c(
     R = citation(),
-    AnnotationHub = citation("AnnotationHub"),
     BiocFileCache = citation("BiocFileCache"),
     BiocStyle = citation("BiocStyle"),
     knitcitations = citation("knitcitations"),
@@ -73,7 +72,6 @@ bib <- c(
     R.utils = citation("R.utils"),
     Matrix = citation("Matrix"),
     GenomicRanges = citation("GenomicRanges"),
-    ExperimentHub = citation("ExperimentHub"),
     recount2paper = citation("recount")[1],
     recount2workflow = citation("recount")[2],
     recount1paper = citation("recount")[5],
@@ -193,11 +191,6 @@ if (interactive()) {
     ## Select a single row, then hit "send". The following code checks this.
     stopifnot(nrow(proj_info_interactive) == 1)
 
-    ## This is similar to using the following code to explore all of
-    ## ExperimentHub, choosing one recount3 entry, then hitting "send"
-    # eh2 <- AnnotationHub::display(ExperimentHub::ExperimentHub())
-    # proj_info_interactive <- eh2[[1]]
-
     ## Then create the RSE object
     rse_gene_interactive <- create_rse(proj_info_interactive)
 }
@@ -255,30 +248,6 @@ if (interactive()) {
 }
 ```
 
-### Through `recount3_hub()`
-
-Alternatively, you can use `r Biocpkg('ExperimentHub')` to search all of the available studies, filter the ones that have a `recount3` tag, and then use that information with this package to retrieve the data. Just like with our approach using `interactiveDisplayBase::display()` and `available_projects()`, you can also interactively explore the data from r `r Biocpkg('ExperimentHub')`.
-
-```{r "experiment_hub"}
-## Retrieve the experiments in ExperimentHub
-eh <- ExperimentHub::ExperimentHub()
-
-if (interactive()) {
-    ## Search for the recount3 tag, find a study of interest, select it, then
-    ## hit send
-    eh2 <- AnnotationHub::display(ExperimentHub::ExperimentHub())
-
-    ## Retrieve the study data from ExperimentHub
-    selected_study_eh <- eh2[[1]]
-}
-```
-
-The process of retrieving the project information from `r Biocpkg('ExperimentHub')` is simplified in `recount3_hub()` for situations where you know the project ID already as shown for `SRP009615`. 
-
-```{r "proj_info_SRP009615"}
-project_info <- recount3_hub("SRP009615")
-```
-
 Ultimately, we need three pieces of information in order to download a specific dataset from `r Biocpkg('recount3')`. Those are:
 
 * **project**: the project ID,
@@ -286,7 +255,7 @@ Ultimately, we need three pieces of information in order to download a specific 
 * **project_home**: where the data lives which varies between data sources and collections.
 
 ```{r "display_proj_info"}
-project_info
+project_info[, c("project", "organism", "project_home")]
 ```
 
 ## Available annotations
@@ -529,13 +498,11 @@ P.S. An [alternative version of this vignette is available](http://research.libd
 The `r Biocpkg('recount3')` package `r citep(bib[['recount3']])` was made possible thanks to:
 
 * R `r citep(bib[['R']])`
-* `r Biocpkg('AnnotationHub')` `r citep(bib[['AnnotationHub']])`
 * `r Biocpkg('BiocFileCache')` `r citep(bib[['BiocFileCache']])`
 * `r Biocpkg('BiocStyle')` `r citep(bib[['BiocStyle']])`
 * `r Githubpkg("lcolladotor/biocthis")`
 * `r CRANpkg('covr')` `r citep(bib[['covr']])`
 * `r CRANpkg('data.table')` `r citep(bib[['data.table']])`
-* `r Biocpkg('ExperimentHub')` `r citep(bib[['ExperimentHub']])`
 * `r Biocpkg('GenomicRanges')` `r citep(bib[['GenomicRanges']])`
 * `r Biocpkg('interactiveDisplayBase')` `r citep(bib[['interactiveDisplayBase']])`
 * `r CRANpkg('knitcitations')` `r citep(bib[['knitcitations']])`

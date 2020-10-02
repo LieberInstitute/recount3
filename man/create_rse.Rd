@@ -16,7 +16,7 @@ create_rse(
 \arguments{
 \item{project_info}{A \code{data.frame()} with one row that contains the
 information for the project you are interested in. You can find which
-project to work on using \code{available_projects()} or \code{recount3_hub()}..}
+project to work on using \code{available_projects()}.}
 
 \item{type}{A \code{character(1)} specifying whether you want to access gene,
 exon, or exon-exon junction counts.}

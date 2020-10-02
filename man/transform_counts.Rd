@@ -64,7 +64,7 @@ for TPMs, use \code{recount::getTPM(length_var = "score")}.
 \examples{
 
 ## Create a RSE object at the gene level
-rse_gene_SRP009615 <- create_rse(recount3_hub("SRP009615"))
+rse_gene_SRP009615 <- create_rse_manual("SRP009615")
 
 ## Scale the counts using the AUC
 assays(rse_gene_SRP009615)$counts <- transform_counts(rse_gene_SRP009615)
