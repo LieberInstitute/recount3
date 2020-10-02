@@ -94,9 +94,9 @@ write.bibtex(bib, file = "quickstartRef.bib")
 
 # Overview
 
-The `r Biocpkg('recount3')` R/Bioconductor package is an interface to the recount3 project. recount3 provides uniformly processed RNA-seq data for hundreds of thousands of samples. The R package makes it possible to easily retrieve this data in standard Bioconductor containers, including _RangedSummarizedExperiment_.  The the sections on terminology and available data contains more detail on those subjects.
+The `r Biocpkg('recount3')` R/Bioconductor package is an interface to the recount3 project. recount3 provides uniformly processed RNA-seq data for hundreds of thousands of samples. The R package makes it possible to easily retrieve this data in standard Bioconductor containers, including _RangedSummarizedExperiment_.  The sections on terminology and available data contains more detail on those subjects.
 
-<!-- The `r Biocpkg('recount3')` R/Bioconductor package is part of the `recount3` project and is the latest iteration of the `ReCount` family of projects that provide access to uniformly-processed RNA sequencing datasets. The **main documentation website** for all the `recount3`-related projects is available at [**recount.bio**](https://LieberInstitute/github.io/recount3-docs). Please check that website for more information about how this R/Bioconductor package and other tools are related to each other. -->
+The **main documentation website** for all the `recount3`-related projects is available at [**recount.bio**](https://LieberInstitute/github.io/recount3-docs). Please check that website for more information about how this R/Bioconductor package and other tools are related to each other.
 
 # Basics
 
