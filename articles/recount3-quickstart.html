@@ -89,7 +89,7 @@
       Lieber Institute for Brain Development, Johns Hopkins Medical Campus<br><a class="author_email" href="mailto:#"></a><a href="mailto:lcolladotor@gmail.com" class="email">lcolladotor@gmail.com</a>
       </address>
                   
-            <h4 class="date">1 October 2020</h4>
+            <h4 class="date">2 October 2020</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/LieberInstitute/recount3/blob/master/vignettes/recount3-quickstart.Rmd"><code>vignettes/recount3-quickstart.Rmd</code></a></small>
       <div class="hidden name"><code>recount3-quickstart.Rmd</code></div>
@@ -102,30 +102,15 @@
 <div id="overview" class="section level1">
 <h1 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h1>
-<p>The <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> R/Bioconductor package is part of the <code>recount3</code> project and is the latest iteration of the <code>ReCount</code> family of projects that provide access to uniformly-processed RNA sequencing datasets. The <strong>main documentation website</strong> for all the <code>recount3</code>-related projects is available at <a href="https://LieberInstitute/github.io/recount3-docs"><strong>recount.bio</strong></a>. Please check that website for more information about how this R/Bioconductor package and other tools are related to each other.</p>
-<div id="teams-involved" class="section level2">
-<h2 class="hasAnchor">
-<a href="#teams-involved" class="anchor"></a>Teams involved</h2>
-<p>The <code>ReCount</code> family involves the following teams:</p>
-<ul>
-<li><a href="http://www.langmead-lab.org/">Ben Langmead’s lab at JHU Computer Science</a></li>
-<li><a href="https://www.hansenlab.org/">Kasper Daniel Hansen’s lab at JHBSPH Biostatistics Department</a></li>
-<li>
-<a href="http://lcolladotor.github.io/">Leonardo Collado-Torres</a> and <a href="http://aejaffe.com/">Andrew E. Jaffe</a> from <a href="https://www.libd.org/">LIBD</a>
-</li>
-<li><a href="http://nellore.bio/">Abhinav Nellore’s lab at OHSU</a></li>
-<li><a href="http://jtleek.com/">Jeff Leek’s lab at JHBSPH Biostatistics Deparment</a></li>
-<li>Data hosted by <a href="https://www.sciserver.org/">SciServer from IDIES at JHU</a>
-</li>
-</ul>
-</div>
+<p>The <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> R/Bioconductor package is an interface to the recount3 project. recount3 provides uniformly processed RNA-seq data for hundreds of thousands of samples. The R package makes it possible to easily retrieve this data in standard Bioconductor containers, including <em>RangedSummarizedExperiment</em>. The the sections on terminology and available data contains more detail on those subjects.</p>
+<!-- The *[recount3](https://bioconductor.org/packages/3.12/recount3)* R/Bioconductor package is part of the `recount3` project and is the latest iteration of the `ReCount` family of projects that provide access to uniformly-processed RNA sequencing datasets. The **main documentation website** for all the `recount3`-related projects is available at [**recount.bio**](https://LieberInstitute/github.io/recount3-docs). Please check that website for more information about how this R/Bioconductor package and other tools are related to each other. -->
 </div>
 <div id="basics" class="section level1">
 <h1 class="hasAnchor">
 <a href="#basics" class="anchor"></a>Basics</h1>
-<div id="install-recount3" class="section level2">
+<div id="installing-recount3" class="section level2">
 <h2 class="hasAnchor">
-<a href="#install-recount3" class="anchor"></a>Install <code>recount3</code>
+<a href="#installing-recount3" class="anchor"></a>Installing <code>recount3</code>
 </h2>
 <p><code>R</code> is an open-source statistical environment which can be easily modified to enhance its functionality via packages. <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> is a <code>R</code> package available via the <a href="http://bioconductor/packages/recount3">Bioconductor</a> repository for packages. <code>R</code> can be installed on any operating system from <a href="https://cran.r-project.org/">CRAN</a> after which you can install <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> by using the following commands in your <code>R</code> session:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
@@ -198,12 +183,12 @@
 <div class="sourceCode" id="cb5"><pre class="downlit">
 <span class="co">## Find all available human projects</span>
 <span class="va">human_projects</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/available_projects.html">available_projects</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; using temporary cache /tmp/RtmpxfyuFQ/BiocFileCache</span>
-<span class="co">#&gt; 2020-10-01 15:14:28 caching file sra.recount_project.MD.gz.</span>
+<span class="co">#&gt; using temporary cache /tmp/RtmpouTrr4/BiocFileCache</span>
+<span class="co">#&gt; 2020-10-02 12:31:59 caching file sra.recount_project.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/sra.recount_project.MD.gz'</span>
-<span class="co">#&gt; 2020-10-01 15:14:29 caching file gtex.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:00 caching file gtex.recount_project.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/gtex.recount_project.MD.gz'</span>
-<span class="co">#&gt; 2020-10-01 15:14:29 caching file tcga.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:00 caching file tcga.recount_project.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/tcga/metadata/tcga.recount_project.MD.gz'</span>
 
 <span class="co">## Find the project you are interested in,</span>
@@ -215,24 +200,24 @@
 
 <span class="co">## Create a RangedSummarizedExperiment (RSE) object at the gene level</span>
 <span class="va">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_rse.html">create_rse</a></span><span class="op">(</span><span class="va">proj_info</span><span class="op">)</span>
-<span class="co">#&gt; 2020-10-01 15:14:33 downloading and reading the metadata.</span>
-<span class="co">#&gt; 2020-10-01 15:14:33 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:06 downloading and reading the metadata.</span>
+<span class="co">#&gt; 2020-10-02 12:32:06 caching file sra.sra.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.sra.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-10-01 15:14:34 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:07 caching file sra.recount_project.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_project.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-10-01 15:14:34 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:07 caching file sra.recount_qc.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_qc.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-10-01 15:14:34 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:07 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_seq_qc.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-10-01 15:14:34 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:08 caching file sra.recount_pred.SRP009615.MD.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/15/SRP009615/sra.recount_pred.SRP009615.MD.gz'</span>
-<span class="co">#&gt; 2020-10-01 15:14:35 downloading and reading the feature information.</span>
-<span class="co">#&gt; 2020-10-01 15:14:35 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:08 downloading and reading the feature information.</span>
+<span class="co">#&gt; 2020-10-02 12:32:08 caching file human.gene_sums.G026.gtf.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/annotations/gene_sums/human.gene_sums.G026.gtf.gz'</span>
-<span class="co">#&gt; 2020-10-01 15:14:36 downloading and reading the counts: 12 samples across 63856 features.</span>
-<span class="co">#&gt; 2020-10-01 15:14:36 caching file sra.gene_sums.SRP009615.G026.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:09 downloading and reading the counts: 12 samples across 63856 features.</span>
+<span class="co">#&gt; 2020-10-02 12:32:09 caching file sra.gene_sums.SRP009615.G026.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.G026.gz'</span>
-<span class="co">#&gt; 2020-10-01 15:14:37 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class="co">#&gt; 2020-10-02 12:32:10 construcing the RangedSummarizedExperiment (rse) object.</span>
 
 <span class="co">## Explore that RSE object</span>
 <span class="va">rse_gene_SRP009615</span>
@@ -287,9 +272,9 @@
 <p>While you can use external websites to find a study of interest, you can also use <code><a href="../reference/available_projects.html">available_projects()</a></code> to list the projects that are available in <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em> as shown below. This will return a <code><a href="https://rdrr.io/r/base/data.frame.html">data.frame()</a></code> object that lists the unique project IDs.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit">
 <span class="va">human_projects</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/available_projects.html">available_projects</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; 2020-10-01 15:14:37 caching file sra.recount_project.MD.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:14:38 caching file gtex.recount_project.MD.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:14:38 caching file tcga.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:11 caching file sra.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:11 caching file gtex.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:11 caching file tcga.recount_project.MD.gz.</span>
 <span class="fu"><a href="https://rdrr.io/r/base/dim.html">dim</a></span><span class="op">(</span><span class="va">human_projects</span><span class="op">)</span>
 <span class="co">#&gt; [1] 8742    5</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">human_projects</span><span class="op">)</span>
@@ -375,11 +360,11 @@
 <div class="sourceCode" id="cb10"><pre class="downlit">
 <span class="va">project_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/recount3_hub.html">recount3_hub</a></span><span class="op">(</span><span class="st">"SRP009615"</span><span class="op">)</span>
 <span class="co">#&gt; snapshotDate(): 2020-09-24</span>
-<span class="co">#&gt; 2020-10-01 15:14:43 the project SRP009615 was not found on ExperimentHub.</span>
+<span class="co">#&gt; 2020-10-02 12:32:18 the project SRP009615 was not found on ExperimentHub.</span>
 <span class="co">#&gt; Using a backup mechanism powered by recount3::available_projects().</span>
-<span class="co">#&gt; 2020-10-01 15:14:44 caching file sra.recount_project.MD.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:14:44 caching file gtex.recount_project.MD.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:14:44 caching file tcga.recount_project.MD.gz.</span></pre></div>
+<span class="co">#&gt; 2020-10-02 12:32:18 caching file sra.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:18 caching file gtex.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:19 caching file tcga.recount_project.MD.gz.</span></pre></div>
 <p>Ultimately, we need three pieces of information in order to download a specific dataset from <em><a href="https://bioconductor.org/packages/3.12/recount3">recount3</a></em>. Those are:</p>
 <ul>
 <li>
@@ -428,17 +413,17 @@
 <div class="sourceCode" id="cb13"><pre class="downlit">
 <span class="co">## Create a RSE object at the gene level</span>
 <span class="va">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_rse.html">create_rse</a></span><span class="op">(</span><span class="va">project_info</span><span class="op">)</span>
-<span class="co">#&gt; 2020-10-01 15:14:47 downloading and reading the metadata.</span>
-<span class="co">#&gt; 2020-10-01 15:14:47 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:14:47 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:14:47 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:14:47 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:14:47 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:14:48 downloading and reading the feature information.</span>
-<span class="co">#&gt; 2020-10-01 15:14:48 caching file human.gene_sums.G026.gtf.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:14:49 downloading and reading the counts: 12 samples across 63856 features.</span>
-<span class="co">#&gt; 2020-10-01 15:14:49 caching file sra.gene_sums.SRP009615.G026.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:14:49 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class="co">#&gt; 2020-10-02 12:32:22 downloading and reading the metadata.</span>
+<span class="co">#&gt; 2020-10-02 12:32:22 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:23 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:23 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:23 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:23 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:23 downloading and reading the feature information.</span>
+<span class="co">#&gt; 2020-10-02 12:32:23 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:24 downloading and reading the counts: 12 samples across 63856 features.</span>
+<span class="co">#&gt; 2020-10-02 12:32:24 caching file sra.gene_sums.SRP009615.G026.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:25 construcing the RangedSummarizedExperiment (rse) object.</span>
 
 <span class="co">## Explore the resulting RSE gene object</span>
 <span class="va">rse_gene_SRP009615</span>
@@ -461,13 +446,13 @@
 <span class="co">## Information about how this RSE object was made</span>
 <span class="fu">metadata</span><span class="op">(</span><span class="va">rse_gene_SRP009615</span><span class="op">)</span>
 <span class="co">#&gt; $time_created</span>
-<span class="co">#&gt; [1] "2020-10-01 15:14:49 UTC"</span>
+<span class="co">#&gt; [1] "2020-10-02 12:32:25 UTC"</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $recount3_version</span>
 <span class="co">#&gt;           package ondiskversion loadedversion                        path</span>
 <span class="co">#&gt; recount3 recount3        0.99.0        0.99.0 /__w/_temp/Library/recount3</span>
 <span class="co">#&gt;                           loadedpath attached is_base       date       source</span>
-<span class="co">#&gt; recount3 /__w/_temp/Library/recount3     TRUE   FALSE 2020-10-01 Bioconductor</span>
+<span class="co">#&gt; recount3 /__w/_temp/Library/recount3     TRUE   FALSE 2020-10-02 Bioconductor</span>
 <span class="co">#&gt;          md5ok            library</span>
 <span class="co">#&gt; recount3    NA /__w/_temp/Library</span>
 <span class="co">#&gt; </span>
@@ -614,19 +599,19 @@
     <span class="va">proj_info</span>,
     type <span class="op">=</span> <span class="st">"exon"</span>
 <span class="op">)</span>
-<span class="co">#&gt; 2020-10-01 15:14:50 downloading and reading the metadata.</span>
-<span class="co">#&gt; 2020-10-01 15:14:50 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:14:50 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:14:50 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:14:50 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:14:50 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:14:50 downloading and reading the feature information.</span>
-<span class="co">#&gt; 2020-10-01 15:14:51 caching file human.exon_sums.G026.gtf.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:26 downloading and reading the metadata.</span>
+<span class="co">#&gt; 2020-10-02 12:32:26 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:26 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:27 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:27 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:27 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:27 downloading and reading the feature information.</span>
+<span class="co">#&gt; 2020-10-02 12:32:27 caching file human.exon_sums.G026.gtf.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/annotations/exon_sums/human.exon_sums.G026.gtf.gz'</span>
-<span class="co">#&gt; 2020-10-01 15:15:14 downloading and reading the counts: 12 samples across 1299686 features.</span>
-<span class="co">#&gt; 2020-10-01 15:15:14 caching file sra.exon_sums.SRP009615.G026.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:32:55 downloading and reading the counts: 12 samples across 1299686 features.</span>
+<span class="co">#&gt; 2020-10-02 12:32:55 caching file sra.exon_sums.SRP009615.G026.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/exon_sums/15/SRP009615/sra.exon_sums.SRP009615.G026.gz'</span>
-<span class="co">#&gt; 2020-10-01 15:15:17 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class="co">#&gt; 2020-10-02 12:32:58 construcing the RangedSummarizedExperiment (rse) object.</span>
 
 <span class="co">## Explore the resulting RSE exon object</span>
 <span class="va">rse_exon_SRP009615</span>
@@ -794,22 +779,22 @@
     <span class="va">proj_info</span>,
     type <span class="op">=</span> <span class="st">"jxn"</span>
 <span class="op">)</span>
-<span class="co">#&gt; 2020-10-01 15:15:20 downloading and reading the metadata.</span>
-<span class="co">#&gt; 2020-10-01 15:15:20 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:15:20 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:15:21 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:15:21 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:15:21 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2020-10-01 15:15:21 downloading and reading the feature information.</span>
-<span class="co">#&gt; 2020-10-01 15:15:21 caching file sra.junctions.SRP009615.ALL.RR.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:33:04 downloading and reading the metadata.</span>
+<span class="co">#&gt; 2020-10-02 12:33:04 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:33:04 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:33:04 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:33:05 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:33:05 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:33:05 downloading and reading the feature information.</span>
+<span class="co">#&gt; 2020-10-02 12:33:05 caching file sra.junctions.SRP009615.ALL.RR.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.RR.gz'</span>
-<span class="co">#&gt; 2020-10-01 15:15:24 downloading and reading the counts: 12 samples across 281448 features.</span>
-<span class="co">#&gt; 2020-10-01 15:15:24 caching file sra.junctions.SRP009615.ALL.MM.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:33:08 downloading and reading the counts: 12 samples across 281448 features.</span>
+<span class="co">#&gt; 2020-10-02 12:33:08 caching file sra.junctions.SRP009615.ALL.MM.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.MM.gz'</span>
-<span class="co">#&gt; 2020-10-01 15:15:25 matching exon-exon junction counts with the metadata.</span>
-<span class="co">#&gt; 2020-10-01 15:15:25 caching file sra.junctions.SRP009615.ALL.ID.gz.</span>
+<span class="co">#&gt; 2020-10-02 12:33:10 matching exon-exon junction counts with the metadata.</span>
+<span class="co">#&gt; 2020-10-02 12:33:10 caching file sra.junctions.SRP009615.ALL.ID.gz.</span>
 <span class="co">#&gt; adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.ID.gz'</span>
-<span class="co">#&gt; 2020-10-01 15:15:26 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class="co">#&gt; 2020-10-02 12:33:11 construcing the RangedSummarizedExperiment (rse) object.</span>
 
 <span class="co">## Explore the resulting RSE exon-exon junctions object</span>
 <span class="va">rse_jxn_SRP009615</span>
@@ -945,6 +930,26 @@
 <p>In particular, this functionality can be useful if you want to access the data at <a href="https://idies.jhu.edu/">IDIES</a> using <a href="https://apps.sciserver.org/compute/">SciServer Compute</a>.</p>
 <p><a href="https://apps.sciserver.org/compute/"><img src="https://skyserver.sdss.org/dr14/en/images/sciserver_logo_inverted_vertical.png" width="400px"></a></p>
 </div>
+<div id="teams-involved" class="section level2">
+<h2 class="hasAnchor">
+<a href="#teams-involved" class="anchor"></a>Teams involved</h2>
+<p>The <code>ReCount</code> family involves the following teams:</p>
+<ul>
+<li>
+<a href="http://www.langmead-lab.org/">Ben Langmead’s lab</a> at JHU Computer Science</li>
+<li>
+<a href="https://www.hansenlab.org/">Kasper Daniel Hansen’s lab</a> at JHBSPH Biostatistics Department</li>
+<li>
+<a href="http://lcolladotor.github.io/">Leonardo Collado-Torres</a> and <a href="http://aejaffe.com/">Andrew E. Jaffe</a> from <a href="https://www.libd.org/">LIBD</a>
+</li>
+<li>
+<a href="http://nellore.bio/">Abhinav Nellore’s lab</a> at OHSU</li>
+<li>
+<a href="http://jtleek.com/">Jeff Leek’s lab</a> at JHBSPH Biostatistics Deparment</li>
+<li>Data hosted by <a href="https://www.sciserver.org/">SciServer from IDIES at JHU</a>
+</li>
+</ul>
+</div>
 <div id="project-history" class="section level2">
 <h2 class="hasAnchor">
 <a href="#project-history" class="anchor"></a>Project history</h2>
@@ -1054,9 +1059,9 @@
 <span class="fu"><a href="https://rdrr.io/r/base/files.html">file.remove</a></span><span class="op">(</span><span class="st">"quickstartRef.bib"</span><span class="op">)</span>
 <span class="co">#&gt; [1] TRUE</span></pre></div>
 <p>Date the vignette was generated.</p>
-<pre><code>#&gt; [1] "2020-10-01 15:15:28 UTC"</code></pre>
+<pre><code>#&gt; [1] "2020-10-02 12:33:13 UTC"</code></pre>
 <p>Wallclock time spent generating the vignette.</p>
-<pre><code>#&gt; Time difference of 1.144 mins</code></pre>
+<pre><code>#&gt; Time difference of 1.416 mins</code></pre>
 <p><code>R</code> session information.</p>
 <pre><code>#&gt; ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
 #&gt;  setting  value                                      
@@ -1068,7 +1073,7 @@
 #&gt;  collate  en_US.UTF-8                                
 #&gt;  ctype    en_US.UTF-8                                
 #&gt;  tz       UTC                                        
-#&gt;  date     2020-10-01                                 
+#&gt;  date     2020-10-02                                 
 #&gt; 
 #&gt; ─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
 #&gt;  package                * version    date       lib source                        
@@ -1097,7 +1102,7 @@
 #&gt;  data.table               1.13.0     2020-07-24 [1] RSPM (R 4.0.2)                
 #&gt;  DBI                      1.1.0      2019-12-15 [1] RSPM (R 4.0.0)                
 #&gt;  dbplyr                 * 1.4.4      2020-05-27 [1] RSPM (R 4.0.0)                
-#&gt;  DelayedArray           * 0.15.11    2020-09-29 [1] Bioconductor                  
+#&gt;  DelayedArray             0.15.12    2020-09-30 [1] Bioconductor                  
 #&gt;  desc                     1.2.0      2018-05-01 [2] RSPM (R 4.0.0)                
 #&gt;  digest                   0.6.25     2020-02-23 [2] RSPM (R 4.0.0)                
 #&gt;  dplyr                    1.0.2      2020-08-18 [1] RSPM (R 4.0.2)                
@@ -1126,7 +1131,8 @@
 #&gt;  lifecycle                0.2.0      2020-03-06 [2] RSPM (R 4.0.0)                
 #&gt;  lubridate                1.7.9      2020-06-08 [1] RSPM (R 4.0.2)                
 #&gt;  magrittr                 1.5        2014-11-22 [2] RSPM (R 4.0.0)                
-#&gt;  Matrix                 * 1.2-18     2019-11-27 [3] CRAN (R 4.0.2)                
+#&gt;  Matrix                   1.2-18     2019-11-27 [3] CRAN (R 4.0.2)                
+#&gt;  MatrixGenerics         * 1.1.3      2020-09-30 [1] Bioconductor                  
 #&gt;  matrixStats            * 0.57.0     2020-09-25 [1] RSPM (R 4.0.2)                
 #&gt;  memoise                  1.1.0      2017-04-21 [2] RSPM (R 4.0.0)                
 #&gt;  mime                     0.9        2020-02-04 [2] RSPM (R 4.0.0)                
@@ -1145,20 +1151,20 @@
 #&gt;  rappdirs                 0.3.1      2016-03-28 [1] RSPM (R 4.0.0)                
 #&gt;  Rcpp                     1.0.5      2020-07-06 [2] RSPM (R 4.0.2)                
 #&gt;  RCurl                    1.98-1.2   2020-04-18 [1] RSPM (R 4.0.0)                
-#&gt;  recount3               * 0.99.0     2020-10-01 [1] Bioconductor                  
+#&gt;  recount3               * 0.99.0     2020-10-02 [1] Bioconductor                  
 #&gt;  RefManageR               1.2.12     2019-04-03 [1] RSPM (R 4.0.0)                
 #&gt;  rlang                    0.4.7      2020-07-09 [2] RSPM (R 4.0.2)                
-#&gt;  rmarkdown                2.3        2020-06-18 [1] RSPM (R 4.0.1)                
+#&gt;  rmarkdown                2.4        2020-09-30 [1] RSPM (R 4.0.2)                
 #&gt;  rprojroot                1.3-2      2018-01-03 [2] RSPM (R 4.0.0)                
 #&gt;  Rsamtools                2.5.3      2020-06-26 [1] Bioconductor                  
-#&gt;  RSQLite                  2.2.0      2020-01-07 [1] RSPM (R 4.0.2)                
+#&gt;  RSQLite                  2.2.1      2020-09-30 [1] RSPM (R 4.0.2)                
 #&gt;  rtracklayer              1.49.5     2020-08-07 [1] Bioconductor                  
 #&gt;  S4Vectors              * 0.27.13    2020-09-18 [1] Bioconductor                  
 #&gt;  sessioninfo            * 1.1.1      2018-11-05 [2] RSPM (R 4.0.0)                
 #&gt;  shiny                    1.5.0      2020-06-23 [1] RSPM (R 4.0.2)                
 #&gt;  stringi                  1.5.3      2020-09-09 [2] RSPM (R 4.0.2)                
 #&gt;  stringr                  1.4.0      2019-02-10 [2] RSPM (R 4.0.0)                
-#&gt;  SummarizedExperiment   * 1.19.7     2020-09-27 [1] Bioconductor                  
+#&gt;  SummarizedExperiment   * 1.19.8     2020-09-30 [1] Bioconductor                  
 #&gt;  systemfonts              0.3.2      2020-09-29 [1] RSPM (R 4.0.2)                
 #&gt;  tibble                   3.0.3      2020-07-10 [2] RSPM (R 4.0.2)                
 #&gt;  tidyselect               1.1.0      2020-05-11 [1] RSPM (R 4.0.0)                
