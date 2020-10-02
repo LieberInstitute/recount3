@@ -94,22 +94,13 @@ write.bibtex(bib, file = "quickstartRef.bib")
 
 # Overview
 
-The `r Biocpkg('recount3')` R/Bioconductor package is part of the `recount3` project and is the latest iteration of the `ReCount` family of projects that provide access to uniformly-processed RNA sequencing datasets. The **main documentation website** for all the `recount3`-related projects is available at [**recount.bio**](https://LieberInstitute/github.io/recount3-docs). Please check that website for more information about how this R/Bioconductor package and other tools are related to each other.
+The `r Biocpkg('recount3')` R/Bioconductor package is an interface to the recount3 project. recount3 provides uniformly processed RNA-seq data for hundreds of thousands of samples. The R package makes it possible to easily retrieve this data in standard Bioconductor containers, including _RangedSummarizedExperiment_.  The the sections on terminology and available data contains more detail on those subjects.
 
-## Teams involved
-
-The `ReCount` family involves the following teams:
-
-* [Ben Langmead's lab at JHU Computer Science](http://www.langmead-lab.org/)
-* [Kasper Daniel Hansen's lab at JHBSPH Biostatistics Department](https://www.hansenlab.org/)
-* [Leonardo Collado-Torres](http://lcolladotor.github.io/) and [Andrew E. Jaffe](http://aejaffe.com/) from [LIBD](https://www.libd.org/)
-* [Abhinav Nellore's lab at OHSU](http://nellore.bio/)
-* [Jeff Leek's lab at JHBSPH Biostatistics Deparment](http://jtleek.com/)
-* Data hosted by [SciServer from IDIES at JHU](https://www.sciserver.org/)
+<!-- The `r Biocpkg('recount3')` R/Bioconductor package is part of the `recount3` project and is the latest iteration of the `ReCount` family of projects that provide access to uniformly-processed RNA sequencing datasets. The **main documentation website** for all the `recount3`-related projects is available at [**recount.bio**](https://LieberInstitute/github.io/recount3-docs). Please check that website for more information about how this R/Bioconductor package and other tools are related to each other. -->
 
 # Basics
 
-## Install `recount3`
+## Installing `recount3`
 
 `R` is an open-source statistical environment which can be easily modified to enhance its functionality via packages. `r Biocpkg('recount3')` is a `R` package available via the [Bioconductor](http://bioconductor/packages/recount3) repository for packages. `R` can be installed on any operating system from [CRAN](https://cran.r-project.org/) after which you can install `r Biocpkg('recount3')` by using the following commands in your `R` session:
 
@@ -473,6 +464,19 @@ In particular, this functionality can be useful if you want to access the data a
 
 <a href="https://apps.sciserver.org/compute/"><img src="https://skyserver.sdss.org/dr14/en/images/sciserver_logo_inverted_vertical.png" width="400px"></a>
 
+
+## Teams involved
+
+The `ReCount` family involves the following teams:
+
+* [Ben Langmead's lab](http://www.langmead-lab.org/) at JHU Computer Science
+* [Kasper Daniel Hansen's lab](https://www.hansenlab.org/)  at JHBSPH Biostatistics Department
+* [Leonardo Collado-Torres](http://lcolladotor.github.io/) and [Andrew E. Jaffe](http://aejaffe.com/) from [LIBD](https://www.libd.org/)
+* [Abhinav Nellore's lab](http://nellore.bio/)  at OHSU
+* [Jeff Leek's lab](http://jtleek.com/) at JHBSPH Biostatistics Deparment
+* Data hosted by [SciServer from IDIES at JHU](https://www.sciserver.org/)
+
+
 ## Project history
 
 To clarify the relationship between the R/Bioconductor packages and the phases of `ReCount` `r citep(bib[["recount1paper"]])` please check the table below:
@@ -492,6 +496,11 @@ We remind you that the **main documentation website** for all the `recount3`-rel
 **Thank you!**
 
 P.S. An [alternative version of this vignette is available](http://research.libd.org/recount3/) that was made using `r CRANpkg("pkgdown")`.
+
+
+
+
+
 
 # Reproducibility
 
