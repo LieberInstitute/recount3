@@ -75,6 +75,7 @@ bib <- c(
     recount2paper = citation("recount")[1],
     recount2workflow = citation("recount")[2],
     recount1paper = citation("recount")[5],
+    recountbrain = citation("recount")[6],
     recount2fantom = citation("recount")[7],
     bioconductor2015 = RefManageR::BibEntry(
         bibtype = "Article",
@@ -200,6 +201,49 @@ assay(rse_gene_SRP009615, "counts") <- transform_counts(rse_gene_SRP009615)
 # Users guide
 
 `r Biocpkg('recount3')` `r citep(bib[['recount3paper']])` provides an interface for downloading the [recount3 raw files](https://LieberInstitute.github.io/recount3-docs/raw-files.html) and building Bioconductor-friendly R objects `r citep(list(bib[["bioconductor2015"]], bib[["SummarizedExperiment"]]))` that can be used with many downstream packages. To achieve this, the raw data is organized by **study** from a specific **data source**. That same study can be a part of one or more **collections**, which is a manually curated set of studies with collection-specific sample metadata (see the [Data source vs collection](https://LieberInstitute.github.io/recount3-docs/raw-files.html#data-source-vs-collection) for details). To get started with `r Biocpkg('recount3')`, you will need to identify the ID for the study of interest from either **human** or **mouse** for a particular **annotation** of interest. Once you have identified study, data source or collection, and annotation, `r Biocpkg('recount3')` can be used to build a `RangedSummarizedExperiment` object `r citep(bib[["SummarizedExperiment"]])` for either **gene**, **exon** or **exon-exon junction** expression feature data. Furthermore, `r Biocpkg('recount3')` provides access to the coverage BigWig files that can be quantified for custom set of genomic regions using `r Biocpkg('megadepth')`. Furthermore, `r Biocpkg('snapcount')` allows fast-queries for custom exon-exon junctions and other custom input.
+
+## Available data
+
+`r Biocpkg('recount3')` provides access to most of the [`recount3` raw files](https://LieberInstitute.github.io/recount3-docs/raw-files.html) in a form that is R/Bioconductor-friendly. As a summary of the data provided by the `recount3` project (Figure \@ref(fig:recountWorkflowFig1)), the main data files provided are:
+
+* **metadata**: information about the samples in `recount3`, which can come from sources such as the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) as well as `recount3` [quality metrics](https://LieberInstitute.github.io/recount3-docs/quality-check-fields.html).
+* **gene**: RNA expression data quantified at the gene annotation level. This information is provided for multiple annotations that are organism-specific. Similar to the `recount2` project, the `recount3` project provides counts at the base-pair coverage level `r citep(bib[["recount2workflow"]])`.
+* **exon**: RNA expression data quantified at the exon annotation level. The data is also annotation-specific and the counts are also at the base-pair coverage level.
+* **exon-exon junctions**: RNA expression data quantified at the exon-exon junction level. This data is annotation-agnostic (it does not depend on the annotation) and is variable across each study because different sets of exon-exon junctions are measured in each study.
+* **bigWig**: RNA expression data in raw format at the base-pair coverage resolution. This raw data when coupled with a given annotation can be used to generate gene and exon level counts using software such as `r Biocpkg("megadepth")`. It enables exploring the RNA expression landscape in an annotation-agnostic way.
+
+```{r "recountWorkflowFig1", out.width="100%", fig.align="center", fig.cap = "Overview of the data available in recount2 and recount3. Reads (pink boxes) aligned to the reference genome can be used to compute a base-pair coverage curve and identify exon-exon junctions (split reads). Gene and exon count matrices are generated using annotation information providing the gene (green boxes) and exon (blue boxes) coordinates together with the base-level coverage curve. The reads spanning exon-exon junctions (jx) are used to compute a third count matrix that might include unannotated junctions (jx 3 and 4). Without using annotation information, expressed regions (orange box) can be determined from the base-level coverage curve to then construct data-driven count matrices. DOI: < https://doi.org/10.12688/f1000research.12223.1>.", echo = FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/LieberInstitute/recountWorkflow/master/vignettes/Figure1.png")
+```
+
+
+## Terminology
+
+Here we describe some of the common terminology and acronyms used throughout the rest of the documentation. `r Biocpkg('recount3')` enables creating `RangedSummarizedExperiment` objects that contain expression quantitative data (Figure \@ref(fig:recountWorkflowFig2)). As a quick overview, some of the main terms are:
+
+* **rse**: a `RangedSummarizedExperiment` object from `r Biocpkg("SummarizedExperiment")` `r citep(bib[["SummarizedExperiment"]])` that contains:
+  * **counts**: a matrix with the expression feature data (either: gene, exon, or exon-exon junctions) and that can be accessed using `assays(counts)`.
+  * **metadata**: a table with information about the samples and quality metrics that can be accessed using `colData(rse)`.
+  * **annotation**: a table-like object with information about the expression features which can be annotation-specific (gene and exons) or annotation-agnostic (exon-exon junctions). This information can be accessed using `rowRanges(rse)`.
+  
+  
+```{r recountWorkflowFig2, out.width="100%", fig.align="center", fig.cap = "recount2 and recount3 provide coverage count matrices in RangedSummarizedExperiment (rse) objects. Once the rse object has been downloaded and loaded into R (using `recount3::create_rse()` or `recount2::download_study()`), the feature information is accessed with `rowRanges(rse)` (blue box), the counts with assays(rse) (pink box) and the sample metadata with `colData(rse)` (green box). The sample metadata stored in `colData(rse)` can be expanded with custom code (brown box) matching by a unique sample identifier such as the SRA Run ID. The rse object is inside the purple box and matching data is highlighted in each box. DOI: < https://doi.org/10.12688/f1000research.12223.1>.", echo = FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/LieberInstitute/recountWorkflow/master/vignettes/Figure2.png")
+```
+
+`r Biocpkg('recount3')` enables accessing data from multiple reference organisms from public projects. To identify these projects, the key terms we use are:
+
+* **project**: the project ID, which is typically the same ID that is used externally to identify that project in databases like the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) ^[GTEx and TCGA are broken up by tissue as described later in this vignette.]
+* **project_home**: the location for where the project is located at in the main `recount3` data host: IDIES SciServer. We have two types of project homes:
+  * **data_source**: this identifies where the raw data was downloaded from for creating `recount3`.
+  * **collection**: this identifies a human-curated set of projects or samples. The main difference compared to a *data_source* is that a *collection* has collection-specific metadata. For example, someone might have created a table of information about samples in several projects by reading the papers describing these studies as in `recount-brain` `r citep(bib[["recountbrain"]])`.
+* **organism**: the reference organism (species) for the RNA-seq data, which is either _human_ (hg38) or _mouse_ (mm10).
+
+Many of the [`recount3` raw files](https://LieberInstitute.github.io/recount3-docs/raw-files.html) include three columns that are used to identify each sample and that allow merging the data across these files. Those are:
+
+* **rail_id**: an internal ID used by the `recount` team. The name stems from `Rail-RNA` which was the aligner used for generated the data in `recount2` `r citep(bib[["recount2paper"]])`.
+* **external_id**: the external ID for the samle, such as the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) `run` ID.
+* **study**: the **project** ID.
 
 ## Find a study
 
@@ -495,7 +539,7 @@ We remind you that the **main documentation website** for all the `recount3`-rel
 
 **Thank you!**
 
-P.S. An [alternative version of this vignette is available](http://research.libd.org/recount3/) that was made using `r CRANpkg("pkgdown")`.
+P.S. An [alternative version of this vignette is available](https://LieberInstitute.github.io/recount3/) that was made using `r CRANpkg("pkgdown")`.
 
 
 
