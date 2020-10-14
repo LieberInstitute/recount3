@@ -174,26 +174,33 @@ rse_gene_SRP009615 <- create_rse(proj_info)
 
 ## Explore that RSE object
 rse_gene_SRP009615
+```
 
-## You can also interactively choose your study of interest
-if (interactive()) {
-    ## Note that you can interactively explore the available projects
-    proj_info_interactive <- interactiveDisplayBase::display(human_projects)
+You can also interactively choose your study of interest
 
-    ## Select a single row, then hit "send". The following code checks this.
-    stopifnot(nrow(proj_info_interactive) == 1)
+```{r "interactive_display", eval = FALSE}
+## Note that you can interactively explore the available projects
+proj_info_interactive <- interactiveDisplayBase::display(human_projects)
 
-    ## Then create the RSE object
-    rse_gene_interactive <- create_rse(proj_info_interactive)
-}
+## Select a single row, then hit "send". The following code checks this.
+stopifnot(nrow(proj_info_interactive) == 1)
 
+## Then create the RSE object
+rse_gene_interactive <- create_rse(proj_info_interactive)
+```
+
+Once you have a RSE file, you can use `transform_counts()` to transform the raw coverage counts.
+
+
+```{r "tranform_counts"}
 ## Once you have your RSE object, you can transform the raw coverage
 ## base-pair coverage counts using transform_counts().
 ## For RPKM, TPM or read outputs, check the details in transform_counts().
 assay(rse_gene_SRP009615, "counts") <- transform_counts(rse_gene_SRP009615)
-
-## Now you are ready to continue with downstream analysis software
 ```
+
+Now you are ready to continue with downstream analysis software.
+
 
 `r Biocpkg('recount3')` also supports accessing the BigWig raw coverage files as well as specific study or collection sample **metadata**. Please continue to the users guide for more detailed information.
 
@@ -276,11 +283,10 @@ Note that one of the projects for GTEx is `STUDY_NA`, that's because in `r Biocp
 
 If you prefer to view the list of available studies interactively, you can do so with `r Biocpkg('interactiveDisplayBase')` as shown below. You'll want to assign the output of `interactiveDisplayBase::display()` to an object so you can save your selections and use them later. By doing so, you'll be able to select a study of interest, and save the information for later use after you hit the "send" button.
 
-```{r "select_interactively"}
-if (interactive()) {
-    ## Interactively browse the human projects, select one, then hit send
-    selected_study <- interactiveDisplayBase::display(human_projects)
-}
+```{r "select_interactively", eval = FALSE}
+## Alternatively, interactively browse the human projects,
+## select one, then hit send
+selected_study <- interactiveDisplayBase::display(human_projects)
 ```
 
 Ultimately, we need three pieces of information in order to download a specific dataset from `r Biocpkg('recount3')`. Those are:
@@ -365,12 +371,13 @@ recount3_cols_groups[recount3_cols_groups > 1]
 
 ## Unique columns
 recount3_cols_groups[recount3_cols_groups == 1]
-
-## Explore them all
-if (interactive()) {
-    recount3_cols
-}
 ```
+
+```{r "explore_all", eval = FALSE}
+## Explore them all
+recount3_cols
+```
+
 
 ## Counts
 
