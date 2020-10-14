@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.2</span>
       </span>
     </div>
 
@@ -171,7 +171,7 @@ the <code>recount3</code> project home location (<code>project_home</code>), and
     <pre class="examples"><div class='input'>
 <span class='co'>## Find all the human projects</span>
 <span class='va'>human_projects</span> <span class='op'>&lt;-</span> <span class='fu'>available_projects</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>using temporary cache /tmp/Rtmp93jFio/BiocFileCache</span></div><div class='output co'>#&gt; <span class='message'>2020-10-02 21:08:54 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/sra.recount_project.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-10-02 21:08:55 caching file gtex.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/gtex.recount_project.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-10-02 21:08:55 caching file tcga.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/tcga/metadata/tcga.recount_project.MD.gz'</span></div><div class='input'>
+</div><div class='output co'>#&gt; <span class='message'>using temporary cache /tmp/Rtmp1BfWyN/BiocFileCache</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 15:09:21 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/sra.recount_project.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 15:09:23 caching file gtex.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/gtex.recount_project.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 15:09:23 caching file tcga.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/human/data_sources/tcga/metadata/tcga.recount_project.MD.gz'</span></div><div class='input'>
 <span class='co'>## Explore the results</span>
 <span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>human_projects</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; [1] 8742    5</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>human_projects</span><span class='op'>)</span>
@@ -213,7 +213,7 @@ the <code>recount3</code> project home location (<code>project_home</code>), and
 #&gt; 337786    COAD    human        tcga data_sources/tcga data_sources</div><div class='input'>
 <span class='co'>## Find all the mouse projects</span>
 <span class='va'>mouse_projects</span> <span class='op'>&lt;-</span> <span class='fu'>available_projects</span><span class='op'>(</span>organism <span class='op'>=</span> <span class='st'>"mouse"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>2020-10-02 21:09:01 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/mouse/data_sources/sra/metadata/sra.recount_project.MD.gz'</span></div><div class='input'>
+</div><div class='output co'>#&gt; <span class='message'>2020-10-14 15:09:29 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://idies.jhu.edu/recount3/data/mouse/data_sources/sra/metadata/sra.recount_project.MD.gz'</span></div><div class='input'>
 <span class='co'>## Explore the results</span>
 <span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>mouse_projects</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; [1] 10088     5</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>mouse_projects</span><span class='op'>)</span>
