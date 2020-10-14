@@ -16,7 +16,7 @@
 #' @examples
 #'
 #' ## Download the metadata file for project SRP009615
-#' url_SRP009615_meta <- file_locate_url(
+#' url_SRP009615_meta <- locate_url(
 #'     "SRP009615",
 #'     "data_sources/sra"
 #' )
@@ -26,7 +26,7 @@
 #' local_SRP009615_meta
 #'
 #' ## Download the gene counts file for project SRP009615
-#' url_SRP009615_gene <- file_locate_url(
+#' url_SRP009615_gene <- locate_url(
 #'     "SRP009615",
 #'     "data_sources/sra",
 #'     type = "gene"

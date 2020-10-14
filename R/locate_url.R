@@ -30,20 +30,20 @@
 #' @examples
 #'
 #' ## Example for metadata files from a project from SRA
-#' file_locate_url(
+#' locate_url(
 #'     "SRP009615",
 #'     "data_sources/sra"
 #' )
 #'
 #' ## Example for metadata files from a project that is part of a collection
-#' file_locate_url(
+#' locate_url(
 #'     "ERP110066",
 #'     "collections/geuvadis_smartseq",
 #'     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3"
 #' )
 #'
 #' ## Example for a BigWig file
-#' file_locate_url(
+#' locate_url(
 #'     "SRP009615",
 #'     "data_sources/sra",
 #'     "bw",
@@ -52,12 +52,12 @@
 #' )
 #'
 #' ## Locate example gene count files
-#' file_locate_url(
+#' locate_url(
 #'     "SRP009615",
 #'     "data_sources/sra",
 #'     "gene"
 #' )
-#' file_locate_url(
+#' locate_url(
 #'     "SRP009615",
 #'     "data_sources/sra",
 #'     "gene",
@@ -65,7 +65,7 @@
 #' )
 #'
 #' ## Example for a gene count file from a project that is part of a collection
-#' file_locate_url(
+#' locate_url(
 #'     "ERP110066",
 #'     "collections/geuvadis_smartseq",
 #'     "gene",
@@ -73,18 +73,18 @@
 #' )
 #'
 #' ## Locate example junction files
-#' file_locate_url(
+#' locate_url(
 #'     "SRP009615",
 #'     "data_sources/sra",
 #'     "jxn"
 #' )
 #'
 #' ## Example for metadata files from a project from SRA
-#' file_locate_url(
+#' locate_url(
 #'     "ERP001942",
 #'     "data_sources/sra"
 #' )
-file_locate_url <-
+locate_url <-
     function(project,
     project_home = project_homes(
         organism = organism,
@@ -193,7 +193,7 @@ file_locate_url <-
             file_source <- metadata$recount_project.file_source[i[1]]
 
             ## Find the files from the file source
-            url <- file_locate_url(
+            url <- locate_url(
                 project = project,
                 project_home = file_source,
                 type = type,

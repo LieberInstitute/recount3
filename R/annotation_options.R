@@ -3,7 +3,7 @@
 #' This function will return the available annotation options for a given
 #' `organism`.
 #'
-#' @inheritParams file_locate_url
+#' @inheritParams locate_url
 #'
 #' @return A `character()` vector with the supported annotation options for the
 #' given `organism`.

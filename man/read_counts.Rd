@@ -19,13 +19,13 @@ A \code{data.frame()} with sample IDs as the column names.
 }
 \description{
 This function reads in a \code{recount3} gene or gexon counts file into R. You can
-first locate the file using \code{file_locate_url()} then download it to your
+first locate the file using \code{locate_url()} then download it to your
 computer using \code{file_retrieve()}.
 }
 \examples{
 
 ## Download the gene counts file for project SRP009615
-url_SRP009615_gene <- file_locate_url(
+url_SRP009615_gene <- locate_url(
     "SRP009615",
     "data_sources/sra",
     type = "gene"
@@ -52,7 +52,7 @@ summary(SRP009615_gene_counts[, seq_len(6)])
 
 ## Locate and retrieve an exon counts file
 local_SRP009615_exon <- file_retrieve(
-    file_locate_url(
+    locate_url(
         "SRP009615",
         "data_sources/sra",
         type = "exon"
@@ -84,7 +84,7 @@ Other internal functions for accessing the recount3 data:
 \code{\link{annotation_ext}()},
 \code{\link{create_rse_manual}()},
 \code{\link{locate_url_ann}()},
-\code{\link{file_locate_url}()},
+\code{\link{locate_url}()},
 \code{\link{file_retrieve}()},
 \code{\link{project_homes}()},
 \code{\link{read_metadata}()}

@@ -7,7 +7,7 @@
 #'
 #' @param type  A `character(1)` specifying whether you want to access gene,
 #' exon, or exon-exon junction counts.
-#' @inheritParams file_locate_url
+#' @inheritParams locate_url
 #' @inheritParams file_retrieve
 #'
 #' @return A
@@ -133,7 +133,7 @@ create_rse_manual <- function(project,
     )
 
     metadata <- read_metadata(file_retrieve(
-        url = file_locate_url(
+        url = locate_url(
             project = project,
             project_home = project_home,
             type = "metadata",
@@ -149,7 +149,7 @@ create_rse_manual <- function(project,
     project_home <- metadata$recount_project.file_source[1]
 
     ## Add the URLs to the BigWig files
-    metadata$BigWigURL <- file_locate_url(
+    metadata$BigWigURL <- locate_url(
         project = project,
         project_home = project_home,
         type = "bw",
@@ -160,7 +160,7 @@ create_rse_manual <- function(project,
     )
 
     if (type == "jxn") {
-        jxn_files <- file_locate_url(
+        jxn_files <- locate_url(
             project = project,
             project_home = project_home,
             type = "jxn",
@@ -213,7 +213,7 @@ create_rse_manual <- function(project,
     if (type %in% c("gene", "exon")) {
         counts <- read_counts(
             file_retrieve(
-                url = file_locate_url(
+                url = locate_url(
                     project = project,
                     project_home = project_home,
                     type = type,

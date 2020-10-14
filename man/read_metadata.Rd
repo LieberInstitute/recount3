@@ -16,13 +16,13 @@ metadata.
 }
 \description{
 This function reads in the \code{recount3} metadata files into R. You can first
-locate the files using \code{file_locate_url()} then download it to your computer
+locate the files using \code{locate_url()} then download it to your computer
 using \code{file_retrieve()}.
 }
 \examples{
 
 ## Download the metadata files for project ERP110066
-url_ERP110066_meta <- file_locate_url(
+url_ERP110066_meta <- locate_url(
     "ERP110066",
     "data_sources/sra"
 )
@@ -40,7 +40,7 @@ colnames(ERP110066_meta)
 ## for this collection
 ERP110066_collection_meta <- read_metadata(
     metadata_files = file_retrieve(
-        file_locate_url(
+        locate_url(
             "ERP110066",
             "collections/geuvadis_smartseq",
             recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3"
@@ -54,7 +54,7 @@ colnames(ERP110066_collection_meta)[!colnames(ERP110066_collection_meta) \%in\% 
 ## Read the metadata for a mouse project
 DRP002367_meta <- read_metadata(
     metadata_files = file_retrieve(
-        file_locate_url("DRP002367", "data_sources/sra", organism = "mouse")
+        locate_url("DRP002367", "data_sources/sra", organism = "mouse")
     )
 )
 dim(DRP002367_meta)
@@ -62,7 +62,7 @@ dim(DRP002367_meta)
 ## Locate and read the GTEx bladder metadata
 gtex_bladder_meta <- read_metadata(
     file_retrieve(
-        file_locate_url("BLADDER", "data_sources/gtex")
+        locate_url("BLADDER", "data_sources/gtex")
     )
 )
 
@@ -74,7 +74,7 @@ Other internal functions for accessing the recount3 data:
 \code{\link{annotation_ext}()},
 \code{\link{create_rse_manual}()},
 \code{\link{locate_url_ann}()},
-\code{\link{file_locate_url}()},
+\code{\link{locate_url}()},
 \code{\link{file_retrieve}()},
 \code{\link{project_homes}()},
 \code{\link{read_counts}()}

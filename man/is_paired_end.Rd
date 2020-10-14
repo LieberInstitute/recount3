@@ -36,7 +36,7 @@ end or not.
 ## Download the metadata for SRP009615, a single-end study
 SRP009615_meta <- read_metadata(
     metadata_files = file_retrieve(
-        file_locate_url(
+        locate_url(
             "SRP009615",
             "data_sources/sra",
         )
@@ -49,7 +49,7 @@ is_paired_end(SRP009615_meta)
 ## Download the metadata for DRP000499, a paired-end study
 DRP000499_meta <- read_metadata(
     metadata_files = file_retrieve(
-        file_locate_url(
+        locate_url(
             "DRP000499",
             "data_sources/sra",
         )

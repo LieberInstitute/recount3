@@ -23,7 +23,7 @@ Download a remote file and cache it to re-use later
 \examples{
 
 ## Download the metadata file for project SRP009615
-url_SRP009615_meta <- file_locate_url(
+url_SRP009615_meta <- locate_url(
     "SRP009615",
     "data_sources/sra"
 )
@@ -33,7 +33,7 @@ local_SRP009615_meta <- file_retrieve(
 local_SRP009615_meta
 
 ## Download the gene counts file for project SRP009615
-url_SRP009615_gene <- file_locate_url(
+url_SRP009615_gene <- locate_url(
     "SRP009615",
     "data_sources/sra",
     type = "gene"
@@ -48,7 +48,7 @@ Other internal functions for accessing the recount3 data:
 \code{\link{annotation_ext}()},
 \code{\link{create_rse_manual}()},
 \code{\link{locate_url_ann}()},
-\code{\link{file_locate_url}()},
+\code{\link{locate_url}()},
 \code{\link{project_homes}()},
 \code{\link{read_counts}()},
 \code{\link{read_metadata}()}

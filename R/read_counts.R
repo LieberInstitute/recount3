@@ -1,7 +1,7 @@
 #' Read a counts file
 #'
 #' This function reads in a `recount3` gene or gexon counts file into R. You can
-#' first locate the file using `file_locate_url()` then download it to your
+#' first locate the file using `locate_url()` then download it to your
 #' computer using `file_retrieve()`.
 #'
 #' @param counts_file A `character(1)` with the local path to a `recount3`
@@ -25,7 +25,7 @@
 #' @examples
 #'
 #' ## Download the gene counts file for project SRP009615
-#' url_SRP009615_gene <- file_locate_url(
+#' url_SRP009615_gene <- locate_url(
 #'     "SRP009615",
 #'     "data_sources/sra",
 #'     type = "gene"
@@ -52,7 +52,7 @@
 #'
 #' ## Locate and retrieve an exon counts file
 #' local_SRP009615_exon <- file_retrieve(
-#'     file_locate_url(
+#'     locate_url(
 #'         "SRP009615",
 #'         "data_sources/sra",
 #'         type = "exon"

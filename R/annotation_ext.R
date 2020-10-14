@@ -5,7 +5,7 @@
 #'
 #' @param annotation A `character(1)` specifying which annotation you want to
 #' use.
-#' @inheritParams file_locate_url
+#' @inheritParams locate_url
 #'
 #'
 #' @return A `character(1)` with the annotation file extension to be used.

@@ -3,7 +3,7 @@
 #' This function finds the home for a given project (study) of interest based
 #' on the `organism` and the `home_type`.
 #'
-#' @inheritParams file_locate_url
+#' @inheritParams locate_url
 #' @inheritParams file_retrieve
 #'
 #' @return A `character()` vector with the available `project_home` options.
