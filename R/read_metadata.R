@@ -106,15 +106,7 @@ read_metadata <- function(metadata_files) {
     }
 
     ## Merge the metadata files
-    for (i in seq_along(meta_list)) {
-        if (i == 1) {
-            ## Initialize
-            meta <- meta_list[[i]]
-        } else {
-            ## Then merge one by one
-            meta <- merge(meta, meta_list[[i]], by = keys)
-        }
-    }
+    meta <- Reduce(function(...) merge(..., by = keys), meta_list)
 
     ## Add the origin to the colnames
     origin <- vapply(
