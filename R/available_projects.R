@@ -39,7 +39,7 @@
 #' ## How many are from a data source vs a compilation?
 #' table(mouse_samples$project_type, useNA = "ifany")
 available_samples <- function(organism = c("human", "mouse"),
-    recount3_url = "http://idies.jhu.edu/recount3/data",
+    recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
     bfc = BiocFileCache::BiocFileCache()) {
     organism <- match.arg(organism)
 
@@ -142,7 +142,7 @@ available_samples <- function(organism = c("human", "mouse"),
 #'     mouse_projects$file_source[mouse_projects$project_type == "data_sources"]
 #' )
 available_projects <- function(organism = c("human", "mouse"),
-    recount3_url = "http://idies.jhu.edu/recount3/data",
+    recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
     bfc = BiocFileCache::BiocFileCache()) {
     organism <- match.arg(organism)
 

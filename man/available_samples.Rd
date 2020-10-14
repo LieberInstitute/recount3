@@ -6,7 +6,7 @@
 \usage{
 available_samples(
   organism = c("human", "mouse"),
-  recount3_url = "http://idies.jhu.edu/recount3/data",
+  recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
   bfc = BiocFileCache::BiocFileCache()
 )
 }

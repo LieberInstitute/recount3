@@ -119,7 +119,7 @@ create_rse_manual <- function(project,
     annotation = annotation_options(organism),
     bfc = BiocFileCache::BiocFileCache(),
     jxn_format = c("ALL", "UNIQUE"),
-    recount3_url = "http://idies.jhu.edu/recount3/data") {
+    recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data")) {
     type <- match.arg(type)
     organism <- match.arg(organism)
     project_home <- match.arg(project_home)

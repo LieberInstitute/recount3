@@ -21,7 +21,7 @@
 locate_url_ann <- function(type = c("gene", "exon"),
     organism = c("human", "mouse"),
     annotation = annotation_options(organism),
-    recount3_url = "http://idies.jhu.edu/recount3/data") {
+    recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data")) {
     type <- match.arg(type)
     organism <- match.arg(organism)
     annotation <- match.arg(annotation)
