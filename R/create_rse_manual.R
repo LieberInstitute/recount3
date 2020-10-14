@@ -17,7 +17,7 @@
 #' @importFrom SummarizedExperiment SummarizedExperiment "assayNames<-"
 #' "metadata<-"
 #' @importFrom S4Vectors DataFrame
-#' @importFrom rtracklayer import
+#' @importFrom rtracklayer import.bed
 #' @importFrom Matrix readMM
 #' @importFrom GenomicRanges GRanges
 #' @importFrom sessioninfo package_info
@@ -179,7 +179,7 @@ create_rse_manual <- function(project,
     ## Read the feature information
     if (type %in% c("gene", "exon")) {
         feature_info <-
-            rtracklayer::import(file_retrieve(
+            rtracklayer::import.bed(file_retrieve(
                 url = file_locate_url_annotation(
                     type = type,
                     organism = organism,

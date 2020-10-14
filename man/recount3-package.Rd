@@ -12,12 +12,10 @@ Explore and download data from the recount project available at
     https://jhubiostatistics.shinyapps.io/recount3/. Using the recount3 package
     you can download RangedSummarizedExperiment objects at the gene, exon or
     exon-exon junctions level, the raw counts, the phenotype metadata used,
-    the urls to the sample coverage bigWig files or the mean coverage bigWig
-    file for a particular study. The RangedSummarizedExperiment objects can be
-    used by different packages for performing differential expression analysis.
-    Using http://bioconductor.org/packages/derfinder you can perform
-    annotation-agnostic differential expression analyses with the data from the
-    recount3 project as described at 
+    the urls to the sample coverage bigWig files. The RangedSummarizedExperiment
+    objects can be used by different packages for performing differential
+    expression analysis. Using data from the recount3 project you can perform
+    annotation-agnostic differential expression analyses as described at 
     http://doi.org/TODO.
 }
 \seealso{
