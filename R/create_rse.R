@@ -128,7 +128,7 @@ create_rse <-
     function(project_info,
     type = c("gene", "exon", "jxn"),
     annotation = annotation_options(project_info$organism),
-    bfc = BiocFileCache::BiocFileCache(),
+    bfc = recount3_cache(),
     jxn_format = c("ALL", "UNIQUE"),
     recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
     verbose = getOption("recount3_verbose", TRUE)) {

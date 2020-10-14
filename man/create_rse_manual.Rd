@@ -10,7 +10,7 @@ create_rse_manual(
   type = c("gene", "exon", "jxn"),
   organism = c("human", "mouse"),
   annotation = annotation_options(organism),
-  bfc = BiocFileCache::BiocFileCache(),
+  bfc = recount3_cache(),
   jxn_format = c("ALL", "UNIQUE"),
   recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
   verbose = getOption("recount3_verbose", TRUE)
@@ -32,7 +32,8 @@ download data from. Supported options are \code{"human"} or \code{"mouse"}.}
 download. Only used when \code{type} is either \code{gene} or \code{exon}.}
 
 \item{bfc}{A \link[BiocFileCache:BiocFileCache-class]{BiocFileCache-class}
-object where the files will be cached to.}
+object where the files will be cached to, typically created by
+\code{recount3_cache()}.}
 
 \item{jxn_format}{A \code{character(1)} specifying whether the exon-exon junction
 files are derived from all the reads (\code{ALL}) or only the uniquely mapping

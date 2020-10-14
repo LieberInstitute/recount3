@@ -7,7 +7,7 @@
 available_projects(
   organism = c("human", "mouse"),
   recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
-  bfc = BiocFileCache::BiocFileCache()
+  bfc = recount3_cache()
 )
 }
 \arguments{
@@ -18,7 +18,8 @@ download data from. Supported options are \code{"human"} or \code{"mouse"}.}
 or a local directory where you have mirrored \code{recount3}.}
 
 \item{bfc}{A \link[BiocFileCache:BiocFileCache-class]{BiocFileCache-class}
-object where the files will be cached to.}
+object where the files will be cached to, typically created by
+\code{recount3_cache()}.}
 }
 \value{
 A \code{data.frame()} with the project ID (\code{project}), the \code{organism}, the

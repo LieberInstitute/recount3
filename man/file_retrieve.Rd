@@ -16,7 +16,8 @@ which case, it won't be cached. If \code{length(url) > 1} , this function
 will be used recursively.}
 
 \item{bfc}{A \link[BiocFileCache:BiocFileCache-class]{BiocFileCache-class}
-object where the files will be cached to.}
+object where the files will be cached to, typically created by
+\code{recount3_cache()}.}
 
 \item{verbose}{A \code{logical(1)} indicating whether to show messages with
 updates.}

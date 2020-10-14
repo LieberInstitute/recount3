@@ -4,7 +4,8 @@
 #' which case, it won't be cached. If `length(url) > 1` , this function
 #' will be used recursively.
 #' @param bfc A [BiocFileCache-class][BiocFileCache::BiocFileCache-class]
-#' object where the files will be cached to.
+#' object where the files will be cached to, typically created by
+#' `recount3_cache()`.
 #' @param verbose A `logical(1)` indicating whether to show messages with
 #' updates.
 #'
@@ -73,8 +74,12 @@ file_retrieve <-
         }
         if (verbose)
             message(Sys.time(), " caching file ", basename(url), ".")
-        res <-
-            BiocFileCache::bfcrpath(bfc, url, exact = TRUE, verbose = verbose)
+        res <- BiocFileCache::bfcrpath(
+            bfc,
+            url,
+            exact = TRUE,
+            verbose = verbose
+        )
         names(res) <- names(url)
         return(res)
     }

@@ -7,7 +7,7 @@
 available_samples(
   organism = c("human", "mouse"),
   recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
-  bfc = BiocFileCache::BiocFileCache(),
+  bfc = recount3_cache(),
   verbose = getOption("recount3_verbose", TRUE)
 )
 }
@@ -19,7 +19,8 @@ download data from. Supported options are \code{"human"} or \code{"mouse"}.}
 or a local directory where you have mirrored \code{recount3}.}
 
 \item{bfc}{A \link[BiocFileCache:BiocFileCache-class]{BiocFileCache-class}
-object where the files will be cached to.}
+object where the files will be cached to, typically created by
+\code{recount3_cache()}.}
 
 \item{verbose}{A \code{logical(1)} indicating whether to show messages with
 updates.}

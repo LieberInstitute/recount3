@@ -478,31 +478,21 @@ You can also use `r Biocpkg("derfinder")` and `r Biocpkg("derfinderPlot")` if yo
 
 `r Biocpkg('recount3')` depends on `r Biocpkg('BiocFileCache')` `r citep(bib[['BiocFileCache']])` for organizing the raw files and caching them, such that if you use the same file more than once, you only have to download it once. `r Biocpkg('BiocFileCache')` will automatically update the file if it detects that the file has changed in the source
 
-If you want to inspect which files you have downloaded or even delete them, them you'll want to use `r Biocpkg('BiocFileCache')` functions such as `BiocFileCache::bfcinfo()` and `BiocFileCache::bfcremove()` as illustrated below.
+If you want to inspect which files you have downloaded or even delete them, them you'll want to use `recount3_cache_files()` and `recount3_cache_rm()` as illustrated below.
 
 ```{r "BiocFileCache"}
-library("BiocFileCache")
-
-## Set up your cache the same way you used the functions
-bfc <- BiocFileCache()
-
-## Locate all files
-bfc_files <- bfcinfo()
-
-## Find files from recount3
-bfc_recount3 <- grep("recount3", bfc_files[["fpath"]])
-
-## List the original URLs for the data
-bfc_files[["fpath"]][bfc_recount3]
-
-## You can remove the recount3 files from your cache if you want using bfcremove
-if (interactive()) {
-    bfcremove(bfc, rids = bfc_files[["rid"]][bfc_recount3])
-
-    ## Verify that the recount3 files have been deleted
-    bfcinfo()
-}
+## List the URLs of the recount3 data that you have downloaded
+recount3_cache_files()
 ```
+
+```{r "remove_files", eval = FALSE}
+## Delete the recount3 files from your cache
+recount3_cache_rm()
+
+## Check that no files are listed
+recount3_cache_files()
+```
+
 
 ## Your own mirror
 

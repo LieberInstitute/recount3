@@ -50,4 +50,5 @@ Imports:
     R.utils,
     Matrix,
     GenomicRanges,
-    sessioninfo
+    sessioninfo,
+    tools

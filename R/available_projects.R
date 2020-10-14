@@ -41,7 +41,7 @@
 #' table(mouse_samples$project_type, useNA = "ifany")
 available_samples <- function(organism = c("human", "mouse"),
     recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
-    bfc = BiocFileCache::BiocFileCache(),
+    bfc = recount3_cache(),
     verbose = getOption("recount3_verbose", TRUE)) {
     organism <- match.arg(organism)
 
@@ -145,7 +145,7 @@ available_samples <- function(organism = c("human", "mouse"),
 #' )
 available_projects <- function(organism = c("human", "mouse"),
     recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
-    bfc = BiocFileCache::BiocFileCache()) {
+    bfc = recount3_cache()) {
     organism <- match.arg(organism)
 
     samples <- available_samples(
