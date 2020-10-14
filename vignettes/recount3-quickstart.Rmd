@@ -66,7 +66,6 @@ bib <- c(
     interactiveDisplayBase = citation("interactiveDisplayBase"),
     rtracklayer = citation("rtracklayer"),
     S4Vectors = citation("S4Vectors"),
-    XML = citation("XML"),
     RCurl = citation("RCurl"),
     data.table = citation("data.table"),
     R.utils = citation("R.utils"),
@@ -578,7 +577,6 @@ The `r Biocpkg('recount3')` package `r citep(bib[['recount3']])` was made possib
 * `r CRANpkg('sessioninfo')` `r citep(bib[['sessioninfo']])`
 * `r Biocpkg('SummarizedExperiment')` `r citep(bib[['SummarizedExperiment']])`
 * `r CRANpkg('testthat')` `r citep(bib[['testthat']])`
-* `r CRANpkg('XML')` `r citep(bib[['XML']])`
 
 Code for creating the vignette
 
