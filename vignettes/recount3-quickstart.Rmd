@@ -508,7 +508,7 @@ if (interactive()) {
 
 `r Biocpkg('recount3')` functions such as `create_rse()` have a `recount3_url` argument that can be changed to point to a mirror or to a path in your computing system. This argument enables using `r Biocpkg('recount3')` with data stored in other locations, or even generated using the same processing pipeline that was used for `r Biocpkg('recount3')` but for your own/private data.
 
-The main documentation website documents how the raw files should be organized in your mirror or for your own data. You can inspect the structure of the data by checking the internals of `file_locate_url()` and `file_locate_url_annotation()`. Both functions can be used to get the full list of URLs. In addition, for a given mirror, `available_projects()` will show the local data sources and collections. Finally, `file_retrieve()` won't cache the data if it detects that the data already exists in the local disk.
+The main documentation website documents how the raw files should be organized in your mirror or for your own data. You can inspect the structure of the data by checking the internals of `file_locate_url()` and `locate_url_ann()`. Both functions can be used to get the full list of URLs. In addition, for a given mirror, `available_projects()` will show the local data sources and collections. Finally, `file_retrieve()` won't cache the data if it detects that the data already exists in the local disk.
 
 In particular, this functionality can be useful if you want to access the data at [IDIES](https://idies.jhu.edu/) using [SciServer Compute](https://apps.sciserver.org/compute/).
 

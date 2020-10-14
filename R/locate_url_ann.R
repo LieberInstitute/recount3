@@ -16,9 +16,9 @@
 #'
 #' @examples
 #'
-#' file_locate_url_annotation()
-#' file_locate_url_annotation(organism = "mouse")
-file_locate_url_annotation <- function(type = c("gene", "exon"),
+#' locate_url_ann()
+#' locate_url_ann(organism = "mouse")
+locate_url_ann <- function(type = c("gene", "exon"),
     organism = c("human", "mouse"),
     annotation = annotation_options(organism),
     recount3_url = "http://idies.jhu.edu/recount3/data") {

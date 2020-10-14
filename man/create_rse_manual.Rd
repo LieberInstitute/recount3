@@ -142,7 +142,7 @@ base-pair coverage counts used in recount2 and recount3.
 \seealso{
 Other internal functions for accessing the recount3 data: 
 \code{\link{annotation_ext}()},
-\code{\link{file_locate_url_annotation}()},
+\code{\link{locate_url_ann}()},
 \code{\link{file_locate_url}()},
 \code{\link{file_retrieve}()},
 \code{\link{project_homes}()},

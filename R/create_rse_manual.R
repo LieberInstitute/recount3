@@ -179,7 +179,7 @@ create_rse_manual <- function(project,
     if (type %in% c("gene", "exon")) {
         feature_info <-
             rtracklayer::import.bed(file_retrieve(
-                url = file_locate_url_annotation(
+                url = locate_url_ann(
                     type = type,
                     organism = organism,
                     annotation = annotation,
