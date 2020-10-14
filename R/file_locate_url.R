@@ -6,7 +6,7 @@
 #'
 #' @param project A `character(1)` with the ID for a given study.
 #' @param project_home A `character(1)` with the home directory for the
-#' `project`. You can find these using `project_home_available()`.
+#' `project`. You can find these using `project_homes()`.
 #' @param type A `character(1)` specifying whether you want to access gene
 #' counts, exon counts, exon-exon junctions or base-pair BigWig coverage files
 #' (one per `sample`).
@@ -86,7 +86,7 @@
 #' )
 file_locate_url <-
     function(project,
-    project_home = project_home_available(
+    project_home = project_homes(
         organism = organism,
         recount3_url = recount3_url
     ),

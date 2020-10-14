@@ -4,7 +4,7 @@
 #' from `recount3`. Note that a specific sample might be available from a
 #' given `data_source` and none or many `collections`.
 #'
-#' @inheritParams project_home_available
+#' @inheritParams project_homes
 #'
 #' @return A `data.frame()` with the sample ID used by the original source of
 #' the data (`external_id`), the project ID (`project`), the `organism`, the
@@ -43,10 +43,9 @@ available_samples <- function(organism = c("human", "mouse"),
     bfc = BiocFileCache::BiocFileCache()) {
     organism <- match.arg(organism)
 
-    homes <- project_home_available(
+    homes <- project_homes(
         organism = organism,
-        recount3_url = recount3_url,
-        bfc = bfc
+        recount3_url = recount3_url
     )
 
 

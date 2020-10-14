@@ -15,17 +15,16 @@
 #'
 #' ## List the different available `project_home` options for the default
 #' ## arguments
-#' project_home_available("human")
-#' project_home_available("mouse")
+#' project_homes("human")
+#' project_homes("mouse")
 #'
 #' ## Test files
-#' project_home_available("human",
+#' project_homes("human",
 #'     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3"
 #' )
-project_home_available <-
+project_homes <-
     function(organism = c("human", "mouse"),
-        recount3_url = "http://idies.jhu.edu/recount3/data",
-        bfc = BiocFileCache::BiocFileCache()) {
+        recount3_url = "http://idies.jhu.edu/recount3/data") {
         organism <- match.arg(organism)
 
         if (recount3_url == "http://idies.jhu.edu/recount3/data") {

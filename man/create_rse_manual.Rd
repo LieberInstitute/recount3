@@ -6,8 +6,7 @@
 \usage{
 create_rse_manual(
   project,
-  project_home = project_home_available(organism = organism, recount3_url =
-    recount3_url, bfc = bfc),
+  project_home = project_homes(organism = organism, recount3_url = recount3_url),
   type = c("gene", "exon", "jxn"),
   organism = c("human", "mouse"),
   annotation = annotation_options(organism),
@@ -20,7 +19,7 @@ create_rse_manual(
 \item{project}{A \code{character(1)} with the ID for a given study.}
 
 \item{project_home}{A \code{character(1)} with the home directory for the
-\code{project}. You can find these using \code{project_home_available()}.}
+\code{project}. You can find these using \code{project_homes()}.}
 
 \item{type}{A \code{character(1)} specifying whether you want to access gene,
 exon, or exon-exon junction counts.}
@@ -146,7 +145,7 @@ Other internal functions for accessing the recount3 data:
 \code{\link{file_locate_url_annotation}()},
 \code{\link{file_locate_url}()},
 \code{\link{file_retrieve}()},
-\code{\link{project_home_available}()},
+\code{\link{project_homes}()},
 \code{\link{read_counts}()},
 \code{\link{read_metadata}()}
 }

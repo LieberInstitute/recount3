@@ -110,10 +110,9 @@
 #' recount3_url <- "http://idies.jhu.edu/recount3/data"
 #' }
 create_rse_manual <- function(project,
-    project_home = project_home_available(
+    project_home = project_homes(
         organism = organism,
-        recount3_url = recount3_url,
-        bfc = bfc
+        recount3_url = recount3_url
     ),
     type = c("gene", "exon", "jxn"),
     organism = c("human", "mouse"),

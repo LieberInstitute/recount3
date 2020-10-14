@@ -76,7 +76,7 @@ Other internal functions for accessing the recount3 data:
 \code{\link{file_locate_url_annotation}()},
 \code{\link{file_locate_url}()},
 \code{\link{file_retrieve}()},
-\code{\link{project_home_available}()},
+\code{\link{project_homes}()},
 \code{\link{read_counts}()}
 }
 \concept{internal functions for accessing the recount3 data}
