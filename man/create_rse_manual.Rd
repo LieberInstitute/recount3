@@ -134,10 +134,11 @@ project <- "SRP009615"
 project_home <- "data_sources/sra"
 type <- "gene"
 organism <- "human"
-annotation <- "refseq"
+annotation <- "gencode_v26"
 jxn_format <- "ALL"
-bfc <- BiocFileCache::BiocFileCache()
+bfc <- recount3_cache()
 recount3_url <- "http://idies.jhu.edu/recount3/data"
+verbose <- TRUE
 }
 }
 \references{

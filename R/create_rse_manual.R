@@ -17,7 +17,7 @@
 #' @importFrom SummarizedExperiment SummarizedExperiment "assayNames<-"
 #' "metadata<-"
 #' @importFrom S4Vectors DataFrame
-#' @importFrom rtracklayer import.bed
+#' @importFrom rtracklayer import.gff
 #' @importFrom Matrix readMM
 #' @importFrom GenomicRanges GRanges
 #' @importFrom sessioninfo package_info
@@ -104,10 +104,11 @@
 #' project_home <- "data_sources/sra"
 #' type <- "gene"
 #' organism <- "human"
-#' annotation <- "refseq"
+#' annotation <- "gencode_v26"
 #' jxn_format <- "ALL"
-#' bfc <- BiocFileCache::BiocFileCache()
+#' bfc <- recount3_cache()
 #' recount3_url <- "http://idies.jhu.edu/recount3/data"
+#' verbose <- TRUE
 #' }
 create_rse_manual <- function(project,
     project_home = project_homes(
@@ -180,7 +181,7 @@ create_rse_manual <- function(project,
     ## Read the feature information
     if (type %in% c("gene", "exon")) {
         feature_info <-
-            rtracklayer::import.bed(file_retrieve(
+            rtracklayer::import.gff(file_retrieve(
                 url = locate_url_ann(
                     type = type,
                     organism = organism,
