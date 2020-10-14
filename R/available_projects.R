@@ -5,6 +5,7 @@
 #' given `data_source` and none or many `collections`.
 #'
 #' @inheritParams project_homes
+#' @inheritParams file_retrieve
 #'
 #' @return A `data.frame()` with the sample ID used by the original source of
 #' the data (`external_id`), the project ID (`project`), the `organism`, the
@@ -40,7 +41,8 @@
 #' table(mouse_samples$project_type, useNA = "ifany")
 available_samples <- function(organism = c("human", "mouse"),
     recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
-    bfc = BiocFileCache::BiocFileCache()) {
+    bfc = BiocFileCache::BiocFileCache(),
+    verbose = getOption("recount3_verbose", TRUE)) {
     organism <- match.arg(organism)
 
     homes <- project_homes(
@@ -58,7 +60,7 @@ available_samples <- function(organism = c("human", "mouse"),
     )
     names(urls) <- basename(homes)
 
-    local_files <- file_retrieve(urls, bfc = bfc)
+    local_files <- file_retrieve(urls, bfc = bfc, verbose = verbose)
 
     samples_list <- lapply(
         local_files,

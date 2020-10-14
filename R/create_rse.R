@@ -51,7 +51,8 @@
 #' ## Create an RSE object using gencode_v29 instead of gencode_v26
 #' rse_gene_SRP009615_gencode_v29 <- create_rse(
 #'     proj_info,
-#'     annotation = "gencode_v29"
+#'     annotation = "gencode_v29",
+#'     verbose = FALSE
 #' )
 #' rowRanges(rse_gene_SRP009615_gencode_v29)
 #'
@@ -119,7 +120,7 @@
 #' ## Obtain a list of RSE objects for all exon annotations
 #' \dontrun{
 #' rses_exon <- lapply(annotation_options(), function(x) {
-#'     create_rse(proj_info, type = "exon", annotation = x)
+#'     create_rse(proj_info, type = "exon", annotation = x, verbose = FALSE)
 #' })
 #' names(rses_exon) <- annotation_options()
 #' }
@@ -129,7 +130,8 @@ create_rse <-
     annotation = annotation_options(project_info$organism),
     bfc = BiocFileCache::BiocFileCache(),
     jxn_format = c("ALL", "UNIQUE"),
-    recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data")) {
+    recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
+    verbose = getOption("recount3_verbose", TRUE)) {
         ## Check the inputs
         stopifnot(
             "'project_info' should be a data.frame" =
@@ -155,7 +157,8 @@ create_rse <-
             annotation = annotation,
             bfc = bfc,
             jxn_format = jxn_format,
-            recount3_url = recount3_url
+            recount3_url = recount3_url,
+            verbose = verbose
         )
 
         return(rse)

@@ -10,7 +10,8 @@ create_rse(
   annotation = annotation_options(project_info$organism),
   bfc = BiocFileCache::BiocFileCache(),
   jxn_format = c("ALL", "UNIQUE"),
-  recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data")
+  recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
+  verbose = getOption("recount3_verbose", TRUE)
 )
 }
 \arguments{
@@ -34,6 +35,9 @@ projects: GTEx and TCGA for human.}
 
 \item{recount3_url}{A \code{character(1)} specifying the home URL for \code{recount3}
 or a local directory where you have mirrored \code{recount3}.}
+
+\item{verbose}{A \code{logical(1)} indicating whether to show messages with
+updates.}
 }
 \value{
 A
@@ -82,7 +86,8 @@ pryr::object_size(rse_gene_SRP009615)
 ## Create an RSE object using gencode_v29 instead of gencode_v26
 rse_gene_SRP009615_gencode_v29 <- create_rse(
     proj_info,
-    annotation = "gencode_v29"
+    annotation = "gencode_v29",
+    verbose = FALSE
 )
 rowRanges(rse_gene_SRP009615_gencode_v29)
 
@@ -150,7 +155,7 @@ pryr::object_size(rse_jxn_SRP009615)
 ## Obtain a list of RSE objects for all exon annotations
 \dontrun{
 rses_exon <- lapply(annotation_options(), function(x) {
-    create_rse(proj_info, type = "exon", annotation = x)
+    create_rse(proj_info, type = "exon", annotation = x, verbose = FALSE)
 })
 names(rses_exon) <- annotation_options()
 }

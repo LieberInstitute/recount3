@@ -119,7 +119,8 @@ create_rse_manual <- function(project,
     annotation = annotation_options(organism),
     bfc = BiocFileCache::BiocFileCache(),
     jxn_format = c("ALL", "UNIQUE"),
-    recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data")) {
+    recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
+    verbose = getOption("recount3_verbose", TRUE)) {
     type <- match.arg(type)
     organism <- match.arg(organism)
     project_home <- match.arg(project_home)
@@ -127,7 +128,7 @@ create_rse_manual <- function(project,
     jxn_format <- match.arg(jxn_format)
 
     ## First the metadata which is the smallest
-    message(
+    if(verbose) message(
         Sys.time(),
         " downloading and reading the metadata."
     )
@@ -141,7 +142,8 @@ create_rse_manual <- function(project,
             annotation = annotation,
             recount3_url = recount3_url
         ),
-        bfc = bfc
+        bfc = bfc,
+        verbose = verbose
     ))
 
     ## Update the project_home based on the metadata
@@ -171,7 +173,7 @@ create_rse_manual <- function(project,
         )
     }
 
-    message(
+    if(verbose) message(
         Sys.time(),
         " downloading and reading the feature information."
     )
@@ -185,12 +187,14 @@ create_rse_manual <- function(project,
                     annotation = annotation,
                     recount3_url = recount3_url
                 ),
-                bfc = bfc
+                bfc = bfc,
+                verbose = verbose
             ))
     } else if (type == "jxn") {
         feature_info <- utils::read.delim(file_retrieve(
             url = jxn_files[grep("\\.RR\\.gz$", jxn_files)],
-            bfc = bfc
+            bfc = bfc,
+            verbose = verbose
         ))
         ## Testing with ERP001942 revealed an issue here
         # > table(x$strand)
@@ -201,7 +205,7 @@ create_rse_manual <- function(project,
         feature_info <- GenomicRanges::GRanges(feature_info)
     }
 
-    message(
+    if(verbose) message(
         Sys.time(),
         " downloading and reading the counts: ",
         nrow(metadata),
@@ -221,17 +225,19 @@ create_rse_manual <- function(project,
                     annotation = annotation,
                     recount3_url = recount3_url
                 ),
-                bfc = bfc
+                bfc = bfc,
+                verbose = verbose
             ),
             samples = metadata$external_id
         )
     } else if (type == "jxn") {
         counts <- Matrix::readMM(file_retrieve(
             url = jxn_files[grep("\\.MM\\.gz$", jxn_files)],
-            bfc = bfc
+            bfc = bfc,
+            verbose = verbose
         ))
 
-        message(
+        if(verbose) message(
             Sys.time(),
             " matching exon-exon junction counts with the metadata."
         )
@@ -239,7 +245,8 @@ create_rse_manual <- function(project,
         ## metadata!
         jxn_rail <- read.delim(file_retrieve(
             url = jxn_files[grep("\\.ID\\.gz$", jxn_files)],
-            bfc = bfc
+            bfc = bfc,
+            verbose = verbose
         ))
         m <- match(metadata$rail_id, jxn_rail$rail_id)
         stopifnot(
@@ -251,7 +258,7 @@ create_rse_manual <- function(project,
     }
 
     ## Build the RSE object
-    message(
+    if(verbose) message(
         Sys.time(),
         " construcing the RangedSummarizedExperiment (rse) object."
     )

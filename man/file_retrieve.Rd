@@ -4,7 +4,11 @@
 \alias{file_retrieve}
 \title{Download a remote file and cache it to re-use later}
 \usage{
-file_retrieve(url, bfc = BiocFileCache::BiocFileCache())
+file_retrieve(
+  url,
+  bfc = BiocFileCache::BiocFileCache,
+  verbose = getOption("recount3_verbose", TRUE)
+)
 }
 \arguments{
 \item{url}{A \code{character(1)} with the file URL or the actual local path in
@@ -13,6 +17,9 @@ will be used recursively.}
 
 \item{bfc}{A \link[BiocFileCache:BiocFileCache-class]{BiocFileCache-class}
 object where the files will be cached to.}
+
+\item{verbose}{A \code{logical(1)} indicating whether to show messages with
+updates.}
 }
 \value{
 A \code{character(1)} with the path to the cached file.

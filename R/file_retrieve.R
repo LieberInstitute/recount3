@@ -5,6 +5,8 @@
 #' will be used recursively.
 #' @param bfc A [BiocFileCache-class][BiocFileCache::BiocFileCache-class]
 #' object where the files will be cached to.
+#' @param verbose A `logical(1)` indicating whether to show messages with
+#' updates.
 #'
 #' @return A `character(1)` with the path to the cached file.
 #' @export
@@ -35,34 +37,44 @@
 #'     url = url_SRP009615_gene
 #' )
 #' local_SRP009615_gene
-file_retrieve <- function(url, bfc = BiocFileCache::BiocFileCache()) {
-    ## In case you are working with more than one url (like with metadata)
-    if (length(url) > 1) {
-        return(vapply(url, file_retrieve, character(1), bfc = bfc))
-    }
-
-    ## In case the url is a local file, there's no need to cache it then
-    if (file.exists(url)) {
-        return(url)
-    } else if (!url.exists(url)) {
-        if (!grepl("tcga\\.recount_pred|gtex\\.recount_pred", url)) {
-            warning(
-                "The 'url' <",
+file_retrieve <-
+    function(url,
+        bfc = BiocFileCache::BiocFileCache,
+        verbose = getOption("recount3_verbose", TRUE)) {
+        ## In case you are working with more than one url (like with metadata)
+        if (length(url) > 1) {
+            return(vapply(
                 url,
-                "> does not exist or is not available.",
-                call. = FALSE
-            )
+                file_retrieve,
+                character(1),
+                bfc = bfc,
+                verbose = verbose
+            ))
         }
-        res <- as.character(NA)
+
+        ## In case the url is a local file, there's no need to cache it then
+        if (file.exists(url)) {
+            return(url)
+        } else if (!url.exists(url)) {
+            if (!grepl("tcga\\.recount_pred|gtex\\.recount_pred", url)) {
+                warning("The 'url' <",
+                    url,
+                    "> does not exist or is not available.",
+                    call. = FALSE)
+            }
+            res <- as.character(NA)
+            names(res) <- names(url)
+            return(res)
+        }
+
+        if (!methods::is(bfc, "BiocFileCache")) {
+            stop("'bfc' should be a BiocFileCache::BiocFileCache object.",
+                call. = FALSE)
+        }
+        if (verbose)
+            message(Sys.time(), " caching file ", basename(url), ".")
+        res <-
+            BiocFileCache::bfcrpath(bfc, url, exact = TRUE, verbose = verbose)
         names(res) <- names(url)
         return(res)
     }
-
-    if (!methods::is(bfc, "BiocFileCache")) {
-        stop("'bfc' should be a BiocFileCache::BiocFileCache object.", call. = FALSE)
-    }
-    message(Sys.time(), " caching file ", basename(url), ".")
-    res <- BiocFileCache::bfcrpath(bfc, url, exact = TRUE)
-    names(res) <- names(url)
-    return(res)
-}

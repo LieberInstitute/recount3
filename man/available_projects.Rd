@@ -16,6 +16,9 @@ download data from. Supported options are \code{"human"} or \code{"mouse"}.}
 
 \item{recount3_url}{A \code{character(1)} specifying the home URL for \code{recount3}
 or a local directory where you have mirrored \code{recount3}.}
+
+\item{bfc}{A \link[BiocFileCache:BiocFileCache-class]{BiocFileCache-class}
+object where the files will be cached to.}
 }
 \value{
 A \code{data.frame()} with the project ID (\code{project}), the \code{organism}, the

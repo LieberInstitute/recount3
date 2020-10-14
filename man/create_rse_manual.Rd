@@ -12,7 +12,8 @@ create_rse_manual(
   annotation = annotation_options(organism),
   bfc = BiocFileCache::BiocFileCache(),
   jxn_format = c("ALL", "UNIQUE"),
-  recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data")
+  recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
+  verbose = getOption("recount3_verbose", TRUE)
 )
 }
 \arguments{
@@ -40,6 +41,9 @@ projects: GTEx and TCGA for human.}
 
 \item{recount3_url}{A \code{character(1)} specifying the home URL for \code{recount3}
 or a local directory where you have mirrored \code{recount3}.}
+
+\item{verbose}{A \code{logical(1)} indicating whether to show messages with
+updates.}
 }
 \value{
 A
