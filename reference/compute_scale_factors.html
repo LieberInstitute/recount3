@@ -219,13 +219,13 @@ sample is paired-end or not.</p></td>
 <span class='co'>## Download the metadata for SRP009615, a single-end study</span>
 <span class='va'>SRP009615_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read_metadata.html'>read_metadata</a></span><span class='op'>(</span>
     metadata_files <span class='op'>=</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span><span class='op'>(</span>
-        <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span><span class='op'>(</span>
+        <span class='fu'><a href='locate_url.html'>locate_url</a></span><span class='op'>(</span>
             <span class='st'>"SRP009615"</span>,
             <span class='st'>"data_sources/sra"</span>,
         <span class='op'>)</span>
     <span class='op'>)</span>
 <span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>2020-10-14 15:09:56 caching file sra.sra.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 15:09:56 caching file sra.recount_project.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 15:09:56 caching file sra.recount_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 15:09:57 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 15:09:57 caching file sra.recount_pred.SRP009615.MD.gz.</span></div><div class='input'>
+</div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:39:31 caching file sra.sra.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:39:31 caching file sra.recount_project.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:39:31 caching file sra.recount_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:39:31 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:39:32 caching file sra.recount_pred.SRP009615.MD.gz.</span></div><div class='input'>
 <span class='co'>## Compute the scaling factors</span>
 <span class='fu'>compute_scale_factors</span><span class='op'>(</span><span class='va'>SRP009615_meta</span>, by <span class='op'>=</span> <span class='st'>"auc"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;  SRR387777  SRR387778  SRR387779  SRR387780  SRR389079  SRR389080  SRR389081 
@@ -239,13 +239,13 @@ sample is paired-end or not.</p></td>
 <span class='co'>## Download the metadata for DRP000499, a paired-end study</span>
 <span class='va'>DRP000499_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read_metadata.html'>read_metadata</a></span><span class='op'>(</span>
     metadata_files <span class='op'>=</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span><span class='op'>(</span>
-        <span class='fu'><a href='file_locate_url.html'>file_locate_url</a></span><span class='op'>(</span>
+        <span class='fu'><a href='locate_url.html'>locate_url</a></span><span class='op'>(</span>
             <span class='st'>"DRP000499"</span>,
             <span class='st'>"data_sources/sra"</span>,
         <span class='op'>)</span>
     <span class='op'>)</span>
 <span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>2020-10-14 15:09:57 caching file sra.sra.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 15:09:57 caching file sra.recount_project.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 15:09:57 caching file sra.recount_qc.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 15:09:58 caching file sra.recount_seq_qc.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 15:09:58 caching file sra.recount_pred.DRP000499.MD.gz.</span></div><div class='input'>
+</div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:39:32 caching file sra.sra.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:39:32 caching file sra.recount_project.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:39:32 caching file sra.recount_qc.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:39:33 caching file sra.recount_seq_qc.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:39:33 caching file sra.recount_pred.DRP000499.MD.gz.</span></div><div class='input'>
 <span class='co'>## Compute the scaling factors</span>
 <span class='fu'>compute_scale_factors</span><span class='op'>(</span><span class='va'>DRP000499_meta</span>, by <span class='op'>=</span> <span class='st'>"auc"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;   DRR001622   DRR001623   DRR001624   DRR001625   DRR001626   DRR001627 
