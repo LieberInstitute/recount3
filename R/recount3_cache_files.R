@@ -8,7 +8,7 @@
 #' @return A `character()` with the URLs of the recount3 files you have
 #' downloaded.
 #' @export
-#' @importfrom BiocFileCache bfcinfo
+#' @importFrom BiocFileCache bfcinfo
 #' @family recount3 cache functions
 #'
 #' @examples

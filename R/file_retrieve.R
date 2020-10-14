@@ -40,7 +40,7 @@
 #' local_SRP009615_gene
 file_retrieve <-
     function(url,
-        bfc = BiocFileCache::BiocFileCache,
+        bfc = recount3_cache(),
         verbose = getOption("recount3_verbose", TRUE)) {
         ## In case you are working with more than one url (like with metadata)
         if (length(url) > 1) {

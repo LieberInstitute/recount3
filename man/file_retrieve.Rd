@@ -6,7 +6,7 @@
 \usage{
 file_retrieve(
   url,
-  bfc = BiocFileCache::BiocFileCache,
+  bfc = recount3_cache(),
   verbose = getOption("recount3_verbose", TRUE)
 )
 }

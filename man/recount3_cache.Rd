@@ -4,11 +4,11 @@
 \alias{recount3_cache}
 \title{Specify where to cache the recount3 files}
 \usage{
-recount3_cache(dir = getOption("recount3_cache", NULL))
+recount3_cache(cache_dir = getOption("recount3_cache", NULL))
 }
 \arguments{
-\item{dir}{A \code{character(1)} specifying the directory that will be used
-for caching the data.}
+\item{cache_dir}{A \code{character(1)} specifying the directory that will be used
+for caching the data. If \code{NULL} a sensible default location will be used.}
 }
 \value{
 A \link[BiocFileCache:BiocFileCache-class]{BiocFileCache-class}

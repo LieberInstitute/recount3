@@ -7,7 +7,7 @@
 #'
 #' @return A `character(0)` if the removal of files was successful.
 #' @export
-#' @importfrom BiocFileCache bfcinfo bfcremove
+#' @importFrom BiocFileCache bfcinfo bfcremove
 #' @family recount3 cache functions
 #'
 #' @examples
