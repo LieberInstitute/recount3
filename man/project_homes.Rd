@@ -39,9 +39,9 @@ project_homes("human",
 Other internal functions for accessing the recount3 data: 
 \code{\link{annotation_ext}()},
 \code{\link{create_rse_manual}()},
+\code{\link{file_retrieve}()},
 \code{\link{locate_url_ann}()},
 \code{\link{locate_url}()},
-\code{\link{file_retrieve}()},
 \code{\link{read_counts}()},
 \code{\link{read_metadata}()}
 }
