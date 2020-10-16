@@ -21,7 +21,6 @@ stored in your \code{recount3_cache()}.
 \examples{
 ## List the URLs you have downloaded
 recount3_cache_files()
-
 \dontrun{
 ## Now delete the cached files
 recount3_cache_rm()

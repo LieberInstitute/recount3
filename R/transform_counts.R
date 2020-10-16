@@ -68,7 +68,6 @@
 #' ## Compute TPMs
 #' assays(rse_gene_SRP009615)$TPM <- recount::getTPM(rse_gene_SRP009615, length_var = "score")
 #' colSums(assay(rse_gene_SRP009615, "TPM")) / 1e6 ## Should all be equal to 1
-#'
 transform_counts <- function(
     rse,
     by = c("auc", "mapped_reads"),
@@ -180,8 +179,6 @@ transform_counts <- function(
 #' )
 #' plot(recount2 ~ recount3, data = recount_factors)
 #' abline(a = 0, b = 1, col = "purple", lwd = 2, lty = 2)
-#'
-#'
 compute_scale_factors <- function(
     x,
     by = c("auc", "mapped_reads"),
@@ -356,7 +353,6 @@ is_paired_end <- function(x,
 #' )
 #' plot(recount2 ~ recount3, data = recount_readsums)
 #' abline(a = 0, b = 1, col = "purple", lwd = 2, lty = 2)
-#'
 compute_read_counts <- function(rse, round = TRUE, avg_mapped_read_length = "recount_qc.star.average_mapped_length") {
     stopifnot(is(rse, "RangedSummarizedExperiment"))
     stopifnot("raw_counts" %in% assayNames(rse))

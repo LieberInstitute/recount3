@@ -77,7 +77,6 @@ recount_readsums <- data.frame(
 )
 plot(recount2 ~ recount3, data = recount_readsums)
 abline(a = 0, b = 1, col = "purple", lwd = 2, lty = 2)
-
 }
 \references{
 Collado-Torres L, Nellore A and Jaffe AE. recount workflow: Accessing over

@@ -40,8 +40,8 @@
 #' local_SRP009615_gene
 file_retrieve <-
     function(url,
-        bfc = recount3_cache(),
-        verbose = getOption("recount3_verbose", TRUE)) {
+    bfc = recount3_cache(),
+    verbose = getOption("recount3_verbose", TRUE)) {
         ## In case you are working with more than one url (like with metadata)
         if (length(url) > 1) {
             return(vapply(
@@ -61,7 +61,8 @@ file_retrieve <-
                 warning("The 'url' <",
                     url,
                     "> does not exist or is not available.",
-                    call. = FALSE)
+                    call. = FALSE
+                )
             }
             res <- as.character(NA)
             names(res) <- names(url)
@@ -70,10 +71,12 @@ file_retrieve <-
 
         if (!methods::is(bfc, "BiocFileCache")) {
             stop("'bfc' should be a BiocFileCache::BiocFileCache object.",
-                call. = FALSE)
+                call. = FALSE
+            )
         }
-        if (verbose)
-            message(Sys.time(), " caching file ", basename(url), ".")
+        if (verbose) {
+              message(Sys.time(), " caching file ", basename(url), ".")
+          }
         res <- BiocFileCache::bfcrpath(
             bfc,
             url,

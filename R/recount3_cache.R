@@ -18,6 +18,6 @@
 #' ## Locate the recount3 cache default directory
 #' recount3_cache()
 recount3_cache <- function(cache_dir = getOption("recount3_cache", NULL)) {
-    if(is.null(cache_dir)) cache_dir <- tools::R_user_dir("recount3", "cache")
+    if (is.null(cache_dir)) cache_dir <- tools::R_user_dir("recount3", "cache")
     BiocFileCache::BiocFileCache(cache_dir)
 }

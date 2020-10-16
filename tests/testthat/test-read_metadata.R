@@ -6,8 +6,10 @@ test_bfc <- recount3_cache(
     )
 )
 
-url_DRP002835_meta <- locate_url("DRP002835",
-    "data_sources/sra")
+url_DRP002835_meta <- locate_url(
+    "DRP002835",
+    "data_sources/sra"
+)
 
 test_that("Reading metadata files works", {
     meta <-

@@ -129,10 +129,12 @@ create_rse_manual <- function(project,
     jxn_format <- match.arg(jxn_format)
 
     ## First the metadata which is the smallest
-    if(verbose) message(
-        Sys.time(),
-        " downloading and reading the metadata."
-    )
+    if (verbose) {
+        message(
+            Sys.time(),
+            " downloading and reading the metadata."
+        )
+    }
 
     metadata <- read_metadata(file_retrieve(
         url = locate_url(
@@ -174,10 +176,12 @@ create_rse_manual <- function(project,
         )
     }
 
-    if(verbose) message(
-        Sys.time(),
-        " downloading and reading the feature information."
-    )
+    if (verbose) {
+        message(
+            Sys.time(),
+            " downloading and reading the feature information."
+        )
+    }
     ## Read the feature information
     if (type %in% c("gene", "exon")) {
         feature_info <-
@@ -206,15 +210,17 @@ create_rse_manual <- function(project,
         feature_info <- GenomicRanges::GRanges(feature_info)
     }
 
-    if(verbose) message(
-        Sys.time(),
-        " downloading and reading the counts: ",
-        nrow(metadata),
-        ifelse(nrow(metadata) > 1, " samples", " sample"),
-        " across ",
-        length(feature_info),
-        " features."
-    )
+    if (verbose) {
+        message(
+            Sys.time(),
+            " downloading and reading the counts: ",
+            nrow(metadata),
+            ifelse(nrow(metadata) > 1, " samples", " sample"),
+            " across ",
+            length(feature_info),
+            " features."
+        )
+    }
     if (type %in% c("gene", "exon")) {
         counts <- read_counts(
             file_retrieve(
@@ -238,10 +244,12 @@ create_rse_manual <- function(project,
             verbose = verbose
         ))
 
-        if(verbose) message(
-            Sys.time(),
-            " matching exon-exon junction counts with the metadata."
-        )
+        if (verbose) {
+            message(
+                Sys.time(),
+                " matching exon-exon junction counts with the metadata."
+            )
+        }
         ## The samples in the MM jxn table are not in the same order as the
         ## metadata!
         jxn_rail <- read.delim(file_retrieve(
@@ -259,10 +267,12 @@ create_rse_manual <- function(project,
     }
 
     ## Build the RSE object
-    if(verbose) message(
-        Sys.time(),
-        " construcing the RangedSummarizedExperiment (rse) object."
-    )
+    if (verbose) {
+        message(
+            Sys.time(),
+            " construcing the RangedSummarizedExperiment (rse) object."
+        )
+    }
 
     stopifnot(
         "Metadata external_id and counts colnames are not matching." =

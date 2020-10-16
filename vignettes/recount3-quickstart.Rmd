@@ -79,7 +79,7 @@ bib <- c(
     bioconductor2015 = RefManageR::BibEntry(
         bibtype = "Article",
         key = "bioconductor2015",
-        author = "Wolfgang Huber and Vincent J Carey and Robert Gentleman and Simon Anders and Marc Carlson and Benilton S Carvalho and Hector Corrada Bravo and Sean Davis and Laurent Gatto and Thomas Girke and Raphael Gottardo and Florian Hahne and Kasper D Hansen and Rafael A Irizarry and Michael Lawrence and Michael I Love and James MacDonald and Valerie Obenchain and Andrzej K Oleś and Hervé Pagès and Alejandro Reyes and Paul Shannon and Gordon K Smyth and Dan Tenenbaum and Levi Waldron and Martin Morgan",
+        author = "Wolfgang Huber and Vincent J Carey and Robert Gentleman and Simon Anders and Marc Carlson and Benilton S Carvalho and Hector Corrada Bravo and Sean Davis and Laurent Gatto and Thomas Girke and Raphael Gottardo and Florian Hahne and Kasper D Hansen and Rafael A Irizarry and Michael Lawrence and Michael I Love and James MacDonald and Valerie Obenchain and Andrzej K Oles and Hervé Pagès and Alejandro Reyes and Paul Shannon and Gordon K Smyth and Dan Tenenbaum and Levi Waldron and Martin Morgan",
         title = "Orchestrating high-throughput genomic analysis with Bioconductor",
         year = 2015, doi = "10.1038/nmeth.3252",
         journal = "Nature Methods",
@@ -106,8 +106,8 @@ The **main documentation website** for all the `recount3`-related projects is av
 
 ```{r 'install', eval = FALSE}
 if (!requireNamespace("BiocManager", quietly = TRUE)) {
-      install.packages("BiocManager")
-  }
+    install.packages("BiocManager")
+}
 
 BiocManager::install("recount3")
 

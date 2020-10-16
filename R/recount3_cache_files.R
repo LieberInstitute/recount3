@@ -17,7 +17,8 @@
 recount3_cache_files <- function(bfc = recount3_cache()) {
     if (!methods::is(bfc, "BiocFileCache")) {
         stop("'bfc' should be a BiocFileCache::BiocFileCache object.",
-            call. = FALSE)
+            call. = FALSE
+        )
     }
 
     ## Locate all files

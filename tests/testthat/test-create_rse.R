@@ -18,9 +18,11 @@ test_that("Creating an RSE works (ercc) - user friendly function", {
             bfc = test_bfc
         )
     rse_DRP002835_test <-
-        create_rse_manual(project = "DRP002835",
+        create_rse_manual(
+            project = "DRP002835",
             annotation = "ercc",
-            bfc = test_bfc)
+            bfc = test_bfc
+        )
 
     expect_equivalent(rse_DRP002835_test_userfriendly, rse_DRP002835_test)
 })

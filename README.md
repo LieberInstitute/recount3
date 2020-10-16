@@ -21,7 +21,7 @@ tagged
 posts.](http://www.bioconductor.org/shields/posts/recount3.svg)](https://support.bioconductor.org/t/recount3/)
 <!-- badges: end -->
 
-The *[recount3](https://bioconductor.org/packages/3.12/recount3)*
+The *[recount3](https://bioconductor.org/packages/3.11/recount3)*
 R/Bioconductor package is part of the `recount3` project and is the
 latest iteration of the `ReCount` family of projects that provide access
 to uniformly-processed RNA sequencing datasets. The **main documentation
@@ -33,7 +33,7 @@ R/Bioconductor package and other tools are related to each other.
 ## Documentation
 
 For more information about
-*[recount3](https://bioconductor.org/packages/3.12/recount3)* check the
+*[recount3](https://bioconductor.org/packages/3.11/recount3)* check the
 vignettes [through
 Bioconductor](http://bioconductor.org/packages/recount3) or at the
 [documentation website](http://lieberinstitute.github.io/recount3).
@@ -42,13 +42,13 @@ Bioconductor](http://bioconductor.org/packages/recount3) or at the
 
 Get the latest stable `R` release from
 [CRAN](http://cran.r-project.org/). Then install
-*[recount3](https://bioconductor.org/packages/3.12/recount3)* using from
+*[recount3](https://bioconductor.org/packages/3.11/recount3)* using from
 [Bioconductor](http://bioconductor.org/) the following code:
 
 ``` r
 if (!requireNamespace("BiocManager", quietly = TRUE)) {
-      install.packages("BiocManager")
-  }
+    install.packages("BiocManager")
+}
 
 BiocManager::install("recount3")
 ```
@@ -65,7 +65,7 @@ print(citation("recount3"), bibtex = TRUE)
 #> Collado-Torres L (2020). _Explore and download data from the recount3
 #> project_. doi: 10.18129/B9.bioc.recount3 (URL:
 #> https://doi.org/10.18129/B9.bioc.recount3),
-#> https://github.com/LieberInstitute/recount3 - R package version 0.99.0,
+#> https://github.com/LieberInstitute/recount3 - R package version 0.99.5,
 #> <URL: http://www.bioconductor.org/packages/recount3>.
 #> 
 #> A BibTeX entry for LaTeX users is
@@ -75,7 +75,7 @@ print(citation("recount3"), bibtex = TRUE)
 #>     author = {Leonardo Collado-Torres},
 #>     year = {2020},
 #>     url = {http://www.bioconductor.org/packages/recount3},
-#>     note = {https://github.com/LieberInstitute/recount3 - R package version 0.99.0},
+#>     note = {https://github.com/LieberInstitute/recount3 - R package version 0.99.5},
 #>     doi = {10.18129/B9.bioc.recount3},
 #>   }
 #> 
@@ -97,7 +97,7 @@ print(citation("recount3"), bibtex = TRUE)
 ```
 
 Please note that
-*[recount3](https://bioconductor.org/packages/3.12/recount3)* was only
+*[recount3](https://bioconductor.org/packages/3.11/recount3)* was only
 made possible thanks to many other R and bioinformatics software
 authors, which are cited either in the vignettes and/or the paper(s)
 describing this package.
@@ -119,7 +119,7 @@ By contributing to this project, you agree to abide by its terms.
     *[rcmdcheck](https://CRAN.R-project.org/package=rcmdcheck)*
     customized to use [Bioconductor’s docker
     containers](https://www.bioconductor.org/help/docker/) and
-    *[BiocCheck](https://bioconductor.org/packages/3.12/BiocCheck)*.
+    *[BiocCheck](https://bioconductor.org/packages/3.11/BiocCheck)*.
   - Code coverage assessment is possible thanks to
     [codecov](https://codecov.io/gh) and
     *[covr](https://CRAN.R-project.org/package=covr)*.
@@ -143,8 +143,8 @@ phases of `ReCount` please check the table below:
 | Year | Phase                                                         | Main references                                                                                                                            | R/Bioconductor                                                |
 | ---- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------- |
 | 2011 | [`ReCount`](http://bowtie-bio.sourceforge.net/recount/)       | DOI: [10.1186/1471-2105-12-449](https://doi.org/10.1186/1471-2105-12-449)                                                                  | none                                                          |
-| 2017 | [`recount2`](https://jhubiostatistics.shinyapps.io/recount/)  | DOI: [10.1038/nbt.3838](https://doi.org/10.1038/nbt.3838) [10.12688/f1000research.12223.1](https://doi.org/10.12688/f1000research.12223.1) | *[recount](https://bioconductor.org/packages/3.12/recount)*   |
-| 2020 | [`recount3`](https://LieberInstitute/github.io/recount3-docs) | DOI: [TODO](https://doi.org/TODO)                                                                                                          | *[recount3](https://bioconductor.org/packages/3.12/recount3)* |
+| 2017 | [`recount2`](https://jhubiostatistics.shinyapps.io/recount/)  | DOI: [10.1038/nbt.3838](https://doi.org/10.1038/nbt.3838) [10.12688/f1000research.12223.1](https://doi.org/10.12688/f1000research.12223.1) | *[recount](https://bioconductor.org/packages/3.11/recount)*   |
+| 2020 | [`recount3`](https://LieberInstitute/github.io/recount3-docs) | DOI: [TODO](https://doi.org/TODO)                                                                                                          | *[recount3](https://bioconductor.org/packages/3.11/recount3)* |
 
 ## Teams involved
 

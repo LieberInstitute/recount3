@@ -24,7 +24,7 @@
 #' )
 project_homes <-
     function(organism = c("human", "mouse"),
-        recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data")) {
+    recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data")) {
         organism <- match.arg(organism)
 
         if (recount3_url == "http://idies.jhu.edu/recount3/data") {
@@ -59,8 +59,10 @@ project_homes <-
         }
 
         ## Define the base directories
-        base_dirs <- c("data_sources",
-            "collections")
+        base_dirs <- c(
+            "data_sources",
+            "collections"
+        )
         if (organism == "mouse") {
             ## Currently there are no mouse collections
             base_dirs <- "data_sources"

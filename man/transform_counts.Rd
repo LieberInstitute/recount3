@@ -97,7 +97,6 @@ colSums(assay(rse_gene_SRP009615, "RPKM"))
 ## Compute TPMs
 assays(rse_gene_SRP009615)$TPM <- recount::getTPM(rse_gene_SRP009615, length_var = "score")
 colSums(assay(rse_gene_SRP009615, "TPM")) / 1e6 ## Should all be equal to 1
-
 }
 \seealso{
 Other count transformation functions: 

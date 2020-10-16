@@ -13,7 +13,6 @@
 #' @examples
 #' ## List the URLs you have downloaded
 #' recount3_cache_files()
-#'
 #' \dontrun{
 #' ## Now delete the cached files
 #' recount3_cache_rm()
@@ -24,7 +23,8 @@
 recount3_cache_rm <- function(bfc = recount3_cache()) {
     if (!methods::is(bfc, "BiocFileCache")) {
         stop("'bfc' should be a BiocFileCache::BiocFileCache object.",
-            call. = FALSE)
+            call. = FALSE
+        )
     }
 
     ## Locate all files

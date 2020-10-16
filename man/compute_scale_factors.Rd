@@ -103,8 +103,6 @@ recount_factors <- data.frame(
 )
 plot(recount2 ~ recount3, data = recount_factors)
 abline(a = 0, b = 1, col = "purple", lwd = 2, lty = 2)
-
-
 }
 \seealso{
 Other count transformation functions: 
