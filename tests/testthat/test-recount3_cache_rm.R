@@ -8,10 +8,5 @@ BiocFileCache::bfcrpath(
 
 test_that("Wiping out the cache works", {
     recount3_cache_rm(temp_bfc_rm)
-    expect_equal(
-        recount3_cache_files(temp_bfc_rm),
-        test_url
-    )
-    recount3_cache_rm(temp_bfc_rm)
     expect_equal(recount3_cache_files(temp_bfc_rm), character())
 })
