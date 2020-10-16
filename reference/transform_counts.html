@@ -91,7 +91,7 @@ counts without scaling check the function compute_read_counts()." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.9</span>
       </span>
     </div>
 
@@ -225,7 +225,7 @@ for TPMs, use <code><a href='https://rdrr.io/pkg/recount/man/getTPM.html'>recoun
     <pre class="examples"><div class='input'>
 <span class='co'>## Create a RSE object at the gene level</span>
 <span class='va'>rse_gene_SRP009615</span> <span class='op'>&lt;-</span> <span class='fu'><a href='create_rse_manual.html'>create_rse_manual</a></span><span class='op'>(</span><span class='st'>"SRP009615"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:51:24 downloading and reading the metadata.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:51:24 caching file sra.sra.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:51:25 caching file sra.recount_project.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:51:25 caching file sra.recount_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:51:25 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:51:25 caching file sra.recount_pred.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:51:26 downloading and reading the feature information.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:51:26 caching file human.gene_sums.G026.gtf.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:51:26 downloading and reading the counts: 12 samples across 63856 features.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:51:26 caching file sra.gene_sums.SRP009615.G026.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-14 17:51:27 construcing the RangedSummarizedExperiment (rse) object.</span></div><div class='input'>
+</div><div class='output co'>#&gt; <span class='message'>2020-10-16 22:34:21 downloading and reading the metadata.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-16 22:34:21 caching file sra.sra.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-16 22:34:21 caching file sra.recount_project.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-16 22:34:22 caching file sra.recount_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-16 22:34:22 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-16 22:34:22 caching file sra.recount_pred.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-16 22:34:22 downloading and reading the feature information.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-16 22:34:22 caching file human.gene_sums.G026.gtf.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-16 22:34:23 downloading and reading the counts: 12 samples across 63856 features.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-16 22:34:23 caching file sra.gene_sums.SRP009615.G026.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-16 22:34:23 construcing the RangedSummarizedExperiment (rse) object.</span></div><div class='input'>
 <span class='co'>## Scale the counts using the AUC</span>
 <span class='fu'>assays</span><span class='op'>(</span><span class='va'>rse_gene_SRP009615</span><span class='op'>)</span><span class='op'>$</span><span class='va'>counts</span> <span class='op'>&lt;-</span> <span class='fu'>transform_counts</span><span class='op'>(</span><span class='va'>rse_gene_SRP009615</span><span class='op'>)</span>
 
@@ -272,8 +272,7 @@ for TPMs, use <code><a href='https://rdrr.io/pkg/recount/man/getTPM.html'>recoun
 </div><div class='output co'>#&gt; SRR387777 SRR387778 SRR387779 SRR387780 SRR389079 SRR389080 SRR389081 SRR389082 
 #&gt;         1         1         1         1         1         1         1         1 
 #&gt; SRR389083 SRR389084 SRR389077 SRR389078 
-#&gt;         1         1         1         1 </div><div class='input'>
-</div></pre>
+#&gt;         1         1         1         1 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
