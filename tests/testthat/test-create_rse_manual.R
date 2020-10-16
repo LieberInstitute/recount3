@@ -1,8 +1,11 @@
 temp_bfc <- recount3_cache(tempdir())
-test_bfc <- recount3_cache(system.file("inst",
-    "test_files",
-    package = "recount3",
-    mustWork = TRUE))
+test_bfc <- recount3_cache(
+    system.file(
+        "test_files",
+        package = "recount3",
+        mustWork = TRUE
+    )
+)
 
 test_that("Creating an RSE works (ercc)", {
     rse_DRP002835_temp <-

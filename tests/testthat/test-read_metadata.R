@@ -1,7 +1,10 @@
-test_bfc <- recount3_cache(system.file("inst",
-    "test_files",
-    package = "recount3",
-    mustWork = TRUE))
+test_bfc <- recount3_cache(
+    system.file(
+        "test_files",
+        package = "recount3",
+        mustWork = TRUE
+    )
+)
 
 url_DRP002835_meta <- locate_url("DRP002835",
     "data_sources/sra")

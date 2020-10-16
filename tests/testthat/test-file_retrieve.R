@@ -1,6 +1,5 @@
 test_bfc <- recount3_cache(
     system.file(
-        "inst",
         "test_files",
         package = "recount3",
         mustWork = TRUE
