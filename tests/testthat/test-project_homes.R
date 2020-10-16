@@ -12,4 +12,5 @@ test_that("Default project homes by organism", {
         project_homes(recount3_url = file.path(tempdir(), "random")),
         "not a valid URL or is it not an existing directory"
     )
+    expect_equal(project_homes(recount3_url = tempdir()), character(0))
 })

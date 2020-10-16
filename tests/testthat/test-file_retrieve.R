@@ -19,4 +19,8 @@ test_that("multiplication works", {
         file_retrieve(test_url, bfc = tempdir()),
         "should be a BiocFileCache::BiocFileCache"
     )
+    expect_warning(
+        file_retrieve("http://idies.jhu.edu/recount4"),
+        "does not exist or is not available"
+    )
 })

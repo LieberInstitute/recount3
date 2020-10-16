@@ -17,4 +17,5 @@ test_that("Reading metadata files works", {
     expect_s3_class(meta, "data.frame")
     expect_equal(nrow(meta), 2)
     expect_equal(ncol(meta), 174)
+    expect_error(read_metadata(NULL), "The are no metadata files to work with")
 })

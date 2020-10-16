@@ -26,4 +26,30 @@ test_that("Locating URLs works", {
         basename(url_bw),
         "sra.base_sums.DRR028129_DRR028129.ALL.bw"
     )
+    expect_error(
+        locate_url(
+            "DRR028129",
+            "data_sources/sra",
+            "bw"
+        ),
+        "You need to specify the 'sample' when type = 'bw'"
+    )
+    expect_equivalent(
+        locate_url(
+            "ERP110066",
+            "collections/geuvadis_smartseq",
+            "gene",
+            recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3"
+        ),
+        "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.G026.gz"
+    )
+    expect_error(
+        locate_url(
+            "random",
+            "collections/geuvadis_smartseq",
+            "gene",
+            recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3"
+        ),
+        "The 'project' is not part of this collection"
+    )
 })

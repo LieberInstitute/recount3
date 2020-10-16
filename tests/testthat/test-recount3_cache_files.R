@@ -11,4 +11,10 @@ test_that("Locating cached files", {
     expect_equal(length(cached_files), 9)
     expect_equal(sum(grepl("metadata", cached_files)), 5)
     expect_equal(sum(grepl("DRP002835", cached_files)), 7)
+    expect_error(
+        recount3_cache_files(
+            tempdir(),
+            "should be a BiocFileCache::BiocFileCache object"
+        )
+    )
 })
