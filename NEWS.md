@@ -1,3 +1,9 @@
+# recount3 1.0.1
+
+BUG FIXES
+
+Fixed `locate_url()` for GTEx & TCGA BigWig files.
+
 # recount3 0.99.0
 
 NEW FEATURES

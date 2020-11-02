@@ -162,9 +162,16 @@ locate_url <-
 
         ## Handle the BigWig file case
         if (type == "bw") {
-            base_url <- file.path(
-                base_url,
-                substr(sample, nchar(sample) - 1, nchar(sample))
+            base_url <- file.path(base_url,
+                toupper(substr(
+                    sample,
+                    nchar(sample) - ifelse(grepl("gtex", project_home), 3, 1),
+                    ifelse(
+                        grepl("gtex", project_home),
+                        nchar(sample) - 2,
+                        nchar(sample)
+                    )
+                ))
             )
             base_file <- paste0(base_file, "_", sample)
         }
