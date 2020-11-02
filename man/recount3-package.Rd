@@ -8,15 +8,11 @@
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-Explore and download data from the recount project available at
-    https://jhubiostatistics.shinyapps.io/recount3/. Using the recount3 package
-    you can download RangedSummarizedExperiment objects at the gene, exon or
-    exon-exon junctions level, the raw counts, the phenotype metadata used,
-    the urls to the sample coverage bigWig files. The RangedSummarizedExperiment
-    objects can be used by different packages for performing differential
-    expression analysis. Using data from the recount3 project you can perform
-    annotation-agnostic differential expression analyses as described at 
-    http://doi.org/TODO.
+The recount3 package enables access to a large amount of uniformly
+    processed RNA-seq data from human and mouse. You can download
+    RangedSummarizedExperiment objects at the gene, exon or exon-exon junctions
+    level with sample metadata and QC statistics. In addition we provide access
+    to sample coverage BigWig files.
 }
 \seealso{
 Useful links:

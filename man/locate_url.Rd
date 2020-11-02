@@ -71,7 +71,7 @@ locate_url(
     "data_sources/sra",
     "bw",
     "human",
-    "ERR204900"
+    "SRR387777"
 )
 
 ## Locate example gene count files
