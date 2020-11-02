@@ -2,7 +2,7 @@
 
 BUG FIXES
 
-Fixed `locate_url()` for GTEx BigWig files.
+Fixed `locate_url()` for GTEx & TCGA BigWig files.
 
 # recount3 0.99.0
 

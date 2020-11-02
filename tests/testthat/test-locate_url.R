@@ -45,6 +45,14 @@ test_that("Locating URLs works", {
             nchar(gtex_samples$external_id)
         ) %in% c(".1", ".2", ".3")
     ))
+    expect_equivalent(
+        locate_url("ACC",
+            "data_sources/tcga",
+            "bw",
+            sample = "193ccbe6-104f-49b4-bdb2-c82ee36fdaad"
+        ),
+        "http://idies.jhu.edu/recount3/data/human/data_sources/tcga/base_sums/CC/ACC/AD/tcga.base_sums.ACC_193ccbe6-104f-49b4-bdb2-c82ee36fdaad.ALL.bw"
+    )
     expect_error(
         locate_url(
             "DRR028129",
