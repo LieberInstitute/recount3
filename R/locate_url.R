@@ -86,16 +86,14 @@
 #' )
 locate_url <-
     function(project,
-    project_home = project_homes(
-        organism = organism,
-        recount3_url = recount3_url
-    ),
-    type = c("metadata", "gene", "exon", "jxn", "bw"),
-    organism = c("human", "mouse"),
-    sample = NULL,
-    annotation = annotation_options(organism),
-    jxn_format = c("ALL", "UNIQUE"),
-    recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data")) {
+        project_home = project_homes(organism = organism,
+            recount3_url = recount3_url),
+        type = c("metadata", "gene", "exon", "jxn", "bw"),
+        organism = c("human", "mouse"),
+        sample = NULL,
+        annotation = annotation_options(organism),
+        jxn_format = c("ALL", "UNIQUE"),
+        recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data")) {
         type <- match.arg(type)
         organism <- match.arg(organism)
         project_home <- match.arg(project_home)
@@ -113,7 +111,8 @@ locate_url <-
         )
 
         ## Define the annotation to work with
-        ann_ext <- annotation_ext(organism = organism, annotation = annotation)
+        ann_ext <-
+            annotation_ext(organism = organism, annotation = annotation)
 
         ## Define the file extensions
         file_ext <- paste0(".", switch(
@@ -129,8 +128,7 @@ locate_url <-
         if (type == "bw") {
             if (is.null(sample)) {
                 stop("You need to specify the 'sample' when type = 'bw'.",
-                    call. = FALSE
-                )
+                    call. = FALSE)
             }
         }
 
@@ -158,14 +156,21 @@ locate_url <-
         }
 
         ## Define the base file path
-        base_file <- paste0(basename(project_home), ".", file_tag, ".", project)
+        base_file <-
+            paste0(basename(project_home), ".", file_tag, ".", project)
 
         ## Handle the BigWig file case
         if (type == "bw") {
-            base_url <- file.path(
-                base_url,
-                substr(sample, nchar(sample) - 1, nchar(sample))
-            )
+            base_url <- file.path(base_url,
+                substr(
+                    sample,
+                    nchar(sample) - ifelse(grepl("gtex", project_home), 3, 1),
+                    ifelse(
+                        grepl("gtex", project_home),
+                        nchar(sample) - 2,
+                        nchar(sample)
+                    )
+                ))
             base_file <- paste0(base_file, "_", sample)
         }
 
@@ -181,16 +186,14 @@ locate_url <-
                 "metadata",
                 paste0(basename(project_home), ".recount_project.gz")
             )
-            names(url_collection_meta) <- basename(url_collection_meta)
+            names(url_collection_meta) <-
+                basename(url_collection_meta)
 
-            metadata <- read_metadata(
-                file_retrieve(url = url_collection_meta)
-            )
+            metadata <- read_metadata(file_retrieve(url = url_collection_meta))
             i <- which(metadata$recount_project.project == project)
-            stopifnot(
-                "The 'project' is not part of this collection." = length(i) > 0
-            )
-            file_source <- metadata$recount_project.file_source[i[1]]
+            stopifnot("The 'project' is not part of this collection." = length(i) > 0)
+            file_source <-
+                metadata$recount_project.file_source[i[1]]
 
             ## Find the files from the file source
             url <- locate_url(
@@ -205,7 +208,6 @@ locate_url <-
 
             ## Deal with metadata collection case
             if (type == "metadata") {
-
                 ## Add the custom collection metadata
                 url <- c(
                     url,
@@ -214,9 +216,7 @@ locate_url <-
                         organism,
                         project_home,
                         "metadata",
-                        paste0(
-                            basename(project_home), ".custom.gz"
-                        )
+                        paste0(basename(project_home), ".custom.gz")
                     )
                 )
             }

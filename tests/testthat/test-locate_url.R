@@ -26,6 +26,25 @@ test_that("Locating URLs works", {
         basename(url_bw),
         "sra.base_sums.DRR028129_DRR028129.ALL.bw"
     )
+    expect_equivalent(
+        locate_url("SKIN",
+            "data_sources/gtex",
+            "bw",
+            sample = "GTEX-1117F-2926-SM-5GZYI.1"
+        ),
+        "http://idies.jhu.edu/recount3/data/human/data_sources/gtex/base_sums/IN/SKIN/YI/gtex.base_sums.SKIN_GTEX-1117F-2926-SM-5GZYI.1.ALL.bw"
+    )
+    gtex_samples <- subset(
+        available_samples(),
+        project_home == "data_sources/gtex"
+    )
+    expect_true(all(
+        substr(
+            gtex_samples$external_id,
+            nchar(gtex_samples$external_id) - 1,
+            nchar(gtex_samples$external_id)
+        ) %in% c(".1", ".2", ".3")
+    ))
     expect_error(
         locate_url(
             "DRR028129",
