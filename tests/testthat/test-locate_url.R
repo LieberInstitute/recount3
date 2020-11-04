@@ -34,6 +34,28 @@ test_that("Locating URLs works", {
         ),
         "http://idies.jhu.edu/recount3/data/human/data_sources/gtex/base_sums/IN/SKIN/YI/gtex.base_sums.SKIN_GTEX-1117F-2926-SM-5GZYI.1.ALL.bw"
     )
+    expect_equivalent(
+        locate_url("SKIN",
+            "data_sources/gtex",
+            "bw",
+            sample = c("GTEX-1117F-2926-SM-5GZYI.1", "GTEX-111CU-1126-SM-5EGIM.1")
+        ),
+        c(
+            "http://idies.jhu.edu/recount3/data/human/data_sources/gtex/base_sums/IN/SKIN/YI/gtex.base_sums.SKIN_GTEX-1117F-2926-SM-5GZYI.1.ALL.bw",
+            "http://idies.jhu.edu/recount3/data/human/data_sources/gtex/base_sums/IN/SKIN/IM/gtex.base_sums.SKIN_GTEX-111CU-1126-SM-5EGIM.1.ALL.bw"
+        )
+    )
+    expect_equivalent(
+        locate_url("SKIN",
+            "data_sources/gtex",
+            "bw",
+            sample = c("GTEX-1192X-0008-SM-5Q5B7.1", "GTEX-WVLH-0008-SM-4MVPD.1")
+        ),
+        c(
+            "http://idies.jhu.edu/recount3/data/human/data_sources/gtex/base_sums/IN/SKIN/B7/gtex.base_sums.SKIN_GTEX-1192X-0008-SM-5Q5B7.1.ALL.bw",
+            "http://idies.jhu.edu/recount3/data/human/data_sources/gtex/base_sums/IN/SKIN/PD/gtex.base_sums.SKIN_GTEX-WVLH-0008-SM-4MVPD.1.ALL.bw"
+        )
+    )
     gtex_samples <- subset(
         available_samples(),
         project_home == "data_sources/gtex"
