@@ -82,13 +82,19 @@ given data_source and none or many collections." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.11</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.2</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -184,7 +190,7 @@ the <code>recount3</code> project home location (<code>project_home</code>), and
     <pre class="examples"><div class='input'>
 <span class='co'>## Find all the human samples available from recount3</span>
 <span class='va'>human_samples</span> <span class='op'>&lt;-</span> <span class='fu'>available_samples</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>2020-10-19 10:31:52 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-19 10:31:52 caching file gtex.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-10-19 10:31:52 caching file tcga.recount_project.MD.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>human_samples</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>2020-11-04 19:58:51 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-11-04 19:58:52 caching file gtex.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-11-04 19:58:52 caching file tcga.recount_project.MD.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>human_samples</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; [1] 347011      7</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>human_samples</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;   external_id   project organism file_source date_processed     project_home
 #&gt; 1  SRR5579327 SRP107565    human         sra     2019-10-01 data_sources/sra
@@ -214,7 +220,7 @@ the <code>recount3</code> project home location (<code>project_home</code>), and
 #&gt;  19214 316449  11348 </div><div class='input'>
 <span class='co'>## Find all the mouse samples available from recount3</span>
 <span class='va'>mouse_samples</span> <span class='op'>&lt;-</span> <span class='fu'>available_samples</span><span class='op'>(</span><span class='st'>"mouse"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>2020-10-19 10:31:55 caching file sra.recount_project.MD.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>mouse_samples</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>2020-11-04 19:58:56 caching file sra.recount_project.MD.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>mouse_samples</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; [1] 416903      7</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>mouse_samples</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;   external_id   project organism file_source date_processed     project_home
 #&gt; 1  SRR8249198 SRP170963    mouse         sra     2020-01-01 data_sources/sra
@@ -250,7 +256,7 @@ the <code>recount3</code> project home location (<code>project_home</code>), and
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
