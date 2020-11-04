@@ -165,10 +165,10 @@ locate_url <-
                 toupper(substr(
                     sample,
                     nchar(sample) - ifelse(grepl("gtex", project_home), 3, 1),
-                    ifelse(
+                    nchar(sample) - ifelse(
                         grepl("gtex", project_home),
-                        nchar(sample) - 2,
-                        nchar(sample)
+                         2,
+                        0
                     )
                 ))
             )
