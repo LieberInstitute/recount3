@@ -83,7 +83,9 @@ read_metadata <- function(metadata_files) {
         metadata_files,
         utils::read.delim,
         sep = "\t",
-        check.names = FALSE
+        check.names = FALSE,
+        quote = "",
+        comment.char = ""
     )
 
     ## Key columns

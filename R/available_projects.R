@@ -103,8 +103,9 @@ available_samples <- function(organism = c("human", "mouse"),
 #'
 #' @return A `data.frame()` with the project ID (`project`), the `organism`, the
 #' `file_source` from where the data was accessed,
-#' the `recount3` project home location (`project_home`), and the project
-#' `project_type` that differentiates between `data_sources` and `compilations`.
+#' the `recount3` project home location (`project_home`), the project
+#' `project_type` that differentiates between `data_sources` and `compilations`,
+#' the `n_samples` with the number of samples in the given project.
 #' @export
 #'
 #' @examples
@@ -162,6 +163,12 @@ available_projects <- function(organism = c("human", "mouse"),
     ## Identify the unique projects
     projects <- samples[!duplicated(samples), , drop = FALSE]
     projects$project_type <- dirname(projects$project_home)
+
+    samples_unique <- with(samples, paste0(project, "_", organism, "_", project_home))
+    projects_unique <- with(projects, paste0(project, "_", organism, "_", project_home))
+    projects_n <- table(samples_unique)
+    projects$n_samples <- projects_n[projects_unique]
+    rownames(projects) <- NULL
 
     return(projects)
 }
