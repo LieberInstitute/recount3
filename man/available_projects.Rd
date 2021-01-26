@@ -24,8 +24,9 @@ object where the files will be cached to, typically created by
 \value{
 A \code{data.frame()} with the project ID (\code{project}), the \code{organism}, the
 \code{file_source} from where the data was accessed,
-the \code{recount3} project home location (\code{project_home}), and the project
-\code{project_type} that differentiates between \code{data_sources} and \code{compilations}.
+the \code{recount3} project home location (\code{project_home}), the project
+\code{project_type} that differentiates between \code{data_sources} and \code{compilations},
+the \code{n_samples} with the number of samples in the given project.
 }
 \description{
 List available projects in recount3

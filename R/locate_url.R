@@ -86,14 +86,16 @@
 #' )
 locate_url <-
     function(project,
-        project_home = project_homes(organism = organism,
-            recount3_url = recount3_url),
-        type = c("metadata", "gene", "exon", "jxn", "bw"),
-        organism = c("human", "mouse"),
-        sample = NULL,
-        annotation = annotation_options(organism),
-        jxn_format = c("ALL", "UNIQUE"),
-        recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data")) {
+    project_home = project_homes(
+        organism = organism,
+        recount3_url = recount3_url
+    ),
+    type = c("metadata", "gene", "exon", "jxn", "bw"),
+    organism = c("human", "mouse"),
+    sample = NULL,
+    annotation = annotation_options(organism),
+    jxn_format = c("ALL", "UNIQUE"),
+    recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data")) {
         type <- match.arg(type)
         organism <- match.arg(organism)
         project_home <- match.arg(project_home)
@@ -128,7 +130,8 @@ locate_url <-
         if (type == "bw") {
             if (is.null(sample)) {
                 stop("You need to specify the 'sample' when type = 'bw'.",
-                    call. = FALSE)
+                    call. = FALSE
+                )
             }
         }
 
@@ -161,13 +164,14 @@ locate_url <-
 
         ## Handle the BigWig file case
         if (type == "bw") {
-            base_url <- file.path(base_url,
+            base_url <- file.path(
+                base_url,
                 toupper(substr(
                     sample,
                     nchar(sample) - ifelse(grepl("gtex", project_home), 3, 1),
                     nchar(sample) - ifelse(
                         grepl("gtex", project_home),
-                         2,
+                        2,
                         0
                     )
                 ))

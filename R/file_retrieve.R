@@ -75,8 +75,8 @@ file_retrieve <-
             )
         }
         if (verbose) {
-              message(Sys.time(), " caching file ", basename(url), ".")
-          }
+            message(Sys.time(), " caching file ", basename(url), ".")
+        }
         res <- BiocFileCache::bfcrpath(
             bfc,
             url,
