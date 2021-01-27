@@ -377,6 +377,15 @@ recount3_cols_groups[recount3_cols_groups == 1]
 recount3_cols
 ```
 
+For studies from SRA, we can further extract the SRA attributes using `expand_sra_attributes()` as shown below.
+
+```{r "expand attributes"}
+rse_gene_SRP009615_expanded <-
+    expand_sra_attributes(rse_gene_SRP009615)
+colData(rse_gene_SRP009615_expanded)[, ncol(colData(rse_gene_SRP009615)):ncol(colData(rse_gene_SRP009615_expanded))]
+```
+
+
 
 ## Counts
 

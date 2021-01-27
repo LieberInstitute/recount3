@@ -1,3 +1,12 @@
+# recount3 1.0.3
+
+NEW FEATURES
+
+* Added `expand_sra_attributes()` that was contributed by Andrew E Jaffe. This
+function expands the SRA attributes stored in a given SRA study, which makes it
+easier to use that data. However, it makes it harder to merge studies and thus
+should be used with caution.
+
 # recount3 1.0.1
 
 BUG FIXES
