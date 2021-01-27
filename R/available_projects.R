@@ -6,6 +6,9 @@
 #'
 #' @inheritParams project_homes
 #' @inheritParams file_retrieve
+#' @param available_homes A `character()` vector with the available project homes
+#' for the given `recount3_url`. If you use a non-standard `recount3_url`, you
+#' will likely need to specify manually the valid values for `available_homes`.
 #'
 #' @return A `data.frame()` with the sample ID used by the original source of
 #' the data (`external_id`), the project ID (`project`), the `organism`, the
@@ -42,23 +45,21 @@
 available_samples <- function(organism = c("human", "mouse"),
     recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
     bfc = recount3_cache(),
-    verbose = getOption("recount3_verbose", TRUE)) {
-    organism <- match.arg(organism)
-
-    homes <- project_homes(
+    verbose = getOption("recount3_verbose", TRUE),
+    available_homes = project_homes(
         organism = organism,
         recount3_url = recount3_url
-    )
-
+    )) {
+    organism <- match.arg(organism)
 
     urls <- file.path(
         recount3_url,
         organism,
-        homes,
+        available_homes,
         "metadata",
-        paste0(basename(homes), ".recount_project.MD.gz")
+        paste0(basename(available_homes), ".recount_project.MD.gz")
     )
-    names(urls) <- basename(homes)
+    names(urls) <- basename(available_homes)
 
     local_files <- file_retrieve(urls, bfc = bfc, verbose = verbose)
 
@@ -144,15 +145,26 @@ available_samples <- function(organism = c("human", "mouse"),
 #' table(
 #'     mouse_projects$file_source[mouse_projects$project_type == "data_sources"]
 #' )
+#'
+#' ## Use with a custom recount3_url:
+#' available_projects(
+#'     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3test",
+#'     available_homes = "data_sources/sra"
+#' )
 available_projects <- function(organism = c("human", "mouse"),
     recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
-    bfc = recount3_cache()) {
+    bfc = recount3_cache(),
+    available_homes = project_homes(
+        organism = organism,
+        recount3_url = recount3_url
+    )) {
     organism <- match.arg(organism)
 
     samples <- available_samples(
         organism = organism,
         recount3_url = recount3_url,
-        bfc = bfc
+        bfc = bfc,
+        available_homes = available_homes
     )
 
     ## Remove sample-specific info
@@ -164,8 +176,10 @@ available_projects <- function(organism = c("human", "mouse"),
     projects <- samples[!duplicated(samples), , drop = FALSE]
     projects$project_type <- dirname(projects$project_home)
 
-    samples_unique <- with(samples, paste0(project, "_", organism, "_", project_home))
-    projects_unique <- with(projects, paste0(project, "_", organism, "_", project_home))
+    samples_unique <-
+        with(samples, paste0(project, "_", organism, "_", project_home))
+    projects_unique <-
+        with(projects, paste0(project, "_", organism, "_", project_home))
     projects_n <- table(samples_unique)
     projects$n_samples <- projects_n[projects_unique]
     rownames(projects) <- NULL
