@@ -1,3 +1,15 @@
+# recount3 1.1.4
+
+BUG FIXES
+
+* Fixed `project_homes()`, `available_projects()` and `available_samples()` to
+support using non-standard `recount3_url`s where the user knows that are the
+`project_homes()` for their organism of choice. This fix enables users to 
+create their own custom recount3-like webservers and access their data using
+the functions in this package. This fix introduces the argument
+`available_homes` to both `available_projects()` and `available_samples()`. This
+bug was reported by Christopher Wilks.
+
 # recount3 1.1.3
 
 NEW FEATURES

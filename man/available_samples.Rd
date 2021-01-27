@@ -8,7 +8,8 @@ available_samples(
   organism = c("human", "mouse"),
   recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
   bfc = recount3_cache(),
-  verbose = getOption("recount3_verbose", TRUE)
+  verbose = getOption("recount3_verbose", TRUE),
+  available_homes = project_homes(organism = organism, recount3_url = recount3_url)
 )
 }
 \arguments{
@@ -24,6 +25,10 @@ object where the files will be cached to, typically created by
 
 \item{verbose}{A \code{logical(1)} indicating whether to show messages with
 updates.}
+
+\item{available_homes}{A \code{character()} vector with the available project homes
+for the given \code{recount3_url}. If you use a non-standard \code{recount3_url}, you
+will likely need to specify manually the valid values for \code{available_homes}.}
 }
 \value{
 A \code{data.frame()} with the sample ID used by the original source of

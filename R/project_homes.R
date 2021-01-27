@@ -27,7 +27,7 @@ project_homes <-
     recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data")) {
         organism <- match.arg(organism)
 
-        if (recount3_url == "http://idies.jhu.edu/recount3/data") {
+        if (recount3_url %in% c("http://idies.jhu.edu/recount3/data", "https://duffel.rail.bio/recount3")) {
             if (organism == "mouse") {
                 return("data_sources/sra")
             } else if (organism == "human") {
@@ -53,7 +53,7 @@ project_homes <-
             }
         } else if (!file.exists(recount3_url)) {
             stop(
-                "'recount3_url' is not a valid URL or is it not an existing directory in your file system.",
+                "'recount3_url' is not a valid supported URL and you'll need to specify the project_homes() manually or 'recount3_url' is not an existing directory in your file system.",
                 call. = FALSE
             )
         }

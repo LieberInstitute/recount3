@@ -10,7 +10,7 @@ test_that("Default project homes by organism", {
     expect_equal(project_homes("mouse"), "data_sources/sra")
     expect_error(
         project_homes(recount3_url = file.path(tempdir(), "random")),
-        "not a valid URL or is it not an existing directory"
+        "is not a valid supported URL"
     )
     expect_equal(project_homes(recount3_url = tempdir()), character(0))
 })

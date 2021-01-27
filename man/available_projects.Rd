@@ -7,7 +7,8 @@
 available_projects(
   organism = c("human", "mouse"),
   recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
-  bfc = recount3_cache()
+  bfc = recount3_cache(),
+  available_homes = project_homes(organism = organism, recount3_url = recount3_url)
 )
 }
 \arguments{
@@ -20,6 +21,10 @@ or a local directory where you have mirrored \code{recount3}.}
 \item{bfc}{A \link[BiocFileCache:BiocFileCache-class]{BiocFileCache-class}
 object where the files will be cached to, typically created by
 \code{recount3_cache()}.}
+
+\item{available_homes}{A \code{character()} vector with the available project homes
+for the given \code{recount3_url}. If you use a non-standard \code{recount3_url}, you
+will likely need to specify manually the valid values for \code{available_homes}.}
 }
 \value{
 A \code{data.frame()} with the project ID (\code{project}), the \code{organism}, the
@@ -66,5 +71,11 @@ table(mouse_projects$project_type, useNA = "ifany")
 ## What are the unique file sources?
 table(
     mouse_projects$file_source[mouse_projects$project_type == "data_sources"]
+)
+
+## Use with a custom recount3_url:
+available_projects(
+    recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3test",
+    available_homes = "data_sources/sra"
 )
 }
