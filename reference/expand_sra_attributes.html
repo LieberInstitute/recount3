@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Obtain the file extension for a given organism and annotation — annotation_ext • recount3</title>
+<title>Expand SRA attributes — expand_sra_attributes • recount3</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,9 +46,11 @@
 
 
 
-<meta property="og:title" content="Obtain the file extension for a given organism and annotation — annotation_ext" />
-<meta property="og:description" content="Given an organism and an annotation, this function returns the
-corresponding file extension used in the recount3 files." />
+<meta property="og:title" content="Expand SRA attributes — expand_sra_attributes" />
+<meta property="og:description" content="This function expands the SRA attributes stored in sra.sample_attributes
+variable in the colData() slot of a
+RangedSummarizedExperiment-class
+produced by create_rse()." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -132,57 +134,62 @@ corresponding file extension used in the recount3 files." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Obtain the file extension for a given organism and annotation</h1>
-    <small class="dont-index">Source: <a href='https://github.com/LieberInstitute/recount3/blob/master/R/annotation_ext.R'><code>R/annotation_ext.R</code></a></small>
-    <div class="hidden name"><code>annotation_ext.Rd</code></div>
+    <h1>Expand SRA attributes</h1>
+    <small class="dont-index">Source: <a href='https://github.com/LieberInstitute/recount3/blob/master/R/expand_sra_attributes.R'><code>R/expand_sra_attributes.R</code></a></small>
+    <div class="hidden name"><code>expand_sra_attributes.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Given an <code>organism</code> and an <code>annotation</code>, this function returns the
-corresponding file extension used in the <code>recount3</code> files.</p>
+    <p>This function expands the SRA attributes stored in <code>sra.sample_attributes</code>
+variable in the <code>colData()</code> slot of a
+<a href='https://rdrr.io/pkg/SummarizedExperiment/man/RangedSummarizedExperiment-class.html'>RangedSummarizedExperiment-class</a>
+produced by <code><a href='create_rse.html'>create_rse()</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>annotation_ext</span><span class='op'>(</span>
-  organism <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"human"</span>, <span class='st'>"mouse"</span><span class='op'>)</span>,
-  annotation <span class='op'>=</span> <span class='fu'><a href='annotation_options.html'>annotation_options</a></span><span class='op'>(</span><span class='va'>organism</span><span class='op'>)</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>expand_sra_attributes</span><span class='op'>(</span><span class='va'>rse</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>organism</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> specifying which organism you want to
-download data from. Supported options are <code>"human"</code> or <code>"mouse"</code>.</p></td>
-    </tr>
-    <tr>
-      <th>annotation</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> specifying which annotation you want to
-use.</p></td>
+      <th>rse</th>
+      <td><p>A <a href='https://rdrr.io/pkg/SummarizedExperiment/man/RangedSummarizedExperiment-class.html'>RangedSummarizedExperiment-class</a>
+object created by <code><a href='create_rse.html'>create_rse()</a></code> or <code><a href='create_rse_manual.html'>create_rse_manual()</a></code>.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> with the annotation file extension to be used.</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+    <p>A <a href='https://rdrr.io/pkg/SummarizedExperiment/man/RangedSummarizedExperiment-class.html'>RangedSummarizedExperiment-class</a>
+object with expanded metadata columns.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <div class='dont-index'><p>Other internal functions for accessing the recount3 data: 
-<code><a href='create_rse_manual.html'>create_rse_manual</a>()</code>,
-<code><a href='file_retrieve.html'>file_retrieve</a>()</code>,
-<code><a href='locate_url_ann.html'>locate_url_ann</a>()</code>,
-<code><a href='locate_url.html'>locate_url</a>()</code>,
-<code><a href='project_homes.html'>project_homes</a>()</code>,
-<code><a href='read_counts.html'>read_counts</a>()</code>,
-<code><a href='read_metadata.html'>read_metadata</a>()</code></p></div>
+    <p>Note that this function will work on projects available from SRA only.
+Furthermore, SRA attributes are project-specific. Thus, if you use this
+function in more than one RSE object, you won't be able to combine them
+easily with <code><a href='https://rdrr.io/r/base/cbind.html'>cbind()</a></code> and will need to manually merge the <code>colData()</code> slots
+from your set of RSE files before being able to run <code><a href='https://rdrr.io/r/base/cbind.html'>cbind()</a></code>.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Andrew E Jaffe modified by Leonardo Collado-Torres.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'>annotation_ext</span><span class='op'>(</span><span class='st'>"human"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] "G026"</div><div class='input'><span class='fu'>annotation_ext</span><span class='op'>(</span><span class='st'>"human"</span>, <span class='st'>"fantom6_cat"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] "F006"</div><div class='input'><span class='fu'>annotation_ext</span><span class='op'>(</span><span class='st'>"human"</span>, <span class='st'>"refseq"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] "R109"</div><div class='input'><span class='fu'>annotation_ext</span><span class='op'>(</span><span class='st'>"mouse"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] "M023"</div></pre>
+<span class='co'>## Find all available human projects</span>
+<span class='va'>human_projects</span> <span class='op'>&lt;-</span> <span class='fu'><a href='available_projects.html'>available_projects</a></span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:29:24 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:29:24 caching file gtex.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:29:24 caching file tcga.recount_project.MD.gz.</span></div><div class='input'>
+<span class='co'>## Find the project you are interested in</span>
+<span class='va'>proj_info</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span><span class='op'>(</span>
+    <span class='va'>human_projects</span>,
+    <span class='va'>project</span> <span class='op'>==</span> <span class='st'>"SRP009615"</span> <span class='op'>&amp;</span> <span class='va'>project_type</span> <span class='op'>==</span> <span class='st'>"data_sources"</span>
+<span class='op'>)</span>
+
+<span class='co'>## Create a RSE object at the gene level</span>
+<span class='va'>rse_gene_SRP009615</span> <span class='op'>&lt;-</span> <span class='fu'><a href='create_rse.html'>create_rse</a></span><span class='op'>(</span><span class='va'>proj_info</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:29:29 downloading and reading the metadata.</span></div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:29:29 caching file sra.sra.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:29:29 caching file sra.recount_project.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:29:30 caching file sra.recount_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:29:30 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:29:31 caching file sra.recount_pred.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:29:31 downloading and reading the feature information.</span></div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:29:31 caching file human.gene_sums.G026.gtf.gz.</span></div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:29:32 downloading and reading the counts: 12 samples across 63856 features.</span></div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:29:32 caching file sra.gene_sums.SRP009615.G026.gz.</span></div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:29:32 construcing the RangedSummarizedExperiment (rse) object.</span></div><div class='input'>
+<span class='co'>## Expand the SRA attributes (see details for more information)</span>
+<span class='va'>rse_gene_SRP009615</span> <span class='op'>&lt;-</span> <span class='fu'>expand_sra_attributes</span><span class='op'>(</span><span class='va'>rse_gene_SRP009615</span><span class='op'>)</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

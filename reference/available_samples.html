@@ -82,7 +82,7 @@ given data_source and none or many collections." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.5</span>
       </span>
     </div>
 
@@ -90,7 +90,7 @@ given data_source and none or many collections." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -116,7 +116,7 @@ given data_source and none or many collections." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/LieberInstitute/recount3/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -146,9 +146,10 @@ given <code>data_source</code> and none or many <code>collections</code>.</p>
 
     <pre class="usage"><span class='fu'>available_samples</span><span class='op'>(</span>
   organism <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"human"</span>, <span class='st'>"mouse"</span><span class='op'>)</span>,
-  recount3_url <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"recount3_url"</span>, <span class='st'>"http://idies.jhu.edu/recount3/data"</span><span class='op'>)</span>,
+  recount3_url <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"recount3_url"</span>, <span class='st'>"http://duffel.rail.bio/recount3"</span><span class='op'>)</span>,
   bfc <span class='op'>=</span> <span class='fu'><a href='recount3_cache.html'>recount3_cache</a></span><span class='op'>(</span><span class='op'>)</span>,
-  verbose <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"recount3_verbose"</span>, <span class='cn'>TRUE</span><span class='op'>)</span>
+  verbose <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"recount3_verbose"</span>, <span class='cn'>TRUE</span><span class='op'>)</span>,
+  available_homes <span class='op'>=</span> <span class='fu'><a href='project_homes.html'>project_homes</a></span><span class='op'>(</span>organism <span class='op'>=</span> <span class='va'>organism</span>, recount3_url <span class='op'>=</span> <span class='va'>recount3_url</span><span class='op'>)</span>
 <span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -175,6 +176,12 @@ object where the files will be cached to, typically created by
       <td><p>A <code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code> indicating whether to show messages with
 updates.</p></td>
     </tr>
+    <tr>
+      <th>available_homes</th>
+      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character()</a></code> vector with the available project homes
+for the given <code>recount3_url</code>. If you use a non-standard <code>recount3_url</code>, you
+will likely need to specify manually the valid values for <code>available_homes</code>.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -190,7 +197,7 @@ the <code>recount3</code> project home location (<code>project_home</code>), and
     <pre class="examples"><div class='input'>
 <span class='co'>## Find all the human samples available from recount3</span>
 <span class='va'>human_samples</span> <span class='op'>&lt;-</span> <span class='fu'>available_samples</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>2020-11-04 19:58:51 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-11-04 19:58:52 caching file gtex.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2020-11-04 19:58:52 caching file tcga.recount_project.MD.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>human_samples</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:26:52 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:26:52 caching file gtex.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:26:53 caching file tcga.recount_project.MD.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>human_samples</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; [1] 347011      7</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>human_samples</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;   external_id   project organism file_source date_processed     project_home
 #&gt; 1  SRR5579327 SRP107565    human         sra     2019-10-01 data_sources/sra
@@ -220,8 +227,8 @@ the <code>recount3</code> project home location (<code>project_home</code>), and
 #&gt;  19214 316449  11348 </div><div class='input'>
 <span class='co'>## Find all the mouse samples available from recount3</span>
 <span class='va'>mouse_samples</span> <span class='op'>&lt;-</span> <span class='fu'>available_samples</span><span class='op'>(</span><span class='st'>"mouse"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>2020-11-04 19:58:56 caching file sra.recount_project.MD.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>mouse_samples</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] 416903      7</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>mouse_samples</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:26:56 caching file sra.recount_project.MD.gz.</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>mouse_samples</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 416899      7</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>mouse_samples</span><span class='op'>)</span>
 </div><div class='output co'>#&gt;   external_id   project organism file_source date_processed     project_home
 #&gt; 1  SRR8249198 SRP170963    mouse         sra     2020-01-01 data_sources/sra
 #&gt; 2  SRR8249199 SRP170963    mouse         sra     2020-01-01 data_sources/sra
@@ -240,7 +247,7 @@ the <code>recount3</code> project home location (<code>project_home</code>), and
 <span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>mouse_samples</span><span class='op'>$</span><span class='va'>project_type</span>, useNA <span class='op'>=</span> <span class='st'>"ifany"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; 
 #&gt; data_sources 
-#&gt;       416903 </div></pre>
+#&gt;       416899 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
