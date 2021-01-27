@@ -24,10 +24,10 @@
 #' )
 project_homes <-
     function(organism = c("human", "mouse"),
-    recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data")) {
+    recount3_url = getOption("recount3_url", "http://duffel.rail.bio/recount3")) {
         organism <- match.arg(organism)
 
-        if (recount3_url %in% c("http://idies.jhu.edu/recount3/data", "https://duffel.rail.bio/recount3")) {
+        if (recount3_url %in% c("http://idies.jhu.edu/recount3/data", "http://duffel.rail.bio/recount3")) {
             if (organism == "mouse") {
                 return("data_sources/sra")
             } else if (organism == "human") {

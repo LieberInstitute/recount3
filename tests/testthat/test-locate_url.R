@@ -30,7 +30,8 @@ test_that("Locating URLs works", {
         locate_url("SKIN",
             "data_sources/gtex",
             "bw",
-            sample = "GTEX-1117F-2926-SM-5GZYI.1"
+            sample = "GTEX-1117F-2926-SM-5GZYI.1",
+            recount3_url = "http://idies.jhu.edu/recount3/data"
         ),
         "http://idies.jhu.edu/recount3/data/human/data_sources/gtex/base_sums/IN/SKIN/YI/gtex.base_sums.SKIN_GTEX-1117F-2926-SM-5GZYI.1.ALL.bw"
     )
@@ -38,7 +39,8 @@ test_that("Locating URLs works", {
         locate_url("SKIN",
             "data_sources/gtex",
             "bw",
-            sample = c("GTEX-1117F-2926-SM-5GZYI.1", "GTEX-111CU-1126-SM-5EGIM.1")
+            sample = c("GTEX-1117F-2926-SM-5GZYI.1", "GTEX-111CU-1126-SM-5EGIM.1"),
+            recount3_url = "http://idies.jhu.edu/recount3/data"
         ),
         c(
             "http://idies.jhu.edu/recount3/data/human/data_sources/gtex/base_sums/IN/SKIN/YI/gtex.base_sums.SKIN_GTEX-1117F-2926-SM-5GZYI.1.ALL.bw",
@@ -49,7 +51,8 @@ test_that("Locating URLs works", {
         locate_url("SKIN",
             "data_sources/gtex",
             "bw",
-            sample = c("GTEX-1192X-0008-SM-5Q5B7.1", "GTEX-WVLH-0008-SM-4MVPD.1")
+            sample = c("GTEX-1192X-0008-SM-5Q5B7.1", "GTEX-WVLH-0008-SM-4MVPD.1"),
+            recount3_url = "http://idies.jhu.edu/recount3/data"
         ),
         c(
             "http://idies.jhu.edu/recount3/data/human/data_sources/gtex/base_sums/IN/SKIN/B7/gtex.base_sums.SKIN_GTEX-1192X-0008-SM-5Q5B7.1.ALL.bw",
@@ -71,7 +74,8 @@ test_that("Locating URLs works", {
         locate_url("ACC",
             "data_sources/tcga",
             "bw",
-            sample = "193ccbe6-104f-49b4-bdb2-c82ee36fdaad"
+            sample = "193ccbe6-104f-49b4-bdb2-c82ee36fdaad",
+            recount3_url = "http://idies.jhu.edu/recount3/data"
         ),
         "http://idies.jhu.edu/recount3/data/human/data_sources/tcga/base_sums/CC/ACC/AD/tcga.base_sums.ACC_193ccbe6-104f-49b4-bdb2-c82ee36fdaad.ALL.bw"
     )

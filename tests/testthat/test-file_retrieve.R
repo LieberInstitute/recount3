@@ -6,9 +6,9 @@ test_bfc <- recount3_cache(
     )
 )
 test_url <-
-    "http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/35/DRP002835/sra.recount_project.DRP002835.MD.gz"
+    "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/35/DRP002835/sra.recount_project.DRP002835.MD.gz"
 
-test_that("multiplication works", {
+test_that("caching recount3 files", {
     expect_equivalent(
         file_retrieve(test_url, test_bfc),
         BiocFileCache::bfcrpath(test_bfc, test_url)

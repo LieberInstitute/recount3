@@ -95,7 +95,7 @@ locate_url <-
     sample = NULL,
     annotation = annotation_options(organism),
     jxn_format = c("ALL", "UNIQUE"),
-    recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data")) {
+    recount3_url = getOption("recount3_url", "http://duffel.rail.bio/recount3")) {
         type <- match.arg(type)
         organism <- match.arg(organism)
         project_home <- match.arg(project_home)
