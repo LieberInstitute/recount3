@@ -1,6 +1,6 @@
 Package: recount3
 Title: Explore and download data from the recount3 project
-Version: 1.1.4
+Version: 1.1.5
 Date: 2021-01-27
 Authors@R: 
     c(

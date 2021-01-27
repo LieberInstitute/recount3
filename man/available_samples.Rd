@@ -6,7 +6,7 @@
 \usage{
 available_samples(
   organism = c("human", "mouse"),
-  recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
+  recount3_url = getOption("recount3_url", "http://duffel.rail.bio/recount3"),
   bfc = recount3_cache(),
   verbose = getOption("recount3_verbose", TRUE),
   available_homes = project_homes(organism = organism, recount3_url = recount3_url)

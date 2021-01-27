@@ -120,7 +120,7 @@ create_rse_manual <- function(project,
     annotation = annotation_options(organism),
     bfc = recount3_cache(),
     jxn_format = c("ALL", "UNIQUE"),
-    recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
+    recount3_url = getOption("recount3_url", "http://duffel.rail.bio/recount3"),
     verbose = getOption("recount3_verbose", TRUE)) {
     type <- match.arg(type)
     organism <- match.arg(organism)

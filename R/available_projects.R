@@ -43,7 +43,7 @@
 #' ## How many are from a data source vs a compilation?
 #' table(mouse_samples$project_type, useNA = "ifany")
 available_samples <- function(organism = c("human", "mouse"),
-    recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
+    recount3_url = getOption("recount3_url", "http://duffel.rail.bio/recount3"),
     bfc = recount3_cache(),
     verbose = getOption("recount3_verbose", TRUE),
     available_homes = project_homes(
@@ -152,7 +152,7 @@ available_samples <- function(organism = c("human", "mouse"),
 #'     available_homes = "data_sources/sra"
 #' )
 available_projects <- function(organism = c("human", "mouse"),
-    recount3_url = getOption("recount3_url", "http://idies.jhu.edu/recount3/data"),
+    recount3_url = getOption("recount3_url", "http://duffel.rail.bio/recount3"),
     bfc = recount3_cache(),
     available_homes = project_homes(
         organism = organism,
