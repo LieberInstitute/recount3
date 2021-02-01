@@ -3,11 +3,17 @@
 #' This function finds the home for a given project (study) of interest based
 #' on the `organism` and the `home_type`.
 #'
+#' By default it reads a small text file from
+#' `recount3_url`/`organism`/homes_index using `readLines()`. This text file
+#' should contain each possible project home per line. See
+#' <http://duffel.rail.bio/recount3/human/homes_index> for an example.
+#'
 #' @inheritParams locate_url
 #' @inheritParams file_retrieve
 #'
 #' @return A `character()` vector with the available `project_home` options.
 #'
+#' @importFrom RCurl url.exists
 #' @family internal functions for accessing the recount3 data
 #' @export
 #'
@@ -27,16 +33,12 @@ project_homes <-
     recount3_url = getOption("recount3_url", "http://duffel.rail.bio/recount3")) {
         organism <- match.arg(organism)
 
-        if (recount3_url %in% c("http://idies.jhu.edu/recount3/data", "http://duffel.rail.bio/recount3")) {
-            if (organism == "mouse") {
-                return("data_sources/sra")
-            } else if (organism == "human") {
-                return(c(
-                    "data_sources/sra",
-                    "data_sources/gtex",
-                    "data_sources/tcga"
-                ))
-            }
+        ## Construct the URL for the homes_index file
+        homes_url <- paste(recount3_url, organism, "homes_index", sep = "/")
+        if (url.exists(homes_url)) {
+            return(
+                readLines(homes_url)
+            )
         } else if (recount3_url == "http://snaptron.cs.jhu.edu/data/temp/recount3") {
             if (organism == "mouse") {
                 return("data_sources/sra")
@@ -53,7 +55,7 @@ project_homes <-
             }
         } else if (!file.exists(recount3_url)) {
             stop(
-                "'recount3_url' is not a valid supported URL and you'll need to specify the project_homes() manually or 'recount3_url' is not an existing directory in your file system.",
+                "'recount3_url' is not a valid supported URL since it's missing the URL/<organism>/homes_index text file or 'recount3_url' is not an existing directory in your file system.",
                 call. = FALSE
             )
         }
@@ -63,10 +65,6 @@ project_homes <-
             "data_sources",
             "collections"
         )
-        if (organism == "mouse") {
-            ## Currently there are no mouse collections
-            base_dirs <- "data_sources"
-        }
 
         homes <- lapply(base_dirs, function(base_dir) {
             ## Build the query URL

@@ -151,6 +151,13 @@ available_samples <- function(organism = c("human", "mouse"),
 #'     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3test",
 #'     available_homes = "data_sources/sra"
 #' )
+#'
+#' ## You can also rely on project_homes() if the custom URL has a text file
+#' ## that can be read with readLines() at:
+#' ## <recount3_url>/<organism>/homes_index
+#' available_projects(
+#'     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3test"
+#' )
 available_projects <- function(organism = c("human", "mouse"),
     recount3_url = getOption("recount3_url", "http://duffel.rail.bio/recount3"),
     bfc = recount3_cache(),
