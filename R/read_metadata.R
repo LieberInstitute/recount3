@@ -118,7 +118,7 @@ read_metadata <- function(metadata_files) {
         2
     )
     origin_n <- vapply(meta_list, ncol, integer(1)) - length(keys)
-    stopifnot(all(origin_n > 0))
+    stopifnot(all(origin_n >= 0))
     colnames(meta) <- paste0(
         rep(
             c("", paste0(origin, ".")),
