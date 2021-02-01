@@ -1,3 +1,11 @@
+# recount3 1.1.6
+
+BUG FIXES
+
+* Now `project_homes()` reads in a text file from
+`recount3_url`/`organism`/homes_index which enables support for custom URLs such
+as http://snaptron.cs.jhu.edu/data/temp/recount3test.
+
 # recount3 1.1.4
 
 BUG FIXES

@@ -23,6 +23,12 @@ A \code{character()} vector with the available \code{project_home} options.
 This function finds the home for a given project (study) of interest based
 on the \code{organism} and the \code{home_type}.
 }
+\details{
+By default it reads a small text file from
+\code{recount3_url}/\code{organism}/homes_index using \code{readLines()}. This text file
+should contain each possible project home per line. See
+\url{http://duffel.rail.bio/recount3/human/homes_index} for an example.
+}
 \examples{
 
 ## List the different available `project_home` options for the default
