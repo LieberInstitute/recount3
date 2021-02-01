@@ -81,7 +81,7 @@ on the organism and the home_type." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.6</span>
       </span>
     </div>
 
@@ -165,6 +165,12 @@ or a local directory where you have mirrored <code>recount3</code>.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A <code><a href='https://rdrr.io/r/base/character.html'>character()</a></code> vector with the available <code>project_home</code> options.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>By default it reads a small text file from
+<code>recount3_url</code>/<code>organism</code>/homes_index using <code><a href='https://rdrr.io/r/base/readLines.html'>readLines()</a></code>. This text file
+should contain each possible project home per line. See
+<a href='http://duffel.rail.bio/recount3/human/homes_index'>http://duffel.rail.bio/recount3/human/homes_index</a> for an example.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other internal functions for accessing the recount3 data: 

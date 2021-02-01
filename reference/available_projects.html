@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.6</span>
       </span>
     </div>
 
@@ -186,7 +186,7 @@ the <code>n_samples</code> with the number of samples in the given project.</p>
     <pre class="examples"><div class='input'>
 <span class='co'>## Find all the human projects</span>
 <span class='va'>human_projects</span> <span class='op'>&lt;-</span> <span class='fu'>available_projects</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>using temporary cache /tmp/RtmpHeuS7a/BiocFileCache</span></div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:26:38 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/sra.recount_project.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:26:40 caching file gtex.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://duffel.rail.bio/recount3/human/data_sources/gtex/metadata/gtex.recount_project.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:26:41 caching file tcga.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://duffel.rail.bio/recount3/human/data_sources/tcga/metadata/tcga.recount_project.MD.gz'</span></div><div class='input'>
+</div><div class='output co'>#&gt; <span class='message'>using temporary cache /tmp/RtmpXK6p6H/BiocFileCache</span></div><div class='output co'>#&gt; <span class='message'>2021-02-01 20:25:42 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/sra.recount_project.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2021-02-01 20:25:44 caching file gtex.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://duffel.rail.bio/recount3/human/data_sources/gtex/metadata/gtex.recount_project.MD.gz'</span></div><div class='output co'>#&gt; <span class='message'>2021-02-01 20:25:44 caching file tcga.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://duffel.rail.bio/recount3/human/data_sources/tcga/metadata/tcga.recount_project.MD.gz'</span></div><div class='input'>
 <span class='co'>## Explore the results</span>
 <span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>human_projects</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; [1] 8742    6</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>human_projects</span><span class='op'>)</span>
@@ -235,7 +235,7 @@ the <code>n_samples</code> with the number of samples in the given project.</p>
 #&gt; 8715    COAD    human        tcga data_sources/tcga data_sources       546</div><div class='input'>
 <span class='co'>## Find all the mouse projects</span>
 <span class='va'>mouse_projects</span> <span class='op'>&lt;-</span> <span class='fu'>available_projects</span><span class='op'>(</span>organism <span class='op'>=</span> <span class='st'>"mouse"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:26:46 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://duffel.rail.bio/recount3/mouse/data_sources/sra/metadata/sra.recount_project.MD.gz'</span></div><div class='input'>
+</div><div class='output co'>#&gt; <span class='message'>2021-02-01 20:25:51 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://duffel.rail.bio/recount3/mouse/data_sources/sra/metadata/sra.recount_project.MD.gz'</span></div><div class='input'>
 <span class='co'>## Explore the results</span>
 <span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>mouse_projects</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; [1] 10088     6</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>mouse_projects</span><span class='op'>)</span>
@@ -263,8 +263,18 @@ the <code>n_samples</code> with the number of samples in the given project.</p>
     recount3_url <span class='op'>=</span> <span class='st'>"http://snaptron.cs.jhu.edu/data/temp/recount3test"</span>,
     available_homes <span class='op'>=</span> <span class='st'>"data_sources/sra"</span>
 <span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>2021-01-27 08:26:51 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3test/human/data_sources/sra/metadata/sra.recount_project.MD.gz'</span></div><div class='output co'>#&gt;     project organism file_source     project_home project_type n_samples
-#&gt; 1 DRP004088    human         sra data_sources/sra data_sources         2</div></pre>
+</div><div class='output co'>#&gt; <span class='message'>2021-02-01 20:25:56 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>adding rname 'http://snaptron.cs.jhu.edu/data/temp/recount3test/human/data_sources/sra/metadata/sra.recount_project.MD.gz'</span></div><div class='output co'>#&gt;     project organism file_source     project_home project_type n_samples
+#&gt; 1 ERP001942    human         sra data_sources/sra data_sources       667
+#&gt; 2 DRP004088    human         sra data_sources/sra data_sources         2</div><div class='input'>
+<span class='co'>## You can also rely on project_homes() if the custom URL has a text file</span>
+<span class='co'>## that can be read with readLines() at:</span>
+<span class='co'>## &lt;recount3_url&gt;/&lt;organism&gt;/homes_index</span>
+<span class='fu'>available_projects</span><span class='op'>(</span>
+    recount3_url <span class='op'>=</span> <span class='st'>"http://snaptron.cs.jhu.edu/data/temp/recount3test"</span>
+<span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>2021-02-01 20:25:56 caching file sra.recount_project.MD.gz.</span></div><div class='output co'>#&gt;     project organism file_source     project_home project_type n_samples
+#&gt; 1 ERP001942    human         sra data_sources/sra data_sources       667
+#&gt; 2 DRP004088    human         sra data_sources/sra data_sources         2</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
