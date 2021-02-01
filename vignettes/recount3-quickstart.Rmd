@@ -96,7 +96,7 @@ write.bibtex(bib, file = "quickstartRef.bib")
 
 The `r Biocpkg('recount3')` R/Bioconductor package is an interface to the recount3 project. recount3 provides uniformly processed RNA-seq data for hundreds of thousands of samples. The R package makes it possible to easily retrieve this data in standard Bioconductor containers, including _RangedSummarizedExperiment_.  The sections on terminology and available data contains more detail on those subjects.
 
-The **main documentation website** for all the `recount3`-related projects is available at [**recount.bio**](https://LieberInstitute/github.io/recount3-docs). Please check that website for more information about how this R/Bioconductor package and other tools are related to each other.
+The **main documentation website** for all the `recount3`-related projects is available at [**recount.bio**](https://LieberInstitute.github.io/recount3-docs). Please check that website for more information about how this R/Bioconductor package and other tools are related to each other.
 
 # Basics
 
@@ -534,13 +534,13 @@ To clarify the relationship between the R/Bioconductor packages and the phases o
 | --- | --- | --- | --- |
 | 2011 | [`ReCount`](http://bowtie-bio.sourceforge.net/recount/) | DOI: [10.1186/1471-2105-12-449](https://doi.org/10.1186/1471-2105-12-449) | none |
 | 2017 | [`recount2`](https://jhubiostatistics.shinyapps.io/recount/) | DOI: [10.1038/nbt.3838](https://doi.org/10.1038/nbt.3838) [10.12688/f1000research.12223.1](https://doi.org/10.12688/f1000research.12223.1) | `r Biocpkg('recount')` |
-| 2020 | [`recount3`](https://LieberInstitute/github.io/recount3-docs) | DOI: [TODO](https://doi.org/TODO) | `r Biocpkg('recount3')` |
+| 2020 | [`recount3`](https://LieberInstitute.github.io/recount3-docs) | DOI: [TODO](https://doi.org/TODO) | `r Biocpkg('recount3')` |
 
 ## Other related tools
 
 The `ReCount` team has worked on several software solutions and projects that complement each other and enable you to re-use public RNA-seq data. Another Bioconductor package that you might be highly interested in is `r Biocpkg("snapcount")`, which allows you to use the [Snaptron web services](http://snaptron.cs.jhu.edu/). In particular, `r Biocpkg("snapcount")` is best for queries over a particular subset of genes or intervals across all or most of the samples in `recount2`/`Snaptron`.
 
-We remind you that the **main documentation website** for all the `recount3`-related projects is available at [**recount.bio**](https://LieberInstitute/github.io/recount3-docs). Please check that website for more information about how this R/Bioconductor package and other tools are related to each other.
+We remind you that the **main documentation website** for all the `recount3`-related projects is available at [**recount.bio**](https://LieberInstitute.github.io/recount3-docs). Please check that website for more information about how this R/Bioconductor package and other tools are related to each other.
 
 **Thank you!**
 

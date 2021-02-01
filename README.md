@@ -26,7 +26,7 @@ R/Bioconductor package is part of the `recount3` project and is the
 latest iteration of the `ReCount` family of projects that provide access
 to uniformly-processed RNA sequencing datasets. The **main documentation
 website** for all the `recount3`-related projects is available at
-[**recount.bio**](https://LieberInstitute/github.io/recount3-docs).
+[**recount.bio**](https://LieberInstitute.github.io/recount3-docs).
 Please check that website for more information about how this
 R/Bioconductor package and other tools are related to each other.
 
@@ -144,7 +144,7 @@ phases of `ReCount` please check the table below:
 | ---- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------- |
 | 2011 | [`ReCount`](http://bowtie-bio.sourceforge.net/recount/)       | DOI: [10.1186/1471-2105-12-449](https://doi.org/10.1186/1471-2105-12-449)                                                                  | none                                                          |
 | 2017 | [`recount2`](https://jhubiostatistics.shinyapps.io/recount/)  | DOI: [10.1038/nbt.3838](https://doi.org/10.1038/nbt.3838) [10.12688/f1000research.12223.1](https://doi.org/10.12688/f1000research.12223.1) | *[recount](https://bioconductor.org/packages/3.11/recount)*   |
-| 2020 | [`recount3`](https://LieberInstitute/github.io/recount3-docs) | DOI: [TODO](https://doi.org/TODO)                                                                                                          | *[recount3](https://bioconductor.org/packages/3.11/recount3)* |
+| 2020 | [`recount3`](https://LieberInstitute.github.io/recount3-docs) | DOI: [TODO](https://doi.org/TODO)                                                                                                          | *[recount3](https://bioconductor.org/packages/3.11/recount3)* |
 
 ## Teams involved
 
