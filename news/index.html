@@ -79,7 +79,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.7</span>
       </span>
     </div>
 
@@ -134,6 +134,15 @@
       <small>Source: <a href='https://github.com/LieberInstitute/recount3/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="recount3-117" class="section level1">
+<h1 class="page-header" data-toc-text="1.1.7">
+<a href="#recount3-117" class="anchor"></a>recount3 1.1.7</h1>
+<p>BUG FIXES</p>
+<ul>
+<li>
+<code><a href="../reference/read_counts.html">read_counts()</a></code> now reads the gene/exon counts for every sample as numeric instead of integer in order to support count values that exceed the 32bit integer threshold (such as <code>2447935369</code>). Previously, <code><a href="../reference/read_counts.html">read_counts()</a></code> would report tiny fractions for such large numbers. This bug was reported by Christopher Wilks.</li>
+</ul>
+</div>
     <div id="recount3-116" class="section level1">
 <h1 class="page-header" data-toc-text="1.1.6">
 <a href="#recount3-116" class="anchor"></a>recount3 1.1.6</h1>
