@@ -107,7 +107,7 @@ read_counts <- function(counts_file, samples = NULL) {
         data.table::fread(
             counts_file,
             skip = 2,
-            colClasses = c("character", rep("integer", ncol(counts_info) - 1)),
+            colClasses = c("character", rep("numeric", ncol(counts_info) - 1)),
             nThread = 1,
             sep = "\t",
             data.table = FALSE,

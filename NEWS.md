@@ -1,3 +1,13 @@
+# recount3 1.0.7
+
+BUG FIXES
+
+* `read_counts()` now reads the gene/exon counts for every sample as numeric
+instead of integer in order to support count values that exceed the 32bit
+integer threshold (such as `2447935369`). Previously, `read_counts()` would
+report tiny fractions for such large numbers. This bug was reported by
+Christopher Wilks.
+
 # recount3 1.0.6
 
 BUG FIXES
