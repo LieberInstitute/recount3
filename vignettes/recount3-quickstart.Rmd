@@ -206,13 +206,13 @@ Now you are ready to continue with downstream analysis software.
 
 # Users guide
 
-`r Biocpkg('recount3')` `r citep(bib[['recount3paper']])` provides an interface for downloading the [recount3 raw files](https://LieberInstitute.github.io/recount3-docs/raw-files.html) and building Bioconductor-friendly R objects `r citep(list(bib[["bioconductor2015"]], bib[["SummarizedExperiment"]]))` that can be used with many downstream packages. To achieve this, the raw data is organized by **study** from a specific **data source**. That same study can be a part of one or more **collections**, which is a manually curated set of studies with collection-specific sample metadata (see the [Data source vs collection](https://LieberInstitute.github.io/recount3-docs/raw-files.html#data-source-vs-collection) for details). To get started with `r Biocpkg('recount3')`, you will need to identify the ID for the study of interest from either **human** or **mouse** for a particular **annotation** of interest. Once you have identified study, data source or collection, and annotation, `r Biocpkg('recount3')` can be used to build a `RangedSummarizedExperiment` object `r citep(bib[["SummarizedExperiment"]])` for either **gene**, **exon** or **exon-exon junction** expression feature data. Furthermore, `r Biocpkg('recount3')` provides access to the coverage BigWig files that can be quantified for custom set of genomic regions using `r Biocpkg('megadepth')`. Furthermore, `r Biocpkg('snapcount')` allows fast-queries for custom exon-exon junctions and other custom input.
+`r Biocpkg('recount3')` `r citep(bib[['recount3paper']])` provides an interface for downloading the [recount3 raw files](https://LieberInstitute.github.io/recount3-docs/docs/raw-files.html) and building Bioconductor-friendly R objects `r citep(list(bib[["bioconductor2015"]], bib[["SummarizedExperiment"]]))` that can be used with many downstream packages. To achieve this, the raw data is organized by **study** from a specific **data source**. That same study can be a part of one or more **collections**, which is a manually curated set of studies with collection-specific sample metadata (see the [Data source vs collection](https://LieberInstitute.github.io/recount3-docs/docs/raw-files.html#data-source-vs-collection) for details). To get started with `r Biocpkg('recount3')`, you will need to identify the ID for the study of interest from either **human** or **mouse** for a particular **annotation** of interest. Once you have identified study, data source or collection, and annotation, `r Biocpkg('recount3')` can be used to build a `RangedSummarizedExperiment` object `r citep(bib[["SummarizedExperiment"]])` for either **gene**, **exon** or **exon-exon junction** expression feature data. Furthermore, `r Biocpkg('recount3')` provides access to the coverage BigWig files that can be quantified for custom set of genomic regions using `r Biocpkg('megadepth')`. Furthermore, `r Biocpkg('snapcount')` allows fast-queries for custom exon-exon junctions and other custom input.
 
 ## Available data
 
-`r Biocpkg('recount3')` provides access to most of the [`recount3` raw files](https://LieberInstitute.github.io/recount3-docs/raw-files.html) in a form that is R/Bioconductor-friendly. As a summary of the data provided by the `recount3` project (Figure \@ref(fig:recountWorkflowFig1)), the main data files provided are:
+`r Biocpkg('recount3')` provides access to most of the [`recount3` raw files](https://LieberInstitute.github.io/recount3-docs/docs/raw-files.html) in a form that is R/Bioconductor-friendly. As a summary of the data provided by the `recount3` project (Figure \@ref(fig:recountWorkflowFig1)), the main data files provided are:
 
-* **metadata**: information about the samples in `recount3`, which can come from sources such as the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) as well as `recount3` [quality metrics](https://LieberInstitute.github.io/recount3-docs/quality-check-fields.html).
+* **metadata**: information about the samples in `recount3`, which can come from sources such as the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) as well as `recount3` [quality metrics](https://LieberInstitute.github.io/recount3-docs/docs/quality-check-fields.html).
 * **gene**: RNA expression data quantified at the gene annotation level. This information is provided for multiple annotations that are organism-specific. Similar to the `recount2` project, the `recount3` project provides counts at the base-pair coverage level `r citep(bib[["recount2workflow"]])`.
 * **exon**: RNA expression data quantified at the exon annotation level. The data is also annotation-specific and the counts are also at the base-pair coverage level.
 * **exon-exon junctions**: RNA expression data quantified at the exon-exon junction level. This data is annotation-agnostic (it does not depend on the annotation) and is variable across each study because different sets of exon-exon junctions are measured in each study.
@@ -245,7 +245,7 @@ knitr::include_graphics("https://raw.githubusercontent.com/LieberInstitute/recou
   * **collection**: this identifies a human-curated set of projects or samples. The main difference compared to a *data_source* is that a *collection* has collection-specific metadata. For example, someone might have created a table of information about samples in several projects by reading the papers describing these studies as in `recount-brain` `r citep(bib[["recountbrain"]])`.
 * **organism**: the reference organism (species) for the RNA-seq data, which is either _human_ (hg38) or _mouse_ (mm10).
 
-Many of the [`recount3` raw files](https://LieberInstitute.github.io/recount3-docs/raw-files.html) include three columns that are used to identify each sample and that allow merging the data across these files. Those are:
+Many of the [`recount3` raw files](https://LieberInstitute.github.io/recount3-docs/docs/raw-files.html) include three columns that are used to identify each sample and that allow merging the data across these files. Those are:
 
 * **rail_id**: an internal ID used by the `recount` team. The name stems from `Rail-RNA` which was the aligner used for generated the data in `recount2` `r citep(bib[["recount2paper"]])`.
 * **external_id**: the external ID for the samle, such as the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) `run` ID.
@@ -350,7 +350,7 @@ rowRanges(rse_gene_SRP009615)
 
 ## Sample metadata
 
-The sample metadata provided in `r Biocpkg('recount3')` is much more extensive than the one in `r Biocpkg('recount')` for the `recount2` project because it's includes for [**quality control metrics**](https://LieberInstitute.github.io/recount3-docs/quality-check-fields.html), predictions, and information used internally by `r Biocpkg('recount3')` functions such as `create_rse()`. All individual metadata tables include the columns **rail_id**, **external_id** and **study** which are used for merging the different tables. Finally, **BigWigUrl* provides the URL for the BigWig file for the given sample.
+The sample metadata provided in `r Biocpkg('recount3')` is much more extensive than the one in `r Biocpkg('recount')` for the `recount2` project because it's includes for [**quality control metrics**](https://LieberInstitute.github.io/recount3-docs/docs/quality-check-fields.html), predictions, and information used internally by `r Biocpkg('recount3')` functions such as `create_rse()`. All individual metadata tables include the columns **rail_id**, **external_id** and **study** which are used for merging the different tables. Finally, **BigWigUrl* provides the URL for the BigWig file for the given sample.
 
 ```{r "recount3_meta_cols"}
 ## Sample metadata
@@ -410,7 +410,7 @@ Just like with `r Biocpkg('recount')` for `recount2`, you can transform the raw 
 
 ## Exon
 
-`r Biocpkg('recount3')` provides an interface to [raw files](https://LieberInstitute.github.io/recount3-docs/raw-files.html) that go beyond gene counts, as well as other features you might be interested in. For instance, you might want to study expression at the **exon** expression level instead of **gene**. To do so, use the `type` argument in `create_rse()` as shown below.
+`r Biocpkg('recount3')` provides an interface to [raw files](https://LieberInstitute.github.io/recount3-docs/docs/raw-files.html) that go beyond gene counts, as well as other features you might be interested in. For instance, you might want to study expression at the **exon** expression level instead of **gene**. To do so, use the `type` argument in `create_rse()` as shown below.
 
 ```{r "rse_exon"}
 ## Create a RSE object at the exon level
