@@ -41,7 +41,7 @@ should be used with caution.
 
 BUG FIXES
 
-Fixed `locate_url()` for GTEx & TCGA BigWig files.
+* Fixed `locate_url()` for GTEx & TCGA BigWig files.
 
 # recount3 0.99.0
 
