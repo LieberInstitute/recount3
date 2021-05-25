@@ -17,19 +17,27 @@ c(
         doi = '10.18129/B9.bioc.recount3'
     ),
     bibentry(bibtype="article",
-        title = "recount3 pre-print title TODO",
+        title = "recount3: summaries and queries for large-scale RNA-seq expression and splicing",
         author = personList(
             as.person("Christopher Wilks"),
-            as.person("Leonardo Collado-Torres"),
             as.person("Shijie C. Zheng"),
+            as.person("Feng Yong Chen"),
+            as.person("Rone Charles"),
+            as.person("Brad Solomon"),
+            as.person("Jonathan P. Ling"),
+            as.person("Eddie Luidy Imada"),
+            as.person("David Zhang"),
+            as.person("Lance Joseph"),
+            as.person("Jeffrey T. Leek"),
             as.person("Andrew E. Jaffe"),
             as.person("Abhinav Nellore"),
+            as.person("Leonardo Collado-Torres"),
             as.person("Kasper D. Hansen"),
             as.person("Ben Langmead")
         ),
-        year = 2020,
+        year = 2021,
         journal = "bioRxiv",
-        doi = "10.1101/TODO",
-        url = "https://www.biorxiv.org/content/10.1101/TODO"
+        doi = "10.1101/2021.05.21.445138",
+        url = "https://doi.org/10.1101/2021.05.21.445138"
     )
 )
