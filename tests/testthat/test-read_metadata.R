@@ -19,3 +19,11 @@ test_that("Reading metadata files works", {
     expect_equal(ncol(meta), 174)
     expect_error(read_metadata(NULL), "The are no metadata files to work with")
 })
+
+## Some files have issues, like the one reported at:
+## https://github.com/LieberInstitute/recount3/issues/5
+test_that("Incomplete metadata", {
+    url <- locate_url(project='SRP103067', project_home='data_sources/sra', type='metadata')
+    metadata_files <- file_retrieve(url)
+    expect_warning(read_metadata(metadata_files), "The following metadata files are empty and will be dropped")
+})

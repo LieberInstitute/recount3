@@ -1,3 +1,11 @@
+# recount3 1.3.2
+
+BUG FIXES
+
+* Updated `read_metadata()` based on
+https://github.com/LieberInstitute/recount3/issues/5. The empty metadata will
+be dropped with a warning in situations like that.
+
 # recount3 1.1.7
 
 BUG FIXES
