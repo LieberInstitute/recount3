@@ -302,6 +302,10 @@ create_rse_manual <- function(project,
         dependencies = FALSE
     )
 
+    ## Change "score" for "bp_length"
+    ## Related to https://github.com/LieberInstitute/recount3/issues/4
+    colnames(mcols(feature_info))[colnames(mcols(feature_info)) == "score"] <- "bp_length"
+
     rse <- SummarizedExperiment::SummarizedExperiment(
         assays = list(counts = counts),
         colData = S4Vectors::DataFrame(metadata, check.names = FALSE),

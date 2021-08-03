@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![BioC
 status](http://www.bioconductor.org/shields/build/release/bioc/recount3.svg)](https://bioconductor.org/checkResults/release/bioc-LATEST/recount3)
 [![BioC dev
@@ -65,7 +65,7 @@ print(citation("recount3"), bibtex = TRUE)
 #> Collado-Torres L (2021). _Explore and download data from the recount3
 #> project_. doi: 10.18129/B9.bioc.recount3 (URL:
 #> https://doi.org/10.18129/B9.bioc.recount3),
-#> https://github.com/LieberInstitute/recount3 - R package version 1.3.1,
+#> https://github.com/LieberInstitute/recount3 - R package version 1.3.3,
 #> <URL: http://www.bioconductor.org/packages/recount3>.
 #> 
 #> A BibTeX entry for LaTeX users is
@@ -75,7 +75,7 @@ print(citation("recount3"), bibtex = TRUE)
 #>     author = {Leonardo Collado-Torres},
 #>     year = {2021},
 #>     url = {http://www.bioconductor.org/packages/recount3},
-#>     note = {https://github.com/LieberInstitute/recount3 - R package version 1.3.1},
+#>     note = {https://github.com/LieberInstitute/recount3 - R package version 1.3.3},
 #>     doi = {10.18129/B9.bioc.recount3},
 #>   }
 #> 

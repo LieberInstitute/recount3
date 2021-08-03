@@ -55,7 +55,7 @@ biocthis::use_bioc_issue_template()
 biocthis::use_bioc_citation()
 
 ## Add badges to the README.Rmd file
-usethis::use_lifecycle_badge("Maturing")
+usethis::use_lifecycle_badge("Stable")
 usethis::use_bioc_badge()
 ## NOTE: If your Bioconductor package is an experiment, annotation or workflow
 ## package, you will need to edit the resulting badge!

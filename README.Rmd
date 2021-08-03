@@ -17,7 +17,7 @@ library("BiocStyle")
 # recount3 <img src="man/figures/logo.png" align="right" width="200px" >
 
 <!-- badges: start -->
-[![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![BioC status](http://www.bioconductor.org/shields/build/release/bioc/recount3.svg)](https://bioconductor.org/checkResults/release/bioc-LATEST/recount3)
 [![BioC dev status](http://www.bioconductor.org/shields/build/devel/bioc/recount3.svg)](https://bioconductor.org/checkResults/devel/bioc-LATEST/recount3)
 [![Codecov test coverage](https://codecov.io/gh/LieberInstitute/recount3/branch/master/graph/badge.svg)](https://codecov.io/gh/LieberInstitute/recount3?branch=master)

@@ -1,3 +1,11 @@
+# recount3 1.2.3
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+* `rowRanges(rse_gene)$score` is now `rowRanges(rse_gene)$bp_length` to
+make it easier to use `recount::getTPM()` and `recount::getRPKM()` with
+recount3 objects. Resolves https://github.com/LieberInstitute/recount3/issues/4.
+
 # recount3 1.2.2
 
 BUG FIXES

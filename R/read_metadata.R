@@ -89,11 +89,12 @@ read_metadata <- function(metadata_files) {
     )
 
     meta_rows <- vapply(meta_list, nrow, integer(1)) > 0
-    if(any(!meta_rows))
-        warning("The following metadata files are empty and will be dropped: ",
-            paste(names(meta_rows)[!meta_rows], collapse = ", "),
-            call. = FALSE
-        )
+    if (any(!meta_rows)) {
+          warning("The following metadata files are empty and will be dropped: ",
+              paste(names(meta_rows)[!meta_rows], collapse = ", "),
+              call. = FALSE
+          )
+      }
     meta_list <- meta_list[meta_rows]
 
     ## Key columns

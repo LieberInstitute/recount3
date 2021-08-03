@@ -103,8 +103,7 @@ locate_url <-
         jxn_format <- match.arg(jxn_format)
 
         ## Define the base directories
-        base_dir <- switch(
-            type,
+        base_dir <- switch(type,
             metadata = "metadata",
             gene = "gene_sums",
             exon = "exon_sums",
@@ -117,8 +116,7 @@ locate_url <-
             annotation_ext(organism = organism, annotation = annotation)
 
         ## Define the file extensions
-        file_ext <- paste0(".", switch(
-            type,
+        file_ext <- paste0(".", switch(type,
             metadata = "MD.gz",
             gene = paste0(ann_ext, ".gz"),
             exon = paste0(ann_ext, ".gz"),
