@@ -57,9 +57,6 @@ counts without scaling check the function \code{compute_read_counts()}.
 This function is similar to
 \code{recount::scale_counts()} but more general and with a different name to
 avoid NAMESPACE conflicts.
-
-To compute RPKMs, use \code{recount::getRPKM(length_var = "score")}. Similarly,
-for TPMs, use \code{recount::getTPM(length_var = "score")}.
 }
 \examples{
 
@@ -91,11 +88,11 @@ plot(recount2 ~ recount3, data = recount_sizes)
 abline(a = 0, b = 1, col = "purple", lwd = 2, lty = 2)
 
 ## Compute RPKMs
-assays(rse_gene_SRP009615)$RPKM <- recount::getRPKM(rse_gene_SRP009615, length_var = "score")
+assays(rse_gene_SRP009615)$RPKM <- recount::getRPKM(rse_gene_SRP009615)
 colSums(assay(rse_gene_SRP009615, "RPKM"))
 
 ## Compute TPMs
-assays(rse_gene_SRP009615)$TPM <- recount::getTPM(rse_gene_SRP009615, length_var = "score")
+assays(rse_gene_SRP009615)$TPM <- recount::getTPM(rse_gene_SRP009615)
 colSums(assay(rse_gene_SRP009615, "TPM")) / 1e6 ## Should all be equal to 1
 }
 \seealso{

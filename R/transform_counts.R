@@ -17,9 +17,6 @@
 #' `recount::scale_counts()` but more general and with a different name to
 #' avoid NAMESPACE conflicts.
 #'
-#' To compute RPKMs, use `recount::getRPKM(length_var = "score")`. Similarly,
-#' for TPMs, use `recount::getTPM(length_var = "score")`.
-#'
 #' @param rse A
 #' [RangedSummarizedExperiment-class][SummarizedExperiment::RangedSummarizedExperiment-class]
 #' created by `create_rse()`.
@@ -62,14 +59,13 @@
 #' abline(a = 0, b = 1, col = "purple", lwd = 2, lty = 2)
 #'
 #' ## Compute RPKMs
-#' assays(rse_gene_SRP009615)$RPKM <- recount::getRPKM(rse_gene_SRP009615, length_var = "score")
+#' assays(rse_gene_SRP009615)$RPKM <- recount::getRPKM(rse_gene_SRP009615)
 #' colSums(assay(rse_gene_SRP009615, "RPKM"))
 #'
 #' ## Compute TPMs
-#' assays(rse_gene_SRP009615)$TPM <- recount::getTPM(rse_gene_SRP009615, length_var = "score")
+#' assays(rse_gene_SRP009615)$TPM <- recount::getTPM(rse_gene_SRP009615)
 #' colSums(assay(rse_gene_SRP009615, "TPM")) / 1e6 ## Should all be equal to 1
-transform_counts <- function(
-    rse,
+transform_counts <- function(rse,
     by = c("auc", "mapped_reads"),
     targetSize = 4e7,
     L = 100,
@@ -179,8 +175,7 @@ transform_counts <- function(
 #' )
 #' plot(recount2 ~ recount3, data = recount_factors)
 #' abline(a = 0, b = 1, col = "purple", lwd = 2, lty = 2)
-compute_scale_factors <- function(
-    x,
+compute_scale_factors <- function(x,
     by = c("auc", "mapped_reads"),
     targetSize = 4e7,
     L = 100,
