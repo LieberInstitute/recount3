@@ -18,6 +18,7 @@
 #' @return A [RangedSummarizedExperiment-class][SummarizedExperiment::RangedSummarizedExperiment-class]
 #' object with expanded metadata columns.
 #' @export
+#' @importFrom SummarizedExperiment colData<-
 #' @author Andrew E Jaffe modified by Leonardo Collado-Torres.
 #'
 #' @examples

@@ -19,7 +19,7 @@
 #' @importFrom S4Vectors DataFrame
 #' @importFrom rtracklayer import.gff
 #' @importFrom Matrix readMM
-#' @importFrom GenomicRanges GRanges
+#' @importFrom GenomicRanges GRanges mcols mcols<-
 #' @importFrom sessioninfo package_info
 #' @references
 #'
