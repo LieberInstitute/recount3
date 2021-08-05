@@ -55,6 +55,8 @@ BiocFileCache-class." />
 
 
 
+
+
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -66,9 +68,15 @@ BiocFileCache-class." />
 
 
 
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -82,19 +90,13 @@ BiocFileCache-class." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.4</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -144,14 +146,14 @@ to. It is powered by
 <a href='https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html'>BiocFileCache-class</a>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>recount3_cache</span><span class='op'>(</span>cache_dir <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"recount3_cache"</span>, <span class='cn'>NULL</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>recount3_cache</span><span class='op'>(</span>cache_dir <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"recount3_cache"</span>, <span class='cn'>NULL</span><span class='op'>)</span><span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>cache_dir</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> specifying the directory that will be used
+      <td><p>A <code>character(1)</code> specifying the directory that will be used
 for caching the data. If <code>NULL</code> a sensible default location will be used.</p></td>
     </tr>
     </table>
@@ -167,13 +169,14 @@ object where the recount3 files will be cached to.</p>
 <code><a href='recount3_cache_rm.html'>recount3_cache_rm</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='co'>## Locate the recount3 cache default directory</span>
-<span class='fu'>recount3_cache</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; class: BiocFileCache
-#&gt; bfccache: /github/home/.cache/R/recount3
-#&gt; bfccount: 62
-#&gt; For more information see: bfcinfo() or bfcquery()</div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'></span>
+<span class='r-in'><span class='co'>## Locate the recount3 cache default directory</span></span>
+<span class='r-in'><span class='fu'>recount3_cache</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> class: BiocFileCache</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> bfccache: /github/home/.cache/R/recount3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> bfccount: 62</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> For more information see: bfcinfo() or bfcquery()</span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -185,11 +188,11 @@ object where the recount3 files will be cached to.</p>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Leonardo Collado-Torres.</p>
+  <p><p>Developed by Leonardo Collado-Torres.</p></p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
 </div>
 
       </footer>
@@ -197,6 +200,8 @@ object where the recount3 files will be cached to.</p>
 
   
 
+
+  
 
   </body>
 </html>

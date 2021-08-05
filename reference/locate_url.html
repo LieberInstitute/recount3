@@ -55,6 +55,8 @@ the file using file_retrieve()." />
 
 
 
+
+
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -66,9 +68,15 @@ the file using file_retrieve()." />
 
 
 
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -82,19 +90,13 @@ the file using file_retrieve()." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.4</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -144,7 +146,7 @@ one of the output files from the <code>recount3</code> project. You can then dow
 the file using <code><a href='file_retrieve.html'>file_retrieve()</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>locate_url</span><span class='op'>(</span>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>locate_url</span><span class='op'>(</span>
   <span class='va'>project</span>,
   project_home <span class='op'>=</span> <span class='fu'><a href='project_homes.html'>project_homes</a></span><span class='op'>(</span>organism <span class='op'>=</span> <span class='va'>organism</span>, recount3_url <span class='op'>=</span> <span class='va'>recount3_url</span><span class='op'>)</span>,
   type <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"metadata"</span>, <span class='st'>"gene"</span>, <span class='st'>"exon"</span>, <span class='st'>"jxn"</span>, <span class='st'>"bw"</span><span class='op'>)</span>,
@@ -153,29 +155,29 @@ the file using <code><a href='file_retrieve.html'>file_retrieve()</a></code>.</p
   annotation <span class='op'>=</span> <span class='fu'><a href='annotation_options.html'>annotation_options</a></span><span class='op'>(</span><span class='va'>organism</span><span class='op'>)</span>,
   jxn_format <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"ALL"</span>, <span class='st'>"UNIQUE"</span><span class='op'>)</span>,
   recount3_url <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"recount3_url"</span>, <span class='st'>"http://duffel.rail.bio/recount3"</span><span class='op'>)</span>
-<span class='op'>)</span></pre>
+<span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>project</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> with the ID for a given study.</p></td>
+      <td><p>A <code>character(1)</code> with the ID for a given study.</p></td>
     </tr>
     <tr>
       <th>project_home</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> with the home directory for the
+      <td><p>A <code>character(1)</code> with the home directory for the
 <code>project</code>. You can find these using <code><a href='project_homes.html'>project_homes()</a></code>.</p></td>
     </tr>
     <tr>
       <th>type</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> specifying whether you want to access gene
+      <td><p>A <code>character(1)</code> specifying whether you want to access gene
 counts, exon counts, exon-exon junctions or base-pair BigWig coverage files
 (one per <code>sample</code>).</p></td>
     </tr>
     <tr>
       <th>organism</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> specifying which organism you want to
+      <td><p>A <code>character(1)</code> specifying which organism you want to
 download data from. Supported options are <code>"human"</code> or <code>"mouse"</code>.</p></td>
     </tr>
     <tr>
@@ -185,19 +187,19 @@ download.</p></td>
     </tr>
     <tr>
       <th>annotation</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> specifying which annotation you want to
+      <td><p>A <code>character(1)</code> specifying which annotation you want to
 download. Only used when <code>type</code> is either <code>gene</code> or <code>exon</code>.</p></td>
     </tr>
     <tr>
       <th>jxn_format</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> specifying whether the exon-exon junction
+      <td><p>A <code>character(1)</code> specifying whether the exon-exon junction
 files are derived from all the reads (<code>ALL</code>) or only the uniquely mapping
 read counts (<code>UNIQUE</code>). Note that <code>UNIQUE</code> is only available for some
 projects: GTEx and TCGA for human.</p></td>
     </tr>
     <tr>
       <th>recount3_url</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> specifying the home URL for <code>recount3</code>
+      <td><p>A <code>character(1)</code> specifying the home URL for <code>recount3</code>
 or a local directory where you have mirrored <code>recount3</code>.</p></td>
     </tr>
     </table>
@@ -217,101 +219,111 @@ or a local directory where you have mirrored <code>recount3</code>.</p></td>
 <code><a href='read_metadata.html'>read_metadata</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='co'>## Example for metadata files from a project from SRA</span>
-<span class='fu'>locate_url</span><span class='op'>(</span>
-    <span class='st'>"SRP009615"</span>,
-    <span class='st'>"data_sources/sra"</span>
-<span class='op'>)</span>
-</div><div class='output co'>#&gt;                                                                                            sra.sra.SRP009615.MD.gz 
-#&gt;             "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.sra.SRP009615.MD.gz" 
-#&gt;                                                                                sra.recount_project.SRP009615.MD.gz 
-#&gt; "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_project.SRP009615.MD.gz" 
-#&gt;                                                                                     sra.recount_qc.SRP009615.MD.gz 
-#&gt;      "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_qc.SRP009615.MD.gz" 
-#&gt;                                                                                 sra.recount_seq_qc.SRP009615.MD.gz 
-#&gt;  "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_seq_qc.SRP009615.MD.gz" 
-#&gt;                                                                                   sra.recount_pred.SRP009615.MD.gz 
-#&gt;    "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_pred.SRP009615.MD.gz" </div><div class='input'>
-<span class='co'>## Example for metadata files from a project that is part of a collection</span>
-<span class='fu'>locate_url</span><span class='op'>(</span>
-    <span class='st'>"ERP110066"</span>,
-    <span class='st'>"collections/geuvadis_smartseq"</span>,
-    recount3_url <span class='op'>=</span> <span class='st'>"http://snaptron.cs.jhu.edu/data/temp/recount3"</span>
-<span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>2021-08-03 12:26:21 caching file geuvadis_smartseq.recount_project.gz.</span></div><div class='output co'>#&gt;                                                                                                          sra.sra.ERP110066.MD.gz 
-#&gt;             "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.sra.ERP110066.MD.gz" 
-#&gt;                                                                                              sra.recount_project.ERP110066.MD.gz 
-#&gt; "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_project.ERP110066.MD.gz" 
-#&gt;                                                                                                   sra.recount_qc.ERP110066.MD.gz 
-#&gt;      "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_qc.ERP110066.MD.gz" 
-#&gt;                                                                                               sra.recount_seq_qc.ERP110066.MD.gz 
-#&gt;  "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_seq_qc.ERP110066.MD.gz" 
-#&gt;                                                                                                 sra.recount_pred.ERP110066.MD.gz 
-#&gt;    "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_pred.ERP110066.MD.gz" 
-#&gt;                                                                                                      geuvadis_smartseq.custom.gz 
-#&gt;         "http://snaptron.cs.jhu.edu/data/temp/recount3/human/collections/geuvadis_smartseq/metadata/geuvadis_smartseq.custom.gz" </div><div class='input'>
-<span class='co'>## Example for a BigWig file</span>
-<span class='fu'>locate_url</span><span class='op'>(</span>
-    <span class='st'>"SRP009615"</span>,
-    <span class='st'>"data_sources/sra"</span>,
-    <span class='st'>"bw"</span>,
-    <span class='st'>"human"</span>,
-    <span class='st'>"SRR387777"</span>
-<span class='op'>)</span>
-</div><div class='output co'>#&gt;                                                                                    sra.base_sums.SRP009615_SRR387777.ALL.bw 
-#&gt; "http://duffel.rail.bio/recount3/human/data_sources/sra/base_sums/15/SRP009615/77/sra.base_sums.SRP009615_SRR387777.ALL.bw" </div><div class='input'>
-<span class='co'>## Locate example gene count files</span>
-<span class='fu'>locate_url</span><span class='op'>(</span>
-    <span class='st'>"SRP009615"</span>,
-    <span class='st'>"data_sources/sra"</span>,
-    <span class='st'>"gene"</span>
-<span class='op'>)</span>
-</div><div class='output co'>#&gt;                                                                                 sra.gene_sums.SRP009615.G026.gz 
-#&gt; "http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.G026.gz" </div><div class='input'><span class='fu'>locate_url</span><span class='op'>(</span>
-    <span class='st'>"SRP009615"</span>,
-    <span class='st'>"data_sources/sra"</span>,
-    <span class='st'>"gene"</span>,
-    annotation <span class='op'>=</span> <span class='st'>"refseq"</span>
-<span class='op'>)</span>
-</div><div class='output co'>#&gt;                                                                                 sra.gene_sums.SRP009615.R109.gz 
-#&gt; "http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.R109.gz" </div><div class='input'>
-<span class='co'>## Example for a gene count file from a project that is part of a collection</span>
-<span class='fu'>locate_url</span><span class='op'>(</span>
-    <span class='st'>"ERP110066"</span>,
-    <span class='st'>"collections/geuvadis_smartseq"</span>,
-    <span class='st'>"gene"</span>,
-    recount3_url <span class='op'>=</span> <span class='st'>"http://snaptron.cs.jhu.edu/data/temp/recount3"</span>
-<span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>2021-08-03 12:26:23 caching file geuvadis_smartseq.recount_project.gz.</span></div><div class='output co'>#&gt;                                                                                               sra.gene_sums.ERP110066.G026.gz 
-#&gt; "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.G026.gz" </div><div class='input'>
-<span class='co'>## Locate example junction files</span>
-<span class='fu'>locate_url</span><span class='op'>(</span>
-    <span class='st'>"SRP009615"</span>,
-    <span class='st'>"data_sources/sra"</span>,
-    <span class='st'>"jxn"</span>
-<span class='op'>)</span>
-</div><div class='output co'>#&gt;                                                                                 sra.junctions.SRP009615.ALL.MM.gz 
-#&gt; "http://duffel.rail.bio/recount3/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.MM.gz" 
-#&gt;                                                                                 sra.junctions.SRP009615.ALL.RR.gz 
-#&gt; "http://duffel.rail.bio/recount3/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.RR.gz" 
-#&gt;                                                                                 sra.junctions.SRP009615.ALL.ID.gz 
-#&gt; "http://duffel.rail.bio/recount3/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.ID.gz" </div><div class='input'>
-<span class='co'>## Example for metadata files from a project from SRA</span>
-<span class='fu'>locate_url</span><span class='op'>(</span>
-    <span class='st'>"ERP001942"</span>,
-    <span class='st'>"data_sources/sra"</span>
-<span class='op'>)</span>
-</div><div class='output co'>#&gt;                                                                                            sra.sra.ERP001942.MD.gz 
-#&gt;             "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/42/ERP001942/sra.sra.ERP001942.MD.gz" 
-#&gt;                                                                                sra.recount_project.ERP001942.MD.gz 
-#&gt; "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/42/ERP001942/sra.recount_project.ERP001942.MD.gz" 
-#&gt;                                                                                     sra.recount_qc.ERP001942.MD.gz 
-#&gt;      "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/42/ERP001942/sra.recount_qc.ERP001942.MD.gz" 
-#&gt;                                                                                 sra.recount_seq_qc.ERP001942.MD.gz 
-#&gt;  "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/42/ERP001942/sra.recount_seq_qc.ERP001942.MD.gz" 
-#&gt;                                                                                   sra.recount_pred.ERP001942.MD.gz 
-#&gt;    "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/42/ERP001942/sra.recount_pred.ERP001942.MD.gz" </div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'></span>
+<span class='r-in'><span class='co'>## Example for metadata files from a project from SRA</span></span>
+<span class='r-in'><span class='fu'>locate_url</span><span class='op'>(</span></span>
+<span class='r-in'>    <span class='st'>"SRP009615"</span>,</span>
+<span class='r-in'>    <span class='st'>"data_sources/sra"</span></span>
+<span class='r-in'><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                            sra.sra.SRP009615.MD.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>             "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.sra.SRP009615.MD.gz" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                sra.recount_project.SRP009615.MD.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_project.SRP009615.MD.gz" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                     sra.recount_qc.SRP009615.MD.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_qc.SRP009615.MD.gz" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                 sra.recount_seq_qc.SRP009615.MD.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_seq_qc.SRP009615.MD.gz" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                   sra.recount_pred.SRP009615.MD.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_pred.SRP009615.MD.gz" </span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'>## Example for metadata files from a project that is part of a collection</span></span>
+<span class='r-in'><span class='fu'>locate_url</span><span class='op'>(</span></span>
+<span class='r-in'>    <span class='st'>"ERP110066"</span>,</span>
+<span class='r-in'>    <span class='st'>"collections/geuvadis_smartseq"</span>,</span>
+<span class='r-in'>    recount3_url <span class='op'>=</span> <span class='st'>"http://snaptron.cs.jhu.edu/data/temp/recount3"</span></span>
+<span class='r-in'><span class='op'>)</span></span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-08-05 18:31:23 caching file geuvadis_smartseq.recount_project.gz.</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                                          sra.sra.ERP110066.MD.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>             "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.sra.ERP110066.MD.gz" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                              sra.recount_project.ERP110066.MD.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_project.ERP110066.MD.gz" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                                   sra.recount_qc.ERP110066.MD.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_qc.ERP110066.MD.gz" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                               sra.recount_seq_qc.ERP110066.MD.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_seq_qc.ERP110066.MD.gz" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                                 sra.recount_pred.ERP110066.MD.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_pred.ERP110066.MD.gz" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                                      geuvadis_smartseq.custom.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>         "http://snaptron.cs.jhu.edu/data/temp/recount3/human/collections/geuvadis_smartseq/metadata/geuvadis_smartseq.custom.gz" </span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'>## Example for a BigWig file</span></span>
+<span class='r-in'><span class='fu'>locate_url</span><span class='op'>(</span></span>
+<span class='r-in'>    <span class='st'>"SRP009615"</span>,</span>
+<span class='r-in'>    <span class='st'>"data_sources/sra"</span>,</span>
+<span class='r-in'>    <span class='st'>"bw"</span>,</span>
+<span class='r-in'>    <span class='st'>"human"</span>,</span>
+<span class='r-in'>    <span class='st'>"SRR387777"</span></span>
+<span class='r-in'><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                    sra.base_sums.SRP009615_SRR387777.ALL.bw </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> "http://duffel.rail.bio/recount3/human/data_sources/sra/base_sums/15/SRP009615/77/sra.base_sums.SRP009615_SRR387777.ALL.bw" </span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'>## Locate example gene count files</span></span>
+<span class='r-in'><span class='fu'>locate_url</span><span class='op'>(</span></span>
+<span class='r-in'>    <span class='st'>"SRP009615"</span>,</span>
+<span class='r-in'>    <span class='st'>"data_sources/sra"</span>,</span>
+<span class='r-in'>    <span class='st'>"gene"</span></span>
+<span class='r-in'><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                 sra.gene_sums.SRP009615.G026.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> "http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.G026.gz" </span>
+<span class='r-in'><span class='fu'>locate_url</span><span class='op'>(</span></span>
+<span class='r-in'>    <span class='st'>"SRP009615"</span>,</span>
+<span class='r-in'>    <span class='st'>"data_sources/sra"</span>,</span>
+<span class='r-in'>    <span class='st'>"gene"</span>,</span>
+<span class='r-in'>    annotation <span class='op'>=</span> <span class='st'>"refseq"</span></span>
+<span class='r-in'><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                 sra.gene_sums.SRP009615.R109.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> "http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.R109.gz" </span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'>## Example for a gene count file from a project that is part of a collection</span></span>
+<span class='r-in'><span class='fu'>locate_url</span><span class='op'>(</span></span>
+<span class='r-in'>    <span class='st'>"ERP110066"</span>,</span>
+<span class='r-in'>    <span class='st'>"collections/geuvadis_smartseq"</span>,</span>
+<span class='r-in'>    <span class='st'>"gene"</span>,</span>
+<span class='r-in'>    recount3_url <span class='op'>=</span> <span class='st'>"http://snaptron.cs.jhu.edu/data/temp/recount3"</span></span>
+<span class='r-in'><span class='op'>)</span></span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-08-05 18:31:24 caching file geuvadis_smartseq.recount_project.gz.</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                               sra.gene_sums.ERP110066.G026.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.G026.gz" </span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'>## Locate example junction files</span></span>
+<span class='r-in'><span class='fu'>locate_url</span><span class='op'>(</span></span>
+<span class='r-in'>    <span class='st'>"SRP009615"</span>,</span>
+<span class='r-in'>    <span class='st'>"data_sources/sra"</span>,</span>
+<span class='r-in'>    <span class='st'>"jxn"</span></span>
+<span class='r-in'><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                 sra.junctions.SRP009615.ALL.MM.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> "http://duffel.rail.bio/recount3/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.MM.gz" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                 sra.junctions.SRP009615.ALL.RR.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> "http://duffel.rail.bio/recount3/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.RR.gz" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                 sra.junctions.SRP009615.ALL.ID.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> "http://duffel.rail.bio/recount3/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.ID.gz" </span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'>## Example for metadata files from a project from SRA</span></span>
+<span class='r-in'><span class='fu'>locate_url</span><span class='op'>(</span></span>
+<span class='r-in'>    <span class='st'>"ERP001942"</span>,</span>
+<span class='r-in'>    <span class='st'>"data_sources/sra"</span></span>
+<span class='r-in'><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                            sra.sra.ERP001942.MD.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>             "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/42/ERP001942/sra.sra.ERP001942.MD.gz" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                sra.recount_project.ERP001942.MD.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/42/ERP001942/sra.recount_project.ERP001942.MD.gz" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                     sra.recount_qc.ERP001942.MD.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/42/ERP001942/sra.recount_qc.ERP001942.MD.gz" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                 sra.recount_seq_qc.ERP001942.MD.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/42/ERP001942/sra.recount_seq_qc.ERP001942.MD.gz" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                                                                                   sra.recount_pred.ERP001942.MD.gz </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/42/ERP001942/sra.recount_pred.ERP001942.MD.gz" </span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -323,11 +335,11 @@ or a local directory where you have mirrored <code>recount3</code>.</p></td>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Leonardo Collado-Torres.</p>
+  <p><p>Developed by Leonardo Collado-Torres.</p></p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
 </div>
 
       </footer>
@@ -335,6 +347,8 @@ or a local directory where you have mirrored <code>recount3</code>.</p></td>
 
   
 
+
+  
 
   </body>
 </html>

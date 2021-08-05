@@ -55,6 +55,8 @@ recount::scale_counts(factor_only = TRUE), but it is more general." />
 
 
 
+
+
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -66,9 +68,15 @@ recount::scale_counts(factor_only = TRUE), but it is more general." />
 
 
 
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -82,19 +90,13 @@ recount::scale_counts(factor_only = TRUE), but it is more general." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.4</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -141,10 +143,10 @@ recount::scale_counts(factor_only = TRUE), but it is more general." />
     <div class="ref-description">
     <p>This function computes the count scaling factors used by
 <code><a href='transform_counts.html'>transform_counts()</a></code>. This function is similar to
-<code><a href='https://rdrr.io/pkg/recount/man/scale_counts.html'>recount::scale_counts(factor_only = TRUE)</a></code>, but it is more general.</p>
+<code>recount::scale_counts(factor_only = TRUE)</code>, but it is more general.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>compute_scale_factors</span><span class='op'>(</span>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>compute_scale_factors</span><span class='op'>(</span>
   <span class='va'>x</span>,
   by <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"auc"</span>, <span class='st'>"mapped_reads"</span><span class='op'>)</span>,
   targetSize <span class='op'>=</span> <span class='fl'>4e+07</span>,
@@ -153,7 +155,7 @@ recount::scale_counts(factor_only = TRUE), but it is more general." />
   avg_mapped_read_length <span class='op'>=</span> <span class='st'>"recount_qc.star.average_mapped_length"</span>,
   mapped_reads <span class='op'>=</span> <span class='st'>"recount_qc.star.all_mapped_reads"</span>,
   paired_end <span class='op'>=</span> <span class='fu'><a href='is_paired_end.html'>is_paired_end</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>avg_mapped_read_length</span><span class='op'>)</span>
-<span class='op'>)</span></pre>
+<span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -175,31 +177,31 @@ whether the library was paired-end or not, and the desired read length (<code>L<
     </tr>
     <tr>
       <th>targetSize</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/numeric.html'>numeric(1)</a></code> specifying the target library size in number
+      <td><p>A <code>numeric(1)</code> specifying the target library size in number
 of single end reads.</p></td>
     </tr>
     <tr>
       <th>L</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code> specifying the target read length. It is only used
+      <td><p>A <code>integer(1)</code> specifying the target read length. It is only used
 when <code>by = 'mapped_reads'</code> since it cancels out in the calculation when
 using <code>by = 'auc'</code>.</p></td>
     </tr>
     <tr>
       <th>auc</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> specifying the metadata column
+      <td><p>A <code>character(1)</code> specifying the metadata column
 name that contains the area under the coverage (AUC). Note that there are
 several possible AUC columns provided in the sample metadata generated
 by <code><a href='create_rse.html'>create_rse()</a></code>.</p></td>
     </tr>
     <tr>
       <th>avg_mapped_read_length</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> specifying the metdata column
+      <td><p>A <code>character(1)</code> specifying the metdata column
 name that contains the average fragment length after aligning. This is
 typically twice the average read length for paired-end reads.</p></td>
     </tr>
     <tr>
       <th>mapped_reads</th>
-      <td><p>A <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> specifying the metadata column
+      <td><p>A <code>character(1)</code> specifying the metadata column
 name that contains the number of mapped reads.</p></td>
     </tr>
     <tr>
@@ -221,71 +223,87 @@ sample is paired-end or not.</p></td>
 <code><a href='transform_counts.html'>transform_counts</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='co'>## Download the metadata for SRP009615, a single-end study</span>
-<span class='va'>SRP009615_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read_metadata.html'>read_metadata</a></span><span class='op'>(</span>
-    metadata_files <span class='op'>=</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span><span class='op'>(</span>
-        <span class='fu'><a href='locate_url.html'>locate_url</a></span><span class='op'>(</span>
-            <span class='st'>"SRP009615"</span>,
-            <span class='st'>"data_sources/sra"</span>,
-        <span class='op'>)</span>
-    <span class='op'>)</span>
-<span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>2021-08-03 12:23:32 caching file sra.sra.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2021-08-03 12:23:33 caching file sra.recount_project.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2021-08-03 12:23:33 caching file sra.recount_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2021-08-03 12:23:34 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2021-08-03 12:23:34 caching file sra.recount_pred.SRP009615.MD.gz.</span></div><div class='input'>
-<span class='co'>## Compute the scaling factors</span>
-<span class='fu'>compute_scale_factors</span><span class='op'>(</span><span class='va'>SRP009615_meta</span>, by <span class='op'>=</span> <span class='st'>"auc"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;  SRR387777  SRR387778  SRR387779  SRR387780  SRR389079  SRR389080  SRR389081 
-#&gt; 0.03996103 0.03457138 0.03071544 0.03833955 0.02367289 0.03517519 0.05286476 
-#&gt;  SRR389082  SRR389083  SRR389084  SRR389077  SRR389078 
-#&gt; 0.06658138 0.05071328 0.05204845 0.04585471 0.04066468 </div><div class='input'><span class='fu'>compute_scale_factors</span><span class='op'>(</span><span class='va'>SRP009615_meta</span>, by <span class='op'>=</span> <span class='st'>"mapped_reads"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;  SRR387777  SRR387778  SRR387779  SRR387780  SRR389079  SRR389080  SRR389081 
-#&gt; 0.11235750 0.09725162 0.08624279 0.10768442 0.06657889 0.09877155 0.14878642 
-#&gt;  SRR389082  SRR389083  SRR389084  SRR389077  SRR389078 
-#&gt; 0.18697660 0.14237100 0.14600002 0.12904391 0.11425062 </div><div class='input'>
-<span class='co'>## Download the metadata for DRP000499, a paired-end study</span>
-<span class='va'>DRP000499_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read_metadata.html'>read_metadata</a></span><span class='op'>(</span>
-    metadata_files <span class='op'>=</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span><span class='op'>(</span>
-        <span class='fu'><a href='locate_url.html'>locate_url</a></span><span class='op'>(</span>
-            <span class='st'>"DRP000499"</span>,
-            <span class='st'>"data_sources/sra"</span>,
-        <span class='op'>)</span>
-    <span class='op'>)</span>
-<span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>2021-08-03 12:23:35 caching file sra.sra.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2021-08-03 12:23:35 caching file sra.recount_project.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2021-08-03 12:23:36 caching file sra.recount_qc.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2021-08-03 12:23:36 caching file sra.recount_seq_qc.DRP000499.MD.gz.</span></div><div class='output co'>#&gt; <span class='message'>2021-08-03 12:23:37 caching file sra.recount_pred.DRP000499.MD.gz.</span></div><div class='input'>
-<span class='co'>## Compute the scaling factors</span>
-<span class='fu'>compute_scale_factors</span><span class='op'>(</span><span class='va'>DRP000499_meta</span>, by <span class='op'>=</span> <span class='st'>"auc"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;   DRR001622   DRR001623   DRR001624   DRR001625   DRR001626   DRR001627 
-#&gt; 0.022680966 0.032187945 0.021844235         Inf 0.034138563 0.022909709 
-#&gt;   DRR001628   DRR001629   DRR001630   DRR001631   DRR001632   DRR001633 
-#&gt; 0.005089376 0.011296977 0.009467943 0.007160352 0.005208585 0.012453028 
-#&gt;   DRR001634   DRR001635   DRR001636   DRR001637   DRR001638   DRR001639 
-#&gt; 0.007230697 0.008044157 0.007327219 0.005505240 0.008029237 0.009597381 
-#&gt;   DRR001640   DRR001641   DRR001642 
-#&gt; 0.013427737 0.014480916 0.010110987 </div><div class='input'><span class='fu'>compute_scale_factors</span><span class='op'>(</span><span class='va'>DRP000499_meta</span>, by <span class='op'>=</span> <span class='st'>"mapped_reads"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: is_paired_end(): Looks like some samples failed to align and will return NA.</span></div><div class='output co'>#&gt;   DRR001622   DRR001623   DRR001624   DRR001625   DRR001626   DRR001627 
-#&gt; 0.029459016 0.042985428 0.028993649          NA 0.045477396 0.030802276 
-#&gt;   DRR001628   DRR001629   DRR001630   DRR001631   DRR001632   DRR001633 
-#&gt; 0.007368791 0.018508532 0.011344073 0.009351792 0.006493370 0.014206925 
-#&gt;   DRR001634   DRR001635   DRR001636   DRR001637   DRR001638   DRR001639 
-#&gt; 0.009455928 0.010047395 0.008369215 0.007094889 0.009827127 0.011310495 
-#&gt;   DRR001640   DRR001641   DRR001642 
-#&gt; 0.015537455 0.016555494 0.012514436 </div><div class='input'>
-<span class='co'>## You can compare the factors against those from recount::scale_counts()</span>
-<span class='co'>## from the recount2 project which used a different RNA-seq aligner</span>
-<span class='co'>## If needed, install recount, the R/Bioconductor package for recount2:</span>
-<span class='co'># BiocManager::install("recount")</span>
-<span class='va'>recount2_factors</span> <span class='op'>&lt;-</span> <span class='fu'>recount</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/recount/man/scale_counts.html'>scale_counts</a></span><span class='op'>(</span>
-    <span class='fu'>recount</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/recount/man/rse_gene_SRP009615.html'>rse_gene_SRP009615</a></span>,
-    by <span class='op'>=</span> <span class='st'>"auc"</span>, factor_only <span class='op'>=</span> <span class='cn'>TRUE</span>
-<span class='op'>)</span>
-<span class='va'>recount3_factors</span> <span class='op'>&lt;-</span> <span class='fu'>compute_scale_factors</span><span class='op'>(</span><span class='va'>SRP009615_meta</span>, by <span class='op'>=</span> <span class='st'>"auc"</span><span class='op'>)</span>
-<span class='va'>recount_factors</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>
-    recount2 <span class='op'>=</span> <span class='va'>recount2_factors</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/order.html'>order</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>recount2_factors</span><span class='op'>)</span><span class='op'>)</span><span class='op'>]</span>,
-    recount3 <span class='op'>=</span> <span class='va'>recount3_factors</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/order.html'>order</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>recount3_factors</span><span class='op'>)</span><span class='op'>)</span><span class='op'>]</span>
-<span class='op'>)</span>
-<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>recount2</span> <span class='op'>~</span> <span class='va'>recount3</span>, data <span class='op'>=</span> <span class='va'>recount_factors</span><span class='op'>)</span>
-</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/abline.html'>abline</a></span><span class='op'>(</span>a <span class='op'>=</span> <span class='fl'>0</span>, b <span class='op'>=</span> <span class='fl'>1</span>, col <span class='op'>=</span> <span class='st'>"purple"</span>, lwd <span class='op'>=</span> <span class='fl'>2</span>, lty <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span>
-</div><div class='img'><img src='compute_scale_factors-1.png' alt='' width='700' height='433' /></div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'></span>
+<span class='r-in'><span class='co'>## Download the metadata for SRP009615, a single-end study</span></span>
+<span class='r-in'><span class='va'>SRP009615_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read_metadata.html'>read_metadata</a></span><span class='op'>(</span></span>
+<span class='r-in'>    metadata_files <span class='op'>=</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span><span class='op'>(</span></span>
+<span class='r-in'>        <span class='fu'><a href='locate_url.html'>locate_url</a></span><span class='op'>(</span></span>
+<span class='r-in'>            <span class='st'>"SRP009615"</span>,</span>
+<span class='r-in'>            <span class='st'>"data_sources/sra"</span>,</span>
+<span class='r-in'>        <span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span></span>
+<span class='r-in'><span class='op'>)</span></span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-08-05 18:28:59 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-08-05 18:28:59 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-08-05 18:29:00 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-08-05 18:29:00 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-08-05 18:29:00 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'>## Compute the scaling factors</span></span>
+<span class='r-in'><span class='fu'>compute_scale_factors</span><span class='op'>(</span><span class='va'>SRP009615_meta</span>, by <span class='op'>=</span> <span class='st'>"auc"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  SRR387777  SRR387778  SRR387779  SRR387780  SRR389079  SRR389080  SRR389081 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 0.03996103 0.03457138 0.03071544 0.03833955 0.02367289 0.03517519 0.05286476 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  SRR389082  SRR389083  SRR389084  SRR389077  SRR389078 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 0.06658138 0.05071328 0.05204845 0.04585471 0.04066468 </span>
+<span class='r-in'><span class='fu'>compute_scale_factors</span><span class='op'>(</span><span class='va'>SRP009615_meta</span>, by <span class='op'>=</span> <span class='st'>"mapped_reads"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  SRR387777  SRR387778  SRR387779  SRR387780  SRR389079  SRR389080  SRR389081 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 0.11235750 0.09725162 0.08624279 0.10768442 0.06657889 0.09877155 0.14878642 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  SRR389082  SRR389083  SRR389084  SRR389077  SRR389078 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 0.18697660 0.14237100 0.14600002 0.12904391 0.11425062 </span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'>## Download the metadata for DRP000499, a paired-end study</span></span>
+<span class='r-in'><span class='va'>DRP000499_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read_metadata.html'>read_metadata</a></span><span class='op'>(</span></span>
+<span class='r-in'>    metadata_files <span class='op'>=</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span><span class='op'>(</span></span>
+<span class='r-in'>        <span class='fu'><a href='locate_url.html'>locate_url</a></span><span class='op'>(</span></span>
+<span class='r-in'>            <span class='st'>"DRP000499"</span>,</span>
+<span class='r-in'>            <span class='st'>"data_sources/sra"</span>,</span>
+<span class='r-in'>        <span class='op'>)</span></span>
+<span class='r-in'>    <span class='op'>)</span></span>
+<span class='r-in'><span class='op'>)</span></span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-08-05 18:29:02 caching file sra.sra.DRP000499.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-08-05 18:29:02 caching file sra.recount_project.DRP000499.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-08-05 18:29:03 caching file sra.recount_qc.DRP000499.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-08-05 18:29:03 caching file sra.recount_seq_qc.DRP000499.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-08-05 18:29:03 caching file sra.recount_pred.DRP000499.MD.gz.</span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'>## Compute the scaling factors</span></span>
+<span class='r-in'><span class='fu'>compute_scale_factors</span><span class='op'>(</span><span class='va'>DRP000499_meta</span>, by <span class='op'>=</span> <span class='st'>"auc"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   DRR001622   DRR001623   DRR001624   DRR001625   DRR001626   DRR001627 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 0.022680966 0.032187945 0.021844235         Inf 0.034138563 0.022909709 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   DRR001628   DRR001629   DRR001630   DRR001631   DRR001632   DRR001633 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 0.005089376 0.011296977 0.009467943 0.007160352 0.005208585 0.012453028 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   DRR001634   DRR001635   DRR001636   DRR001637   DRR001638   DRR001639 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 0.007230697 0.008044157 0.007327219 0.005505240 0.008029237 0.009597381 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   DRR001640   DRR001641   DRR001642 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 0.013427737 0.014480916 0.010110987 </span>
+<span class='r-in'><span class='fu'>compute_scale_factors</span><span class='op'>(</span><span class='va'>DRP000499_meta</span>, by <span class='op'>=</span> <span class='st'>"mapped_reads"</span><span class='op'>)</span></span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>is_paired_end(): Looks like some samples failed to align and will return NA.</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   DRR001622   DRR001623   DRR001624   DRR001625   DRR001626   DRR001627 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 0.029459016 0.042985428 0.028993649          NA 0.045477396 0.030802276 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   DRR001628   DRR001629   DRR001630   DRR001631   DRR001632   DRR001633 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 0.007368791 0.018508532 0.011344073 0.009351792 0.006493370 0.014206925 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   DRR001634   DRR001635   DRR001636   DRR001637   DRR001638   DRR001639 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 0.009455928 0.010047395 0.008369215 0.007094889 0.009827127 0.011310495 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   DRR001640   DRR001641   DRR001642 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 0.015537455 0.016555494 0.012514436 </span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'>## You can compare the factors against those from recount::scale_counts()</span></span>
+<span class='r-in'><span class='co'>## from the recount2 project which used a different RNA-seq aligner</span></span>
+<span class='r-in'><span class='co'>## If needed, install recount, the R/Bioconductor package for recount2:</span></span>
+<span class='r-in'><span class='co'># BiocManager::install("recount")</span></span>
+<span class='r-in'><span class='va'>recount2_factors</span> <span class='op'>&lt;-</span> <span class='fu'>recount</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/recount/man/scale_counts.html'>scale_counts</a></span><span class='op'>(</span></span>
+<span class='r-in'>    <span class='fu'>recount</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/recount/man/rse_gene_SRP009615.html'>rse_gene_SRP009615</a></span>,</span>
+<span class='r-in'>    by <span class='op'>=</span> <span class='st'>"auc"</span>, factor_only <span class='op'>=</span> <span class='cn'>TRUE</span></span>
+<span class='r-in'><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>recount3_factors</span> <span class='op'>&lt;-</span> <span class='fu'>compute_scale_factors</span><span class='op'>(</span><span class='va'>SRP009615_meta</span>, by <span class='op'>=</span> <span class='st'>"auc"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>recount_factors</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span></span>
+<span class='r-in'>    recount2 <span class='op'>=</span> <span class='va'>recount2_factors</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/order.html'>order</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>recount2_factors</span><span class='op'>)</span><span class='op'>)</span><span class='op'>]</span>,</span>
+<span class='r-in'>    recount3 <span class='op'>=</span> <span class='va'>recount3_factors</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/order.html'>order</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>recount3_factors</span><span class='op'>)</span><span class='op'>)</span><span class='op'>]</span></span>
+<span class='r-in'><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>recount2</span> <span class='op'>~</span> <span class='va'>recount3</span>, data <span class='op'>=</span> <span class='va'>recount_factors</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/graphics/abline.html'>abline</a></span><span class='op'>(</span>a <span class='op'>=</span> <span class='fl'>0</span>, b <span class='op'>=</span> <span class='fl'>1</span>, col <span class='op'>=</span> <span class='st'>"purple"</span>, lwd <span class='op'>=</span> <span class='fl'>2</span>, lty <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></span>
+<span class='r-plt'><img src='compute_scale_factors-1.png' alt='' width='700' height='433' /></span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -297,11 +315,11 @@ sample is paired-end or not.</p></td>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Leonardo Collado-Torres.</p>
+  <p><p>Developed by Leonardo Collado-Torres.</p></p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
 </div>
 
       </footer>
@@ -309,6 +327,8 @@ sample is paired-end or not.</p></td>
 
   
 
+
+  
 
   </body>
 </html>

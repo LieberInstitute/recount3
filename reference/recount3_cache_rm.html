@@ -54,6 +54,8 @@ stored in your recount3_cache()." />
 
 
 
+
+
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -65,9 +67,15 @@ stored in your recount3_cache()." />
 
 
 
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -81,19 +89,13 @@ stored in your recount3_cache()." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.4</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -142,7 +144,7 @@ stored in your recount3_cache()." />
 stored in your <code><a href='recount3_cache.html'>recount3_cache()</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>recount3_cache_rm</span><span class='op'>(</span>bfc <span class='op'>=</span> <span class='fu'><a href='recount3_cache.html'>recount3_cache</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>recount3_cache_rm</span><span class='op'>(</span>bfc <span class='op'>=</span> <span class='fu'><a href='recount3_cache.html'>recount3_cache</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -157,7 +159,7 @@ object where the files will be cached to, typically created by
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code><a href='https://rdrr.io/r/base/character.html'>character(0)</a></code> if the removal of files was successful.</p>
+    <p>A <code>character(0)</code> if the removal of files was successful.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other recount3 cache functions: 
@@ -165,77 +167,78 @@ object where the files will be cached to, typically created by
 <code><a href='recount3_cache.html'>recount3_cache</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## List the URLs you have downloaded</span>
-<span class='fu'><a href='recount3_cache_files.html'>recount3_cache_files</a></span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt;  [1] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/sra.recount_project.MD.gz"                                      
-#&gt;  [2] "http://duffel.rail.bio/recount3/human/data_sources/gtex/metadata/gtex.recount_project.MD.gz"                                    
-#&gt;  [3] "http://duffel.rail.bio/recount3/human/data_sources/tcga/metadata/tcga.recount_project.MD.gz"                                    
-#&gt;  [4] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.sra.SRP009615.MD.gz"                           
-#&gt;  [5] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_project.SRP009615.MD.gz"               
-#&gt;  [6] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_qc.SRP009615.MD.gz"                    
-#&gt;  [7] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_seq_qc.SRP009615.MD.gz"                
-#&gt;  [8] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_pred.SRP009615.MD.gz"                  
-#&gt;  [9] "http://duffel.rail.bio/recount3/human/annotations/gene_sums/human.gene_sums.G026.gtf.gz"                                        
-#&gt; [10] "http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.G026.gz"                  
-#&gt; [11] "http://duffel.rail.bio/recount3/human/annotations/exon_sums/human.exon_sums.G026.gtf.gz"                                        
-#&gt; [12] "http://duffel.rail.bio/recount3/human/data_sources/sra/exon_sums/15/SRP009615/sra.exon_sums.SRP009615.G026.gz"                  
-#&gt; [13] "http://duffel.rail.bio/recount3/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.RR.gz"                
-#&gt; [14] "http://duffel.rail.bio/recount3/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.MM.gz"                
-#&gt; [15] "http://duffel.rail.bio/recount3/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.ID.gz"                
-#&gt; [16] "http://duffel.rail.bio/recount3/mouse/data_sources/sra/metadata/sra.recount_project.MD.gz"                                      
-#&gt; [17] "http://snaptron.cs.jhu.edu/data/temp/recount3test/human/data_sources/sra/metadata/sra.recount_project.MD.gz"                    
-#&gt; [18] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/99/DRP000499/sra.sra.DRP000499.MD.gz"                           
-#&gt; [19] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/99/DRP000499/sra.recount_project.DRP000499.MD.gz"               
-#&gt; [20] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/99/DRP000499/sra.recount_qc.DRP000499.MD.gz"                    
-#&gt; [21] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/99/DRP000499/sra.recount_seq_qc.DRP000499.MD.gz"                
-#&gt; [22] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/99/DRP000499/sra.recount_pred.DRP000499.MD.gz"                  
-#&gt; [23] "http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/99/DRP000499/sra.gene_sums.DRP000499.G026.gz"                  
-#&gt; [24] "http://duffel.rail.bio/recount3/human/annotations/gene_sums/human.gene_sums.G029.gtf.gz"                                        
-#&gt; [25] "http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.G029.gz"                  
-#&gt; [26] "http://duffel.rail.bio/recount3/human/annotations/gene_sums/human.gene_sums.F006.gtf.gz"                                        
-#&gt; [27] "http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.F006.gz"                  
-#&gt; [28] "http://duffel.rail.bio/recount3/human/annotations/gene_sums/human.gene_sums.R109.gtf.gz"                                        
-#&gt; [29] "http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.R109.gz"                  
-#&gt; [30] "http://duffel.rail.bio/recount3/human/annotations/gene_sums/human.gene_sums.ERCC.gtf.gz"                                        
-#&gt; [31] "http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.ERCC.gz"                  
-#&gt; [32] "http://duffel.rail.bio/recount3/human/annotations/gene_sums/human.gene_sums.SIRV.gtf.gz"                                        
-#&gt; [33] "http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.SIRV.gz"                  
-#&gt; [34] "http://snaptron.cs.jhu.edu/data/temp/recount3/human/collections/geuvadis_smartseq/metadata/geuvadis_smartseq.recount_project.gz"
-#&gt; [35] "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.sra.ERP110066.MD.gz"             
-#&gt; [36] "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_project.ERP110066.MD.gz" 
-#&gt; [37] "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_qc.ERP110066.MD.gz"      
-#&gt; [38] "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_pred.ERP110066.MD.gz"    
-#&gt; [39] "http://snaptron.cs.jhu.edu/data/temp/recount3/human/collections/geuvadis_smartseq/metadata/geuvadis_smartseq.custom.gz"         
-#&gt; [40] "http://snaptron.cs.jhu.edu/data/temp/recount3/human/annotations/gene_sums/human.gene_sums.G026.gtf.gz"                          
-#&gt; [41] "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.G026.gz"    
-#&gt; [42] "http://duffel.rail.bio/recount3/mouse/data_sources/sra/metadata/67/DRP002367/sra.sra.DRP002367.MD.gz"                           
-#&gt; [43] "http://duffel.rail.bio/recount3/mouse/data_sources/sra/metadata/67/DRP002367/sra.recount_project.DRP002367.MD.gz"               
-#&gt; [44] "http://duffel.rail.bio/recount3/mouse/data_sources/sra/metadata/67/DRP002367/sra.recount_qc.DRP002367.MD.gz"                    
-#&gt; [45] "http://duffel.rail.bio/recount3/mouse/data_sources/sra/metadata/67/DRP002367/sra.recount_seq_qc.DRP002367.MD.gz"                
-#&gt; [46] "http://duffel.rail.bio/recount3/mouse/data_sources/sra/metadata/67/DRP002367/sra.recount_pred.DRP002367.MD.gz"                  
-#&gt; [47] "http://duffel.rail.bio/recount3/mouse/annotations/gene_sums/mouse.gene_sums.M023.gtf.gz"                                        
-#&gt; [48] "http://duffel.rail.bio/recount3/mouse/data_sources/sra/gene_sums/67/DRP002367/sra.gene_sums.DRP002367.M023.gz"                  
-#&gt; [49] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.sra.ERP110066.MD.gz"                           
-#&gt; [50] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_project.ERP110066.MD.gz"               
-#&gt; [51] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_qc.ERP110066.MD.gz"                    
-#&gt; [52] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_seq_qc.ERP110066.MD.gz"                
-#&gt; [53] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_pred.ERP110066.MD.gz"                  
-#&gt; [54] "http://duffel.rail.bio/recount3/human/data_sources/gtex/metadata/ER/BLADDER/gtex.gtex.BLADDER.MD.gz"                            
-#&gt; [55] "http://duffel.rail.bio/recount3/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_project.BLADDER.MD.gz"                 
-#&gt; [56] "http://duffel.rail.bio/recount3/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_qc.BLADDER.MD.gz"                      
-#&gt; [57] "http://duffel.rail.bio/recount3/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_seq_qc.BLADDER.MD.gz"                  
-#&gt; [58] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.sra.SRP103067.MD.gz"                           
-#&gt; [59] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_project.SRP103067.MD.gz"               
-#&gt; [60] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_qc.SRP103067.MD.gz"                    
-#&gt; [61] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_seq_qc.SRP103067.MD.gz"                
-#&gt; [62] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_pred.SRP103067.MD.gz"                  </div><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='co'>## Now delete the cached files</span>
-<span class='fu'>recount3_cache_rm</span><span class='op'>(</span><span class='op'>)</span>
-
-<span class='co'>## List againt your recount3 files (should be empty)</span>
-<span class='fu'><a href='recount3_cache_files.html'>recount3_cache_files</a></span><span class='op'>(</span><span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='co'>## List the URLs you have downloaded</span></span>
+<span class='r-in'><span class='fu'><a href='recount3_cache_files.html'>recount3_cache_files</a></span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [1] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/sra.recount_project.MD.gz"                                      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [2] "http://duffel.rail.bio/recount3/human/data_sources/gtex/metadata/gtex.recount_project.MD.gz"                                    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [3] "http://duffel.rail.bio/recount3/human/data_sources/tcga/metadata/tcga.recount_project.MD.gz"                                    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [4] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.sra.SRP009615.MD.gz"                           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [5] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_project.SRP009615.MD.gz"               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [6] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_qc.SRP009615.MD.gz"                    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [7] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_seq_qc.SRP009615.MD.gz"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [8] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_pred.SRP009615.MD.gz"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>  [9] "http://duffel.rail.bio/recount3/human/annotations/gene_sums/human.gene_sums.G026.gtf.gz"                                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [10] "http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.G026.gz"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [11] "http://duffel.rail.bio/recount3/human/annotations/exon_sums/human.exon_sums.G026.gtf.gz"                                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [12] "http://duffel.rail.bio/recount3/human/data_sources/sra/exon_sums/15/SRP009615/sra.exon_sums.SRP009615.G026.gz"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [13] "http://duffel.rail.bio/recount3/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.RR.gz"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [14] "http://duffel.rail.bio/recount3/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.MM.gz"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [15] "http://duffel.rail.bio/recount3/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.ID.gz"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [16] "http://duffel.rail.bio/recount3/mouse/data_sources/sra/metadata/sra.recount_project.MD.gz"                                      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [17] "http://snaptron.cs.jhu.edu/data/temp/recount3test/human/data_sources/sra/metadata/sra.recount_project.MD.gz"                    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [18] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/99/DRP000499/sra.sra.DRP000499.MD.gz"                           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [19] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/99/DRP000499/sra.recount_project.DRP000499.MD.gz"               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [20] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/99/DRP000499/sra.recount_qc.DRP000499.MD.gz"                    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [21] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/99/DRP000499/sra.recount_seq_qc.DRP000499.MD.gz"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [22] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/99/DRP000499/sra.recount_pred.DRP000499.MD.gz"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [23] "http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/99/DRP000499/sra.gene_sums.DRP000499.G026.gz"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [24] "http://duffel.rail.bio/recount3/human/annotations/gene_sums/human.gene_sums.G029.gtf.gz"                                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [25] "http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.G029.gz"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [26] "http://duffel.rail.bio/recount3/human/annotations/gene_sums/human.gene_sums.F006.gtf.gz"                                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [27] "http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.F006.gz"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [28] "http://duffel.rail.bio/recount3/human/annotations/gene_sums/human.gene_sums.R109.gtf.gz"                                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [29] "http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.R109.gz"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [30] "http://duffel.rail.bio/recount3/human/annotations/gene_sums/human.gene_sums.ERCC.gtf.gz"                                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [31] "http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.ERCC.gz"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [32] "http://duffel.rail.bio/recount3/human/annotations/gene_sums/human.gene_sums.SIRV.gtf.gz"                                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [33] "http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.SIRV.gz"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [34] "http://snaptron.cs.jhu.edu/data/temp/recount3/human/collections/geuvadis_smartseq/metadata/geuvadis_smartseq.recount_project.gz"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [35] "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.sra.ERP110066.MD.gz"             </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [36] "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_project.ERP110066.MD.gz" </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [37] "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_qc.ERP110066.MD.gz"      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [38] "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_pred.ERP110066.MD.gz"    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [39] "http://snaptron.cs.jhu.edu/data/temp/recount3/human/collections/geuvadis_smartseq/metadata/geuvadis_smartseq.custom.gz"         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [40] "http://snaptron.cs.jhu.edu/data/temp/recount3/human/annotations/gene_sums/human.gene_sums.G026.gtf.gz"                          </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [41] "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.G026.gz"    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [42] "http://duffel.rail.bio/recount3/mouse/data_sources/sra/metadata/67/DRP002367/sra.sra.DRP002367.MD.gz"                           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [43] "http://duffel.rail.bio/recount3/mouse/data_sources/sra/metadata/67/DRP002367/sra.recount_project.DRP002367.MD.gz"               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [44] "http://duffel.rail.bio/recount3/mouse/data_sources/sra/metadata/67/DRP002367/sra.recount_qc.DRP002367.MD.gz"                    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [45] "http://duffel.rail.bio/recount3/mouse/data_sources/sra/metadata/67/DRP002367/sra.recount_seq_qc.DRP002367.MD.gz"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [46] "http://duffel.rail.bio/recount3/mouse/data_sources/sra/metadata/67/DRP002367/sra.recount_pred.DRP002367.MD.gz"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [47] "http://duffel.rail.bio/recount3/mouse/annotations/gene_sums/mouse.gene_sums.M023.gtf.gz"                                        </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [48] "http://duffel.rail.bio/recount3/mouse/data_sources/sra/gene_sums/67/DRP002367/sra.gene_sums.DRP002367.M023.gz"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [49] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.sra.ERP110066.MD.gz"                           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [50] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_project.ERP110066.MD.gz"               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [51] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_qc.ERP110066.MD.gz"                    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [52] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_seq_qc.ERP110066.MD.gz"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [53] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_pred.ERP110066.MD.gz"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [54] "http://duffel.rail.bio/recount3/human/data_sources/gtex/metadata/ER/BLADDER/gtex.gtex.BLADDER.MD.gz"                            </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [55] "http://duffel.rail.bio/recount3/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_project.BLADDER.MD.gz"                 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [56] "http://duffel.rail.bio/recount3/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_qc.BLADDER.MD.gz"                      </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [57] "http://duffel.rail.bio/recount3/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_seq_qc.BLADDER.MD.gz"                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [58] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.sra.SRP103067.MD.gz"                           </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [59] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_project.SRP103067.MD.gz"               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [60] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_qc.SRP103067.MD.gz"                    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [61] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_seq_qc.SRP103067.MD.gz"                </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [62] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_pred.SRP103067.MD.gz"                  </span>
+<span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'><span class='co'>## Now delete the cached files</span></span>
+<span class='r-in'><span class='fu'>recount3_cache_rm</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'>## List againt your recount3 files (should be empty)</span></span>
+<span class='r-in'><span class='fu'><a href='recount3_cache_files.html'>recount3_cache_files</a></span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -247,11 +250,11 @@ object where the files will be cached to, typically created by
 
       <footer>
       <div class="copyright">
-  <p>Developed by Leonardo Collado-Torres.</p>
+  <p><p>Developed by Leonardo Collado-Torres.</p></p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
 </div>
 
       </footer>
@@ -259,6 +262,8 @@ object where the files will be cached to, typically created by
 
   
 
+
+  
 
   </body>
 </html>
