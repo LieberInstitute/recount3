@@ -98,7 +98,6 @@ locate_url <-
     recount3_url = getOption("recount3_url", "http://duffel.rail.bio/recount3")) {
         type <- match.arg(type)
         organism <- match.arg(organism)
-        project_home <- match.arg(project_home)
         annotation <- match.arg(annotation)
         jxn_format <- match.arg(jxn_format)
 
