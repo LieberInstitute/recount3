@@ -124,7 +124,6 @@ create_rse_manual <- function(project,
     verbose = getOption("recount3_verbose", TRUE)) {
     type <- match.arg(type)
     organism <- match.arg(organism)
-    project_home <- match.arg(project_home)
     annotation <- match.arg(annotation)
     jxn_format <- match.arg(jxn_format)
 
