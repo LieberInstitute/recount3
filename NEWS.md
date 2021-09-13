@@ -1,3 +1,11 @@
+# recount3 1.3.7
+
+NEW FEATURES
+
+* Added the `create_hub()` function for creating UCSC track hub configuration
+files for using the UCSC Genome Browser to explore the recount3 BigWig
+base-pair coverage files.
+
 # recount3 1.3.2
 
 SIGNIFICANT USER-VISIBLE CHANGES
