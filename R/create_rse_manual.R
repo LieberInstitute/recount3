@@ -122,6 +122,7 @@ create_rse_manual <- function(project,
     jxn_format = c("ALL", "UNIQUE"),
     recount3_url = getOption("recount3_url", "http://duffel.rail.bio/recount3"),
     verbose = getOption("recount3_verbose", TRUE)) {
+    project_home <- match.arg(project_home)
     type <- match.arg(type)
     organism <- match.arg(organism)
     annotation <- match.arg(annotation)
