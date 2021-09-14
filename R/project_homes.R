@@ -34,7 +34,7 @@ project_homes <-
         organism <- match.arg(organism)
 
         ## Choose cached values if they exist
-        option_name <- paste0("recount3_", organism, "_project_homes")
+        option_name <- paste0("recount3_", organism, "_project_homes_URL_", recount3_url)
         homes <- getOption(option_name)
         if (!is.null(homes))
             return(homes)
