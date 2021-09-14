@@ -30,15 +30,29 @@
 #' )
 project_homes <-
     function(organism = c("human", "mouse"),
-    recount3_url = getOption("recount3_url", "http://duffel.rail.bio/recount3")) {
+        recount3_url = getOption("recount3_url", "http://duffel.rail.bio/recount3")) {
         organism <- match.arg(organism)
 
+        ## Choose cached values if they exist
+        option_name <- paste0("recount3_", organism, "_project_homes")
+        homes <- getOption(option_name)
+        if (!is.null(homes))
+            return(homes)
+
         ## Construct the URL for the homes_index file
-        homes_url <- paste(recount3_url, organism, "homes_index", sep = "/")
+        homes_url <-
+            paste(recount3_url, organism, "homes_index", sep = "/")
         if (url.exists(homes_url)) {
-            return(
-                readLines(homes_url)
-            )
+            homes_from_url <- readLines(homes_url)
+
+            ## Cache the result for the resulting organism so we don't need
+            ## to check this again in this R session
+            options_list <- list(homes_from_url)
+            names(options_list) <- option_name
+            options(options_list)
+
+            ## Return result found
+            return(homes_from_url)
         } else if (recount3_url == "http://snaptron.cs.jhu.edu/data/temp/recount3") {
             if (organism == "mouse") {
                 return("data_sources/sra")
@@ -61,10 +75,8 @@ project_homes <-
         }
 
         ## Define the base directories
-        base_dirs <- c(
-            "data_sources",
-            "collections"
-        )
+        base_dirs <- c("data_sources",
+            "collections")
 
         homes <- lapply(base_dirs, function(base_dir) {
             ## Build the query URL
