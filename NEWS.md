@@ -1,3 +1,9 @@
+# recount3 1.3.9
+
+BUG FIXES
+
+* Resolved https://github.com/LieberInstitute/recount3/issues/7.
+
 # recount3 1.3.7
 
 NEW FEATURES
