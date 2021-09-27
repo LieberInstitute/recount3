@@ -1,7 +1,7 @@
 pandoc: 2.11.4
 pkgdown: 1.6.1.9001
-pkgdown_sha: 705ff7c650bb1c7d46d35e72f27ad093689e2f29
+pkgdown_sha: b5b4bd40887b7acfd4451656dd56ca8f0ca3d436
 articles:
   recount3-quickstart: recount3-quickstart.html
-last_built: 2021-09-14T20:54Z
+last_built: 2021-09-27T14:47Z
 

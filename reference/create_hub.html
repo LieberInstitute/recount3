@@ -92,7 +92,7 @@ https://genome.ucsc.edu/goldenpath/help/hgTrackHubHelp.html." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.3.9</span>
       </span>
     </div>
 
@@ -224,7 +224,7 @@ for an example of how this function was used.</p>
     <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'></span>
 <span class='r-in'><span class='co'>## Find all the mouse samples available from recount3</span></span>
 <span class='r-in'><span class='va'>mouse_samples</span> <span class='op'>&lt;-</span> <span class='fu'><a href='available_samples.html'>available_samples</a></span><span class='op'>(</span><span class='st'>"mouse"</span><span class='op'>)</span></span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-14 20:55:11 caching file sra.recount_project.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:48:24 caching file sra.recount_project.MD.gz.</span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'>## Subset to project DRP001299</span></span>
 <span class='r-in'><span class='va'>info_DRP001299</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span><span class='op'>(</span><span class='va'>mouse_samples</span>, <span class='va'>project</span> <span class='op'>==</span> <span class='st'>"DRP001299"</span><span class='op'>)</span></span>
@@ -234,9 +234,9 @@ for an example of how this function was used.</p>
 <span class='r-in'><span class='co'>## List the files created by create_hub()</span></span>
 <span class='r-in'><span class='va'>hub_files</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.files.html'>list.files</a></span><span class='op'>(</span><span class='va'>hub_dir</span>, full.names <span class='op'>=</span> <span class='cn'>TRUE</span>, recursive <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
 <span class='r-in'><span class='va'>hub_files</span></span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "/tmp/RtmpjMRsJc/DRP001299/genomes.txt"     </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> [2] "/tmp/RtmpjMRsJc/DRP001299/hub.txt"         </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> [3] "/tmp/RtmpjMRsJc/DRP001299/mm10/trackDb.txt"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "/tmp/Rtmpb0Q4fk/DRP001299/genomes.txt"     </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [2] "/tmp/Rtmpb0Q4fk/DRP001299/hub.txt"         </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [3] "/tmp/Rtmpb0Q4fk/DRP001299/mm10/trackDb.txt"</span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'>## Check the files contents</span></span>
 <span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>sapply</a></span><span class='op'>(</span><span class='va'>hub_files</span>, <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>{</span></span>
@@ -329,13 +329,13 @@ for an example of how this function was used.</p>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> type bigWig</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> visibility hide</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> autoScale on</span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> $`/tmp/RtmpjMRsJc/DRP001299/genomes.txt`</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $`/tmp/Rtmpb0Q4fk/DRP001299/genomes.txt`</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> NULL</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> $`/tmp/RtmpjMRsJc/DRP001299/hub.txt`</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $`/tmp/Rtmpb0Q4fk/DRP001299/hub.txt`</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> NULL</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
-<span class='r-out co'><span class='r-pr'>#&gt;</span> $`/tmp/RtmpjMRsJc/DRP001299/mm10/trackDb.txt`</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $`/tmp/Rtmpb0Q4fk/DRP001299/mm10/trackDb.txt`</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> NULL</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
 <span class='r-in'></span>

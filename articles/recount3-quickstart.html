@@ -40,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.3.9</span>
       </span>
     </div>
 
@@ -82,7 +82,7 @@
 
       
 
-      </header><script src="recount3-quickstart_files/header-attrs-2.10/header-attrs.js"></script><div class="row">
+      </header><script src="recount3-quickstart_files/header-attrs-2.11/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>recount3 quick start guide</h1>
@@ -91,7 +91,7 @@
       Lieber Institute for Brain Development, Johns Hopkins Medical CampusCenter for Computational Biology, Johns Hopkins University<br><a class="author_email" href="mailto:#"></a><a href="mailto:lcolladotor@gmail.com" class="email">lcolladotor@gmail.com</a>
       </address>
                   
-            <h4 data-toc-skip class="date">14 September 2021</h4>
+            <h4 data-toc-skip class="date">27 September 2021</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/LieberInstitute/recount3/blob/master/vignettes/recount3-quickstart.Rmd" class="external-link"><code>vignettes/recount3-quickstart.Rmd</code></a></small>
       <div class="hidden name"><code>recount3-quickstart.Rmd</code></div>
@@ -161,7 +161,7 @@
 <span class="co">#&gt; Collado-Torres L (2021). _Explore and download data from the recount3</span>
 <span class="co">#&gt; project_. doi: 10.18129/B9.bioc.recount3 (URL:</span>
 <span class="co">#&gt; https://doi.org/10.18129/B9.bioc.recount3),</span>
-<span class="co">#&gt; https://github.com/LieberInstitute/recount3 - R package version 1.3.8,</span>
+<span class="co">#&gt; https://github.com/LieberInstitute/recount3 - R package version 1.3.9,</span>
 <span class="co">#&gt; &lt;URL: http://www.bioconductor.org/packages/recount3&gt;.</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Wilks C, Zheng SC, Chen FY, Charles R, Solomon B, Ling JP, Imada EL,</span>
@@ -188,9 +188,9 @@
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Find all available human projects</span>
 <span class="va">human_projects</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/available_projects.html">available_projects</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; 2021-09-14 20:57:54 caching file sra.recount_project.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:57:54 caching file gtex.recount_project.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:57:55 caching file tcga.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:51:57 caching file sra.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:51:58 caching file gtex.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:51:59 caching file tcga.recount_project.MD.gz.</span>
 <span class="co">## Find the project you are interested in,</span>
 <span class="co">## here we use SRP009615 as an example</span>
 <span class="va">proj_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span>
@@ -200,17 +200,17 @@
 
 <span class="co">## Create a RangedSummarizedExperiment (RSE) object at the gene level</span>
 <span class="va">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_rse.html">create_rse</a></span><span class="op">(</span><span class="va">proj_info</span><span class="op">)</span>
-<span class="co">#&gt; 2021-09-14 20:58:00 downloading and reading the metadata.</span>
-<span class="co">#&gt; 2021-09-14 20:58:01 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:01 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:01 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:02 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:02 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:03 downloading and reading the feature information.</span>
-<span class="co">#&gt; 2021-09-14 20:58:03 caching file human.gene_sums.G026.gtf.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:03 downloading and reading the counts: 12 samples across 63856 features.</span>
-<span class="co">#&gt; 2021-09-14 20:58:04 caching file sra.gene_sums.SRP009615.G026.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:04 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class="co">#&gt; 2021-09-27 14:52:06 downloading and reading the metadata.</span>
+<span class="co">#&gt; 2021-09-27 14:52:06 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:06 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:07 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:07 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:08 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:09 downloading and reading the feature information.</span>
+<span class="co">#&gt; 2021-09-27 14:52:09 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:10 downloading and reading the counts: 12 samples across 63856 features.</span>
+<span class="co">#&gt; 2021-09-27 14:52:10 caching file sra.gene_sums.SRP009615.G026.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:10 construcing the RangedSummarizedExperiment (rse) object.</span>
 <span class="co">## Explore that RSE object</span>
 <span class="va">rse_gene_SRP009615</span>
 <span class="co">#&gt; class: RangedSummarizedExperiment </span>
@@ -328,9 +328,9 @@ recount2 and recount3 provide coverage count matrices in RangedSummarizedExperim
 <p>While you can use external websites to find a study of interest, you can also use <code><a href="../reference/available_projects.html">available_projects()</a></code> to list the projects that are available in <em><a href="https://bioconductor.org/packages/3.14/recount3" class="external-link">recount3</a></em> as shown below. This will return a <code><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame()</a></code> object that lists the unique project IDs.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">human_projects</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/available_projects.html">available_projects</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; 2021-09-14 20:58:05 caching file sra.recount_project.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:05 caching file gtex.recount_project.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:06 caching file tcga.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:12 caching file sra.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:12 caching file gtex.recount_project.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:13 caching file tcga.recount_project.MD.gz.</span>
 <span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">human_projects</span><span class="op">)</span>
 <span class="co">#&gt; [1] 8742    6</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">human_projects</span><span class="op">)</span>
@@ -472,17 +472,17 @@ recount2 and recount3 provide coverage count matrices in RangedSummarizedExperim
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Create a RSE object at the gene level</span>
 <span class="va">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_rse.html">create_rse</a></span><span class="op">(</span><span class="va">project_info</span><span class="op">)</span>
-<span class="co">#&gt; 2021-09-14 20:58:11 downloading and reading the metadata.</span>
-<span class="co">#&gt; 2021-09-14 20:58:11 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:11 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:12 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:12 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:13 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:13 downloading and reading the feature information.</span>
-<span class="co">#&gt; 2021-09-14 20:58:13 caching file human.gene_sums.G026.gtf.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:14 downloading and reading the counts: 12 samples across 63856 features.</span>
-<span class="co">#&gt; 2021-09-14 20:58:14 caching file sra.gene_sums.SRP009615.G026.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:14 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class="co">#&gt; 2021-09-27 14:52:19 downloading and reading the metadata.</span>
+<span class="co">#&gt; 2021-09-27 14:52:20 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:20 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:21 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:21 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:22 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:22 downloading and reading the feature information.</span>
+<span class="co">#&gt; 2021-09-27 14:52:23 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:24 downloading and reading the counts: 12 samples across 63856 features.</span>
+<span class="co">#&gt; 2021-09-27 14:52:24 caching file sra.gene_sums.SRP009615.G026.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:24 construcing the RangedSummarizedExperiment (rse) object.</span>
 <span class="co">## Explore the resulting RSE gene object</span>
 <span class="va">rse_gene_SRP009615</span>
 <span class="co">#&gt; class: RangedSummarizedExperiment </span>
@@ -504,13 +504,13 @@ recount2 and recount3 provide coverage count matrices in RangedSummarizedExperim
 <code class="sourceCode R"><span class="co">## Information about how this RSE object was made</span>
 <span class="fu">metadata</span><span class="op">(</span><span class="va">rse_gene_SRP009615</span><span class="op">)</span>
 <span class="co">#&gt; $time_created</span>
-<span class="co">#&gt; [1] "2021-09-14 20:58:14 UTC"</span>
+<span class="co">#&gt; [1] "2021-09-27 14:52:24 UTC"</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $recount3_version</span>
 <span class="co">#&gt;           package ondiskversion loadedversion                        path</span>
-<span class="co">#&gt; recount3 recount3         1.3.8         1.3.8 /__w/_temp/Library/recount3</span>
+<span class="co">#&gt; recount3 recount3         1.3.9         1.3.9 /__w/_temp/Library/recount3</span>
 <span class="co">#&gt;                           loadedpath attached is_base       date       source</span>
-<span class="co">#&gt; recount3 /__w/_temp/Library/recount3     TRUE   FALSE 2021-09-14 Bioconductor</span>
+<span class="co">#&gt; recount3 /__w/_temp/Library/recount3     TRUE   FALSE 2021-09-27 Bioconductor</span>
 <span class="co">#&gt;          md5ok            library</span>
 <span class="co">#&gt; recount3    NA /__w/_temp/Library</span>
 <span class="co">#&gt; </span>
@@ -696,17 +696,17 @@ recount2 and recount3 provide coverage count matrices in RangedSummarizedExperim
     <span class="va">proj_info</span>,
     type <span class="op">=</span> <span class="st">"exon"</span>
 <span class="op">)</span>
-<span class="co">#&gt; 2021-09-14 20:58:15 downloading and reading the metadata.</span>
-<span class="co">#&gt; 2021-09-14 20:58:15 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:16 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:16 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:17 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:17 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:17 downloading and reading the feature information.</span>
-<span class="co">#&gt; 2021-09-14 20:58:17 caching file human.exon_sums.G026.gtf.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:42 downloading and reading the counts: 12 samples across 1299686 features.</span>
-<span class="co">#&gt; 2021-09-14 20:58:42 caching file sra.exon_sums.SRP009615.G026.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:45 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class="co">#&gt; 2021-09-27 14:52:25 downloading and reading the metadata.</span>
+<span class="co">#&gt; 2021-09-27 14:52:26 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:26 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:27 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:27 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:28 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:52:28 downloading and reading the feature information.</span>
+<span class="co">#&gt; 2021-09-27 14:52:28 caching file human.exon_sums.G026.gtf.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:53:01 downloading and reading the counts: 12 samples across 1299686 features.</span>
+<span class="co">#&gt; 2021-09-27 14:53:01 caching file sra.exon_sums.SRP009615.G026.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:53:05 construcing the RangedSummarizedExperiment (rse) object.</span>
 <span class="co">## Explore the resulting RSE exon object</span>
 <span class="va">rse_exon_SRP009615</span>
 <span class="co">#&gt; class: RangedSummarizedExperiment </span>
@@ -868,19 +868,19 @@ recount2 and recount3 provide coverage count matrices in RangedSummarizedExperim
     <span class="va">proj_info</span>,
     type <span class="op">=</span> <span class="st">"jxn"</span>
 <span class="op">)</span>
-<span class="co">#&gt; 2021-09-14 20:58:52 downloading and reading the metadata.</span>
-<span class="co">#&gt; 2021-09-14 20:58:52 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:52 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:53 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:53 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:54 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:54 downloading and reading the feature information.</span>
-<span class="co">#&gt; 2021-09-14 20:58:54 caching file sra.junctions.SRP009615.ALL.RR.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:56 downloading and reading the counts: 12 samples across 281448 features.</span>
-<span class="co">#&gt; 2021-09-14 20:58:56 caching file sra.junctions.SRP009615.ALL.MM.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:57 matching exon-exon junction counts with the metadata.</span>
-<span class="co">#&gt; 2021-09-14 20:58:57 caching file sra.junctions.SRP009615.ALL.ID.gz.</span>
-<span class="co">#&gt; 2021-09-14 20:58:58 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class="co">#&gt; 2021-09-27 14:53:13 downloading and reading the metadata.</span>
+<span class="co">#&gt; 2021-09-27 14:53:13 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:53:13 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:53:14 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:53:15 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:53:15 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:53:16 downloading and reading the feature information.</span>
+<span class="co">#&gt; 2021-09-27 14:53:16 caching file sra.junctions.SRP009615.ALL.RR.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:53:19 downloading and reading the counts: 12 samples across 281448 features.</span>
+<span class="co">#&gt; 2021-09-27 14:53:19 caching file sra.junctions.SRP009615.ALL.MM.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:53:20 matching exon-exon junction counts with the metadata.</span>
+<span class="co">#&gt; 2021-09-27 14:53:20 caching file sra.junctions.SRP009615.ALL.ID.gz.</span>
+<span class="co">#&gt; 2021-09-27 14:53:21 construcing the RangedSummarizedExperiment (rse) object.</span>
 <span class="co">## Explore the resulting RSE exon-exon junctions object</span>
 <span class="va">rse_jxn_SRP009615</span>
 <span class="co">#&gt; class: RangedSummarizedExperiment </span>
@@ -1171,9 +1171,9 @@ recount2 and recount3 provide coverage count matrices in RangedSummarizedExperim
 <span class="fu"><a href="https://rdrr.io/r/base/files.html" class="external-link">file.remove</a></span><span class="op">(</span><span class="st">"quickstartRef.bib"</span><span class="op">)</span>
 <span class="co">#&gt; [1] TRUE</span></code></pre></div>
 <p>Date the vignette was generated.</p>
-<pre><code>#&gt; [1] "2021-09-14 20:59:00 UTC"</code></pre>
+<pre><code>#&gt; [1] "2021-09-27 14:53:24 UTC"</code></pre>
 <p>Wallclock time spent generating the vignette.</p>
-<pre><code>#&gt; Time difference of 1.273 mins</code></pre>
+<pre><code>#&gt; Time difference of 1.658 mins</code></pre>
 <p><code>R</code> session information.</p>
 <pre><code>#&gt; ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
 #&gt;  setting  value                       
@@ -1185,7 +1185,7 @@ recount2 and recount3 provide coverage count matrices in RangedSummarizedExperim
 #&gt;  collate  en_US.UTF-8                 
 #&gt;  ctype    en_US.UTF-8                 
 #&gt;  tz       UTC                         
-#&gt;  date     2021-09-14                  
+#&gt;  date     2021-09-27                  
 #&gt; 
 #&gt; ─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────
 #&gt;  package              * version    date       lib source                        
@@ -1195,7 +1195,7 @@ recount2 and recount3 provide coverage count matrices in RangedSummarizedExperim
 #&gt;  BiocGenerics         * 0.39.2     2021-08-18 [1] Bioconductor                  
 #&gt;  BiocIO                 1.3.0      2021-05-19 [1] Bioconductor                  
 #&gt;  BiocManager            1.30.16    2021-06-15 [2] CRAN (R 4.1.1)                
-#&gt;  BiocParallel           1.27.7     2021-09-09 [1] Bioconductor                  
+#&gt;  BiocParallel           1.27.10    2021-09-23 [1] Bioconductor                  
 #&gt;  BiocStyle            * 2.21.3     2021-06-16 [1] Bioconductor                  
 #&gt;  Biostrings             2.61.2     2021-08-04 [1] Bioconductor                  
 #&gt;  bit                    4.0.4      2020-08-04 [1] RSPM (R 4.1.0)                
@@ -1212,9 +1212,9 @@ recount2 and recount3 provide coverage count matrices in RangedSummarizedExperim
 #&gt;  data.table             1.14.0     2021-02-21 [1] RSPM (R 4.1.0)                
 #&gt;  DBI                    1.1.1      2021-01-15 [1] RSPM (R 4.1.0)                
 #&gt;  dbplyr                 2.1.1      2021-04-06 [1] RSPM (R 4.1.0)                
-#&gt;  DelayedArray           0.19.3     2021-09-12 [1] Bioconductor                  
+#&gt;  DelayedArray           0.19.4     2021-09-23 [1] Bioconductor                  
 #&gt;  desc                   1.3.0      2021-03-05 [2] RSPM (R 4.1.0)                
-#&gt;  digest                 0.6.27     2020-10-24 [2] RSPM (R 4.1.0)                
+#&gt;  digest                 0.6.28     2021-09-23 [2] RSPM (R 4.1.0)                
 #&gt;  dplyr                  1.0.7      2021-06-18 [2] RSPM (R 4.1.0)                
 #&gt;  ellipsis               0.3.2      2021-04-29 [2] RSPM (R 4.1.0)                
 #&gt;  evaluate               0.14       2019-05-28 [2] RSPM (R 4.1.0)                
@@ -1224,7 +1224,7 @@ recount2 and recount3 provide coverage count matrices in RangedSummarizedExperim
 #&gt;  fs                     1.5.0      2020-07-31 [2] RSPM (R 4.1.0)                
 #&gt;  generics               0.1.0      2020-10-31 [2] RSPM (R 4.1.0)                
 #&gt;  GenomeInfoDb         * 1.29.8     2021-09-05 [1] Bioconductor                  
-#&gt;  GenomeInfoDbData       1.2.6      2021-07-30 [1] Bioconductor                  
+#&gt;  GenomeInfoDbData       1.2.7      2021-09-27 [1] Bioconductor                  
 #&gt;  GenomicAlignments      1.29.0     2021-05-19 [1] Bioconductor                  
 #&gt;  GenomicRanges        * 1.45.0     2021-05-19 [1] Bioconductor                  
 #&gt;  glue                   1.4.2      2020-08-27 [2] RSPM (R 4.1.0)                
@@ -1236,18 +1236,18 @@ recount2 and recount3 provide coverage count matrices in RangedSummarizedExperim
 #&gt;  jsonlite               1.7.2      2020-12-09 [2] RSPM (R 4.1.0)                
 #&gt;  knitcitations        * 1.0.12     2021-01-10 [1] RSPM (R 4.1.0)                
 #&gt;  knitr                  1.34       2021-09-09 [2] RSPM (R 4.1.0)                
-#&gt;  lattice                0.20-44    2021-05-02 [3] CRAN (R 4.1.1)                
+#&gt;  lattice                0.20-45    2021-09-22 [2] RSPM (R 4.1.0)                
 #&gt;  lifecycle              1.0.0      2021-02-15 [2] RSPM (R 4.1.0)                
 #&gt;  lobstr                 1.1.1      2019-07-02 [1] RSPM (R 4.1.0)                
 #&gt;  lubridate              1.7.10     2021-02-26 [1] RSPM (R 4.1.0)                
 #&gt;  magrittr               2.0.1      2020-11-17 [2] RSPM (R 4.1.0)                
 #&gt;  Matrix                 1.3-4      2021-06-01 [3] CRAN (R 4.1.1)                
 #&gt;  MatrixGenerics       * 1.5.4      2021-08-26 [1] Bioconductor                  
-#&gt;  matrixStats          * 0.60.1     2021-08-23 [1] RSPM (R 4.1.0)                
+#&gt;  matrixStats          * 0.61.0     2021-09-17 [1] RSPM (R 4.1.0)                
 #&gt;  memoise                2.0.0      2021-01-26 [2] RSPM (R 4.1.0)                
 #&gt;  pillar                 1.6.2      2021-07-29 [2] RSPM (R 4.1.0)                
 #&gt;  pkgconfig              2.0.3      2019-09-22 [2] RSPM (R 4.1.0)                
-#&gt;  pkgdown                1.6.1.9001 2021-09-14 [1] Github (r-lib/pkgdown@705ff7c)
+#&gt;  pkgdown                1.6.1.9001 2021-09-27 [1] Github (r-lib/pkgdown@b5b4bd4)
 #&gt;  plyr                   1.8.6      2020-03-03 [1] RSPM (R 4.1.0)                
 #&gt;  pryr                   0.1.5      2021-07-26 [1] RSPM (R 4.1.0)                
 #&gt;  purrr                  0.3.4      2020-04-17 [2] RSPM (R 4.1.0)                
@@ -1258,18 +1258,18 @@ recount2 and recount3 provide coverage count matrices in RangedSummarizedExperim
 #&gt;  ragg                   1.1.3      2021-06-09 [1] RSPM (R 4.1.0)                
 #&gt;  rappdirs               0.3.3      2021-01-31 [2] RSPM (R 4.1.0)                
 #&gt;  Rcpp                   1.0.7      2021-07-07 [1] RSPM (R 4.1.0)                
-#&gt;  RCurl                  1.98-1.4   2021-08-17 [1] RSPM (R 4.1.0)                
-#&gt;  recount3             * 1.3.8      2021-09-14 [1] Bioconductor                  
+#&gt;  RCurl                  1.98-1.5   2021-09-17 [1] RSPM (R 4.1.0)                
+#&gt;  recount3             * 1.3.9      2021-09-27 [1] Bioconductor                  
 #&gt;  RefManageR             1.3.0      2020-11-13 [1] RSPM (R 4.1.0)                
 #&gt;  restfulr               0.0.13     2017-08-06 [1] RSPM (R 4.1.0)                
 #&gt;  rjson                  0.2.20     2018-06-08 [1] RSPM (R 4.1.0)                
 #&gt;  rlang                  0.4.11     2021-04-30 [2] RSPM (R 4.1.0)                
-#&gt;  rmarkdown              2.10       2021-08-06 [1] RSPM (R 4.1.0)                
+#&gt;  rmarkdown              2.11       2021-09-14 [1] RSPM (R 4.1.0)                
 #&gt;  rprojroot              2.0.2      2020-11-15 [2] RSPM (R 4.1.0)                
 #&gt;  Rsamtools              2.9.1      2021-06-17 [1] Bioconductor                  
 #&gt;  RSQLite                2.2.8      2021-08-21 [1] RSPM (R 4.1.0)                
 #&gt;  rtracklayer            1.53.1     2021-08-13 [1] Bioconductor                  
-#&gt;  S4Vectors            * 0.31.3     2021-08-26 [1] Bioconductor                  
+#&gt;  S4Vectors            * 0.31.4     2021-09-24 [1] Bioconductor                  
 #&gt;  sass                   0.4.0      2021-05-12 [1] RSPM (R 4.1.0)                
 #&gt;  sessioninfo          * 1.1.1      2018-11-05 [2] RSPM (R 4.1.0)                
 #&gt;  stringi                1.7.4      2021-08-25 [2] RSPM (R 4.1.0)                
@@ -1282,8 +1282,8 @@ recount2 and recount3 provide coverage count matrices in RangedSummarizedExperim
 #&gt;  utf8                   1.2.2      2021-07-24 [2] RSPM (R 4.1.0)                
 #&gt;  vctrs                  0.3.8      2021-04-29 [2] RSPM (R 4.1.0)                
 #&gt;  withr                  2.4.2      2021-04-18 [2] RSPM (R 4.1.0)                
-#&gt;  xfun                   0.25       2021-08-06 [2] RSPM (R 4.1.0)                
-#&gt;  XML                    3.99-0.7   2021-08-17 [1] RSPM (R 4.1.0)                
+#&gt;  xfun                   0.26       2021-09-14 [2] RSPM (R 4.1.0)                
+#&gt;  XML                    3.99-0.8   2021-09-17 [1] RSPM (R 4.1.0)                
 #&gt;  xml2                   1.3.2      2020-04-23 [2] RSPM (R 4.1.0)                
 #&gt;  XVector                0.33.0     2021-05-19 [1] Bioconductor                  
 #&gt;  yaml                   2.2.1      2020-02-01 [2] RSPM (R 4.1.0)                
@@ -1298,12 +1298,12 @@ recount2 and recount3 provide coverage count matrices in RangedSummarizedExperim
 <a href="#bibliography" class="anchor" aria-hidden="true"></a>Bibliography</h1>
 <p>This vignette was generated using <em><a href="https://bioconductor.org/packages/3.14/BiocStyle" class="external-link">BiocStyle</a></em> (<a href="https://github.com/Bioconductor/BiocStyle" class="external-link">Oleś, 2021</a>) with <em><a href="https://CRAN.R-project.org/package=knitr" class="external-link">knitr</a></em> (<a href="http://www.crcpress.com/product/isbn/9781466561595" class="external-link">Xie, 2014</a>) and <em><a href="https://CRAN.R-project.org/package=rmarkdown" class="external-link">rmarkdown</a></em> (<a href="https://github.com/rstudio/rmarkdown" class="external-link">Allaire, Xie, McPherson, Luraschi, et al., 2021</a>) running behind the scenes.</p>
 <p>Citations made with <em><a href="https://CRAN.R-project.org/package=knitcitations" class="external-link">knitcitations</a></em> (<a href="https://github.com/cboettig/knitcitations" class="external-link">Boettiger, 2021</a>).</p>
-<p>[1] J. Allaire, Y. Xie, J. McPherson, J. Luraschi, et al. <em>rmarkdown: Dynamic Documents for R</em>. R package version 2.10. 2021. &lt;URL: <a href="https://github.com/rstudio/rmarkdown" class="external-link uri">https://github.com/rstudio/rmarkdown</a>&gt;.</p>
+<p>[1] J. Allaire, Y. Xie, J. McPherson, J. Luraschi, et al. <em>rmarkdown: Dynamic Documents for R</em>. R package version 2.11. 2021. &lt;URL: <a href="https://github.com/rstudio/rmarkdown" class="external-link uri">https://github.com/rstudio/rmarkdown</a>&gt;.</p>
 <p>[2] S. Balcome. <em>interactiveDisplayBase: Base package for enabling powerful shiny web displays of Bioconductor objects</em>. R package version 1.31.2. 2021.</p>
 <p>[3] D. Bates and M. Maechler. <em>Matrix: Sparse and Dense Matrix Classes and Methods</em>. R package version 1.3-4. 2021. &lt;URL: <a href="https://CRAN.R-project.org/package=Matrix" class="external-link uri">https://CRAN.R-project.org/package=Matrix</a>&gt;.</p>
 <p>[4] H. Bengtsson. <em>R.utils: Various Programming Utilities</em>. R package version 2.10.1. 2020. &lt;URL: <a href="https://github.com/HenrikBengtsson/R.utils" class="external-link uri">https://github.com/HenrikBengtsson/R.utils</a>&gt;.</p>
 <p>[5] C. Boettiger. <em>knitcitations: Citations for ‘Knitr’ Markdown Files</em>. R package version 1.0.12. 2021. &lt;URL: <a href="https://github.com/cboettig/knitcitations" class="external-link uri">https://github.com/cboettig/knitcitations</a>&gt;.</p>
-<p>[6] L. Collado-Torres. <em>Explore and download data from the recount3 project</em>. <a href="https://github.com/LieberInstitute/recount3" class="external-link uri">https://github.com/LieberInstitute/recount3</a> - R package version 1.3.8. 2021. DOI: 10.18129/B9.bioc.recount3. &lt;URL: <a href="http://www.bioconductor.org/packages/recount3" class="external-link uri">http://www.bioconductor.org/packages/recount3</a>&gt;.</p>
+<p>[6] L. Collado-Torres. <em>Explore and download data from the recount3 project</em>. <a href="https://github.com/LieberInstitute/recount3" class="external-link uri">https://github.com/LieberInstitute/recount3</a> - R package version 1.3.9. 2021. DOI: 10.18129/B9.bioc.recount3. &lt;URL: <a href="http://www.bioconductor.org/packages/recount3" class="external-link uri">http://www.bioconductor.org/packages/recount3</a>&gt;.</p>
 <p>[7] L. Collado-Torres, A. Nellore, and A. E. Jaffe. “recount workflow: Accessing over 70,000 human RNA-seq samples with Bioconductor [version 1; referees: 1 approved, 2 approved with reservations]”. In: <em>F1000Research</em> (2017). DOI: 10.12688/f1000research.12223.1. &lt;URL: <a href="https://f1000research.com/articles/6-1558/v1" class="external-link uri">https://f1000research.com/articles/6-1558/v1</a>&gt;.</p>
 <p>[8] L. Collado-Torres, A. Nellore, K. Kammers, S. E. Ellis, et al. “Reproducible RNA-seq analysis using recount2”. In: <em>Nature Biotechnology</em> (2017). DOI: 10.1038/nbt.3838. &lt;URL: <a href="http://www.nature.com/nbt/journal/v35/n4/full/nbt.3838.html" class="external-link uri">http://www.nature.com/nbt/journal/v35/n4/full/nbt.3838.html</a>&gt;.</p>
 <p>[9] G. Csárdi, R. core, H. Wickham, W. Chang, et al. <em>sessioninfo: R Session Information</em>. R package version 1.1.1. 2018. &lt;URL: <a href="https://github.com/r-lib/sessioninfo#readme" class="external-link uri">https://github.com/r-lib/sessioninfo#readme</a>&gt;.</p>
@@ -1317,11 +1317,11 @@ recount2 and recount3 provide coverage count matrices in RangedSummarizedExperim
 <p>[17] M. W. McLean. “RefManageR: Import and Manage BibTeX and BibLaTeX References in R”. In: <em>The Journal of Open Source Software</em> (2017). DOI: 10.21105/joss.00338.</p>
 <p>[18] M. Morgan, V. Obenchain, J. Hester, and H. Pagès. <em>SummarizedExperiment: SummarizedExperiment container</em>. 2019. DOI: 10.18129/B9.bioc.SummarizedExperiment.</p>
 <p>[19] A. Oleś. <em>BiocStyle: Standard styles for vignettes and other Bioconductor documents</em>. R package version 2.21.3. 2021. &lt;URL: <a href="https://github.com/Bioconductor/BiocStyle" class="external-link uri">https://github.com/Bioconductor/BiocStyle</a>&gt;.</p>
-<p>[20] H. Pagès, M. Lawrence, and P. Aboyoun. <em>S4Vectors: Foundation of vector-like and list-like containers in Bioconductor</em>. R package version 0.31.3. 2021. &lt;URL: <a href="https://bioconductor.org/packages/S4Vectors" class="external-link uri">https://bioconductor.org/packages/S4Vectors</a>&gt;.</p>
+<p>[20] H. Pagès, M. Lawrence, and P. Aboyoun. <em>S4Vectors: Foundation of vector-like and list-like containers in Bioconductor</em>. R package version 0.31.4. 2021. &lt;URL: <a href="https://bioconductor.org/packages/S4Vectors" class="external-link uri">https://bioconductor.org/packages/S4Vectors</a>&gt;.</p>
 <p>[21] R Core Team. <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing. Vienna, Austria, 2021. &lt;URL: <a href="https://www.R-project.org/" class="external-link uri">https://www.R-project.org/</a>&gt;.</p>
 <p>[22] A. Razmara, S. E. Ellis, D. J. Sokolowski, S. Davis, et al. “recount-brain: a curated repository of human brain RNA-seq datasets metadata”. In: <em>bioRxiv</em> (2019). DOI: 10.1101/618025. &lt;URL: <a href="https://doi.org/10.1101/618025" class="external-link uri">https://doi.org/10.1101/618025</a>&gt;.</p>
 <p>[23] L. Shepherd and M. Morgan. <em>BiocFileCache: Manage Files Across Sessions</em>. R package version 2.1.1. 2021.</p>
-<p>[24] D. Temple Lang. <em>RCurl: General Network (HTTP/FTP/…) Client Interface for R</em>. R package version 1.98-1.4. 2021.</p>
+<p>[24] D. Temple Lang. <em>RCurl: General Network (HTTP/FTP/…) Client Interface for R</em>. R package version 1.98-1.5. 2021.</p>
 <p>[25] H. Wickham. <em>pryr: Tools for Computing on the Language</em>. R package version 0.1.5. 2021. &lt;URL: <a href="https://github.com/hadley/pryr" class="external-link uri">https://github.com/hadley/pryr</a>&gt;.</p>
 <p>[26] H. Wickham. “testthat: Get Started with Testing”. In: <em>The R Journal</em> 3 (2011), pp. 5-10. &lt;URL: <a href="https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf" class="external-link uri">https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf</a>&gt;.</p>
 <p>[27] C. Wilks, S. C. Zheng, F. Y. Chen, R. Charles, et al. “recount3: summaries and queries for large-scale RNA-seq expression and splicing”. In: <em>bioRxiv</em> (2021). DOI: 10.1101/2021.05.21.445138. &lt;URL: <a href="https://doi.org/10.1101/2021.05.21.445138" class="external-link uri">https://doi.org/10.1101/2021.05.21.445138</a>&gt;.</p>
