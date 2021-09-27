@@ -1,7 +1,7 @@
 Package: recount3
 Title: Explore and download data from the recount3 project
-Version: 1.2.5
-Date: 2021-09-14
+Version: 1.2.6
+Date: 2021-09-27
 Authors@R: 
     c(
     person("Leonardo", "Collado-Torres", role = c("aut", "cre"), 

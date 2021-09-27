@@ -328,7 +328,7 @@ create_rse_manual <- function(project,
         assayNames(rse) <- "raw_counts"
 
         ## Remove jxn_format since it has nothing to do with genes/exons
-        metadata(rse)$jxn_format <- NULL
+        S4Vectors::metadata(rse)$jxn_format <- NULL
     }
     return(rse)
 }
