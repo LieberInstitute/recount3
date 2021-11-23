@@ -30,8 +30,6 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
-    
-
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -44,12 +42,18 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.3.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
+<li>
+  <a href="index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -90,33 +94,33 @@
   <div class="contents col-md-9">
 <div id="recount3-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#recount3-" class="anchor" aria-hidden="true"></a>recount3 <img src="reference/figures/logo.png" align="right" width="200px">
+<a href="#recount3-" class="anchor"></a>recount3 <img src="reference/figures/logo.png" align="right" width="200px">
 </h1></div>
 <!-- badges: start -->
 
-<p>The <em><a href="https://bioconductor.org/packages/3.13/recount3" class="external-link">recount3</a></em> R/Bioconductor package is part of the <code>recount3</code> project and is the latest iteration of the <code>ReCount</code> family of projects that provide access to uniformly-processed RNA sequencing datasets. The <strong>main documentation website</strong> for all the <code>recount3</code>-related projects is available at <a href="https://LieberInstitute.github.io/recount3-docs" class="external-link"><strong>recount.bio</strong></a>. Please check that website for more information about how this R/Bioconductor package and other tools are related to each other.</p>
+<p>The <em><a href="https://bioconductor.org/packages/3.13/recount3">recount3</a></em> R/Bioconductor package is part of the <code>recount3</code> project and is the latest iteration of the <code>ReCount</code> family of projects that provide access to uniformly-processed RNA sequencing datasets. The <strong>main documentation website</strong> for all the <code>recount3</code>-related projects is available at <a href="https://LieberInstitute.github.io/recount3-docs"><strong>recount.bio</strong></a>. Please check that website for more information about how this R/Bioconductor package and other tools are related to each other.</p>
 <div id="documentation" class="section level2">
 <h2 class="hasAnchor">
-<a href="#documentation" class="anchor" aria-hidden="true"></a>Documentation</h2>
-<p>For more information about <em><a href="https://bioconductor.org/packages/3.13/recount3" class="external-link">recount3</a></em> check the vignettes <a href="http://bioconductor.org/packages/recount3" class="external-link">through Bioconductor</a> or at the <a href="http://lieberinstitute.github.io/recount3" class="external-link">documentation website</a>.</p>
+<a href="#documentation" class="anchor"></a>Documentation</h2>
+<p>For more information about <em><a href="https://bioconductor.org/packages/3.13/recount3">recount3</a></em> check the vignettes <a href="http://bioconductor.org/packages/recount3">through Bioconductor</a> or at the <a href="http://lieberinstitute.github.io/recount3">documentation website</a>.</p>
 </div>
 <div id="installation-instructions" class="section level2">
 <h2 class="hasAnchor">
-<a href="#installation-instructions" class="anchor" aria-hidden="true"></a>Installation instructions</h2>
-<p>Get the latest stable <code>R</code> release from <a href="http://cran.r-project.org/" class="external-link">CRAN</a>. Then install <em><a href="https://bioconductor.org/packages/3.13/recount3" class="external-link">recount3</a></em> from <a href="http://bioconductor.org/" class="external-link">Bioconductor</a> using the following code:</p>
+<a href="#installation-instructions" class="anchor"></a>Installation instructions</h2>
+<p>Get the latest stable <code>R</code> release from <a href="http://cran.r-project.org/">CRAN</a>. Then install <em><a href="https://bioconductor.org/packages/3.13/recount3">recount3</a></em> from <a href="http://bioconductor.org/">Bioconductor</a> using the following code:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace</a></span><span class="op">(</span><span class="st">"BiocManager"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
-    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"BiocManager"</span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html">requireNamespace</a></span><span class="op">(</span><span class="st">"BiocManager"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"BiocManager"</span><span class="op">)</span>
 <span class="op">}</span>
 
-<span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/install.html" class="external-link">install</a></span><span class="op">(</span><span class="st">"recount3"</span><span class="op">)</span></code></pre></div>
+<span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BiocManager/man/install.html">install</a></span><span class="op">(</span><span class="st">"recount3"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="citation" class="section level2">
 <h2 class="hasAnchor">
-<a href="#citation" class="anchor" aria-hidden="true"></a>Citation</h2>
+<a href="#citation" class="anchor"></a>Citation</h2>
 <p>Below is the citation output from using <code>citation('recount3')</code> in R. Please run this yourself to check for any updates on how to cite <strong>recount3</strong>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"recount3"</span><span class="op">)</span>, bibtex <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span><span class="op">(</span><span class="st">"recount3"</span><span class="op">)</span>, bibtex <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Collado-Torres L (2021). _Explore and download data from the recount3</span>
 <span class="co">#&gt; project_. doi: 10.18129/B9.bioc.recount3 (URL:</span>
@@ -153,28 +157,28 @@
 <span class="co">#&gt;     doi = {10.1101/2021.05.21.445138},</span>
 <span class="co">#&gt;     url = {https://doi.org/10.1101/2021.05.21.445138},</span>
 <span class="co">#&gt;   }</span></code></pre></div>
-<p>Please note that <em><a href="https://bioconductor.org/packages/3.13/recount3" class="external-link">recount3</a></em> was only made possible thanks to many other R and bioinformatics software authors, which are cited either in the vignettes and/or the paper(s) describing this package.</p>
+<p>Please note that <em><a href="https://bioconductor.org/packages/3.13/recount3">recount3</a></em> was only made possible thanks to many other R and bioinformatics software authors, which are cited either in the vignettes and/or the paper(s) describing this package.</p>
 </div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
-<a href="#code-of-conduct" class="anchor" aria-hidden="true"></a>Code of Conduct</h2>
-<p>Please note that the derfinderPlot project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
+<p>Please note that the derfinderPlot project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 <div id="development-tools" class="section level2">
 <h2 class="hasAnchor">
-<a href="#development-tools" class="anchor" aria-hidden="true"></a>Development tools</h2>
+<a href="#development-tools" class="anchor"></a>Development tools</h2>
 <ul>
-<li>Continuous code testing is possible thanks to <a href="https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/" class="external-link">GitHub actions</a> through <em><a href="https://CRAN.R-project.org/package=usethis" class="external-link">usethis</a></em>, <em><a href="https://CRAN.R-project.org/package=remotes" class="external-link">remotes</a></em>, <em><a href="https://github.com/r-hub/sysreqs" class="external-link">sysreqs</a></em> and <em><a href="https://CRAN.R-project.org/package=rcmdcheck" class="external-link">rcmdcheck</a></em> customized to use <a href="https://www.bioconductor.org/help/docker/" class="external-link">Bioconductor’s docker containers</a> and <em><a href="https://bioconductor.org/packages/3.13/BiocCheck" class="external-link">BiocCheck</a></em>.</li>
-<li>Code coverage assessment is possible thanks to <a href="https://codecov.io/gh" class="external-link">codecov</a> and <em><a href="https://CRAN.R-project.org/package=covr" class="external-link">covr</a></em>.</li>
-<li>The <a href="http://lieberinstitute.github.io/recount3" class="external-link">documentation website</a> is automatically updated thanks to <em><a href="https://CRAN.R-project.org/package=pkgdown" class="external-link">pkgdown</a></em>.</li>
-<li>The code is styled automatically thanks to <em><a href="https://CRAN.R-project.org/package=styler" class="external-link">styler</a></em>.</li>
-<li>The documentation is formatted thanks to <em><a href="https://CRAN.R-project.org/package=devtools" class="external-link">devtools</a></em> and <em><a href="https://CRAN.R-project.org/package=roxygen2" class="external-link">roxygen2</a></em>.</li>
+<li>Continuous code testing is possible thanks to <a href="https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/">GitHub actions</a> through <em><a href="https://CRAN.R-project.org/package=usethis">usethis</a></em>, <em><a href="https://CRAN.R-project.org/package=remotes">remotes</a></em>, <em><a href="https://github.com/r-hub/sysreqs">sysreqs</a></em> and <em><a href="https://CRAN.R-project.org/package=rcmdcheck">rcmdcheck</a></em> customized to use <a href="https://www.bioconductor.org/help/docker/">Bioconductor’s docker containers</a> and <em><a href="https://bioconductor.org/packages/3.13/BiocCheck">BiocCheck</a></em>.</li>
+<li>Code coverage assessment is possible thanks to <a href="https://codecov.io/gh">codecov</a> and <em><a href="https://CRAN.R-project.org/package=covr">covr</a></em>.</li>
+<li>The <a href="http://lieberinstitute.github.io/recount3">documentation website</a> is automatically updated thanks to <em><a href="https://CRAN.R-project.org/package=pkgdown">pkgdown</a></em>.</li>
+<li>The code is styled automatically thanks to <em><a href="https://CRAN.R-project.org/package=styler">styler</a></em>.</li>
+<li>The documentation is formatted thanks to <em><a href="https://CRAN.R-project.org/package=devtools">devtools</a></em> and <em><a href="https://CRAN.R-project.org/package=roxygen2">roxygen2</a></em>.</li>
 </ul>
 <p>For more details, check the <code>dev</code> directory.</p>
 </div>
 <div id="project-history" class="section level2">
 <h2 class="hasAnchor">
-<a href="#project-history" class="anchor" aria-hidden="true"></a>Project history</h2>
+<a href="#project-history" class="anchor"></a>Project history</h2>
 <p>To clarify the relationship between the R/Bioconductor packages and the phases of <code>ReCount</code> please check the table below:</p>
 <table class="table">
 <thead><tr class="header">
@@ -186,48 +190,48 @@
 <tbody>
 <tr class="odd">
 <td>2011</td>
-<td><a href="http://bowtie-bio.sourceforge.net/recount/" class="external-link"><code>ReCount</code></a></td>
-<td>DOI: <a href="https://doi.org/10.1186/1471-2105-12-449" class="external-link">10.1186/1471-2105-12-449</a>
+<td><a href="http://bowtie-bio.sourceforge.net/recount/"><code>ReCount</code></a></td>
+<td>DOI: <a href="https://doi.org/10.1186/1471-2105-12-449">10.1186/1471-2105-12-449</a>
 </td>
 <td>none</td>
 </tr>
 <tr class="even">
 <td>2017</td>
-<td><a href="https://jhubiostatistics.shinyapps.io/recount/" class="external-link"><code>recount2</code></a></td>
-<td>DOI: <a href="https://doi.org/10.1038/nbt.3838" class="external-link">10.1038/nbt.3838</a> <a href="https://doi.org/10.12688/f1000research.12223.1" class="external-link">10.12688/f1000research.12223.1</a>
+<td><a href="https://jhubiostatistics.shinyapps.io/recount/"><code>recount2</code></a></td>
+<td>DOI: <a href="https://doi.org/10.1038/nbt.3838">10.1038/nbt.3838</a> <a href="https://doi.org/10.12688/f1000research.12223.1">10.12688/f1000research.12223.1</a>
 </td>
-<td><em><a href="https://bioconductor.org/packages/3.13/recount" class="external-link">recount</a></em></td>
+<td><em><a href="https://bioconductor.org/packages/3.13/recount">recount</a></em></td>
 </tr>
 <tr class="odd">
 <td>2021</td>
-<td><a href="https://LieberInstitute.github.io/recount3-docs" class="external-link"><code>recount3</code></a></td>
-<td>DOI: <a href="https://doi.org/10.1101/2021.05.21.445138" class="external-link">10.1101/2021.05.21.445138</a>
+<td><a href="https://LieberInstitute.github.io/recount3-docs"><code>recount3</code></a></td>
+<td>DOI: <a href="https://doi.org/10.1101/2021.05.21.445138">10.1101/2021.05.21.445138</a>
 </td>
-<td><em><a href="https://bioconductor.org/packages/3.13/recount3" class="external-link">recount3</a></em></td>
+<td><em><a href="https://bioconductor.org/packages/3.13/recount3">recount3</a></em></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="teams-involved" class="section level2">
 <h2 class="hasAnchor">
-<a href="#teams-involved" class="anchor" aria-hidden="true"></a>Teams involved</h2>
+<a href="#teams-involved" class="anchor"></a>Teams involved</h2>
 <p>The <code>ReCount</code> family involves the following teams:</p>
 <ul>
-<li><a href="http://www.langmead-lab.org/" class="external-link">Ben Langmead’s lab at JHU Computer Science</a></li>
-<li><a href="https://www.hansenlab.org/" class="external-link">Kasper Daniel Hansen’s lab at JHBSPH Biostatistics Department</a></li>
+<li><a href="http://www.langmead-lab.org/">Ben Langmead’s lab at JHU Computer Science</a></li>
+<li><a href="https://www.hansenlab.org/">Kasper Daniel Hansen’s lab at JHBSPH Biostatistics Department</a></li>
 <li>
-<a href="http://lcolladotor.github.io/" class="external-link">Leonardo Collado-Torres</a> and <a href="http://aejaffe.com/" class="external-link">Andrew E. Jaffe</a> from <a href="https://www.libd.org/" class="external-link">LIBD</a>
+<a href="http://lcolladotor.github.io/">Leonardo Collado-Torres</a> and <a href="http://aejaffe.com/">Andrew E. Jaffe</a> from <a href="https://www.libd.org/">LIBD</a>
 </li>
-<li><a href="http://nellore.bio/" class="external-link">Abhinav Nellore’s lab at OHSU</a></li>
-<li><a href="http://jtleek.com/" class="external-link">Jeff Leek’s lab at JHBSPH Biostatistics Deparment</a></li>
-<li>Data hosted by <a href="https://www.sciserver.org/" class="external-link">SciServer from IDIES at JHU</a>
+<li><a href="http://nellore.bio/">Abhinav Nellore’s lab at OHSU</a></li>
+<li><a href="http://jtleek.com/">Jeff Leek’s lab at JHBSPH Biostatistics Deparment</a></li>
+<li>Data hosted by <a href="https://www.sciserver.org/">SciServer from IDIES at JHU</a>
 </li>
 </ul>
 <table class="table"><tbody><tr class="odd">
-<td><a href="http://www.langmead-lab.org/" class="external-link"><img src="http://www.langmead-lab.org/wp-content/uploads/2014/01/Screen-Shot-2014-02-02-at-5.20.13-PM-1024x199.png" width="250px"></a></td>
-<td><a href="https://www.libd.org/" class="external-link"><img src="http://lcolladotor.github.io/img/LIBD_logo.jpg" width="250px"></a></td>
-<td><a href="http://nellore.bio/" class="external-link"><img src="https://seekvectorlogo.net/wp-content/uploads/2018/08/oregon-health-science-university-ohsu-vector-logo.png" width="250px"></a></td>
-<td><a href="https://www.sciserver.org/" class="external-link"><img src="https://skyserver.sdss.org/dr14/en/images/sciserver_logo_inverted_vertical.png" width="250px"></a></td>
+<td><a href="http://www.langmead-lab.org/"><img src="http://www.langmead-lab.org/wp-content/uploads/2014/01/Screen-Shot-2014-02-02-at-5.20.13-PM-1024x199.png" width="250px"></a></td>
+<td><a href="https://www.libd.org/"><img src="http://lcolladotor.github.io/img/LIBD_logo.jpg" width="250px"></a></td>
+<td><a href="http://nellore.bio/"><img src="https://seekvectorlogo.net/wp-content/uploads/2018/08/oregon-health-science-university-ohsu-vector-logo.png" width="250px"></a></td>
+<td><a href="https://www.sciserver.org/"><img src="https://skyserver.sdss.org/dr14/en/images/sciserver_logo_inverted_vertical.png" width="250px"></a></td>
 </tr></tbody></table>
 <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&amp;w=300&amp;t=n&amp;d=4xd7F6p1BfdRypx-yEodrXiKhC0xvF0bJJywqR8rMKQ"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-163623894-1"></script><script>
   window.dataLayer = window.dataLayer || [];
@@ -242,7 +246,7 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2 data-toc-skip>Links</h2>
+<h2>Links</h2>
 <ul class="list-unstyled">
 <li>Download from BIOC at <br><a href="https://www.bioconductor.org/packages/recount3">https://​www.bioconductor.org/​packages/​recount3</a>
 </li>
@@ -252,60 +256,53 @@
 </li>
 </ul>
 </div>
-
 <div class="license">
-<h2 data-toc-skip>License</h2>
+<h2>License</h2>
 <ul class="list-unstyled">
 <li><a href="https://www.r-project.org/Licenses/Artistic-2.0">Artistic-2.0</a></li>
 </ul>
 </div>
-
 <div class="community">
-<h2 data-toc-skip>Community</h2>
+<h2>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CONTRIBUTING.html">Contributing guide</a></li>
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
-
 <div class="citation">
-<h2 data-toc-skip>Citation</h2>
+<h2>Citation</h2>
 <ul class="list-unstyled">
 <li><a href="authors.html">Citing recount3</a></li>
 </ul>
 </div>
-
 <div class="developers">
-<h2 data-toc-skip>Developers</h2>
+<h2>Developers</h2>
 <ul class="list-unstyled">
 <li>Leonardo Collado-Torres <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-2140-308X" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 </ul>
 </div>
 
-<div class="dev-status">
-<h2 data-toc-skip>Dev status</h2>
+  <div class="dev-status">
+<h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://lifecycle.r-lib.org/articles/stages.html#stable" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
-<li><a href="https://bioconductor.org/checkResults/release/bioc-LATEST/recount3" class="external-link"><img src="http://www.bioconductor.org/shields/build/release/bioc/recount3.svg" alt="BioC status"></a></li>
-<li><a href="https://bioconductor.org/checkResults/devel/bioc-LATEST/recount3" class="external-link"><img src="http://www.bioconductor.org/shields/build/devel/bioc/recount3.svg" alt="BioC dev status"></a></li>
-<li><a href="https://codecov.io/gh/LieberInstitute/recount3?branch=master" class="external-link"><img src="https://codecov.io/gh/LieberInstitute/recount3/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
-<li><a href="https://github.com/LieberInstitute/recount3/actions" class="external-link"><img src="https://github.com/LieberInstitute/recount3/workflows/R-CMD-check-bioc/badge.svg" alt="R build status"></a></li>
-<li><a href="https://support.bioconductor.org/t/recount3/" class="external-link"><img src="http://www.bioconductor.org/shields/posts/recount3.svg" alt="Support site activity, last 6 months: tagged questions/avg. answers per question/avg. comments per question/accepted answers, or 0 if no tagged posts."></a></li>
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#stable"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
+<li><a href="https://bioconductor.org/checkResults/release/bioc-LATEST/recount3"><img src="http://www.bioconductor.org/shields/build/release/bioc/recount3.svg" alt="BioC status"></a></li>
+<li><a href="https://bioconductor.org/checkResults/devel/bioc-LATEST/recount3"><img src="http://www.bioconductor.org/shields/build/devel/bioc/recount3.svg" alt="BioC dev status"></a></li>
+<li><a href="https://codecov.io/gh/LieberInstitute/recount3?branch=master"><img src="https://codecov.io/gh/LieberInstitute/recount3/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://github.com/LieberInstitute/recount3/actions"><img src="https://github.com/LieberInstitute/recount3/workflows/R-CMD-check-bioc/badge.svg" alt="R build status"></a></li>
+<li><a href="https://support.bioconductor.org/t/recount3/"><img src="http://www.bioconductor.org/shields/posts/recount3.svg" alt="Support site activity, last 6 months: tagged questions/avg. answers per question/avg. comments per question/accepted answers, or 0 if no tagged posts."></a></li>
 </ul>
 </div>
-
-  </div>
+</div>
 </div>
 
 
       <footer><div class="copyright">
-  <p></p>
-<p>Developed by Leonardo Collado-Torres.</p>
+  <p>Developed by Leonardo Collado-Torres.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
@@ -313,8 +310,6 @@
 
   
 
-
-  
 
   </body>
 </html>

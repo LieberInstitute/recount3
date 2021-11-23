@@ -55,8 +55,6 @@ recount::scale_counts(factor_only = TRUE), but it is more general." />
 
 
 
-
-
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -68,15 +66,9 @@ recount::scale_counts(factor_only = TRUE), but it is more general." />
 
 
 
-  
-
-  
-
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    
-
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -90,13 +82,19 @@ recount::scale_counts(factor_only = TRUE), but it is more general." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.3.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -146,7 +144,7 @@ recount::scale_counts(factor_only = TRUE), but it is more general." />
 <code>recount::scale_counts(factor_only = TRUE)</code>, but it is more general.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>compute_scale_factors</span><span class='op'>(</span>
+    <pre class="usage"><span class='fu'>compute_scale_factors</span><span class='op'>(</span>
   <span class='va'>x</span>,
   by <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"auc"</span>, <span class='st'>"mapped_reads"</span><span class='op'>)</span>,
   targetSize <span class='op'>=</span> <span class='fl'>4e+07</span>,
@@ -155,7 +153,7 @@ recount::scale_counts(factor_only = TRUE), but it is more general." />
   avg_mapped_read_length <span class='op'>=</span> <span class='st'>"recount_qc.star.average_mapped_length"</span>,
   mapped_reads <span class='op'>=</span> <span class='st'>"recount_qc.star.all_mapped_reads"</span>,
   paired_end <span class='op'>=</span> <span class='fu'><a href='is_paired_end.html'>is_paired_end</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>avg_mapped_read_length</span><span class='op'>)</span>
-<span class='op'>)</span></code></pre></div>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -223,7 +221,7 @@ sample is paired-end or not.</p></td>
 <code><a href='transform_counts.html'>transform_counts</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'></span>
+    <pre class="examples"><span class='r-in'></span>
 <span class='r-in'><span class='co'>## Download the metadata for SRP009615, a single-end study</span></span>
 <span class='r-in'><span class='va'>SRP009615_meta</span> <span class='op'>&lt;-</span> <span class='fu'><a href='read_metadata.html'>read_metadata</a></span><span class='op'>(</span></span>
 <span class='r-in'>    metadata_files <span class='op'>=</span> <span class='fu'><a href='file_retrieve.html'>file_retrieve</a></span><span class='op'>(</span></span>
@@ -233,11 +231,11 @@ sample is paired-end or not.</p></td>
 <span class='r-in'>        <span class='op'>)</span></span>
 <span class='r-in'>    <span class='op'>)</span></span>
 <span class='r-in'><span class='op'>)</span></span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:48:17 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:48:18 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:48:18 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:48:19 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:48:19 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:46 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:47 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:48 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:48 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:49 caching file sra.recount_pred.SRP009615.MD.gz.</span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'>## Compute the scaling factors</span></span>
 <span class='r-in'><span class='fu'>compute_scale_factors</span><span class='op'>(</span><span class='va'>SRP009615_meta</span>, by <span class='op'>=</span> <span class='st'>"auc"</span><span class='op'>)</span></span>
@@ -260,11 +258,11 @@ sample is paired-end or not.</p></td>
 <span class='r-in'>        <span class='op'>)</span></span>
 <span class='r-in'>    <span class='op'>)</span></span>
 <span class='r-in'><span class='op'>)</span></span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:48:20 caching file sra.sra.DRP000499.MD.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:48:20 caching file sra.recount_project.DRP000499.MD.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:48:21 caching file sra.recount_qc.DRP000499.MD.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:48:21 caching file sra.recount_seq_qc.DRP000499.MD.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:48:22 caching file sra.recount_pred.DRP000499.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:50 caching file sra.sra.DRP000499.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:51 caching file sra.recount_project.DRP000499.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:52 caching file sra.recount_qc.DRP000499.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:53 caching file sra.recount_seq_qc.DRP000499.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:53 caching file sra.recount_pred.DRP000499.MD.gz.</span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'>## Compute the scaling factors</span></span>
 <span class='r-in'><span class='fu'>compute_scale_factors</span><span class='op'>(</span><span class='va'>DRP000499_meta</span>, by <span class='op'>=</span> <span class='st'>"auc"</span><span class='op'>)</span></span>
@@ -302,8 +300,8 @@ sample is paired-end or not.</p></td>
 <span class='r-in'><span class='op'>)</span></span>
 <span class='r-in'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>recount2</span> <span class='op'>~</span> <span class='va'>recount3</span>, data <span class='op'>=</span> <span class='va'>recount_factors</span><span class='op'>)</span></span>
 <span class='r-in'><span class='fu'><a href='https://rdrr.io/r/graphics/abline.html'>abline</a></span><span class='op'>(</span>a <span class='op'>=</span> <span class='fl'>0</span>, b <span class='op'>=</span> <span class='fl'>1</span>, col <span class='op'>=</span> <span class='st'>"purple"</span>, lwd <span class='op'>=</span> <span class='fl'>2</span>, lty <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></span>
-<span class='r-plt'><img src='compute_scale_factors-1.png' alt='' width='700' height='433' /></span>
-</code></pre></div>
+<span class='r-plt img'><img src='compute_scale_factors-1.png' alt='' width='700' height='433' /></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -315,11 +313,11 @@ sample is paired-end or not.</p></td>
 
       <footer>
       <div class="copyright">
-  <p><p>Developed by Leonardo Collado-Torres.</p></p>
+  <p>Developed by Leonardo Collado-Torres.</p>
 </div>
 
 <div class="pkgdown">
-  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
@@ -327,8 +325,6 @@ sample is paired-end or not.</p></td>
 
   
 
-
-  
 
   </body>
 </html>

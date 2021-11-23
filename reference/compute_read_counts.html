@@ -55,8 +55,6 @@ or compute the read counts using the area under coverage information (AUC)." />
 
 
 
-
-
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -68,15 +66,9 @@ or compute the read counts using the area under coverage information (AUC)." />
 
 
 
-  
-
-  
-
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    
-
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -90,13 +82,19 @@ or compute the read counts using the area under coverage information (AUC)." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.3.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.5.0</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -146,11 +144,11 @@ project are base-pair counts. You can scale them using <code><a href='transform_
 or compute the read counts using the area under coverage information (AUC).</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>compute_read_counts</span><span class='op'>(</span>
+    <pre class="usage"><span class='fu'>compute_read_counts</span><span class='op'>(</span>
   <span class='va'>rse</span>,
   round <span class='op'>=</span> <span class='cn'>TRUE</span>,
   avg_mapped_read_length <span class='op'>=</span> <span class='st'>"recount_qc.star.average_mapped_length"</span>
-<span class='op'>)</span></code></pre></div>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -199,20 +197,20 @@ doi: 10.12688/f1000research.12223.1.</p>
 <code><a href='transform_counts.html'>transform_counts</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'></span>
+    <pre class="examples"><span class='r-in'></span>
 <span class='r-in'><span class='co'>## Create a RSE object at the gene level</span></span>
 <span class='r-in'><span class='va'>rse_gene_SRP009615</span> <span class='op'>&lt;-</span> <span class='fu'><a href='create_rse_manual.html'>create_rse_manual</a></span><span class='op'>(</span><span class='st'>"SRP009615"</span><span class='op'>)</span></span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:47:51 downloading and reading the metadata.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:47:52 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:47:52 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:47:53 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:47:53 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:47:54 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:47:54 downloading and reading the feature information.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:47:55 caching file human.gene_sums.G026.gtf.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:47:56 downloading and reading the counts: 12 samples across 63856 features.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:47:56 caching file sra.gene_sums.SRP009615.G026.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:47:56 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:12 downloading and reading the metadata.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:12 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:13 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:14 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:14 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:15 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:16 downloading and reading the feature information.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:16 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:18 downloading and reading the counts: 12 samples across 63856 features.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:18 caching file sra.gene_sums.SRP009615.G026.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:20 construcing the RangedSummarizedExperiment (rse) object.</span>
 <span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colSums</a></span><span class='op'>(</span><span class='fu'>compute_read_counts</span><span class='op'>(</span><span class='va'>rse_gene_SRP009615</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>/</span> <span class='fl'>1e6</span></span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> SRR387777 SRR387778 SRR387779 SRR387780 SRR389079 SRR389080 SRR389081 SRR389082 </span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>  21.33424  23.70639  32.67551  25.50398  41.55222  28.10329  17.81035  15.49213 </span>
@@ -221,17 +219,17 @@ doi: 10.12688/f1000research.12223.1.</p>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'>## Create a RSE object at the gene level</span></span>
 <span class='r-in'><span class='va'>rse_gene_DRP000499</span> <span class='op'>&lt;-</span> <span class='fu'><a href='create_rse_manual.html'>create_rse_manual</a></span><span class='op'>(</span><span class='st'>"DRP000499"</span><span class='op'>)</span></span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:47:57 downloading and reading the metadata.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:47:57 caching file sra.sra.DRP000499.MD.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:47:57 caching file sra.recount_project.DRP000499.MD.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:47:58 caching file sra.recount_qc.DRP000499.MD.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:47:59 caching file sra.recount_seq_qc.DRP000499.MD.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:47:59 caching file sra.recount_pred.DRP000499.MD.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:48:00 downloading and reading the feature information.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:48:00 caching file human.gene_sums.G026.gtf.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:48:01 downloading and reading the counts: 21 samples across 63856 features.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:48:01 caching file sra.gene_sums.DRP000499.G026.gz.</span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:48:02 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:20 downloading and reading the metadata.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:20 caching file sra.sra.DRP000499.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:22 caching file sra.recount_project.DRP000499.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:23 caching file sra.recount_qc.DRP000499.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:25 caching file sra.recount_seq_qc.DRP000499.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:26 caching file sra.recount_pred.DRP000499.MD.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:26 downloading and reading the feature information.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:27 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:28 downloading and reading the counts: 21 samples across 63856 features.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:28 caching file sra.gene_sums.DRP000499.G026.gz.</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:29 construcing the RangedSummarizedExperiment (rse) object.</span>
 <span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colSums</a></span><span class='op'>(</span><span class='fu'>compute_read_counts</span><span class='op'>(</span><span class='va'>rse_gene_DRP000499</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>/</span> <span class='fl'>1e6</span></span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> DRR001622 DRR001623 DRR001624 DRR001625 DRR001626 DRR001627 DRR001628 DRR001629 </span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> 10.972020  8.007966 11.893009       NaN  7.530776 11.289832 53.523929 27.598855 </span>
@@ -256,11 +254,11 @@ doi: 10.12688/f1000research.12223.1.</p>
 <span class='r-in'><span class='op'>)</span></span>
 <span class='r-in'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>recount2</span> <span class='op'>~</span> <span class='va'>recount3</span>, data <span class='op'>=</span> <span class='va'>recount_readsums</span><span class='op'>)</span></span>
 <span class='r-in'><span class='fu'><a href='https://rdrr.io/r/graphics/abline.html'>abline</a></span><span class='op'>(</span>a <span class='op'>=</span> <span class='fl'>0</span>, b <span class='op'>=</span> <span class='fl'>1</span>, col <span class='op'>=</span> <span class='st'>"purple"</span>, lwd <span class='op'>=</span> <span class='fl'>2</span>, lty <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></span>
-<span class='r-plt'><img src='compute_read_counts-1.png' alt='' width='700' height='433' /></span>
+<span class='r-plt img'><img src='compute_read_counts-1.png' alt='' width='700' height='433' /></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='co'>## Repeat for DRP000499, a paired-end study</span></span>
 <span class='r-in'><span class='fu'>recount</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/recount/man/download_study.html'>download_study</a></span><span class='op'>(</span><span class='st'>"DRP000499"</span>, outdir <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></span>
-<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-09-27 14:48:10 downloading file rse_gene.Rdata to /tmp/Rtmpb0Q4fk</span>
+<span class='r-msg co'><span class='r-pr'>#&gt;</span> 2021-11-23 01:47:35 downloading file rse_gene.Rdata to /tmp/RtmpPZ2BvX</span>
 <span class='r-in'><span class='fu'><a href='https://rdrr.io/r/base/load.html'>load</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='st'>"rse_gene.Rdata"</span><span class='op'>)</span>, verbose <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span> Loading objects:</span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>   rse_gene</span>
@@ -275,8 +273,8 @@ doi: 10.12688/f1000research.12223.1.</p>
 <span class='r-in'><span class='op'>)</span></span>
 <span class='r-in'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>recount2</span> <span class='op'>~</span> <span class='va'>recount3</span>, data <span class='op'>=</span> <span class='va'>recount_readsums</span><span class='op'>)</span></span>
 <span class='r-in'><span class='fu'><a href='https://rdrr.io/r/graphics/abline.html'>abline</a></span><span class='op'>(</span>a <span class='op'>=</span> <span class='fl'>0</span>, b <span class='op'>=</span> <span class='fl'>1</span>, col <span class='op'>=</span> <span class='st'>"purple"</span>, lwd <span class='op'>=</span> <span class='fl'>2</span>, lty <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></span>
-<span class='r-plt'><img src='compute_read_counts-2.png' alt='' width='700' height='433' /></span>
-</code></pre></div>
+<span class='r-plt img'><img src='compute_read_counts-2.png' alt='' width='700' height='433' /></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -288,11 +286,11 @@ doi: 10.12688/f1000research.12223.1.</p>
 
       <footer>
       <div class="copyright">
-  <p><p>Developed by Leonardo Collado-Torres.</p></p>
+  <p>Developed by Leonardo Collado-Torres.</p>
 </div>
 
 <div class="pkgdown">
-  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
@@ -300,8 +298,6 @@ doi: 10.12688/f1000research.12223.1.</p>
 
   
 
-
-  
 
   </body>
 </html>
