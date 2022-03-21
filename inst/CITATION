@@ -36,8 +36,8 @@ c(
             as.person("Ben Langmead")
         ),
         year = 2021,
-        journal = "bioRxiv",
-        doi = "10.1101/2021.05.21.445138",
-        url = "https://doi.org/10.1101/2021.05.21.445138"
+        journal = "Genome Biol",
+        doi = "10.1186/s13059-021-02533-6",
+        url = "https://doi.org/10.1186/s13059-021-02533-6"
     )
 )

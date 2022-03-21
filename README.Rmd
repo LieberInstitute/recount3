@@ -76,7 +76,7 @@ To clarify the relationship between the R/Bioconductor packages and the phases o
 | --- | --- | --- | --- |
 | 2011 | [`ReCount`](http://bowtie-bio.sourceforge.net/recount/) | DOI: [10.1186/1471-2105-12-449](https://doi.org/10.1186/1471-2105-12-449) | none |
 | 2017 | [`recount2`](https://jhubiostatistics.shinyapps.io/recount/) | DOI: [10.1038/nbt.3838](https://doi.org/10.1038/nbt.3838) [10.12688/f1000research.12223.1](https://doi.org/10.12688/f1000research.12223.1) | `r Biocpkg('recount')` |
-| 2021 | [`recount3`](https://LieberInstitute.github.io/recount3-docs) | DOI: [10.1101/2021.05.21.445138](https://doi.org/10.1101/2021.05.21.445138) | `r Biocpkg('recount3')` |
+| 2021 | [`recount3`](https://LieberInstitute.github.io/recount3-docs) | DOI: [10.1186/s13059-021-02533-6](https://doi.org/10.1186/s13059-021-02533-6) | `r Biocpkg('recount3')` |
 
 ## Teams involved
 
