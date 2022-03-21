@@ -8,11 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-The recount3 package enables access to a large amount of uniformly
-    processed RNA-seq data from human and mouse. You can download
-    RangedSummarizedExperiment objects at the gene, exon or exon-exon junctions
-    level with sample metadata and QC statistics. In addition we provide access
-    to sample coverage BigWig files.
+The recount3 package enables access to a large amount of uniformly processed RNA-seq data from human and mouse. You can download RangedSummarizedExperiment objects at the gene, exon or exon-exon junctions level with sample metadata and QC statistics. In addition we provide access to sample coverage BigWig files.
 }
 \seealso{
 Useful links:
