@@ -19,7 +19,7 @@ given data_source and none or many collections."><meta property="og:image" conte
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.0</span>
       </span>
     </div>
 
@@ -67,13 +67,13 @@ given <code>data_source</code> and none or many <code>collections</code>.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">available_samples</span><span class="op">(</span>
-  organism <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"human"</span>, <span class="st">"mouse"</span><span class="op">)</span>,
-  recount3_url <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"recount3_url"</span>, <span class="st">"http://duffel.rail.bio/recount3"</span><span class="op">)</span>,
-  bfc <span class="op">=</span> <span class="fu"><a href="recount3_cache.html">recount3_cache</a></span><span class="op">(</span><span class="op">)</span>,
-  verbose <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"recount3_verbose"</span>, <span class="cn">TRUE</span><span class="op">)</span>,
-  available_homes <span class="op">=</span> <span class="fu"><a href="project_homes.html">project_homes</a></span><span class="op">(</span>organism <span class="op">=</span> <span class="va">organism</span>, recount3_url <span class="op">=</span> <span class="va">recount3_url</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">available_samples</span><span class="op">(</span></span>
+<span>  organism <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"human"</span>, <span class="st">"mouse"</span><span class="op">)</span>,</span>
+<span>  recount3_url <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"recount3_url"</span>, <span class="st">"http://duffel.rail.bio/recount3"</span><span class="op">)</span>,</span>
+<span>  bfc <span class="op">=</span> <span class="fu"><a href="recount3_cache.html">recount3_cache</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  verbose <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"recount3_verbose"</span>, <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>  available_homes <span class="op">=</span> <span class="fu"><a href="project_homes.html">project_homes</a></span><span class="op">(</span>organism <span class="op">=</span> <span class="va">organism</span>, recount3_url <span class="op">=</span> <span class="va">recount3_url</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -81,24 +81,35 @@ given <code>data_source</code> and none or many <code>collections</code>.</p>
     <dl><dt>organism</dt>
 <dd><p>A <code>character(1)</code> specifying which organism you want to
 download data from. Supported options are <code>"human"</code> or <code>"mouse"</code>.</p></dd>
+
+
 <dt>recount3_url</dt>
 <dd><p>A <code>character(1)</code> specifying the home URL for <code>recount3</code>
 or a local directory where you have mirrored <code>recount3</code>.</p></dd>
+
+
 <dt>bfc</dt>
 <dd><p>A <a href="https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html" class="external-link">BiocFileCache-class</a>
 object where the files will be cached to, typically created by
 <code><a href="recount3_cache.html">recount3_cache()</a></code>.</p></dd>
+
+
 <dt>verbose</dt>
 <dd><p>A <code>logical(1)</code> indicating whether to show messages with
 updates.</p></dd>
+
+
 <dt>available_homes</dt>
 <dd><p>A <code><a href="https://rdrr.io/r/base/character.html" class="external-link">character()</a></code> vector with the available project homes
 for the given <code>recount3_url</code>. If you use a non-standard <code>recount3_url</code>, you
 will likely need to specify manually the valid values for <code>available_homes</code>.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A <code><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame()</a></code> with the sample ID used by the original source of
+    
+
+<p>A <code><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame()</a></code> with the sample ID used by the original source of
 the data (<code>external_id</code>), the project ID (<code>project</code>), the <code>organism</code>, the
 <code>file_source</code> from where the data was accessed, the date the sample
 was processed (<code>date_processed</code>) in <code>YYYY-MM-DD</code> format,
@@ -108,15 +119,15 @@ the <code>recount3</code> project home location (<code>project_home</code>), and
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="co">## Find all the human samples available from recount3</span></span>
-<span class="r-in"><span class="va">human_samples</span> <span class="op">&lt;-</span> <span class="fu">available_samples</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:22 caching file sra.recount_project.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:23 caching file gtex.recount_project.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:23 caching file tcga.recount_project.MD.gz.</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">human_samples</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Find all the human samples available from recount3</span></span></span>
+<span class="r-in"><span><span class="va">human_samples</span> <span class="op">&lt;-</span> <span class="fu">available_samples</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:04 caching file sra.recount_project.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:04 caching file gtex.recount_project.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:05 caching file tcga.recount_project.MD.gz.</span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">human_samples</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 347005      7</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">human_samples</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">human_samples</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   external_id   project organism file_source date_processed     project_home</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  SRR5579327 SRP107565    human         sra     2019-10-01 data_sources/sra</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2  SRR5579328 SRP107565    human         sra     2019-10-01 data_sources/sra</span>
@@ -131,27 +142,27 @@ the <code>recount3</code> project home location (<code>project_home</code>), and
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4 data_sources</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5 data_sources</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6 data_sources</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## How many are from a data source vs a compilation?</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">human_samples</span><span class="op">$</span><span class="va">project_type</span>, useNA <span class="op">=</span> <span class="st">"ifany"</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## How many are from a data source vs a compilation?</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">human_samples</span><span class="op">$</span><span class="va">project_type</span>, useNA <span class="op">=</span> <span class="st">"ifany"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data_sources </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       347005 </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## What are the unique file sources?</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span></span>
-<span class="r-in">    <span class="va">human_samples</span><span class="op">$</span><span class="va">file_source</span><span class="op">[</span><span class="va">human_samples</span><span class="op">$</span><span class="va">project_type</span> <span class="op">==</span> <span class="st">"data_sources"</span><span class="op">]</span></span>
-<span class="r-in"><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## What are the unique file sources?</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="va">human_samples</span><span class="op">$</span><span class="va">file_source</span><span class="op">[</span><span class="va">human_samples</span><span class="op">$</span><span class="va">project_type</span> <span class="op">==</span> <span class="st">"data_sources"</span><span class="op">]</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   gtex    sra   tcga </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  19214 316443  11348 </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Find all the mouse samples available from recount3</span></span>
-<span class="r-in"><span class="va">mouse_samples</span> <span class="op">&lt;-</span> <span class="fu">available_samples</span><span class="op">(</span><span class="st">"mouse"</span><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:26 caching file sra.recount_project.MD.gz.</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">mouse_samples</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Find all the mouse samples available from recount3</span></span></span>
+<span class="r-in"><span><span class="va">mouse_samples</span> <span class="op">&lt;-</span> <span class="fu">available_samples</span><span class="op">(</span><span class="st">"mouse"</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:09 caching file sra.recount_project.MD.gz.</span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">mouse_samples</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 416859      7</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">mouse_samples</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">mouse_samples</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   external_id   project organism file_source date_processed     project_home</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  SRR8249198 SRP170963    mouse         sra     2020-01-01 data_sources/sra</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2  SRR8249199 SRP170963    mouse         sra     2020-01-01 data_sources/sra</span>
@@ -166,9 +177,9 @@ the <code>recount3</code> project home location (<code>project_home</code>), and
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4 data_sources</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5 data_sources</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6 data_sources</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## How many are from a data source vs a compilation?</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">mouse_samples</span><span class="op">$</span><span class="va">project_type</span>, useNA <span class="op">=</span> <span class="st">"ifany"</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## How many are from a data source vs a compilation?</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">mouse_samples</span><span class="op">$</span><span class="va">project_type</span>, useNA <span class="op">=</span> <span class="st">"ifany"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data_sources </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       416859 </span>
@@ -186,8 +197,7 @@ the <code>recount3</code> project home location (<code>project_home</code>), and
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
-2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

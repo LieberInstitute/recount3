@@ -18,7 +18,7 @@ stored in your recount3_cache()."><meta property="og:image" content="/logo.png">
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.0</span>
       </span>
     </div>
 
@@ -65,7 +65,7 @@ stored in your <code><a href="recount3_cache.html">recount3_cache()</a></code>.<
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">recount3_cache_files</span><span class="op">(</span>bfc <span class="op">=</span> <span class="fu"><a href="recount3_cache.html">recount3_cache</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">recount3_cache_files</span><span class="op">(</span>bfc <span class="op">=</span> <span class="fu"><a href="recount3_cache.html">recount3_cache</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -74,10 +74,13 @@ stored in your <code><a href="recount3_cache.html">recount3_cache()</a></code>.<
 <dd><p>A <a href="https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html" class="external-link">BiocFileCache-class</a>
 object where the files will be cached to, typically created by
 <code><a href="recount3_cache.html">recount3_cache()</a></code>.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A <code><a href="https://rdrr.io/r/base/character.html" class="external-link">character()</a></code> with the URLs of the recount3 files you have
+    
+
+<p>A <code><a href="https://rdrr.io/r/base/character.html" class="external-link">character()</a></code> with the URLs of the recount3 files you have
 downloaded.</p>
     </div>
     <div id="see-also">
@@ -89,8 +92,8 @@ downloaded.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co">## List the URLs you have downloaded</span></span>
-<span class="r-in"><span class="fu">recount3_cache_files</span><span class="op">(</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co">## List the URLs you have downloaded</span></span></span>
+<span class="r-in"><span><span class="fu">recount3_cache_files</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/sra.recount_project.MD.gz"                                      </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [2] "http://duffel.rail.bio/recount3/human/data_sources/gtex/metadata/gtex.recount_project.MD.gz"                                    </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  [3] "http://duffel.rail.bio/recount3/human/data_sources/tcga/metadata/tcga.recount_project.MD.gz"                                    </span>
@@ -167,8 +170,7 @@ downloaded.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
-2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

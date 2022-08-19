@@ -18,7 +18,7 @@ end or not."><meta property="og:image" content="/logo.png"><!-- mathjax --><scri
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.0</span>
       </span>
     </div>
 
@@ -65,11 +65,11 @@ end or not.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">is_paired_end</span><span class="op">(</span>
-  <span class="va">x</span>,
-  avg_mapped_read_length <span class="op">=</span> <span class="st">"recount_qc.star.average_mapped_length"</span>,
-  avg_read_length <span class="op">=</span> <span class="st">"recount_seq_qc.avg_len"</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">is_paired_end</span><span class="op">(</span></span>
+<span>  <span class="va">x</span>,</span>
+<span>  avg_mapped_read_length <span class="op">=</span> <span class="st">"recount_qc.star.average_mapped_length"</span>,</span>
+<span>  avg_read_length <span class="op">=</span> <span class="st">"recount_seq_qc.avg_len"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -79,17 +79,24 @@ end or not.</p>
 <a href="https://rdrr.io/pkg/SummarizedExperiment/man/RangedSummarizedExperiment-class.html" class="external-link">RangedSummarizedExperiment-class</a>
 created by <code><a href="create_rse.html">create_rse()</a></code> or the sample metadata created by
 <code><a href="read_metadata.html">read_metadata()</a></code>.</p></dd>
+
+
 <dt>avg_mapped_read_length</dt>
 <dd><p>A <code>character(1)</code> specifying the metdata column
 name that contains the average fragment length after aligning. This is
 typically twice the average read length for paired-end reads.</p></dd>
+
+
 <dt>avg_read_length</dt>
 <dd><p>A <code>character(1)</code> specifying the metadata column
 name that contains the average read length prior to aligning.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A <code><a href="https://rdrr.io/r/base/logical.html" class="external-link">logical()</a></code> vector specifying whether each sample was likely
+    
+
+<p>A <code><a href="https://rdrr.io/r/base/logical.html" class="external-link">logical()</a></code> vector specifying whether each sample was likely
 paired-end or not.</p>
     </div>
     <div id="see-also">
@@ -102,44 +109,44 @@ paired-end or not.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="co">## Download the metadata for SRP009615, a single-end study</span></span>
-<span class="r-in"><span class="va">SRP009615_meta</span> <span class="op">&lt;-</span> <span class="fu"><a href="read_metadata.html">read_metadata</a></span><span class="op">(</span></span>
-<span class="r-in">    metadata_files <span class="op">=</span> <span class="fu"><a href="file_retrieve.html">file_retrieve</a></span><span class="op">(</span></span>
-<span class="r-in">        <span class="fu"><a href="locate_url.html">locate_url</a></span><span class="op">(</span></span>
-<span class="r-in">            <span class="st">"SRP009615"</span>,</span>
-<span class="r-in">            <span class="st">"data_sources/sra"</span>,</span>
-<span class="r-in">        <span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:28 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:29 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:29 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:30 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:30 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Are the samples paired end?</span></span>
-<span class="r-in"><span class="fu">is_paired_end</span><span class="op">(</span><span class="va">SRP009615_meta</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Download the metadata for SRP009615, a single-end study</span></span></span>
+<span class="r-in"><span><span class="va">SRP009615_meta</span> <span class="op">&lt;-</span> <span class="fu"><a href="read_metadata.html">read_metadata</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    metadata_files <span class="op">=</span> <span class="fu"><a href="file_retrieve.html">file_retrieve</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="locate_url.html">locate_url</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>            <span class="st">"SRP009615"</span>,</span></span>
+<span class="r-in"><span>            <span class="st">"data_sources/sra"</span>,</span></span>
+<span class="r-in"><span>        <span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:14 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:15 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:15 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:16 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:17 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Are the samples paired end?</span></span></span>
+<span class="r-in"><span><span class="fu">is_paired_end</span><span class="op">(</span><span class="va">SRP009615_meta</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> SRR387777 SRR387778 SRR387779 SRR387780 SRR389079 SRR389080 SRR389081 SRR389082 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     FALSE     FALSE     FALSE     FALSE     FALSE     FALSE     FALSE     FALSE </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> SRR389083 SRR389084 SRR389077 SRR389078 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     FALSE     FALSE     FALSE     FALSE </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Download the metadata for DRP000499, a paired-end study</span></span>
-<span class="r-in"><span class="va">DRP000499_meta</span> <span class="op">&lt;-</span> <span class="fu"><a href="read_metadata.html">read_metadata</a></span><span class="op">(</span></span>
-<span class="r-in">    metadata_files <span class="op">=</span> <span class="fu"><a href="file_retrieve.html">file_retrieve</a></span><span class="op">(</span></span>
-<span class="r-in">        <span class="fu"><a href="locate_url.html">locate_url</a></span><span class="op">(</span></span>
-<span class="r-in">            <span class="st">"DRP000499"</span>,</span>
-<span class="r-in">            <span class="st">"data_sources/sra"</span>,</span>
-<span class="r-in">        <span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:31 caching file sra.sra.DRP000499.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:31 caching file sra.recount_project.DRP000499.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:32 caching file sra.recount_qc.DRP000499.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:32 caching file sra.recount_seq_qc.DRP000499.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:33 caching file sra.recount_pred.DRP000499.MD.gz.</span>
-<span class="r-in"><span class="fu">is_paired_end</span><span class="op">(</span><span class="va">DRP000499_meta</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Download the metadata for DRP000499, a paired-end study</span></span></span>
+<span class="r-in"><span><span class="va">DRP000499_meta</span> <span class="op">&lt;-</span> <span class="fu"><a href="read_metadata.html">read_metadata</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    metadata_files <span class="op">=</span> <span class="fu"><a href="file_retrieve.html">file_retrieve</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="locate_url.html">locate_url</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>            <span class="st">"DRP000499"</span>,</span></span>
+<span class="r-in"><span>            <span class="st">"data_sources/sra"</span>,</span></span>
+<span class="r-in"><span>        <span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:17 caching file sra.sra.DRP000499.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:18 caching file sra.recount_project.DRP000499.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:18 caching file sra.recount_qc.DRP000499.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:19 caching file sra.recount_seq_qc.DRP000499.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:20 caching file sra.recount_pred.DRP000499.MD.gz.</span>
+<span class="r-in"><span><span class="fu">is_paired_end</span><span class="op">(</span><span class="va">DRP000499_meta</span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>is_paired_end(): Looks like some samples failed to align and will return NA.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> DRR001622 DRR001623 DRR001624 DRR001625 DRR001626 DRR001627 DRR001628 DRR001629 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      TRUE      TRUE      TRUE        NA      TRUE      TRUE      TRUE      TRUE </span>
@@ -161,8 +168,7 @@ paired-end or not.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
-2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

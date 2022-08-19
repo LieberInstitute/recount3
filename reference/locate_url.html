@@ -19,7 +19,7 @@ the file using file_retrieve()."><meta property="og:image" content="/logo.png"><
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.0</span>
       </span>
     </div>
 
@@ -67,50 +67,67 @@ the file using <code><a href="file_retrieve.html">file_retrieve()</a></code>.</p
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">locate_url</span><span class="op">(</span>
-  <span class="va">project</span>,
-  project_home <span class="op">=</span> <span class="fu"><a href="project_homes.html">project_homes</a></span><span class="op">(</span>organism <span class="op">=</span> <span class="va">organism</span>, recount3_url <span class="op">=</span> <span class="va">recount3_url</span><span class="op">)</span>,
-  type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"metadata"</span>, <span class="st">"gene"</span>, <span class="st">"exon"</span>, <span class="st">"jxn"</span>, <span class="st">"bw"</span><span class="op">)</span>,
-  organism <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"human"</span>, <span class="st">"mouse"</span><span class="op">)</span>,
-  sample <span class="op">=</span> <span class="cn">NULL</span>,
-  annotation <span class="op">=</span> <span class="fu"><a href="annotation_options.html">annotation_options</a></span><span class="op">(</span><span class="va">organism</span><span class="op">)</span>,
-  jxn_format <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ALL"</span>, <span class="st">"UNIQUE"</span><span class="op">)</span>,
-  recount3_url <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"recount3_url"</span>, <span class="st">"http://duffel.rail.bio/recount3"</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">locate_url</span><span class="op">(</span></span>
+<span>  <span class="va">project</span>,</span>
+<span>  project_home <span class="op">=</span> <span class="fu"><a href="project_homes.html">project_homes</a></span><span class="op">(</span>organism <span class="op">=</span> <span class="va">organism</span>, recount3_url <span class="op">=</span> <span class="va">recount3_url</span><span class="op">)</span>,</span>
+<span>  type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"metadata"</span>, <span class="st">"gene"</span>, <span class="st">"exon"</span>, <span class="st">"jxn"</span>, <span class="st">"bw"</span><span class="op">)</span>,</span>
+<span>  organism <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"human"</span>, <span class="st">"mouse"</span><span class="op">)</span>,</span>
+<span>  sample <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  annotation <span class="op">=</span> <span class="fu"><a href="annotation_options.html">annotation_options</a></span><span class="op">(</span><span class="va">organism</span><span class="op">)</span>,</span>
+<span>  jxn_format <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ALL"</span>, <span class="st">"UNIQUE"</span><span class="op">)</span>,</span>
+<span>  recount3_url <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"recount3_url"</span>, <span class="st">"http://duffel.rail.bio/recount3"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>project</dt>
 <dd><p>A <code>character(1)</code> with the ID for a given study.</p></dd>
+
+
 <dt>project_home</dt>
 <dd><p>A <code>character(1)</code> with the home directory for the
 <code>project</code>. You can find these using <code><a href="project_homes.html">project_homes()</a></code>.</p></dd>
+
+
 <dt>type</dt>
 <dd><p>A <code>character(1)</code> specifying whether you want to access gene
 counts, exon counts, exon-exon junctions or base-pair BigWig coverage files
 (one per <code>sample</code>).</p></dd>
+
+
 <dt>organism</dt>
 <dd><p>A <code>character(1)</code> specifying which organism you want to
 download data from. Supported options are <code>"human"</code> or <code>"mouse"</code>.</p></dd>
+
+
 <dt>sample</dt>
 <dd><p>A <code><a href="https://rdrr.io/r/base/character.html" class="external-link">character()</a></code> vector with the sample ID(s) you want to
 download.</p></dd>
+
+
 <dt>annotation</dt>
 <dd><p>A <code>character(1)</code> specifying which annotation you want to
 download. Only used when <code>type</code> is either <code>gene</code> or <code>exon</code>.</p></dd>
+
+
 <dt>jxn_format</dt>
 <dd><p>A <code>character(1)</code> specifying whether the exon-exon junction
 files are derived from all the reads (<code>ALL</code>) or only the uniquely mapping
 read counts (<code>UNIQUE</code>). Note that <code>UNIQUE</code> is only available for some
 projects: GTEx and TCGA for human.</p></dd>
+
+
 <dt>recount3_url</dt>
 <dd><p>A <code>character(1)</code> specifying the home URL for <code>recount3</code>
 or a local directory where you have mirrored <code>recount3</code>.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A <code><a href="https://rdrr.io/r/base/character.html" class="external-link">character()</a></code> with the URL(s) for the file(s) of interest.</p>
+    
+
+<p>A <code><a href="https://rdrr.io/r/base/character.html" class="external-link">character()</a></code> with the URL(s) for the file(s) of interest.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -126,12 +143,12 @@ or a local directory where you have mirrored <code>recount3</code>.</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="co">## Example for metadata files from a project from SRA</span></span>
-<span class="r-in"><span class="fu">locate_url</span><span class="op">(</span></span>
-<span class="r-in">    <span class="st">"SRP009615"</span>,</span>
-<span class="r-in">    <span class="st">"data_sources/sra"</span></span>
-<span class="r-in"><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Example for metadata files from a project from SRA</span></span></span>
+<span class="r-in"><span><span class="fu">locate_url</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"SRP009615"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"data_sources/sra"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                            sra.sra.SRP009615.MD.gz </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.sra.SRP009615.MD.gz" </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                sra.recount_project.SRP009615.MD.gz </span>
@@ -142,14 +159,14 @@ or a local directory where you have mirrored <code>recount3</code>.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_seq_qc.SRP009615.MD.gz" </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                   sra.recount_pred.SRP009615.MD.gz </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/15/SRP009615/sra.recount_pred.SRP009615.MD.gz" </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Example for metadata files from a project that is part of a collection</span></span>
-<span class="r-in"><span class="fu">locate_url</span><span class="op">(</span></span>
-<span class="r-in">    <span class="st">"ERP110066"</span>,</span>
-<span class="r-in">    <span class="st">"collections/geuvadis_smartseq"</span>,</span>
-<span class="r-in">    recount3_url <span class="op">=</span> <span class="st">"http://snaptron.cs.jhu.edu/data/temp/recount3"</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:33 caching file geuvadis_smartseq.recount_project.gz.</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Example for metadata files from a project that is part of a collection</span></span></span>
+<span class="r-in"><span><span class="fu">locate_url</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"ERP110066"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"collections/geuvadis_smartseq"</span>,</span></span>
+<span class="r-in"><span>    recount3_url <span class="op">=</span> <span class="st">"http://snaptron.cs.jhu.edu/data/temp/recount3"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:20 caching file geuvadis_smartseq.recount_project.gz.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                          sra.sra.ERP110066.MD.gz </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.sra.ERP110066.MD.gz" </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                              sra.recount_project.ERP110066.MD.gz </span>
@@ -162,64 +179,64 @@ or a local directory where you have mirrored <code>recount3</code>.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_pred.ERP110066.MD.gz" </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                      geuvadis_smartseq.custom.gz </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         "http://snaptron.cs.jhu.edu/data/temp/recount3/human/collections/geuvadis_smartseq/metadata/geuvadis_smartseq.custom.gz" </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Example for a BigWig file</span></span>
-<span class="r-in"><span class="fu">locate_url</span><span class="op">(</span></span>
-<span class="r-in">    <span class="st">"SRP009615"</span>,</span>
-<span class="r-in">    <span class="st">"data_sources/sra"</span>,</span>
-<span class="r-in">    <span class="st">"bw"</span>,</span>
-<span class="r-in">    <span class="st">"human"</span>,</span>
-<span class="r-in">    <span class="st">"SRR387777"</span></span>
-<span class="r-in"><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Example for a BigWig file</span></span></span>
+<span class="r-in"><span><span class="fu">locate_url</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"SRP009615"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"data_sources/sra"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"bw"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"human"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"SRR387777"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                    sra.base_sums.SRP009615_SRR387777.ALL.bw </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> "http://duffel.rail.bio/recount3/human/data_sources/sra/base_sums/15/SRP009615/77/sra.base_sums.SRP009615_SRR387777.ALL.bw" </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Locate example gene count files</span></span>
-<span class="r-in"><span class="fu">locate_url</span><span class="op">(</span></span>
-<span class="r-in">    <span class="st">"SRP009615"</span>,</span>
-<span class="r-in">    <span class="st">"data_sources/sra"</span>,</span>
-<span class="r-in">    <span class="st">"gene"</span></span>
-<span class="r-in"><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Locate example gene count files</span></span></span>
+<span class="r-in"><span><span class="fu">locate_url</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"SRP009615"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"data_sources/sra"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"gene"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                 sra.gene_sums.SRP009615.G026.gz </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> "http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.G026.gz" </span>
-<span class="r-in"><span class="fu">locate_url</span><span class="op">(</span></span>
-<span class="r-in">    <span class="st">"SRP009615"</span>,</span>
-<span class="r-in">    <span class="st">"data_sources/sra"</span>,</span>
-<span class="r-in">    <span class="st">"gene"</span>,</span>
-<span class="r-in">    annotation <span class="op">=</span> <span class="st">"refseq"</span></span>
-<span class="r-in"><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">locate_url</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"SRP009615"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"data_sources/sra"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"gene"</span>,</span></span>
+<span class="r-in"><span>    annotation <span class="op">=</span> <span class="st">"refseq"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                 sra.gene_sums.SRP009615.R109.gz </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> "http://duffel.rail.bio/recount3/human/data_sources/sra/gene_sums/15/SRP009615/sra.gene_sums.SRP009615.R109.gz" </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Example for a gene count file from a project that is part of a collection</span></span>
-<span class="r-in"><span class="fu">locate_url</span><span class="op">(</span></span>
-<span class="r-in">    <span class="st">"ERP110066"</span>,</span>
-<span class="r-in">    <span class="st">"collections/geuvadis_smartseq"</span>,</span>
-<span class="r-in">    <span class="st">"gene"</span>,</span>
-<span class="r-in">    recount3_url <span class="op">=</span> <span class="st">"http://snaptron.cs.jhu.edu/data/temp/recount3"</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:34 caching file geuvadis_smartseq.recount_project.gz.</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Example for a gene count file from a project that is part of a collection</span></span></span>
+<span class="r-in"><span><span class="fu">locate_url</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"ERP110066"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"collections/geuvadis_smartseq"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"gene"</span>,</span></span>
+<span class="r-in"><span>    recount3_url <span class="op">=</span> <span class="st">"http://snaptron.cs.jhu.edu/data/temp/recount3"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:21 caching file geuvadis_smartseq.recount_project.gz.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                               sra.gene_sums.ERP110066.G026.gz </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> "http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/gene_sums/66/ERP110066/sra.gene_sums.ERP110066.G026.gz" </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Locate example junction files</span></span>
-<span class="r-in"><span class="fu">locate_url</span><span class="op">(</span></span>
-<span class="r-in">    <span class="st">"SRP009615"</span>,</span>
-<span class="r-in">    <span class="st">"data_sources/sra"</span>,</span>
-<span class="r-in">    <span class="st">"jxn"</span></span>
-<span class="r-in"><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Locate example junction files</span></span></span>
+<span class="r-in"><span><span class="fu">locate_url</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"SRP009615"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"data_sources/sra"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"jxn"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                 sra.junctions.SRP009615.ALL.MM.gz </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> "http://duffel.rail.bio/recount3/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.MM.gz" </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                 sra.junctions.SRP009615.ALL.RR.gz </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> "http://duffel.rail.bio/recount3/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.RR.gz" </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                 sra.junctions.SRP009615.ALL.ID.gz </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> "http://duffel.rail.bio/recount3/human/data_sources/sra/junctions/15/SRP009615/sra.junctions.SRP009615.ALL.ID.gz" </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Example for metadata files from a project from SRA</span></span>
-<span class="r-in"><span class="fu">locate_url</span><span class="op">(</span></span>
-<span class="r-in">    <span class="st">"ERP001942"</span>,</span>
-<span class="r-in">    <span class="st">"data_sources/sra"</span></span>
-<span class="r-in"><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Example for metadata files from a project from SRA</span></span></span>
+<span class="r-in"><span><span class="fu">locate_url</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"ERP001942"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"data_sources/sra"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                            sra.sra.ERP001942.MD.gz </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/42/ERP001942/sra.sra.ERP001942.MD.gz" </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                sra.recount_project.ERP001942.MD.gz </span>
@@ -244,8 +261,7 @@ or a local directory where you have mirrored <code>recount3</code>.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
-2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

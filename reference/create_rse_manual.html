@@ -20,7 +20,7 @@ feature level for a given annotation."><meta property="og:image" content="/logo.
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.0</span>
       </span>
     </div>
 
@@ -69,55 +69,77 @@ feature level for a given annotation.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">create_rse_manual</span><span class="op">(</span>
-  <span class="va">project</span>,
-  project_home <span class="op">=</span> <span class="fu"><a href="project_homes.html">project_homes</a></span><span class="op">(</span>organism <span class="op">=</span> <span class="va">organism</span>, recount3_url <span class="op">=</span> <span class="va">recount3_url</span><span class="op">)</span>,
-  type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gene"</span>, <span class="st">"exon"</span>, <span class="st">"jxn"</span><span class="op">)</span>,
-  organism <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"human"</span>, <span class="st">"mouse"</span><span class="op">)</span>,
-  annotation <span class="op">=</span> <span class="fu"><a href="annotation_options.html">annotation_options</a></span><span class="op">(</span><span class="va">organism</span><span class="op">)</span>,
-  bfc <span class="op">=</span> <span class="fu"><a href="recount3_cache.html">recount3_cache</a></span><span class="op">(</span><span class="op">)</span>,
-  jxn_format <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ALL"</span>, <span class="st">"UNIQUE"</span><span class="op">)</span>,
-  recount3_url <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"recount3_url"</span>, <span class="st">"http://duffel.rail.bio/recount3"</span><span class="op">)</span>,
-  verbose <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"recount3_verbose"</span>, <span class="cn">TRUE</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">create_rse_manual</span><span class="op">(</span></span>
+<span>  <span class="va">project</span>,</span>
+<span>  project_home <span class="op">=</span> <span class="fu"><a href="project_homes.html">project_homes</a></span><span class="op">(</span>organism <span class="op">=</span> <span class="va">organism</span>, recount3_url <span class="op">=</span> <span class="va">recount3_url</span><span class="op">)</span>,</span>
+<span>  type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gene"</span>, <span class="st">"exon"</span>, <span class="st">"jxn"</span><span class="op">)</span>,</span>
+<span>  organism <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"human"</span>, <span class="st">"mouse"</span><span class="op">)</span>,</span>
+<span>  annotation <span class="op">=</span> <span class="fu"><a href="annotation_options.html">annotation_options</a></span><span class="op">(</span><span class="va">organism</span><span class="op">)</span>,</span>
+<span>  bfc <span class="op">=</span> <span class="fu"><a href="recount3_cache.html">recount3_cache</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  jxn_format <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ALL"</span>, <span class="st">"UNIQUE"</span><span class="op">)</span>,</span>
+<span>  recount3_url <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"recount3_url"</span>, <span class="st">"http://duffel.rail.bio/recount3"</span><span class="op">)</span>,</span>
+<span>  verbose <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"recount3_verbose"</span>, <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>project</dt>
 <dd><p>A <code>character(1)</code> with the ID for a given study.</p></dd>
+
+
 <dt>project_home</dt>
 <dd><p>A <code>character(1)</code> with the home directory for the
 <code>project</code>. You can find these using <code><a href="project_homes.html">project_homes()</a></code>.</p></dd>
+
+
 <dt>type</dt>
 <dd><p>A <code>character(1)</code> specifying whether you want to access gene,
 exon, or exon-exon junction counts.</p></dd>
+
+
 <dt>organism</dt>
 <dd><p>A <code>character(1)</code> specifying which organism you want to
 download data from. Supported options are <code>"human"</code> or <code>"mouse"</code>.</p></dd>
+
+
 <dt>annotation</dt>
 <dd><p>A <code>character(1)</code> specifying which annotation you want to
 download. Only used when <code>type</code> is either <code>gene</code> or <code>exon</code>.</p></dd>
+
+
 <dt>bfc</dt>
 <dd><p>A <a href="https://rdrr.io/pkg/BiocFileCache/man/BiocFileCache-class.html" class="external-link">BiocFileCache-class</a>
 object where the files will be cached to, typically created by
 <code><a href="recount3_cache.html">recount3_cache()</a></code>.</p></dd>
+
+
 <dt>jxn_format</dt>
 <dd><p>A <code>character(1)</code> specifying whether the exon-exon junction
 files are derived from all the reads (<code>ALL</code>) or only the uniquely mapping
 read counts (<code>UNIQUE</code>). Note that <code>UNIQUE</code> is only available for some
 projects: GTEx and TCGA for human.</p></dd>
+
+
 <dt>recount3_url</dt>
 <dd><p>A <code>character(1)</code> specifying the home URL for <code>recount3</code>
 or a local directory where you have mirrored <code>recount3</code>.</p></dd>
+
+
 <dt>verbose</dt>
 <dd><p>A <code>logical(1)</code> indicating whether to show messages with
 updates.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A
-<a href="https://rdrr.io/pkg/SummarizedExperiment/man/RangedSummarizedExperiment-class.html" class="external-link">RangedSummarizedExperiment-class</a>object.</p>
+    
+
+<p>A
+<a href="https://rdrr.io/pkg/SummarizedExperiment/man/RangedSummarizedExperiment-class.html" class="external-link">RangedSummarizedExperiment-class</a></p>
+
+
+<p>object.</p>
     </div>
     <div id="references">
     <h2>References</h2>
@@ -138,25 +160,25 @@ base-pair coverage counts used in recount2 and recount3.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="co">## Unlike create_rse(), here we create an RSE object by</span></span>
-<span class="r-in"><span class="co">## fully specifying all the arguments for locating this study</span></span>
-<span class="r-in"><span class="va">rse_gene_SRP009615_manual</span> <span class="op">&lt;-</span> <span class="fu">create_rse_manual</span><span class="op">(</span></span>
-<span class="r-in">    <span class="st">"SRP009615"</span>,</span>
-<span class="r-in">    <span class="st">"data_sources/sra"</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:03:55 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:03:55 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:03:56 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:03:57 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:03:57 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:03:58 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:03:58 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:03:58 caching file human.gene_sums.G026.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:03:59 downloading and reading the counts: 12 samples across 63856 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:03:59 caching file sra.gene_sums.SRP009615.G026.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:00 construcing the RangedSummarizedExperiment (rse) object.</span>
-<span class="r-in"><span class="va">rse_gene_SRP009615_manual</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Unlike create_rse(), here we create an RSE object by</span></span></span>
+<span class="r-in"><span><span class="co">## fully specifying all the arguments for locating this study</span></span></span>
+<span class="r-in"><span><span class="va">rse_gene_SRP009615_manual</span> <span class="op">&lt;-</span> <span class="fu">create_rse_manual</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"SRP009615"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"data_sources/sra"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:44 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:44 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:45 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:45 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:46 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:46 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:46 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:47 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:48 downloading and reading the counts: 12 samples across 63856 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:48 caching file sra.gene_sums.SRP009615.G026.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:48 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-in"><span><span class="va">rse_gene_SRP009615_manual</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> class: RangedSummarizedExperiment </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> dim: 63856 12 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> metadata(8): time_created recount3_version ... annotation recount3_url</span>
@@ -167,33 +189,33 @@ base-pair coverage counts used in recount2 and recount3.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> colnames(12): SRR387777 SRR387778 ... SRR389077 SRR389078</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> colData names(175): rail_id external_id ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   recount_pred.curated.cell_line BigWigURL</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Check how much memory this RSE object uses</span></span>
-<span class="r-in"><span class="fu">pryr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pryr/man/object_size.html" class="external-link">object_size</a></span><span class="op">(</span><span class="va">rse_gene_SRP009615_manual</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24,811,608 B</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Test with a collection that has a single sample</span></span>
-<span class="r-in"><span class="co">## NOTE: this requires loading the full data for this study when</span></span>
-<span class="r-in"><span class="co">## creating the RSE object</span></span>
-<span class="r-in"><span class="va">rse_gene_ERP110066_collection_manual</span> <span class="op">&lt;-</span> <span class="fu">create_rse_manual</span><span class="op">(</span></span>
-<span class="r-in">    <span class="st">"ERP110066"</span>,</span>
-<span class="r-in">    <span class="st">"collections/geuvadis_smartseq"</span>,</span>
-<span class="r-in">    recount3_url <span class="op">=</span> <span class="st">"http://snaptron.cs.jhu.edu/data/temp/recount3"</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:00 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:00 caching file geuvadis_smartseq.recount_project.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:01 caching file sra.sra.ERP110066.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:01 caching file sra.recount_project.ERP110066.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:02 caching file sra.recount_qc.ERP110066.MD.gz.</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Check how much memory this RSE object uses</span></span></span>
+<span class="r-in"><span><span class="fu">pryr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pryr/man/object_size.html" class="external-link">object_size</a></span><span class="op">(</span><span class="va">rse_gene_SRP009615_manual</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24.81 MB</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Test with a collection that has a single sample</span></span></span>
+<span class="r-in"><span><span class="co">## NOTE: this requires loading the full data for this study when</span></span></span>
+<span class="r-in"><span><span class="co">## creating the RSE object</span></span></span>
+<span class="r-in"><span><span class="va">rse_gene_ERP110066_collection_manual</span> <span class="op">&lt;-</span> <span class="fu">create_rse_manual</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"ERP110066"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"collections/geuvadis_smartseq"</span>,</span></span>
+<span class="r-in"><span>    recount3_url <span class="op">=</span> <span class="st">"http://snaptron.cs.jhu.edu/data/temp/recount3"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:49 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:49 caching file geuvadis_smartseq.recount_project.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:49 caching file sra.sra.ERP110066.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:50 caching file sra.recount_project.ERP110066.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:50 caching file sra.recount_qc.ERP110066.MD.gz.</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>The 'url' &lt;http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_seq_qc.ERP110066.MD.gz&gt; does not exist or is not available.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:02 caching file sra.recount_pred.ERP110066.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:03 caching file geuvadis_smartseq.custom.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:03 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:03 caching file human.gene_sums.G026.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:05 downloading and reading the counts: 1 sample across 63856 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:05 caching file sra.gene_sums.ERP110066.G026.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:07 construcing the RangedSummarizedExperiment (rse) object.</span>
-<span class="r-in"><span class="va">rse_gene_ERP110066_collection_manual</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:51 caching file sra.recount_pred.ERP110066.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:51 caching file geuvadis_smartseq.custom.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:52 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:52 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:53 downloading and reading the counts: 1 sample across 63856 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:53 caching file sra.gene_sums.ERP110066.G026.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:55 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-in"><span><span class="va">rse_gene_ERP110066_collection_manual</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> class: RangedSummarizedExperiment </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> dim: 63856 1 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> metadata(8): time_created recount3_version ... annotation recount3_url</span>
@@ -204,29 +226,29 @@ base-pair coverage counts used in recount2 and recount3.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> colnames(1): ERR2713106</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> colData names(162): rail_id external_id ... custom.sequencing_type</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   BigWigURL</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Check how much memory this RSE object uses</span></span>
-<span class="r-in"><span class="fu">pryr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pryr/man/object_size.html" class="external-link">object_size</a></span><span class="op">(</span><span class="va">rse_gene_ERP110066_collection_manual</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19,163,912 B</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Mouse example</span></span>
-<span class="r-in"><span class="va">rse_gene_DRP002367_manual</span> <span class="op">&lt;-</span> <span class="fu">create_rse_manual</span><span class="op">(</span></span>
-<span class="r-in">    <span class="st">"DRP002367"</span>,</span>
-<span class="r-in">    <span class="st">"data_sources/sra"</span>,</span>
-<span class="r-in">    organism <span class="op">=</span> <span class="st">"mouse"</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:07 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:07 caching file sra.sra.DRP002367.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:08 caching file sra.recount_project.DRP002367.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:08 caching file sra.recount_qc.DRP002367.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:09 caching file sra.recount_seq_qc.DRP002367.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:10 caching file sra.recount_pred.DRP002367.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:10 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:10 caching file mouse.gene_sums.M023.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:11 downloading and reading the counts: 4 samples across 55421 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:12 caching file sra.gene_sums.DRP002367.M023.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:12 construcing the RangedSummarizedExperiment (rse) object.</span>
-<span class="r-in"><span class="va">rse_gene_DRP002367_manual</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Check how much memory this RSE object uses</span></span></span>
+<span class="r-in"><span><span class="fu">pryr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pryr/man/object_size.html" class="external-link">object_size</a></span><span class="op">(</span><span class="va">rse_gene_ERP110066_collection_manual</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19.16 MB</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Mouse example</span></span></span>
+<span class="r-in"><span><span class="va">rse_gene_DRP002367_manual</span> <span class="op">&lt;-</span> <span class="fu">create_rse_manual</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"DRP002367"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"data_sources/sra"</span>,</span></span>
+<span class="r-in"><span>    organism <span class="op">=</span> <span class="st">"mouse"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:56 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:56 caching file sra.sra.DRP002367.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:57 caching file sra.recount_project.DRP002367.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:57 caching file sra.recount_qc.DRP002367.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:58 caching file sra.recount_seq_qc.DRP002367.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:58 caching file sra.recount_pred.DRP002367.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:59 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:04:59 caching file mouse.gene_sums.M023.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:00 downloading and reading the counts: 4 samples across 55421 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:00 caching file sra.gene_sums.DRP002367.M023.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:00 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-in"><span><span class="va">rse_gene_DRP002367_manual</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> class: RangedSummarizedExperiment </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> dim: 55421 4 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> metadata(8): time_created recount3_version ... annotation recount3_url</span>
@@ -237,17 +259,17 @@ base-pair coverage counts used in recount2 and recount3.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> colnames(4): DRR023307 DRR023308 DRR023309 DRR023310</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> colData names(177): rail_id external_id ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   recount_pred.curated.cell_line BigWigURL</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Information about how this RSE was made</span></span>
-<span class="r-in"><span class="fu">metadata</span><span class="op">(</span><span class="va">rse_gene_DRP002367_manual</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Information about how this RSE was made</span></span></span>
+<span class="r-in"><span><span class="fu">metadata</span><span class="op">(</span><span class="va">rse_gene_DRP002367_manual</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $time_created</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2022-03-21 16:04:12 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2022-08-19 15:05:00 UTC"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $recount3_version</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           package ondiskversion loadedversion                        path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> recount3 recount3         1.5.1         1.5.1 /__w/_temp/Library/recount3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> recount3 recount3         1.7.0         1.7.0 /__w/_temp/Library/recount3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                           loadedpath attached is_base       date       source</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> recount3 /__w/_temp/Library/recount3     TRUE   FALSE 2022-03-21 Bioconductor</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> recount3 /__w/_temp/Library/recount3     TRUE   FALSE 2022-08-19 Bioconductor</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>          md5ok            library</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> recount3    NA /__w/_temp/Library</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -269,53 +291,53 @@ base-pair coverage counts used in recount2 and recount3.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $recount3_url</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "http://duffel.rail.bio/recount3"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Test with a collection that has one sample, at the exon level</span></span>
-<span class="r-in"><span class="co">## NOTE: this requires loading the full data for this study (nearly 6GB!)</span></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="va">rse_exon_ERP110066_collection_manual</span> <span class="op">&lt;-</span> <span class="fu">create_rse_manual</span><span class="op">(</span></span>
-<span class="r-in">    <span class="st">"ERP110066"</span>,</span>
-<span class="r-in">    <span class="st">"collections/geuvadis_smartseq"</span>,</span>
-<span class="r-in">    type <span class="op">=</span> <span class="st">"exon"</span>,</span>
-<span class="r-in">    recount3_url <span class="op">=</span> <span class="st">"http://snaptron.cs.jhu.edu/data/temp/recount3"</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-in"><span class="va">rse_exon_ERP110066_collection_manual</span></span>
-<span class="r-in"></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Check how much memory this RSE object uses</span></span>
-<span class="r-in"><span class="fu">pryr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pryr/man/object_size.html" class="external-link">object_size</a></span><span class="op">(</span><span class="va">rse_exon_ERP110066_collection_manual</span><span class="op">)</span></span>
-<span class="r-in"><span class="co"># 409 MB</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Test with a collection that has one sample, at the junction level</span></span>
-<span class="r-in"><span class="co">## NOTE: this requires loading the full data for this study</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/system.time.html" class="external-link">system.time</a></span><span class="op">(</span><span class="va">rse_jxn_ERP110066_collection_manual</span> <span class="op">&lt;-</span> <span class="fu">create_rse_manual</span><span class="op">(</span></span>
-<span class="r-in">    <span class="st">"ERP110066"</span>,</span>
-<span class="r-in">    <span class="st">"collections/geuvadis_smartseq"</span>,</span>
-<span class="r-in">    type <span class="op">=</span> <span class="st">"jxn"</span>,</span>
-<span class="r-in">    recount3_url <span class="op">=</span> <span class="st">"http://snaptron.cs.jhu.edu/data/temp/recount3"</span></span>
-<span class="r-in"><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">rse_jxn_ERP110066_collection_manual</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Check how much memory this RSE object uses</span></span>
-<span class="r-in"><span class="co">## NOTE: this doesn't run since 2 files are missing on the test site!</span></span>
-<span class="r-in"><span class="fu">pryr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pryr/man/object_size.html" class="external-link">object_size</a></span><span class="op">(</span><span class="va">rse_jxn_ERP110066_collection_manual</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="co">## For testing and debugging</span></span>
-<span class="r-in"><span class="va">project</span> <span class="op">&lt;-</span> <span class="st">"ERP110066"</span></span>
-<span class="r-in"><span class="va">project_home</span> <span class="op">&lt;-</span> <span class="st">"collections/geuvadis_smartseq"</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">project</span> <span class="op">&lt;-</span> <span class="st">"SRP009615"</span></span>
-<span class="r-in"><span class="va">project_home</span> <span class="op">&lt;-</span> <span class="st">"data_sources/sra"</span></span>
-<span class="r-in"><span class="va">type</span> <span class="op">&lt;-</span> <span class="st">"gene"</span></span>
-<span class="r-in"><span class="va">organism</span> <span class="op">&lt;-</span> <span class="st">"human"</span></span>
-<span class="r-in"><span class="va">annotation</span> <span class="op">&lt;-</span> <span class="st">"gencode_v26"</span></span>
-<span class="r-in"><span class="va">jxn_format</span> <span class="op">&lt;-</span> <span class="st">"ALL"</span></span>
-<span class="r-in"><span class="va">bfc</span> <span class="op">&lt;-</span> <span class="fu"><a href="recount3_cache.html">recount3_cache</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">recount3_url</span> <span class="op">&lt;-</span> <span class="st">"http://idies.jhu.edu/recount3/data"</span></span>
-<span class="r-in"><span class="va">verbose</span> <span class="op">&lt;-</span> <span class="cn">TRUE</span></span>
-<span class="r-in"><span class="op">}</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Test with a collection that has one sample, at the exon level</span></span></span>
+<span class="r-in"><span><span class="co">## NOTE: this requires loading the full data for this study (nearly 6GB!)</span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="va">rse_exon_ERP110066_collection_manual</span> <span class="op">&lt;-</span> <span class="fu">create_rse_manual</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"ERP110066"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"collections/geuvadis_smartseq"</span>,</span></span>
+<span class="r-in"><span>    type <span class="op">=</span> <span class="st">"exon"</span>,</span></span>
+<span class="r-in"><span>    recount3_url <span class="op">=</span> <span class="st">"http://snaptron.cs.jhu.edu/data/temp/recount3"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">rse_exon_ERP110066_collection_manual</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Check how much memory this RSE object uses</span></span></span>
+<span class="r-in"><span><span class="fu">pryr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pryr/man/object_size.html" class="external-link">object_size</a></span><span class="op">(</span><span class="va">rse_exon_ERP110066_collection_manual</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># 409 MB</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Test with a collection that has one sample, at the junction level</span></span></span>
+<span class="r-in"><span><span class="co">## NOTE: this requires loading the full data for this study</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/system.time.html" class="external-link">system.time</a></span><span class="op">(</span><span class="va">rse_jxn_ERP110066_collection_manual</span> <span class="op">&lt;-</span> <span class="fu">create_rse_manual</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"ERP110066"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"collections/geuvadis_smartseq"</span>,</span></span>
+<span class="r-in"><span>    type <span class="op">=</span> <span class="st">"jxn"</span>,</span></span>
+<span class="r-in"><span>    recount3_url <span class="op">=</span> <span class="st">"http://snaptron.cs.jhu.edu/data/temp/recount3"</span></span></span>
+<span class="r-in"><span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">rse_jxn_ERP110066_collection_manual</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Check how much memory this RSE object uses</span></span></span>
+<span class="r-in"><span><span class="co">## NOTE: this doesn't run since 2 files are missing on the test site!</span></span></span>
+<span class="r-in"><span><span class="fu">pryr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pryr/man/object_size.html" class="external-link">object_size</a></span><span class="op">(</span><span class="va">rse_jxn_ERP110066_collection_manual</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="co">## For testing and debugging</span></span></span>
+<span class="r-in"><span><span class="va">project</span> <span class="op">&lt;-</span> <span class="st">"ERP110066"</span></span></span>
+<span class="r-in"><span><span class="va">project_home</span> <span class="op">&lt;-</span> <span class="st">"collections/geuvadis_smartseq"</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">project</span> <span class="op">&lt;-</span> <span class="st">"SRP009615"</span></span></span>
+<span class="r-in"><span><span class="va">project_home</span> <span class="op">&lt;-</span> <span class="st">"data_sources/sra"</span></span></span>
+<span class="r-in"><span><span class="va">type</span> <span class="op">&lt;-</span> <span class="st">"gene"</span></span></span>
+<span class="r-in"><span><span class="va">organism</span> <span class="op">&lt;-</span> <span class="st">"human"</span></span></span>
+<span class="r-in"><span><span class="va">annotation</span> <span class="op">&lt;-</span> <span class="st">"gencode_v26"</span></span></span>
+<span class="r-in"><span><span class="va">jxn_format</span> <span class="op">&lt;-</span> <span class="st">"ALL"</span></span></span>
+<span class="r-in"><span><span class="va">bfc</span> <span class="op">&lt;-</span> <span class="fu"><a href="recount3_cache.html">recount3_cache</a></span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">recount3_url</span> <span class="op">&lt;-</span> <span class="st">"http://idies.jhu.edu/recount3/data"</span></span></span>
+<span class="r-in"><span><span class="va">verbose</span> <span class="op">&lt;-</span> <span class="cn">TRUE</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -330,8 +352,7 @@ base-pair coverage counts used in recount2 and recount3.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
-2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

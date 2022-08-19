@@ -18,7 +18,7 @@ corresponding file extension used in the recount3 files."><meta property="og:ima
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.0</span>
       </span>
     </div>
 
@@ -65,10 +65,10 @@ corresponding file extension used in the <code>recount3</code> files.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">annotation_ext</span><span class="op">(</span>
-  organism <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"human"</span>, <span class="st">"mouse"</span><span class="op">)</span>,
-  annotation <span class="op">=</span> <span class="fu"><a href="annotation_options.html">annotation_options</a></span><span class="op">(</span><span class="va">organism</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">annotation_ext</span><span class="op">(</span></span>
+<span>  organism <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"human"</span>, <span class="st">"mouse"</span><span class="op">)</span>,</span>
+<span>  annotation <span class="op">=</span> <span class="fu"><a href="annotation_options.html">annotation_options</a></span><span class="op">(</span><span class="va">organism</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -76,13 +76,18 @@ corresponding file extension used in the <code>recount3</code> files.</p>
     <dl><dt>organism</dt>
 <dd><p>A <code>character(1)</code> specifying which organism you want to
 download data from. Supported options are <code>"human"</code> or <code>"mouse"</code>.</p></dd>
+
+
 <dt>annotation</dt>
 <dd><p>A <code>character(1)</code> specifying which annotation you want to
 use.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A <code>character(1)</code> with the annotation file extension to be used.</p>
+    
+
+<p>A <code>character(1)</code> with the annotation file extension to be used.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -98,14 +103,14 @@ use.</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="fu">annotation_ext</span><span class="op">(</span><span class="st">"human"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">annotation_ext</span><span class="op">(</span><span class="st">"human"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "G026"</span>
-<span class="r-in"><span class="fu">annotation_ext</span><span class="op">(</span><span class="st">"human"</span>, <span class="st">"fantom6_cat"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">annotation_ext</span><span class="op">(</span><span class="st">"human"</span>, <span class="st">"fantom6_cat"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "F006"</span>
-<span class="r-in"><span class="fu">annotation_ext</span><span class="op">(</span><span class="st">"human"</span>, <span class="st">"refseq"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">annotation_ext</span><span class="op">(</span><span class="st">"human"</span>, <span class="st">"refseq"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "R109"</span>
-<span class="r-in"><span class="fu">annotation_ext</span><span class="op">(</span><span class="st">"mouse"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">annotation_ext</span><span class="op">(</span><span class="st">"mouse"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "M023"</span>
 </code></pre></div>
     </div>
@@ -121,8 +126,7 @@ use.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
-2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

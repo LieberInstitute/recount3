@@ -19,7 +19,7 @@ using file_retrieve()."><meta property="og:image" content="/logo.png"><!-- mathj
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.0</span>
       </span>
     </div>
 
@@ -67,7 +67,7 @@ using <code><a href="file_retrieve.html">file_retrieve()</a></code>.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">read_metadata</span><span class="op">(</span><span class="va">metadata_files</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">read_metadata</span><span class="op">(</span><span class="va">metadata_files</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -75,10 +75,13 @@ using <code><a href="file_retrieve.html">file_retrieve()</a></code>.</p>
     <dl><dt>metadata_files</dt>
 <dd><p>A <code><a href="https://rdrr.io/r/base/character.html" class="external-link">character()</a></code> with the local path to <code>recount3</code>
 metadata files.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A <code><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame()</a></code> with all lower case column names for the sample
+    
+
+<p>A <code><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame()</a></code> with all lower case column names for the sample
 metadata.</p>
     </div>
     <div id="see-also">
@@ -95,26 +98,26 @@ metadata.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="co">## Download the metadata files for project ERP110066</span></span>
-<span class="r-in"><span class="va">url_ERP110066_meta</span> <span class="op">&lt;-</span> <span class="fu"><a href="locate_url.html">locate_url</a></span><span class="op">(</span></span>
-<span class="r-in">    <span class="st">"ERP110066"</span>,</span>
-<span class="r-in">    <span class="st">"data_sources/sra"</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-in"><span class="va">local_ERP110066_meta</span> <span class="op">&lt;-</span> <span class="fu"><a href="file_retrieve.html">file_retrieve</a></span><span class="op">(</span></span>
-<span class="r-in">    url <span class="op">=</span> <span class="va">url_ERP110066_meta</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:45 caching file sra.sra.ERP110066.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:45 caching file sra.recount_project.ERP110066.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:45 caching file sra.recount_qc.ERP110066.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:46 caching file sra.recount_seq_qc.ERP110066.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:47 caching file sra.recount_pred.ERP110066.MD.gz.</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Read the metadata</span></span>
-<span class="r-in"><span class="va">ERP110066_meta</span> <span class="op">&lt;-</span> <span class="fu">read_metadata</span><span class="op">(</span><span class="va">local_ERP110066_meta</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">ERP110066_meta</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Download the metadata files for project ERP110066</span></span></span>
+<span class="r-in"><span><span class="va">url_ERP110066_meta</span> <span class="op">&lt;-</span> <span class="fu"><a href="locate_url.html">locate_url</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"ERP110066"</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"data_sources/sra"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">local_ERP110066_meta</span> <span class="op">&lt;-</span> <span class="fu"><a href="file_retrieve.html">file_retrieve</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    url <span class="op">=</span> <span class="va">url_ERP110066_meta</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:33 caching file sra.sra.ERP110066.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:33 caching file sra.recount_project.ERP110066.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:34 caching file sra.recount_qc.ERP110066.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:34 caching file sra.recount_seq_qc.ERP110066.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:35 caching file sra.recount_pred.ERP110066.MD.gz.</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Read the metadata</span></span></span>
+<span class="r-in"><span><span class="va">ERP110066_meta</span> <span class="op">&lt;-</span> <span class="fu">read_metadata</span><span class="op">(</span><span class="va">local_ERP110066_meta</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">ERP110066_meta</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1024  174</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">ERP110066_meta</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">ERP110066_meta</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [1] "rail_id"                                                           </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [2] "external_id"                                                       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [3] "study"                                                             </span>
@@ -289,60 +292,60 @@ metadata.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [172] "recount_pred.pred.type"                                            </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [173] "recount_pred.curated.cell_type"                                    </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [174] "recount_pred.curated.cell_line"                                    </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Read the metadata files for a project in a collection</span></span>
-<span class="r-in"><span class="co">## Note: using the test files since I can't access collections right now</span></span>
-<span class="r-in"><span class="co">## for this collection</span></span>
-<span class="r-in"><span class="va">ERP110066_collection_meta</span> <span class="op">&lt;-</span> <span class="fu">read_metadata</span><span class="op">(</span></span>
-<span class="r-in">    metadata_files <span class="op">=</span> <span class="fu"><a href="file_retrieve.html">file_retrieve</a></span><span class="op">(</span></span>
-<span class="r-in">        <span class="fu"><a href="locate_url.html">locate_url</a></span><span class="op">(</span></span>
-<span class="r-in">            <span class="st">"ERP110066"</span>,</span>
-<span class="r-in">            <span class="st">"collections/geuvadis_smartseq"</span>,</span>
-<span class="r-in">            recount3_url <span class="op">=</span> <span class="st">"http://snaptron.cs.jhu.edu/data/temp/recount3"</span></span>
-<span class="r-in">        <span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:47 caching file geuvadis_smartseq.recount_project.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:48 caching file sra.sra.ERP110066.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:48 caching file sra.recount_project.ERP110066.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:49 caching file sra.recount_qc.ERP110066.MD.gz.</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Read the metadata files for a project in a collection</span></span></span>
+<span class="r-in"><span><span class="co">## Note: using the test files since I can't access collections right now</span></span></span>
+<span class="r-in"><span><span class="co">## for this collection</span></span></span>
+<span class="r-in"><span><span class="va">ERP110066_collection_meta</span> <span class="op">&lt;-</span> <span class="fu">read_metadata</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    metadata_files <span class="op">=</span> <span class="fu"><a href="file_retrieve.html">file_retrieve</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="locate_url.html">locate_url</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>            <span class="st">"ERP110066"</span>,</span></span>
+<span class="r-in"><span>            <span class="st">"collections/geuvadis_smartseq"</span>,</span></span>
+<span class="r-in"><span>            recount3_url <span class="op">=</span> <span class="st">"http://snaptron.cs.jhu.edu/data/temp/recount3"</span></span></span>
+<span class="r-in"><span>        <span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:36 caching file geuvadis_smartseq.recount_project.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:36 caching file sra.sra.ERP110066.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:37 caching file sra.recount_project.ERP110066.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:37 caching file sra.recount_qc.ERP110066.MD.gz.</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>The 'url' &lt;http://snaptron.cs.jhu.edu/data/temp/recount3/human/data_sources/sra/metadata/66/ERP110066/sra.recount_seq_qc.ERP110066.MD.gz&gt; does not exist or is not available.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:49 caching file sra.recount_pred.ERP110066.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:49 caching file geuvadis_smartseq.custom.gz.</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">ERP110066_collection_meta</span><span class="op">)</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:38 caching file sra.recount_pred.ERP110066.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:38 caching file geuvadis_smartseq.custom.gz.</span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">ERP110066_collection_meta</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1]   1 161</span>
-<span class="r-in"><span class="co">## New columns for this collection</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">ERP110066_collection_meta</span><span class="op">)</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">ERP110066_collection_meta</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">ERP110066_meta</span><span class="op">)</span><span class="op">]</span></span>
+<span class="r-in"><span><span class="co">## New columns for this collection</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">ERP110066_collection_meta</span><span class="op">)</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">ERP110066_collection_meta</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">ERP110066_meta</span><span class="op">)</span><span class="op">]</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "custom.sequencing_type"</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Read the metadata for a mouse project</span></span>
-<span class="r-in"><span class="va">DRP002367_meta</span> <span class="op">&lt;-</span> <span class="fu">read_metadata</span><span class="op">(</span></span>
-<span class="r-in">    metadata_files <span class="op">=</span> <span class="fu"><a href="file_retrieve.html">file_retrieve</a></span><span class="op">(</span></span>
-<span class="r-in">        <span class="fu"><a href="locate_url.html">locate_url</a></span><span class="op">(</span><span class="st">"DRP002367"</span>, <span class="st">"data_sources/sra"</span>, organism <span class="op">=</span> <span class="st">"mouse"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:50 caching file sra.sra.DRP002367.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:51 caching file sra.recount_project.DRP002367.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:51 caching file sra.recount_qc.DRP002367.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:52 caching file sra.recount_seq_qc.DRP002367.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:53 caching file sra.recount_pred.DRP002367.MD.gz.</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">DRP002367_meta</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Read the metadata for a mouse project</span></span></span>
+<span class="r-in"><span><span class="va">DRP002367_meta</span> <span class="op">&lt;-</span> <span class="fu">read_metadata</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    metadata_files <span class="op">=</span> <span class="fu"><a href="file_retrieve.html">file_retrieve</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="locate_url.html">locate_url</a></span><span class="op">(</span><span class="st">"DRP002367"</span>, <span class="st">"data_sources/sra"</span>, organism <span class="op">=</span> <span class="st">"mouse"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:39 caching file sra.sra.DRP002367.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:39 caching file sra.recount_project.DRP002367.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:40 caching file sra.recount_qc.DRP002367.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:40 caching file sra.recount_seq_qc.DRP002367.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:41 caching file sra.recount_pred.DRP002367.MD.gz.</span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">DRP002367_meta</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1]   4 176</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Locate and read the GTEx bladder metadata</span></span>
-<span class="r-in"><span class="va">gtex_bladder_meta</span> <span class="op">&lt;-</span> <span class="fu">read_metadata</span><span class="op">(</span></span>
-<span class="r-in">    <span class="fu"><a href="file_retrieve.html">file_retrieve</a></span><span class="op">(</span></span>
-<span class="r-in">        <span class="fu"><a href="locate_url.html">locate_url</a></span><span class="op">(</span><span class="st">"BLADDER"</span>, <span class="st">"data_sources/gtex"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="op">)</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:53 caching file gtex.gtex.BLADDER.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:54 caching file gtex.recount_project.BLADDER.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:54 caching file gtex.recount_qc.BLADDER.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:04:55 caching file gtex.recount_seq_qc.BLADDER.MD.gz.</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">gtex_bladder_meta</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Locate and read the GTEx bladder metadata</span></span></span>
+<span class="r-in"><span><span class="va">gtex_bladder_meta</span> <span class="op">&lt;-</span> <span class="fu">read_metadata</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="file_retrieve.html">file_retrieve</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>        <span class="fu"><a href="locate_url.html">locate_url</a></span><span class="op">(</span><span class="st">"BLADDER"</span>, <span class="st">"data_sources/gtex"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:41 caching file gtex.gtex.BLADDER.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:42 caching file gtex.recount_project.BLADDER.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:43 caching file gtex.recount_qc.BLADDER.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:05:43 caching file gtex.recount_seq_qc.BLADDER.MD.gz.</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">gtex_bladder_meta</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1]  21 197</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">gtex_bladder_meta</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">gtex_bladder_meta</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [1] "rail_id"                                                           </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [2] "external_id"                                                       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [3] "study"                                                             </span>
@@ -554,8 +557,7 @@ metadata.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
-2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

@@ -19,7 +19,7 @@ or compute the read counts using the area under coverage information (AUC)."><me
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.5.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.7.0</span>
       </span>
     </div>
 
@@ -67,11 +67,11 @@ or compute the read counts using the area under coverage information (AUC).</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">compute_read_counts</span><span class="op">(</span>
-  <span class="va">rse</span>,
-  round <span class="op">=</span> <span class="cn">TRUE</span>,
-  avg_mapped_read_length <span class="op">=</span> <span class="st">"recount_qc.star.average_mapped_length"</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">compute_read_counts</span><span class="op">(</span></span>
+<span>  <span class="va">rse</span>,</span>
+<span>  round <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  avg_mapped_read_length <span class="op">=</span> <span class="st">"recount_qc.star.average_mapped_length"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -80,17 +80,24 @@ or compute the read counts using the area under coverage information (AUC).</p>
 <dd><p>A
 <a href="https://rdrr.io/pkg/SummarizedExperiment/man/RangedSummarizedExperiment-class.html" class="external-link">RangedSummarizedExperiment-class</a>
 created by <code><a href="create_rse.html">create_rse()</a></code>.</p></dd>
+
+
 <dt>round</dt>
 <dd><p>A <code>logical(1)</code> specifying whether to round the transformed
 counts or not.</p></dd>
+
+
 <dt>avg_mapped_read_length</dt>
 <dd><p>A <code>character(1)</code> specifying the metdata column
 name that contains the average fragment length after aligning. This is
 typically twice the average read length for paired-end reads.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A <code><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix()</a></code> with the read counts. By default this function uses
+    
+
+<p>A <code><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix()</a></code> with the read counts. By default this function uses
 the average read length to the QC annotation.</p>
     </div>
     <div id="details">
@@ -118,82 +125,82 @@ doi: 10.12688/f1000research.12223.1.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="co">## Create a RSE object at the gene level</span></span>
-<span class="r-in"><span class="va">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="create_rse_manual.html">create_rse_manual</a></span><span class="op">(</span><span class="st">"SRP009615"</span><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:30 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:31 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:31 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:32 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:32 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:33 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:33 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:33 caching file human.gene_sums.G026.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:34 downloading and reading the counts: 12 samples across 63856 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:35 caching file sra.gene_sums.SRP009615.G026.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:35 construcing the RangedSummarizedExperiment (rse) object.</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colSums</a></span><span class="op">(</span><span class="fu">compute_read_counts</span><span class="op">(</span><span class="va">rse_gene_SRP009615</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="fl">1e6</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Create a RSE object at the gene level</span></span></span>
+<span class="r-in"><span><span class="va">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="create_rse_manual.html">create_rse_manual</a></span><span class="op">(</span><span class="st">"SRP009615"</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:12 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:12 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:13 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:14 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:14 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:15 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:15 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:15 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:16 downloading and reading the counts: 12 samples across 63856 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:17 caching file sra.gene_sums.SRP009615.G026.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:18 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colSums</a></span><span class="op">(</span><span class="fu">compute_read_counts</span><span class="op">(</span><span class="va">rse_gene_SRP009615</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="fl">1e6</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> SRR387777 SRR387778 SRR387779 SRR387780 SRR389079 SRR389080 SRR389081 SRR389082 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  21.29962  23.66484  32.62525  25.46085  41.48717  28.05485  17.78092  15.46669 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> SRR389083 SRR389084 SRR389077 SRR389078 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  18.84982  18.18674  13.88166  15.14785 </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Create a RSE object at the gene level</span></span>
-<span class="r-in"><span class="va">rse_gene_DRP000499</span> <span class="op">&lt;-</span> <span class="fu"><a href="create_rse_manual.html">create_rse_manual</a></span><span class="op">(</span><span class="st">"DRP000499"</span><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:35 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:35 caching file sra.sra.DRP000499.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:36 caching file sra.recount_project.DRP000499.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:37 caching file sra.recount_qc.DRP000499.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:37 caching file sra.recount_seq_qc.DRP000499.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:38 caching file sra.recount_pred.DRP000499.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:38 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:38 caching file human.gene_sums.G026.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:39 downloading and reading the counts: 21 samples across 63856 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:39 caching file sra.gene_sums.DRP000499.G026.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:40 construcing the RangedSummarizedExperiment (rse) object.</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colSums</a></span><span class="op">(</span><span class="fu">compute_read_counts</span><span class="op">(</span><span class="va">rse_gene_DRP000499</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="fl">1e6</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Create a RSE object at the gene level</span></span></span>
+<span class="r-in"><span><span class="va">rse_gene_DRP000499</span> <span class="op">&lt;-</span> <span class="fu"><a href="create_rse_manual.html">create_rse_manual</a></span><span class="op">(</span><span class="st">"DRP000499"</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:18 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:18 caching file sra.sra.DRP000499.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:19 caching file sra.recount_project.DRP000499.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:20 caching file sra.recount_qc.DRP000499.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:20 caching file sra.recount_seq_qc.DRP000499.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:21 caching file sra.recount_pred.DRP000499.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:21 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:21 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:23 downloading and reading the counts: 21 samples across 63856 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:23 caching file sra.gene_sums.DRP000499.G026.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:23 construcing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colSums</a></span><span class="op">(</span><span class="fu">compute_read_counts</span><span class="op">(</span><span class="va">rse_gene_DRP000499</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="fl">1e6</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> DRR001622 DRR001623 DRR001624 DRR001625 DRR001626 DRR001627 DRR001628 DRR001629 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 10.952140  7.995718 11.874082       NaN  7.518984 11.272031 53.412769 27.539984 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> DRR001630 DRR001631 DRR001632 DRR001633 DRR001634 DRR001635 DRR001636 DRR001637 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 27.721930 35.301338 48.673389 20.585057 35.074474 31.622335 34.844632 46.270835 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> DRR001638 DRR001639 DRR001640 DRR001641 DRR001642 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 31.505395 26.991040 18.916860 17.788569 25.389886 </span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## You can compare the read counts against those from recount::read_counts()</span></span>
-<span class="r-in"><span class="co">## from the recount2 project which used a different RNA-seq aligner</span></span>
-<span class="r-in"><span class="co">## If needed, install recount, the R/Bioconductor package for recount2:</span></span>
-<span class="r-in"><span class="co"># BiocManager::install("recount")</span></span>
-<span class="r-in"><span class="va">recount2_readsums</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colSums</a></span><span class="op">(</span><span class="fu">assay</span><span class="op">(</span><span class="fu">recount</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/recount/man/read_counts.html" class="external-link">read_counts</a></span><span class="op">(</span></span>
-<span class="r-in">    <span class="fu">recount</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/recount/man/rse_gene_SRP009615.html" class="external-link">rse_gene_SRP009615</a></span></span>
-<span class="r-in"><span class="op">)</span>, <span class="st">"counts"</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="fl">1e6</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## You can compare the read counts against those from recount::read_counts()</span></span></span>
+<span class="r-in"><span><span class="co">## from the recount2 project which used a different RNA-seq aligner</span></span></span>
+<span class="r-in"><span><span class="co">## If needed, install recount, the R/Bioconductor package for recount2:</span></span></span>
+<span class="r-in"><span><span class="co"># BiocManager::install("recount")</span></span></span>
+<span class="r-in"><span><span class="va">recount2_readsums</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colSums</a></span><span class="op">(</span><span class="fu">assay</span><span class="op">(</span><span class="fu">recount</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/recount/man/read_counts.html" class="external-link">read_counts</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="fu">recount</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/recount/man/rse_gene_SRP009615.html" class="external-link">rse_gene_SRP009615</a></span></span></span>
+<span class="r-in"><span><span class="op">)</span>, <span class="st">"counts"</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="fl">1e6</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Setting options('download.file.method.GEOquery'='auto')</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Setting options('GEOquery.inmemory.gpl'=FALSE)</span>
-<span class="r-in"><span class="va">recount3_readsums</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colSums</a></span><span class="op">(</span><span class="fu">compute_read_counts</span><span class="op">(</span><span class="va">rse_gene_SRP009615</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="fl">1e6</span></span>
-<span class="r-in"><span class="va">recount_readsums</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
-<span class="r-in">    recount2 <span class="op">=</span> <span class="va">recount2_readsums</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html" class="external-link">order</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">recount2_readsums</span><span class="op">)</span><span class="op">)</span><span class="op">]</span>,</span>
-<span class="r-in">    recount3 <span class="op">=</span> <span class="va">recount3_readsums</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html" class="external-link">order</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">recount3_readsums</span><span class="op">)</span><span class="op">)</span><span class="op">]</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">recount2</span> <span class="op">~</span> <span class="va">recount3</span>, data <span class="op">=</span> <span class="va">recount_readsums</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html" class="external-link">abline</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fl">0</span>, b <span class="op">=</span> <span class="fl">1</span>, col <span class="op">=</span> <span class="st">"purple"</span>, lwd <span class="op">=</span> <span class="fl">2</span>, lty <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="va">recount3_readsums</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colSums</a></span><span class="op">(</span><span class="fu">compute_read_counts</span><span class="op">(</span><span class="va">rse_gene_SRP009615</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="fl">1e6</span></span></span>
+<span class="r-in"><span><span class="va">recount_readsums</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    recount2 <span class="op">=</span> <span class="va">recount2_readsums</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html" class="external-link">order</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">recount2_readsums</span><span class="op">)</span><span class="op">)</span><span class="op">]</span>,</span></span>
+<span class="r-in"><span>    recount3 <span class="op">=</span> <span class="va">recount3_readsums</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html" class="external-link">order</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">recount3_readsums</span><span class="op">)</span><span class="op">)</span><span class="op">]</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">recount2</span> <span class="op">~</span> <span class="va">recount3</span>, data <span class="op">=</span> <span class="va">recount_readsums</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html" class="external-link">abline</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fl">0</span>, b <span class="op">=</span> <span class="fl">1</span>, col <span class="op">=</span> <span class="st">"purple"</span>, lwd <span class="op">=</span> <span class="fl">2</span>, lty <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="compute_read_counts-1.png" alt="" width="700" height="433"></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">## Repeat for DRP000499, a paired-end study</span></span>
-<span class="r-in"><span class="fu">recount</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/recount/man/download_study.html" class="external-link">download_study</a></span><span class="op">(</span><span class="st">"DRP000499"</span>, outdir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-03-21 16:01:47 downloading file rse_gene.Rdata to /tmp/RtmpZn73nD</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/load.html" class="external-link">load</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"rse_gene.Rdata"</span><span class="op">)</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">## Repeat for DRP000499, a paired-end study</span></span></span>
+<span class="r-in"><span><span class="fu">recount</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/recount/man/download_study.html" class="external-link">download_study</a></span><span class="op">(</span><span class="st">"DRP000499"</span>, outdir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-08-19 15:02:31 downloading file rse_gene.Rdata to /tmp/RtmpgBhCfZ</span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/load.html" class="external-link">load</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"rse_gene.Rdata"</span><span class="op">)</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Loading objects:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   rse_gene</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">recount2_readsums</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colSums</a></span><span class="op">(</span><span class="fu">assay</span><span class="op">(</span><span class="fu">recount</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/recount/man/read_counts.html" class="external-link">read_counts</a></span><span class="op">(</span></span>
-<span class="r-in">    <span class="va">rse_gene</span></span>
-<span class="r-in"><span class="op">)</span>, <span class="st">"counts"</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="fl">1e6</span></span>
-<span class="r-in"><span class="va">recount3_readsums</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colSums</a></span><span class="op">(</span><span class="fu">compute_read_counts</span><span class="op">(</span><span class="va">rse_gene_DRP000499</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="fl">1e6</span></span>
-<span class="r-in"><span class="va">recount_readsums</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
-<span class="r-in">    recount2 <span class="op">=</span> <span class="va">recount2_readsums</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html" class="external-link">order</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">recount2_readsums</span><span class="op">)</span><span class="op">)</span><span class="op">]</span>,</span>
-<span class="r-in">    recount3 <span class="op">=</span> <span class="va">recount3_readsums</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html" class="external-link">order</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">recount3_readsums</span><span class="op">)</span><span class="op">)</span><span class="op">]</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">recount2</span> <span class="op">~</span> <span class="va">recount3</span>, data <span class="op">=</span> <span class="va">recount_readsums</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html" class="external-link">abline</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fl">0</span>, b <span class="op">=</span> <span class="fl">1</span>, col <span class="op">=</span> <span class="st">"purple"</span>, lwd <span class="op">=</span> <span class="fl">2</span>, lty <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">recount2_readsums</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colSums</a></span><span class="op">(</span><span class="fu">assay</span><span class="op">(</span><span class="fu">recount</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/recount/man/read_counts.html" class="external-link">read_counts</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="va">rse_gene</span></span></span>
+<span class="r-in"><span><span class="op">)</span>, <span class="st">"counts"</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="fl">1e6</span></span></span>
+<span class="r-in"><span><span class="va">recount3_readsums</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colSums</a></span><span class="op">(</span><span class="fu">compute_read_counts</span><span class="op">(</span><span class="va">rse_gene_DRP000499</span><span class="op">)</span><span class="op">)</span> <span class="op">/</span> <span class="fl">1e6</span></span></span>
+<span class="r-in"><span><span class="va">recount_readsums</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    recount2 <span class="op">=</span> <span class="va">recount2_readsums</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html" class="external-link">order</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">recount2_readsums</span><span class="op">)</span><span class="op">)</span><span class="op">]</span>,</span></span>
+<span class="r-in"><span>    recount3 <span class="op">=</span> <span class="va">recount3_readsums</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html" class="external-link">order</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">recount3_readsums</span><span class="op">)</span><span class="op">)</span><span class="op">]</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">recount2</span> <span class="op">~</span> <span class="va">recount3</span>, data <span class="op">=</span> <span class="va">recount_readsums</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html" class="external-link">abline</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fl">0</span>, b <span class="op">=</span> <span class="fl">1</span>, col <span class="op">=</span> <span class="st">"purple"</span>, lwd <span class="op">=</span> <span class="fl">2</span>, lty <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="compute_read_counts-2.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
@@ -209,8 +216,7 @@ doi: 10.12688/f1000research.12223.1.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
-2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>
