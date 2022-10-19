@@ -22,7 +22,7 @@ library("BiocStyle")
 [![BioC dev status](http://www.bioconductor.org/shields/build/devel/bioc/recount3.svg)](https://bioconductor.org/checkResults/devel/bioc-LATEST/recount3)
 [![Codecov test coverage](https://codecov.io/gh/LieberInstitute/recount3/branch/master/graph/badge.svg)](https://codecov.io/gh/LieberInstitute/recount3?branch=master)
 [![R build status](https://github.com/LieberInstitute/recount3/workflows/R-CMD-check-bioc/badge.svg)](https://github.com/LieberInstitute/recount3/actions)
-[![Support site activity, last 6 months: tagged questions/avg. answers per question/avg. comments per question/accepted answers, or 0 if no tagged posts.](http://www.bioconductor.org/shields/posts/recount3.svg)](https://support.bioconductor.org/t/recount3/)
+[![Support site activity, last 6 months: tagged questions/avg. answers per question/avg. comments per question/accepted answers, or 0 if no tagged posts.](http://www.bioconductor.org/shields/posts/recount3.svg)](https://support.bioconductor.org/tag/recount3/)
 <!-- badges: end -->
 
 The `r Biocpkg('recount3')` R/Bioconductor package is part of the `recount3` project and is the latest iteration of the `ReCount` family of projects that provide access to uniformly-processed RNA sequencing datasets. The **main documentation website** for all the `recount3`-related projects is available at [**recount.bio**](https://LieberInstitute.github.io/recount3-docs). Please check that website for more information about how this R/Bioconductor package and other tools are related to each other.
