@@ -148,7 +148,7 @@ for an example of how this function was used.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Find all the mouse samples available from recount3</span></span></span>
 <span class="r-in"><span><span class="va">mouse_samples</span> <span class="op">&lt;-</span> <span class="fu"><a href="available_samples.html">available_samples</a></span><span class="op">(</span><span class="st">"mouse"</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-11-01 21:46:31 caching file sra.recount_project.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2022-11-01 22:00:26 caching file sra.recount_project.MD.gz.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Subset to project DRP001299</span></span></span>
 <span class="r-in"><span><span class="va">info_DRP001299</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span><span class="va">mouse_samples</span>, <span class="va">project</span> <span class="op">==</span> <span class="st">"DRP001299"</span><span class="op">)</span></span></span>
@@ -158,9 +158,9 @@ for an example of how this function was used.</p>
 <span class="r-in"><span><span class="co">## List the files created by create_hub()</span></span></span>
 <span class="r-in"><span><span class="va">hub_files</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">list.files</a></span><span class="op">(</span><span class="va">hub_dir</span>, full.names <span class="op">=</span> <span class="cn">TRUE</span>, recursive <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">hub_files</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/tmp/RtmpP0qawc/DRP001299/genomes.txt"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2] "/tmp/RtmpP0qawc/DRP001299/hub.txt"         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "/tmp/RtmpP0qawc/DRP001299/mm10/trackDb.txt"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/tmp/RtmpTaJUnw/DRP001299/genomes.txt"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [2] "/tmp/RtmpTaJUnw/DRP001299/hub.txt"         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "/tmp/RtmpTaJUnw/DRP001299/mm10/trackDb.txt"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Check the files contents</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="va">hub_files</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span></span>
@@ -253,13 +253,13 @@ for an example of how this function was used.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> type bigWig</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> visibility hide</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> autoScale on</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $`/tmp/RtmpP0qawc/DRP001299/genomes.txt`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`/tmp/RtmpTaJUnw/DRP001299/genomes.txt`</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $`/tmp/RtmpP0qawc/DRP001299/hub.txt`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`/tmp/RtmpTaJUnw/DRP001299/hub.txt`</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $`/tmp/RtmpP0qawc/DRP001299/mm10/trackDb.txt`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`/tmp/RtmpTaJUnw/DRP001299/mm10/trackDb.txt`</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
