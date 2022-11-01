@@ -18,7 +18,7 @@ status](https://github.com/LieberInstitute/recount3/workflows/R-CMD-check-bioc/b
 [![Support site activity, last 6 months: tagged questions/avg. answers
 per question/avg. comments per question/accepted answers, or 0 if no
 tagged
-posts.](http://www.bioconductor.org/shields/posts/recount3.svg)](https://support.bioconductor.org/t/recount3/)
+posts.](http://www.bioconductor.org/shields/posts/recount3.svg)](https://support.bioconductor.org/tag/recount3/)
 <!-- badges: end -->
 
 The *[recount3](https://bioconductor.org/packages/3.15/recount3)*
