@@ -4,21 +4,18 @@
 # recount3 <img src="man/figures/logo.png" align="right" width="200px" >
 
 <!-- badges: start -->
-
-[![Lifecycle:
-stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![BioC
-status](http://www.bioconductor.org/shields/build/release/bioc/recount3.svg)](https://bioconductor.org/checkResults/release/bioc-LATEST/recount3)
-[![BioC dev
-status](http://www.bioconductor.org/shields/build/devel/bioc/recount3.svg)](https://bioconductor.org/checkResults/devel/bioc-LATEST/recount3)
-[![Codecov test
-coverage](https://codecov.io/gh/LieberInstitute/recount3/branch/master/graph/badge.svg)](https://codecov.io/gh/LieberInstitute/recount3?branch=master)
-[![R build
-status](https://github.com/LieberInstitute/recount3/workflows/R-CMD-check-bioc/badge.svg)](https://github.com/LieberInstitute/recount3/actions)
-[![Support site activity, last 6 months: tagged questions/avg. answers
-per question/avg. comments per question/accepted answers, or 0 if no
-tagged
-posts.](http://www.bioconductor.org/shields/posts/recount3.svg)](https://support.bioconductor.org/tag/recount3/)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![Bioc release status](http://www.bioconductor.org/shields/build/release/bioc/recount3.svg)](https://bioconductor.org/checkResults/release/bioc-LATEST/recount3)
+[![Bioc devel status](http://www.bioconductor.org/shields/build/devel/bioc/recount3.svg)](https://bioconductor.org/checkResults/devel/bioc-LATEST/recount3)
+[![Bioc downloads rank](https://bioconductor.org/shields/downloads/release/recount3.svg)](http://bioconductor.org/packages/stats/bioc/recount3/)
+[![Bioc support](https://bioconductor.org/shields/posts/recount3.svg)](https://support.bioconductor.org/tag/recount3)
+[![Bioc history](https://bioconductor.org/shields/years-in-bioc/recount3.svg)](https://bioconductor.org/packages/release/bioc/html/recount3.html#since)
+[![Bioc last commit](https://bioconductor.org/shields/lastcommit/devel/bioc/recount3.svg)](http://bioconductor.org/checkResults/devel/bioc-LATEST/recount3/)
+[![Bioc dependencies](https://bioconductor.org/shields/dependencies/release/recount3.svg)](https://bioconductor.org/packages/release/bioc/html/recount3.html#since)
+[![Codecov test coverage](https://codecov.io/gh/LieberInstitute/recount3/branch/master/graph/badge.svg)](https://codecov.io/gh/LieberInstitute/recount3?branch=master)
+[![R build status](https://github.com/LieberInstitute/recount3/workflows/R-CMD-check-bioc/badge.svg)](https://github.com/LieberInstitute/recount3/actions)
+[![GitHub issues](https://img.shields.io/github/issues/LieberInstitute/recount3)](https://github.com/LieberInstitute/recount3/issues)
+[![GitHub pulls](https://img.shields.io/github/issues-pr/LieberInstitute/recount3)](https://github.com/LieberInstitute/recount3/pulls)
 <!-- badges: end -->
 
 The *[recount3](https://bioconductor.org/packages/3.15/recount3)*
