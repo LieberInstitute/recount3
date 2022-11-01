@@ -270,7 +270,7 @@ create_rse_manual <- function(project,
     if (verbose) {
         message(
             Sys.time(),
-            " construcing the RangedSummarizedExperiment (rse) object."
+            " constructing the RangedSummarizedExperiment (rse) object."
         )
     }
 
