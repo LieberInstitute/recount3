@@ -1,5 +1,5 @@
 temp_bfc_rm <- recount3_cache(file.path(tempdir(), "cache_rm_test"))
-test_url <- "http://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/35/DRP002835/sra.recount_project.DRP002835.MD.gz"
+test_url <- "http://sciserver.org/public-data/recount3/data/human/data_sources/sra/metadata/35/DRP002835/sra.recount_project.DRP002835.MD.gz"
 
 BiocFileCache::bfcrpath(
     temp_bfc_rm,
