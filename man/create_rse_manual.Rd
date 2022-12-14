@@ -137,7 +137,7 @@ organism <- "human"
 annotation <- "gencode_v26"
 jxn_format <- "ALL"
 bfc <- recount3_cache()
-recount3_url <- "http://idies.jhu.edu/recount3/data"
+recount3_url <- "http://sciserver.org/public-data/recount3/data"
 verbose <- TRUE
 }
 }
