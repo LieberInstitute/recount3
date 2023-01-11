@@ -93,12 +93,12 @@ The `ReCount` family involves the following teams:
 * [Leonardo Collado-Torres](http://lcolladotor.github.io/) and [Andrew E. Jaffe](http://aejaffe.com/) from [LIBD](https://www.libd.org/)
 * [Abhinav Nellore's lab at OHSU](http://nellore.bio/)
 * [Jeff Leek's lab at JHBSPH Biostatistics Deparment](http://jtleek.com/)
-* Data hosted by [SciServer from IDIES at JHU](https://www.sciserver.org/)
+* Data hosted by the [Registry of Open Data on AWS](https://registry.opendata.aws/recount/) and [SciServer from IDIES at JHU](https://www.sciserver.org/) through a load balancer called [duffel](https://github.com/nellore/digitalocean-duffel).
 
 
-| | | | |
-| --- | --- | --- | --- |
-| <a href="http://www.langmead-lab.org/"><img src="http://www.langmead-lab.org/wp-content/uploads/2014/01/Screen-Shot-2014-02-02-at-5.20.13-PM-1024x199.png" width="250px"></a> | <a href="https://www.libd.org/"><img src="http://lcolladotor.github.io/img/LIBD_logo.jpg" width="250px"></a> | <a href="http://nellore.bio/"><img src="https://seekvectorlogo.net/wp-content/uploads/2018/08/oregon-health-science-university-ohsu-vector-logo.png" width="250px"></a> | <a href="https://www.sciserver.org/"><img src="https://skyserver.sdss.org/dr14/en/images/sciserver_logo_inverted_vertical.png" width="250px"></a> |
+| | | | | |
+| --- | --- | --- | --- | --- |
+| <a href="http://www.langmead-lab.org/"><img src="http://www.langmead-lab.org/wp-content/uploads/2014/01/Screen-Shot-2014-02-02-at-5.20.13-PM-1024x199.png" width="250px"></a> | <a href="https://www.libd.org/"><img src="http://lcolladotor.github.io/img/LIBD_logo.jpg" width="250px"></a> | <a href="http://nellore.bio/"><img src="https://seekvectorlogo.net/wp-content/uploads/2018/08/oregon-health-science-university-ohsu-vector-logo.png" width="250px"></a> | <a href="https://www.sciserver.org/"><img src="https://skyserver.sdss.org/dr14/en/images/sciserver_logo_inverted_vertical.png" width="250px"></a> | <a href="https://registry.opendata.aws/recount/"><img src="https://assets.opendata.aws/img/AWS-Logo_White-Color_300x180.png" width="250px"></a> |
 
 
 <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=n&d=4xd7F6p1BfdRypx-yEodrXiKhC0xvF0bJJywqR8rMKQ'></script>

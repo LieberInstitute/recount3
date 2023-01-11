@@ -509,7 +509,9 @@ recount3_cache_files()
 
 The main documentation website documents how the raw files should be organized in your mirror or for your own data. You can inspect the structure of the data by checking the internals of `locate_url()` and `locate_url_ann()`. Both functions can be used to get the full list of URLs. In addition, for a given mirror, `available_projects()` will show the local data sources and collections. Finally, `file_retrieve()` won't cache the data if it detects that the data already exists in the local disk.
 
-In particular, this functionality can be useful if you want to access the data at [IDIES](https://idies.jhu.edu/) using [SciServer Compute](https://apps.sciserver.org/compute/).
+In particular, this functionality can be useful if you want to access the data through [Registry of Open Data on AWS](https://registry.opendata.aws/recount/) or at [IDIES](https://idies.jhu.edu/) using [SciServer Compute](https://apps.sciserver.org/compute/), which are the two official mirrors for `recount3` data.
+
+<a href="https://registry.opendata.aws/recount/"><img src="https://assets.opendata.aws/img/AWS-Logo_White-Color_300x180.png" width="250px"></a>
 
 <a href="https://apps.sciserver.org/compute/"><img src="https://skyserver.sdss.org/dr14/en/images/sciserver_logo_inverted_vertical.png" width="400px"></a>
 
@@ -523,7 +525,7 @@ The `ReCount` family involves the following teams:
 * [Leonardo Collado-Torres](http://lcolladotor.github.io/) and [Andrew E. Jaffe](http://aejaffe.com/) from [LIBD](https://www.libd.org/)
 * [Abhinav Nellore's lab](http://nellore.bio/)  at OHSU
 * [Jeff Leek's lab](http://jtleek.com/) at JHBSPH Biostatistics Deparment
-* Data hosted by [SciServer from IDIES at JHU](https://www.sciserver.org/)
+* Data hosted by the [Registry of Open Data on AWS](https://registry.opendata.aws/recount/) and [SciServer from IDIES at JHU](https://www.sciserver.org/) through a load balancer called [duffel](https://github.com/nellore/digitalocean-duffel).
 
 
 ## Project history
