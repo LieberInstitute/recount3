@@ -11,8 +11,8 @@ create_hub(
   email = "someone@somewhere",
   show_max = 5,
   hub_short_label = "recount3 coverage",
- 
-    hub_long_label = "recount3 summaries and queries for large-scaleRNA-seq expression and splicing",
+  hub_long_label =
+    "recount3 summaries and queries for large-scaleRNA-seq expression and splicing",
   hub_description_url = "https://rna.recount.bio/index.html",
   recount3_url = getOption("recount3_url", "http://duffel.rail.bio/recount3")
 )
@@ -40,7 +40,13 @@ label.}
 that will describe the UCSC track hub to users.}
 
 \item{recount3_url}{A \code{character(1)} specifying the home URL for \code{recount3}
-or a local directory where you have mirrored \code{recount3}.}
+or a local directory where you have mirrored \code{recount3}. Defaults to the
+load balancer \url{http://duffel.rail.bio/recount3}, but can also be
+\url{https://recount-opendata.s3.amazonaws.com/recount3/release} from
+\url{https://registry.opendata.aws/recount/} or SciServer datascope from
+IDIES at JHU \url{https://sciserver.org/public-data/recount3/data}. You can
+set the R option \code{recount3_url} (for example in your \code{.Rprofile}) if
+you have a favorite mirror.}
 }
 \value{
 A directory at \code{output_dir} with the files needed for a UCSC

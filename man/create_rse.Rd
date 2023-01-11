@@ -35,7 +35,13 @@ read counts (\code{UNIQUE}). Note that \code{UNIQUE} is only available for some
 projects: GTEx and TCGA for human.}
 
 \item{recount3_url}{A \code{character(1)} specifying the home URL for \code{recount3}
-or a local directory where you have mirrored \code{recount3}.}
+or a local directory where you have mirrored \code{recount3}. Defaults to the
+load balancer \url{http://duffel.rail.bio/recount3}, but can also be
+\url{https://recount-opendata.s3.amazonaws.com/recount3/release} from
+\url{https://registry.opendata.aws/recount/} or SciServer datascope from
+IDIES at JHU \url{https://sciserver.org/public-data/recount3/data}. You can
+set the R option \code{recount3_url} (for example in your \code{.Rprofile}) if
+you have a favorite mirror.}
 
 \item{verbose}{A \code{logical(1)} indicating whether to show messages with
 updates.}

@@ -21,7 +21,13 @@
 #' read counts (`UNIQUE`). Note that `UNIQUE` is only available for some
 #' projects: GTEx and TCGA for human.
 #' @param recount3_url A `character(1)` specifying the home URL for `recount3`
-#' or a local directory where you have mirrored `recount3`.
+#' or a local directory where you have mirrored `recount3`. Defaults to the
+#' load balancer <http://duffel.rail.bio/recount3>, but can also be
+#' <https://recount-opendata.s3.amazonaws.com/recount3/release> from
+#' <https://registry.opendata.aws/recount/> or SciServer datascope from
+#' IDIES at JHU <https://sciserver.org/public-data/recount3/data>. You can
+#' set the R option `recount3_url` (for example in your `.Rprofile`) if
+#' you have a favorite mirror.
 #'
 #' @return A `character()` with the URL(s) for the file(s) of interest.
 #' @export

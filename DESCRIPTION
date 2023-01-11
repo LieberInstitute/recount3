@@ -1,7 +1,7 @@
 Package: recount3
 Title: Explore and download data from the recount3 project
-Version: 1.9.0
-Date: 2022-03-21
+Version: 1.9.1
+Date: 2023-01-11
 Authors@R: 
     c(
     person("Leonardo", "Collado-Torres", role = c("aut", "cre"), 
@@ -16,7 +16,7 @@ License: Artistic-2.0
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
 URL: https://github.com/LieberInstitute/recount3
 BugReports: https://github.com/LieberInstitute/recount3/issues
 biocViews: Coverage, DifferentialExpression, GeneExpression, RNASeq, Sequencing,
