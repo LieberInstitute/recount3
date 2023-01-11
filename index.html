@@ -94,16 +94,16 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>The <em><a href="https://bioconductor.org/packages/3.15/recount3" class="external-link">recount3</a></em> R/Bioconductor package is part of the <code>recount3</code> project and is the latest iteration of the <code>ReCount</code> family of projects that provide access to uniformly-processed RNA sequencing datasets. The <strong>main documentation website</strong> for all the <code>recount3</code>-related projects is available at <a href="https://LieberInstitute.github.io/recount3-docs" class="external-link"><strong>recount.bio</strong></a>. Please check that website for more information about how this R/Bioconductor package and other tools are related to each other.</p>
+<p>The <em><a href="https://bioconductor.org/packages/3.16/recount3" class="external-link">recount3</a></em> R/Bioconductor package is part of the <code>recount3</code> project and is the latest iteration of the <code>ReCount</code> family of projects that provide access to uniformly-processed RNA sequencing datasets. The <strong>main documentation website</strong> for all the <code>recount3</code>-related projects is available at <a href="https://LieberInstitute.github.io/recount3-docs" class="external-link"><strong>recount.bio</strong></a>. Please check that website for more information about how this R/Bioconductor package and other tools are related to each other.</p>
 <div class="section level2">
 <h2 id="documentation">Documentation<a class="anchor" aria-label="anchor" href="#documentation"></a>
 </h2>
-<p>For more information about <em><a href="https://bioconductor.org/packages/3.15/recount3" class="external-link">recount3</a></em> check the vignettes <a href="http://bioconductor.org/packages/recount3" class="external-link">through Bioconductor</a> or at the <a href="http://lieberinstitute.github.io/recount3" class="external-link">documentation website</a>.</p>
+<p>For more information about <em><a href="https://bioconductor.org/packages/3.16/recount3" class="external-link">recount3</a></em> check the vignettes <a href="http://bioconductor.org/packages/recount3" class="external-link">through Bioconductor</a> or at the <a href="http://lieberinstitute.github.io/recount3" class="external-link">documentation website</a>.</p>
 </div>
 <div class="section level2">
 <h2 id="installation-instructions">Installation instructions<a class="anchor" aria-label="anchor" href="#installation-instructions"></a>
 </h2>
-<p>Get the latest stable <code>R</code> release from <a href="http://cran.r-project.org/" class="external-link">CRAN</a>. Then install <em><a href="https://bioconductor.org/packages/3.15/recount3" class="external-link">recount3</a></em> from <a href="http://bioconductor.org/" class="external-link">Bioconductor</a> using the following code:</p>
+<p>Get the latest stable <code>R</code> release from <a href="http://cran.r-project.org/" class="external-link">CRAN</a>. Then install <em><a href="https://bioconductor.org/packages/3.16/recount3" class="external-link">recount3</a></em> from <a href="http://bioconductor.org/" class="external-link">Bioconductor</a> using the following code:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace</a></span><span class="op">(</span><span class="st">"BiocManager"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span>    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"BiocManager"</span><span class="op">)</span></span>
@@ -118,30 +118,32 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"recount3"</span><span class="op">)</span>, bibtex <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Collado-Torres L (2022). _Explore and download data from the recount3</span></span>
-<span><span class="co">#&gt; project_. doi: 10.18129/B9.bioc.recount3 (URL:</span></span>
-<span><span class="co">#&gt; https://doi.org/10.18129/B9.bioc.recount3),</span></span>
-<span><span class="co">#&gt; https://github.com/LieberInstitute/recount3 - R package version 1.5.1,</span></span>
-<span><span class="co">#&gt; &lt;URL: http://www.bioconductor.org/packages/recount3&gt;.</span></span>
+<span><span class="co">#&gt; To cite package 'recount3' in publications use:</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;   Collado-Torres L (2023). _Explore and download data from the recount3</span></span>
+<span><span class="co">#&gt;   project_. doi:10.18129/B9.bioc.recount3</span></span>
+<span><span class="co">#&gt;   &lt;https://doi.org/10.18129/B9.bioc.recount3&gt;,</span></span>
+<span><span class="co">#&gt;   https://github.com/LieberInstitute/recount3 - R package version</span></span>
+<span><span class="co">#&gt;   1.9.1, &lt;http://www.bioconductor.org/packages/recount3&gt;.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; A BibTeX entry for LaTeX users is</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;   @Manual{,</span></span>
 <span><span class="co">#&gt;     title = {Explore and download data from the recount3 project},</span></span>
 <span><span class="co">#&gt;     author = {Leonardo Collado-Torres},</span></span>
-<span><span class="co">#&gt;     year = {2022},</span></span>
+<span><span class="co">#&gt;     year = {2023},</span></span>
 <span><span class="co">#&gt;     url = {http://www.bioconductor.org/packages/recount3},</span></span>
-<span><span class="co">#&gt;     note = {https://github.com/LieberInstitute/recount3 - R package version 1.5.1},</span></span>
+<span><span class="co">#&gt;     note = {https://github.com/LieberInstitute/recount3 - R package version 1.9.1},</span></span>
 <span><span class="co">#&gt;     doi = {10.18129/B9.bioc.recount3},</span></span>
 <span><span class="co">#&gt;   }</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Wilks C, Zheng SC, Chen FY, Charles R, Solomon B, Ling JP, Imada EL,</span></span>
-<span><span class="co">#&gt; Zhang D, Joseph L, Leek JT, Jaffe AE, Nellore A, Collado-Torres L,</span></span>
-<span><span class="co">#&gt; Hansen KD, Langmead B (2021). "recount3: summaries and queries for</span></span>
-<span><span class="co">#&gt; large-scale RNA-seq expression and splicing." _Genome Biol_. doi:</span></span>
-<span><span class="co">#&gt; 10.1186/s13059-021-02533-6 (URL:</span></span>
-<span><span class="co">#&gt; https://doi.org/10.1186/s13059-021-02533-6), &lt;URL:</span></span>
-<span><span class="co">#&gt; https://doi.org/10.1186/s13059-021-02533-6&gt;.</span></span>
+<span><span class="co">#&gt;   Wilks C, Zheng SC, Chen FY, Charles R, Solomon B, Ling JP, Imada EL,</span></span>
+<span><span class="co">#&gt;   Zhang D, Joseph L, Leek JT, Jaffe AE, Nellore A, Collado-Torres L,</span></span>
+<span><span class="co">#&gt;   Hansen KD, Langmead B (2021). "recount3: summaries and queries for</span></span>
+<span><span class="co">#&gt;   large-scale RNA-seq expression and splicing." _Genome Biol_.</span></span>
+<span><span class="co">#&gt;   doi:10.1186/s13059-021-02533-6</span></span>
+<span><span class="co">#&gt;   &lt;https://doi.org/10.1186/s13059-021-02533-6&gt;,</span></span>
+<span><span class="co">#&gt;   &lt;https://doi.org/10.1186/s13059-021-02533-6&gt;.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; A BibTeX entry for LaTeX users is</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -153,7 +155,7 @@
 <span><span class="co">#&gt;     doi = {10.1186/s13059-021-02533-6},</span></span>
 <span><span class="co">#&gt;     url = {https://doi.org/10.1186/s13059-021-02533-6},</span></span>
 <span><span class="co">#&gt;   }</span></span></code></pre></div>
-<p>Please note that <em><a href="https://bioconductor.org/packages/3.15/recount3" class="external-link">recount3</a></em> was only made possible thanks to many other R and bioinformatics software authors, which are cited either in the vignettes and/or the paper(s) describing this package.</p>
+<p>Please note that <em><a href="https://bioconductor.org/packages/3.16/recount3" class="external-link">recount3</a></em> was only made possible thanks to many other R and bioinformatics software authors, which are cited either in the vignettes and/or the paper(s) describing this package.</p>
 </div>
 <div class="section level2">
 <h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
@@ -164,7 +166,7 @@
 <h2 id="development-tools">Development tools<a class="anchor" aria-label="anchor" href="#development-tools"></a>
 </h2>
 <ul>
-<li>Continuous code testing is possible thanks to <a href="https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/" class="external-link">GitHub actions</a> through <em><a href="https://CRAN.R-project.org/package=usethis" class="external-link">usethis</a></em>, <em><a href="https://CRAN.R-project.org/package=remotes" class="external-link">remotes</a></em>, <em><a href="https://github.com/r-hub/sysreqs" class="external-link">sysreqs</a></em> and <em><a href="https://CRAN.R-project.org/package=rcmdcheck" class="external-link">rcmdcheck</a></em> customized to use <a href="https://www.bioconductor.org/help/docker/" class="external-link">Bioconductor’s docker containers</a> and <em><a href="https://bioconductor.org/packages/3.15/BiocCheck" class="external-link">BiocCheck</a></em>.</li>
+<li>Continuous code testing is possible thanks to <a href="https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/" class="external-link">GitHub actions</a> through <em><a href="https://CRAN.R-project.org/package=usethis" class="external-link">usethis</a></em>, <em><a href="https://CRAN.R-project.org/package=remotes" class="external-link">remotes</a></em>, <em><a href="https://github.com/r-hub/sysreqs" class="external-link">sysreqs</a></em> and <em><a href="https://CRAN.R-project.org/package=rcmdcheck" class="external-link">rcmdcheck</a></em> customized to use <a href="https://www.bioconductor.org/help/docker/" class="external-link">Bioconductor’s docker containers</a> and <em><a href="https://bioconductor.org/packages/3.16/BiocCheck" class="external-link">BiocCheck</a></em>.</li>
 <li>Code coverage assessment is possible thanks to <a href="https://codecov.io/gh" class="external-link">codecov</a> and <em><a href="https://CRAN.R-project.org/package=covr" class="external-link">covr</a></em>.</li>
 <li>The <a href="http://lieberinstitute.github.io/recount3" class="external-link">documentation website</a> is automatically updated thanks to <em><a href="https://CRAN.R-project.org/package=pkgdown" class="external-link">pkgdown</a></em>.</li>
 <li>The code is styled automatically thanks to <em><a href="https://CRAN.R-project.org/package=styler" class="external-link">styler</a></em>.</li>
@@ -202,14 +204,14 @@
 <td><a href="https://jhubiostatistics.shinyapps.io/recount/" class="external-link"><code>recount2</code></a></td>
 <td>DOI: <a href="https://doi.org/10.1038/nbt.3838" class="external-link">10.1038/nbt.3838</a> <a href="https://doi.org/10.12688/f1000research.12223.1" class="external-link">10.12688/f1000research.12223.1</a>
 </td>
-<td><em><a href="https://bioconductor.org/packages/3.15/recount" class="external-link">recount</a></em></td>
+<td><em><a href="https://bioconductor.org/packages/3.16/recount" class="external-link">recount</a></em></td>
 </tr>
 <tr class="odd">
 <td>2021</td>
 <td><a href="https://LieberInstitute.github.io/recount3-docs" class="external-link"><code>recount3</code></a></td>
 <td>DOI: <a href="https://doi.org/10.1186/s13059-021-02533-6" class="external-link">10.1186/s13059-021-02533-6</a>
 </td>
-<td><em><a href="https://bioconductor.org/packages/3.15/recount3" class="external-link">recount3</a></em></td>
+<td><em><a href="https://bioconductor.org/packages/3.16/recount3" class="external-link">recount3</a></em></td>
 </tr>
 </tbody>
 </table>
@@ -226,21 +228,22 @@
 </li>
 <li><a href="http://nellore.bio/" class="external-link">Abhinav Nellore’s lab at OHSU</a></li>
 <li><a href="http://jtleek.com/" class="external-link">Jeff Leek’s lab at JHBSPH Biostatistics Deparment</a></li>
-<li>Data hosted by <a href="https://www.sciserver.org/" class="external-link">SciServer from IDIES at JHU</a>
-</li>
+<li>Data hosted by the <a href="https://registry.opendata.aws/recount/" class="external-link">Registry of Open Data on AWS</a> and <a href="https://www.sciserver.org/" class="external-link">SciServer from IDIES at JHU</a> through a load balancer called <a href="https://github.com/nellore/digitalocean-duffel" class="external-link">duffel</a>.</li>
 </ul>
 <table class="table">
 <colgroup>
-<col width="29%">
-<col width="18%">
-<col width="28%">
-<col width="24%">
+<col width="23%">
+<col width="14%">
+<col width="22%">
+<col width="19%">
+<col width="19%">
 </colgroup>
 <tbody><tr class="odd">
 <td><a href="http://www.langmead-lab.org/" class="external-link"><img src="http://www.langmead-lab.org/wp-content/uploads/2014/01/Screen-Shot-2014-02-02-at-5.20.13-PM-1024x199.png" width="250px"></a></td>
 <td><a href="https://www.libd.org/" class="external-link"><img src="http://lcolladotor.github.io/img/LIBD_logo.jpg" width="250px"></a></td>
 <td><a href="http://nellore.bio/" class="external-link"><img src="https://seekvectorlogo.net/wp-content/uploads/2018/08/oregon-health-science-university-ohsu-vector-logo.png" width="250px"></a></td>
 <td><a href="https://www.sciserver.org/" class="external-link"><img src="https://skyserver.sdss.org/dr14/en/images/sciserver_logo_inverted_vertical.png" width="250px"></a></td>
+<td><a href="https://registry.opendata.aws/recount/" class="external-link"><img src="https://assets.opendata.aws/img/AWS-Logo_White-Color_300x180.png" width="250px"></a></td>
 </tr></tbody>
 </table>
 <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&amp;w=300&amp;t=n&amp;d=4xd7F6p1BfdRypx-yEodrXiKhC0xvF0bJJywqR8rMKQ"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-163623894-1"></script><script>
