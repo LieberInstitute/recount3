@@ -56,17 +56,23 @@ file_retrieve <-
         ## In case the url is a local file, there's no need to cache it then
         if (file.exists(url)) {
             return(url)
-        } else if (http_error(url)) {
-            if (!grepl("tcga\\.recount_pred|gtex\\.recount_pred", url)) {
-                warning("The 'url' <",
-                    url,
-                    "> does not exist or is not available.",
-                    call. = FALSE
-                )
+        } else {
+            url_failed <- tryCatch(
+                http_error(url),
+                error = function(e) { return (TRUE)}
+            )
+            if (url_failed) {
+                if (!grepl("tcga\\.recount_pred|gtex\\.recount_pred", url)) {
+                    warning("The 'url' <",
+                        url,
+                        "> does not exist or is not available.",
+                        call. = FALSE
+                    )
+                }
+                res <- as.character(NA)
+                names(res) <- names(url)
+                return(res)
             }
-            res <- as.character(NA)
-            names(res) <- names(url)
-            return(res)
         }
 
         if (!methods::is(bfc, "BiocFileCache")) {

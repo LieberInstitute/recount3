@@ -38,23 +38,10 @@ project_homes <-
         homes <- getOption(option_name)
         if (!is.null(homes)) {
               return(homes)
-          }
+        }
 
-        ## Construct the URL for the homes_index file
-        homes_url <-
-            paste(recount3_url, organism, "homes_index", sep = "/")
-        if (!http_error(homes_url)) {
-            homes_from_url <- readLines(homes_url)
-
-            ## Cache the result for the resulting organism so we don't need
-            ## to check this again in this R session
-            options_list <- list(homes_from_url)
-            names(options_list) <- option_name
-            options(options_list)
-
-            ## Return result found
-            return(homes_from_url)
-        } else if (recount3_url == "http://snaptron.cs.jhu.edu/data/temp/recount3") {
+        ## For the recount3 test case
+        if (recount3_url == "http://snaptron.cs.jhu.edu/data/temp/recount3") {
             if (organism == "mouse") {
                 return("data_sources/sra")
             } else if (organism == "human") {
@@ -68,6 +55,28 @@ project_homes <-
                     )
                 )
             }
+        }
+
+        url_failed <- tryCatch(
+            http_error(homes_url),
+            error = function(e) { return (TRUE)}
+        )
+
+
+        ## Construct the URL for the homes_index file
+        homes_url <-
+            paste(recount3_url, organism, "homes_index", sep = "/")
+        if (!url_failed) {
+            homes_from_url <- readLines(homes_url)
+
+            ## Cache the result for the resulting organism so we don't need
+            ## to check this again in this R session
+            options_list <- list(homes_from_url)
+            names(options_list) <- option_name
+            options(options_list)
+
+            ## Return result found
+            return(homes_from_url)
         } else if (!file.exists(recount3_url)) {
             stop(
                 "'recount3_url' is not a valid supported URL since it's missing the URL/<organism>/homes_index text file or 'recount3_url' is not an existing directory in your file system.",
