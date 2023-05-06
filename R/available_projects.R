@@ -146,6 +146,7 @@ available_samples <- function(organism = c("human", "mouse"),
 #'     mouse_projects$file_source[mouse_projects$project_type == "data_sources"]
 #' )
 #'
+#' \dontrun{
 #' ## Use with a custom recount3_url:
 #' available_projects(
 #'     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3test",
@@ -158,6 +159,7 @@ available_samples <- function(organism = c("human", "mouse"),
 #' available_projects(
 #'     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3test"
 #' )
+#' }
 available_projects <- function(organism = c("human", "mouse"),
     recount3_url = getOption("recount3_url", "http://duffel.rail.bio/recount3"),
     bfc = recount3_cache(),
