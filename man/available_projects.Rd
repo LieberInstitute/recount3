@@ -79,6 +79,7 @@ table(
     mouse_projects$file_source[mouse_projects$project_type == "data_sources"]
 )
 
+\dontrun{
 ## Use with a custom recount3_url:
 available_projects(
     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3test",
@@ -91,4 +92,5 @@ available_projects(
 available_projects(
     recount3_url = "http://snaptron.cs.jhu.edu/data/temp/recount3test"
 )
+}
 }
