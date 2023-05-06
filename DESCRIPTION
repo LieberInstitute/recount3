@@ -41,7 +41,7 @@ Imports:
     rtracklayer,
     S4Vectors,
     utils,
-    RCurl,
+    httr,
     data.table,
     R.utils,
     Matrix,

@@ -66,7 +66,7 @@ bib <- c(
     interactiveDisplayBase = citation("interactiveDisplayBase")[1],
     rtracklayer = citation("rtracklayer")[1],
     S4Vectors = citation("S4Vectors")[1],
-    RCurl = citation("RCurl")[1],
+    httr = citation("httr")[1],
     data.table = citation("data.table")[1],
     R.utils = citation("R.utils")[1],
     Matrix = citation("Matrix")[1],
@@ -564,13 +564,13 @@ The `r Biocpkg('recount3')` package `r citep(bib[['recount3']])` was made possib
 * `r CRANpkg('covr')` `r citep(bib[['covr']])`
 * `r CRANpkg('data.table')` `r citep(bib[['data.table']])`
 * `r Biocpkg('GenomicRanges')` `r citep(bib[['GenomicRanges']])`
+* `r CRANpkg('httr')` `r citep(bib[['httr']])`
 * `r Biocpkg('interactiveDisplayBase')` `r citep(bib[['interactiveDisplayBase']])`
 * `r CRANpkg('knitcitations')` `r citep(bib[['knitcitations']])`
 * `r CRANpkg('knitr')` `r citep(bib[['knitr']])`
 * `r CRANpkg('Matrix')` `r citep(bib[['Matrix']])`
 * `r CRANpkg('pryr')` `r citep(bib[['pryr']])`
 * `r CRANpkg('RefManageR')` `r citep(bib[['RefManageR']])`
-* `r CRANpkg('RCurl')` `r citep(bib[['RCurl']])`
 * `r CRANpkg('rmarkdown')` `r citep(bib[['rmarkdown']])`
 * `r Biocpkg('rtracklayer')` `r citep(bib[['rtracklayer']])`
 * `r CRANpkg('R.utils')` `r citep(bib[['R.utils']])`
