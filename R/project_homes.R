@@ -13,7 +13,7 @@
 #'
 #' @return A `character()` vector with the available `project_home` options.
 #'
-#' @importFrom RCurl url.exists
+#' @importFrom httr http_error
 #' @family internal functions for accessing the recount3 data
 #' @export
 #'
@@ -43,7 +43,7 @@ project_homes <-
         ## Construct the URL for the homes_index file
         homes_url <-
             paste(recount3_url, organism, "homes_index", sep = "/")
-        if (url.exists(homes_url)) {
+        if (!http_error(homes_url)) {
             homes_from_url <- readLines(homes_url)
 
             ## Cache the result for the resulting organism so we don't need
