@@ -1,3 +1,9 @@
+# recount3 1.11.1
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+* Switched from using `RCurl::url.exists()` to `!httr::http_error()`.
+
 # recount3 1.3.9
 
 BUG FIXES
