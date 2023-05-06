@@ -57,15 +57,15 @@ project_homes <-
             }
         }
 
+        ## Construct the URL for the homes_index file
+        homes_url <-
+            paste(recount3_url, organism, "homes_index", sep = "/")
+
         url_failed <- tryCatch(
             http_error(homes_url),
             error = function(e) { return (TRUE)}
         )
 
-
-        ## Construct the URL for the homes_index file
-        homes_url <-
-            paste(recount3_url, organism, "homes_index", sep = "/")
         if (!url_failed) {
             homes_from_url <- readLines(homes_url)
 
