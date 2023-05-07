@@ -41,7 +41,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.11.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.11.2</span>
       </span>
     </div>
 
@@ -95,7 +95,7 @@ CampusCenter for Computational Biology, Johns Hopkins
 University<br><a class="author_email" href="mailto:#"></a><a href="mailto:lcolladotor@gmail.com" class="email">lcolladotor@gmail.com</a>
       </address>
                   
-            <h4 data-toc-skip class="date">6 May 2023</h4>
+            <h4 data-toc-skip class="date">7 May 2023</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/LieberInstitute/recount3/blob/HEAD/vignettes/recount3-quickstart.Rmd" class="external-link"><code>vignettes/recount3-quickstart.Rmd</code></a></small>
       <div class="hidden name"><code>recount3-quickstart.Rmd</code></div>
@@ -215,7 +215,7 @@ to cite the package and the overall approach. Thank you!</p>
 <span><span class="co">#&gt;   project_. doi:10.18129/B9.bioc.recount3</span></span>
 <span><span class="co">#&gt;   &lt;https://doi.org/10.18129/B9.bioc.recount3&gt;,</span></span>
 <span><span class="co">#&gt;   https://github.com/LieberInstitute/recount3 - R package version</span></span>
-<span><span class="co">#&gt;   1.11.1, &lt;http://www.bioconductor.org/packages/recount3&gt;.</span></span>
+<span><span class="co">#&gt;   1.11.2, &lt;http://www.bioconductor.org/packages/recount3&gt;.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;   Wilks C, Zheng SC, Chen FY, Charles R, Solomon B, Ling JP, Imada EL,</span></span>
 <span><span class="co">#&gt;   Zhang D, Joseph L, Leek JT, Jaffe AE, Nellore A, Collado-Torres L,</span></span>
@@ -250,9 +250,9 @@ data.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Find all available human projects</span></span>
 <span><span class="va">human_projects</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/available_projects.html">available_projects</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:44:50.223282 caching file sra.recount_project.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:44:50.469118 caching file gtex.recount_project.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:44:50.659536 caching file tcga.recount_project.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:09.092849 caching file sra.recount_project.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:09.470188 caching file gtex.recount_project.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:09.797249 caching file tcga.recount_project.MD.gz.</span></span>
 <span></span>
 <span><span class="co">## Find the project you are interested in,</span></span>
 <span><span class="co">## here we use SRP009615 as an example</span></span>
@@ -263,17 +263,17 @@ data.</p>
 <span></span>
 <span><span class="co">## Create a RangedSummarizedExperiment (RSE) object at the gene level</span></span>
 <span><span class="va">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_rse.html">create_rse</a></span><span class="op">(</span><span class="va">proj_info</span><span class="op">)</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:44:55.82056 downloading and reading the metadata.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:44:55.994663 caching file sra.sra.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:44:56.213808 caching file sra.recount_project.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:44:56.426054 caching file sra.recount_qc.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:44:56.640289 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:44:56.851982 caching file sra.recount_pred.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:44:56.9342 downloading and reading the feature information.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:44:57.08476 caching file human.gene_sums.G026.gtf.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:44:57.615091 downloading and reading the counts: 12 samples across 63856 features.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:44:57.776566 caching file sra.gene_sums.SRP009615.G026.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:44:58.030335 constructing the RangedSummarizedExperiment (rse) object.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:14.229616 downloading and reading the metadata.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:14.522375 caching file sra.sra.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:14.84609 caching file sra.recount_project.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:15.174247 caching file sra.recount_qc.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:15.538286 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:15.860603 caching file sra.recount_pred.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:15.935994 downloading and reading the feature information.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:16.213029 caching file human.gene_sums.G026.gtf.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:16.729389 downloading and reading the counts: 12 samples across 63856 features.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:17.001371 caching file sra.gene_sums.SRP009615.G026.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:17.224353 constructing the RangedSummarizedExperiment (rse) object.</span></span>
 <span></span>
 <span><span class="co">## Explore that RSE object</span></span>
 <span><span class="va">rse_gene_SRP009615</span></span>
@@ -521,9 +521,9 @@ as shown below. This will return a <code><a href="https://rdrr.io/r/base/data.fr
 lists the unique project IDs.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">human_projects</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/available_projects.html">available_projects</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:44:58.803888 caching file sra.recount_project.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:44:58.987009 caching file gtex.recount_project.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:44:59.173614 caching file tcga.recount_project.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:18.06864 caching file sra.recount_project.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:18.377585 caching file gtex.recount_project.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:18.705197 caching file tcga.recount_project.MD.gz.</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">human_projects</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 8742    6</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">human_projects</span><span class="op">)</span></span>
@@ -709,17 +709,17 @@ updates that you can silence with
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Create a RSE object at the gene level</span></span>
 <span><span class="va">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_rse.html">create_rse</a></span><span class="op">(</span><span class="va">project_info</span><span class="op">)</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:03.378364 downloading and reading the metadata.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:03.517137 caching file sra.sra.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:03.698916 caching file sra.recount_project.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:03.887932 caching file sra.recount_qc.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:04.071244 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:04.259634 caching file sra.recount_pred.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:04.344924 downloading and reading the feature information.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:04.470372 caching file human.gene_sums.G026.gtf.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:04.997401 downloading and reading the counts: 12 samples across 63856 features.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:05.123315 caching file sra.gene_sums.SRP009615.G026.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:05.355473 constructing the RangedSummarizedExperiment (rse) object.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:22.336787 downloading and reading the metadata.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:22.630779 caching file sra.sra.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:22.940676 caching file sra.recount_project.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:23.257932 caching file sra.recount_qc.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:23.599902 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:23.932979 caching file sra.recount_pred.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:24.009546 downloading and reading the feature information.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:24.293872 caching file human.gene_sums.G026.gtf.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:24.802968 downloading and reading the counts: 12 samples across 63856 features.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:25.067825 caching file sra.gene_sums.SRP009615.G026.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:25.275564 constructing the RangedSummarizedExperiment (rse) object.</span></span>
 <span></span>
 <span><span class="co">## Explore the resulting RSE gene object</span></span>
 <span><span class="va">rse_gene_SRP009615</span></span>
@@ -747,13 +747,13 @@ wants to be able to re-make the object with the latest data <a href="#fn4" class
 <code class="sourceCode R"><span><span class="co">## Information about how this RSE object was made</span></span>
 <span><span class="fu">metadata</span><span class="op">(</span><span class="va">rse_gene_SRP009615</span><span class="op">)</span></span>
 <span><span class="co">#&gt; $time_created</span></span>
-<span><span class="co">#&gt; [1] "2023-05-06 23:45:05 UTC"</span></span>
+<span><span class="co">#&gt; [1] "2023-05-07 00:13:25 UTC"</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $recount3_version</span></span>
 <span><span class="co">#&gt;           package ondiskversion loadedversion                        path</span></span>
-<span><span class="co">#&gt; recount3 recount3        1.11.1        1.11.1 /__w/_temp/Library/recount3</span></span>
+<span><span class="co">#&gt; recount3 recount3        1.11.2        1.11.2 /__w/_temp/Library/recount3</span></span>
 <span><span class="co">#&gt;                           loadedpath attached is_base       date       source</span></span>
-<span><span class="co">#&gt; recount3 /__w/_temp/Library/recount3     TRUE   FALSE 2023-05-06 Bioconductor</span></span>
+<span><span class="co">#&gt; recount3 /__w/_temp/Library/recount3     TRUE   FALSE 2023-05-07 Bioconductor</span></span>
 <span><span class="co">#&gt;          md5ok            library</span></span>
 <span><span class="co">#&gt; recount3    NA /__w/_temp/Library</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -980,17 +980,17 @@ at the <strong>exon</strong> expression level instead of
 <span>    <span class="va">proj_info</span>,</span>
 <span>    type <span class="op">=</span> <span class="st">"exon"</span></span>
 <span><span class="op">)</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:06.172741 downloading and reading the metadata.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:06.315896 caching file sra.sra.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:06.501451 caching file sra.recount_project.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:06.693027 caching file sra.recount_qc.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:06.890256 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:07.119364 caching file sra.recount_pred.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:07.202948 downloading and reading the feature information.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:07.358249 caching file human.exon_sums.G026.gtf.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:30.915382 downloading and reading the counts: 12 samples across 1299686 features.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:31.178964 caching file sra.exon_sums.SRP009615.G026.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:33.719337 constructing the RangedSummarizedExperiment (rse) object.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:26.019767 downloading and reading the metadata.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:26.340216 caching file sra.sra.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:26.653524 caching file sra.recount_project.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:26.964942 caching file sra.recount_qc.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:27.292065 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:27.606952 caching file sra.recount_pred.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:27.682036 downloading and reading the feature information.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:27.9505 caching file human.exon_sums.G026.gtf.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:50.074768 downloading and reading the counts: 12 samples across 1299686 features.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:50.66939 caching file sra.exon_sums.SRP009615.G026.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:52.96192 constructing the RangedSummarizedExperiment (rse) object.</span></span>
 <span></span>
 <span><span class="co">## Explore the resulting RSE exon object</span></span>
 <span><span class="va">rse_exon_SRP009615</span></span>
@@ -1171,19 +1171,19 @@ RSE files.</p>
 <span>    <span class="va">proj_info</span>,</span>
 <span>    type <span class="op">=</span> <span class="st">"jxn"</span></span>
 <span><span class="op">)</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:39.743301 downloading and reading the metadata.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:39.99523 caching file sra.sra.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:40.175934 caching file sra.recount_project.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:40.391297 caching file sra.recount_qc.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:40.582871 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:40.774463 caching file sra.recount_pred.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:40.857767 downloading and reading the feature information.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:41.01147 caching file sra.junctions.SRP009615.ALL.RR.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:42.898738 downloading and reading the counts: 12 samples across 281448 features.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:43.073241 caching file sra.junctions.SRP009615.ALL.MM.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:43.704555 matching exon-exon junction counts with the metadata.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:43.836062 caching file sra.junctions.SRP009615.ALL.ID.gz.</span></span>
-<span><span class="co">#&gt; 2023-05-06 23:45:43.979101 constructing the RangedSummarizedExperiment (rse) object.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:58.486701 downloading and reading the metadata.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:59.030464 caching file sra.sra.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:59.331674 caching file sra.recount_project.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:59.625764 caching file sra.recount_qc.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:13:59.947766 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:14:00.270782 caching file sra.recount_pred.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:14:00.346054 downloading and reading the feature information.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:14:00.611637 caching file sra.junctions.SRP009615.ALL.RR.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:14:02.320374 downloading and reading the counts: 12 samples across 281448 features.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:14:02.580696 caching file sra.junctions.SRP009615.ALL.MM.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:14:03.190086 matching exon-exon junction counts with the metadata.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:14:03.457154 caching file sra.junctions.SRP009615.ALL.ID.gz.</span></span>
+<span><span class="co">#&gt; 2023-05-07 00:14:03.589659 constructing the RangedSummarizedExperiment (rse) object.</span></span>
 <span></span>
 <span><span class="co">## Explore the resulting RSE exon-exon junctions object</span></span>
 <span><span class="va">rse_jxn_SRP009615</span></span>
@@ -1593,9 +1593,9 @@ Obenchain, Hester, and Pagès, 2019</a>)</li>
 <span><span class="fu"><a href="https://rdrr.io/r/base/files.html" class="external-link">file.remove</a></span><span class="op">(</span><span class="st">"quickstartRef.bib"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] TRUE</span></span></code></pre></div>
 <p>Date the vignette was generated.</p>
-<pre><code><span><span class="co">#&gt; [1] "2023-05-06 23:45:46 UTC"</span></span></code></pre>
+<pre><code><span><span class="co">#&gt; [1] "2023-05-07 00:14:05 UTC"</span></span></code></pre>
 <p>Wallclock time spent generating the vignette.</p>
-<pre><code><span><span class="co">#&gt; Time difference of 1.115 mins</span></span></code></pre>
+<pre><code><span><span class="co">#&gt; Time difference of 1.124 mins</span></span></code></pre>
 <p><code>R</code> session information.</p>
 <pre><code><span><span class="co">#&gt; <span style="color: #00BBBB; font-weight: bold;">─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────</span></span></span>
 <span><span class="co">#&gt;  <span style="color: #555555; font-style: italic;">setting </span> <span style="color: #555555; font-style: italic;">value</span></span></span>
@@ -1607,7 +1607,7 @@ Obenchain, Hester, and Pagès, 2019</a>)</li>
 <span><span class="co">#&gt;  collate  en_US.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    en_US.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2023-05-06</span></span>
+<span><span class="co">#&gt;  date     2023-05-07</span></span>
 <span><span class="co">#&gt;  pandoc   2.19.2 @ /usr/local/bin/ (via rmarkdown)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; <span style="color: #00BBBB; font-weight: bold;">─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────</span></span></span>
@@ -1682,7 +1682,7 @@ Obenchain, Hester, and Pagès, 2019</a>)</li>
 <span><span class="co">#&gt;  ragg                   1.2.5     <span style="color: #555555;">2023-01-12</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.3.0)</span></span></span>
 <span><span class="co">#&gt;  Rcpp                   1.0.10    <span style="color: #555555;">2023-01-22</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.3.0)</span></span></span>
 <span><span class="co">#&gt;  RCurl                  1.98-1.12 <span style="color: #555555;">2023-03-27</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.3.0)</span></span></span>
-<span><span class="co">#&gt;  recount3             * 1.11.1    <span style="color: #555555;">2023-05-06</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor</span></span></span>
+<span><span class="co">#&gt;  recount3             * 1.11.2    <span style="color: #555555;">2023-05-07</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor</span></span></span>
 <span><span class="co">#&gt;  RefManageR             1.4.0     <span style="color: #555555;">2022-09-30</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.3.0)</span></span></span>
 <span><span class="co">#&gt;  restfulr               0.0.15    <span style="color: #555555;">2022-06-16</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.3.0)</span></span></span>
 <span><span class="co">#&gt;  rjson                  0.2.21    <span style="color: #555555;">2022-01-09</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.3.0)</span></span></span>
@@ -1746,7 +1746,7 @@ package version 2.12.2. 2022. <a href="https://CRAN.R-project.org/package=R.util
 Files</em>. R package version 1.0.12. 2021. <a href="https://github.com/cboettig/knitcitations" class="external-link uri">https://github.com/cboettig/knitcitations</a>.</p>
 <p>[6] L. Collado-Torres. <em>Explore and download data from the
 recount3 project</em>. <a href="https://github.com/LieberInstitute/recount3" class="external-link uri">https://github.com/LieberInstitute/recount3</a> - R package
-version 1.11.1. 2023. DOI: 10.18129/B9.bioc.recount3. <a href="http://www.bioconductor.org/packages/recount3" class="external-link uri">http://www.bioconductor.org/packages/recount3</a>.</p>
+version 1.11.2. 2023. DOI: 10.18129/B9.bioc.recount3. <a href="http://www.bioconductor.org/packages/recount3" class="external-link uri">http://www.bioconductor.org/packages/recount3</a>.</p>
 <p>[7] L. Collado-Torres, A. Nellore, and A. E. Jaffe. “recount
 workflow: Accessing over 70,000 human RNA-seq samples with Bioconductor
 [version 1; referees: 1 approved, 2 approved with reservations]”. In:

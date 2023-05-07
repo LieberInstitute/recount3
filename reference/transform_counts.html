@@ -28,7 +28,7 @@ counts without scaling check the function compute_read_counts()."><meta property
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.11.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.11.2</span>
       </span>
     </div>
 
@@ -156,17 +156,17 @@ avoid NAMESPACE conflicts.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Create a RSE object at the gene level</span></span></span>
 <span class="r-in"><span><span class="va">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="create_rse_manual.html">create_rse_manual</a></span><span class="op">(</span><span class="st">"SRP009615"</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:34.551628 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:34.687165 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:35.066714 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:35.266991 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:35.481853 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:35.690667 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:35.788755 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:35.914631 caching file human.gene_sums.G026.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:36.441705 downloading and reading the counts: 12 samples across 63856 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:36.569496 caching file sra.gene_sums.SRP009615.G026.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:36.771128 constructing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:51.616844 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:52.103045 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:52.699716 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:53.047657 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:53.58639 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:54.127138 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:54.213777 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:54.685976 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:55.198254 downloading and reading the counts: 12 samples across 63856 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:55.680187 caching file sra.gene_sums.SRP009615.G026.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:55.865277 constructing the RangedSummarizedExperiment (rse) object.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Scale the counts using the AUC</span></span></span>
 <span class="r-in"><span><span class="fu">assays</span><span class="op">(</span><span class="va">rse_gene_SRP009615</span><span class="op">)</span><span class="op">$</span><span class="va">counts</span> <span class="op">&lt;-</span> <span class="fu">transform_counts</span><span class="op">(</span><span class="va">rse_gene_SRP009615</span><span class="op">)</span></span></span>

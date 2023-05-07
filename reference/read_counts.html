@@ -19,7 +19,7 @@ computer using file_retrieve()."><meta property="og:image" content="/logo.png"><
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.11.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.11.2</span>
       </span>
     </div>
 
@@ -116,12 +116,12 @@ base-pair coverage counts used in recount2 and recount3.</p>
 <span class="r-in"><span>    type <span class="op">=</span> <span class="st">"gene"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">local_SRP009615_gene</span> <span class="op">&lt;-</span> <span class="fu"><a href="file_retrieve.html">file_retrieve</a></span><span class="op">(</span>url <span class="op">=</span> <span class="va">url_SRP009615_gene</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:18.349147 caching file sra.gene_sums.SRP009615.G026.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:32.972618 caching file sra.gene_sums.SRP009615.G026.gz.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Read the gene counts, take about 3 seconds</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/system.time.html" class="external-link">system.time</a></span><span class="op">(</span><span class="va">SRP009615_gene_counts</span> <span class="op">&lt;-</span> <span class="fu">read_counts</span><span class="op">(</span><span class="va">local_SRP009615_gene</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    user  system elapsed </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.111   0.004   0.115 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.103   0.004   0.106 </span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">SRP009615_gene_counts</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 63856    12</span>
 <span class="r-in"><span></span></span>
@@ -168,10 +168,10 @@ base-pair coverage counts used in recount2 and recount3.</p>
 <span class="r-in"><span>        type <span class="op">=</span> <span class="st">"exon"</span></span></span>
 <span class="r-in"><span>    <span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:19.87027 caching file sra.exon_sums.SRP009615.G026.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:34.394238 caching file sra.exon_sums.SRP009615.G026.gz.</span>
 <span class="r-in"><span><span class="va">local_SRP009615_exon</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                               sra.exon_sums.SRP009615.G026.gz </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> "/github/home/.cache/R/recount3/22465b399dff_sra.exon_sums.SRP009615.G026.gz" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                              sra.exon_sums.SRP009615.G026.gz </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> "/github/home/.cache/R/recount3/2248fa92647_sra.exon_sums.SRP009615.G026.gz" </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Read the exon counts, takes about 50-60 seconds</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/system.time.html" class="external-link">system.time</a></span><span class="op">(</span></span></span>
@@ -180,7 +180,7 @@ base-pair coverage counts used in recount2 and recount3.</p>
 <span class="r-in"><span>    <span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    user  system elapsed </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.947   0.112   1.060 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.929   0.104   1.033 </span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">SRP009615_exon_counts</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1299686      12</span>
 <span class="r-in"><span><span class="fu">pryr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pryr/man/object_size.html" class="external-link">object_size</a></span><span class="op">(</span><span class="va">SRP009615_exon_counts</span><span class="op">)</span></span></span>

@@ -20,7 +20,7 @@ produced by create_rse()."><meta property="og:image" content="/logo.png"><!-- ma
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.11.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.11.2</span>
       </span>
     </div>
 
@@ -106,9 +106,9 @@ from your set of RSE files before being able to run <code><a href="https://rdrr.
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Find all available human projects</span></span></span>
 <span class="r-in"><span><span class="va">human_projects</span> <span class="op">&lt;-</span> <span class="fu"><a href="available_projects.html">available_projects</a></span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:07.410991 caching file sra.recount_project.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:07.615296 caching file gtex.recount_project.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:07.834003 caching file tcga.recount_project.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:18.971639 caching file sra.recount_project.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:19.291246 caching file gtex.recount_project.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:19.631356 caching file tcga.recount_project.MD.gz.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Find the project you are interested in</span></span></span>
 <span class="r-in"><span><span class="va">proj_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span></span></span>
@@ -118,17 +118,17 @@ from your set of RSE files before being able to run <code><a href="https://rdrr.
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Create a RSE object at the gene level</span></span></span>
 <span class="r-in"><span><span class="va">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="create_rse.html">create_rse</a></span><span class="op">(</span><span class="va">proj_info</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:10.379648 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:10.558891 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:10.776064 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:10.994375 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:11.213025 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:11.430257 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:11.523191 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:11.683657 caching file human.gene_sums.G026.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:12.199557 downloading and reading the counts: 12 samples across 63856 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:12.343862 caching file sra.gene_sums.SRP009615.G026.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-06 23:44:12.537379 constructing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:21.845299 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:22.180084 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:22.496025 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:22.814289 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:23.151212 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:23.475999 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:23.558369 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:23.841686 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:24.337531 downloading and reading the counts: 12 samples across 63856 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:24.608303 caching file sra.gene_sums.SRP009615.G026.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2023-05-07 00:12:24.787148 constructing the RangedSummarizedExperiment (rse) object.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Expand the SRA attributes (see details for more information)</span></span></span>
 <span class="r-in"><span><span class="va">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu">expand_sra_attributes</span><span class="op">(</span><span class="va">rse_gene_SRP009615</span><span class="op">)</span></span></span>
