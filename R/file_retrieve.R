@@ -86,8 +86,7 @@ file_retrieve <-
         res <- BiocFileCache::bfcrpath(
             bfc,
             url,
-            exact = TRUE,
-            verbose = verbose
+            exact = TRUE
         )
         names(res) <- names(url)
         return(res)
