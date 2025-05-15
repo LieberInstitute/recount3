@@ -1,3 +1,12 @@
+# recount3 1.19.2
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+* `recount3` no longer suggests using `interactiveDisplayBase::display()` as
+that package will be deprecated on bioc-devel. While the interactive sub-setting
+of a table was a nice little feature, it was not an important feature. Related
+to <https://github.com/LieberInstitute/recount3/issues/57>.
+
 # recount3 1.19.1
 
 BUG FIXES
