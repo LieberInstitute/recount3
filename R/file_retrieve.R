@@ -39,9 +39,11 @@
 #' )
 #' local_SRP009615_gene
 file_retrieve <-
-    function(url,
-    bfc = recount3_cache(),
-    verbose = getOption("recount3_verbose", TRUE)) {
+    function(
+        url,
+        bfc = recount3_cache(),
+        verbose = getOption("recount3_verbose", TRUE)
+    ) {
         ## In case you are working with more than one url (like with metadata)
         if (length(url) > 1) {
             return(vapply(
@@ -59,11 +61,14 @@ file_retrieve <-
         } else {
             url_failed <- tryCatch(
                 http_error(url),
-                error = function(e) { return (TRUE)}
+                error = function(e) {
+                    return(TRUE)
+                }
             )
             if (url_failed) {
                 if (!grepl("tcga\\.recount_pred|gtex\\.recount_pred", url)) {
-                    warning("The 'url' <",
+                    warning(
+                        "The 'url' <",
                         url,
                         "> does not exist or is not available.",
                         call. = FALSE
@@ -76,7 +81,8 @@ file_retrieve <-
         }
 
         if (!methods::is(bfc, "BiocFileCache")) {
-            stop("'bfc' should be a BiocFileCache::BiocFileCache object.",
+            stop(
+                "'bfc' should be a BiocFileCache::BiocFileCache object.",
                 call. = FALSE
             )
         }
