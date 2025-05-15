@@ -1,3 +1,11 @@
+# recount3 1.19.1
+
+BUG FIXES
+
+* Fixed a bug in `file_retrieve()` as noted at
+<https://github.com/LieberInstitute/recount3/issues/56>. The bug and solution
+to it was reported by @LiNk-NY.
+
 # recount3 1.11.2
 
 SIGNIFICANT USER-VISIBLE CHANGES
