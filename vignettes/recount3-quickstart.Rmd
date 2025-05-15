@@ -63,7 +63,6 @@ bib <- c(
     covr = citation("covr")[1],
     RefManageR = citation("RefManageR")[1],
     pryr = citation("pryr")[1],
-    interactiveDisplayBase = citation("interactiveDisplayBase")[1],
     rtracklayer = citation("rtracklayer")[1],
     S4Vectors = citation("S4Vectors")[1],
     httr = citation("httr")[1],
@@ -175,19 +174,6 @@ rse_gene_SRP009615 <- create_rse(proj_info)
 rse_gene_SRP009615
 ```
 
-You can also interactively choose your study of interest
-
-```{r "interactive_display", eval = FALSE}
-## Note that you can interactively explore the available projects
-proj_info_interactive <- interactiveDisplayBase::display(human_projects)
-
-## Select a single row, then hit "send". The following code checks this.
-stopifnot(nrow(proj_info_interactive) == 1)
-
-## Then create the RSE object
-rse_gene_interactive <- create_rse(proj_info_interactive)
-```
-
 Once you have a RSE file, you can use `transform_counts()` to transform the raw coverage counts.
 
 
@@ -279,14 +265,6 @@ subset(human_projects, file_source == "gtex" & project_type == "data_sources")
 ```
 
 Note that one of the projects for GTEx is `STUDY_NA`, that's because in `r Biocpkg('recount3')` we processed all GTEx samples, including some that had no tissue assigned and were not used by the GTEx consortium. 
-
-If you prefer to view the list of available studies interactively, you can do so with `r Biocpkg('interactiveDisplayBase')` as shown below. You'll want to assign the output of `interactiveDisplayBase::display()` to an object so you can save your selections and use them later. By doing so, you'll be able to select a study of interest, and save the information for later use after you hit the "send" button.
-
-```{r "select_interactively", eval = FALSE}
-## Alternatively, interactively browse the human projects,
-## select one, then hit send
-selected_study <- interactiveDisplayBase::display(human_projects)
-```
 
 Ultimately, we need three pieces of information in order to download a specific dataset from `r Biocpkg('recount3')`. Those are:
 
@@ -565,7 +543,6 @@ The `r Biocpkg('recount3')` package `r citep(bib[['recount3']])` was made possib
 * `r CRANpkg('data.table')` `r citep(bib[['data.table']])`
 * `r Biocpkg('GenomicRanges')` `r citep(bib[['GenomicRanges']])`
 * `r CRANpkg('httr')` `r citep(bib[['httr']])`
-* `r Biocpkg('interactiveDisplayBase')` `r citep(bib[['interactiveDisplayBase']])`
 * `r CRANpkg('knitcitations')` `r citep(bib[['knitcitations']])`
 * `r CRANpkg('knitr')` `r citep(bib[['knitr']])`
 * `r CRANpkg('Matrix')` `r citep(bib[['Matrix']])`

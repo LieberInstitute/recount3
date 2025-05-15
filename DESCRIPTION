@@ -30,7 +30,6 @@ Suggests:
     rmarkdown,
     testthat,
     pryr,
-    interactiveDisplayBase,
     recount
 VignetteBuilder: knitr
 Depends: 
