@@ -25,7 +25,7 @@ recount3_cache_files()
 }
 \seealso{
 Other recount3 cache functions: 
-\code{\link{recount3_cache_rm}()},
-\code{\link{recount3_cache}()}
+\code{\link{recount3_cache}()},
+\code{\link{recount3_cache_rm}()}
 }
 \concept{recount3 cache functions}

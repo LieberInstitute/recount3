@@ -24,8 +24,9 @@
 #' or a local directory where you have mirrored `recount3`. Defaults to the
 #' load balancer <http://duffel.rail.bio/recount3>, but can also be
 #' <https://recount-opendata.s3.amazonaws.com/recount3/release> from
-#' <https://registry.opendata.aws/recount/> or SciServer datascope from
-#' IDIES at JHU <https://sciserver.org/public-data/recount3/data>. You can
+#' <https://registry.opendata.aws/recount/> or from
+#' IDIES at JHU <https://idies.jhu.edu/recount3/data> (which redirects to
+#' <https://data.idies.jhu.edu/recount3/data/>). You can
 #' set the R option `recount3_url` (for example in your `.Rprofile`) if
 #' you have a favorite mirror.
 #'
@@ -91,17 +92,22 @@
 #'     "data_sources/sra"
 #' )
 locate_url <-
-    function(project,
-    project_home = project_homes(
-        organism = organism,
-        recount3_url = recount3_url
-    ),
-    type = c("metadata", "gene", "exon", "jxn", "bw"),
-    organism = c("human", "mouse"),
-    sample = NULL,
-    annotation = annotation_options(organism),
-    jxn_format = c("ALL", "UNIQUE"),
-    recount3_url = getOption("recount3_url", "http://duffel.rail.bio/recount3")) {
+    function(
+        project,
+        project_home = project_homes(
+            organism = organism,
+            recount3_url = recount3_url
+        ),
+        type = c("metadata", "gene", "exon", "jxn", "bw"),
+        organism = c("human", "mouse"),
+        sample = NULL,
+        annotation = annotation_options(organism),
+        jxn_format = c("ALL", "UNIQUE"),
+        recount3_url = getOption(
+            "recount3_url",
+            "http://duffel.rail.bio/recount3"
+        )
+    ) {
         project_home <- match.arg(project_home)
         type <- match.arg(type)
         organism <- match.arg(organism)
@@ -109,7 +115,8 @@ locate_url <-
         jxn_format <- match.arg(jxn_format)
 
         ## Define the base directories
-        base_dir <- switch(type,
+        base_dir <- switch(
+            type,
             metadata = "metadata",
             gene = "gene_sums",
             exon = "exon_sums",
@@ -122,18 +129,23 @@ locate_url <-
             annotation_ext(organism = organism, annotation = annotation)
 
         ## Define the file extensions
-        file_ext <- paste0(".", switch(type,
-            metadata = "MD.gz",
-            gene = paste0(ann_ext, ".gz"),
-            exon = paste0(ann_ext, ".gz"),
-            jxn = paste0(jxn_format, ".", c("MM.gz", "RR.gz", "ID.gz")),
-            bw = "ALL.bw"
-        ))
+        file_ext <- paste0(
+            ".",
+            switch(
+                type,
+                metadata = "MD.gz",
+                gene = paste0(ann_ext, ".gz"),
+                exon = paste0(ann_ext, ".gz"),
+                jxn = paste0(jxn_format, ".", c("MM.gz", "RR.gz", "ID.gz")),
+                bw = "ALL.bw"
+            )
+        )
 
         ## Check that sample exists when type == 'bw'
         if (type == "bw") {
             if (is.null(sample)) {
-                stop("You need to specify the 'sample' when type = 'bw'.",
+                stop(
+                    "You need to specify the 'sample' when type = 'bw'.",
                     call. = FALSE
                 )
             }
@@ -173,11 +185,12 @@ locate_url <-
                 toupper(substr(
                     sample,
                     nchar(sample) - ifelse(grepl("gtex", project_home), 3, 1),
-                    nchar(sample) - ifelse(
-                        grepl("gtex", project_home),
-                        2,
-                        0
-                    )
+                    nchar(sample) -
+                        ifelse(
+                            grepl("gtex", project_home),
+                            2,
+                            0
+                        )
                 ))
             )
             base_file <- paste0(base_file, "_", sample)
@@ -200,7 +213,9 @@ locate_url <-
 
             metadata <- read_metadata(file_retrieve(url = url_collection_meta))
             i <- which(metadata$recount_project.project == project)
-            stopifnot("The 'project' is not part of this collection." = length(i) > 0)
+            stopifnot(
+                "The 'project' is not part of this collection." = length(i) > 0
+            )
             file_source <-
                 metadata$recount_project.file_source[i[1]]
 

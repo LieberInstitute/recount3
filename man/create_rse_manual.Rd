@@ -44,8 +44,9 @@ projects: GTEx and TCGA for human.}
 or a local directory where you have mirrored \code{recount3}. Defaults to the
 load balancer \url{http://duffel.rail.bio/recount3}, but can also be
 \url{https://recount-opendata.s3.amazonaws.com/recount3/release} from
-\url{https://registry.opendata.aws/recount/} or SciServer datascope from
-IDIES at JHU \url{https://sciserver.org/public-data/recount3/data}. You can
+\url{https://registry.opendata.aws/recount/} or from
+IDIES at JHU \url{https://idies.jhu.edu/recount3/data} (which redirects to
+\url{https://data.idies.jhu.edu/recount3/data/}). You can
 set the R option \code{recount3_url} (for example in your \code{.Rprofile}) if
 you have a favorite mirror.}
 
@@ -155,8 +156,8 @@ base-pair coverage counts used in recount2 and recount3.
 Other internal functions for accessing the recount3 data: 
 \code{\link{annotation_ext}()},
 \code{\link{file_retrieve}()},
-\code{\link{locate_url_ann}()},
 \code{\link{locate_url}()},
+\code{\link{locate_url_ann}()},
 \code{\link{project_homes}()},
 \code{\link{read_counts}()},
 \code{\link{read_metadata}()}

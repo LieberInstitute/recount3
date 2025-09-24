@@ -31,7 +31,7 @@ recount3_cache_files()
 }
 \seealso{
 Other recount3 cache functions: 
-\code{\link{recount3_cache_files}()},
-\code{\link{recount3_cache}()}
+\code{\link{recount3_cache}()},
+\code{\link{recount3_cache_files}()}
 }
 \concept{recount3 cache functions}
