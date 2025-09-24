@@ -20,7 +20,7 @@ produced by create_rse()."><meta property="og:image" content="/logo.png"><!-- ma
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.19.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.19.3</span>
       </span>
     </div>
 
@@ -104,9 +104,9 @@ from your set of RSE files before being able to run <code><a href="https://rdrr.
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Find all available human projects</span></span></span>
 <span class="r-in"><span><span class="va">human_projects</span> <span class="op">&lt;-</span> <span class="fu"><a href="available_projects.html">available_projects</a></span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:31:28.447533 caching file sra.recount_project.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:31:28.920122 caching file gtex.recount_project.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:31:29.406467 caching file tcga.recount_project.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:48:45.948417 caching file sra.recount_project.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:48:46.738868 caching file gtex.recount_project.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:48:47.311536 caching file tcga.recount_project.MD.gz.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Find the project you are interested in</span></span></span>
 <span class="r-in"><span><span class="va">proj_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span></span></span>
@@ -116,17 +116,17 @@ from your set of RSE files before being able to run <code><a href="https://rdrr.
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Create a RSE object at the gene level</span></span></span>
 <span class="r-in"><span><span class="va">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="create_rse.html">create_rse</a></span><span class="op">(</span><span class="va">proj_info</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:31:31.054281 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:31:31.466973 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:31:31.945732 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:31:32.448182 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:31:33.043516 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:31:33.494239 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:31:33.554898 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:31:33.958526 caching file human.gene_sums.G026.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:31:34.316052 downloading and reading the counts: 12 samples across 63856 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:31:34.717869 caching file sra.gene_sums.SRP009615.G026.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:31:34.852585 constructing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:48:49.880167 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:48:50.704225 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:48:51.685219 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:48:52.606729 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:48:53.133553 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:48:53.935569 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:48:54.00144 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:48:54.934797 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:48:55.296659 downloading and reading the counts: 12 samples across 63856 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:48:55.885535 caching file sra.gene_sums.SRP009615.G026.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:48:56.020876 constructing the RangedSummarizedExperiment (rse) object.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Expand the SRA attributes (see details for more information)</span></span></span>
 <span class="r-in"><span><span class="va">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu">expand_sra_attributes</span><span class="op">(</span><span class="va">rse_gene_SRP009615</span><span class="op">)</span></span></span>
@@ -144,7 +144,7 @@ from your set of RSE files before being able to run <code><a href="https://rdrr.
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
       </footer></div>

@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.19.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.19.3</span>
       </span>
     </div>
 
@@ -87,7 +87,7 @@ CampusCenter for Computational Biology, Johns Hopkins
 University<br><a class="author_email" href="mailto:#"></a><a href="mailto:lcolladotor@gmail.com" class="email">lcolladotor@gmail.com</a>
       </address>
                   
-            <h4 data-toc-skip class="date">15 May 2025</h4>
+            <h4 data-toc-skip class="date">24 September 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/LieberInstitute/recount3/blob/devel/vignettes/recount3-quickstart.Rmd" class="external-link"><code>vignettes/recount3-quickstart.Rmd</code></a></small>
       <div class="hidden name"><code>recount3-quickstart.Rmd</code></div>
@@ -207,7 +207,7 @@ to cite the package and the overall approach. Thank you!</p>
 <span><span class="co">#&gt;   project_. doi:10.18129/B9.bioc.recount3</span></span>
 <span><span class="co">#&gt;   &lt;https://doi.org/10.18129/B9.bioc.recount3&gt;,</span></span>
 <span><span class="co">#&gt;   https://github.com/LieberInstitute/recount3 - R package version</span></span>
-<span><span class="co">#&gt;   1.19.2, &lt;http://www.bioconductor.org/packages/recount3&gt;.</span></span>
+<span><span class="co">#&gt;   1.19.3, &lt;http://www.bioconductor.org/packages/recount3&gt;.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;   Wilks C, Zheng SC, Chen FY, Charles R, Solomon B, Ling JP, Imada EL,</span></span>
 <span><span class="co">#&gt;   Zhang D, Joseph L, Leek JT, Jaffe AE, Nellore A, Collado-Torres L,</span></span>
@@ -242,9 +242,9 @@ data.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Find all available human projects</span></span>
 <span><span class="va">human_projects</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/available_projects.html">available_projects</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:19.095396 caching file sra.recount_project.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:19.556877 caching file gtex.recount_project.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:20.013278 caching file tcga.recount_project.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:49:53.699545 caching file sra.recount_project.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:49:54.446132 caching file gtex.recount_project.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:49:55.135577 caching file tcga.recount_project.MD.gz.</span></span>
 <span></span>
 <span><span class="co">## Find the project you are interested in,</span></span>
 <span><span class="co">## here we use SRP009615 as an example</span></span>
@@ -255,17 +255,17 @@ data.</p>
 <span></span>
 <span><span class="co">## Create a RangedSummarizedExperiment (RSE) object at the gene level</span></span>
 <span><span class="va">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_rse.html">create_rse</a></span><span class="op">(</span><span class="va">proj_info</span><span class="op">)</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:24.506123 downloading and reading the metadata.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:24.932555 caching file sra.sra.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:25.453915 caching file sra.recount_project.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:25.931859 caching file sra.recount_qc.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:26.505656 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:26.949086 caching file sra.recount_pred.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:27.005734 downloading and reading the feature information.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:27.520592 caching file human.gene_sums.G026.gtf.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:27.882526 downloading and reading the counts: 12 samples across 63856 features.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:28.292399 caching file sra.gene_sums.SRP009615.G026.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:28.420811 constructing the RangedSummarizedExperiment (rse) object.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:49:59.02621 downloading and reading the metadata.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:49:59.752585 caching file sra.sra.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:00.73781 caching file sra.recount_project.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:01.548428 caching file sra.recount_qc.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:02.55013 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:03.487661 caching file sra.recount_pred.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:03.547547 downloading and reading the feature information.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:04.137337 caching file human.gene_sums.G026.gtf.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:04.525175 downloading and reading the counts: 12 samples across 63856 features.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:05.339601 caching file sra.gene_sums.SRP009615.G026.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:05.522864 constructing the RangedSummarizedExperiment (rse) object.</span></span>
 <span></span>
 <span><span class="co">## Explore that RSE object</span></span>
 <span><span class="va">rse_gene_SRP009615</span></span>
@@ -503,9 +503,9 @@ as shown below. This will return a <code><a href="https://rdrr.io/r/base/data.fr
 lists the unique project IDs.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">human_projects</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/available_projects.html">available_projects</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:29.268018 caching file sra.recount_project.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:29.710878 caching file gtex.recount_project.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:30.151491 caching file tcga.recount_project.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:06.422673 caching file sra.recount_project.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:07.086169 caching file gtex.recount_project.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:07.554508 caching file tcga.recount_project.MD.gz.</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">human_projects</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 8742    6</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">human_projects</span><span class="op">)</span></span>
@@ -680,17 +680,17 @@ updates that you can silence with
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Create a RSE object at the gene level</span></span>
 <span><span class="va">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_rse.html">create_rse</a></span><span class="op">(</span><span class="va">project_info</span><span class="op">)</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:33.063798 downloading and reading the metadata.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:33.483346 caching file sra.sra.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:33.982625 caching file sra.recount_project.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:34.483222 caching file sra.recount_qc.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:34.939912 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:35.361699 caching file sra.recount_pred.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:35.421383 downloading and reading the feature information.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:35.859103 caching file human.gene_sums.G026.gtf.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:36.194714 downloading and reading the counts: 12 samples across 63856 features.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:36.629748 caching file sra.gene_sums.SRP009615.G026.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:36.75558 constructing the RangedSummarizedExperiment (rse) object.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:10.295059 downloading and reading the metadata.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:11.007701 caching file sra.sra.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:11.928057 caching file sra.recount_project.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:12.904326 caching file sra.recount_qc.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:13.80728 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:14.482621 caching file sra.recount_pred.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:14.673431 downloading and reading the feature information.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:15.353626 caching file human.gene_sums.G026.gtf.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:15.728374 downloading and reading the counts: 12 samples across 63856 features.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:16.496029 caching file sra.gene_sums.SRP009615.G026.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:16.620635 constructing the RangedSummarizedExperiment (rse) object.</span></span>
 <span></span>
 <span><span class="co">## Explore the resulting RSE gene object</span></span>
 <span><span class="va">rse_gene_SRP009615</span></span>
@@ -718,13 +718,13 @@ wants to be able to re-make the object with the latest data <a href="#fn4" class
 <code class="sourceCode R"><span><span class="co">## Information about how this RSE object was made</span></span>
 <span><span class="fu">metadata</span><span class="op">(</span><span class="va">rse_gene_SRP009615</span><span class="op">)</span></span>
 <span><span class="co">#&gt; $time_created</span></span>
-<span><span class="co">#&gt; [1] "2025-05-15 15:32:36 UTC"</span></span>
+<span><span class="co">#&gt; [1] "2025-09-24 22:50:16 UTC"</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $recount3_version</span></span>
 <span><span class="co">#&gt;           package ondiskversion loadedversion                        path</span></span>
-<span><span class="co">#&gt; recount3 recount3        1.19.2        1.19.2 /__w/_temp/Library/recount3</span></span>
+<span><span class="co">#&gt; recount3 recount3        1.19.3        1.19.3 /__w/_temp/Library/recount3</span></span>
 <span><span class="co">#&gt;                           loadedpath attached is_base       date       source</span></span>
-<span><span class="co">#&gt; recount3 /__w/_temp/Library/recount3     TRUE   FALSE 2025-05-15 Bioconductor</span></span>
+<span><span class="co">#&gt; recount3 /__w/_temp/Library/recount3     TRUE   FALSE 2025-09-24 Bioconductor</span></span>
 <span><span class="co">#&gt;          md5ok            library</span></span>
 <span><span class="co">#&gt; recount3    NA /__w/_temp/Library</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -951,17 +951,17 @@ at the <strong>exon</strong> expression level instead of
 <span>    <span class="va">proj_info</span>,</span>
 <span>    type <span class="op">=</span> <span class="st">"exon"</span></span>
 <span><span class="op">)</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:37.429922 downloading and reading the metadata.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:37.826729 caching file sra.sra.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:38.31713 caching file sra.recount_project.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:38.825813 caching file sra.recount_qc.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:39.271862 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:39.704324 caching file sra.recount_pred.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:39.762325 downloading and reading the feature information.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:40.163669 caching file human.exon_sums.G026.gtf.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:57.523217 downloading and reading the counts: 12 samples across 1299686 features.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:32:58.098407 caching file sra.exon_sums.SRP009615.G026.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:33:00.213325 constructing the RangedSummarizedExperiment (rse) object.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:17.268085 downloading and reading the metadata.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:18.042565 caching file sra.sra.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:18.995759 caching file sra.recount_project.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:19.980678 caching file sra.recount_qc.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:20.792514 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:21.722049 caching file sra.recount_pred.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:21.784463 downloading and reading the feature information.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:22.659039 caching file human.exon_sums.G026.gtf.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:40.419933 downloading and reading the counts: 12 samples across 1299686 features.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:41.036128 caching file sra.exon_sums.SRP009615.G026.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:43.151007 constructing the RangedSummarizedExperiment (rse) object.</span></span>
 <span></span>
 <span><span class="co">## Explore the resulting RSE exon object</span></span>
 <span><span class="va">rse_exon_SRP009615</span></span>
@@ -1142,19 +1142,19 @@ RSE files.</p>
 <span>    <span class="va">proj_info</span>,</span>
 <span>    type <span class="op">=</span> <span class="st">"jxn"</span></span>
 <span><span class="op">)</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:33:04.58424 downloading and reading the metadata.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:33:05.233028 caching file sra.sra.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:33:05.710839 caching file sra.recount_project.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:33:06.48835 caching file sra.recount_qc.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:33:06.948892 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:33:07.39849 caching file sra.recount_pred.SRP009615.MD.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:33:07.459318 downloading and reading the feature information.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:33:07.932443 caching file sra.junctions.SRP009615.ALL.RR.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:33:09.213328 downloading and reading the counts: 12 samples across 281448 features.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:33:09.664657 caching file sra.junctions.SRP009615.ALL.MM.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:33:10.08961 matching exon-exon junction counts with the metadata.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:33:10.487591 caching file sra.junctions.SRP009615.ALL.ID.gz.</span></span>
-<span><span class="co">#&gt; 2025-05-15 15:33:10.565243 constructing the RangedSummarizedExperiment (rse) object.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:47.570598 downloading and reading the metadata.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:48.328273 caching file sra.sra.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:48.960717 caching file sra.recount_project.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:49.618007 caching file sra.recount_qc.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:50.208907 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:51.107994 caching file sra.recount_pred.SRP009615.MD.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:51.16612 downloading and reading the feature information.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:52.002604 caching file sra.junctions.SRP009615.ALL.RR.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:53.265101 downloading and reading the counts: 12 samples across 281448 features.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:54.125621 caching file sra.junctions.SRP009615.ALL.MM.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:54.559936 matching exon-exon junction counts with the metadata.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:55.567007 caching file sra.junctions.SRP009615.ALL.ID.gz.</span></span>
+<span><span class="co">#&gt; 2025-09-24 22:50:55.645645 constructing the RangedSummarizedExperiment (rse) object.</span></span>
 <span></span>
 <span><span class="co">## Explore the resulting RSE exon-exon junctions object</span></span>
 <span><span class="va">rse_jxn_SRP009615</span></span>
@@ -1331,11 +1331,18 @@ them, them you’ll want to use <code><a href="../reference/recount3_cache_files
 <span><span class="co">#&gt; [54] "http://duffel.rail.bio/recount3/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_project.BLADDER.MD.gz"                 </span></span>
 <span><span class="co">#&gt; [55] "http://duffel.rail.bio/recount3/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_qc.BLADDER.MD.gz"                      </span></span>
 <span><span class="co">#&gt; [56] "http://duffel.rail.bio/recount3/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_seq_qc.BLADDER.MD.gz"                  </span></span>
-<span><span class="co">#&gt; [57] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.sra.SRP103067.MD.gz"                           </span></span>
-<span><span class="co">#&gt; [58] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_project.SRP103067.MD.gz"               </span></span>
-<span><span class="co">#&gt; [59] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_qc.SRP103067.MD.gz"                    </span></span>
-<span><span class="co">#&gt; [60] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_seq_qc.SRP103067.MD.gz"                </span></span>
-<span><span class="co">#&gt; [61] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_pred.SRP103067.MD.gz"</span></span></code></pre></div>
+<span><span class="co">#&gt; [57] "https://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/sra.recount_project.MD.gz"                                  </span></span>
+<span><span class="co">#&gt; [58] "https://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/gtex.recount_project.MD.gz"                                </span></span>
+<span><span class="co">#&gt; [59] "https://idies.jhu.edu/recount3/data/human/data_sources/tcga/metadata/tcga.recount_project.MD.gz"                                </span></span>
+<span><span class="co">#&gt; [60] "https://idies.jhu.edu/recount3/data/mouse/data_sources/sra/metadata/sra.recount_project.MD.gz"                                  </span></span>
+<span><span class="co">#&gt; [61] "https://data.idies.jhu.edu/recount3/data//human/data_sources/sra/metadata/sra.recount_project.MD.gz"                            </span></span>
+<span><span class="co">#&gt; [62] "https://data.idies.jhu.edu/recount3/data//human/data_sources/gtex/metadata/gtex.recount_project.MD.gz"                          </span></span>
+<span><span class="co">#&gt; [63] "https://data.idies.jhu.edu/recount3/data//human/data_sources/tcga/metadata/tcga.recount_project.MD.gz"                          </span></span>
+<span><span class="co">#&gt; [64] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.sra.SRP103067.MD.gz"                           </span></span>
+<span><span class="co">#&gt; [65] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_project.SRP103067.MD.gz"               </span></span>
+<span><span class="co">#&gt; [66] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_qc.SRP103067.MD.gz"                    </span></span>
+<span><span class="co">#&gt; [67] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_seq_qc.SRP103067.MD.gz"                </span></span>
+<span><span class="co">#&gt; [68] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_pred.SRP103067.MD.gz"</span></span></code></pre></div>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Delete the recount3 files from your cache</span></span>
 <span><span class="fu"><a href="../reference/recount3_cache_rm.html">recount3_cache_rm</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -1484,7 +1491,7 @@ Morgan, 2025</a>)</li>
 <li><em><a href="https://github.com/lcolladotor/biocthis" class="external-link">biocthis</a></em></li>
 <li>
 <em><a href="https://CRAN.R-project.org/package=covr" class="external-link">covr</a></em>
-<a id="cite-Hester_2023"></a>(<a href="https://CRAN.R-project.org/package=covr" class="external-link">Hester,
+<a id="cite-Hester_2023"></a>(<a href="https://covr.r-lib.org" class="external-link">Hester,
 2023</a>)</li>
 <li>
 <em><a href="https://CRAN.R-project.org/package=data.table" class="external-link">data.table</a></em>
@@ -1496,22 +1503,22 @@ Dowle, Srinivasan, Gorecki et al., 2025</a>)</li>
 Huber, Pagès, Aboyoun et al., 2013</a>)</li>
 <li>
 <em><a href="https://CRAN.R-project.org/package=httr" class="external-link">httr</a></em>
-<a id="cite-Wickham_2023"></a>(<a href="https://CRAN.R-project.org/package=httr" class="external-link">Wickham,
+<a id="cite-Wickham_2023"></a>(<a href="https://httr.r-lib.org/" class="external-link">Wickham,
 2023</a>)</li>
 <li>
 <em><a href="https://CRAN.R-project.org/package=knitcitations" class="external-link">knitcitations</a></em>
-<a id="cite-Boettiger_2021"></a>(<a href="https://CRAN.R-project.org/package=knitcitations" class="external-link">Boettiger,
+<a id="cite-Boettiger_2021"></a>(<a href="https://github.com/cboettig/knitcitations" class="external-link">Boettiger,
 2021</a>)</li>
 <li>
 <em><a href="https://CRAN.R-project.org/package=knitr" class="external-link">knitr</a></em>
 <a id="cite-Xie_2014"></a>(<a href="#bib-Xie_2014">Xie, 2014</a>)</li>
 <li>
 <em><a href="https://CRAN.R-project.org/package=Matrix" class="external-link">Matrix</a></em>
-<a id="cite-Bates_2025"></a>(<a href="https://CRAN.R-project.org/package=Matrix" class="external-link">Bates,
+<a id="cite-Bates_2025"></a>(<a href="https://Matrix.R-forge.R-project.org" class="external-link">Bates,
 Maechler, and Jagan, 2025</a>)</li>
 <li>
 <em><a href="https://CRAN.R-project.org/package=pryr" class="external-link">pryr</a></em>
-<a id="cite-Wickham_2023a"></a>(<a href="https://CRAN.R-project.org/package=pryr" class="external-link">Wickham,
+<a id="cite-Wickham_2023a"></a>(<a href="https://github.com/hadley/pryr" class="external-link">Wickham,
 2023</a>)</li>
 <li>
 <em><a href="https://CRAN.R-project.org/package=RefManageR" class="external-link">RefManageR</a></em>
@@ -1527,7 +1534,7 @@ Xie, Dervieux, McPherson et al., 2024</a>)</li>
 Gentleman, and Carey, 2009</a>)</li>
 <li>
 <em><a href="https://CRAN.R-project.org/package=R.utils" class="external-link">R.utils</a></em>
-<a id="cite-Bengtsson_2025"></a>(<a href="https://CRAN.R-project.org/package=R.utils" class="external-link">Bengtsson,
+<a id="cite-Bengtsson_2025"></a>(<a href="https://henrikbengtsson.github.io/R.utils/" class="external-link">Bengtsson,
 2025</a>)</li>
 <li>
 <em><a href="https://bioconductor.org/packages/3.21/S4Vectors" class="external-link">S4Vectors</a></em>
@@ -1560,124 +1567,124 @@ Obenchain, Hester, and Pagès, 2019</a>)</li>
 <span><span class="fu"><a href="https://rdrr.io/r/base/files.html" class="external-link">file.remove</a></span><span class="op">(</span><span class="st">"quickstartRef.bib"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] TRUE</span></span></code></pre></div>
 <p>Date the vignette was generated.</p>
-<pre><code><span><span class="co">#&gt; [1] "2025-05-15 15:33:12 UTC"</span></span></code></pre>
+<pre><code><span><span class="co">#&gt; [1] "2025-09-24 22:50:57 UTC"</span></span></code></pre>
 <p>Wallclock time spent generating the vignette.</p>
-<pre><code><span><span class="co">#&gt; Time difference of 1.054 mins</span></span></code></pre>
+<pre><code><span><span class="co">#&gt; Time difference of 1.245 mins</span></span></code></pre>
 <p><code>R</code> session information.</p>
 <pre><code><span><span class="co">#&gt; <span style="color: #00BBBB; font-weight: bold;">─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────</span></span></span>
 <span><span class="co">#&gt;  <span style="color: #555555; font-style: italic;">setting </span> <span style="color: #555555; font-style: italic;">value</span></span></span>
-<span><span class="co">#&gt;  version  R version 4.5.0 (2025-04-11)</span></span>
-<span><span class="co">#&gt;  os       Ubuntu 24.04.2 LTS</span></span>
+<span><span class="co">#&gt;  version  R version 4.5.1 (2025-06-13)</span></span>
+<span><span class="co">#&gt;  os       Ubuntu 24.04.3 LTS</span></span>
 <span><span class="co">#&gt;  system   x86_64, linux-gnu</span></span>
 <span><span class="co">#&gt;  ui       X11</span></span>
 <span><span class="co">#&gt;  language en</span></span>
 <span><span class="co">#&gt;  collate  en_US.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    en_US.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2025-05-15</span></span>
-<span><span class="co">#&gt;  pandoc   3.6.4 @ /usr/bin/ (via rmarkdown)</span></span>
-<span><span class="co">#&gt;  quarto   1.5.57 @ /usr/local/bin/quarto</span></span>
+<span><span class="co">#&gt;  date     2025-09-24</span></span>
+<span><span class="co">#&gt;  pandoc   3.8 @ /usr/bin/ (via rmarkdown)</span></span>
+<span><span class="co">#&gt;  quarto   1.7.32 @ /usr/local/bin/quarto</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; <span style="color: #00BBBB; font-weight: bold;">─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────</span></span></span>
 <span><span class="co">#&gt;  <span style="color: #555555; font-style: italic;">package             </span> <span style="color: #555555; font-style: italic;">*</span> <span style="color: #555555; font-style: italic;">version  </span> <span style="color: #555555; font-style: italic;">date (UTC)</span> <span style="color: #555555; font-style: italic;">lib</span> <span style="color: #555555; font-style: italic;">source</span></span></span>
-<span><span class="co">#&gt;  abind                  1.4-8     <span style="color: #555555;">2024-09-12</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  backports              1.5.0     <span style="color: #555555;">2024-05-23</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  bibtex                 0.5.1     <span style="color: #555555;">2023-01-26</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  abind                  1.4-8     <span style="color: #555555;">2024-09-12</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  backports              1.5.0     <span style="color: #555555;">2024-05-23</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  bibtex                 0.5.1     <span style="color: #555555;">2023-01-26</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  Biobase              * 2.68.0    <span style="color: #555555;">2025-04-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  BiocFileCache          2.16.0    <span style="color: #555555;">2025-04-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  BiocFileCache          2.16.2    <span style="color: #555555;">2025-08-27</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.1)</span></span></span>
 <span><span class="co">#&gt;  BiocGenerics         * 0.54.0    <span style="color: #555555;">2025-04-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  BiocIO                 1.18.0    <span style="color: #555555;">2025-04-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  BiocManager            1.30.25   <span style="color: #555555;">2024-08-28</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  BiocParallel           1.42.0    <span style="color: #555555;">2025-04-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  BiocManager            1.30.26   <span style="color: #555555;">2025-06-05</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.5.1)</span></span></span>
+<span><span class="co">#&gt;  BiocParallel           1.42.2    <span style="color: #555555;">2025-09-14</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.1)</span></span></span>
 <span><span class="co">#&gt;  BiocStyle            * 2.36.0    <span style="color: #555555;">2025-04-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  Biostrings             2.76.0    <span style="color: #555555;">2025-04-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  bit                    4.6.0     <span style="color: #555555;">2025-03-06</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  bit64                  4.6.0-1   <span style="color: #555555;">2025-01-16</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  bitops                 1.0-9     <span style="color: #555555;">2024-10-03</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  blob                   1.2.4     <span style="color: #555555;">2023-03-17</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  bookdown               0.43      <span style="color: #555555;">2025-04-15</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  bit                    4.6.0     <span style="color: #555555;">2025-03-06</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  bit64                  4.6.0-1   <span style="color: #555555;">2025-01-16</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  bitops                 1.0-9     <span style="color: #555555;">2024-10-03</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  blob                   1.2.4     <span style="color: #555555;">2023-03-17</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  bookdown               0.44      <span style="color: #555555;">2025-08-21</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  bslib                  0.9.0     <span style="color: #555555;">2025-01-30</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  cachem                 1.1.0     <span style="color: #555555;">2024-05-16</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  cli                    3.6.5     <span style="color: #555555;">2025-04-23</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  codetools              0.2-20    <span style="color: #555555;">2024-03-31</span> <span style="color: #555555;">[3]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  codetools              0.2-20    <span style="color: #555555;">2024-03-31</span> <span style="color: #555555;">[3]</span> <span style="color: #555555;">CRAN (R 4.5.1)</span></span></span>
 <span><span class="co">#&gt;  crayon                 1.5.3     <span style="color: #555555;">2024-06-20</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  curl                   6.2.2     <span style="color: #555555;">2025-03-24</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  data.table             1.17.2    <span style="color: #555555;">2025-05-12</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  DBI                    1.2.3     <span style="color: #555555;">2024-06-02</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  dbplyr                 2.5.0     <span style="color: #555555;">2024-03-19</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  curl                   7.0.0     <span style="color: #555555;">2025-08-19</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  data.table             1.17.8    <span style="color: #555555;">2025-07-10</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  DBI                    1.2.3     <span style="color: #555555;">2024-06-02</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  dbplyr                 2.5.1     <span style="color: #555555;">2025-09-10</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  DelayedArray           0.34.1    <span style="color: #555555;">2025-04-17</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  desc                   1.4.3     <span style="color: #555555;">2023-12-10</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  digest                 0.6.37    <span style="color: #555555;">2024-08-19</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  dplyr                  1.1.4     <span style="color: #555555;">2023-11-17</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  evaluate               1.0.3     <span style="color: #555555;">2025-01-10</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  dplyr                  1.1.4     <span style="color: #555555;">2023-11-17</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  evaluate               1.0.5     <span style="color: #555555;">2025-08-27</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  fastmap                1.2.0     <span style="color: #555555;">2024-05-15</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  filelock               1.0.3     <span style="color: #555555;">2023-12-11</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  filelock               1.0.3     <span style="color: #555555;">2023-12-11</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  fs                     1.6.6     <span style="color: #555555;">2025-04-12</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  generics             * 0.1.4     <span style="color: #555555;">2025-05-09</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  GenomeInfoDb         * 1.44.0    <span style="color: #555555;">2025-04-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  GenomeInfoDbData       1.2.14    <span style="color: #555555;">2025-03-27</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor</span></span></span>
+<span><span class="co">#&gt;  GenomeInfoDb         * 1.44.3    <span style="color: #555555;">2025-09-21</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.1)</span></span></span>
+<span><span class="co">#&gt;  GenomeInfoDbData       1.2.14    <span style="color: #555555;">2025-05-24</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor</span></span></span>
 <span><span class="co">#&gt;  GenomicAlignments      1.44.0    <span style="color: #555555;">2025-04-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  GenomicRanges        * 1.60.0    <span style="color: #555555;">2025-04-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  glue                   1.8.0     <span style="color: #555555;">2024-09-30</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  htmltools              0.5.8.1   <span style="color: #555555;">2024-04-04</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  htmlwidgets            1.6.4     <span style="color: #555555;">2023-12-06</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  httr                   1.4.7     <span style="color: #555555;">2023-08-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  httr                   1.4.7     <span style="color: #555555;">2023-08-15</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  IRanges              * 2.42.0    <span style="color: #555555;">2025-04-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  jquerylib              0.1.4     <span style="color: #555555;">2021-04-26</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  jsonlite               2.0.0     <span style="color: #555555;">2025-03-27</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  knitcitations        * 1.0.12    <span style="color: #555555;">2021-01-10</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  knitcitations        * 1.0.12    <span style="color: #555555;">2021-01-10</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  knitr                  1.50      <span style="color: #555555;">2025-03-16</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  lattice                0.22-7    <span style="color: #555555;">2025-04-02</span> <span style="color: #555555;">[3]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  lattice                0.22-7    <span style="color: #555555;">2025-04-02</span> <span style="color: #555555;">[3]</span> <span style="color: #555555;">CRAN (R 4.5.1)</span></span></span>
 <span><span class="co">#&gt;  lifecycle              1.0.4     <span style="color: #555555;">2023-11-07</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  lobstr                 1.1.2     <span style="color: #555555;">2022-06-22</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  lubridate              1.9.4     <span style="color: #555555;">2024-12-08</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  magrittr               2.0.3     <span style="color: #555555;">2022-03-30</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  Matrix                 1.7-3     <span style="color: #555555;">2025-03-11</span> <span style="color: #555555;">[3]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  lobstr                 1.1.2     <span style="color: #555555;">2022-06-22</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  lubridate              1.9.4     <span style="color: #555555;">2024-12-08</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  magrittr               2.0.4     <span style="color: #555555;">2025-09-12</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  Matrix                 1.7-4     <span style="color: #555555;">2025-08-28</span> <span style="color: #555555;">[3]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  MatrixGenerics       * 1.20.0    <span style="color: #555555;">2025-04-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  matrixStats          * 1.5.0     <span style="color: #555555;">2025-01-07</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  matrixStats          * 1.5.0     <span style="color: #555555;">2025-01-07</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  memoise                2.0.1     <span style="color: #555555;">2021-11-26</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  pillar                 1.10.2    <span style="color: #555555;">2025-04-05</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  pillar                 1.11.1    <span style="color: #555555;">2025-09-17</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  pkgconfig              2.0.3     <span style="color: #555555;">2019-09-22</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  pkgdown                2.1.2     <span style="color: #555555;">2025-04-28</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  plyr                   1.8.9     <span style="color: #555555;">2023-10-02</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  pkgdown                2.1.3     <span style="color: #555555;">2025-05-25</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  plyr                   1.8.9     <span style="color: #555555;">2023-10-02</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  prettyunits            1.2.0     <span style="color: #555555;">2023-09-24</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  pryr                   0.1.6     <span style="color: #555555;">2023-01-17</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  purrr                  1.0.4     <span style="color: #555555;">2025-02-05</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  R.methodsS3            1.8.2     <span style="color: #555555;">2022-06-13</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  pryr                   0.1.6     <span style="color: #555555;">2023-01-17</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  purrr                  1.1.0     <span style="color: #555555;">2025-07-10</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  R.methodsS3            1.8.2     <span style="color: #555555;">2022-06-13</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  R.oo                   1.27.1    <span style="color: #555555;">2025-05-02</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  R.utils                2.13.0    <span style="color: #555555;">2025-02-24</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  R.utils                2.13.0    <span style="color: #555555;">2025-02-24</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  R6                     2.6.1     <span style="color: #555555;">2025-02-15</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  ragg                   1.4.0     <span style="color: #555555;">2025-04-10</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  Rcpp                   1.0.14    <span style="color: #555555;">2025-01-12</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  RCurl                  1.98-1.17 <span style="color: #555555;">2025-03-22</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  recount3             * 1.19.2    <span style="color: #555555;">2025-05-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor</span></span></span>
-<span><span class="co">#&gt;  RefManageR             1.4.0     <span style="color: #555555;">2022-09-30</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  restfulr               0.0.15    <span style="color: #555555;">2022-06-16</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  rjson                  0.2.23    <span style="color: #555555;">2024-09-16</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  ragg                   1.5.0     <span style="color: #555555;">2025-09-02</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  Rcpp                   1.1.0     <span style="color: #555555;">2025-07-02</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  RCurl                  1.98-1.17 <span style="color: #555555;">2025-03-22</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  recount3             * 1.19.3    <span style="color: #555555;">2025-09-24</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor</span></span></span>
+<span><span class="co">#&gt;  RefManageR             1.4.0     <span style="color: #555555;">2022-09-30</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  restfulr               0.0.16    <span style="color: #555555;">2025-06-27</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.1)</span></span></span>
+<span><span class="co">#&gt;  rjson                  0.2.23    <span style="color: #555555;">2024-09-16</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  rlang                  1.1.6     <span style="color: #555555;">2025-04-11</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  rmarkdown              2.29      <span style="color: #555555;">2024-11-04</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  Rsamtools              2.24.0    <span style="color: #555555;">2025-04-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  RSQLite                2.3.11    <span style="color: #555555;">2025-05-04</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  Rsamtools              2.24.1    <span style="color: #555555;">2025-09-07</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.1)</span></span></span>
+<span><span class="co">#&gt;  RSQLite                2.4.3     <span style="color: #555555;">2025-08-20</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  rtracklayer            1.68.0    <span style="color: #555555;">2025-04-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  S4Arrays               1.8.0     <span style="color: #555555;">2025-04-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  S4Arrays               1.8.1     <span style="color: #555555;">2025-06-01</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.1)</span></span></span>
 <span><span class="co">#&gt;  S4Vectors            * 0.46.0    <span style="color: #555555;">2025-04-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  sass                   0.4.10    <span style="color: #555555;">2025-04-11</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  sessioninfo          * 1.2.3     <span style="color: #555555;">2025-02-05</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  SparseArray            1.8.0     <span style="color: #555555;">2025-04-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  SparseArray            1.8.1     <span style="color: #555555;">2025-07-23</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.1)</span></span></span>
 <span><span class="co">#&gt;  stringi                1.8.7     <span style="color: #555555;">2025-03-27</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  stringr                1.5.1     <span style="color: #555555;">2023-11-14</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  stringr                1.5.2     <span style="color: #555555;">2025-09-08</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  SummarizedExperiment * 1.38.1    <span style="color: #555555;">2025-04-30</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  systemfonts            1.2.3     <span style="color: #555555;">2025-04-30</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  textshaping            1.0.1     <span style="color: #555555;">2025-05-01</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  tibble                 3.2.1     <span style="color: #555555;">2023-03-20</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  tidyselect             1.2.1     <span style="color: #555555;">2024-03-11</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  timechange             0.3.0     <span style="color: #555555;">2024-01-18</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  textshaping            1.0.3     <span style="color: #555555;">2025-09-02</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  tibble                 3.3.0     <span style="color: #555555;">2025-06-08</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  tidyselect             1.2.1     <span style="color: #555555;">2024-03-11</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  timechange             0.3.0     <span style="color: #555555;">2024-01-18</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  UCSC.utils             1.4.0     <span style="color: #555555;">2025-04-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  vctrs                  0.6.5     <span style="color: #555555;">2023-12-01</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  withr                  3.0.2     <span style="color: #555555;">2024-10-28</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  xfun                   0.52      <span style="color: #555555;">2025-04-02</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  XML                    3.99-0.18 <span style="color: #555555;">2025-01-01</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.5.0)</span></span></span>
-<span><span class="co">#&gt;  xml2                   1.3.8     <span style="color: #555555;">2025-03-14</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  xfun                   0.53      <span style="color: #555555;">2025-08-19</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  XML                    3.99-0.19 <span style="color: #555555;">2025-08-22</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
+<span><span class="co">#&gt;  xml2                   1.4.0     <span style="color: #555555;">2025-08-20</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  XVector                0.48.0    <span style="color: #555555;">2025-04-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.21 (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt;  yaml                   2.3.10    <span style="color: #555555;">2024-07-26</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.5.0)</span></span></span>
 <span><span class="co">#&gt; </span></span>
@@ -1698,25 +1705,23 @@ with <em><a href="https://CRAN.R-project.org/package=knitr" class="external-link
 (<a href="https://github.com/rstudio/rmarkdown" class="external-link">Allaire, Xie, Dervieux,
 McPherson et al., 2024</a>) running behind the scenes.</p>
 <p>Citations made with <em><a href="https://CRAN.R-project.org/package=knitcitations" class="external-link">knitcitations</a></em>
-(<a href="https://CRAN.R-project.org/package=knitcitations" class="external-link">Boettiger,
+(<a href="https://github.com/cboettig/knitcitations" class="external-link">Boettiger,
 2021</a>).</p>
 <p>[1] J. Allaire, Y. Xie, C. Dervieux, J. McPherson, et
 al. <em>rmarkdown: Dynamic Documents for R</em>. R package version 2.29.
 2024. <a href="https://github.com/rstudio/rmarkdown" class="external-link uri">https://github.com/rstudio/rmarkdown</a>.</p>
 <p>[2] T. Barrett, M. Dowle, A. Srinivasan, J. Gorecki, et
 al. <em>data.table: Extension of <code>data.frame</code></em>. R package
-version 1.17.2. 2025. <a href="https://r-datatable.com" class="external-link uri">https://r-datatable.com</a>.</p>
+version 1.17.8. 2025. <a href="https://r-datatable.com" class="external-link uri">https://r-datatable.com</a>.</p>
 <p>[3] D. Bates, M. Maechler, and M. Jagan. <em>Matrix: Sparse and Dense
-Matrix Classes and Methods</em>. R package version 1.7-3. 2025. DOI:
-10.32614/CRAN.package.Matrix. <a href="https://CRAN.R-project.org/package=Matrix" class="external-link uri">https://CRAN.R-project.org/package=Matrix</a>.</p>
+Matrix Classes and Methods</em>. R package version 1.7-4. 2025. <a href="https://Matrix.R-forge.R-project.org" class="external-link uri">https://Matrix.R-forge.R-project.org</a>.</p>
 <p>[4] H. Bengtsson. <em>R.utils: Various Programming Utilities</em>. R
-package version 2.13.0. 2025. DOI: 10.32614/CRAN.package.R.utils. <a href="https://CRAN.R-project.org/package=R.utils" class="external-link uri">https://CRAN.R-project.org/package=R.utils</a>.</p>
+package version 2.13.0. 2025. <a href="https://henrikbengtsson.github.io/R.utils/" class="external-link uri">https://henrikbengtsson.github.io/R.utils/</a>.</p>
 <p>[5] C. Boettiger. <em>knitcitations: Citations for ‘Knitr’ Markdown
-Files</em>. R package version 1.0.12. 2021. DOI:
-10.32614/CRAN.package.knitcitations. <a href="https://CRAN.R-project.org/package=knitcitations" class="external-link uri">https://CRAN.R-project.org/package=knitcitations</a>.</p>
+Files</em>. R package version 1.0.12. 2021. <a href="https://github.com/cboettig/knitcitations" class="external-link uri">https://github.com/cboettig/knitcitations</a>.</p>
 <p>[6] L. Collado-Torres. <em>Explore and download data from the
 recount3 project</em>. <a href="https://github.com/LieberInstitute/recount3" class="external-link uri">https://github.com/LieberInstitute/recount3</a> - R package
-version 1.19.2. 2025. DOI: 10.18129/B9.bioc.recount3. <a href="http://www.bioconductor.org/packages/recount3" class="external-link uri">http://www.bioconductor.org/packages/recount3</a>.</p>
+version 1.19.3. 2025. DOI: 10.18129/B9.bioc.recount3. <a href="http://www.bioconductor.org/packages/recount3" class="external-link uri">http://www.bioconductor.org/packages/recount3</a>.</p>
 <p>[7] L. Collado-Torres, A. Nellore, and A. E. Jaffe. “recount
 workflow: Accessing over 70,000 human RNA-seq samples with Bioconductor
 [version 1; referees: 1 approved, 2 approved with reservations]”. In:
@@ -1729,7 +1734,7 @@ multi-experiment resource of analysis-ready RNA-seq gene count
 datasets”. In: <em>BMC Bioinformatics</em> (2011). DOI:
 10.1186/1471-2105-12-449. <a href="https://doi.org/10.1186/1471-2105-12-449" class="external-link uri">https://doi.org/10.1186/1471-2105-12-449</a>.</p>
 <p>[10] J. Hester. <em>covr: Test Coverage for Packages</em>. R package
-version 3.6.4. 2023. DOI: 10.32614/CRAN.package.covr. <a href="https://CRAN.R-project.org/package=covr" class="external-link uri">https://CRAN.R-project.org/package=covr</a>.</p>
+version 3.6.4. 2023. <a href="https://covr.r-lib.org" class="external-link uri">https://covr.r-lib.org</a>.</p>
 <p>[11] W. Huber, V. J. Carey, R. Gentleman, S. Anders, et
 al. “Orchestrating high-throughput genomic analysis with Bioconductor”.
 In: <em>Nat Methods</em> (2015). DOI: 10.1038/nmeth.3252.</p>
@@ -1762,12 +1767,12 @@ Computing</em>. R Foundation for Statistical Computing. Vienna, Austria,
 al. “recount-brain: a curated repository of human brain RNA-seq datasets
 metadata”. In: <em>bioRxiv</em> (2019). DOI: 10.1101/618025. <a href="https://doi.org/10.1101/618025" class="external-link uri">https://doi.org/10.1101/618025</a>.</p>
 <p>[21] L. Shepherd and M. Morgan. <em>BiocFileCache: Manage Files
-Across Sessions</em>. R package version 2.16.0. 2025. DOI:
+Across Sessions</em>. R package version 2.16.2. 2025. DOI:
 10.18129/B9.bioc.BiocFileCache. <a href="https://bioconductor.org/packages/BiocFileCache" class="external-link uri">https://bioconductor.org/packages/BiocFileCache</a>.</p>
 <p>[22] H. Wickham. <em>httr: Tools for Working with URLs and HTTP</em>.
-R package version 1.4.7. 2023. DOI: 10.32614/CRAN.package.httr. <a href="https://CRAN.R-project.org/package=httr" class="external-link uri">https://CRAN.R-project.org/package=httr</a>.</p>
+R package version 1.4.7. 2023. <a href="https://httr.r-lib.org/" class="external-link uri">https://httr.r-lib.org/</a>.</p>
 <p>[23] H. Wickham. <em>pryr: Tools for Computing on the Language</em>.
-R package version 0.1.6. 2023. DOI: 10.32614/CRAN.package.pryr. <a href="https://CRAN.R-project.org/package=pryr" class="external-link uri">https://CRAN.R-project.org/package=pryr</a>.</p>
+R package version 0.1.6. 2023. <a href="https://github.com/hadley/pryr" class="external-link uri">https://github.com/hadley/pryr</a>.</p>
 <p>[24] H. Wickham. “testthat: Get Started with Testing”. In: <em>The R
 Journal</em> 3 (2011), pp. 5-10. <a href="https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf" class="external-link uri">https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf</a>.</p>
 <p>[25] H. Wickham, W. Chang, R. Flight, K. Müller, et
@@ -1815,7 +1820,7 @@ an error in the files.<a href="#fnref4" class="footnote-back">↩︎</a></p></li
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
       </footer>

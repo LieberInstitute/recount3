@@ -28,7 +28,7 @@ counts without scaling check the function compute_read_counts()."><meta property
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.19.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.19.3</span>
       </span>
     </div>
 
@@ -156,17 +156,17 @@ avoid NAMESPACE conflicts.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Create a RSE object at the gene level</span></span></span>
 <span class="r-in"><span><span class="va">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu"><a href="create_rse_manual.html">create_rse_manual</a></span><span class="op">(</span><span class="st">"SRP009615"</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:32:02.970493 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:32:03.405576 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:32:03.885507 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:32:04.459399 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:32:04.926368 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:32:05.369553 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:32:05.435688 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:32:05.845056 caching file human.gene_sums.G026.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:32:06.217125 downloading and reading the counts: 12 samples across 63856 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:32:06.627932 caching file sra.gene_sums.SRP009615.G026.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-05-15 15:32:06.916027 constructing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:49:34.38014 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:49:34.84362 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:49:35.555724 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:49:36.349473 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:49:37.103991 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:49:38.016218 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:49:38.083548 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:49:38.929834 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:49:39.313211 downloading and reading the counts: 12 samples across 63856 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:49:40.420547 caching file sra.gene_sums.SRP009615.G026.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:49:40.564003 constructing the RangedSummarizedExperiment (rse) object.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Scale the counts using the AUC</span></span></span>
 <span class="r-in"><span><span class="fu">assays</span><span class="op">(</span><span class="va">rse_gene_SRP009615</span><span class="op">)</span><span class="op">$</span><span class="va">counts</span> <span class="op">&lt;-</span> <span class="fu">transform_counts</span><span class="op">(</span><span class="va">rse_gene_SRP009615</span><span class="op">)</span></span></span>
@@ -233,7 +233,7 @@ avoid NAMESPACE conflicts.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
       </footer></div>

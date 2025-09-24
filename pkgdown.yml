@@ -1,6 +1,6 @@
-pandoc: 3.6.4
-pkgdown: 2.1.2
+pandoc: '3.8'
+pkgdown: 2.1.3
 pkgdown_sha: ~
 articles:
   recount3-quickstart: recount3-quickstart.html
-last_built: 2025-05-15T15:28Z
+last_built: 2025-09-24T22:45Z

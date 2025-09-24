@@ -18,7 +18,7 @@ stored in your recount3_cache()."><meta property="og:image" content="/logo.png">
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.19.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.19.3</span>
       </span>
     </div>
 
@@ -85,8 +85,8 @@ object where the files will be cached to, typically created by
     <div id="see-also">
     <h2>See also</h2>
     <div class="dont-index"><p>Other recount3 cache functions:
-<code><a href="recount3_cache_files.html">recount3_cache_files</a>()</code>,
-<code><a href="recount3_cache.html">recount3_cache</a>()</code></p></div>
+<code><a href="recount3_cache.html">recount3_cache</a>()</code>,
+<code><a href="recount3_cache_files.html">recount3_cache_files</a>()</code></p></div>
     </div>
 
     <div id="ref-examples">
@@ -149,11 +149,18 @@ object where the files will be cached to, typically created by
 <span class="r-out co"><span class="r-pr">#&gt;</span> [54] "http://duffel.rail.bio/recount3/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_project.BLADDER.MD.gz"                 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [55] "http://duffel.rail.bio/recount3/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_qc.BLADDER.MD.gz"                      </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [56] "http://duffel.rail.bio/recount3/human/data_sources/gtex/metadata/ER/BLADDER/gtex.recount_seq_qc.BLADDER.MD.gz"                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [57] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.sra.SRP103067.MD.gz"                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [58] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_project.SRP103067.MD.gz"               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [59] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_qc.SRP103067.MD.gz"                    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [60] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_seq_qc.SRP103067.MD.gz"                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [61] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_pred.SRP103067.MD.gz"                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [57] "https://idies.jhu.edu/recount3/data/human/data_sources/sra/metadata/sra.recount_project.MD.gz"                                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [58] "https://idies.jhu.edu/recount3/data/human/data_sources/gtex/metadata/gtex.recount_project.MD.gz"                                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [59] "https://idies.jhu.edu/recount3/data/human/data_sources/tcga/metadata/tcga.recount_project.MD.gz"                                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [60] "https://idies.jhu.edu/recount3/data/mouse/data_sources/sra/metadata/sra.recount_project.MD.gz"                                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [61] "https://data.idies.jhu.edu/recount3/data//human/data_sources/sra/metadata/sra.recount_project.MD.gz"                            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [62] "https://data.idies.jhu.edu/recount3/data//human/data_sources/gtex/metadata/gtex.recount_project.MD.gz"                          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [63] "https://data.idies.jhu.edu/recount3/data//human/data_sources/tcga/metadata/tcga.recount_project.MD.gz"                          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [64] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.sra.SRP103067.MD.gz"                           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [65] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_project.SRP103067.MD.gz"               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [66] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_qc.SRP103067.MD.gz"                    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [67] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_seq_qc.SRP103067.MD.gz"                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [68] "http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/67/SRP103067/sra.recount_pred.SRP103067.MD.gz"                  </span>
 <span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
 <span class="r-in"><span><span class="co">## Now delete the cached files</span></span></span>
 <span class="r-in"><span><span class="fu">recount3_cache_rm</span><span class="op">(</span><span class="op">)</span></span></span>
@@ -175,7 +182,7 @@ object where the files will be cached to, typically created by
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
       </footer></div>
