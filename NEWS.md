@@ -1,3 +1,12 @@
+# recount3 1.19.3
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+* We have verified that the data hosted by IDIES at JHU is accessible via either
+<https://idies.jhu.edu/recount3/data> or
+<https://data.idies.jhu.edu/recount3/data/>. See 
+<https://github.com/LieberInstitute/recount3/issues/58> for the details.
+
 # recount3 1.19.2
 
 SIGNIFICANT USER-VISIBLE CHANGES
