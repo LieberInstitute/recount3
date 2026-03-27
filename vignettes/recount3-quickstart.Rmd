@@ -62,7 +62,7 @@ bib <- c(
     testthat = citation("testthat")[1],
     covr = citation("covr")[1],
     RefManageR = citation("RefManageR")[1],
-    pryr = citation("pryr")[1],
+    lobstr = citation("lobstr")[1],
     rtracklayer = citation("rtracklayer")[1],
     S4Vectors = citation("S4Vectors")[1],
     httr = citation("httr")[1],
@@ -419,8 +419,8 @@ Because there are many more exons than genes, this type of analysis uses more co
 
 ```{r "exon_memory"}
 ## Check how much memory the gene and exon RSE objects use
-pryr::object_size(rse_gene_SRP009615)
-pryr::object_size(rse_exon_SRP009615)
+lobstr::obj_size(rse_gene_SRP009615)
+lobstr::obj_size(rse_exon_SRP009615)
 ```
 
 ## Exon-exon junctions
@@ -442,7 +442,7 @@ dim(rse_jxn_SRP009615)
 rowRanges(rse_jxn_SRP009615)
 
 ## Memory used
-pryr::object_size(rse_jxn_SRP009615)
+lobstr::obj_size(rse_jxn_SRP009615)
 ```
 
 ## BigWig files
@@ -546,7 +546,7 @@ The `r Biocpkg('recount3')` package `r citep(bib[['recount3']])` was made possib
 * `r CRANpkg('knitcitations')` `r citep(bib[['knitcitations']])`
 * `r CRANpkg('knitr')` `r citep(bib[['knitr']])`
 * `r CRANpkg('Matrix')` `r citep(bib[['Matrix']])`
-* `r CRANpkg('pryr')` `r citep(bib[['pryr']])`
+* `r CRANpkg('lobstr')` `r citep(bib[['lobstr']])`
 * `r CRANpkg('RefManageR')` `r citep(bib[['RefManageR']])`
 * `r CRANpkg('rmarkdown')` `r citep(bib[['rmarkdown']])`
 * `r Biocpkg('rtracklayer')` `r citep(bib[['rtracklayer']])`
@@ -610,5 +610,4 @@ Citations made with `r CRANpkg('knitcitations')` `r citep(bib[['knitcitations']]
 ## Print bibliography
 bibliography()
 ```
-
 

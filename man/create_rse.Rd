@@ -89,7 +89,7 @@ rowRanges(rse_gene_SRP009615)
 colnames(colData(rse_gene_SRP009615))
 
 ## Check how much memory this RSE object uses
-pryr::object_size(rse_gene_SRP009615)
+lobstr::obj_size(rse_gene_SRP009615)
 
 ## Create an RSE object using gencode_v29 instead of gencode_v26
 rse_gene_SRP009615_gencode_v29 <- create_rse(
@@ -145,7 +145,7 @@ rse_exon_SRP009615
 
 dim(rse_exon_SRP009615)
 rowRanges(rse_exon_SRP009615)
-pryr::object_size(rse_exon_SRP009615)
+lobstr::obj_size(rse_exon_SRP009615)
 
 ## Create a RSE object at the exon-exon junction level
 rse_jxn_SRP009615 <- create_rse(
@@ -158,7 +158,7 @@ rse_jxn_SRP009615
 
 dim(rse_jxn_SRP009615)
 rowRanges(rse_jxn_SRP009615)
-pryr::object_size(rse_jxn_SRP009615)
+lobstr::obj_size(rse_jxn_SRP009615)
 
 ## Obtain a list of RSE objects for all exon annotations
 \dontrun{

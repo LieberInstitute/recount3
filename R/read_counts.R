@@ -67,7 +67,7 @@
 #'     )
 #' )
 #' dim(SRP009615_exon_counts)
-#' pryr::object_size(SRP009615_exon_counts)
+#' lobstr::obj_size(SRP009615_exon_counts)
 #'
 #' ## Explore the top left corner
 #' SRP009615_exon_counts[seq_len(6), seq_len(6)]

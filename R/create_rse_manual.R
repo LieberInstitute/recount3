@@ -38,7 +38,7 @@
 #' rse_gene_SRP009615_manual
 #'
 #' ## Check how much memory this RSE object uses
-#' pryr::object_size(rse_gene_SRP009615_manual)
+#' lobstr::obj_size(rse_gene_SRP009615_manual)
 #'
 #' ## Test with a collection that has a single sample
 #' ## NOTE: this requires loading the full data for this study when
@@ -51,7 +51,7 @@
 #' rse_gene_ERP110066_collection_manual
 #'
 #' ## Check how much memory this RSE object uses
-#' pryr::object_size(rse_gene_ERP110066_collection_manual)
+#' lobstr::obj_size(rse_gene_ERP110066_collection_manual)
 #'
 #' ## Mouse example
 #' rse_gene_DRP002367_manual <- create_rse_manual(
@@ -77,7 +77,7 @@
 #'
 #'
 #' ## Check how much memory this RSE object uses
-#' pryr::object_size(rse_exon_ERP110066_collection_manual)
+#' lobstr::obj_size(rse_exon_ERP110066_collection_manual)
 #' # 409 MB
 #'
 #' ## Test with a collection that has one sample, at the junction level
@@ -92,7 +92,7 @@
 #'
 #' ## Check how much memory this RSE object uses
 #' ## NOTE: this doesn't run since 2 files are missing on the test site!
-#' pryr::object_size(rse_jxn_ERP110066_collection_manual)
+#' lobstr::obj_size(rse_jxn_ERP110066_collection_manual)
 #' }
 #'
 #' \dontrun{
