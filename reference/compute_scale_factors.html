@@ -140,9 +140,9 @@ sample is paired-end or not.</p></dd>
     <div id="see-also">
     <h2>See also</h2>
     <div class="dont-index"><p>Other count transformation functions:
-<code><a href="compute_read_counts.html">compute_read_counts</a>()</code>,
-<code><a href="is_paired_end.html">is_paired_end</a>()</code>,
-<code><a href="transform_counts.html">transform_counts</a>()</code></p></div>
+<code><a href="compute_read_counts.html">compute_read_counts()</a></code>,
+<code><a href="is_paired_end.html">is_paired_end()</a></code>,
+<code><a href="transform_counts.html">transform_counts()</a></code></p></div>
     </div>
 
     <div id="ref-examples">
@@ -157,11 +157,11 @@ sample is paired-end or not.</p></dd>
 <span class="r-in"><span>        <span class="op">)</span></span></span>
 <span class="r-in"><span>    <span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:46:16.647354 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:46:17.372505 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:46:17.986001 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:46:18.73151 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:46:19.335594 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-27 00:30:29.202564 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-27 00:30:29.475981 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-27 00:30:29.788946 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-27 00:30:30.088213 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-27 00:30:30.455359 caching file sra.recount_pred.SRP009615.MD.gz.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Compute the scaling factors</span></span></span>
 <span class="r-in"><span><span class="fu">compute_scale_factors</span><span class="op">(</span><span class="va">SRP009615_meta</span>, by <span class="op">=</span> <span class="st">"auc"</span><span class="op">)</span></span></span>
@@ -184,11 +184,11 @@ sample is paired-end or not.</p></dd>
 <span class="r-in"><span>        <span class="op">)</span></span></span>
 <span class="r-in"><span>    <span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:46:20.338099 caching file sra.sra.DRP000499.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:46:20.983825 caching file sra.recount_project.DRP000499.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:46:21.605778 caching file sra.recount_qc.DRP000499.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:46:22.972575 caching file sra.recount_seq_qc.DRP000499.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2025-09-24 22:46:23.843884 caching file sra.recount_pred.DRP000499.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-27 00:30:30.838894 caching file sra.sra.DRP000499.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-27 00:30:31.157723 caching file sra.recount_project.DRP000499.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-27 00:30:31.461917 caching file sra.recount_qc.DRP000499.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-27 00:30:31.789139 caching file sra.recount_seq_qc.DRP000499.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-27 00:30:32.087573 caching file sra.recount_pred.DRP000499.MD.gz.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Compute the scaling factors</span></span></span>
 <span class="r-in"><span><span class="fu">compute_scale_factors</span><span class="op">(</span><span class="va">DRP000499_meta</span>, by <span class="op">=</span> <span class="st">"auc"</span><span class="op">)</span></span></span>
@@ -241,7 +241,7 @@ sample is paired-end or not.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
       </footer></div>
