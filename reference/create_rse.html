@@ -21,7 +21,7 @@ retrieve the data, cache it, then assemble the RSE object."><meta property="og:i
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">recount3</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.21.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.21.0</span>
       </span>
     </div>
 
@@ -144,9 +144,9 @@ object.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Find all available human projects</span></span></span>
 <span class="r-in"><span><span class="va">human_projects</span> <span class="op">&lt;-</span> <span class="fu"><a href="available_projects.html">available_projects</a></span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:44.349181 caching file sra.recount_project.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:44.592203 caching file gtex.recount_project.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:44.851213 caching file tcga.recount_project.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:01.075101 caching file sra.recount_project.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:01.355532 caching file gtex.recount_project.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:01.688679 caching file tcga.recount_project.MD.gz.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Find the project you are interested in</span></span></span>
 <span class="r-in"><span><span class="va">proj_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html" class="external-link">subset</a></span><span class="op">(</span></span></span>
@@ -156,17 +156,17 @@ object.</p>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Create a RSE object at the gene level</span></span></span>
 <span class="r-in"><span><span class="va">rse_gene_SRP009615</span> <span class="op">&lt;-</span> <span class="fu">create_rse</span><span class="op">(</span><span class="va">proj_info</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:47.996216 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:48.22189 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:48.469795 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:48.73174 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:48.977905 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:49.29049 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:49.353559 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:49.557681 caching file human.gene_sums.G026.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:49.915782 downloading and reading the counts: 12 samples across 63856 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:50.125546 caching file sra.gene_sums.SRP009615.G026.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:50.273875 constructing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:05.557167 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:05.85747 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:06.169294 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:06.445374 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:06.735259 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:07.075294 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:07.145677 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:07.46791 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:07.861451 downloading and reading the counts: 12 samples across 63856 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:08.249702 caching file sra.gene_sums.SRP009615.G026.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:08.413634 constructing the RangedSummarizedExperiment (rse) object.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Explore the resulting RSE gene object</span></span></span>
 <span class="r-in"><span><span class="va">rse_gene_SRP009615</span></span></span>
@@ -184,11 +184,11 @@ object.</p>
 <span class="r-in"><span><span class="co">## Information about how this RSE object was made</span></span></span>
 <span class="r-in"><span><span class="fu">metadata</span><span class="op">(</span><span class="va">rse_gene_SRP009615</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $time_created</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2026-03-31 16:04:50 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2026-03-31 16:06:08 UTC"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $recount3_version</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           package ondiskversion loadedversion                        path</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> recount3 recount3        1.21.1        1.21.1 /__w/_temp/Library/recount3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> recount3 recount3        1.21.0        1.21.0 /__w/_temp/Library/recount3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                           loadedpath attached is_base       date       source</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> recount3 /__w/_temp/Library/recount3     TRUE   FALSE 2026-03-31 Bioconductor</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>          md5ok            library</span>
@@ -525,17 +525,17 @@ object.</p>
 <span class="r-in"><span>    <span class="va">proj_info</span>,</span></span>
 <span class="r-in"><span>    annotation <span class="op">=</span> <span class="st">"fantom6_cat"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:53.115399 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:53.316801 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:53.572929 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:53.87596 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:54.153567 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:54.458591 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:54.524854 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:54.754103 caching file human.gene_sums.F006.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:55.144406 downloading and reading the counts: 12 samples across 124047 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:55.414963 caching file sra.gene_sums.SRP009615.F006.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:55.578831 constructing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:11.684992 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:12.03367 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:12.366523 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:12.679636 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:13.067808 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:13.400536 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:13.471966 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:13.726407 caching file human.gene_sums.F006.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:14.176623 downloading and reading the counts: 12 samples across 124047 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:14.459024 caching file sra.gene_sums.SRP009615.F006.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:14.634096 constructing the RangedSummarizedExperiment (rse) object.</span>
 <span class="r-in"><span><span class="fu">rowRanges</span><span class="op">(</span><span class="va">rse_gene_SRP009615_fantom6_cat</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> GRanges object with 124047 ranges and 5 metadata columns:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                   seqnames            ranges strand |   source     type</span>
@@ -572,17 +572,17 @@ object.</p>
 <span class="r-in"><span>    <span class="va">proj_info</span>,</span></span>
 <span class="r-in"><span>    annotation <span class="op">=</span> <span class="st">"refseq"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:55.608471 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:55.835376 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:56.061596 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:56.342803 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:56.607033 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:56.923784 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:56.993343 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:57.225235 caching file human.gene_sums.R109.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:57.704089 downloading and reading the counts: 12 samples across 54042 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:57.932598 caching file sra.gene_sums.SRP009615.R109.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:58.246751 constructing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:14.663191 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:14.930421 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:15.263106 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:15.553982 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:15.848165 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:16.16844 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:16.24001 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:16.494771 caching file human.gene_sums.R109.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:17.02406 downloading and reading the counts: 12 samples across 54042 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:25.379299 caching file sra.gene_sums.SRP009615.R109.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:25.771535 constructing the RangedSummarizedExperiment (rse) object.</span>
 <span class="r-in"><span><span class="fu">rowRanges</span><span class="op">(</span><span class="va">rse_gene_SRP009615_refseq</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> GRanges object with 54042 ranges and 25 metadata columns:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>               seqnames            ranges strand |   source     type bp_length</span>
@@ -684,17 +684,17 @@ object.</p>
 <span class="r-in"><span>    <span class="va">proj_info</span>,</span></span>
 <span class="r-in"><span>    annotation <span class="op">=</span> <span class="st">"ercc"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:58.277482 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:58.540092 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:58.787201 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:59.059801 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:59.307102 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:59.650722 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:59.716197 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:59.936002 caching file human.gene_sums.ERCC.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:04:59.999692 downloading and reading the counts: 12 samples across 92 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:00.243089 caching file sra.gene_sums.SRP009615.ERCC.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:00.335239 constructing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:25.801022 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:26.230139 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:26.537415 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:26.826458 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:27.115784 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:27.452561 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:27.519876 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:27.750129 caching file human.gene_sums.ERCC.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:27.814538 downloading and reading the counts: 12 samples across 92 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:28.048054 caching file sra.gene_sums.SRP009615.ERCC.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:28.14605 constructing the RangedSummarizedExperiment (rse) object.</span>
 <span class="r-in"><span><span class="fu">rowRanges</span><span class="op">(</span><span class="va">rse_gene_SRP009615_ercc</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> GRanges object with 92 ranges and 6 metadata columns:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                seqnames    ranges strand |   source     type bp_length</span>
@@ -731,17 +731,17 @@ object.</p>
 <span class="r-in"><span>    <span class="va">proj_info</span>,</span></span>
 <span class="r-in"><span>    annotation <span class="op">=</span> <span class="st">"sirv"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:00.364579 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:00.590729 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:00.853568 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:01.155338 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:01.428235 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:01.7655 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:01.843785 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:02.087362 caching file human.gene_sums.SIRV.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:02.16074 downloading and reading the counts: 12 samples across 7 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:02.409742 caching file sra.gene_sums.SRP009615.SIRV.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:02.513382 constructing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:28.173229 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:28.428685 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:28.741564 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:29.077326 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:29.367348 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:29.703004 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:29.783667 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:30.014168 caching file human.gene_sums.SIRV.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:30.093325 downloading and reading the counts: 12 samples across 7 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:30.332831 caching file sra.gene_sums.SRP009615.SIRV.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:30.440918 constructing the RangedSummarizedExperiment (rse) object.</span>
 <span class="r-in"><span><span class="fu">rowRanges</span><span class="op">(</span><span class="va">rse_gene_SRP009615_sirv</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> GRanges object with 7 ranges and 5 metadata columns:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         seqnames      ranges strand |          source     type bp_length</span>
@@ -769,72 +769,72 @@ object.</p>
 <span class="r-in"><span><span class="va">rses_gene</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="fu"><a href="annotation_options.html">annotation_options</a></span><span class="op">(</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span>    <span class="fu">create_rse</span><span class="op">(</span><span class="va">proj_info</span>, type <span class="op">=</span> <span class="st">"gene"</span>, annotation <span class="op">=</span> <span class="va">x</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:02.539439 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:02.81048 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:03.19465 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:03.524935 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:03.858618 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:04.241594 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:04.302547 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:04.539295 caching file human.gene_sums.G026.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:04.886712 downloading and reading the counts: 12 samples across 63856 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:05.110008 caching file sra.gene_sums.SRP009615.G026.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:05.243605 constructing the RangedSummarizedExperiment (rse) object.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:05.264207 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:05.500154 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:05.763494 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:06.151185 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:07.321053 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:07.640126 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:07.701753 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:07.966023 caching file human.gene_sums.G029.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:08.312871 downloading and reading the counts: 12 samples across 64837 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:08.614228 caching file sra.gene_sums.SRP009615.G029.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:08.744956 constructing the RangedSummarizedExperiment (rse) object.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:08.764419 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:08.978535 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:09.264951 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:09.549692 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:09.800059 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:10.121504 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:10.189525 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:10.443701 caching file human.gene_sums.F006.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:10.755164 downloading and reading the counts: 12 samples across 124047 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:11.158292 caching file sra.gene_sums.SRP009615.F006.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:11.388758 constructing the RangedSummarizedExperiment (rse) object.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:11.414497 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:11.620938 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:11.871538 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:12.139347 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:12.41759 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:12.717237 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:12.778631 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:12.968496 caching file human.gene_sums.R109.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:13.36323 downloading and reading the counts: 12 samples across 54042 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:13.577775 caching file sra.gene_sums.SRP009615.R109.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:13.693799 constructing the RangedSummarizedExperiment (rse) object.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:13.713234 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:13.924382 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:14.183297 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:14.441643 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:14.690249 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:15.016539 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:15.085336 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:15.443279 caching file human.gene_sums.ERCC.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:15.509555 downloading and reading the counts: 12 samples across 92 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:15.747426 caching file sra.gene_sums.SRP009615.ERCC.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:15.906826 constructing the RangedSummarizedExperiment (rse) object.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:15.925822 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:16.173779 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:16.425303 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:16.706027 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:16.959115 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:17.262442 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:17.324127 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:17.556913 caching file human.gene_sums.SIRV.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:17.615534 downloading and reading the counts: 12 samples across 7 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:17.842218 caching file sra.gene_sums.SRP009615.SIRV.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:17.927497 constructing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:30.465842 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:30.710819 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:31.035183 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:31.344651 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:31.653862 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:32.089233 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:32.151921 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:32.376339 caching file human.gene_sums.G026.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:32.752171 downloading and reading the counts: 12 samples across 63856 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:33.002206 caching file sra.gene_sums.SRP009615.G026.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:33.145842 constructing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:33.164722 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:33.419462 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:33.73464 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:34.027251 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:35.56956 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:35.902352 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:35.96794 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:36.24691 caching file human.gene_sums.G029.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:36.639421 downloading and reading the counts: 12 samples across 64837 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:36.94353 caching file sra.gene_sums.SRP009615.G029.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:37.091561 constructing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:37.110794 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:37.367171 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:37.839936 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:38.221134 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:38.577059 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:38.926614 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:39.004203 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:39.260762 caching file human.gene_sums.F006.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:39.600267 downloading and reading the counts: 12 samples across 124047 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:39.891784 caching file sra.gene_sums.SRP009615.F006.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:40.158699 constructing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:40.184086 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:40.42856 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:40.700137 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:41.0353 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:41.353102 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:41.686043 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:41.753294 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:42.032222 caching file human.gene_sums.R109.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:42.47195 downloading and reading the counts: 12 samples across 54042 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:42.828238 caching file sra.gene_sums.SRP009615.R109.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:42.962148 constructing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:42.981336 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:43.234843 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:43.550146 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:43.980998 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:44.337329 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:44.736775 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:44.816488 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:45.060034 caching file human.gene_sums.ERCC.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:45.139077 downloading and reading the counts: 12 samples across 92 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:45.371766 caching file sra.gene_sums.SRP009615.ERCC.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:45.560663 constructing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:45.578765 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:45.843215 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:46.124511 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:46.453156 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:46.737407 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:47.135148 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:47.203958 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:47.454267 caching file human.gene_sums.SIRV.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:47.519359 downloading and reading the counts: 12 samples across 7 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:47.875765 caching file sra.gene_sums.SRP009615.SIRV.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:47.971425 constructing the RangedSummarizedExperiment (rse) object.</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">rses_gene</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="annotation_options.html">annotation_options</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">rses_gene</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $gencode_v26</span>
@@ -912,17 +912,17 @@ object.</p>
 <span class="r-in"><span>    <span class="va">proj_info</span>,</span></span>
 <span class="r-in"><span>    type <span class="op">=</span> <span class="st">"exon"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:17.993704 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:18.217842 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:18.477053 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:18.748853 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:19.00693 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:19.331766 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:19.400112 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:19.61935 caching file human.exon_sums.G026.gtf.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:36.853721 downloading and reading the counts: 12 samples across 1299686 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:37.154381 caching file sra.exon_sums.SRP009615.G026.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:39.569491 constructing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:48.040733 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:48.287543 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:48.594627 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:48.924299 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:49.242865 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:49.635498 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:49.714595 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:06:50.041473 caching file human.exon_sums.G026.gtf.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:07:10.709364 downloading and reading the counts: 12 samples across 1299686 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:07:11.049442 caching file sra.exon_sums.SRP009615.G026.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:07:12.181189 constructing the RangedSummarizedExperiment (rse) object.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Explore the resulting RSE exon object</span></span></span>
 <span class="r-in"><span><span class="va">rse_exon_SRP009615</span></span></span>
@@ -1068,19 +1068,19 @@ object.</p>
 <span class="r-in"><span>    <span class="va">proj_info</span>,</span></span>
 <span class="r-in"><span>    type <span class="op">=</span> <span class="st">"jxn"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:42.601804 downloading and reading the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:42.842006 caching file sra.sra.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:43.117201 caching file sra.recount_project.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:43.383154 caching file sra.recount_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:43.771065 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:44.083674 caching file sra.recount_pred.SRP009615.MD.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:44.143146 downloading and reading the feature information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:44.409898 caching file sra.junctions.SRP009615.ALL.RR.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:45.742896 downloading and reading the counts: 12 samples across 281448 features.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:45.993555 caching file sra.junctions.SRP009615.ALL.MM.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:46.60688 matching exon-exon junction counts with the metadata.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:46.842083 caching file sra.junctions.SRP009615.ALL.ID.gz.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:05:46.915627 constructing the RangedSummarizedExperiment (rse) object.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:07:16.09042 downloading and reading the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:07:16.351695 caching file sra.sra.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:07:16.681661 caching file sra.recount_project.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:07:17.041659 caching file sra.recount_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:07:17.346009 caching file sra.recount_seq_qc.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:07:17.671816 caching file sra.recount_pred.SRP009615.MD.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:07:17.739819 downloading and reading the feature information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:07:17.976281 caching file sra.junctions.SRP009615.ALL.RR.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:07:20.222684 downloading and reading the counts: 12 samples across 281448 features.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:07:20.561083 caching file sra.junctions.SRP009615.ALL.MM.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:07:20.973198 matching exon-exon junction counts with the metadata.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:07:21.246305 caching file sra.junctions.SRP009615.ALL.ID.gz.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2026-03-31 16:07:21.32277 constructing the RangedSummarizedExperiment (rse) object.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Explore the resulting RSE exon-exon junctions object</span></span></span>
 <span class="r-in"><span><span class="va">rse_jxn_SRP009615</span></span></span>
