@@ -1,3 +1,9 @@
+# recount3 1.21.1
+
+BUG FIXES
+
+* Switched from `pryr` to `lobstr`. This was done by @gpertea.
+
 # recount3 1.19.3
 
 SIGNIFICANT USER-VISIBLE CHANGES
